@@ -13,13 +13,22 @@ ACTIVE = {
     'bequests.html': 'bequests.html',
     # no active nav item: articles, news, reports, donate, gift-a-tree, bring-back-the-bush
 }
+PILLARS = ('growing-national-parks.html', 'saving-species.html', 'healing-the-land.html')
+
+def active_for(p):
+    if p.startswith('project-') or p in PILLARS:
+        return 'projects.html'
+    if p.startswith('corporate-volunteering-'):
+        return 'volunteer.html'
+    return ACTIVE.get(p)
+
 hdr = open(os.path.join(ROOT, 'partials/header.html')).read()
 ftr = open(os.path.join(ROOT, 'partials/footer.html')).read()
 for p in sorted(f for f in os.listdir(ROOT) if f.endswith('.html')):
     path = os.path.join(ROOT, p)
     t = open(path).read()
     h = hdr
-    a = ACTIVE.get(p)
+    a = active_for(p)
     if a:
         h = h.replace(f'<a href="{a}" class=""', f'<a href="{a}" class=" on"', 1)
     t2 = re.sub(r'<!-- @header -->.*?<!-- /@header -->', lambda m: '<!-- @header -->'+h+'<!-- /@header -->', t, count=1, flags=re.S)
