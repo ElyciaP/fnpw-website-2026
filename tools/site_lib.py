@@ -107,6 +107,11 @@ def card(slug, title, img, pillar_label, pillar_class, state, blurb, data_pil=''
   </a>
 </article>'''
 
+# Pages owned by gen_exemplars.py; gen_projects.py must not overwrite them.
+EXEMPLAR_SLUGS = {'remarkable-southern-flinders',
+                  'southern-highlands-koala-conservation',
+                  'warddeken-mayh'}
+
 RAISELY_DONATE = 'https://foundation-for-national-parks-and-wildlife.raiselysite.com/'
 RAISELY_HERO = 'https://habitat-heroes.raiselysite.com/'
 PLACEHOLDER_IMG = 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1800&q=80'

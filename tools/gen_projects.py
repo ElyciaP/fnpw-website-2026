@@ -158,8 +158,11 @@ def main():
     with open(os.path.join(ROOT, 'data/projects.json'), 'w') as f:
         json.dump(projects, f, indent=1)
 
-    # ---- project detail pages ----
+    # ---- project detail pages (exemplars are owned by gen_exemplars.py) ----
+    from site_lib import EXEMPLAR_SLUGS
     for p in projects:
+        if p['slug'] in EXEMPLAR_SLUGS:
+            continue
         pil = PILLARS[p['pillar']]
         others = [q for q in projects if q['pillar'] == p['pillar'] and q['slug'] != p['slug']][:3]
         related = '\n'.join(card(q['slug'], q['title'], q['img'], pil['label'], pil['cls'],

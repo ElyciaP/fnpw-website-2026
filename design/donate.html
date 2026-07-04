@@ -1,0 +1,984 @@
+<!-- DESIGN PACK: donate front door to Raisely. Source of truth is the repo; merge changes back via Claude, do not copy this file over the original. -->
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Donate | Foundation for National Parks & Wildlife</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* === global.css (inlined for design) === */
+:root{
+  /* Eucalyptus family (primary) */
+  --euc:#0F7768;--euc-deep:#0F3132;--euc-mid:#51B593;--euc-soft:#C6EBCA;--euc-pale:#EAF4ED;
+  /* Waratah family (red-pink) */
+  --waratah:#C23747;--waratah-dk:#8C1422;--waratah-soft:#FFADB7;--waratah-pale:#FFE5E8;
+  /* Reef (blue) */
+  --reef:#2C4B89;--reef-mid:#5A78B5;--reef-soft:#A8C4F3;--reef-pale:#E5EDF8;
+  /* Hovea (purple-pink) */
+  --hovea:#703985;--hovea-mid:#9A5FAD;--hovea-soft:#DBD1EC;--hovea-pale:#F2EBF6;
+  /* Earthy warms */
+  --bark:#AB7341;--bark-mid:#85735E;--bark-soft:#D9C4A6;
+  --red-soil:#B64629;--red-soil-bright:#E26539;--red-soil-soft:#FFAA8A;
+  --wattle:#C4A927;--wattle-dk:#9F8506;--wattle-soft:#F8EEA9;
+  --soil:#241914;
+  /* Neutrals */
+  --cream:#FAF6F2;--sand:#EEE8E1;--paper:#F4EEE6;
+  --ink:#141414;--char:#2a2a2a;--stone:#7a7367;--rule:#E5DFD3;--white:#fff;
+  /* Type */
+  --ff-d:'Sora',sans-serif;--ff-b:'Figtree',sans-serif;--ff-h:'Caveat',cursive;
+  --mw:1240px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);font-size:17px;line-height:1.65;color:var(--char);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .18 0 0 0 0 .16 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:multiply}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none;transition:.25s}
+a:hover{opacity:.78}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3,h4,h5{font-family:var(--ff-d);font-weight:600;line-height:1.08;letter-spacing:-.022em;color:var(--euc-deep)}
+h1{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;letter-spacing:-.02em}
+h3{font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:600}
+h4{font-size:clamp(1rem,1.3vw,1.15rem);font-weight:600}
+p{margin-bottom:1em}p:last-child{margin-bottom:0}
+.ey{font-family:var(--ff-b);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc);display:inline-flex;align-items:center;gap:.6em}
+.ey::before{content:"";width:24px;height:1.5px;background:currentColor;display:inline-block}
+.lede{font-size:clamp(1.08rem,1.4vw,1.3rem);line-height:1.55;color:var(--char);max-width:62ch}
+.hand{font-family:var(--ff-h);font-weight:600;color:var(--euc)}
+.cw{max-width:var(--mw);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);position:relative;z-index:2}
+
+/* ---- ACKNOWLEDGE BAR ---- */
+.ack{background:var(--soil);color:var(--cream);font-size:.78rem;letter-spacing:.04em;padding:.55em 0;text-align:center;position:relative;z-index:50}
+
+/* ---- HEADER ---- */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(250,246,242,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.hdr.scrolled{box-shadow:0 8px 28px -12px rgba(15,49,50,.18)}
+.hdr-in{display:flex;align-items:center;gap:2rem;height:72px}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0}
+.logo img{display:block;max-height:42px;width:auto}
+.nav{display:flex;align-items:center;gap:1.7rem;margin-left:auto}
+.nav>a,.nav .ng>button{font-size:.9rem;font-weight:500;color:var(--char);position:relative;padding:.4em 0;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;text-decoration:none}
+.nav>a::after,.nav .ng>button::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--euc);transform:scaleX(0);transform-origin:left;transition:.3s}
+.nav>a:hover::after,.nav>a.on::after,.nav .ng:hover>button::after,.nav .ng.on>button::after{transform:scaleX(1)}
+.nav>a.on,.nav .ng.on>button{color:var(--euc)}
+.ng{position:relative}
+.ng .ar{font-size:.7em;transition:.25s;display:inline-block}
+.ng:hover .ar{transform:rotate(180deg)}
+.dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:var(--white);border:1px solid var(--rule);border-radius:6px;box-shadow:0 14px 40px -10px rgba(15,49,50,.18);padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:.22s ease;z-index:10}.ng>button{padding:.4em .25em}.ng.open .ar{transform:rotate(180deg)}
+.ng:hover .dd,.ng:focus-within .dd,.ng.open .dd{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dd::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--white);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.dd a{display:block;padding:.65rem .85rem;border-radius:4px;font-size:.9rem;color:var(--char)}
+.dd a:hover{background:var(--euc-pale);color:var(--euc-deep);opacity:1}
+.dd a.on{background:var(--euc-pale);color:var(--euc);font-weight:600}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;border-radius:6px;border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;letter-spacing:.01em;white-space:nowrap;text-decoration:none}
+.btn-p{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.btn-p:hover{background:var(--euc);border-color:var(--euc);opacity:1;transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(10,42,43,.4)}
+.btn-o{background:transparent;color:var(--euc-deep);border-color:var(--euc-deep)}
+.btn-o:hover{background:var(--euc-deep);color:var(--cream);opacity:1}
+.btn-s{background:var(--euc-deep);color:var(--cream)}
+.btn-s:hover{background:var(--euc);opacity:1}
+.btn-g{padding:.5em 0;border-bottom:1.5px solid currentColor;border-radius:0;color:var(--euc-deep)}
+.btn-g::after{content:"→";display:inline-block;transition:.25s}
+.btn-g:hover{opacity:1;color:var(--euc)}.btn-g:hover::after{transform:translateX(4px)}
+
+.mt{display:none;flex-direction:column;gap:5px;padding:8px}
+.mt span{width:22px;height:2px;background:var(--char);transition:.25s}
+@media(max-width:980px){
+  .nav{position:fixed;top:0;right:-100%;width:80%;max-width:340px;height:100vh;background:var(--cream);flex-direction:column;align-items:flex-start;padding:5rem 2rem 2rem;gap:1.5rem;box-shadow:-10px 0 40px rgba(0,0,0,.12);transition:.35s}
+  .nav.open{right:0}
+  .dd{position:static;transform:none;opacity:1;pointer-events:auto;background:0;border:0;box-shadow:none;padding:.5rem 0 0 1rem;min-width:0}.dd::before{display:none}
+  .mt{display:flex;margin-left:auto;z-index:50;position:relative}
+}
+
+/* ---- FOOTER ---- */
+.ftr{background:var(--euc-deep);color:var(--euc-soft);padding:5rem 0 2rem;margin-top:6rem;position:relative;overflow:hidden}
+.ftr::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--euc-mid),transparent)}
+.ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:880px){.ftr-g{grid-template-columns:1fr 1fr;gap:2.4rem}}
+@media(max-width:520px){.ftr-g{grid-template-columns:1fr}}
+.ftr h4{color:var(--white);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2em;font-weight:600;font-family:var(--ff-b)}
+.ftr ul{list-style:none}.ftr li{margin-bottom:.6em}.ftr li a{color:var(--euc-soft);font-size:.94rem;opacity:.85}.ftr li a:hover{color:var(--wattle-soft);opacity:1}
+.ftr-b{border-top:1px solid rgba(198,235,202,.16);padding-top:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:var(--euc-mid)}
+
+/* ---- UTILITIES ---- */
+.sec{padding:5.5rem 0;position:relative}
+.sec.dark{background:var(--euc-deep);color:var(--euc-soft)}
+.sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4{color:var(--white)}
+.sec.dark .ey{color:var(--wattle)}.sec.dark .ey::before{background:var(--wattle)}
+.sec.paper{background:var(--paper)}
+.sec.sand{background:var(--sand)}
+.deco{position:absolute;pointer-events:none;opacity:.12}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}.rv.d4{transition-delay:.48s}
+.framed{position:relative}.framed::before{content:"";position:absolute;top:16px;left:-16px;width:100%;height:100%;background:var(--euc);z-index:0;border-radius:6px}
+.framed.wt::before{background:var(--wattle)}.framed.bk::before{background:var(--bark)}
+.framed img,.framed .ib{position:relative;z-index:1;border-radius:6px;width:100%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:880px){.two{grid-template-columns:1fr;gap:2.5rem}}
+.stat-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;color:var(--euc);letter-spacing:-.04em}
+.stat-l{font-size:.82rem;letter-spacing:.05em;color:var(--stone);line-height:1.3;margin-top:.4em}
+
+/* === v2 shared components (generated) === */
+
+.ch{padding:8.5rem 0 4rem;background:var(--paper)}
+.chi{position:relative;background:var(--euc-deep);color:#fff}
+.chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.28}
+.chi .cw{position:relative}
+.chi h1{color:#fff}
+.chi .lede{color:rgba(255,255,255,.85)}
+.port-note{border:2px dashed var(--wattle-dk);background:var(--wattle-soft);color:var(--ink);padding:.9rem 1.1rem;border-radius:10px;font-size:.9rem;margin:1.2rem 0}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
+.pc-link{display:block;color:inherit;text-decoration:none;height:100%}
+.pb-parks{background:var(--euc)}.pb-species{background:var(--waratah)}.pb-healing{background:var(--bark)}
+.pmeta{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:1.4rem}
+.pmeta-i{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
+.pmeta-i:last-child{border-bottom:0}
+.pmeta-i span{color:var(--stone);font-size:.85rem}
+.lcg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem}
+.lc{position:relative;display:block;background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.5rem 2.6rem 1.5rem 1.5rem;color:inherit;text-decoration:none;transition:transform .18s,box-shadow .18s}
+.lc:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,49,50,.12)}
+.lc h3{margin-bottom:.4rem;color:var(--euc-deep)}
+.lc p{font-size:.92rem;color:var(--stone)}
+.lc-go{position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);font-size:1.6rem;color:var(--euc)}
+.fq{border:1px solid var(--rule);border-radius:12px;background:#fff;margin-bottom:.8rem;overflow:hidden}
+.fq summary{cursor:pointer;padding:1.05rem 1.3rem;font-family:var(--ff-d);font-weight:600;list-style:none;position:relative}
+.fq summary::after{content:"+";position:absolute;right:1.2rem;color:var(--euc);font-size:1.2rem}
+.fq[open] summary::after{content:"\2212"}
+.fq-a{padding:0 1.3rem 1.1rem;color:var(--char)}
+.prog-wrap{margin-top:1.6rem;max-width:420px}
+.prog{height:13px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--wattle),var(--wattle-soft));border-radius:99px}
+.prog-lbl{font-size:.9rem;margin-top:.5rem}
+.statrow{display:flex;gap:2.4rem;flex-wrap:wrap;margin:1.6rem 0}
+.srch{width:100%;max-width:560px;font:inherit;padding:.9rem 1.2rem;border:2px solid var(--euc);border-radius:12px;background:#fff}
+.srch-res{list-style:none;margin-top:1.4rem;max-width:560px}
+.srch-res li{border-bottom:1px solid var(--rule);padding:.7rem 0}
+.pilband{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:0 0 2.4rem}
+
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3rem 0 6rem}
+.pg{grid-template-columns:repeat(2,1fr)}
+.pg{grid-template-columns:1fr}
+.pc{position:relative;background:var(--white);border:1px solid var(--rule);border-radius:6px;overflow:hidden;cursor:pointer;transition:.35s;display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-6px);box-shadow:0 26px 60px -24px rgba(15,49,50,.25);border-color:var(--euc)}
+.pc-im{aspect-ratio:5/3;background:var(--euc);overflow:hidden;position:relative}
+.pc-im img{width:100%;height:100%;object-fit:cover;transition:1.2s}
+.pc:hover .pc-im img{transform:scale(1.06)}
+.pc-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,49,50,.45))}
+.pc-pb{position:absolute;top:1rem;left:1rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:.4em .9em;border-radius:999px;color:var(--euc-deep);z-index:2}
+.pc-pb.sp{color:var(--waratah-dk);background:rgba(255,236,238,.95)}
+.pc-pb.hl{color:var(--wattle-dk);background:rgba(255,247,217,.95)}
+.pc-lo{position:absolute;bottom:.9rem;left:1rem;font-size:.76rem;color:var(--white);z-index:2}
+.pc-bd{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.pc-bd h3{font-size:1.15rem;line-height:1.2;margin-bottom:.5rem}
+.pc-bd p{font-size:.9rem;line-height:1.5;color:var(--char);flex:1;margin-bottom:1rem}
+.pc-st{display:flex;gap:1rem;padding-top:1rem;border-top:1px dashed var(--rule)}
+.pc-st .ps{flex:1}
+.pc-st strong{display:block;font-family:var(--ff-d);font-weight:700;font-size:1.1rem;color:var(--euc);letter-spacing:-.02em}
+.pc.sp .pc-st strong{color:var(--waratah)}
+.pc.hl .pc-st strong{color:var(--wattle-dk)}
+.pc-st span{font-size:.7rem;color:var(--stone)}
+.pp-sts .ps{text-align:center}
+/* ════ Bring Back The Bush — campaign landing page ════════════════════ */
+/* Hero */
+.cmp-hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(5rem,9vw,8rem) 0 clamp(4rem,7vw,6rem);color:var(--white)}
+.cmp-hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 100% at 75% 20%,#C49EDE 0,var(--hovea-mid) 30%,var(--hovea) 60%,#4a225c 100%)}
+.cmp-hero-grain{position:absolute;inset:0;z-index:-1;opacity:.16;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cmp-hero::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%);z-index:3}
+.cmp-hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;position:relative;z-index:2}
+.cmp-hero-g{grid-template-columns:1fr;gap:3rem}
+.cmp-bc{display:flex;gap:.5em;font-size:.78rem;color:rgba(250,247,243,.65);margin-bottom:1.4rem;font-weight:500;letter-spacing:.04em}
+.cmp-bc a{color:#F8EEA9}
+.cmp-ey{display:inline-flex;align-items:center;gap:.65em;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#F8EEA9;margin-bottom:1.5rem}
+.cmp-ey-dot{width:8px;height:8px;border-radius:50%;background:#F8EEA9;box-shadow:0 0 0 4px rgba(248,238,169,.22);animation:cmpPulse 2.4s ease-in-out infinite}
+.cmp-h1{font-family:var(--ff-d);font-size:clamp(3rem,7.5vw,6rem);font-weight:700;line-height:.96;letter-spacing:-.035em;color:var(--white);margin-bottom:.5rem}
+.cmp-h1 em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:#F8EEA9;font-size:1.05em;letter-spacing:-.01em;display:inline-block;transform:translateY(.03em) rotate(-2deg);padding:0 .04em}
+.cmp-smit{font-family:var(--ff-d);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:500;line-height:1.25;color:rgba(255,255,255,.92);margin:0 0 1.6rem;letter-spacing:-.015em;max-width:24ch}
+.cmp-lede{font-size:clamp(1rem,1.25vw,1.18rem);line-height:1.6;color:rgba(255,255,255,.82);max-width:54ch;margin-bottom:2rem}
+.cmp-meta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;font-size:.85rem;color:rgba(255,255,255,.78);margin-bottom:2rem}
+.cmp-meta-i{display:inline-flex;align-items:center;gap:.5em}
+.cmp-meta-i svg{width:16px;height:16px;flex:0 0 16px;color:#F8EEA9}
+.cmp-btns{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+.cmp-btn-p{display:inline-block;background:#F8EEA9;color:var(--hovea) !important;padding:1em 1.9em;border-radius:999px;font-family:var(--ff-d);font-weight:600;font-size:.95rem;transition:.25s;border:none}
+.cmp-btn-p:hover{background:var(--white);transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(0,0,0,.3);opacity:1}
+.cmp-btn-g{display:inline-flex;align-items:center;gap:.55em;color:var(--white);font-weight:600;font-size:.92rem;border-bottom:1.5px solid rgba(255,255,255,.5);padding:.4em 0;transition:.25s}
+.cmp-btn-g svg{width:18px;height:18px}
+.cmp-btn-g:hover{border-bottom-color:#F8EEA9;color:#F8EEA9;opacity:1}
+/* Hero image */
+.cmp-hero-im{position:relative;display:flex;justify-content:center;align-items:center}
+.cmp-hero-im-wrap{position:relative;width:100%;max-width:500px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#B58DCC;box-shadow:0 40px 100px -25px rgba(0,0,0,.5),0 0 0 10px rgba(255,255,255,.08),0 0 0 1px rgba(255,255,255,.15);transform:rotate(-2deg)}
+.cmp-hero-im-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.cmp-hero-tag{position:absolute;bottom:-.5rem;right:-.5rem;background:var(--white);color:var(--hovea);font-family:var(--ff-h);font-size:1.85rem;font-weight:700;padding:.3em 1.1em .35em;border-radius:999px;transform:rotate(6deg);box-shadow:0 10px 30px -10px rgba(0,0,0,.35);letter-spacing:-.01em;z-index:3}
+.cmp-hero-im-wrap{max-width:380px}
+.cmp-hero-tag{font-size:1.55rem;bottom:0;right:.5rem}
+/* Why-now / messaging section */
+.cmp-why{padding:clamp(4rem,7vw,6rem) 0;background:var(--cream);position:relative}
+.cmp-why-g{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.cmp-why-g{grid-template-columns:1fr}
+.cmp-why-l h2{font-size:clamp(2rem,3.4vw,2.8rem);letter-spacing:-.025em;line-height:1.05;margin-bottom:1.2rem}
+.cmp-why-l h2 em{font-family:var(--ff-h);font-weight:700;color:var(--hovea);font-style:normal;font-size:1.18em;display:inline-block;transform:rotate(-1.5deg) translateY(.02em)}
+.cmp-why-l p{font-size:1.02rem;color:var(--stone);line-height:1.65;margin-bottom:1.1rem}
+.cmp-why-r p{font-size:1.05rem;line-height:1.7;color:var(--char);margin-bottom:1.2rem}
+.cmp-why-r p:first-child{font-family:var(--ff-d);font-size:1.25rem;line-height:1.45;color:var(--euc-deep);font-weight:500;letter-spacing:-.01em;margin-bottom:1.5rem}
+.cmp-why-r p strong{color:var(--hovea);font-weight:600}
+/* Stats */
+.cmp-stats-wrap{background:var(--euc-deep);color:var(--white);padding:0;position:relative;overflow:hidden}
+.cmp-stats-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 100% at 80% 50%,rgba(112,57,133,.5),transparent 70%);pointer-events:none}
+.cmp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:2}
+.cmp-stats{grid-template-columns:repeat(2,1fr)}
+.cmp-stat{padding:3rem 1.8rem;border-right:1px solid rgba(255,255,255,.12);text-align:center;position:relative}
+.cmp-stat:last-child{border-right:0}
+.cmp-stat:nth-child(2){border-right:0}
+.cmp-stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+.cmp-stat-n{font-family:var(--ff-d);font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1;font-weight:700;letter-spacing:-.03em;color:#F8EEA9;margin-bottom:.6rem}
+.cmp-stat-l{font-size:.84rem;color:rgba(255,255,255,.82);line-height:1.45;letter-spacing:.02em;max-width:24ch;margin:0 auto}
+/* Costa section */
+.cmp-costa{padding:clamp(4rem,7vw,7rem) 0;background:var(--paper);position:relative;overflow:hidden}
+.cmp-costa-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,var(--paper) 0,var(--paper) 50%,rgba(219,209,236,.4) 100%);pointer-events:none}
+.cmp-costa-leaf{position:absolute;color:var(--hovea-soft);opacity:.32;z-index:0;pointer-events:none}
+.cmp-costa-leaf.l1{top:-10%;left:-4%;width:240px;transform:rotate(-15deg)}
+.cmp-costa-leaf.l2{bottom:-10%;right:-2%;width:280px;transform:rotate(170deg)}
+.cmp-costa-leaf{width:140px !important}
+.cmp-costa-g{display:grid;grid-template-columns:.85fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
+.cmp-costa-g{grid-template-columns:1fr;gap:2.5rem}
+.cmp-costa-portrait{position:relative;aspect-ratio:4/5;max-width:380px;border-radius:8px;overflow:hidden;background:linear-gradient(160deg,var(--hovea-mid) 0,var(--hovea) 60%,#4a225c 100%);box-shadow:0 25px 60px -20px rgba(112,57,133,.4);justify-self:center;width:100%}
+.cmp-costa-portrait::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3CradialGradient id='f' cx='50%25' cy='40%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='.15'/%3E%3Cstop offset='100%25' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23f)'/%3E%3Cg fill='none' stroke='%23F8EEA9' stroke-width='1.2' opacity='.45'%3E%3Cpath d='M50 380 Q80 320 120 360 Q160 400 180 340 Q200 280 240 320 Q280 360 320 300 Q350 260 380 290'/%3E%3Cpath d='M30 420 Q70 380 110 410 Q150 440 200 400 Q260 360 320 400 Q360 425 390 410'/%3E%3Cellipse cx='80' cy='100' rx='30' ry='12' transform='rotate(-25 80 100)'/%3E%3Cellipse cx='320' cy='130' rx='28' ry='10' transform='rotate(20 320 130)'/%3E%3Cellipse cx='50' cy='220' rx='25' ry='9' transform='rotate(-15 50 220)'/%3E%3Cellipse cx='350' cy='250' rx='32' ry='12' transform='rotate(35 350 250)'/%3E%3C/g%3E%3Ctext x='50%25' y='52%25' font-family='Caveat, cursive' font-size='38' fill='%23F8EEA9' text-anchor='middle' font-weight='700' opacity='.85'%3ECosta%3C/text%3E%3Ctext x='50%25' y='60%25' font-family='Sora, sans-serif' font-size='11' fill='%23F8EEA9' text-anchor='middle' letter-spacing='4' opacity='.7'%3ECAMPAIGN AMBASSADOR%3C/text%3E%3C/svg%3E")}
+.cmp-costa-portrait-cap{position:absolute;bottom:.8rem;left:.8rem;right:.8rem;font-size:.7rem;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;z-index:2;font-weight:500}
+.cmp-costa-r .ey{color:var(--hovea)}
+.cmp-quote-open{font-family:var(--ff-d);font-size:5rem;line-height:.3;color:var(--hovea-mid);display:block;margin-bottom:1rem}
+.cmp-quote{font-family:var(--ff-d);font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.3;font-weight:500;letter-spacing:-.018em;color:var(--euc-deep);margin-bottom:2rem;max-width:32ch}
+.cmp-quote em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:var(--hovea);font-size:1.15em;letter-spacing:0;display:inline-block;transform:rotate(-1deg)}
+.cmp-attr{display:flex;align-items:center;gap:1rem;margin-top:1.6rem}
+.cmp-attr-avatar{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--hovea),var(--hovea-mid));display:flex;align-items:center;justify-content:center;color:#F8EEA9;font-family:var(--ff-d);font-weight:700;font-size:1.1rem;flex:0 0 54px;border:2px solid var(--hovea-soft)}
+.cmp-attr-info strong{display:block;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:1.05rem;margin-bottom:.15rem}
+.cmp-attr-info span{display:block;font-size:.88rem;color:var(--stone);line-height:1.4}
+/* Gallery */
+.cmp-gallery{padding:clamp(4rem,7vw,7rem) 0;background:var(--cream)}
+.cmp-gallery-h{text-align:center;max-width:680px;margin:0 auto 3.5rem}
+.cmp-gallery-h h2{font-size:clamp(2rem,3.4vw,2.7rem);margin:1rem 0 1rem;letter-spacing:-.025em;line-height:1.05}
+.cmp-gallery-h p{color:var(--stone);font-size:1.02rem;line-height:1.6}
+.cmp-gallery-g{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:.9rem}
+.cmp-gallery-g{grid-template-columns:repeat(4,1fr);grid-auto-rows:160px}
+.cmp-gallery-g{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px;gap:.7rem}
+.cmp-tile{position:relative;border-radius:6px;overflow:hidden;background:var(--euc-pale);transition:.45s cubic-bezier(.2,.8,.2,1);cursor:pointer;isolation:isolate}
+.cmp-tile img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.8,.2,1)}
+.cmp-tile:hover img{transform:scale(1.06)}
+.cmp-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,49,50,.78) 100%);z-index:1;transition:.4s;pointer-events:none}
+.cmp-tile-info{position:absolute;left:1rem;right:1rem;bottom:.9rem;z-index:2;color:var(--white)}
+.cmp-tile-tag{display:inline-block;background:rgba(248,238,169,.96);color:var(--hovea);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.2em .7em;border-radius:999px;margin-bottom:.4rem}
+.cmp-tile-t{font-family:var(--ff-d);font-size:.94rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--white)}
+.cmp-tile.span-2-2{grid-column:span 2;grid-row:span 2}
+.cmp-tile.span-2{grid-column:span 2}
+.cmp-tile.span-3{grid-column:span 3}
+.cmp-tile.span-4{grid-column:span 4}
+.cmp-tile.span-2-2,.cmp-tile.span-2,.cmp-tile.span-3,.cmp-tile.span-4{grid-column:span 2;grid-row:span 1}
+.cmp-tile.span-2-2{grid-row:span 2}
+/* Video tiles */
+.cmp-tile.video{cursor:pointer}
+.cmp-tile.video::before{content:"";position:absolute;inset:0;background:rgba(15,49,50,.35);z-index:1;transition:.3s}
+.cmp-tile.video:hover::before{background:rgba(15,49,50,.18)}
+.cmp-tile-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(248,238,169,.96);display:flex;align-items:center;justify-content:center;z-index:3;transition:.3s;box-shadow:0 8px 30px -8px rgba(0,0,0,.4)}
+.cmp-tile.video:hover .cmp-tile-play{transform:translate(-50%,-50%) scale(1.08);background:var(--white)}
+.cmp-tile-play svg{width:24px;height:24px;color:var(--hovea);margin-left:3px}
+.cmp-tile-dur{position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,.65);color:var(--white);font-size:.72rem;font-weight:600;padding:.25em .6em;border-radius:4px;z-index:3;letter-spacing:.02em;font-family:var(--ff-b)}
+/* Get involved */
+.cmp-involved{padding:clamp(4rem,7vw,7rem) 0;background:var(--paper)}
+.cmp-involved-h{text-align:center;max-width:720px;margin:0 auto 3.5rem}
+.cmp-involved-h h2{font-size:clamp(2rem,3.4vw,2.7rem);margin:1rem 0 1rem;line-height:1.05;letter-spacing:-.025em}
+.cmp-involved-h p{color:var(--stone);font-size:1.02rem;line-height:1.6}
+.cmp-involved-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.cmp-involved-g{grid-template-columns:repeat(2,1fr)}
+.cmp-involved-g{grid-template-columns:1fr}
+.cmp-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:2rem 1.6rem;position:relative;transition:.3s;overflow:hidden;text-decoration:none;color:inherit}
+.cmp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--hovea);transition:.3s}
+.cmp-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px -18px rgba(112,57,133,.22);border-color:var(--hovea-soft);opacity:1}
+.cmp-card:hover::before{height:5px}
+.cmp-card .ic{width:48px;height:48px;border-radius:50%;background:var(--hovea-pale);color:var(--hovea);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.cmp-card .ic svg{width:24px;height:24px}
+.cmp-card h3{font-size:1.18rem;font-weight:600;letter-spacing:-.015em;margin-bottom:.6rem;color:var(--euc-deep)}
+.cmp-card p{font-size:.92rem;color:var(--stone);line-height:1.55;margin-bottom:1.4rem;flex:1}
+.cmp-card .al{display:inline-flex;align-items:center;gap:.45em;color:var(--hovea);font-weight:600;font-size:.88rem;letter-spacing:-.005em;margin-top:auto}
+.cmp-card .al svg{width:16px;height:16px;transition:.3s}
+.cmp-card:hover .al svg{transform:translateX(4px)}
+/* Social sharing in get-involved card */
+.cmp-card.share{background:linear-gradient(135deg,var(--hovea) 0%,#4a225c 100%);color:var(--white);border-color:var(--hovea)}
+.cmp-card.share::before{background:#F8EEA9}
+.cmp-card.share .ic{background:rgba(248,238,169,.22);color:#F8EEA9}
+.cmp-card.share h3{color:var(--white)}
+.cmp-card.share p{color:rgba(255,255,255,.85)}
+.cmp-card.share .al{color:#F8EEA9}
+.cmp-card.share:hover{box-shadow:0 20px 50px -18px rgba(112,57,133,.5)}
+.cmp-share-tag{display:inline-block;background:rgba(248,238,169,.95);color:var(--hovea);font-family:var(--ff-d);font-weight:700;padding:.25em .65em;border-radius:4px;font-size:.8rem;letter-spacing:-.005em;margin-top:.3rem}
+/* Final CTA */
+.cmp-final{padding:clamp(5rem,8vw,7rem) 0;background:linear-gradient(135deg,var(--hovea) 0%,#4a225c 100%);color:var(--white);position:relative;overflow:hidden;text-align:center}
+.cmp-final::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%);z-index:3}
+.cmp-final-grain{position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E")}
+.cmp-final h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:1.2rem;color:var(--white);position:relative;z-index:2;max-width:18ch;margin-left:auto;margin-right:auto}
+.cmp-final h2 em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:#F8EEA9;font-size:1.15em;display:inline-block;transform:rotate(-2deg) translateY(.02em)}
+.cmp-final p{font-size:clamp(1.05rem,1.4vw,1.25rem);color:rgba(255,255,255,.86);max-width:50ch;margin:0 auto 2.5rem;line-height:1.55;position:relative;z-index:2}
+.cmp-final-btns{display:inline-flex;gap:1.4rem;align-items:center;flex-wrap:wrap;position:relative;z-index:2;justify-content:center}
+
+/* === v2.1 card visibility guarantee === */
+.pg{display:grid !important}
+.pg .pc{opacity:1 !important;transform:none !important;display:flex;flex-direction:column}
+.pg .pc-link{display:flex;flex-direction:column;height:100%}
+
+</style>
+
+<style>
+/* SHARED full-bleed image hero (used on all sub-pages) */
+.fb-hero{position:relative;min-height:clamp(420px,56vh,540px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
+.fb-hero-bg{position:absolute;inset:0;z-index:-2}
+.fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 50%,rgba(15,49,50,.2) 100%);z-index:1}
+.fb-hero-content{position:relative;z-index:3;padding:4.5rem 0;width:100%}
+.fb-hero-content .breadcrumb{color:rgba(250,246,242,.7)}
+.fb-hero-content .breadcrumb a{color:var(--euc-soft)}
+.fb-hero-content .ey{color:var(--waratah-soft)}
+.fb-hero-content .ey::before{background:var(--waratah-soft)}
+.fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:22ch;margin-top:1rem}
+.fb-hero-content h1 em{font-style:italic;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:400}
+.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
+.fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
+@media(max-width:780px){.fb-cred{display:none}}
+
+
+.dh .deco{position:absolute;pointer-events:none;opacity:.14}
+.dh .deco.d1{top:12%;right:5%;width:180px;color:var(--waratah);transform:rotate(15deg)}
+.dh .deco.d2{bottom:10%;right:20%;width:110px;color:var(--wattle);transform:rotate(-25deg);opacity:.3}
+
+.don-main{padding:3rem 0 6rem;background:var(--paper)}
+.don-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+@media(max-width:960px){.don-grid{grid-template-columns:1fr;gap:2rem}}
+
+.don-info h2{font-size:clamp(1.6rem,2.4vw,2.2rem);margin-bottom:1.2rem}
+.don-info p{color:var(--char);font-size:1.02rem;line-height:1.65;margin-bottom:1.2rem}
+.imp-list{margin:2rem 0;display:flex;flex-direction:column;gap:1rem}
+.imp{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 1.4rem;background:var(--white);border:1px solid var(--rule);border-radius:6px;border-left:4px solid var(--euc)}
+.imp.sp{border-left-color:var(--waratah)}.imp.hl{border-left-color:var(--wattle)}
+.imp .amt{font-family:var(--ff-d);font-weight:800;font-size:1.5rem;color:var(--euc);min-width:80px;letter-spacing:-.02em}
+.imp.sp .amt{color:var(--waratah)}.imp.hl .amt{color:var(--wattle-dk)}
+.imp .txt{flex:1}
+.imp .txt strong{display:block;color:var(--euc-deep);font-family:var(--ff-d);font-size:1rem;margin-bottom:.2rem}
+.imp .txt span{font-size:.9rem;color:var(--stone);line-height:1.5}
+
+.tax{padding:4rem 0;background:var(--euc-deep);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+.tax::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
+.tax h3{color:var(--white);margin-bottom:1rem;font-size:clamp(1.4rem,2vw,1.8rem)}
+
+
+/* ---- Raisely-style stepped donation flow ---- */
+.don-main{padding:3rem 0 6rem;background:var(--paper)}
+.don-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3.5rem;align-items:start}
+@media(max-width:1040px){.don-grid{grid-template-columns:1fr;gap:2.5rem}}
+
+/* Stepper */
+.stepper{display:flex;align-items:center;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.stepper .step{display:flex;align-items:center;gap:.6em;color:var(--stone);font-size:.85rem;font-weight:600;letter-spacing:.02em}
+.stepper .step .dot{width:28px;height:28px;border-radius:50%;background:var(--rule);color:var(--stone);display:inline-flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-weight:700;font-size:.85rem;transition:.3s}
+.stepper .step.on .dot{background:var(--euc-deep);color:var(--cream)}
+.stepper .step.on{color:var(--euc-deep)}
+.stepper .step.done .dot{background:var(--euc);color:var(--cream)}
+.stepper .step.done .dot::before{content:"✓";font-size:.85rem}
+.stepper .step.done .dot span{display:none}
+.stepper .bar{flex:1;height:2px;background:var(--rule);min-width:30px;border-radius:2px;transition:.3s}
+.stepper .bar.on{background:var(--euc)}
+
+/* Donation card (left column) */
+.don-card{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:2.6rem;box-shadow:0 24px 60px -32px rgba(15,49,50,.18);position:relative;overflow:hidden}
+.don-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--waratah),var(--wattle));border-radius:10px 10px 0 0}
+@media(max-width:680px){.don-card{padding:1.8rem 1.4rem}}
+
+.don-step{display:none}.don-step.on{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.step-h{font-size:1.4rem;margin-bottom:.4rem;color:var(--euc-deep)}
+.step-sub{color:var(--stone);font-size:.96rem;margin-bottom:1.6rem;line-height:1.55}
+
+/* Frequency toggle */
+.freq{display:flex;gap:0;margin-bottom:1.8rem;background:var(--paper);border-radius:999px;padding:.3rem;border:1px solid var(--rule)}
+.freq button{flex:1;padding:.85em 1em;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--stone);transition:.25s;display:inline-flex;align-items:center;justify-content:center;gap:.4em}
+.freq button.on{background:var(--euc-deep);color:var(--cream);box-shadow:0 4px 14px -6px rgba(15,49,50,.4)}
+.freq button .pill{background:var(--wattle);color:var(--euc-deep);font-size:.7rem;padding:.15em .55em;border-radius:999px;font-weight:700;letter-spacing:.04em}
+
+/* Amount grid with images */
+.lbl{display:block;font-size:.78rem;font-weight:700;color:var(--euc-deep);margin-bottom:.65rem;letter-spacing:.08em;text-transform:uppercase}
+.amts{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1.2rem}
+@media(max-width:520px){.amts{grid-template-columns:repeat(2,1fr)}}
+.amt{padding:1.1em .6em;border-radius:8px;border:1.5px solid var(--rule);background:var(--white);text-align:center;cursor:pointer;transition:.25s;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:.3em;min-height:108px;justify-content:center}
+.amt:hover{border-color:var(--euc);transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(15,49,50,.25)}
+.amt.on{background:var(--euc-pale);border-color:var(--euc);color:var(--euc-deep);box-shadow:inset 0 0 0 1px var(--euc)}
+.amt .icon{font-size:1.3rem;line-height:1;margin-bottom:.2em}
+.amt strong{display:block;font-family:var(--ff-d);font-size:1.3rem;font-weight:700;line-height:1;color:var(--euc-deep)}
+.amt span{display:block;font-size:.74rem;letter-spacing:.02em;color:var(--stone);line-height:1.35;margin-top:.2em}
+.amt.on span{color:var(--euc-deep)}
+
+/* Custom amount input */
+.custom-wrap{position:relative;margin-bottom:1.4rem}
+.custom-wrap::before{content:"AUD $";position:absolute;left:1.1em;top:50%;transform:translateY(-50%);color:var(--stone);font-weight:600;font-size:.92rem;pointer-events:none}
+.custom-wrap input{width:100%;padding:1em 1.1em 1em 4.6em;border:1.5px solid var(--rule);border-radius:8px;font-family:var(--ff-b);font-size:1.1rem;font-weight:600;background:var(--cream);color:var(--ink);transition:.25s}
+.custom-wrap input:focus{outline:none;border-color:var(--euc);background:var(--white)}
+
+/* Tribute donation toggle */
+.tribute{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--paper);border:1px dashed var(--rule);border-radius:8px}
+.tribute-row{display:flex;align-items:center;gap:.7rem;cursor:pointer}
+.tribute-row input{margin:0;width:18px;height:18px;accent-color:var(--euc)}
+.tribute-row .lab{font-weight:600;font-size:.92rem;color:var(--euc-deep);flex:1}
+.tribute-row .sub{font-size:.78rem;color:var(--stone)}
+.tribute-fields{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);gap:.8rem;flex-direction:column}
+.tribute.open .tribute-fields{display:flex}
+.tribute-fields select,.tribute-fields input{width:100%;padding:.85em 1em;border:1.5px solid var(--rule);border-radius:6px;font-family:var(--ff-b);font-size:.92rem;background:var(--white)}
+.tribute-fields select:focus,.tribute-fields input:focus{outline:none;border-color:var(--euc)}
+
+/* Step navigation */
+.step-nav{display:flex;gap:.8rem;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--rule)}
+.step-nav .next{flex:1;padding:1.1em 1.4em;background:var(--waratah);color:var(--white);border-radius:999px;font-weight:700;font-size:.98rem;letter-spacing:.02em;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:.5em}
+.step-nav .next:hover{background:var(--waratah-dk);transform:translateY(-1px);box-shadow:0 10px 24px -6px rgba(194,55,71,.4)}
+.step-nav .back{padding:1.1em 1.6em;background:transparent;color:var(--euc-deep);border:1.5px solid var(--rule);border-radius:999px;font-weight:600;font-size:.92rem;cursor:pointer;transition:.25s}
+.step-nav .back:hover{border-color:var(--euc);background:var(--euc-pale)}
+
+/* Details form */
+.ff{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.ff label{font-size:.78rem;font-weight:700;color:var(--euc-deep);letter-spacing:.06em;text-transform:uppercase}
+.ff input,.ff select,.ff textarea{width:100%;padding:.95em 1.1em;border:1.5px solid var(--rule);border-radius:6px;font-family:var(--ff-b);font-size:.95rem;background:var(--cream);color:var(--ink);transition:.25s}
+.ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--euc);background:var(--white)}
+.ff.split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;flex-direction:initial}
+.ff.split>div{display:flex;flex-direction:column;gap:.4rem}
+@media(max-width:520px){.ff.split{grid-template-columns:1fr}}
+.ff.tri{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:.7rem;flex-direction:initial}
+.ff.tri>div{display:flex;flex-direction:column;gap:.4rem}
+@media(max-width:520px){.ff.tri{grid-template-columns:1fr}}
+
+.opt-row{display:flex;align-items:flex-start;gap:.7rem;padding:.8rem 0;cursor:pointer;font-size:.9rem;line-height:1.5}
+.opt-row input{margin-top:.25em;width:18px;height:18px;accent-color:var(--euc);flex-shrink:0}
+.opt-row .opt-lab{flex:1}
+.opt-row .opt-lab strong{display:block;color:var(--euc-deep);font-weight:600}
+.opt-row .opt-lab span{color:var(--stone);font-size:.82rem}
+
+/* Payment methods */
+.pay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.6rem}
+@media(max-width:520px){.pay-grid{grid-template-columns:repeat(2,1fr)}}
+.pay{padding:1em .5em;border-radius:8px;border:1.5px solid var(--rule);background:var(--white);cursor:pointer;text-align:center;transition:.25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;min-height:74px;font-size:.78rem;font-weight:600;color:var(--char)}
+.pay:hover{border-color:var(--euc)}
+.pay.on{background:var(--euc-pale);border-color:var(--euc);color:var(--euc-deep)}
+.pay .pi{font-size:1.3rem;line-height:1}
+.pay .pn{font-size:.74rem;letter-spacing:.04em}
+
+/* Card details */
+.card-details{padding-top:.4rem}
+.cover-fee{display:flex;align-items:flex-start;gap:.8rem;padding:1rem 1.2rem;background:var(--wattle-soft);border-radius:8px;margin:1.2rem 0;cursor:pointer;border:1px solid rgba(192,160,30,.3)}
+.cover-fee input{margin-top:.25em;accent-color:var(--euc-deep)}
+.cover-fee .cf-lab{flex:1;font-size:.88rem;line-height:1.5}
+.cover-fee .cf-lab strong{display:block;color:var(--euc-deep);font-weight:700;margin-bottom:.15em}
+
+/* Summary sidebar */
+.summary{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:2rem;position:sticky;top:100px;box-shadow:0 16px 40px -24px rgba(15,49,50,.15)}
+@media(max-width:1040px){.summary{position:static}}
+.summary h3{font-size:1.05rem;letter-spacing:.05em;color:var(--euc-deep);text-transform:uppercase;font-family:var(--ff-b);font-weight:700;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}
+.sum-row{display:flex;justify-content:space-between;align-items:baseline;font-size:.92rem;color:var(--char);margin-bottom:.7rem;gap:1rem}
+.sum-row .lbl-t{color:var(--stone);font-size:.85rem;font-weight:500;letter-spacing:0;text-transform:none}
+.sum-row .val{font-weight:600;color:var(--euc-deep);text-align:right}
+.sum-total{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline}
+.sum-total .lbl-t{font-family:var(--ff-d);font-size:1rem;color:var(--euc-deep);font-weight:700}
+.sum-total .val{font-family:var(--ff-d);font-size:1.8rem;font-weight:800;color:var(--waratah);letter-spacing:-.02em}
+.sum-impact{margin-top:1.4rem;padding:1.2rem;background:var(--euc-pale);border-radius:8px;font-size:.85rem;line-height:1.55;color:var(--euc-deep);border-left:3px solid var(--euc)}
+.sum-impact strong{display:block;font-weight:700;margin-bottom:.3em;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--euc)}
+.trust{display:flex;flex-direction:column;gap:.5rem;margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid var(--rule);font-size:.78rem;color:var(--stone)}
+.trust .t{display:flex;align-items:center;gap:.5em}
+.trust .t::before{content:"✓";color:var(--euc);font-weight:700}
+
+/* Tax info bar */
+.tax-info{background:var(--euc-deep);color:var(--cream);padding:4rem 0;text-align:center;position:relative;overflow:hidden}
+.tax-info::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
+.tax-info h3{color:var(--white);margin-bottom:1rem;font-size:clamp(1.3rem,1.8vw,1.6rem)}
+.tax-info p{color:rgba(250,246,242,.85);max-width:640px;margin:0 auto 1.2rem;font-size:.98rem;line-height:1.65}
+.tax-info .other{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.6rem}
+.tax-info .other a{color:var(--wattle-soft);font-weight:600;font-size:.92rem;border-bottom:1px solid currentColor;padding-bottom:.2em}
+
+
+/* ---- Featured Appeals ---- */
+.appeals{padding:6rem 0 5rem;background:var(--white);position:relative}
+.appeals .head{text-align:center;max-width:720px;margin:0 auto 3.5rem}
+.appeals .head h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:.6rem}
+.appeals .head p{color:var(--stone);font-size:1.02rem;line-height:1.6}
+.appeals-g{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto}
+@media(max-width:880px){.appeals-g{grid-template-columns:1fr;gap:2.5rem}}
+.appeal{display:flex;flex-direction:column}
+.appeal .ap-img{aspect-ratio:4/3;overflow:hidden;border-radius:4px;margin-bottom:1.8rem;background:var(--paper)}
+.appeal .ap-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.appeal:hover .ap-img img{transform:scale(1.04)}
+.appeal h3{font-size:clamp(1.35rem,2vw,1.7rem);margin-bottom:1rem;line-height:1.15;color:var(--euc-deep);max-width:18ch}
+.appeal p{color:var(--char);font-size:1rem;line-height:1.65;margin-bottom:1.6rem;max-width:44ch}
+.appeal .ap-btn{display:inline-flex;align-self:flex-start;padding:1em 1.8em;background:var(--red-soil-bright);color:var(--white);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transition:.25s;border:1.5px solid var(--red-soil-bright)}
+.appeal .ap-btn:hover{background:var(--red-soil);border-color:var(--red-soil);opacity:1;transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(182,70,41,.5);color:var(--white)}
+
+/* Confirmation step */
+.confirm{text-align:center;padding:1rem 0}
+.confirm .tick{width:80px;height:80px;border-radius:50%;background:var(--euc-pale);color:var(--euc);font-size:2.6rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-weight:700}
+.confirm h2{font-size:1.8rem;margin-bottom:.6rem;color:var(--euc-deep)}
+.confirm p{color:var(--char);max-width:46ch;margin:0 auto 1rem;line-height:1.6}
+
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="news.html" class="">News</a>
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="partner.html" class="">Become a Partner</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact</a>
+    <a href="donate.html" class="btn btn-p">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<section class="dh fb-hero">
+  <div class="fb-hero-bg"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1800&q=80" alt="Sunrise over Australian bushland"></div>
+  <div class="fb-cred">Photo: Unsplash</div>
+  <div class="cw rv fb-hero-content">
+    <nav style="display:flex;gap:.5em;font-size:.82rem;color:rgba(250,247,243,.7);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span style="opacity:.4">/</span>Donate</nav>
+    <span class="ey">Make a donation</span>
+    <h1>Protect Australia&rsquo;s land and <em>native wildlife.</em></h1>
+    <p class="lede">Help save Australia&rsquo;s biodiversity by increasing hectares of national parkland, regenerating bushland, and protecting native species on threatened lists.</p>
+  </div>
+</section>
+
+<section class="don-main">
+  <div class="cw">
+    <div class="don-grid">
+      <!-- LEFT: stepped donation form -->
+      <div class="rv">
+        <div class="stepper" id="stepper">
+          <div class="step on" data-step="1"><span class="dot"><span>1</span></span>Donation</div>
+          <div class="bar"></div>
+          <div class="step" data-step="2"><span class="dot"><span>2</span></span>Your details</div>
+          <div class="bar"></div>
+          <div class="step" data-step="3"><span class="dot"><span>3</span></span>Payment</div>
+        </div>
+
+        <div class="don-card">
+
+          <!-- STEP 1: amount & frequency -->
+          <div class="don-step on" data-step="1">
+            <h2 class="step-h">Choose your gift</h2>
+            <p class="step-sub">Your contribution funds science-led conservation across Australia. Choose how often you&rsquo;d like to give.</p>
+
+            <span class="lbl">Frequency</span>
+            <div class="freq" id="freq">
+              <button class="on" data-freq="once">One-off gift</button>
+              <button data-freq="monthly">Monthly <span class="pill">2&times; impact</span></button>
+            </div>
+
+            <span class="lbl">Choose an amount</span>
+            <div class="amts" id="amts">
+              <button class="amt" data-amt="30"><span class="icon">🌱</span><strong>$30</strong><span>Plants 50 trees</span></button>
+              <button class="amt on" data-amt="75"><span class="icon">🐨</span><strong>$75</strong><span>Treats 5 wombats</span></button>
+              <button class="amt" data-amt="150"><span class="icon">🌿</span><strong>$150</strong><span>1 ha restored</span></button>
+              <button class="amt" data-amt="250"><span class="icon">🦘</span><strong>$250</strong><span>Species recovery</span></button>
+              <button class="amt" data-amt="500"><span class="icon">🏞️</span><strong>$500</strong><span>Major impact</span></button>
+              <button class="amt" data-amt="1000"><span class="icon">⭐</span><strong>$1,000</strong><span>Habitat hero</span></button>
+            </div>
+
+            <span class="lbl">Or enter another amount</span>
+            <div class="custom-wrap"><input type="number" id="custom" min="2" step="1" value="75" inputmode="decimal"></div>
+
+            <div class="tribute" id="tribute">
+              <label class="tribute-row">
+                <input type="checkbox" id="tribChk">
+                <span class="lab">Donate in honour or memory of someone</span>
+                <span class="sub">Optional</span>
+              </label>
+              <div class="tribute-fields">
+                <select id="tribType">
+                  <option value="honour">In honour of</option>
+                  <option value="memory">In memory of</option>
+                  <option value="celebration">In celebration of</option>
+                </select>
+                <input type="text" placeholder="Their name" id="tribName">
+                <input type="email" placeholder="Notify someone (optional)" id="tribEmail">
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="next" data-go="2">Continue to details →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: details -->
+          <div class="don-step" data-step="2">
+            <h2 class="step-h">Your details</h2>
+            <p class="step-sub">For your tax-deductible receipt and to keep you informed of the impact you make possible.</p>
+
+            <div class="ff split">
+              <div><label>First name</label><input type="text" required autocomplete="given-name"></div>
+              <div><label>Last name</label><input type="text" required autocomplete="family-name"></div>
+            </div>
+            <div class="ff"><label>Email address</label><input type="email" required autocomplete="email" placeholder="your@email.com.au"></div>
+            <div class="ff"><label>Mobile (optional)</label><input type="tel" autocomplete="tel" placeholder="04xx xxx xxx"></div>
+
+            <span class="lbl" style="margin-top:1rem">Postal address (for tax receipt)</span>
+            <div class="ff"><label>Street address</label><input type="text" autocomplete="street-address" placeholder="123 Wattle Street"></div>
+            <div class="ff tri">
+              <div><label>Suburb</label><input type="text" autocomplete="address-level2"></div>
+              <div><label>State</label><select autocomplete="address-level1"><option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option><option>SA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div>
+              <div><label>Postcode</label><input type="text" inputmode="numeric" maxlength="4" autocomplete="postal-code"></div>
+            </div>
+            <div class="ff"><label>Country</label><select autocomplete="country-name"><option>Australia</option><option>New Zealand</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></div>
+
+            <label class="opt-row">
+              <input type="checkbox" id="anon">
+              <span class="opt-lab"><strong>Make my donation anonymous</strong><span>Your name won&rsquo;t appear in any public donor acknowledgements.</span></span>
+            </label>
+            <label class="opt-row">
+              <input type="checkbox" id="news" checked>
+              <span class="opt-lab"><strong>Keep me updated</strong><span>Email updates on the impact of your gift and FNPW conservation news (unsubscribe anytime).</span></span>
+            </label>
+
+            <div class="step-nav">
+              <button class="back" data-go="1">← Back</button>
+              <button class="next" data-go="3">Continue to payment →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: payment -->
+          <div class="don-step" data-step="3">
+            <h2 class="step-h">Payment</h2>
+            <p class="step-sub">Secure payment processed by Stripe. Your card details are never stored on FNPW servers.</p>
+
+            <span class="lbl">Payment method</span>
+            <div class="pay-grid" id="pays">
+              <button class="pay on" data-pay="card"><span class="pi">💳</span><span class="pn">Card</span></button>
+              <button class="pay" data-pay="apple"><span class="pi"></span><span class="pn">Apple Pay</span></button>
+              <button class="pay" data-pay="google"><span class="pi">G</span><span class="pn">Google Pay</span></button>
+              <button class="pay" data-pay="paypal"><span class="pi">P</span><span class="pn">PayPal</span></button>
+            </div>
+
+            <div class="card-details" id="cardDetails">
+              <div class="ff"><label>Card number</label><input type="text" inputmode="numeric" placeholder="1234 1234 1234 1234" autocomplete="cc-number"></div>
+              <div class="ff split">
+                <div><label>Expiry</label><input type="text" placeholder="MM / YY" autocomplete="cc-exp"></div>
+                <div><label>CVC</label><input type="text" inputmode="numeric" maxlength="4" placeholder="123" autocomplete="cc-csc"></div>
+              </div>
+              <div class="ff"><label>Name on card</label><input type="text" autocomplete="cc-name"></div>
+            </div>
+
+            <label class="cover-fee">
+              <input type="checkbox" id="coverFee">
+              <span class="cf-lab"><strong>Cover transaction fees (+3%)</strong>Adding a small amount to cover processing fees means 100% of your gift goes directly to conservation work.</span>
+            </label>
+
+            <div class="step-nav">
+              <button class="back" data-go="2">← Back</button>
+              <button class="next" id="submitBtn">Donate $<span id="finalAmt">75</span> →</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: confirmation -->
+          <div class="don-step" data-step="4">
+            <div class="confirm">
+              <div class="tick">✓</div>
+              <h2>Thank you!</h2>
+              <p>Your donation of <strong id="confirmAmt">$75</strong> has been received. A tax-deductible receipt is on its way to your inbox.</p>
+              <p style="margin-top:1.2rem"><a href="index.html" class="btn btn-o">Return home</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: summary sidebar -->
+      <aside class="summary rv d2" id="summary">
+        <h3>Your donation</h3>
+        <div class="sum-row"><span class="lbl-t">Frequency</span><span class="val" id="sFreq">One-off</span></div>
+        <div class="sum-row"><span class="lbl-t">Amount</span><span class="val" id="sAmt">$75.00</span></div>
+        <div class="sum-row" id="sFeeRow" style="display:none"><span class="lbl-t">Transaction fee</span><span class="val" id="sFee">$2.25</span></div>
+        <div class="sum-row" id="sTribRow" style="display:none"><span class="lbl-t">Tribute</span><span class="val" id="sTrib">-</span></div>
+        <div class="sum-total"><span class="lbl-t">Total today</span><span class="val" id="sTotal">$75.00</span></div>
+
+        <div class="sum-impact">
+          <strong>Your impact</strong>
+          <span id="impactText">Your $75 gift treats 5 wombats for sarcoptic mange, funding direct treatment and volunteer training across endemic regions.</span>
+        </div>
+
+        <div class="trust">
+          <div class="t">100% tax deductible in Australia</div>
+          <div class="t">Secured by Stripe &middot; SSL encrypted</div>
+          <div class="t">FNPW &middot; ABN 51 248 905 949</div>
+          <div class="t">80% of every dollar to conservation</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="appeals">
+  <div class="cw">
+    <div class="head rv">
+      <h2>Featured Appeals</h2>
+      <p>Two ways to deepen your support: join a community of monthly givers, or plant a tree in someone&rsquo;s name.</p>
+    </div>
+    <div class="appeals-g">
+      <div class="appeal rv">
+        <div class="ap-img"><img src="https://images.unsplash.com/photo-1591025207163-942350e47db2?w=1400&q=80" alt="A small native turtle held in a hand at a wetland edge" loading="lazy"></div>
+        <h3>Join the everyday heroes saving our wildlife</h3>
+        <p>Habitat Heroes are everyday Australians driving powerful change for wildlife. Every action, big or small, makes a real difference on the ground. Will you join them?</p>
+        <a href="bequests.html" class="ap-btn">Join Habitat Heroes</a>
+      </div>
+      <div class="appeal rv d2">
+        <div class="ap-img"><img src="https://images.unsplash.com/photo-1591389703635-e15a07b842d7?w=1400&q=80" alt="Native sugar glider on a eucalyptus branch" loading="lazy"></div>
+        <h3>Give a gift that grows and restores land</h3>
+        <p>Gifting a tree is a way to plant real hope in Australia&rsquo;s landscapes. Every tree donated supports our Landscape Resilience Program, bringing life back to ecosystems that need it most.</p>
+        <a href="gift-a-tree.html" class="ap-btn">Gift a Tree</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tax-info">
+  <div class="cw rv">
+    <h3>Other ways to give</h3>
+    <p>Beyond a one-off donation, there are many ways to deepen your support, from becoming a Habitat Hero with a recurring monthly gift through to leaving a legacy gift in your Will.</p>
+    <div class="other">
+      <a href="bequests.html">Become a Habitat Hero →</a>
+      <a href="bequests.html">Leave a gift in your Will →</a>
+      <a href="partner.html">Corporate partnership →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="news.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="donate.html">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:hello@fnpw.org.au">hello@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script>
+// Header / nav (same as other pages)
+const mt=document.getElementById('mt'),mn=document.getElementById('mn');
+if(mt&&mn){mt.addEventListener('click',()=>{mn.classList.toggle('open');mt.setAttribute('aria-expanded',mn.classList.contains('open'))}); mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mn.classList.remove('open')))}
+const sh=document.getElementById('hdr');if(sh)window.addEventListener('scroll',()=>sh.classList.toggle('scrolled',window.scrollY>30),{passive:true});
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// ---- Donation wizard state ----
+const state={freq:'once',amt:75,coverFee:false,tribute:null,pay:'card'};
+
+const impactCopy={
+  30:'Your $30 gift plants 50 native trees through our Healing Our Land community nursery network across 30+ nurseries in 4 states.',
+  75:'Your $75 gift treats 5 wombats for sarcoptic mange, funding direct treatment and volunteer training across endemic regions.',
+  150:'Your $150 restores 1 hectare of degraded land through native planting, weed control and monitoring to bring an ecosystem back to health.',
+  250:'Your $250 contributes to species recovery programs, from Mountain Pygmy Possums to Growling Grass Frogs.',
+  500:'Your $500 funds major conservation impact, supporting science-led recovery across multiple landscapes.',
+  1000:'Your $1,000 makes you a Habitat Hero, underwriting a significant share of an entire recovery project for a year.'
+};
+
+function fmt(n){return '$'+Number(n).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function fmtNoCents(n){return Number(n).toLocaleString('en-AU')}
+
+function updateSummary(){
+  const amt=Number(state.amt)||0;
+  const fee=state.coverFee?(amt*0.03):0;
+  const total=amt+fee;
+  document.getElementById('sFreq').textContent=state.freq==='once'?'One-off':'Monthly';
+  document.getElementById('sAmt').textContent=fmt(amt)+(state.freq==='monthly'?' / month':'');
+  document.getElementById('sFeeRow').style.display=state.coverFee?'flex':'none';
+  document.getElementById('sFee').textContent=fmt(fee);
+  document.getElementById('sTotal').textContent=fmt(total)+(state.freq==='monthly'?' / month':'');
+  document.getElementById('finalAmt').textContent=fmtNoCents(Math.round(total));
+  document.getElementById('confirmAmt').textContent=fmt(total);
+  // Tribute summary
+  const tribChk=document.getElementById('tribChk');
+  if(tribChk.checked){
+    const t=document.getElementById('tribType').value;
+    const name=document.getElementById('tribName').value||'-';
+    document.getElementById('sTribRow').style.display='flex';
+    document.getElementById('sTrib').textContent=({honour:'In honour of ',memory:'In memory of ',celebration:'In celebration of '}[t])+name;
+  }else{
+    document.getElementById('sTribRow').style.display='none';
+  }
+  // Impact text — find nearest tier
+  const tiers=[30,75,150,250,500,1000];
+  const nearest=tiers.reduce((a,b)=>Math.abs(b-amt)<Math.abs(a-amt)?b:a);
+  document.getElementById('impactText').innerHTML=impactCopy[nearest];
+}
+
+// Frequency toggle
+document.querySelectorAll('#freq button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#freq button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  state.freq=b.dataset.freq;
+  updateSummary();
+}));
+
+// Amount tiles
+document.querySelectorAll('.amt').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.amt').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  state.amt=Number(b.dataset.amt);
+  document.getElementById('custom').value=state.amt;
+  updateSummary();
+}));
+
+// Custom amount
+document.getElementById('custom').addEventListener('input',e=>{
+  state.amt=Number(e.target.value)||0;
+  document.querySelectorAll('.amt').forEach(x=>x.classList.toggle('on',Number(x.dataset.amt)===state.amt));
+  updateSummary();
+});
+
+// Tribute toggle
+document.getElementById('tribChk').addEventListener('change',e=>{
+  document.getElementById('tribute').classList.toggle('open',e.target.checked);
+  updateSummary();
+});
+document.getElementById('tribType').addEventListener('change',updateSummary);
+document.getElementById('tribName').addEventListener('input',updateSummary);
+
+// Cover fee
+document.getElementById('coverFee').addEventListener('change',e=>{
+  state.coverFee=e.target.checked;
+  updateSummary();
+});
+
+// Payment method
+document.querySelectorAll('.pay').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.pay').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  state.pay=b.dataset.pay;
+  // Hide card-details for non-card methods
+  const cd=document.getElementById('cardDetails');
+  cd.style.display=state.pay==='card'?'block':'none';
+}));
+
+// Stepper navigation
+function goStep(n){
+  document.querySelectorAll('.don-step').forEach(s=>s.classList.toggle('on',Number(s.dataset.step)===n));
+  document.querySelectorAll('#stepper .step').forEach(s=>{
+    const sn=Number(s.dataset.step);
+    s.classList.toggle('on',sn===n);
+    s.classList.toggle('done',sn<n);
+  });
+  document.querySelectorAll('#stepper .bar').forEach((bar,i)=>{
+    bar.classList.toggle('on',(i+1)<n);
+  });
+  window.scrollTo({top:document.querySelector('.don-main').offsetTop-80,behavior:'smooth'});
+}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>{
+  e.preventDefault();
+  goStep(Number(b.dataset.go));
+}));
+
+// Submit
+document.getElementById('submitBtn').addEventListener('click',e=>{
+  e.preventDefault();
+  // In production this would tokenise with Stripe / hand off to PayPal etc.
+  goStep(4);
+});
+
+updateSummary();
+(function(){
+  var ngs=document.querySelectorAll('.ng');
+  ngs.forEach(function(ng){
+    var btn=ng.querySelector('button');
+    if(!btn)return;
+    btn.setAttribute('aria-haspopup','true');
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=ng.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      ngs.forEach(function(other){if(other!==ng)other.classList.remove('open')});
+    });
+  });
+  document.addEventListener('click',function(){
+    ngs.forEach(function(ng){
+      ng.classList.remove('open');
+      var b=ng.querySelector('button');if(b)b.setAttribute('aria-expanded','false');
+    });
+  });
+  // Escape closes
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')ngs.forEach(function(ng){ng.classList.remove('open')});
+  });
+})();
+
+(function(){
+  var ngs=document.querySelectorAll('.ng');
+  ngs.forEach(function(ng){
+    var btn=ng.querySelector('button');
+    if(!btn)return;
+    btn.setAttribute('aria-haspopup','true');
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=ng.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      ngs.forEach(function(other){if(other!==ng)other.classList.remove('open')});
+    });
+  });
+  document.addEventListener('click',function(){
+    ngs.forEach(function(ng){
+      ng.classList.remove('open');
+      var b=ng.querySelector('button');if(b)b.setAttribute('aria-expanded','false');
+    });
+  });
+  // Escape closes
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')ngs.forEach(function(ng){ng.classList.remove('open')});
+  });
+})();
+<!-- ng-click-toggle-installed -->
+</script>
+</body>
+</html>
