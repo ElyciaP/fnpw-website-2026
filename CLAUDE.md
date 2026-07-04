@@ -13,25 +13,16 @@ python3 -m http.server 8000
 
 ## Architecture
 
-**11 self-contained HTML pages.** Each file contains all its CSS in inline `<style>` blocks and all its JavaScript in inline `<script>` tags at the bottom. There are no external `.css` or `.js` files.
+**13 HTML pages + shared assets (consolidated July 2026).** Shared code lives in one place:
 
-### What is duplicated across every page
+- `assets/css/global.css` — design tokens (`:root`) and all global/reset CSS, linked by every page
+- `assets/js/main.js` — base JS (hamburger, header scroll shadow, `.rv` reveal, `[data-count]` counters, dropdown a11y), loaded by every page except `donate.html` and `gift-a-tree.html` (their page JS still has the base JS merged inline — untangle during WordPress conversion)
+- `partials/header.html` / `partials/footer.html` — canonical header and footer
+- `assets/img/fnpw-logo.png`, `assets/img/fnpw-logo-footer.png` — logo assets (no more base64)
 
-The following blocks are copied verbatim into every HTML file — changes must be applied to all 11 files:
+**Editing the header or footer:** edit the partial, then run `python3 tools/sync.py`. The script re-injects both partials into every page between `<!-- @header -->…<!-- /@header -->` and `<!-- @footer -->…<!-- /@footer -->` markers, and applies the active-nav `on` class per page (map lives in the script). Never hand-edit inside the marker regions.
 
-- **CSS custom properties** (`:root` block): the full design token set
-- **Global/reset CSS**: typography, links, buttons, `.sec`, `.cw`, utilities
-- **Header HTML**: `.ack` acknowledgement bar, `.hdr` sticky nav with `.ng` dropdown groups and base64 logo
-- **Footer HTML**: `.ftr` four-column grid with links, ABN, copyright
-- **Base JS**: hamburger toggle, scroll shadow on header, `.rv` scroll-reveal `IntersectionObserver`, `[data-count]` counter animation, `.ng` dropdown keyboard accessibility
-
-### Page-specific logic
-
-| Page | Unique feature |
-|---|---|
-| `index.html` | Campaign launch countdown banner (calculates days until `2026-05-18 AEST`) |
-| `donate.html` | Full donation wizard: frequency (once/monthly), preset amounts, fee-coverage checkbox, tribute, impact copy by tier, payment method selector |
-| `bring-back-the-bush.html` | Dedicated campaign landing page for the Bring Back The Bush initiative |
+Page-specific CSS remains in each page's own `<style>` block; page-specific JS in its own `<script>` block.
 
 ## Design system
 
@@ -82,4 +73,4 @@ Contact (contact.html)
 
 ## Images
 
-All images are sourced from Unsplash via URL (e.g. `https://images.unsplash.com/photo-…?w=1800&q=80`). The FNPW logo is embedded as a base64 PNG directly in the `<img>` tag inside the header.
+All images are sourced from Unsplash via URL (e.g. `https://images.unsplash.com/photo-…?w=1800&q=80`). The FNPW logos are real files in `assets/img/`.
