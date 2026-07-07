@@ -448,6 +448,14 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .hx-row:hover p{color:var(--char)}
 .hx-row-a{font-size:1.5rem;color:var(--euc-deep);transition:transform .3s ease}
 .hx-row:hover .hx-row-a{transform:translateX(8px)}
+.hx-row h3{transition:transform .3s ease}
+.hx-row:hover h3{transform:translateX(6px)}
+.hx-row:hover .hx-row-i{color:var(--euc-deep);-webkit-text-stroke-color:var(--euc-deep)}
+.hx-row-tag{font-family:var(--ff-h);font-style:normal;font-weight:600;font-size:1.1rem;color:var(--bark);margin-left:.65rem;display:inline-block;transform:rotate(-2.5deg) translateY(-2px);opacity:0;transition:opacity .3s ease .08s}
+.hx-row:hover .hx-row-tag{opacity:1}
+.hx-row-im{position:absolute;right:120px;top:50%;width:158px;aspect-ratio:4/3;object-fit:cover;border:5px solid #fff;box-shadow:0 20px 44px -18px rgba(15,49,50,.5);transform:translateY(-46%) rotate(-8deg) scale(.65);opacity:0;transition:transform .38s cubic-bezier(.22,.8,.24,1),opacity .28s ease;z-index:1;pointer-events:none}
+.hx-row:hover .hx-row-im{opacity:1;transform:translateY(-52%) rotate(-4deg) scale(1)}
+@media(max-width:900px){.hx-row-im{display:none}}
 @media(max-width:700px){.hx-row{grid-template-columns:52px 1fr auto;padding:1.4rem .4rem}.hx-row-i{font-size:1.2rem}}
 
 /* --- story band --- */
@@ -742,22 +750,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <div class="hx-help-list">
       <a class="hx-row rv" href="donate.html" style="--rowc:var(--wattle-soft)">
         <span class="hx-row-i">01</span>
-        <span><h3>Donate once</h3><p>A single gift, put to work where it is needed most. Tax deductible from $2.</p></span>
+        <span><h3>Donate once<em class="hx-row-tag">quick + mighty</em></h3><p>A single gift, put to work where it is needed most. Tax deductible from $2.</p></span>
+        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="" loading="lazy">
         <span class="hx-row-a">&#8594;</span>
       </a>
       <a class="hx-row rv" href="https://habitat-heroes.raiselysite.com/" style="--rowc:var(--euc-pale)">
         <span class="hx-row-i">02</span>
-        <span><h3>Become a Habitat Hero</h3><p>Monthly giving that funds the long, patient work of recovery.</p></span>
+        <span><h3>Become a Habitat Hero<em class="hx-row-tag">the inner circle</em></h3><p>Monthly giving that funds the long, patient work of recovery.</p></span>
+        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2021/02/WArangers-lge.jpg" alt="" loading="lazy">
         <span class="hx-row-a">&#8594;</span>
       </a>
       <a class="hx-row rv" href="gift-a-tree.html" style="--rowc:var(--waratah-pale)">
         <span class="hx-row-i">03</span>
-        <span><h3>Gift a Tree</h3><p>A native tree planted for someone you love, certificate included.</p></span>
+        <span><h3>Gift a Tree<em class="hx-row-tag">a gift that grows</em></h3><p>A native tree planted for someone you love, certificate included.</p></span>
+        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia.png" alt="" loading="lazy">
         <span class="hx-row-a">&#8594;</span>
       </a>
       <a class="hx-row rv" href="bequests.html" style="--rowc:var(--reef-pale)">
         <span class="hx-row-i">04</span>
-        <span><h3>A gift in your Will</h3><p>Protect what you love beyond your lifetime. We can help with the wording.</p></span>
+        <span><h3>A gift in your Will<em class="hx-row-tag">the long game</em></h3><p>Protect what you love beyond your lifetime. We can help with the wording.</p></span>
+        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="" loading="lazy">
         <span class="hx-row-a">&#8594;</span>
       </a>
     </div>
