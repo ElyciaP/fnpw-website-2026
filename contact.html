@@ -34,8 +34,8 @@
 .cm-g{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
 @media(max-width:880px){.cm-g{grid-template-columns:1fr;gap:2.5rem}}
 
-.cinfo-card{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:2.2rem;margin-bottom:1.4rem;position:relative}
-.cinfo-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:8px 8px 0 0}
+.cinfo-card{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.2rem;margin-bottom:1.4rem;position:relative}
+.cinfo-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:0}
 .cinfo-card.c1::before{background:var(--euc)}.cinfo-card.c2::before{background:var(--waratah)}.cinfo-card.c3::before{background:var(--wattle)}
 .cinfo-card h3{font-size:1.1rem;margin-bottom:.6rem}
 .cinfo-card .row{display:flex;align-items:flex-start;gap:.8em;font-size:.92rem;color:var(--char);margin-bottom:.5rem;line-height:1.5}
@@ -43,21 +43,21 @@
 .cinfo-card.c2 .row svg{color:var(--waratah)}.cinfo-card.c3 .row svg{color:var(--wattle-dk)}
 .cinfo-card .row a{color:var(--euc-deep);font-weight:500}.cinfo-card .row a:hover{color:var(--euc)}
 
-.cform-card{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:2.6rem;position:relative}
-.cform-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--waratah),var(--wattle));border-radius:8px 8px 0 0}
+.cform-card{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.6rem;position:relative}
+.cform-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--waratah),var(--wattle));border-radius:0}
 .cform-card h2{font-size:clamp(1.5rem,2.2vw,2rem);margin-bottom:.5rem}
 .cform-card .sub{color:var(--char);margin-bottom:1.8rem;font-size:1rem;line-height:1.55}
 .cform-card .ff{margin-bottom:1.2rem}
 .cform-card .ff.split{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:560px){.cform-card .ff.split{grid-template-columns:1fr;gap:0}}
 .cform-card label{display:block;font-size:.82rem;font-weight:600;color:var(--euc-deep);margin-bottom:.5rem;letter-spacing:.02em}
-.cform-card input,.cform-card textarea,.cform-card select{width:100%;padding:.9em 1.1em;border:1.5px solid var(--rule);border-radius:6px;font-family:var(--ff-b);font-size:.94rem;background:var(--cream);color:var(--ink);transition:.25s}
+.cform-card input,.cform-card textarea,.cform-card select{width:100%;padding:.9em 1.1em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.94rem;background:var(--cream);color:var(--ink);transition:.25s}
 .cform-card textarea{resize:vertical;min-height:140px}
 .cform-card input:focus,.cform-card textarea:focus,.cform-card select:focus{outline:none;border-color:var(--euc);background:var(--white)}
-.cform-card button{padding:1em 2em;background:var(--waratah);color:var(--white);border-radius:999px;font-weight:700;cursor:pointer;font-family:var(--ff-b);transition:.25s}
+.cform-card button{padding:1em 2em;background:var(--waratah);color:var(--white);border-radius:0;font-weight:700;cursor:pointer;font-family:var(--ff-b);transition:.25s}
 .cform-card button:hover{background:var(--waratah-dk);transform:translateY(-1px);box-shadow:0 8px 24px -6px rgba(194,55,71,.4)}
 
-.map-box{margin-top:4rem;border-radius:8px;overflow:hidden;border:1px solid var(--rule);height:380px;position:relative;background:var(--paper)}
+.map-box{margin-top:4rem;border-radius:0;overflow:hidden;border:1px solid var(--rule);height:380px;position:relative;background:var(--paper)}
 .map-box iframe{width:100%;height:100%;border:0}
 </style>
 </head>

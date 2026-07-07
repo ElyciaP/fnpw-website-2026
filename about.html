@@ -34,7 +34,7 @@
 
 .ap-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 @media(max-width:880px){.ap-g{grid-template-columns:1fr}}
-.ap{position:relative;padding:2.4rem 2rem 2rem;background:var(--white);border:1px solid var(--rule);border-radius:6px;border-top:4px solid var(--euc)}
+.ap{position:relative;padding:2.4rem 2rem 2rem;background:var(--white);border:1px solid var(--rule);border-radius:0;border-top:4px solid var(--euc)}
 .ap.sp{border-top-color:var(--waratah)}.ap.hl{border-top-color:var(--wattle)}
 .ap .ic{width:50px;height:50px;color:var(--euc);margin-bottom:1.2rem}
 .ap.sp .ic{color:var(--waratah)}.ap.hl .ic{color:var(--wattle-dk)}
@@ -47,13 +47,13 @@
 .tl-i .yr{grid-column:2;text-align:center;font-family:var(--ff-d);font-size:.85rem;font-weight:700;background:var(--euc);color:var(--cream);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative;z-index:2;box-shadow:0 0 0 5px var(--cream)}
 @media(max-width:780px){.tl-i .yr{grid-column:1;font-size:.75rem;width:46px;height:46px}}
 .tl-i.wt .yr{background:var(--wattle);color:var(--soil)}.tl-i.bk .yr{background:var(--bark)}
-.tl-i .ct{background:var(--white);padding:1.4rem 1.6rem;border:1px solid var(--rule);border-radius:6px;box-shadow:0 8px 24px -10px rgba(15,49,50,.1)}
+.tl-i .ct{background:var(--white);padding:1.4rem 1.6rem;border:1px solid var(--rule);border-radius:0;box-shadow:0 8px 24px -10px rgba(15,49,50,.1)}
 .tl-i:nth-child(even) .ct{grid-column:1}.tl-i:nth-child(odd) .ct{grid-column:3}
 @media(max-width:780px){.tl-i:nth-child(even) .ct,.tl-i:nth-child(odd) .ct{grid-column:2}}
 
 .tm-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 @media(max-width:880px){.tm-g{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.tm-g{grid-template-columns:1fr}}
-.tc{background:var(--white);border:1px solid var(--rule);border-radius:6px;overflow:hidden;transition:.3s}
+.tc{background:var(--white);border:1px solid var(--rule);border-radius:0;overflow:hidden;transition:.3s}
 .tc:hover{transform:translateY(-4px);box-shadow:0 16px 40px -16px rgba(15,49,50,.18)}
 .tc-ph{aspect-ratio:4/5;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--euc),var(--euc-deep));color:var(--wattle-soft);font-size:5rem}
 .tc-in{padding:1.4rem}

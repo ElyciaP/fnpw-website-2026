@@ -20,6 +20,19 @@ def linkcards(items):
         for t, d, href in items)
     return f'<div class="lcg">{tiles}</div>'
 
+def rows(items):
+    """Editorial index list (shared .hx-row components from global.css)."""
+    pal = ['var(--wattle-soft)', 'var(--euc-pale)', 'var(--waratah-pale)', 'var(--reef-pale)']
+    out = ['<div class="hx-help-list">']
+    for i, (t_, d, href) in enumerate(items):
+        out.append(
+            f'<a class="hx-row rv" href="{href}" style="--rowc:{pal[i % 4]}">'
+            f'<span class="hx-row-i">{i+1:02d}</span>'
+            f'<span><h3>{t_}</h3><p>{d}</p></span>'
+            f'<span class="hx-row-a">&#8594;</span></a>')
+    out.append('</div>')
+    return ''.join(out)
+
 DONATE_CTA = cta_band('Ready to make a difference?',
     'Your donation grows national parks, saves species and heals the land.',
     [('Donate now', RAISELY_DONATE, 'btn-p'), ('Become a Habitat Hero', RAISELY_HERO, 'btn-o')])
@@ -30,7 +43,7 @@ def main():
         'Donate, volunteer, partner, fundraise or leave a gift in your Will. Every way to support FNPW.',
         hero('Get involved', 'Every way to stand with natural Australia.',
              'However you want to help, there is a way that fits. Choose yours.', 'Get Involved')
-        + sec(linkcards([
+        + sec(rows([
             ('Donate', 'A one-off gift, put to work where it is needed most.', 'donate.html'),
             ('Become a Habitat Hero', 'Monthly giving that funds long-term recovery.', RAISELY_HERO),
             ('Gift a Tree', 'A tree planted for someone you love.', 'gift-a-tree.html'),
