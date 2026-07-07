@@ -354,6 +354,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-row:hover .hx-row-a{transform:translateX(8px)}
 @media(max-width:700px){.hx-row{grid-template-columns:48px 1fr auto;padding:1.4rem .4rem}.hx-row-i{font-size:1.2rem}}
 
+/* === v3.1 photographic hero upgrade === */
+.chi{position:relative;background:var(--euc-deep);color:#fff;padding:9.5rem 0 4.5rem;overflow:hidden}
+.chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.5}
+.chi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,49,50,.35) 0%,rgba(15,49,50,.15) 45%,rgba(15,49,50,.82) 100%)}
+.chi .cw{position:relative;z-index:1}
+.chi h1{color:#fff}
+.chi .lede{color:rgba(255,255,255,.88)}
+
 </style>
 
 <style>
@@ -529,6 +537,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 <style>
 .map-head{margin-bottom:2rem}
+
+/* v3.1 photographic hub hero */
+.proj-hero{position:relative;isolation:isolate;overflow:hidden}
+.proj-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/bongil.jpg') center/cover}
+.proj-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.62),rgba(15,49,50,.88))}
+.pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone)}
+.pil-deep a{color:var(--euc);font-weight:600}
 </style>
 
 <div class="fb">
@@ -540,6 +555,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       <button class="fp hl" data-f="heal">Healing Land</button>
     </div>
     <div style="font-size:.85rem;color:var(--stone);font-style:italic" id="fmeta">Showing all 16 projects</div>
+<p class="pil-deep">Want the full story of each pillar? <a href="growing-national-parks.html">Growing National Parks</a> &#183; <a href="saving-species.html">Saving Species</a> &#183; <a href="healing-the-land.html">Healing the Land</a></p>
   </div></div>
 </div>
 

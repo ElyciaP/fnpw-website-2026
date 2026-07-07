@@ -219,23 +219,91 @@ def main():
              'We support cultural fire and caring-for-Country programs led by First Nations communities',
              'We stay for the follow-up: watering, weeding, monitoring, replanting']),
     }
+    # bespoke content per pillar: hero image, headline stat (Impact Report), featured project
+    EXTRA = {
+        'parks': dict(
+            hero_img=U + '2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg',
+            hero_alt='Sturt National Park at dusk',
+            stat=('29,479', 'hectares', 'of land added to National Park status'),
+            feat=('remarkable-southern-flinders', 'Remarkable Southern Flinders',
+                  U + '2021/02/square.jpg',
+                  'Linking established parks, newly protected land and open reservoir country into '
+                  'one vast, connected park precinct for South Australia, co-managed with the Nukunu Nation.')),
+        'species': dict(
+            hero_img=U + '2021/02/Woylie.jpg',
+            hero_alt='Woylie, the brush-tailed bettong',
+            stat=('18,582', 'treatments', 'delivered to wombats with mange'),
+            feat=('warddeken-mayh', 'Warddeken Mayh Recovery Project',
+                  U + '2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg',
+                  'Indigenous rangers monitoring 120 camera sites across 1.4 million hectares of the '
+                  'Warddeken IPA, recovering threatened mammals through fire and feral management.')),
+        'healing': dict(
+            hero_img='assets/img/bongil.jpg',
+            hero_alt='Forest in Bongil Bongil National Park',
+            stat=('1.2M', 'plantings', 'trees, shrubs and seedlings in key areas'),
+            feat=('yarrahapinni-wetlands-restoration-stage-1', 'Yarrahapinni Wetlands',
+                  U + '2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg',
+                  'Floodgates and levee walls removed, tidal flows returned: a wetland on the Macleay '
+                  'coming back to life after decades of damage.')),
+    }
+    others_of = {'parks': ['species', 'healing'], 'species': ['parks', 'healing'],
+                 'healing': ['parks', 'species']}
     for key, pil in PILLARS.items():
         mine = [p for p in projects if p['pillar'] == key]
+        x = EXTRA[key]
         cards = '\n'.join(card(p['slug'], p['title'], p['img'], pil['label'], pil['cls'],
                                p['state'], '') for p in mine)
         para, hows = NARRATIVE[key]
         how_list = ''.join(f'<li>{h}</li>' for h in hows)
+
+        hero_html = f'''<section class="ch chi pil-hero" style="--chi:url('{x['hero_img']}')">
+  <div class="cw rv">
+    <nav style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span style="opacity:.4">/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span style="opacity:.4">/</span>{pil['label']}</nav>
+    <span class="ey" style="color:var(--euc-soft)">{pil['ey']} &#183; {len(mine)} projects</span>
+    <h1 style="margin:1rem 0 1.2rem;max-width:16ch;color:#fff">{pil['label']}</h1>
+    <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">{pil['lede']}</p>
+    <div class="pil-stat rv d1">
+      <span class="pil-stat-n">{x['stat'][0]}<em>{x['stat'][1]}</em></span>
+      <span class="pil-stat-l">{x['stat'][2]}<br><a href="reports.html" style="color:var(--euc-soft);font-size:.82rem">FNPW Impact Report</a></span>
+    </div>
+  </div>
+</section>'''
+
         intro = two(
             f'<span class="ey">Why it matters</span><h2 style="margin:.8rem 0 1.2rem">What this pillar does</h2>{para}',
             f'<div class="pmeta"><h3 style="margin-bottom:.8rem">How we do it</h3>'
             f'<ul style="padding-left:1.1rem;display:grid;gap:.6rem">{how_list}</ul></div>')
-        body = f'''{hero(pil['ey'], pil['label'], pil['lede'], pil['label'])}
+
+        fslug, ftitle, fimg, fdesc = x['feat']
+        featured = sec(
+            f'''<div class="two" style="align-items:center">
+<div class="rv"><a href="project-{fslug}.html"><img src="{fimg}" alt="{ftitle}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--euc-pale)"></a></div>
+<div class="rv d1"><span class="ey">Featured project</span><h2 style="margin:.8rem 0 1rem">{ftitle}</h2>
+<p>{fdesc}</p>
+<a class="hx-cta" href="project-{fslug}.html">Read the full story<span class="hx-cta-line" aria-hidden="true"></span></a></div>
+</div>''', 'dark')
+
+        cross = '\n'.join(
+            f'<a class="lc rv" href="{PILLARS[o]["page"]}"><h3>{PILLARS[o]["label"]}</h3>'
+            f'<p>{PILLARS[o]["lede"][:90]}...</p><span class="lc-go">&rsaquo;</span></a>'
+            for o in others_of[key])
+
+        body = f'''{hero_html}
 {sec(intro)}
-{sec(f"<span class='ey'>{len(mine)} projects</span><h2 style='margin:.8rem 0 1.6rem'>Projects under this pillar</h2><div class='pg'>{cards}</div>", 'paper')}
+{featured}
+{sec(f"<span class='ey'>All {len(mine)} projects</span><h2 style='margin:.8rem 0 1.6rem'>Projects under this pillar</h2><div class='pg'>{cards}</div>", 'paper')}
+{sec(f"<span class='ey'>Keep exploring</span><h2 style='margin:.8rem 0 1.4rem'>The other pillars</h2><div class='lcg'>{cross}</div>")}
 {cta_band(f"Support {pil['label']}.",
           'Donate to this pillar directly, or explore the other ways to get involved.',
           [('Donate', RAISELY_DONATE, 'btn-p'), ('Ways to get involved', 'ways-you-can-get-involved.html', 'btn-o')])}'''
-        write_page(pil['page'], pil['label'], pil['desc'], body)
+        write_page(pil['page'], pil['label'], pil['desc'], body,
+                   page_css='''
+.pil-hero{padding:10rem 0 5rem}
+.pil-stat{display:flex;gap:1.4rem;align-items:baseline;margin-top:2.2rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1.6rem;max-width:560px}
+.pil-stat-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.03em;color:var(--wattle);line-height:1;white-space:nowrap}
+.pil-stat-n em{font-family:var(--ff-h);font-style:normal;font-weight:600;font-size:.42em;color:var(--wattle-soft);margin-left:.2em}
+.pil-stat-l{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.45}
+''')
 
     print(f"projects: {len(projects)} pages, 3 pillar pages, data/projects.json written")
     from collections import Counter

@@ -182,6 +182,13 @@
 
 <style>
 .map-head{margin-bottom:2rem}
+
+/* v3.1 photographic hub hero */
+.proj-hero{position:relative;isolation:isolate;overflow:hidden}
+.proj-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/bongil.jpg') center/cover}
+.proj-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.62),rgba(15,49,50,.88))}
+.pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone)}
+.pil-deep a{color:var(--euc);font-weight:600}
 </style>
 
 <div class="fb">
@@ -193,6 +200,7 @@
       <button class="fp hl" data-f="heal">Healing Land</button>
     </div>
     <div style="font-size:.85rem;color:var(--stone);font-style:italic" id="fmeta">Showing all 16 projects</div>
+<p class="pil-deep">Want the full story of each pillar? <a href="growing-national-parks.html">Growing National Parks</a> &#183; <a href="saving-species.html">Saving Species</a> &#183; <a href="healing-the-land.html">Healing the Land</a></p>
   </div></div>
 </div>
 

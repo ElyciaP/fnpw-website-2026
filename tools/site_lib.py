@@ -43,7 +43,36 @@ def crumb(label):
             'margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a>'
             f'<span style="opacity:.4">/</span>{label}</nav>')
 
+U_ = 'https://fnpw.org.au/wp-content/uploads/'
+# crumb label -> photographic hero (image, alt). Pages not listed fall back to flat.
+HERO_IMGS = {
+    'Get Involved': (U_+'2021/01/children-Biodiversity-discovery-native-flora-banksia-seed-cones.jpg', 'Children discovering native flora'),
+    'Project Partnerships': (U_+'2021/01/K2W-GER-Aerial.jpg', 'Aerial view of the Great Eastern Ranges'),
+    'Workplace Giving': (U_+'2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Bushcare volunteers at work'),
+    'Fundraising': (U_+'2021/02/Phillip-Island-Ambassadors.jpg', 'Youth wildlife ambassadors'),
+    'Donate Land': (U_+'2021/02/heritage-Estates-05-lg.jpg', 'Protected bushland at Heritage Estates'),
+    'How Your Contributions Help': (U_+'2021/02/KNP-recovery-1-scaled.jpg', 'Bushfire recovery in Kosciuszko National Park'),
+    'Why Your Support Is Needed': (U_+'2022/02/Orange-belliedParrot_DPIPWE-scaled.jpg', 'Critically endangered orange-bellied parrot'),
+    'Corporate Governance': (U_+'2021/02/Mount-Field-NP-East-Planking-PAWS.jpg', 'Boardwalk in Mount Field National Park'),
+    'Reconciliation Action Plan': (U_+'2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg', 'Warddeken rangers on Country, photo Donal Sullivan'),
+    'FAQs': (U_+'2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg', 'Black-chinned honeyeater'),
+    'Media Enquiries': (U_+'2021/02/Caught-on-Camera-Superb-Lyrebird.jpg', 'Superb lyrebird caught on camera'),
+    'Newsletter': (U_+'2021/02/WA-Bird-Watering-Stations-Jirdarup-bushland-precinct-Three-cockies.jpeg', 'Three cockatoos at a watering station'),
+    'Thank You': (U_+'2021/01/feeding.jpg', 'A wildlife carer feeding a rescued animal'),
+    'Privacy Policy': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
+    'Terms &amp; Conditions': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
+    'Search': (U_+'2021/01/Seagrass-Small.jpg', 'Seagrass meadow'),
+    'Corporate Volunteering / Sydney': (U_+'2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Bushcare volunteers'),
+    'Corporate Volunteering / Melbourne': (U_+'2021/02/Koala-projects.png', 'Nest box installation'),
+    'Corporate Volunteering / Brisbane': (U_+'2021/02/CurrumbinKoala-Erik-Veland.jpg', 'Koala in Queensland'),
+    'Corporate Volunteering / Adelaide': (U_+'2022/02/torrens-Island-bird.jpg', 'Birdlife at Torrens Island'),
+    'Corporate Volunteering / Perth': (U_+'2021/02/WArangers-lge.jpg', 'Rangers in Western Australia'),
+}
+
 def hero(ey, h1, lede, crumb_label):
+    if crumb_label in HERO_IMGS:
+        img, alt = HERO_IMGS[crumb_label]
+        return hero_img(ey, h1, lede, crumb_label, img, alt)
     return f'''<section class="ch">
   <div class="cw rv">
     {crumb(crumb_label)}

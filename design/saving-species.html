@@ -354,8 +354,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-row:hover .hx-row-a{transform:translateX(8px)}
 @media(max-width:700px){.hx-row{grid-template-columns:48px 1fr auto;padding:1.4rem .4rem}.hx-row-i{font-size:1.2rem}}
 
+/* === v3.1 photographic hero upgrade === */
+.chi{position:relative;background:var(--euc-deep);color:#fff;padding:9.5rem 0 4.5rem;overflow:hidden}
+.chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.5}
+.chi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,49,50,.35) 0%,rgba(15,49,50,.15) 45%,rgba(15,49,50,.82) 100%)}
+.chi .cw{position:relative;z-index:1}
+.chi h1{color:#fff}
+.chi .lede{color:rgba(255,255,255,.88)}
+
 </style>
 <style>
+
+.pil-hero{padding:10rem 0 5rem}
+.pil-stat{display:flex;gap:1.4rem;align-items:baseline;margin-top:2.2rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1.6rem;max-width:560px}
+.pil-stat-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.03em;color:var(--wattle);line-height:1;white-space:nowrap}
+.pil-stat-n em{font-family:var(--ff-h);font-style:normal;font-weight:600;font-size:.42em;color:var(--wattle-soft);margin-left:.2em}
+.pil-stat-l{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.45}
 
 </style>
 </head>
@@ -405,12 +419,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="ch">
+<section class="ch chi pil-hero" style="--chi:url('https://fnpw.org.au/wp-content/uploads/2021/02/Woylie.jpg')">
   <div class="cw rv">
-    <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span>Saving Species</nav>
-    <span class="ey">Pillar two</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">Saving Species</h1>
-    <p class="lede">From koalas to enigma moths, we fund the recovery work that keeps Australia's threatened plants and animals in the world.</p>
+    <nav style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span style="opacity:.4">/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span style="opacity:.4">/</span>Saving Species</nav>
+    <span class="ey" style="color:var(--euc-soft)">Pillar two &#183; 43 projects</span>
+    <h1 style="margin:1rem 0 1.2rem;max-width:16ch;color:#fff">Saving Species</h1>
+    <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">From koalas to enigma moths, we fund the recovery work that keeps Australia's threatened plants and animals in the world.</p>
+    <div class="pil-stat rv d1">
+      <span class="pil-stat-n">18,582<em>treatments</em></span>
+      <span class="pil-stat-l">delivered to wombats with mange<br><a href="reports.html" style="color:var(--euc-soft);font-size:.82rem">FNPW Impact Report</a></span>
+    </div>
   </div>
 </section>
 <section class="sec ">
@@ -421,9 +439,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 </div>
   </div>
 </section>
+<section class="sec dark">
+  <div class="cw rv">
+<div class="two" style="align-items:center">
+<div class="rv"><a href="project-warddeken-mayh.html"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken Mayh Recovery Project" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--euc-pale)"></a></div>
+<div class="rv d1"><span class="ey">Featured project</span><h2 style="margin:.8rem 0 1rem">Warddeken Mayh Recovery Project</h2>
+<p>Indigenous rangers monitoring 120 camera sites across 1.4 million hectares of the Warddeken IPA, recovering threatened mammals through fire and feral management.</p>
+<a class="hx-cta" href="project-warddeken-mayh.html">Read the full story<span class="hx-cta-line" aria-hidden="true"></span></a></div>
+</div>
+  </div>
+</section>
 <section class="sec paper">
   <div class="cw rv">
-<span class='ey'>43 projects</span><h2 style='margin:.8rem 0 1.6rem'>Projects under this pillar</h2><div class='pg'><article class="pc">
+<span class='ey'>All 43 projects</span><h2 style='margin:.8rem 0 1.6rem'>Projects under this pillar</h2><div class='pg'><article class="pc">
   <a href="project-garners-beach-cassowary-rehabilitation-centre-project.html" class="pc-link">
     <div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg" alt="Garners Beach Cassowary Rehabilitation Centre Project" loading="lazy">
       <span class="pc-pb pb-species">Saving Species</span>
@@ -810,6 +838,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <div class="pc-bd"><h3>Supporting Community Led Treatment to Protect Bare Nosed Wombats</h3></div>
   </a>
 </article></div>
+  </div>
+</section>
+<section class="sec ">
+  <div class="cw rv">
+<span class='ey'>Keep exploring</span><h2 style='margin:.8rem 0 1.4rem'>The other pillars</h2><div class='lcg'><a class="lc rv" href="growing-national-parks.html"><h3>Growing National Parks</h3><p>We buy high-conservation-value land and hand it back, adding it to Australia's national pa...</p><span class="lc-go">&rsaquo;</span></a>
+<a class="lc rv" href="healing-the-land.html"><h3>Healing the Land</h3><p>We restore what has been damaged: replanting habitat, healing waterways and supporting cul...</p><span class="lc-go">&rsaquo;</span></a></div>
   </div>
 </section>
 <section class="sec dark">
