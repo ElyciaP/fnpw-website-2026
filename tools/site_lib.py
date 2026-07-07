@@ -143,4 +143,4 @@ EXEMPLAR_SLUGS = {'remarkable-southern-flinders',
 
 RAISELY_DONATE = 'https://foundation-for-national-parks-and-wildlife.raiselysite.com/'
 RAISELY_HERO = 'https://habitat-heroes.raiselysite.com/'
-PLACEHOLDER_IMG = 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1800&q=80'
+PLACEHOLDER_IMG = 'assets/img/bongil.jpg'
