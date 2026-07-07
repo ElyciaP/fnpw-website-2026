@@ -53,6 +53,74 @@ def feature(img, alt, title, paras, points, cta_label, cta_href, flip=False):
     inner = (txt + im) if flip else (im + txt)
     return f'<div class="two" style="align-items:center;margin-bottom:5rem">{inner}</div>'
 
+WY_CSS = '''
+.wy-intro{padding:5rem 0 3.5rem;background:var(--cream)}
+.wy-panel{position:relative;min-height:66vh;display:flex;align-items:center;isolation:isolate;overflow:hidden}
+.wy-panel::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--wy) center/cover}
+.wy-panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,.5) 52%,rgba(15,49,50,.12) 100%)}
+.wy-panel.alt::after{background:linear-gradient(270deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,.5) 52%,rgba(15,49,50,.12) 100%)}
+.wy-bd{position:relative;color:#fff;max-width:530px;padding:4.5rem 0}
+.wy-panel.alt .wy-bd{margin-left:auto;text-align:left}
+.wy-i{font-family:var(--ff-d);font-weight:800;font-size:2.1rem;color:transparent;-webkit-text-stroke:1.4px var(--wattle)}
+.wy-tag{font-family:var(--ff-h);font-size:1.35rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block;margin-left:.7rem}
+.wy-bd h3{font-family:var(--ff-d);font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin:.5rem 0 1rem}
+.wy-bd p{color:rgba(255,255,255,.9);margin-bottom:.8rem}
+.wy-bd ul{padding-left:1.2rem;display:grid;gap:.45rem;margin:.9rem 0 1.6rem;color:rgba(255,255,255,.85);font-size:.95rem}
+.wy-btn{display:inline-block;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:600;padding:.95rem 2rem;text-decoration:none;transition:transform .18s ease}
+.wy-btn:hover{transform:translateY(-2px)}
+@media(max-width:760px){.wy-panel{min-height:0}.wy-bd{max-width:none;padding:3.5rem 0}}
+'''
+
+def wy_panels():
+    P = [
+        ('01', 'quick + mighty', 'Donate once',
+         U+'2021/02/Southern-Koala-05-scaled.jpg',
+         ['A single gift, put to work where it is needed most: buying habitat, funding recovery '
+          'science, replanting burnt country. You choose the amount; we make it count.',
+          'Donations of $2 or more are tax deductible, and your receipt arrives by email straight away.'],
+         ['Goes to work across all three pillars', 'Tax deductible from $2', 'Instant receipt for tax time'],
+         'Donate now', 'donate.html', False),
+        ('02', 'the inner circle', 'Become a Habitat Hero',
+         U+'2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg',
+         ['Recovery is slow, patient work measured in seasons. Monthly giving is what lets us commit '
+          'to it: rangers stay funded, monitoring keeps running, seedlings get watered in year two, '
+          'not just planted in year one.',
+          'Habitat Heroes get updates from the field showing exactly what their support is doing.'],
+         ['Steady funding for long-term projects', 'Field updates from the projects you power', 'Change or pause anytime'],
+         'Join monthly', RAISELY_HERO, True),
+        ('03', 'a gift that grows', 'Gift a Tree',
+         'assets/img/bongil.jpg',
+         ['Skip the socks. A native tree planted in a recovering landscape, with a certificate sent '
+          'to the person you love. It cleans air, shelters wildlife and outlives us all.',
+          'Perfect for birthdays, memorials and Christmas, and popular with businesses gifting '
+          'clients something that means something.'],
+         ['A real tree in a real FNPW project site', 'Personalised certificate for your recipient', 'Bulk gifting for business'],
+         'Plant one', 'gift-a-tree.html', False),
+        ('04', 'the long game', 'Leave a gift in your Will',
+         U+'2021/02/heritage-Estates-05-lg.jpg',
+         ['After family and friends are looked after, a gift in your Will protects what you love '
+          'about this country beyond your lifetime. Bequests have bought some of the most '
+          'significant land in our 55-year history.',
+          'We can provide the exact wording your solicitor needs; every conversation is confidential '
+          'and without obligation.'],
+         ['Land protected forever', 'Suggested wording for your solicitor', 'Confidential, no-obligation conversations'],
+         'Learn how', 'bequests.html', True),
+    ]
+    out = ['<section class="wy-intro"><div class="cw rv"><span class="ey">Ways to give</span>'
+           '<h2 style="margin:.8rem 0 .6rem;max-width:26ch">Money, planted where it grows the most.</h2>'
+           '<p style="max-width:56ch">Four ways to give, each photographed where the money ends up.</p></div></section>']
+    for num, tag, title, img, paras, points, cta, href, alt in P:
+        pts = ''.join(f'<li>{x}</li>' for x in points)
+        ps = ''.join(f'<p>{x}</p>' for x in paras)
+        out.append(
+            f'<section class="wy-panel{" alt" if alt else ""}" style="--wy:url(\'{img}\')">'
+            f'<div class="cw"><div class="wy-bd rv">'
+            f'<span class="wy-i">{num}</span><span class="wy-tag">{tag}</span>'
+            f'<h3>{title}</h3>{ps}<ul>{pts}</ul>'
+            f'<a class="wy-btn" href="{href}">{cta}</a>'
+            f'</div></div></section>')
+    return ''.join(out)
+
 def numbered_steps(steps):
     """1-2-3 process strip."""
     cells = ''.join(
@@ -71,46 +139,7 @@ def main():
         hero('Get involved', 'Every way to stand with natural Australia.',
              'However you want to help, there is a way that fits. Four ways to give, '
              'five ways to give time and influence. Choose yours.', 'Get Involved')
-        + sec('<span class="ey">Ways to give</span>'
-              '<h2 style="margin:.8rem 0 3rem;max-width:24ch">Money, planted where it grows the most.</h2>'
-              + feature(U+'2021/02/Southern-Koala-05-scaled.jpg', 'Koala in the Southern Highlands',
-                  'Donate once',
-                  ['A single gift, put to work where it is needed most: buying habitat, funding recovery '
-                   'science, replanting burnt country. You choose the amount; we make it count.',
-                   'Donations of $2 or more are tax deductible, and your receipt arrives by email straight away.'],
-                  ['Goes to work across all three pillars', 'Tax deductible from $2',
-                   'Instant receipt for tax time'],
-                  'Donate now', 'donate.html')
-              + feature(U+'2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg',
-                  'Warddeken rangers on Country',
-                  'Become a Habitat Hero',
-                  ['Recovery is slow, patient work measured in seasons. Monthly giving is what lets us '
-                   'commit to it: rangers stay funded, monitoring keeps running, seedlings get watered '
-                   'in year two, not just planted in year one.',
-                   'Habitat Heroes are our inner circle: you get updates from the field showing exactly '
-                   'what your support is doing.'],
-                  ['Steady funding for long-term projects', 'Field updates from the projects you power',
-                   'Change or pause anytime'],
-                  'Join monthly', RAISELY_HERO, flip=True)
-              + feature(U+'2024/03/Plant-a-Tree-Australia.png', 'Native tree seedling',
-                  'Gift a Tree',
-                  ['Skip the socks. A native tree planted in a recovering landscape, with a certificate '
-                   'sent to the person you love. It cleans air, shelters wildlife and outlives us all.',
-                   'Perfect for birthdays, memorials, thank-yous and Christmas, and popular with '
-                   'businesses gifting clients something that means something.'],
-                  ['A real tree in a real FNPW project site', 'Personalised certificate for your recipient',
-                   'Bulk gifting available for business'],
-                  'Plant one', 'gift-a-tree.html')
-              + feature(U+'2021/02/heritage-Estates-05-lg.jpg', 'Protected bushland',
-                  'Leave a gift in your Will',
-                  ['After family and friends are looked after, a gift in your Will to FNPW protects what '
-                   'you love about this country beyond your lifetime. Bequests have bought some of the '
-                   'most significant land in our 55-year history.',
-                   'We can provide the exact wording your solicitor needs, and every conversation is '
-                   'confidential and without obligation.'],
-                  ['The long game: land protected forever', 'Suggested wording provided for your solicitor',
-                   'Confidential, no-obligation conversations'],
-                  'Learn how', 'bequests.html', flip=True))
+        + wy_panels()
         + sec('<span class="ey">Time and influence</span>'
               '<h2 style="margin:.8rem 0 1rem;max-width:26ch">Not everything we need is money.</h2>'
               '<p style="max-width:56ch">Hands in the dirt, a company behind the mission, a workplace '
@@ -122,7 +151,7 @@ def main():
                   ('Fundraise for us', 'Run, bake, climb or host in support of FNPW. We supply logos, photos, impact stats and encouragement.', 'fundraising-with-fnpw.html'),
                   ('Donate land', 'Land with conservation value can become part of the protected estate, safe forever. Every conversation is confidential.', 'donate-land.html'),
               ]), 'paper')
-        + DONATE_CTA)
+        + DONATE_CTA, page_css=WY_CSS)
 
     # ---- partnership + giving pages ----
     add('project-partnerships.html', 'Government &amp; Project Partnerships',

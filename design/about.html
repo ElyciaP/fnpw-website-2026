@@ -416,6 +416,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .tc-r{font-size:.85rem;color:var(--stone)}
 
 .ab-cta{position:relative;padding:6rem 0;background:var(--euc-deep);color:var(--cream);overflow:hidden;text-align:center}
+
+/* v3.2 gallery + team photos */
+.tc-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.abg{background:var(--euc-deep);padding:5.5rem 0;overflow:hidden}
+.abg .ey{color:var(--euc-soft)}
+.abg h2{color:#fff;font-family:var(--ff-d);font-weight:700;font-size:clamp(1.6rem,2.8vw,2.3rem);letter-spacing:-.02em;margin:.8rem 0 2rem}
+.abg-rail{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
+.abg-i{flex:0 0 auto;scroll-snap-align:start;position:relative}
+.abg-i img{display:block;height:340px;width:auto;object-fit:cover}
+.abg-i span{position:absolute;left:.8rem;bottom:.8rem;background:rgba(15,49,50,.78);color:#fff;font-size:.78rem;padding:.3rem .7rem}
+@media(max-width:700px){.abg-i img{height:230px}}
 </style>
 </head>
 <body>
@@ -545,10 +556,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <section class="sec paper" style="padding:6rem 0">
   <div class="cw">
     <div class="rv" style="text-align:center;max-width:680px;margin:0 auto"><span class="ey">Our team</span><h2 style="margin-top:1rem">The people leading the work.</h2></div>
-    <div class="tm-g"><div class="tc rv"><div class="tc-ph">🦘</div><div class="tc-in"><div class="tc-n">Ian Darbyshire</div><div class="tc-r">Chief Executive Officer</div></div></div><div class="tc rv"><div class="tc-ph">🌿</div><div class="tc-in"><div class="tc-n">Suzana Tovikj</div><div class="tc-r">Head of Marketing</div></div></div><div class="tc rv"><div class="tc-ph">🌾</div><div class="tc-in"><div class="tc-n">Lynn Eldridge</div><div class="tc-r">Head of Operations</div></div></div><div class="tc rv"><div class="tc-ph">🌱</div><div class="tc-in"><div class="tc-n">Mali Lehmann</div><div class="tc-r">Head of Programs</div></div></div><div class="tc rv"><div class="tc-ph">🌳</div><div class="tc-in"><div class="tc-n">Mandy Kraffczyk</div><div class="tc-r">Head of Partnerships</div></div></div><div class="tc rv"><div class="tc-ph">🪶</div><div class="tc-in"><div class="tc-n">Elycia Paredes</div><div class="tc-r">Head of Content</div></div></div></div>
-  </div>
+    <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy"></div><div class="tc-in"><div class="tc-n">Ian Darbyshire</div><div class="tc-r">Chief Executive Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2022/04/suzana-01.jpg" alt="Suzana Majstorovic" loading="lazy"></div><div class="tc-in"><div class="tc-n">Suzana Majstorovic</div><div class="tc-r">Chief Operations Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2024/09/Glenn-Murray.png" alt="Glenn Murray" loading="lazy"></div><div class="tc-in"><div class="tc-n">Glenn Murray</div><div class="tc-r">Chief Financial Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Mark-Cairns.png" alt="Mark Cairns" loading="lazy"></div><div class="tc-in"><div class="tc-n">Mark Cairns</div><div class="tc-r">Chief Biodiversity Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/06/Ian-Laing.png" alt="Ian Laing" loading="lazy"></div><div class="tc-in"><div class="tc-n">Ian Laing</div><div class="tc-r">Chief Commercial Officer</div></div></div>
+</div>
 </section>
 
+
+<section class="sec paper">
+  <div class="cw">
+    <div class="two" style="align-items:center">
+      <div class="rv" style="max-width:320px;justify-self:center"><img src="https://fnpw.org.au/wp-content/uploads/2020/11/Founder_Positional@2x.png" alt="The late Hon. Tom Lewis AO" loading="lazy" style="display:block;width:100%;box-shadow:12px 12px 0 var(--wattle-soft)"></div>
+      <div class="rv d1"><span class="ey">Founder &amp; Patron</span>
+      <h2 style="margin:.8rem 0 1rem">The late Hon. Tom Lewis AO</h2>
+      <p>As NSW lands minister, Tom Lewis set up the National Parks and Wildlife Service in 1967, then established the Foundation for National Parks &amp; Wildlife in 1970 as its fundraising arm. Today the Foundation he started is an apolitical, independent conservation organisation working Australia-wide.</p></div>
+    </div>
+  </div>
+</section>
 <section class="sec sand" style="padding:6rem 0">
   <div class="cw">
     <div class="rv" style="text-align:center;max-width:680px;margin:0 auto">
@@ -556,17 +578,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       <h2 style="margin-top:1rem">Our Board of Directors.</h2>
       <p class="lede" style="margin-top:1.2rem;margin-left:auto;margin-right:auto">Our board brings together expertise across conservation science, law, finance and community leadership to guide FNPW's long-term mission.</p>
     </div>
-    <div class="tm-g">
-      <div class="tc rv"><div class="tc-ph">🏔️</div><div class="tc-in"><div class="tc-n">David Knowles</div><div class="tc-r">President &amp; Chair</div></div></div>
-      <div class="tc rv"><div class="tc-ph">🌊</div><div class="tc-in"><div class="tc-n">Margaret Thornton</div><div class="tc-r">Deputy Chair</div></div></div>
-      <div class="tc rv"><div class="tc-ph">🦋</div><div class="tc-in"><div class="tc-n">Robert Chen</div><div class="tc-r">Treasurer &amp; Director</div></div></div>
-      <div class="tc rv"><div class="tc-ph">🌻</div><div class="tc-in"><div class="tc-n">Dr. Sarah Mitchell</div><div class="tc-r">Director</div></div></div>
-      <div class="tc rv"><div class="tc-ph">🐨</div><div class="tc-in"><div class="tc-n">James O'Brien</div><div class="tc-r">Director</div></div></div>
-      <div class="tc rv"><div class="tc-ph">🦜</div><div class="tc-in"><div class="tc-n">Dr. Fiona Wallace</div><div class="tc-r">Director</div></div></div>
+    <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kelly-OShanassy.png" alt="Kelly O&rsquo;Shanassy" loading="lazy"></div><div class="tc-in"><div class="tc-n">Kelly O&rsquo;Shanassy</div><div class="tc-r">Chair</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Elected Chair 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Mark-Arnold.png" alt="Mark Arnold" loading="lazy"></div><div class="tc-in"><div class="tc-n">Mark Arnold</div><div class="tc-r">Treasurer &amp; Deputy Chair</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2020/11/Jane-Daziger_POS@2x.png" alt="Jane Danziger" loading="lazy"></div><div class="tc-in"><div class="tc-n">Jane Danziger</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2020</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Tim-Jarvis-FNPW-director-1024x814.jpg" alt="Tim Jarvis AM" loading="lazy"></div><div class="tc-in"><div class="tc-n">Tim Jarvis AM</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2023</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Natalie-Kyrogiou-FNPW-Director.jpg" alt="Natalie Kyriacou OAM" loading="lazy"></div><div class="tc-in"><div class="tc-n">Natalie Kyriacou OAM</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2024</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/leisa-bacon-1024x1024.jpg" alt="Leisa Bacon" loading="lazy"></div><div class="tc-in"><div class="tc-n">Leisa Bacon</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Staff-Profiles.png" alt="Dr Lucas Carmody" loading="lazy"></div><div class="tc-in"><div class="tc-n">Dr Lucas Carmody</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kinjia.png" alt="Kinjia Munkara-Murray" loading="lazy"></div><div class="tc-in"><div class="tc-n">Kinjia Munkara-Murray</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Nick-Tubb.png" alt="Nick Tubb" loading="lazy"></div><div class="tc-in"><div class="tc-n">Nick Tubb</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2026</div></div></div>
+</div>
+</section>
+
+
+<section class="abg">
+  <div class="cw">
+    <span class="ey rv">The country we work for</span>
+    <h2 class="rv">Fifty-five years of views like these.</h2>
+    <div class="abg-rail rv d1">
+      <div class="abg-i"><img src="assets/img/hero-golden.jpg" alt="Golden hour over spinifex country" loading="lazy"><span>Outback at golden hour</span></div>
+      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Southern Flinders Ranges" loading="lazy"><span>Southern Flinders Ranges, SA</span></div>
+      <div class="abg-i"><img src="assets/img/bongil.jpg" alt="Bongil Bongil National Park" loading="lazy"><span>Bongil Bongil National Park, NSW</span></div>
+      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers on Country" loading="lazy"><span>Warddeken IPA, NT</span></div>
+      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="Koala" loading="lazy"><span>Southern Highlands, NSW</span></div>
+      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg" alt="Sturt National Park" loading="lazy"><span>Sturt National Park, NSW</span></div>
+      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/LittlePenguins.jpg" alt="Little penguins" loading="lazy"><span>Granite Island, SA</span></div>
     </div>
   </div>
 </section>
-
 <section class="ab-cta">
   
   
@@ -598,7 +629,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 const mt=document.getElementById('mt'),mn=document.getElementById('mn');
 if(mt&&mn){mt.addEventListener('click',()=>{mn.classList.toggle('open');mt.setAttribute('aria-expanded',mn.classList.contains('open'))}); mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mn.classList.remove('open')))}
 const sh=document.getElementById('hdr');if(sh)window.addEventListener('scroll',()=>sh.classList.toggle('scrolled',window.scrollY>30),{passive:true});
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.01,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const ni=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;const t=parseFloat(el.dataset.count);const d=parseInt(el.dataset.dec||'0');const s=el.dataset.suf||'';const p=el.dataset.pre||'';const dur=1500;const st=performance.now();function step(now){const pr=Math.min(1,(now-st)/dur);const ea=1-Math.pow(1-pr,3);const v=t*ea;el.textContent=p+v.toLocaleString('en-AU',{minimumFractionDigits:d,maximumFractionDigits:d})+s;if(pr<1)requestAnimationFrame(step);else el.textContent=p+t.toLocaleString('en-AU',{minimumFractionDigits:d,maximumFractionDigits:d})+s}requestAnimationFrame(step);ni.unobserve(x.target)})},{threshold:.4});
 document.querySelectorAll('[data-count]').forEach(el=>ni.observe(el));

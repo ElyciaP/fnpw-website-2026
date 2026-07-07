@@ -459,7 +459,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 const mt=document.getElementById('mt'),mn=document.getElementById('mn');
 if(mt&&mn){mt.addEventListener('click',()=>{mn.classList.toggle('open');mt.setAttribute('aria-expanded',mn.classList.contains('open'))}); mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mn.classList.remove('open')))}
 const sh=document.getElementById('hdr');if(sh)window.addEventListener('scroll',()=>sh.classList.toggle('scrolled',window.scrollY>30),{passive:true});
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.01,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const ni=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;const t=parseFloat(el.dataset.count);const d=parseInt(el.dataset.dec||'0');const s=el.dataset.suf||'';const p=el.dataset.pre||'';const dur=1500;const st=performance.now();function step(now){const pr=Math.min(1,(now-st)/dur);const ea=1-Math.pow(1-pr,3);const v=t*ea;el.textContent=p+v.toLocaleString('en-AU',{minimumFractionDigits:d,maximumFractionDigits:d})+s;if(pr<1)requestAnimationFrame(step);else el.textContent=p+t.toLocaleString('en-AU',{minimumFractionDigits:d,maximumFractionDigits:d})+s}requestAnimationFrame(step);ni.unobserve(x.target)})},{threshold:.4});
 document.querySelectorAll('[data-count]').forEach(el=>ni.observe(el));

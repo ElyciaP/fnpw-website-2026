@@ -850,15 +850,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <div class="hx-ir-g">
       <div class="hx-ir-cov rv">
         <span class="hx-ir-tag">Hot off the press</span>
-        <img src="assets/img/impact-report-2026.jpg" alt="Cover of the FNPW Impact Report 2026">
+        <img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025">
       </div>
       <div class="rv d1">
         <span class="ey">The receipts</span>
         <h2>Every dollar, accounted for in the wild.</h2>
-        <p>Our Impact Report 2026 is out: the hectares protected, the species recovering, the seedlings in the ground, and exactly how supporter funding made each one happen. No gloss, just outcomes you can count.</p>
+        <p>Our latest Impact Report is out: the hectares protected, the species recovering, the seedlings in the ground, and exactly how supporter funding made each one happen. No gloss, just outcomes you can count.</p>
         <p>Ten minutes with it and you will know precisely what your support does.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem">
-          <a class="btn-p" href="reports.html">Read the Impact Report</a>
+          <a class="btn-p" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Read the Impact Report</a>
           <a class="hx-cta" href="reports.html" style="margin-top:0">All reports &amp; financials<span class="hx-cta-line" aria-hidden="true"></span></a>
         </div>
         <div class="hx-ir-trust">
@@ -910,7 +910,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 const mt=document.getElementById('mt'),mn=document.getElementById('mn');
 if(mt&&mn){mt.addEventListener('click',()=>{mn.classList.toggle('open');mt.setAttribute('aria-expanded',mn.classList.contains('open'))}); mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mn.classList.remove('open')))}
 const sh=document.getElementById('hdr');if(sh)window.addEventListener('scroll',()=>sh.classList.toggle('scrolled',window.scrollY>30),{passive:true});
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0.01,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const ni=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;const t=parseFloat(el.dataset.count);const d=parseInt(el.dataset.dec||'0');const s=el.dataset.suf||'';const p=el.dataset.pre||'';const dur=1500;const st=performance.now();function step(now){const pr=Math.min(1,(now-st)/dur);const ea=1-Math.pow(1-pr,3);const v=t*ea;el.textContent=p+v.toLocaleString('en-AU',{minimumFractionDigits:d,maximumFractionDigits:d})+s;if(pr<1)requestAnimationFrame(step);else el.textContent=p+t.toLocaleString('en-AU',{minimumFractionDigits:d,maximumFractionDigits:d})+s}requestAnimationFrame(step);ni.unobserve(x.target)})},{threshold:.4});
 document.querySelectorAll('[data-count]').forEach(el=>ni.observe(el));
