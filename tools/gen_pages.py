@@ -37,23 +37,92 @@ DONATE_CTA = cta_band('Ready to make a difference?',
     'Your donation grows national parks, saves species and heals the land.',
     [('Donate now', RAISELY_DONATE, 'btn-p'), ('Become a Habitat Hero', RAISELY_HERO, 'btn-o')])
 
+U = 'https://fnpw.org.au/wp-content/uploads/'
+
+def feature(img, alt, title, paras, points, cta_label, cta_href, flip=False):
+    """Alternating image + rich-copy split for flagship items."""
+    im = (f'<div class="rv"><img src="{img}" alt="{alt}" loading="lazy" '
+          f'style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;'
+          f'box-shadow:12px 12px 0 var(--euc-pale)"></div>')
+    pts = ''.join(f'<li>{p}</li>' for p in points)
+    txt = (f'<div class="rv d1"><h3 style="font-family:var(--ff-d);font-size:1.55rem;'
+           f'color:var(--euc-deep);margin-bottom:.9rem">{title}</h3>'
+           + ''.join(f'<p style="margin-bottom:.8rem">{p}</p>' for p in paras)
+           + f'<ul style="padding-left:1.2rem;display:grid;gap:.45rem;margin:.8rem 0 1.3rem">{pts}</ul>'
+           + f'<a class="btn-p" href="{cta_href}">{cta_label}</a></div>')
+    inner = (txt + im) if flip else (im + txt)
+    return f'<div class="two" style="align-items:center;margin-bottom:5rem">{inner}</div>'
+
+def numbered_steps(steps):
+    """1-2-3 process strip."""
+    cells = ''.join(
+        f'<div class="rv"><span style="font-family:var(--ff-d);font-weight:800;font-size:2.6rem;'
+        f'color:transparent;-webkit-text-stroke:1.3px var(--euc)">{i+1:02d}</span>'
+        f'<h3 style="font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .4rem">{t}</h3>'
+        f'<p style="font-size:.94rem">{d}</p></div>'
+        for i, (t, d) in enumerate(steps))
+    return (f'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));'
+            f'gap:2.2rem">{cells}</div>')
+
 def main():
-    # ---- Get Involved hub ----
+    # ---- Get Involved hub: flagship features + supporting index ----
     add('ways-you-can-get-involved.html', 'Ways to Get Involved',
         'Donate, volunteer, partner, fundraise or leave a gift in your Will. Every way to support FNPW.',
         hero('Get involved', 'Every way to stand with natural Australia.',
-             'However you want to help, there is a way that fits. Choose yours.', 'Get Involved')
-        + sec(rows([
-            ('Donate', 'A one-off gift, put to work where it is needed most.', 'donate.html'),
-            ('Become a Habitat Hero', 'Monthly giving that funds long-term recovery.', RAISELY_HERO),
-            ('Gift a Tree', 'A tree planted for someone you love.', 'gift-a-tree.html'),
-            ('Corporate volunteering', 'Bring your team out for a planting day.', 'volunteer.html'),
-            ('Become a partner', 'Corporate and philanthropic partnerships.', 'partner.html'),
-            ('Workplace giving', 'Small regular gifts from your pay, often matched by employers.', 'workplace-giving.html'),
-            ('Fundraise for us', 'Run, bake, climb or host in support of FNPW.', 'fundraising-with-fnpw.html'),
-            ('Leave a gift in your Will', 'A bequest that protects what you love, forever.', 'bequests.html'),
-            ('Donate land', 'Give land a permanent future in the protected estate.', 'donate-land.html'),
-        ])) + DONATE_CTA)
+             'However you want to help, there is a way that fits. Four ways to give, '
+             'five ways to give time and influence. Choose yours.', 'Get Involved')
+        + sec('<span class="ey">Ways to give</span>'
+              '<h2 style="margin:.8rem 0 3rem;max-width:24ch">Money, planted where it grows the most.</h2>'
+              + feature(U+'2021/02/Southern-Koala-05-scaled.jpg', 'Koala in the Southern Highlands',
+                  'Donate once',
+                  ['A single gift, put to work where it is needed most: buying habitat, funding recovery '
+                   'science, replanting burnt country. You choose the amount; we make it count.',
+                   'Donations of $2 or more are tax deductible, and your receipt arrives by email straight away.'],
+                  ['Goes to work across all three pillars', 'Tax deductible from $2',
+                   'Instant receipt for tax time'],
+                  'Donate now', 'donate.html')
+              + feature(U+'2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg',
+                  'Warddeken rangers on Country',
+                  'Become a Habitat Hero',
+                  ['Recovery is slow, patient work measured in seasons. Monthly giving is what lets us '
+                   'commit to it: rangers stay funded, monitoring keeps running, seedlings get watered '
+                   'in year two, not just planted in year one.',
+                   'Habitat Heroes are our inner circle: you get updates from the field showing exactly '
+                   'what your support is doing.'],
+                  ['Steady funding for long-term projects', 'Field updates from the projects you power',
+                   'Change or pause anytime'],
+                  'Join monthly', RAISELY_HERO, flip=True)
+              + feature(U+'2024/03/Plant-a-Tree-Australia.png', 'Native tree seedling',
+                  'Gift a Tree',
+                  ['Skip the socks. A native tree planted in a recovering landscape, with a certificate '
+                   'sent to the person you love. It cleans air, shelters wildlife and outlives us all.',
+                   'Perfect for birthdays, memorials, thank-yous and Christmas, and popular with '
+                   'businesses gifting clients something that means something.'],
+                  ['A real tree in a real FNPW project site', 'Personalised certificate for your recipient',
+                   'Bulk gifting available for business'],
+                  'Plant one', 'gift-a-tree.html')
+              + feature(U+'2021/02/heritage-Estates-05-lg.jpg', 'Protected bushland',
+                  'Leave a gift in your Will',
+                  ['After family and friends are looked after, a gift in your Will to FNPW protects what '
+                   'you love about this country beyond your lifetime. Bequests have bought some of the '
+                   'most significant land in our 55-year history.',
+                   'We can provide the exact wording your solicitor needs, and every conversation is '
+                   'confidential and without obligation.'],
+                  ['The long game: land protected forever', 'Suggested wording provided for your solicitor',
+                   'Confidential, no-obligation conversations'],
+                  'Learn how', 'bequests.html', flip=True))
+        + sec('<span class="ey">Time and influence</span>'
+              '<h2 style="margin:.8rem 0 1rem;max-width:26ch">Not everything we need is money.</h2>'
+              '<p style="max-width:56ch">Hands in the dirt, a company behind the mission, a workplace '
+              'that gives as a team: these move the work along just as surely.</p>'
+              + rows([
+                  ('Corporate volunteering', 'Bring your team out for a planting or restoration day with our project partners. Tools, guidance and safety covered; most teams call it the best team day they have done.', 'volunteer.html'),
+                  ('Become a partner', 'Corporate and philanthropic partnerships that fund whole projects, from single-project sponsorship to multi-year pillar support.', 'partner.html'),
+                  ('Workplace giving', 'Small regular gifts from pre-tax pay, often matched dollar for dollar by employers. Five minutes with payroll, habitat every payday.', 'workplace-giving.html'),
+                  ('Fundraise for us', 'Run, bake, climb or host in support of FNPW. We supply logos, photos, impact stats and encouragement.', 'fundraising-with-fnpw.html'),
+                  ('Donate land', 'Land with conservation value can become part of the protected estate, safe forever. Every conversation is confidential.', 'donate-land.html'),
+              ]), 'paper')
+        + DONATE_CTA)
 
     # ---- partnership + giving pages ----
     add('project-partnerships.html', 'Government &amp; Project Partnerships',
@@ -77,14 +146,27 @@ def main():
         hero('Get involved', 'Workplace giving.',
              'A small amount from each pay, before tax, often matched by your employer. '
              'Set and forget, and it adds up to habitat.', 'Workplace Giving')
-        + sec(two('<h2>How it works</h2>'
-                  '<p>Ask your payroll team to add the Foundation for National Parks &amp; Wildlife '
-                  'as a workplace giving recipient. Donations come out of pre-tax pay, so there is '
-                  'nothing to claim at tax time, and many employers match staff giving dollar for dollar.</p>',
-                  '<h3>Details payroll will need</h3>'
-                  '<p>Foundation for National Parks &amp; Wildlife<br>ABN 90 107 744 771<br>'
-                  'Registered charity with the ACNC, endorsed as a Deductible Gift Recipient (DGR).</p>'
-                  + port('any existing workplace giving platform links (Good2Give, Benevity etc.)')))
+        + sec('<span class="ey">How it works</span>'
+              '<h2 style="margin:.8rem 0 2.4rem">Three steps, then it runs itself.</h2>'
+              + numbered_steps([
+                  ('Ask payroll', 'Ask your payroll or people team to add the Foundation for National '
+                   'Parks &amp; Wildlife as a workplace giving recipient.'),
+                  ('Pick an amount', 'It comes out of pre-tax pay, so a $10 gift costs you less than $10 '
+                   'and there is nothing to claim at tax time.'),
+                  ('Ask about matching', 'Many employers match staff giving dollar for dollar, which '
+                   'doubles every tree, hectare and treatment your gift funds.')]))
+        + sec(two(
+              f'<div class="rv"><img src="{U}2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg" '
+              'alt="Bushcare volunteers restoring habitat" loading="lazy" style="display:block;width:100%;'
+              'aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--wattle-soft)"></div>',
+              '<div class="rv d1"><span class="ey">For payroll</span>'
+              '<h3 style="font-family:var(--ff-d);font-size:1.4rem;color:var(--euc-deep);margin:.6rem 0 .9rem">Details your payroll team will need</h3>'
+              '<div class="pmeta">'
+              '<div class="pmeta-i"><span>Organisation</span><strong>Foundation for National Parks &amp; Wildlife</strong></div>'
+              '<div class="pmeta-i"><span>ABN</span><strong>90 107 744 771</strong></div>'
+              '<div class="pmeta-i"><span>Status</span><strong>ACNC registered, DGR endorsed</strong></div>'
+              '<div class="pmeta-i"><span>Contact</span><strong>fnpw@fnpw.org.au &#183; 1800 898 626</strong></div>'
+              '</div>' + port('existing workplace giving platform links (Good2Give, Benevity etc.)') + '</div>'), 'paper')
         + DONATE_CTA)
 
     add('fundraising-with-fnpw.html', 'Fundraising with FNPW',
@@ -92,13 +174,24 @@ def main():
         hero('Get involved', 'Fundraise for the bush.',
              'Birthdays, fun runs, morning teas, mountain climbs. Turn your thing into '
              'habitat for wildlife.', 'Fundraising')
-        + sec(two('<h2>Start a fundraiser</h2>'
-                  '<p>Create a fundraising page, set a goal and share it. Every dollar you raise '
-                  'goes to growing national parks, saving species and healing the land.</p>'
-                  f'<p><a class="btn-p" href="{RAISELY_DONATE}">Start fundraising</a></p>',
-                  '<h3>We will help</h3>'
-                  '<p>We can supply logos, photos, impact stats and ideas. '
-                  '<a href="contact.html">Get in touch</a> and tell us what you are planning.</p>'))
+        + sec('<span class="ey">Pick your thing</span>'
+              '<h2 style="margin:.8rem 0 2.2rem">Any excuse works.</h2><div class="lcg">'
+              '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Move for it</h3><p>Fun runs, ocean swims, '
+              'mountain climbs and long rides. Every kilometre earns habitat.</p><span class="lc-go">&rsaquo;</span></a>'
+              '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Host for it</h3><p>Morning teas, trivia '
+              'nights, movie screenings, bush dances. Gather people, raise the roof.</p><span class="lc-go">&rsaquo;</span></a>'
+              '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Give your day</h3><p>Birthdays, weddings '
+              'and milestones: ask for donations instead of gifts.</p><span class="lc-go">&rsaquo;</span></a>'
+              '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Challenge yourself</h3><p>Give something '
+              'up, take something on, let your friends sponsor the suffering.</p><span class="lc-go">&rsaquo;</span></a></div>')
+        + sec('<span class="ey">How it works</span>'
+              '<h2 style="margin:.8rem 0 2.4rem">From idea to impact in three steps.</h2>'
+              + numbered_steps([
+                  ('Create your page', 'Set up a fundraising page in minutes, set a goal, tell your story.'),
+                  ('Share it around', 'Friends, family, workmates. We can supply logos, photos and impact stats to make it look sharp.'),
+                  ('Watch it land', 'Every dollar goes to growing national parks, saving species and healing the land.')])
+              + f'<p style="margin-top:2.2rem"><a class="btn-p" href="{RAISELY_DONATE}">Start fundraising</a> '
+              '<a class="btn-o" href="contact.html" style="margin-left:.6rem">Talk to us first</a></p>', 'paper')
         + DONATE_CTA)
 
     add('donate-land.html', 'Donate Land',
@@ -106,14 +199,26 @@ def main():
         hero('Get involved', 'Donate land.',
              'Some gifts are measured in hectares. Land with conservation value can become '
              'part of the protected estate, safe forever.', 'Donate Land')
-        + sec(two('<h2>How land donation works</h2>'
-                  '<p>We assess the conservation value of the land, then work with you and the '
-                  'relevant parks service on the pathway: addition to a national park, a covenant, '
-                  'or sale with proceeds funding conservation. Every situation is different, and we '
-                  'treat every offer with care.</p>' + port('process detail from fnpw.org.au/donate-land/'),
-                  '<h3>Start the conversation</h3>'
-                  '<p>Contact us for a confidential discussion about your land.</p>'
-                  '<p><a class="btn-p" href="contact.html">Contact us</a></p>'))
+        + sec('<span class="ey">The pathway</span>'
+              '<h2 style="margin:.8rem 0 2.4rem">From your hands to protected, in three careful steps.</h2>'
+              + numbered_steps([
+                  ('A confidential conversation', 'Tell us about the land. Every discussion is private '
+                   'and without obligation, and we treat every offer with care.'),
+                  ('Conservation assessment', 'We assess habitat value and speak with the relevant '
+                   'parks service about the best pathway for the property.'),
+                  ('The right protection', 'Addition to a national park, a conservation covenant, or '
+                   'sale with proceeds funding conservation. Whatever protects it best, forever.')])
+              + port('process detail from fnpw.org.au/donate-land/'))
+        + sec(two(
+              f'<div class="rv"><img src="{U}2021/02/heritage-Estates-05-lg.jpg" '
+              'alt="Bushland protected at Heritage Estates" loading="lazy" style="display:block;width:100%;'
+              'aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--euc-pale)"></div>',
+              '<div class="rv d1"><span class="ey">Why it matters</span>'
+              '<h3 style="font-family:var(--ff-d);font-size:1.4rem;color:var(--euc-deep);margin:.6rem 0 .9rem">Land is the gift that cannot be undone.</h3>'
+              '<p style="margin-bottom:.8rem">Some of the most significant additions to the protected '
+              'estate in our 55 years began as private land and a generous decision. Once protected, '
+              'it stays protected: for the species on it now and everything that returns.</p>'
+              '<a class="btn-p" href="contact.html">Start the conversation</a></div>'), 'paper')
         + DONATE_CTA)
 
     # ---- donation SEO pages ----
