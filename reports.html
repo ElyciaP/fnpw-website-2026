@@ -117,6 +117,31 @@
 
 /* v4.1 hero-height */
 .nh{padding:9.5rem 0 4.5rem;min-height:0}
+
+/* v4.2 reports library */
+.rp-filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.rp-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+@media(max-width:1020px){.rp-g{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:740px){.rp-g{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.rp-g{grid-template-columns:1fr}}
+.rp-c{background:#fff;border:1px solid var(--rule);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.rp-c:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(15,49,50,.28)}
+.rp-cov{aspect-ratio:3/4;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:1.1rem;color:#fff}
+.rp-cov img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rp-cov.t-impact{background:linear-gradient(165deg,var(--euc) 0%,var(--euc-deep) 90%)}
+.rp-cov.t-yir{background:linear-gradient(165deg,var(--reef) 0%,var(--euc-deep) 90%)}
+.rp-cov.t-fin{background:linear-gradient(165deg,var(--bark) 0%,var(--soil) 90%)}
+.rp-cov.t-strat{background:linear-gradient(165deg,var(--waratah) 0%,var(--waratah-dk) 90%)}
+.rp-typ{font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.rp-yr{font-family:var(--ff-d);font-weight:800;font-size:2.6rem;letter-spacing:-.03em;line-height:1.05}
+.rp-bd{padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.rp-bd h3{font-family:var(--ff-d);font-size:.96rem;font-weight:700;color:var(--euc-deep);line-height:1.3}
+.rp-dl{font-family:var(--ff-d);font-weight:600;font-size:.82rem;color:var(--euc);margin-top:auto}
+/* v4.2 featured slimmer */
+.feat-img{min-height:250px}
+.feat-bd{padding:1.5rem 2rem}
+.feat-bd h2{font-size:clamp(1.25rem,2.1vw,1.8rem)}
+.feat-bd p{font-size:.95rem}
 </style>
 <body>
 <!-- @header -->
@@ -141,7 +166,6 @@
     <div class="ng">
       <button>Stories <span class="ar">▾</span></button>
       <div class="dd">
-        <a href="news.html" class="">News</a>
         <a href="articles.html" class="">Articles</a>
         <a href="reports.html" class="">Reports</a>
       </div>
@@ -172,96 +196,33 @@
     <p class="lede">Annual impact reports, program evaluations and conservation research published by FNPW and our partners.</p>
   </div>
 </section>
-
 <section class="feat-art">
   <div class="cw">
     <div class="feat-card rv">
-      <div class="feat-img"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="FNPW Annual Impact Report 2024–25"></div>
+      <div class="feat-img"><img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025"></div>
       <div class="feat-bd">
-        <span class="feat-tag">Annual Impact Report &middot; 2024&ndash;25</span>
-        <h2>FNPW Annual Impact Report 2024&ndash;25.</h2>
-        <p>A full-year review of conservation outcomes, financial performance and on-ground impact across all FNPW programs, from land acquisitions and species recovery to volunteer engagement and corporate partnerships.</p>
-        <div class="feat-meta"><strong>48 pages</strong><span>&middot; PDF &middot; 4.2 MB</span></div>
-        <a href="#" class="btn btn-p" style="align-self:flex-start;margin-top:1.4rem">Download Report</a>
+        <span class="feat-tag">Latest publication</span>
+        <h2>Impact Report 2025</h2>
+        <p>The full year of outcomes: hectares protected, species recovering, plantings in the ground, and where every dollar went. Independently audited, plainly told.</p>
+        <a class="btn-p" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Download the report</a>
       </div>
     </div>
   </div>
 </section>
-
-<section class="filters-news">
+<section class="sec">
   <div class="cw">
-    <div class="fn-r">
-      <span class="lb">Filter:</span>
-      <button class="fp on">All Reports</button>
-      <button class="fp">Annual Reports</button>
-      <button class="fp">Program Reports</button>
-      <button class="fp">Financial</button>
+    <div class="rp-filters rv" id="rpf">
+      <button class="fp on" data-f="all">All publications</button>
+      <button class="fp" data-f="impact">Impact Reports</button>
+      <button class="fp" data-f="yir">Year in Review</button>
+      <button class="fp" data-f="fin">Financials</button>
+      <button class="fp" data-f="strat">Strategy</button>
+    </div>
+    <div class="rp-g rv d1">
+<a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf" data-cat="impact"><div class="rp-cov"><img src="assets/img/impact-report-cover.jpg" alt="Cover of Impact Report 2025" loading="lazy"></div><div class="rp-bd"><h3>Impact Report 2025</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_YearInReview_2025_FA-Medium.pdf" data-cat="yir"><div class="rp-cov"><img src="assets/img/reports/yir2025.jpg" alt="Cover of Year in Review 2025" loading="lazy"></div><div class="rp-bd"><h3>Year in Review 2025</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2025/05/042025_FNPW_Impact-Report-2024_WEB-1.pdf" data-cat="impact"><div class="rp-cov"><img src="assets/img/reports/ir2024.jpg" alt="Cover of Impact Report 2024" loading="lazy"></div><div class="rp-bd"><h3>Impact Report 2024</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2025/05/052025_FNPW_Year-In_Review-2024_Medium_FA.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2024</span></div><div class="rp-bd"><h3>Year in Review 2024</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2025/04/Foundation-for-National-Parks-and-Wildlife-FY24-Financial-statements.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2024</span></div><div class="rp-bd"><h3>Financial Statements 2024</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2025/01/Partnering-For-Impact-FNPW-Strategic-Plan-2025-2028.pdf" data-cat="strat"><div class="rp-cov t-strat"><span class="rp-typ">Strategy</span><span class="rp-yr">2025-28</span></div><div class="rp-bd"><h3>FNPW Strategy: Partnering for Impact</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2024/05/impact_report_final_artwork_digital_compressed.pdf" data-cat="impact"><div class="rp-cov t-impact"><span class="rp-typ">Impact Report</span><span class="rp-yr">2023</span></div><div class="rp-bd"><h3>Impact Report 2023</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2024/05/year_in_review_2023-13May.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2023</span></div><div class="rp-bd"><h3>Year in Review 2023</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2024/05/FNPW-Financial-statements-2023.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2023</span></div><div class="rp-bd"><h3>Financial Statements 2023</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2023/05/a-fnpw-impact-report-2022-29-May.pdf" data-cat="impact"><div class="rp-cov t-impact"><span class="rp-typ">Impact Report</span><span class="rp-yr">2022</span></div><div class="rp-bd"><h3>Impact Report 2022</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2023/05/2022-A-Year-in-Review-v02-18-May.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2022</span></div><div class="rp-bd"><h3>Year in Review 2022</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2023/04/Foundation-for-National-Parks-Wildlife-2022-Financial-Report.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2022</span></div><div class="rp-bd"><h3>Financial Report 2022</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2022/09/FNPW-Impact-Report-2021_V6-digital-1.pdf" data-cat="impact"><div class="rp-cov t-impact"><span class="rp-typ">Impact Report</span><span class="rp-yr">2021</span></div><div class="rp-bd"><h3>Impact Report 2021</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2022/04/FNPW-A-Year-in-Review-2021-Design_v5-LR.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2021</span></div><div class="rp-bd"><h3>Year in Review 2021</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2022/04/FNPW-2021-Financial-Report_2200405-SIGNED.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2021</span></div><div class="rp-bd"><h3>Financial Report 2021</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2021/05/FNPW-A-Year-in-Review-2020-Design_v3-1.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2020</span></div><div class="rp-bd"><h3>Year in Review 2020</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2021/04/2021-04-21_11-30-07-561.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2020</span></div><div class="rp-bd"><h3>Financial Report 2020</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2021/01/FNPW-YIR-2019.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2019</span></div><div class="rp-bd"><h3>Year in Review 2019</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2021/01/2019-FNPW-Financial-Report.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2019</span></div><div class="rp-bd"><h3>Financial Report 2019</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2021/01/FNPW-YIR-2018.pdf" data-cat="yir"><div class="rp-cov t-yir"><span class="rp-typ">Year in Review</span><span class="rp-yr">2018</span></div><div class="rp-bd"><h3>Year in Review 2018</h3><span class="rp-dl">Download PDF &#8595;</span></div></a><a class="rp-c" href="https://fnpw.org.au/wp-content/uploads/2021/01/2018-FNPW-Financial-Report.pdf" data-cat="fin"><div class="rp-cov t-fin"><span class="rp-typ">Financials</span><span class="rp-yr">2018</span></div><div class="rp-bd"><h3>Financial Report 2018</h3><span class="rp-dl">Download PDF &#8595;</span></div></a>
     </div>
   </div>
 </section>
-
-<section style="background:var(--cream)">
-  <div class="cw">
-    <div class="rpt-g">
-
-      <div class="rpt rv">
-        <div class="rpt-bd">
-          <span class="rpt-type">Annual Report</span>
-          <h3>FNPW Annual Impact Report 2023&ndash;24</h3>
-          <p>Full-year review of conservation outcomes, financial performance and on-ground impact across all FNPW programs.</p>
-          <div class="rpt-foot"><span>2024 &middot; 44 pages &middot; PDF</span><a href="#" class="rpt-dl">Download</a></div>
-        </div>
-      </div>
-
-      <div class="rpt rv">
-        <div class="rpt-bd">
-          <span class="rpt-type">Annual Report</span>
-          <h3>FNPW Annual Impact Report 2022&ndash;23</h3>
-          <p>Celebrating 52 years of conservation and a milestone year for land protection, species recovery and community engagement.</p>
-          <div class="rpt-foot"><span>2023 &middot; 40 pages &middot; PDF</span><a href="#" class="rpt-dl">Download</a></div>
-        </div>
-      </div>
-
-      <div class="rpt wt rv">
-        <div class="rpt-bd">
-          <span class="rpt-type">Program Report</span>
-          <h3>Saving Species: Recovery Progress Report 2025</h3>
-          <p>Progress across 18 species recovery programs including wombat mange, mountain pygmy possum and growling grass frog.</p>
-          <div class="rpt-foot"><span>2025 &middot; 28 pages &middot; PDF</span><a href="#" class="rpt-dl">Download</a></div>
-        </div>
-      </div>
-
-      <div class="rpt wt rv">
-        <div class="rpt-bd">
-          <span class="rpt-type">Program Report</span>
-          <h3>Healing Our Land: Program Impact Report 2024</h3>
-          <p>A deep-dive into restoration outcomes across 12 sites in four states, covering native planting, weed control and ecological monitoring.</p>
-          <div class="rpt-foot"><span>2024 &middot; 32 pages &middot; PDF</span><a href="#" class="rpt-dl">Download</a></div>
-        </div>
-      </div>
-
-      <div class="rpt bk rv">
-        <div class="rpt-bd">
-          <span class="rpt-type">Program Report</span>
-          <h3>Growing Parks: Conservation Land Report 2025</h3>
-          <p>Summary of land acquisitions, partnerships and permanent protection outcomes, including the Mundoo Island conservation victory.</p>
-          <div class="rpt-foot"><span>2025 &middot; 24 pages &middot; PDF</span><a href="#" class="rpt-dl">Download</a></div>
-        </div>
-      </div>
-
-      <div class="rpt rf rv">
-        <div class="rpt-bd">
-          <span class="rpt-type">Financial</span>
-          <h3>Financial Summary &amp; Audited Statements 2023&ndash;24</h3>
-          <p>Audited financial statements, breakdown of program expenditure and fundraising performance for the 2023&ndash;24 financial year.</p>
-          <div class="rpt-foot"><span>2024 &middot; 20 pages &middot; PDF</span><a href="#" class="rpt-dl">Download</a></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="nl-strip">
   <div class="cw"><div class="nl-g rv">
     <div><span class="ey" style="color:var(--wattle)">Stay connected</span><h3 style="margin-top:.7rem">Monthly stories. Real impact. No spam.</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
@@ -290,5 +251,12 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<!-- rp-filter JS --><script>
+document.querySelectorAll('#rpf .fp').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('#rpf .fp').forEach(function(x){x.classList.remove('on')});
+  b.classList.add('on');var f=b.dataset.f;
+  document.querySelectorAll('.rp-c').forEach(function(c){c.style.display=(f==='all'||c.dataset.cat===f)?'':'none'});
+});});
+</script>
 </body>
 </html>
