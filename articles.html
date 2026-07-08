@@ -85,7 +85,7 @@
 
 /* v3.2 hero-normalize */
 .nh{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:var(--euc-deep)}
-.nh::before{content:"";position:absolute;inset:0;z-index:-2;background:url('https://fnpw.org.au/wp-content/uploads/2021/02/Eastern-Bristlebird.jpg') center/cover}
+.nh::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/bongil.jpg') center/cover}
 .nh::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.45),rgba(15,49,50,.78))}
 .nh h1{color:#fff}
 .nh .lede{color:rgba(255,255,255,.87)}
@@ -98,6 +98,15 @@
 .feat-bd{padding:2rem 2.4rem;justify-content:center}
 .art-im{aspect-ratio:16/10;overflow:hidden}
 .art-im img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* v4.1 hero-height */
+.nh{padding:9.5rem 0 4.5rem;min-height:0}
+
+/* v4.1 feat-crop: image statically fills its column, no white gap */
+.feat-card{align-items:stretch}
+.feat-img{aspect-ratio:auto;height:100%;min-height:340px;position:relative}
+.feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:880px){.feat-img{min-height:240px;height:auto;aspect-ratio:16/9}}
 </style>
 </head>
 <body>

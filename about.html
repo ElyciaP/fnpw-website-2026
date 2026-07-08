@@ -79,6 +79,19 @@
 .tc-in{padding:.9rem 1rem}
 .tc-n{font-size:.98rem}
 .tc-r{font-size:.82rem}
+
+/* v4.1 stories carousel */
+.abs-rail{display:flex;gap:1.3rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
+.abs-card{flex:0 0 min(310px,80vw);scroll-snap-align:start;text-decoration:none;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);transition:border-color .25s ease,transform .2s ease}
+.abs-card:hover{border-color:var(--wattle);transform:translateY(-3px)}
+.abs-im{aspect-ratio:16/10;overflow:hidden}
+.abs-im img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.abs-card:hover .abs-im img{transform:scale(1.05)}
+.abs-cat{display:inline-block;margin:1rem 1.2rem .3rem;font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wattle-soft)}
+.abs-card h3{margin:0 1.2rem .6rem;font-family:var(--ff-d);font-size:1.05rem;font-weight:700;line-height:1.3;color:#fff}
+.abs-go{display:inline-block;margin:0 1.2rem 1.2rem;font-family:var(--ff-d);font-weight:600;font-size:.84rem;color:var(--euc-soft)}
+.abs-arr{width:46px;height:46px;border:1.5px solid rgba(255,255,255,.6);background:transparent;color:#fff;font-size:1.1rem;cursor:pointer;transition:background .2s,color .2s}
+.abs-arr:hover{background:#fff;color:var(--euc-deep)}
 </style>
 </head>
 <body>
@@ -237,17 +250,18 @@
 
 <section class="abg">
   <div class="cw">
-    <span class="ey rv">The country we work for</span>
-    <h2 class="rv">Fifty-five years of views like these.</h2>
-    <div class="abg-rail rv d1">
-      <div class="abg-i"><img src="assets/img/hero-golden.jpg" alt="Golden hour over spinifex country" loading="lazy"><span>Outback at golden hour</span></div>
-      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Southern Flinders Ranges" loading="lazy"><span>Southern Flinders Ranges, SA</span></div>
-      <div class="abg-i"><img src="assets/img/bongil.jpg" alt="Bongil Bongil National Park" loading="lazy"><span>Bongil Bongil National Park, NSW</span></div>
-      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers on Country" loading="lazy"><span>Warddeken IPA, NT</span></div>
-      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="Koala" loading="lazy"><span>Southern Highlands, NSW</span></div>
-      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg" alt="Sturt National Park" loading="lazy"><span>Sturt National Park, NSW</span></div>
-      <div class="abg-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/LittlePenguins.jpg" alt="Little penguins" loading="lazy"><span>Granite Island, SA</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2rem">
+      <div class="rv"><span class="ey">From the field</span>
+      <h2 style="margin-bottom:0">Our latest stories.</h2></div>
+      <div style="display:flex;gap:.6rem">
+        <button class="abs-arr" data-dir="-1" aria-label="Previous stories">&#8592;</button>
+        <button class="abs-arr" data-dir="1" aria-label="More stories">&#8594;</button>
+      </div>
     </div>
+    <div class="abs-rail rv d1">
+
+    </div>
+    <p style="margin-top:1.4rem"><a class="hx-cta" style="color:var(--euc-soft)" href="news.html">All news &amp; stories<span class="hx-cta-line" aria-hidden="true"></span></a></p>
   </div>
 </section>
 <section class="ab-cta">
@@ -278,5 +292,11 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<!-- abs-arr JS --><script>
+document.querySelectorAll('.abs-arr').forEach(function(b){b.addEventListener('click',function(){
+  var r=document.querySelector('.abs-rail');var c=r.querySelector('.abs-card');
+  r.scrollBy({left:parseInt(b.dataset.dir,10)*(c.offsetWidth+21),behavior:'smooth'});
+});});
+</script>
 </body>
 </html>
