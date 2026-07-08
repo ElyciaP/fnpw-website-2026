@@ -16,7 +16,7 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
     html = f'''<!DOCTYPE html>
 <html lang="en-AU">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">\n<meta name="referrer" content="no-referrer">
 <title>{title} | Foundation for National Parks &amp; Wildlife</title>
 <meta name="description" content="{desc}">
 {FONTS}
