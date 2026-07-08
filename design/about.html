@@ -362,6 +362,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .chi h1{color:#fff}
 .chi .lede{color:rgba(255,255,255,.88)}
 
+/* === v4 contrast + layout fixes === */
+.pg{grid-template-columns:repeat(3,1fr)}
+@media(max-width:980px){.pg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.pg{grid-template-columns:1fr}}
+/* buttons keep their base even without .btn */
+.btn-p,.btn-o{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;border-radius:0;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:all .18s ease}
+.btn-p{border-color:var(--euc-deep)}
+/* dark sections: readable text, visible buttons */
+.sec.dark{color:#fff}
+.sec.dark h2,.sec.dark h3{color:#fff}
+.sec.dark p,.sec.dark .lede{color:rgba(255,255,255,.85)}
+.sec.dark .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--euc-deep)}
+.sec.dark .btn-p:hover{background:var(--wattle-soft);border-color:var(--wattle-soft);color:var(--euc-deep)}
+.sec.dark .btn-o{color:#fff;border-color:rgba(255,255,255,.65)}
+.sec.dark .btn-o:hover{background:#fff;color:var(--euc-deep);border-color:#fff}
+/* photographic heroes: readable breadcrumbs + wattle primary buttons */
+.chi nav,.chi nav a,.nh nav,.nh nav a,.ph nav,.ph nav a{color:rgba(255,255,255,.85)!important}
+.chi .btn-p,.nh .btn-p,.ph .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--euc-deep)}
+/* less green haze: clearer photo, scrim pushed to edges */
+.chi::before{opacity:.68}
+.chi::after{background:linear-gradient(180deg,rgba(15,49,50,.5) 0%,rgba(15,49,50,.22) 50%,rgba(15,49,50,.72) 100%)}
+
 </style>
 
 <style>
@@ -427,6 +449,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .abg-i img{display:block;height:340px;width:auto;object-fit:cover}
 .abg-i span{position:absolute;left:.8rem;bottom:.8rem;background:rgba(15,49,50,.78);color:#fff;font-size:.78rem;padding:.3rem .7rem}
 @media(max-width:700px){.abg-i img{height:230px}}
+
+/* v4 team sizing */
+.tm-g{grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:1.2rem}
+.tc-ph{aspect-ratio:1/1;height:auto;overflow:hidden}
+.tc-in{padding:.9rem 1rem}
+.tc-n{font-size:.98rem}
+.tc-r{font-size:.82rem}
 </style>
 </head>
 <body>

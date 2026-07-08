@@ -54,21 +54,22 @@ def feature(img, alt, title, paras, points, cta_label, cta_href, flip=False):
     return f'<div class="two" style="align-items:center;margin-bottom:5rem">{inner}</div>'
 
 WY_CSS = '''
-.wy-intro{padding:5rem 0 3.5rem;background:var(--cream)}
-.wy-panel{position:relative;min-height:66vh;display:flex;align-items:center;isolation:isolate;overflow:hidden}
-.wy-panel::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--wy) center/cover}
-.wy-panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,.5) 52%,rgba(15,49,50,.12) 100%)}
-.wy-panel.alt::after{background:linear-gradient(270deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,.5) 52%,rgba(15,49,50,.12) 100%)}
-.wy-bd{position:relative;color:#fff;max-width:530px;padding:4.5rem 0}
-.wy-panel.alt .wy-bd{margin-left:auto;text-align:left}
-.wy-i{font-family:var(--ff-d);font-weight:800;font-size:2.1rem;color:transparent;-webkit-text-stroke:1.4px var(--wattle)}
+.wy-intro{padding:5rem 0 3rem;background:var(--cream)}
+.wy-wrap{background:var(--cream);padding:0 0 5.5rem}
+.wy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.wy-panel{position:relative;min-height:600px;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden}
+.wy-panel::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--wy) center/cover;transition:transform .7s ease}
+.wy-panel:hover::before{transform:scale(1.04)}
+.wy-panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.12) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.94) 100%)}
+.wy-bd{position:relative;color:#fff;padding:2.4rem 2.2rem}
+.wy-i{font-family:var(--ff-d);font-weight:800;font-size:2rem;color:transparent;-webkit-text-stroke:1.4px var(--wattle)}
 .wy-tag{font-family:var(--ff-h);font-size:1.35rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block;margin-left:.7rem}
-.wy-bd h3{font-family:var(--ff-d);font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin:.5rem 0 1rem}
-.wy-bd p{color:rgba(255,255,255,.9);margin-bottom:.8rem}
-.wy-bd ul{padding-left:1.2rem;display:grid;gap:.45rem;margin:.9rem 0 1.6rem;color:rgba(255,255,255,.85);font-size:.95rem}
-.wy-btn{display:inline-block;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:600;padding:.95rem 2rem;text-decoration:none;transition:transform .18s ease}
+.wy-bd h3{font-family:var(--ff-d);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;letter-spacing:-.02em;margin:.5rem 0 .9rem;color:#fff}
+.wy-bd p{color:rgba(255,255,255,.92);margin-bottom:.7rem;font-size:.97rem}
+.wy-bd ul{padding-left:1.2rem;display:grid;gap:.4rem;margin:.8rem 0 1.4rem;color:rgba(255,255,255,.88);font-size:.92rem}
+.wy-btn{display:inline-block;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:600;padding:.9rem 1.9rem;text-decoration:none;transition:transform .18s ease}
 .wy-btn:hover{transform:translateY(-2px)}
-@media(max-width:760px){.wy-panel{min-height:0}.wy-bd{max-width:none;padding:3.5rem 0}}
+@media(max-width:860px){.wy-grid{grid-template-columns:1fr}.wy-panel{min-height:480px}}
 '''
 
 def wy_panels():
@@ -109,16 +110,19 @@ def wy_panels():
     out = ['<section class="wy-intro"><div class="cw rv"><span class="ey">Ways to give</span>'
            '<h2 style="margin:.8rem 0 .6rem;max-width:26ch">Money, planted where it grows the most.</h2>'
            '<p style="max-width:56ch">Four ways to give, each photographed where the money ends up.</p></div></section>']
+    panels = []
     for num, tag, title, img, paras, points, cta, href, alt in P:
         pts = ''.join(f'<li>{x}</li>' for x in points)
         ps = ''.join(f'<p>{x}</p>' for x in paras)
-        out.append(
-            f'<section class="wy-panel{" alt" if alt else ""}" style="--wy:url(\'{img}\')">'
-            f'<div class="cw"><div class="wy-bd rv">'
+        panels.append(
+            f'<div class="wy-panel rv" style="--wy:url(\'{img}\')">'
+            f'<div class="wy-bd">'
             f'<span class="wy-i">{num}</span><span class="wy-tag">{tag}</span>'
             f'<h3>{title}</h3>{ps}<ul>{pts}</ul>'
             f'<a class="wy-btn" href="{href}">{cta}</a>'
-            f'</div></div></section>')
+            f'</div></div>')
+    out.append('<section class="wy-wrap"><div class="cw"><div class="wy-grid">'
+               + ''.join(panels) + '</div></div></section>')
     return ''.join(out)
 
 def numbered_steps(steps):

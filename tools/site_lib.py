@@ -46,7 +46,7 @@ def crumb(label):
 U_ = 'https://fnpw.org.au/wp-content/uploads/'
 # crumb label -> photographic hero (image, alt). Pages not listed fall back to flat.
 HERO_IMGS = {
-    'Get Involved': (U_+'2021/01/children-Biodiversity-discovery-native-flora-banksia-seed-cones.jpg', 'Children discovering native flora'),
+    'Get Involved': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Morning light over Woomargama National Park'),
     'Project Partnerships': (U_+'2021/01/K2W-GER-Aerial.jpg', 'Aerial view of the Great Eastern Ranges'),
     'Workplace Giving': (U_+'2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Bushcare volunteers at work'),
     'Fundraising': (U_+'2021/02/Phillip-Island-Ambassadors.jpg', 'Youth wildlife ambassadors'),
