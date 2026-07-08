@@ -471,20 +471,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .abs-arr{width:46px;height:46px;border:1.5px solid rgba(255,255,255,.6);background:transparent;color:#fff;font-size:1.1rem;cursor:pointer;transition:background .2s,color .2s}
 .abs-arr:hover{background:#fff;color:var(--euc-deep)}
 
-/* v5 draggable 55-years timeline */
-.tl{background:var(--euc-deep);color:#fff;padding:5.5rem 0;overflow:hidden}
-.tl .ey{color:var(--euc-soft)}
-.tl h2{color:#fff;font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;margin:.8rem 0 .5rem}
-.tl-hint{font-family:var(--ff-h);font-size:1.3rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block}
-.tl-rail{display:flex;overflow-x:auto;cursor:grab;padding:2.6rem 0 1.2rem;user-select:none;-webkit-user-select:none;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
-.tl-rail.drag{cursor:grabbing}
-.tl-i{flex:0 0 300px;padding-right:2.2rem;position:relative}
-.tl-i::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:rgba(255,255,255,.25)}
-.tl-dot{position:relative;display:block;width:11px;height:11px;background:var(--wattle);border-radius:50%;margin-bottom:1.2rem;z-index:1}
-.tl-yr{display:block;font-family:var(--ff-d);font-weight:800;font-size:2.2rem;letter-spacing:-.02em;color:var(--euc-soft);margin-bottom:.7rem;line-height:1}
-.tl-i img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:.9rem;pointer-events:none}
-.tl-i p{font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.55;max-width:36ch}
-@media(max-width:600px){.tl-i{flex-basis:250px}}
+/* v5.1 centre-spine draggable timeline */
+.ht{background:var(--euc-deep);color:#fff;padding:5.5rem 0 4rem;overflow:hidden}
+.ht-hint{font-family:var(--ff-h);font-size:1.3rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block}
+.ht-railwrap{margin-top:1.5rem}
+.ht-rail{display:flex;overflow-x:auto;cursor:grab;user-select:none;-webkit-user-select:none;padding:0 max(calc((100vw - 1240px)/2),24px) 1rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
+.ht-rail.drag{cursor:grabbing}
+.ht-i{flex:0 0 400px;position:relative;height:480px}
+.ht-i::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--euc-soft);opacity:.9}
+.ht-dot{position:absolute;left:0;top:50%;width:17px;height:17px;border-radius:50%;background:var(--wattle);border:3.5px solid var(--euc-deep);outline:2px solid var(--wattle);transform:translateY(-50%);z-index:1}
+.ht-stem{position:absolute;left:7px;border-left:2px dashed rgba(255,255,255,.4);height:30px}
+.ht-i:nth-child(odd) .ht-stem{bottom:50%;margin-bottom:10px}
+.ht-i:nth-child(even) .ht-stem{top:50%;margin-top:10px}
+.ht-bd{position:absolute;left:0;width:330px}
+.ht-i:nth-child(odd) .ht-bd{bottom:calc(50% + 44px)}
+.ht-i:nth-child(even) .ht-bd{top:calc(50% + 44px)}
+.ht-yr{display:block;font-family:var(--ff-d);font-weight:800;font-size:1.8rem;letter-spacing:-.02em;color:var(--wattle);margin-bottom:.5rem;line-height:1}
+.ht-bd p{font-size:.97rem;line-height:1.6;color:rgba(255,255,255,.9)}
+@media(max-width:640px){.ht-i{flex-basis:320px;height:440px}.ht-bd{width:270px}}
 </style>
 </head>
 <body>
@@ -621,44 +625,44 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     </div>
   </div>
 </section>
-<section class="tl">
+<section class="ht">
   <div class="cw">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
-      <div class="rv"><span class="ey">Since 1970</span>
-      <h2>55 years of impact.</h2>
-      <span class="tl-hint">drag back through the decades &#8594;</span></div>
+      <div class="rv"><span class="ey" style="color:var(--euc-soft)">Since 1970</span>
+      <h2 style="color:#fff;font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;margin:.8rem 0 .5rem">55 years of impact.</h2>
+      <span class="ht-hint">drag back through the decades &#8594;</span></div>
       <div style="display:flex;gap:.6rem">
-        <button class="abs-arr tl-arr" data-dir="-1" aria-label="Earlier milestones">&#8592;</button>
-        <button class="abs-arr tl-arr" data-dir="1" aria-label="Later milestones">&#8594;</button>
+        <button class="abs-arr ht-arr" data-dir="-1" aria-label="Later milestones">&#8592;</button>
+        <button class="abs-arr ht-arr" data-dir="1" aria-label="Earlier milestones">&#8594;</button>
       </div>
     </div>
   </div>
-  <div class="cw">
-    <div class="tl-rail rv d1" id="tlRail" aria-label="FNPW timeline, 1970 to 2025, drag or use arrow buttons">
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2025</span><p>FNPW celebrates 55 years of conservation and partners to help secure 1,900 hectares at Mundoo Island Station in South Australia for permanent protection.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2024</span><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia.png" alt="Native tree seedlings" loading="lazy" draggable="false"><p>One million trees planted in key priority areas across Australia, delivered with 30 community nurseries.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2023</span><img src="assets/img/tl-wombat.jpg" alt="Wombat receiving mange treatment" loading="lazy" draggable="false"><p>The Curb Wombat Mange Program launches, providing treatment and resources to community groups and volunteers across Australia.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2022</span><p>The Gondwana Project begins at Luke&rsquo;s Farm. 1 Million Turtles engages schools and communities, Fire Wise launches, and the Bandicoot Super Highway starts restoring habitat corridors.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2021</span><img src="https://fnpw.org.au/wp-content/uploads/2022/02/mpp_dept_environment_and_primaryIndustries2_VIC_edited-scaled-e1683699811709.jpg" alt="Mountain pygmy possum" loading="lazy" draggable="false"><p>FNPW is named Australian Charity of the Year. The Mountain Pygmy Possum Breeding Centre begins construction, and the $8 million Remarkable Southern Flinders Project begins, connecting 30,000 hectares.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2020</span><p>Healing our Land launches after the 2019/20 bushfires with a commitment to plant one million trees in five years. The Governor-General acknowledges FNPW&rsquo;s 50th anniversary at Admiralty House.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2019</span><p>Wildlife Heroes commences, supporting over 10,000 wildlife rescue volunteers across Australia. FNPW, the SA Government and the Flinders Ranges Ediacara Foundation purchase 60,000 hectares of Nilpena Station.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2018</span><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Ascent-37-Woomargama-2000px-Copy.jpg" alt="Woomargama National Park" loading="lazy" draggable="false"><p>FNPW purchases 229 hectares to extend Woomargama National Park in NSW, home to some 25 endangered or vulnerable species.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2016</span><p>FNPW funds the first and largest national river study of turtles in a campaign to save the Murray River turtle.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2015</span><img src="https://fnpw.org.au/wp-content/uploads/2021/01/LittlePenguins.jpg" alt="Little penguins" loading="lazy" draggable="false"><p>FNPW&rsquo;s first crowd-funding campaign rallies the community for Manly&rsquo;s Little Penguins: cameras, lights and nesting boxes installed to prevent fox attacks.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2012</span><p>The Voluntary Heritage Estates Land project supports FNPW&rsquo;s mission to acquire heritage sites for the public estate.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2010</span><p>The Backyard Buddies microsite launches.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2008</span><p>The Private Land Conservation Grant Program launches to increase high-value conservation areas on private land.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2005</span><p>Green Gully is purchased as a stronghold for the endangered Brush-tailed Rock-wallaby.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2001</span><p>The Wollemi Pine Recovery Program launches to protect the species in the wild.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">2000</span><p>FNPW expands its focus from NSW to Australia-wide.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1996</span><p>The Friends of National Parks community is established with the support of AGL.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1994</span><p>Bushfires ravage NSW. FNPW achieves over $1 million in funding to support the response.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1993</span><p>The Gap Bluff Centre is established as the flagship of the Foundation, providing education on wildlife.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1983</span><p>Maroota Historic Site in the Hornsby area is reserved to protect Aboriginal art and engravings.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1980</span><p>Operation &ldquo;Cheese lift&rdquo; to Lord Howe Island provides a protein supplement for the woodhen population, part of over $250,000 of funding for the species.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1979</span><p>FNPW purchases Mallee Cliffs National Park: 58,000 hectares in south-west NSW protecting Malleefowl habitat.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1972</span><p>FNPW launches its first donor appeal at Greycliffe House, Sydney Harbour National Park HQ.</p></div>
-<div class="tl-i"><span class="tl-dot"></span><span class="tl-yr">1970</span><img src="https://fnpw.org.au/wp-content/uploads/2020/11/Founder_Positional@2x.png" alt="The Hon. Tom Lewis AO" loading="lazy" draggable="false"><p>On 29 June, FNPW is established by NSW Lands Minister the Hon. Thomas Lancelot Lewis AO, later the state&rsquo;s Premier. On 31 July, FNPW announces its first acquisition: Mount King Station in north-west NSW.</p></div>
+  <div class="ht-railwrap">
+    <div class="ht-rail" id="htRail" aria-label="FNPW timeline, 2025 back to 1970. Drag sideways or use the arrow buttons.">
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2025</span><p>FNPW celebrates 55 years of conservation and partners to help secure 1,900 hectares at Mundoo Island Station, SA, for permanent protection.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2024</span><p>One million trees planted in key priority areas across Australia, delivered with 30 community nurseries.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2023</span><p>The Curb Wombat Mange Program launches, providing treatment and resources to community groups and volunteers nationwide.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2022</span><p>The Gondwana Project begins at Luke&rsquo;s Farm; 1 Million Turtles, Fire Wise and the Bandicoot Super Highway all launch.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2021</span><p>Named Australian Charity of the Year. The Mountain Pygmy Possum Breeding Centre and the $8m Remarkable Southern Flinders Project begin.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2020</span><p>Healing our Land launches after the Black Summer fires: one million trees pledged in five years. The Governor-General marks our 50th anniversary.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2019</span><p>Wildlife Heroes begins, backing 10,000+ rescue volunteers. 60,000 hectares of Nilpena Station purchased with SA Government and partners.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2018</span><p>229 hectares purchased to extend Woomargama National Park, home to some 25 endangered or vulnerable species.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2016</span><p>FNPW funds the first and largest national river study of turtles to save the Murray River turtle.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2015</span><p>Our first crowd-funding campaign protects Manly&rsquo;s Little Penguins with cameras, lights and nesting boxes.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2012</span><p>The Voluntary Heritage Estates Land project begins acquiring heritage sites for the public estate.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2010</span><p>The Backyard Buddies microsite launches.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2008</span><p>The Private Land Conservation Grant Program launches to grow conservation on private land.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2005</span><p>Green Gully is purchased as a stronghold for the endangered Brush-tailed Rock-wallaby.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2001</span><p>The Wollemi Pine Recovery Program launches to protect the species in the wild.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">2000</span><p>FNPW expands its focus from NSW to Australia-wide.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1996</span><p>The Friends of National Parks community is established with the support of AGL.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1994</span><p>Bushfires ravage NSW. FNPW raises over $1 million in funding to support the response.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1993</span><p>The Gap Bluff Centre is established as the Foundation&rsquo;s flagship for wildlife education.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1983</span><p>Maroota Historic Site is reserved to protect Aboriginal art and engravings.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1980</span><p>Operation &ldquo;Cheese lift&rdquo; flies protein supplements to Lord Howe Island&rsquo;s woodhen, part of $250,000+ for the species.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1979</span><p>Mallee Cliffs National Park purchased: 58,000 hectares protecting Malleefowl habitat.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1972</span><p>Our first donor appeal launches at Greycliffe House, Sydney Harbour National Park HQ.</p></div></div>
+<div class="ht-i"><span class="ht-dot"></span><span class="ht-stem"></span><div class="ht-bd"><span class="ht-yr">1970</span><p>FNPW is established by NSW Lands Minister the Hon. Tom Lewis AO. First acquisition announced weeks later: Mount King Station, NW NSW.</p></div></div>
     </div>
   </div>
 </section>
@@ -814,15 +818,15 @@ document.querySelectorAll('.abs-arr').forEach(function(b){b.addEventListener('cl
   r.scrollBy({left:parseInt(b.dataset.dir,10)*(c.offsetWidth+21),behavior:'smooth'});
 });});
 </script>
-<!-- tl JS --><script>
+<!-- ht JS --><script>
 (function(){
-  var r=document.getElementById('tlRail');if(!r)return;
+  var r=document.getElementById('htRail');if(!r)return;
   var down=false,sx=0,sl=0;
   r.addEventListener('mousedown',function(e){down=true;r.classList.add('drag');sx=e.pageX;sl=r.scrollLeft;e.preventDefault()});
   window.addEventListener('mouseup',function(){down=false;r.classList.remove('drag')});
   window.addEventListener('mousemove',function(e){if(!down)return;r.scrollLeft=sl-(e.pageX-sx)});
-  document.querySelectorAll('.tl-arr').forEach(function(b){b.addEventListener('click',function(){
-    r.scrollBy({left:parseInt(b.dataset.dir,10)*320,behavior:'smooth'});
+  document.querySelectorAll('.ht-arr').forEach(function(b){b.addEventListener('click',function(){
+    r.scrollBy({left:parseInt(b.dataset.dir,10)*420,behavior:'smooth'});
   })});
 })();
 </script>
