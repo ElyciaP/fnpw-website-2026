@@ -9,13 +9,13 @@ Then run:  python3 tools/gen_map.py
 import json, math, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CX0, CY0, CW, CH = 40, 270, 1960, 1420   # calibration of assets/img/projects-map.png
+# calibration of assets/img/projects-map.png (official priority-areas artwork, 2461x2115 source)
+CW, CH = 2461, 2115
 
 def px(lat, lon):
-    x = 330 + (lon-113)*34.85 - CX0
-    y = 300 + (-10.7-lat)*40.37 - CY0
-    if lat < -40: x -= 140   # stylised Tasmania offset
-    return x, y
+    if lat < -40:  # Tasmania has its own frame on this artwork
+        return -6571.1 + lon*57.03, -1340.9 + (-lat)*76.92
+    return -5535.9 + lon*49.83, -522.2 + (-lat)*56.05
 
 PIL_LABEL = {'parks':('Growing National Parks','pb-parks'),
              'species':('Saving Species','pb-species'),
