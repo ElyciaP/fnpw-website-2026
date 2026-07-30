@@ -112,6 +112,12 @@
 .ht-yr{display:block;font-family:var(--ff-d);font-weight:800;font-size:1.8rem;letter-spacing:-.02em;color:var(--wattle);margin-bottom:.5rem;line-height:1}
 .ht-bd p{font-size:.97rem;line-height:1.6;color:rgba(255,255,255,.9)}
 @media(max-width:640px){.ht-i{flex-basis:320px;height:440px}.ht-bd{width:270px}}
+/* About: story / how-we-work image splits */
+.ab-split{display:grid;grid-template-columns:1.15fr .85fr;gap:4.5rem;align-items:center}
+.ab-split.rev{grid-template-columns:.85fr 1.15fr}
+.ab-split .framed img{width:100%;display:block}
+.ab-p{font-size:1.05rem;line-height:1.7}
+@media(max-width:820px){.ab-split,.ab-split.rev{grid-template-columns:1fr;gap:2.6rem}}
 </style>
 </head>
 <body>
@@ -171,24 +177,31 @@
 </section>
 
 <section class="sec" style="background:var(--cream);padding:6rem 0">
-
-  <div class="cw"><div class="two">
-    <div class="rv"><span class="ey">Our story</span><h2 style="margin-top:1rem">A foundation built on partnership.</h2></div>
-    <div class="rv d2">
-      <p style="font-size:1.05rem;line-height:1.7">Founded on 29 June 1970 by the Hon. Tom Lewis AO as the fundraising arm of the NSW National Parks &amp; Wildlife Service, FNPW was built, from the very start, on partnership. More than 55 years on, we&rsquo;re a national not-for-profit dedicated to safeguarding Australia&rsquo;s biodiversity and natural environment. As a trusted conservation leader, we work to protect endangered species, restore vital ecosystems and secure the long-term health of Country through Indigenous knowledge, science-led and community-driven action.</p>
-      <p style="font-size:1.05rem;line-height:1.7;margin-top:1.1rem">We do this because the stakes have never been higher. Australia is home to some of the most extraordinary biodiversity on Earth, yet more than 2,000 native species are now at risk of extinction as climate change, habitat loss and invasive species accelerate ecological decline. Protecting our natural heritage isn&rsquo;t optional &mdash; it&rsquo;s a responsibility we owe to future generations. That&rsquo;s why we&rsquo;re committed to helping protect 30% of Australia&rsquo;s land and sea by 2030, in line with the Global Biodiversity Framework, combining First Nations knowledge with modern conservation science to deliver stronger, more sustainable outcomes for the country&rsquo;s lands, waters and wildlife.</p>
+  <div class="cw">
+    <div class="ab-split">
+      <div class="rv">
+        <span class="ey">Our story</span>
+        <h2 style="margin:1rem 0 1.4rem">A foundation built on partnership.</h2>
+        <p class="ab-p">Established in 1970 as the fundraising arm of the NSW National Parks &amp; Wildlife Service, FNPW was built on partnership from day one. Today we&rsquo;re a national not-for-profit and trusted conservation leader &mdash; protecting endangered species, restoring vital ecosystems and securing the long-term health of Country through Indigenous knowledge and science-led, community-driven action.</p>
+        <p class="ab-p" style="margin-top:1.1rem">We do it because the stakes have never been higher. More than 2,000 native species are now at risk of extinction, and protecting our natural heritage is a responsibility we owe to future generations. By combining First Nations knowledge with modern conservation science, we deliver stronger, more sustainable outcomes for Australia&rsquo;s lands, waters and wildlife.</p>
+      </div>
+      <div class="rv d2 framed wt"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/K2W-GER-Aerial.jpg" alt="Aerial view of a protected landscape in the Kanangra-Boyd to Wyangala wildlife corridor" loading="lazy"></div>
     </div>
-  </div></div>
+  </div>
 </section>
 
-<section class="sec" style="background:var(--sand);padding:6rem 0">
-  <div class="cw"><div class="two">
-    <div class="rv"><span class="ey">How we work</span><h2 style="margin-top:1rem">Science, culture and community, working as one.</h2></div>
-    <div class="rv d2">
-      <p style="font-size:1.05rem;line-height:1.7">We focus on healing landscapes, protecting native species and expanding protected areas through Indigenous knowledge, science-led and community-powered conservation. By prioritising high-impact regions and the species most under threat, our work helps restore ecosystems, strengthen biodiversity and build resilience in the face of climate change.</p>
-      <p style="font-size:1.05rem;line-height:1.7;margin-top:1.1rem">We bring together First Nations communities, scientists, government agencies, corporates and everyday Australians to care for Country and safeguard biodiversity. Our work blends modern science with 65,000 years of Indigenous knowledge, ensuring long-term resilience for both ecosystems and communities.</p>
+<section class="sec" style="background:var(--paper);padding:6rem 0">
+  <div class="cw">
+    <div class="ab-split rev">
+      <div class="rv framed bk"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Ascent-37-Woomargama-2000px-Copy.jpg" alt="Hands holding a native seedling ready for planting" loading="lazy"></div>
+      <div class="rv d2">
+        <span class="ey">How we work</span>
+        <h2 style="margin:1rem 0 1.4rem">Science, culture and community, working as one.</h2>
+        <p class="ab-p">We heal landscapes, protect native species and expand protected areas through Indigenous knowledge and science-led, community-powered conservation. By prioritising high-impact regions and the species most at risk, we help ecosystems recover and build resilience against a changing climate.</p>
+        <p class="ab-p" style="margin-top:1.1rem">We bring together First Nations communities, scientists, government, corporates and everyday Australians to care for Country &mdash; blending modern science with 65,000 years of Indigenous knowledge for lasting results.</p>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
 
 <section class="ac-sec">
