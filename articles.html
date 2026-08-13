@@ -49,6 +49,11 @@
 .filters-news{padding:2.5rem 0 1.5rem;background:var(--cream);border-bottom:1px solid var(--rule)}
 .fn-r{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
 .fn-r .lb{font-size:.78rem;color:var(--stone);letter-spacing:.1em;text-transform:uppercase;margin-right:.5rem}
+.fn-r .sortwrap{margin-left:auto}
+.sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
+.psel{font-family:var(--ff-b);font-size:.86rem;font-weight:600;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2.2em .5em .9em;cursor:pointer;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230F3132' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8em center}
+.psel:hover,.psel:focus{border-color:var(--euc);color:var(--euc);outline:none}
+@media(max-width:600px){.fn-r .sortwrap{margin-left:0;width:100%;justify-content:space-between}}
 
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3.5rem 0 5rem;background:var(--cream)}
 @media(max-width:1000px){.art-grid{grid-template-columns:repeat(2,1fr)}}
@@ -196,6 +201,13 @@
       <button class="fp sp" data-f="species">Saving Species</button>
       <button class="fp hl" data-f="heal">Healing Land</button>
       <button class="fp" data-f="news">News &amp; Events</button>
+      <label class="sortwrap">Sort by
+        <select class="psel" id="asort">
+          <option value="recent">Most recent</option>
+          <option value="az">A to Z</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </label>
     </div>
   </div>
 </section>
@@ -321,6 +333,30 @@
       a.style.display=(f==='all'||k===f)?'':'none';
     });
   })});
+})();
+</script>
+<script>
+(function(){
+  var grid=document.querySelector('.art-grid'); if(!grid)return;
+  var M={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+  var cards=[].slice.call(grid.querySelectorAll('.art'));
+  cards.forEach(function(a,i){
+    a.dataset.idx=i;
+    a.dataset.title=(a.querySelector('h3')?a.querySelector('h3').textContent:'').trim();
+    var d=a.querySelector('.art-date');
+    var p=d?d.textContent.split('·')[0].trim().split(/\s+/):[];
+    var ts=0; if(p.length>=3){var mo=M[(p[1]||'').slice(0,3).toLowerCase()]; ts=new Date(+p[2],mo||0,+p[0]).getTime();}
+    a.dataset.ts=isNaN(ts)?0:ts;
+  });
+  var sel=document.getElementById('asort'); if(!sel)return;
+  sel.addEventListener('change',function(e){
+    var m=e.target.value;
+    cards.slice().sort(function(a,b){
+      if(m==='az')return a.dataset.title.localeCompare(b.dataset.title,'en',{numeric:true,sensitivity:'base'});
+      if(m==='oldest')return (+a.dataset.ts)-(+b.dataset.ts);
+      return (+b.dataset.ts)-(+a.dataset.ts);
+    }).forEach(function(c){grid.appendChild(c);});
+  });
 })();
 </script>
 </body>
