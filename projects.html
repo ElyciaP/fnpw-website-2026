@@ -45,7 +45,7 @@
 .mm .mt2{font-size:.78rem;color:var(--stone)}
 
 .fb{padding:2rem 0;background:rgba(250,246,242,.95);backdrop-filter:blur(10px);position:sticky;top:72px;z-index:30;border-bottom:1px solid var(--rule)}
-.fb-r{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.fb-r{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
 .fps{display:flex;gap:.5rem;flex-wrap:wrap}
 .fp{font-size:.82rem;font-weight:600;padding:.5em 1em;border-radius:0;border:1.5px solid var(--rule);background:var(--white);color:var(--char);cursor:pointer;transition:.25s}
 .fp:hover{border-color:var(--euc);color:var(--euc)}
@@ -279,7 +279,12 @@
 .proj-hero{position:relative;isolation:isolate;overflow:hidden}
 .proj-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/bongil.jpg') center/cover}
 .proj-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.62),rgba(15,49,50,.88))}
-.pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone)}
+.pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone);flex-basis:100%}
+.fb-right{display:flex;flex-direction:column;align-items:flex-end;gap:.55rem}
+.sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
+.psel{font-family:var(--ff-b);font-size:.86rem;font-weight:600;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2.2em .5em .9em;cursor:pointer;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230F3132' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8em center}
+.psel:hover,.psel:focus{border-color:var(--euc);color:var(--euc);outline:none}
+#fmeta{font-size:.85rem;color:var(--stone);font-style:italic}
 .pil-deep a{color:var(--euc);font-weight:600}
 
 /* v6 interactive impact-report map */
@@ -312,7 +317,16 @@
       <button class="fp sp" data-f="species">Saving Species</button>
       <button class="fp hl" data-f="heal">Healing Land</button>
     </div>
-    <div style="font-size:.85rem;color:var(--stone);font-style:italic" id="fmeta">Showing all 83 projects</div>
+    <div class="fb-right">
+      <label class="sortwrap">Sort by
+        <select class="psel" id="psort">
+          <option value="recent">Most recent</option>
+          <option value="az">A to Z</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </label>
+      <div id="fmeta">Showing all 83 projects</div>
+    </div>
 <p class="pil-deep">Want the full story of each pillar? <a href="growing-national-parks.html">Growing National Parks</a> &#183; <a href="saving-species.html">Saving Species</a> &#183; <a href="healing-the-land.html">Healing the Land</a></p>
   </div></div>
 </div>
@@ -426,6 +440,16 @@ document.querySelectorAll('#fps .fp').forEach(b=>b.addEventListener('click',()=>
   document.querySelectorAll('#pgrid .pc').forEach(x=>{const s=f==='all'||x.dataset.pil===f;x.style.display=s?'':'none';if(s)c++});
   document.getElementById('fmeta').textContent=`Showing ${c} project${c===1?'':'s'}`;
 }));
+const _grid=document.getElementById('pgrid');
+[..._grid.querySelectorAll('.pc')].forEach((c,i)=>{c.dataset.idx=i;c.dataset.title=(c.querySelector('h3').textContent||'').trim();});
+document.getElementById('psort').addEventListener('change',e=>{
+  const mode=e.target.value;
+  [..._grid.querySelectorAll('.pc')].sort((a,b)=>{
+    if(mode==='az')return a.dataset.title.localeCompare(b.dataset.title,'en',{numeric:true,sensitivity:'base'});
+    if(mode==='oldest')return (+b.dataset.idx)-(+a.dataset.idx);
+    return (+a.dataset.idx)-(+b.dataset.idx);
+  }).forEach(c=>_grid.appendChild(c));
+});
 const po=document.getElementById('po'),ppx=document.getElementById('ppx');
 function op(id){const p=PD.find(x=>x.id===id);if(!p)return;document.getElementById('ppi').src=p.img;document.getElementById('ppi').alt=p.name;document.getElementById('pph').textContent=p.name;document.getElementById('ppt').textContent=PN[p.pil]+' · '+p.loc;document.getElementById('pps').innerHTML=p.stats.map(s=>`<div class="ps"><strong>${s[0]}</strong><span>${s[1]}</span></div>`).join('');document.getElementById('ppc').innerHTML=p.body;po.classList.add('open');document.body.style.overflow='hidden'}
 function cp(){po.classList.remove('open');document.body.style.overflow=''}
