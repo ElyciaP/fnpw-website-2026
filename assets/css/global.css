@@ -9,7 +9,7 @@
   --hovea:#703985;--hovea-mid:#9A5FAD;--hovea-soft:#DBD1EC;--hovea-pale:#F2EBF6;
   /* Earthy warms */
   --bark:#AB7341;--bark-mid:#85735E;--bark-soft:#D9C4A6;
-  --red-soil:#B64629;--red-soil-bright:#E26539;--red-soil-soft:#FFAA8A;
+  --red-soil:#B64629;--red-soil-dk:#8E3821;--red-soil-bright:#E26539;--red-soil-soft:#FFAA8A;
   --wattle:#C4A927;--wattle-dk:#9F8506;--wattle-soft:#F8EEA9;
   --soil:#241914;
   /* Neutrals */
@@ -371,3 +371,51 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 /* less green haze: clearer photo, scrim pushed to edges */
 .chi::before{opacity:.68}
 .chi::after{background:linear-gradient(180deg,rgba(15,49,50,.5) 0%,rgba(15,49,50,.22) 50%,rgba(15,49,50,.72) 100%)}
+
+
+/* ============================================================
+   ARTICLE CARD  ·  promoted from articles.html so the pillar
+   pages can share it. Page-level padding stays on the page.
+   ============================================================ */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.art{background:var(--white);border:1px solid var(--rule);border-radius:0;overflow:hidden;display:flex;flex-direction:column;transition:.35s;text-decoration:none;color:inherit}
+.art:hover{transform:translateY(-5px);box-shadow:0 24px 50px -22px rgba(15,49,50,.22);border-color:var(--euc);opacity:1}
+.art-im{aspect-ratio:16/10;overflow:hidden;background:var(--euc);position:relative}
+.art-im img{width:100%;height:100%;object-fit:cover;display:block;transition:1.2s}
+.art:hover .art-im img{transform:scale(1.06)}
+.art-im .cat{position:absolute;top:1rem;left:1rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.94);padding:.4em .9em;color:var(--euc-deep);backdrop-filter:blur(8px);z-index:2}
+.art-im .cat.sp,.art-im .cat.species{color:var(--waratah-dk);background:rgba(255,236,238,.95)}
+.art-im .cat.hl,.art-im .cat.heal{color:var(--wattle-dk);background:rgba(255,247,217,.95)}
+.art-im .cat.news{color:var(--hovea);background:rgba(238,232,255,.95)}
+.art-bd{padding:1.5rem 1.5rem 1.6rem;flex:1;display:flex;flex-direction:column}
+.art-date{font-size:.78rem;color:var(--stone);margin-bottom:.5rem;letter-spacing:.04em}
+.art-bd h3{font-size:1.18rem;line-height:1.25;margin-bottom:.7rem;color:var(--euc-deep)}
+.art-bd p{font-size:.92rem;line-height:1.55;color:var(--char);flex:1;margin-bottom:1rem}
+.art-link{font-size:.84rem;font-weight:600;color:var(--euc);display:inline-flex;align-items:center;gap:.4em}
+.art-link::after{content:"\2192";transition:.25s}
+.art:hover .art-link::after{transform:translateX(4px)}
+
+/* ============================================================
+   RELATED ARTICLES  ·  pillar pages
+   Sits between "Projects under this pillar" and "The other pillars".
+   Colour block behind the heading, cards overhang onto cream.
+   ============================================================ */
+.ra{background:var(--cream);padding-bottom:5.5rem}
+.ra-block{background:var(--ra-c,var(--euc));padding:4.5rem 0 9rem}
+.ra-block h2{color:var(--white)}
+.ra-block .ey{color:var(--white)}
+.ra-block .ey::before{background:var(--white)}
+.ra-block .btn-g{color:var(--white);border-color:rgba(255,255,255,.55)}
+.ra-block .btn-g:hover{color:var(--white);opacity:.82}
+.ra-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.ra-head h2{margin:.8rem 0 0}
+.ra-head .btn-g{margin-bottom:.35rem}
+.ra-cards{margin-top:-7.5rem}
+.ra-parks{--ra-c:var(--euc)}
+.ra-species{--ra-c:var(--waratah-dk)}
+.ra-species .art-link{color:var(--waratah)}
+.ra-healing{--ra-c:var(--red-soil-dk)}
+.ra-healing .art-link{color:var(--red-soil)}
+@media(max-width:1000px){.art-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.ra-block{padding:3.5rem 0 8rem}.ra-cards{margin-top:-6.8rem}}
+@media(max-width:700px){.art-grid{grid-template-columns:1fr}.ra{padding-bottom:3.5rem}.ra-block{padding:3rem 0 7rem}.ra-cards{margin-top:-6rem}.ra-head{gap:.9rem}.ra-head .btn-g{margin-bottom:0}}
