@@ -73,20 +73,24 @@
 @media(max-width:920px){.hx-pilrow{grid-template-columns:1fr}.hx-pil-im{aspect-ratio:16/9}}
 
 /* --- impact band --- */
-.hx-impact{position:relative;background:var(--euc-deep);color:#fff;padding:6rem 0;overflow:hidden}
+.hx-impact{position:relative;background:var(--euc-deep);color:#fff;padding:4.4rem 0;overflow:hidden}
 .hx-impact .topo{position:absolute;inset:0;opacity:.13;pointer-events:none}
 .hx-imp-h{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:#fff;max-width:24ch;margin-top:.8rem}
-.hx-imp-hero{display:grid;grid-template-columns:auto 1fr;gap:1.2rem 3.5rem;align-items:end;padding:2.6rem 0 2.4rem;border-bottom:1px solid rgba(255,255,255,.18);margin-top:2.2rem}
-.hx-imp-hero-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(3.4rem,8vw,6.6rem);letter-spacing:-.04em;line-height:.95;color:var(--wattle);white-space:nowrap}
+.hx-imp-lead{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;align-items:start;padding:1.9rem 0 2rem;border-bottom:1px solid rgba(255,255,255,.18);margin-top:1.6rem}
+.hx-imp-ln{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,4.6vw,3.9rem);letter-spacing:-.04em;line-height:.95;color:var(--wattle);white-space:nowrap}
+.hx-imp-l p{font-size:1rem;color:rgba(255,255,255,.9);max-width:24ch;line-height:1.45;margin-top:.6rem}
 .hx-imp-u{font-family:var(--ff-h);font-weight:600;font-size:.34em;color:var(--wattle-soft);margin-left:.18em;letter-spacing:0}
-.hx-imp-hero-t p{font-size:clamp(1.05rem,1.5vw,1.25rem);color:rgba(255,255,255,.92);max-width:36ch;line-height:1.5;margin-top:.7rem}
 .hx-chip{display:inline-block;font-family:var(--ff-d);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:.32rem .78rem;border-radius:0}
-.hx-imp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:2.5rem;padding-top:2.5rem}
-.hx-imp-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.3rem,3.8vw,3.4rem);letter-spacing:-.03em;color:var(--wattle);line-height:1;margin:.75rem 0 .5rem}
-.hx-imp-i p{font-size:1.02rem;color:rgba(255,255,255,.9);max-width:26ch;line-height:1.5}
-.hx-imp-src{margin-top:2.8rem;font-size:.85rem;color:rgba(255,255,255,.65)}
+.hx-imp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:2rem;padding-top:1.2rem}
+  .hx-imp-year{margin-top:.6rem}
+  .hx-imp-year-l{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-b);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--wattle);margin-top:1.7rem}
+  .hx-imp-year-l::before{content:"";width:22px;height:1.5px;background:var(--wattle);display:inline-block}
+  .hx-imp-year .hx-imp-g{padding-top:1.4rem}
+.hx-imp-n{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.3rem);letter-spacing:-.03em;color:var(--wattle);line-height:1;margin:.6rem 0 .35rem}
+.hx-imp-i p{font-size:.95rem;color:rgba(255,255,255,.85);max-width:26ch;line-height:1.45}
+.hx-imp-src{margin-top:1.9rem;font-size:.85rem;color:rgba(255,255,255,.65)}
 .hx-imp-src a{color:var(--euc-soft)}
-@media(max-width:760px){.hx-imp-hero{grid-template-columns:1fr;gap:.8rem}}
+@media(max-width:820px){.hx-imp-lead{grid-template-columns:1fr;gap:1.6rem}}
 .hx-impact .ey{color:var(--euc-soft)}
 
 /* --- projects rail --- */
@@ -189,7 +193,7 @@
 .hx-rail-nav{display:flex;gap:.6rem;align-items:center}
 .hx-rarr{width:48px;height:48px;border:1.5px solid var(--euc-deep);background:transparent;color:var(--euc-deep);font-size:1.15rem;cursor:pointer;transition:background .2s ease,color .2s ease}
 .hx-rarr:hover{background:var(--euc-deep);color:#fff}
-.hx-impact{padding-bottom:8.5rem}
+.hx-impact{padding-bottom:6.4rem}
 .hx-impact-curve{position:absolute;left:0;right:0;bottom:-1px;height:56px}
 .hx-impact-curve svg{display:block;width:100%;height:100%}
 .hx-cap{font-family:var(--ff-h);font-size:1.35rem;color:var(--bark);transform:rotate(-2deg);display:inline-block;margin-top:1rem}
@@ -365,30 +369,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <!-- IMPACT ========================================================== -->
 <section class="hx-impact">
   <div class="cw">
-    <span class="ey rv">On the ground</span>
+    <span class="ey rv">The Impact</span>
     <h2 class="hx-imp-h rv">What your support looks like on the ground.</h2>
-    <div class="hx-imp-hero rv">
-      <div class="hx-imp-hero-n"><span data-count="29479">0</span><span class="hx-imp-u">hectares</span></div>
-      <div class="hx-imp-hero-t">
-        <span class="hx-chip pb-parks">Growing National Parks</span>
-        <p>of land added to National Park status. Protected forever, for everything that lives there.</p>
+    <div class="hx-imp-lead rv">
+      <div class="hx-imp-l">
+        <div class="hx-imp-ln"><span data-count="600000" data-suf="+">0</span><span class="hx-imp-u">hectares</span></div>
+        <p>protected and secured forever, since 1970</p>
+      </div>
+      <div class="hx-imp-l">
+        <div class="hx-imp-ln"><span data-count="50">0</span></div>
+        <p>national parks and reserves created or expanded</p>
+      </div>
+      <div class="hx-imp-l">
+        <div class="hx-imp-ln"><span data-count="1.2" data-dec="1" data-suf="M">0</span></div>
+        <p>trees, shrubs and seedlings planted since 2020</p>
       </div>
     </div>
-    <div class="hx-imp-g">
-      <div class="hx-imp-i rv">
-        <span class="hx-chip pb-healing">Healing the Land</span>
-        <div class="hx-imp-n"><span data-count="647">0</span><span class="hx-imp-u">hectares</span></div>
-        <p>under active restoration in 2025</p>
-      </div>
-      <div class="hx-imp-i rv d1">
-        <span class="hx-chip pb-healing">Healing the Land</span>
-        <div class="hx-imp-n"><span data-count="1.2" data-dec="1" data-suf="M">0</span></div>
-        <p>trees, shrubs and seedlings planted in key areas</p>
-      </div>
-      <div class="hx-imp-i rv d2">
-        <span class="hx-chip pb-species">Saving Species</span>
-        <div class="hx-imp-n"><span data-count="18582">0</span></div>
-        <p>wombat mange treatments delivered</p>
+    <div class="hx-imp-year rv">
+      <span class="hx-imp-year-l">This year</span>
+      <div class="hx-imp-g">
+        <div class="hx-imp-i"><span class="hx-chip pb-parks">Growing National Parks</span>
+          <div class="hx-imp-n"><span data-count="29479">0</span><span class="hx-imp-u">ha</span></div>
+          <p>added to National Park status</p></div>
+        <div class="hx-imp-i"><span class="hx-chip pb-healing">Healing the Land</span>
+          <div class="hx-imp-n"><span data-count="647">0</span><span class="hx-imp-u">ha</span></div>
+          <p>under active restoration</p></div>
+        <div class="hx-imp-i"><span class="hx-chip pb-species">Saving Species</span>
+          <div class="hx-imp-n"><span data-count="18582">0</span></div>
+          <p>wombat mange treatments delivered</p></div>
       </div>
     </div>
     <p class="hx-imp-src rv">Figures from the <a href="reports.html">FNPW Impact Report</a>.</p>
