@@ -127,17 +127,23 @@ def title_of(slug):
 
 PILLARS = {
     'parks':   dict(label='Growing National Parks', page='growing-national-parks.html', cls='pb-parks',
-                    ey='Pillar one',
+                    ey='Pillar one', num='01',
+                    blurb='We expand and protect conservation spaces to safeguard critical '
+                          'habitats and support resilient landscapes.',
                     lede='We buy high-conservation-value land and hand it back, adding it to '
                          "Australia's national parks and protected areas so it is safe forever.",
                     desc='FNPW projects growing national parks and protected areas across Australia.'),
     'species': dict(label='Saving Species', page='saving-species.html', cls='pb-species',
-                    ey='Pillar two',
+                    ey='Pillar two', num='02',
+                    blurb='We protect Australia\u2019s most vulnerable species by restoring '
+                          'habitats, creating corridors and funding targeted recovery work.',
                     lede='From koalas to enigma moths, we fund the recovery work that keeps '
                          "Australia's threatened plants and animals in the world.",
                     desc='FNPW projects protecting and recovering threatened Australian species.'),
     'healing': dict(label='Healing the Land', page='healing-the-land.html', cls='pb-healing',
-                    ey='Pillar three',
+                    ey='Pillar three', num='03',
+                    blurb='We restore landscapes affected by bushfire, flood and clearing, '
+                          'returning them to health for the species that depend on them.',
                     lede='We restore what has been damaged: replanting habitat, healing waterways '
                          'and supporting cultural fire and land management.',
                     desc='FNPW projects restoring habitat and healing damaged Australian landscapes.'),
@@ -487,8 +493,14 @@ def main():
 </div>''', 'dark')
 
         cross = '\n'.join(
-            f'<a class="lc rv" href="{PILLARS[o]["page"]}"><h3>{PILLARS[o]["label"]}</h3>'
-            f'<p>{PILLARS[o]["lede"][:90]}...</p><span class="lc-go">&rsaquo;</span></a>'
+            f'''<a class="pcard pcard-{o} rv" href="{PILLARS[o]["page"]}">
+  <div class="pcard-im"><img src="{EXTRA[o]["hero_img"]}" alt="{EXTRA[o]["hero_alt"]}" loading="lazy"></div>
+  <span class="pcard-rule" aria-hidden="true"></span>
+  <span class="pcard-ey">Pillar {PILLARS[o]["num"]}</span>
+  <h3>{PILLARS[o]["label"]}</h3>
+  <p>{PILLARS[o]["blurb"]}</p>
+  <span class="pcard-go">See the projects</span>
+</a>'''
             for o in others_of[key])
 
         body = f'''{hero_html}
@@ -503,7 +515,7 @@ def main():
   <div class="cw"><div class="pg" id="pgrid">{cards}</div></div>
 </section>
 {related_html}
-{sec(f"<span class='ey'>Keep exploring</span><h2 style='margin:.8rem 0 1.4rem'>The other pillars</h2><div class='lcg'>{cross}</div>")}
+{sec(f"<span class='ey'>Keep exploring</span><h2 style='margin:.8rem 0 2.4rem'>The other pillars</h2><div class='pcg'>{cross}</div>")}
 {cta_band(f"Support {pil['label']}.",
           'Donate to this pillar directly, or explore the other ways to get involved.',
           [('Donate', RAISELY_DONATE, 'btn-p'), ('Ways to get involved', 'ways-you-can-get-involved.html', 'btn-o')])}'''
