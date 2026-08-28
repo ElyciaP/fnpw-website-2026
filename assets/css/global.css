@@ -419,3 +419,53 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 @media(max-width:1000px){.art-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.ra-block{padding:3.5rem 0 8rem}.ra-cards{margin-top:-6.8rem}}
 @media(max-width:700px){.art-grid{grid-template-columns:1fr}.ra{padding-bottom:3.5rem}.ra-block{padding:3rem 0 7rem}.ra-cards{margin-top:-6rem}.ra-head{gap:.9rem}.ra-head .btn-g{margin-bottom:0}}
+
+
+/* ============================================================
+   PILLAR HERO TINT
+   .chi keeps its existing dark-green default, so every other
+   page is unchanged. Pillar pages add a modifier.
+   ============================================================ */
+.chi{--chi-rgb:15,49,50}
+.chi{background:rgb(var(--chi-rgb))}
+.chi::after{background:linear-gradient(180deg,rgba(var(--chi-rgb),.35) 0%,rgba(var(--chi-rgb),.15) 45%,rgba(var(--chi-rgb),.82) 100%)}
+.chi-parks{--chi-rgb:15,49,50}
+.chi-species{--chi-rgb:140,20,34}
+.chi-healing{--chi-rgb:142,56,33}
+
+/* ============================================================
+   PILLAR STATS BAND  ·  sits directly under the hero
+   ============================================================ */
+.pil-stats{background:var(--sand);padding:3.5rem 0}
+.pil-stats .psg{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.pil-stats .pst{border-top:2px solid var(--ps-c,var(--euc));padding-top:1.4rem}
+.pil-stats .pst-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1;color:var(--ps-c,var(--euc));display:block;margin-bottom:.7rem}
+.pil-stats .pst-l{display:block;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.pil-stats .pst-d{font-size:.92rem;line-height:1.55;color:var(--stone)}
+.pil-stats .pst-d a{color:var(--ps-c,var(--euc));font-weight:600}
+.ps-parks{--ps-c:var(--euc)}
+.ps-species{--ps-c:var(--waratah-dk)}
+.ps-healing{--ps-c:var(--red-soil-dk)}
+@media(max-width:820px){.pil-stats .psg{grid-template-columns:1fr;gap:1.8rem}.pil-stats{padding:2.5rem 0}}
+
+/* ============================================================
+   FILTER BAR  ·  promoted from projects.html so the pillar
+   pages share it. Identical rules, no visual change there.
+   ============================================================ */
+.fb{padding:2rem 0;background:rgba(250,246,242,.95);backdrop-filter:blur(10px);position:sticky;top:72px;z-index:30;border-bottom:1px solid var(--rule)}
+.fb-r{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.fps{display:flex;gap:.5rem;flex-wrap:wrap}
+.fp{font-size:.82rem;font-weight:600;padding:.5em 1em;border-radius:0;border:1.5px solid var(--rule);background:var(--white);color:var(--char);cursor:pointer;transition:.25s;font-family:var(--ff-b)}
+.fp:hover{border-color:var(--euc);color:var(--euc)}
+.fp.on{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.fb-right{display:flex;flex-direction:column;align-items:flex-end;gap:.55rem}
+.sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
+.psel{font-family:var(--ff-b);font-size:.86rem;font-weight:600;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2.2em .5em .9em;cursor:pointer;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230F3132' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8em center}
+.psel:hover,.psel:focus{border-color:var(--euc);color:var(--euc);outline:none}
+#fmeta{font-size:.85rem;color:var(--stone);font-style:italic}
+
+/* pillar-coloured active chip on the pillar pages */
+.fb-parks .fp.on{background:var(--euc);border-color:var(--euc)}
+.fb-species .fp.on{background:var(--waratah-dk);border-color:var(--waratah-dk)}
+.fb-healing .fp.on{background:var(--red-soil-dk);border-color:var(--red-soil-dk)}
+@media(max-width:700px){.fb{position:static}.fb-right{align-items:flex-start}}

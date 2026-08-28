@@ -123,10 +123,12 @@ def stats(items):
 def faq(q, a):
     return f'<details class="fq"><summary>{q}</summary><div class="fq-a"><p>{a}</p></div></details>'
 
-def card(slug, title, img, pillar_label, pillar_class, state, blurb, data_pil=''):
+def card(slug, title, img, pillar_label, pillar_class, state, blurb, data_pil='',
+         data_state=''):
     pil_attr = f' data-pil="{data_pil}"' if data_pil else ''
+    st_attr = f' data-state="{data_state}"' if data_state else ''
     blurb_html = f'<p>{blurb}</p>' if blurb else ''
-    return f'''<article class="pc"{pil_attr}>
+    return f'''<article class="pc"{pil_attr}{st_attr}>
   <a href="project-{slug}.html" class="pc-link">
     <div class="pc-im"><img src="{img}" alt="{title}" loading="lazy">
       <span class="pc-pb {pillar_class}">{pillar_label}</span>

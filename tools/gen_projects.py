@@ -143,6 +143,141 @@ PILLARS = {
                     desc='FNPW projects restoring habitat and healing damaged Australian landscapes.'),
 }
 
+
+U_ART = 'https://fnpw.org.au/wp-content/uploads/'
+RELATED = {
+    'parks': ('Stories from the parks we\u2019re growing', 'parks', 'Growing Parks', [
+        (U_ART + '2022/02/torrens-Island-bird.jpg', '08 May 2026 &middot; Story',
+         'Mundoo Island: a once-in-a-generation conservation victory',
+         'From the Murray Mouth, 1,900 hectares of Ramsar wetlands have been secured for '
+         'Coorong National Park, with the Ngarrindjeri at the heart of decision-making.'),
+        (U_ART + '2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Jul 2026 &middot; Story',
+         'A wildlife corridor is only as wide as its narrowest point',
+         'Development keeps narrowing the routes wildlife depend on, and it is the tightest '
+         'pinch point that decides whether a corridor works at all.'),
+        (U_ART + '2021/02/KNP-recovery-1-scaled.jpg', 'Jun 2026 &middot; Story',
+         'Years of restoration, written in layers',
+         'Hindmarsh Valley has gone from cleared paddock to returning forest, and the layers '
+         'of that recovery are now readable on the ground.')]),
+    'species': ('Stories from the species we\u2019re saving', 'species', 'Saving Species', [
+        (U_ART + '2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg',
+         '02 May 2026 &middot; Update', '18,582 wombat mange treatments delivered',
+         'An update from the Curb Wombat Mange Program, which exceeded its 2025 targets and '
+         'grew volunteer capacity by 92%.'),
+        (U_ART + '2021/02/KNP-recovery-1-scaled.jpg', '18 Apr 2026 &middot; Story',
+         'Mountain Pygmy Possums: a year on',
+         'Tracking the recovery of one of Australia\u2019s most threatened mammals after the '
+         'alpine breeding centre\u2019s first full year of operations.'),
+        (U_ART + '2021/02/Southern-Koala-05-scaled.jpg', '11 Apr 2026 &middot; Story',
+         'Restoring the Growling Grass Frog',
+         'How Winton Wetlands is becoming a stronghold for one of south-eastern '
+         'Australia\u2019s most endangered amphibians.')]),
+    'healing': ('Stories from the land we\u2019re healing', 'heal', 'Healing Land', [
+        (U_ART + '2021/02/KNP-recovery-1-scaled.jpg', '28 Mar 2026 &middot; Update',
+         'Fire Wise: 110,000 plants and counting',
+         'Inside the community network propagating fire-resilient natives across NSW, '
+         'Victoria and South Australia.'),
+        (U_ART + '2021/02/Southern-Koala-05-scaled.jpg', '14 Mar 2026 &middot; Update',
+         'Healing Hindmarsh Island',
+         'Multi-year wetland restoration on Ngarrindjeri Country reaches a new milestone.'),
+        (U_ART + '2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Aug 2026 &middot; Story',
+         'What does healthy bushland actually look like?',
+         'It looks messier than you would expect, and the science behind bringing back the '
+         'bush at Mulligans Flat explains why.')]),
+}
+
+FILTER_JS = """<script>
+(function(){
+  var grid=document.getElementById('pgrid');
+  if(!grid)return;
+  var meta=document.getElementById('fmeta');
+  var chips=[].slice.call(document.querySelectorAll('#fps .fp'));
+  var active='all';
+  [].forEach.call(grid.querySelectorAll('.pc'),function(c){
+    c.dataset.title=(c.querySelector('h3').textContent||'').trim();
+  });
+  function apply(){
+    var c=0;
+    [].forEach.call(grid.querySelectorAll('.pc'),function(x){
+      var ok=(active==='all')||(x.dataset.state===active);
+      x.style.display=ok?'':'none'; if(ok)c++;
+    });
+    meta.textContent='Showing '+c+' project'+(c===1?'':'s');
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){
+    chips.forEach(function(p){p.classList.remove('on')});
+    b.classList.add('on'); active=b.dataset.f; apply();
+  })});
+  var sel=document.getElementById('psort');
+  if(sel)sel.addEventListener('change',function(e){
+    var m=e.target.value;
+    [].slice.call(grid.querySelectorAll('.pc')).sort(function(a,b){
+      var r=a.dataset.title.localeCompare(b.dataset.title,'en',{numeric:true,sensitivity:'base'});
+      return m==='za'?-r:r;
+    }).forEach(function(c){grid.appendChild(c)});
+  });
+  apply();
+})();
+</script>
+"""
+
+
+def related_section(key):
+    heading, catcls, catlabel, items = RELATED[key]
+    cards = []
+    for i, (img, date, title, para) in enumerate(items):
+        d = '' if i == 0 else ' d%d' % i
+        cards.append(
+            f'      <a href="#" class="art rv{d}">\n'
+            f'        <div class="art-im"><img src="{img}" alt="{title}" loading="lazy">'
+            f'<span class="cat {catcls}">{catlabel}</span></div>\n'
+            f'        <div class="art-bd">\n'
+            f'          <div class="art-date">{date}</div>\n'
+            f'          <h3>{title}</h3>\n'
+            f'          <p>{para}</p>\n'
+            f'          <span class="art-link">Read more</span>\n'
+            f'        </div>\n'
+            f'      </a>')
+    return f'''<!-- Related articles -->
+<section class="ra ra-{ "parks" if key=="parks" else ("species" if key=="species" else "healing") }">
+  <div class="ra-block">
+    <div class="cw rv">
+      <div class="ra-head">
+        <div><span class="ey">Related reading</span><h2>{heading}</h2></div>
+        <a href="articles.html" class="btn-g">All articles</a>
+      </div>
+    </div>
+  </div>
+  <div class="cw ra-cards">
+    <div class="art-grid">
+{chr(10).join(cards)}
+    </div>
+  </div>
+</section>'''
+
+
+# Fields that are curated by hand or by another tool and must survive a re-run.
+# gen_map.py reads lat/lon/on_map from data/projects.json; regenerating the file
+# without carrying them across silently empties the projects map.
+CURATED_FIELDS = ('lat', 'lon', 'on_map', 'pillar_confirmed', 'year')
+
+
+def _preserve_curated(projects, path):
+    """Copy curated per-project fields from the existing projects.json."""
+    try:
+        with open(path) as f:
+            existing = {p['slug']: p for p in json.load(f)}
+    except (IOError, ValueError):
+        return
+    for p in projects:
+        old = existing.get(p['slug'])
+        if not old:
+            continue
+        for k in CURATED_FIELDS:
+            if k in old:
+                p[k] = old[k]
+
+
 def main():
     projects = []
     for line in DATA.splitlines():
@@ -155,6 +290,7 @@ def main():
             live_url=f'https://fnpw.org.au/project/{slug}/',
         ))
     os.makedirs(os.path.join(ROOT, 'data'), exist_ok=True)
+    _preserve_curated(projects, os.path.join(ROOT, 'data/projects.json'))
     with open(os.path.join(ROOT, 'data/projects.json'), 'w') as f:
         json.dump(projects, f, indent=1)
 
@@ -222,25 +358,57 @@ def main():
     # bespoke content per pillar: hero image, headline stat (Impact Report), featured project
     EXTRA = {
         'parks': dict(
+            tint='parks',
             hero_img=U + '2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg',
             hero_alt='Sturt National Park at dusk',
             stat=('29,479', 'hectares', 'of land added to National Park status'),
+            stat_label='Hectares protected',
+            stat_desc='Land bought and transferred into the national parks estate. '
+                      '<a href="reports.html">FNPW Impact Report</a>.',
+            projects_desc='Land purchases and park expansions funded with partners, '
+                          'supporters and government.',
+            states_desc='From the Flinders Ranges to the New South Wales coast.',
+            feat2='It is the largest single project in the pillar and the clearest picture of '
+                  'what growing a national park actually takes: patient negotiation, co-funding, '
+                  'and Traditional Owners at the centre of how the land is managed afterwards.',
             feat=('remarkable-southern-flinders', 'Remarkable Southern Flinders',
                   U + '2021/02/square.jpg',
                   'Linking established parks, newly protected land and open reservoir country into '
                   'one vast, connected park precinct for South Australia, co-managed with the Nukunu Nation.')),
         'species': dict(
+            tint='species',
             hero_img=U + '2021/02/Woylie.jpg',
             hero_alt='Woylie, the brush-tailed bettong',
             stat=('18,582', 'treatments', 'delivered to wombats with mange'),
+            stat_label='Treatments delivered',
+            stat_desc='Wombats treated for mange through the Curb Wombat Mange Program. '
+                      '<a href="reports.html">FNPW Impact Report</a>.',
+            projects_desc='Recovery programs run with researchers, carers, Traditional Owners '
+                          'and land managers.',
+            states_desc='From Christmas Island to the Tasmanian midlands, including two '
+                        'external territories.',
+            feat2='It is the largest single landscape in the pillar and the clearest '
+                  'demonstration of what the pillar funds: local knowledge, long timeframes, '
+                  'measured outcomes.',
             feat=('warddeken-mayh', 'Warddeken Mayh Recovery Project',
                   U + '2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg',
-                  'Indigenous rangers monitoring 120 camera sites across 1.4 million hectares of the '
-                  'Warddeken IPA, recovering threatened mammals through fire and feral management.')),
+                  'Indigenous rangers monitor 120 camera sites across 1.4 million hectares of the '
+                  'Warddeken Indigenous Protected Area, recovering threatened mammals through '
+                  'right-way fire and feral animal management.')),
         'healing': dict(
+            tint='healing',
             hero_img='assets/img/bongil.jpg',
             hero_alt='Forest in Bongil Bongil National Park',
             stat=('1.2M', 'plantings', 'trees, shrubs and seedlings in key areas'),
+            stat_label='Plants in the ground',
+            stat_desc='Trees, shrubs and seedlings planted across priority restoration sites. '
+                      '<a href="reports.html">FNPW Impact Report</a>.',
+            projects_desc='Revegetation, wetland repair, bushfire recovery and cultural land '
+                          'management.',
+            states_desc='Across the eastern seaboard, the Top End and the west.',
+            feat2='It shows what healing at scale looks like when you undo the original '
+                  'damage rather than work around it, and then stay long enough to watch the '
+                  'system come back on its own terms.',
             feat=('yarrahapinni-wetlands-restoration-stage-1', 'Yarrahapinni Wetlands',
                   U + '2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg',
                   'Floodgates and levee walls removed, tidal flows returned: a wetland on the Macleay '
@@ -251,20 +419,52 @@ def main():
     for key, pil in PILLARS.items():
         mine = [p for p in projects if p['pillar'] == key]
         x = EXTRA[key]
+        mine = sorted(mine, key=lambda q: q['title'].lower())
         cards = '\n'.join(card(p['slug'], p['title'], p['img'], pil['label'], pil['cls'],
-                               p['state'], '') for p in mine)
+                               p['state'], '', data_state=p['state']) for p in mine)
+
+        # ---- state filter chips, most-used first ----
+        from collections import Counter as _C
+        st_counts = _C(q['state'] for q in mine)
+        chip_order = sorted(st_counts.items(), key=lambda kv: (-kv[1], kv[0]))
+        chips = [f'<button class="fp on" data-f="all">All projects ({len(mine)})</button>']
+        for st, n in chip_order:
+            label = 'Australia-wide' if st == 'Australia' else st
+            chips.append(f'<button class="fp" data-f="{st}">{label} ({n})</button>')
+        filter_bar = f"""<div class="fb fb-paper fb-{x['tint']}">
+  <div class="cw"><div class="fb-r">
+    <div class="fps" id="fps">{''.join(chips)}</div>
+    <div class="fb-right">
+      <label class="sortwrap">Sort by
+        <select class="psel" id="psort">
+          <option value="az">A to Z</option>
+          <option value="za">Z to A</option>
+        </select>
+      </label>
+      <div id="fmeta">Showing all {len(mine)} projects</div>
+    </div>
+  </div></div>
+</div>"""
         para, hows = NARRATIVE[key]
         how_list = ''.join(f'<li>{h}</li>' for h in hows)
 
-        hero_html = f'''<section class="ch chi pil-hero" style="--chi:url('{x['hero_img']}')">
+        hero_html = f'''<section class="ch chi pil-hero chi-{x['tint']}" style="--chi:url('{x['hero_img']}')">
   <div class="cw rv">
     <nav style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span style="opacity:.4">/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span style="opacity:.4">/</span>{pil['label']}</nav>
     <span class="ey" style="color:var(--euc-soft)">{pil['ey']} &#183; {len(mine)} projects</span>
     <h1 style="margin:1rem 0 1.2rem;max-width:16ch;color:#fff">{pil['label']}</h1>
     <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">{pil['lede']}</p>
-    <div class="pil-stat rv d1">
-      <span class="pil-stat-n">{x['stat'][0]}<em>{x['stat'][1]}</em></span>
-      <span class="pil-stat-l">{x['stat'][2]}<br><a href="reports.html" style="color:var(--euc-soft);font-size:.82rem">FNPW Impact Report</a></span>
+  </div>
+</section>'''
+
+        # ---- stats band, directly under the hero ----
+        n_states = len({q['state'] for q in mine if q['state'] != 'Australia'})
+        stats_html = f'''<section class="pil-stats ps-{x['tint']}">
+  <div class="cw rv">
+    <div class="psg">
+      <div class="pst"><span class="pst-n">{x['stat'][0]}</span><span class="pst-l">{x['stat_label']}</span><p class="pst-d">{x['stat_desc']}</p></div>
+      <div class="pst"><span class="pst-n">{len(mine)}</span><span class="pst-l">Projects funded</span><p class="pst-d">{x['projects_desc']}</p></div>
+      <div class="pst"><span class="pst-n">{n_states}</span><span class="pst-l">States and territories</span><p class="pst-d">{x['states_desc']}</p></div>
     </div>
   </div>
 </section>'''
@@ -274,12 +474,15 @@ def main():
             f'<div class="pmeta"><h3 style="margin-bottom:.8rem">How we do it</h3>'
             f'<ul style="padding-left:1.1rem;display:grid;gap:.6rem">{how_list}</ul></div>')
 
+        related_html = related_section(key)
         fslug, ftitle, fimg, fdesc = x['feat']
+        fdesc2 = x['feat2']
         featured = sec(
             f'''<div class="two" style="align-items:center">
 <div class="rv"><a href="project-{fslug}.html"><img src="{fimg}" alt="{ftitle}" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--euc-pale)"></a></div>
 <div class="rv d1"><span class="ey">Featured project</span><h2 style="margin:.8rem 0 1rem">{ftitle}</h2>
 <p>{fdesc}</p>
+<p>{fdesc2}</p>
 <a class="hx-cta" href="project-{fslug}.html">Read the full story<span class="hx-cta-line" aria-hidden="true"></span></a></div>
 </div>''', 'dark')
 
@@ -289,9 +492,17 @@ def main():
             for o in others_of[key])
 
         body = f'''{hero_html}
+{stats_html}
 {sec(intro)}
 {featured}
-{sec(f"<span class='ey'>All {len(mine)} projects</span><h2 style='margin:.8rem 0 1.6rem'>Projects under this pillar</h2><div class='pg'>{cards}</div>", 'paper')}
+<section class="sec paper" style="padding-bottom:1.5rem">
+  <div class="cw rv"><span class="ey">All {len(mine)} projects</span><h2 style="margin:.8rem 0 0">Projects under this pillar</h2></div>
+</section>
+{filter_bar}
+<section class="sec paper" style="padding-top:2.2rem">
+  <div class="cw"><div class="pg" id="pgrid">{cards}</div></div>
+</section>
+{related_html}
 {sec(f"<span class='ey'>Keep exploring</span><h2 style='margin:.8rem 0 1.4rem'>The other pillars</h2><div class='lcg'>{cross}</div>")}
 {cta_band(f"Support {pil['label']}.",
           'Donate to this pillar directly, or explore the other ways to get involved.',
@@ -299,11 +510,9 @@ def main():
         write_page(pil['page'], pil['label'], pil['desc'], body,
                    page_css='''
 .pil-hero{padding:10rem 0 5rem}
-.pil-stat{display:flex;gap:1.4rem;align-items:baseline;margin-top:2.2rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1.6rem;max-width:560px}
-.pil-stat-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.03em;color:var(--wattle);line-height:1;white-space:nowrap}
-.pil-stat-n em{font-family:var(--ff-h);font-style:normal;font-weight:600;font-size:.42em;color:var(--wattle-soft);margin-left:.2em}
-.pil-stat-l{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.45}
-''')
+.fb.fb-paper{background:rgba(244,238,230,.95)}
+''',
+                   extra_js=FILTER_JS)
 
     print(f"projects: {len(projects)} pages, 3 pillar pages, data/projects.json written")
     from collections import Counter
