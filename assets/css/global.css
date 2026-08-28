@@ -2,19 +2,19 @@
   /* Eucalyptus family (primary) */
   --euc:#0F7768;--euc-deep:#0F3132;--euc-mid:#51B593;--euc-soft:#C6EBCA;--euc-pale:#EAF4ED;
   /* Waratah family (red-pink) */
-  --waratah:#C23747;--waratah-dk:#8C1422;--waratah-soft:#FFADB7;--waratah-pale:#FFE5E8;
+  --waratah:#C23747;--waratah-mid:#ED4E61;--waratah-dk:#8C1422;--waratah-soft:#FFADB7;--waratah-pale:#FFE5E8;
   /* Reef (blue) */
-  --reef:#2C4B89;--reef-mid:#5A78B5;--reef-soft:#A8C4F3;--reef-pale:#E5EDF8;
+  --reef:#2C4B89;--reef-deep:#202F54;--reef-mid:#5D7BC1;--reef-soft:#A8C4F3;--reef-pale:#E5EDF8;
   /* Hovea (purple-pink) */
-  --hovea:#703985;--hovea-mid:#9A5FAD;--hovea-soft:#DBD1EC;--hovea-pale:#F2EBF6;
+  --hovea:#703985;--hovea-deep:#47243A;--hovea-mid:#B790DE;--hovea-soft:#DBD1EC;--hovea-pale:#F2EBF6;
   /* Earthy warms */
   --bark:#AB7341;--bark-mid:#85735E;--bark-soft:#D9C4A6;
   --red-soil:#B64629;--red-soil-dk:#8E3821;--red-soil-bright:#E26539;--red-soil-soft:#FFAA8A;
-  --wattle:#C4A927;--wattle-dk:#9F8506;--wattle-soft:#F8EEA9;
+  --wattle:#C4A927;--wattle-mid:#E1CD4A;--wattle-dk:#9F8506;--wattle-soft:#F8EEA9;
   --soil:#241914;
   /* Neutrals */
   --cream:#FAF6F2;--sand:#EEE8E1;--paper:#F4EEE6;
-  --ink:#141414;--char:#2a2a2a;--stone:#7a7367;--rule:#E5DFD3;--white:#fff;
+  --ink:#141414;--char:#2a2a2a;--stone:#6B6459;--rule:#E5DFD3;--white:#fff;
   /* Type */
   --ff-d:'Sora',sans-serif;--ff-b:'Figtree',sans-serif;--ff-h:'Caveat',cursive;
   --mw:1240px;
@@ -528,14 +528,40 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-amt-l{font-size:.78rem;color:var(--stone);line-height:1.35}
 @media(max-width:860px){.hx-tree-ladder{grid-template-columns:repeat(2,1fr)}}
 
-/* ---- Bring Back the Bush, demoted to a compact band ---- */
-.hx-camp.hx-camp-sm{padding:2.4rem 0}
-.hx-camp-sm-r{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.hx-camp-sm-r h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.15rem,2vw,1.5rem);color:#fff;margin-top:.4rem;max-width:24ch}
-.hx-camp-sm-a{display:flex;gap:.8rem;flex-wrap:wrap}
 
 /* ---- leadership quote ---- */
 .hx-quote{margin:2.4rem 0 0;padding-left:1.6rem;border-left:3px solid var(--wattle)}
 .hx-quote blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.45;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 .9rem}
 .hx-quote figcaption{font-size:.85rem;color:var(--stone)}
 .hx-quote figcaption strong{color:var(--char);font-weight:600}
+
+/* ---- donate: Waratah, per the brand direction (urgency = waratah) ---- */
+.btn-don{background:var(--waratah);color:var(--white);border-color:var(--waratah)}
+.btn-don:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--white);opacity:1}
+
+/* ============================================================
+   BRING BACK THE BUSH banner  ·  the campaign hero, at banner
+   scale. Same gradient, disc, script accent and tag.
+   ============================================================ */
+.hx-camp.hx-camp-sm{position:relative;overflow:hidden;isolation:isolate;background:none;padding:0}
+.hx-camp-sm .cmp-hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 150% at 74% 34%,#C49EDE 0,var(--hovea-mid) 26%,var(--hovea) 56%,#4a225c 100%)}
+.hx-camp-sm-r{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding:3.4rem 0}
+.hx-camp-sm-bd .cmp-ey{margin-bottom:1rem}
+.hx-camp-h{font-family:var(--ff-d);font-weight:700;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:.98;letter-spacing:-.035em;color:var(--white);margin:0 0 .55rem}
+.hx-camp-h em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:#F8EEA9;font-size:1.05em;letter-spacing:-.01em;display:inline-block;transform:translateY(.03em) rotate(-2deg);padding:0 .04em}
+.hx-camp-sub{font-family:var(--ff-d);font-weight:600;font-size:clamp(1rem,1.5vw,1.25rem);color:var(--white);margin-bottom:.7rem;max-width:26ch;line-height:1.25}
+.hx-camp-sm-bd p{color:rgba(255,255,255,.82);max-width:48ch;margin-bottom:1.6rem}
+.hx-camp-acts{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+.hx-camp-sm-im{display:flex;justify-content:center;align-items:center;padding:.5rem 0}
+.hx-camp-disc{position:relative;width:100%;max-width:280px;aspect-ratio:1/1;border-radius:50%;background:#B58DCC;transform:rotate(-2deg);box-shadow:0 34px 80px -22px rgba(0,0,0,.5),0 0 0 9px rgba(255,255,255,.08),0 0 0 1px rgba(255,255,255,.15)}
+.hx-camp-disc-in{position:absolute;inset:0;border-radius:50%;overflow:hidden}
+.hx-camp-disc-in img{position:absolute;left:50%;bottom:-3%;transform:translateX(-50%);height:106%;width:auto;max-width:none;display:block}
+.hx-camp-tagline{position:absolute;bottom:-.4rem;right:-1.6rem;background:var(--white);color:var(--hovea);font-family:var(--ff-h);font-size:1.35rem;font-weight:700;padding:.28em 1em .32em;transform:rotate(6deg);box-shadow:0 10px 30px -10px rgba(0,0,0,.35);z-index:3;white-space:nowrap}
+@media(max-width:820px){
+  .hx-camp-sm-r{grid-template-columns:1fr;gap:2rem;padding:2.6rem 0}
+  .hx-camp-sm-im{justify-content:flex-start}
+  .hx-camp-disc{max-width:210px}
+  .hx-camp-tagline{font-size:1.1rem;right:-1rem}
+}
+.hx-btn-onpurple{background:var(--white);color:var(--hovea)}
+.hx-btn-onpurple:hover{background:var(--hovea-soft);color:var(--hovea-deep)}

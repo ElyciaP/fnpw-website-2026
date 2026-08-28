@@ -15,8 +15,8 @@
 /* --- hero --- */
 .hx-hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;background:var(--euc-deep);overflow:hidden}
 .hx-hero-bg{position:absolute;inset:0}
-.hx-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.9}
-.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,49,50,.28) 0%,rgba(15,49,50,.08) 40%,rgba(15,49,50,.88) 100%)}
+.hx-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 44%;opacity:1}
+.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,.96) 0%,rgba(15,49,50,.9) 28%,rgba(15,49,50,.52) 46%,rgba(15,49,50,0) 66%),linear-gradient(180deg,rgba(15,49,50,.4) 0%,rgba(15,49,50,.15) 38%,rgba(15,49,50,.85) 100%)}
 .hx-hero .cw{position:relative;padding-bottom:5.5rem;padding-top:9rem;width:100%}
 .hx-kicker{display:inline-flex;align-items:center;gap:.6rem;color:var(--euc-soft);font-family:var(--ff-d);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem}
 .hx-kicker::before{content:"";width:2.2rem;height:2px;background:var(--wattle)}
@@ -26,7 +26,7 @@
 .hx-hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 .hx-btn{font-family:var(--ff-d);font-weight:600;font-size:1rem;padding:1rem 2rem;border-radius:0;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;display:inline-block}
 .hx-btn:hover{transform:translateY(-2px)}
-.hx-btn-don{background:var(--wattle);color:var(--euc-deep);box-shadow:0 10px 30px -10px rgba(196,169,39,.55)}
+.hx-btn-don{background:var(--waratah);color:#fff;box-shadow:0 10px 30px -10px rgba(194,55,71,.5)}
 .hx-btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 .hx-btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 /* rotating est. stamp */
@@ -246,7 +246,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       </div>
     </div>
     <a href="contact.html" class="">Contact</a>
-    <a href="https://bush.fnpw.org.au" class="btn btn-p">Donate</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
   </nav>
 </div></div>
 </header><!-- /@header -->
@@ -255,7 +255,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <!-- HERO ============================================================ -->
 <section class="hx-hero">
   <div class="hx-hero-bg">
-    <img src="assets/img/hero-golden.jpg" alt="Golden hour over spinifex country">
+    <img src="assets/img/hero-beeeaters.jpg" alt="Two rainbow bee-eaters on a branch">
   </div>
   <div class="hx-stamp">
     <img src="assets/img/55-badge.png" alt="55 years of conservation" loading="lazy" onerror="this.parentNode.style.display='none'">
@@ -298,6 +298,32 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
 </section>
 
+<!-- CHRISTMAS APPEAL: GIVE A TREE ==================================== -->
+<section class="hx-tree">
+  <div class="cw">
+    <div class="hx-tree-g rv">
+      <div class="hx-tree-im">
+        <img src="https://fnpw.org.au/wp-content/uploads/2024/03/Plant-a-Tree-Australia.png" alt="A native seedling being planted" loading="lazy">
+      </div>
+      <div class="hx-tree-bd">
+        <span class="hx-tree-tag">Christmas appeal</span>
+        <h2>Give a Tree this Christmas.</h2>
+        <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
+        <div class="hx-tree-ladder">
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$10</span><span class="hx-amt-t">1 native tree</span><span class="hx-amt-l">a seed of hope</span></a>
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$100</span><span class="hx-amt-t">10 native trees</span><span class="hx-amt-l">builds a haven</span></a>
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$500</span><span class="hx-amt-t">50 native trees</span><span class="hx-amt-l">a wildlife wonder</span></a>
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$1,000</span><span class="hx-amt-t">100 native trees</span><span class="hx-amt-l">a legacy canopy</span></a>
+        </div>
+        <p style="font-size:.86rem;color:var(--stone);margin-top:-.2rem">One native tree planted for every $10 donated. Tax deductible from $2.</p>
+        <div class="hx-tree-btns">
+          <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
+          <a class="hx-btn hx-btn-ghost" href="project-gift-a-tree-for-nature-conservation.html">How it works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- PILLARS ========================================================= -->
 <section class="hx-pils">
   <div class="cw">
@@ -408,82 +434,32 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     </div>
   </div>
 </section>
-
-<!-- CAMPAIGN ======================================================== -->
-<!-- CHRISTMAS APPEAL: GIVE A TREE ==================================== -->
-<section class="hx-tree">
-  <div class="cw">
-    <div class="hx-tree-g rv">
-      <div class="hx-tree-im">
-        <img src="https://fnpw.org.au/wp-content/uploads/2024/03/Plant-a-Tree-Australia.png" alt="A native seedling being planted" loading="lazy">
-      </div>
-      <div class="hx-tree-bd">
-        <span class="hx-tree-tag">Christmas appeal</span>
-        <h2>Give a Tree this Christmas.</h2>
-        <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
-        <div class="hx-tree-ladder">
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$10</span><span class="hx-amt-t">1 native tree</span><span class="hx-amt-l">a seed of hope</span></a>
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$100</span><span class="hx-amt-t">10 native trees</span><span class="hx-amt-l">builds a haven</span></a>
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$500</span><span class="hx-amt-t">50 native trees</span><span class="hx-amt-l">a wildlife wonder</span></a>
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$1,000</span><span class="hx-amt-t">100 native trees</span><span class="hx-amt-l">a legacy canopy</span></a>
-        </div>
-        <p style="font-size:.86rem;color:var(--stone);margin-top:-.2rem">One native tree planted for every $10 donated. Tax deductible from $2.</p>
-        <div class="hx-tree-btns">
-          <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
-          <a class="hx-btn hx-btn-ghost" href="project-gift-a-tree-for-nature-conservation.html">How it works</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- BRING BACK THE BUSH ============================================= -->
 <section class="hx-camp hx-camp-sm">
+  <div class="cmp-hero-bg"></div>
+  <div class="cmp-hero-grain"></div>
   <div class="cw">
     <div class="hx-camp-sm-r rv">
-      <div>
-        <span class="hx-camp-tag">Also running &#183; Bring Back the Bush</span>
-        <h3>Australia looks better with a full bush.</h3>
+      <div class="hx-camp-sm-bd">
+        <span class="cmp-ey"><span class="cmp-ey-dot"></span>Also running</span>
+        <h3 class="hx-camp-h">Bring Back The <em>Bush.</em></h3>
+        <p class="hx-camp-sub">Australia looks better with a full bush.</p>
+        <p>Let&rsquo;s not beat around the bush any longer. Australia&rsquo;s wilderness and wildlife need our help.</p>
+        <div class="hx-camp-acts">
+          <a class="cmp-btn-p" href="https://bush.fnpw.org.au">Bring back the bush</a>
+        </div>
       </div>
-      <div class="hx-camp-sm-a">
-        <a class="hx-btn hx-btn-don" href="https://bush.fnpw.org.au">Give to the campaign</a>
-        <a class="hx-btn hx-btn-ghost" href="campaign.html">Learn more</a>
+      <div class="hx-camp-sm-im">
+        <div class="hx-camp-disc">
+          <div class="hx-camp-disc-in"><img src="https://raisely-images.imgix.net/bring-back-the-bush/uploads/emu-blue-sky-v-2-png-5d1b82.png" alt="Emu with a full crest of feathers" loading="lazy"></div>
+          <span class="hx-camp-tagline">Full bush energy</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WAYS TO HELP ==================================================== -->
-<section class="hx-help">
-  <div class="cw">
-    <span class="ey rv">Get involved</span>
-    <h2 class="hx-h2 rv">Pick your way in.</h2>
-    <div class="hx-help-list">
-      <a class="hx-row rv" href="https://bush.fnpw.org.au" style="--rowc:var(--wattle-soft)">
-        <span class="hx-row-i">01</span>
-        <span><h3>Donate once<em class="hx-row-tag">quick + mighty</em></h3><p>A single gift, put to work where it is needed most. Tax deductible from $2.</p></span>
-        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="" loading="lazy">
-        <span class="hx-row-a">&#8594;</span>
-      </a>
-      <a class="hx-row rv" href="https://habitat-heroes.raiselysite.com/" style="--rowc:var(--euc-pale)">
-        <span class="hx-row-i">02</span>
-        <span><h3>Become a Habitat Hero<em class="hx-row-tag">the inner circle</em></h3><p>Monthly giving that funds the long, patient work of recovery.</p></span>
-        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2021/02/WArangers-lge.jpg" alt="" loading="lazy">
-        <span class="hx-row-a">&#8594;</span>
-      </a>
-      <a class="hx-row rv" href="gift-a-tree.html" style="--rowc:var(--waratah-pale)">
-        <span class="hx-row-i">03</span>
-        <span><h3>Gift a Tree<em class="hx-row-tag">a gift that grows</em></h3><p>A native tree planted for someone you love, certificate included.</p></span>
-        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia.png" alt="" loading="lazy">
-        <span class="hx-row-a">&#8594;</span>
-      </a>
-      <a class="hx-row rv" href="bequests.html" style="--rowc:var(--reef-pale)">
-        <span class="hx-row-i">04</span>
-        <span><h3>A gift in your Will<em class="hx-row-tag">the long game</em></h3><p>Protect what you love beyond your lifetime. We can help with the wording.</p></span>
-        <img class="hx-row-im" src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="" loading="lazy">
-        <span class="hx-row-a">&#8594;</span>
-      </a>
-    </div>
-  </div>
-</section>
+
 
 <!-- STORY =========================================================== -->
 <section class="hx-story">
