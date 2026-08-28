@@ -162,16 +162,22 @@
 .hx-story p{margin-bottom:1rem;max-width:52ch}
 
 /* --- impact report showcase --- */
-.hx-ir{background:var(--euc-pale);padding:5.2rem 0;position:relative;overflow:hidden}
+.hx-ir{background:var(--reef-soft);padding:5.2rem 0;position:relative;overflow:hidden}
 .hx-ir-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
 .hx-ir-cov{position:relative;justify-self:center;width:min(330px,84%)}
-.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;box-shadow:12px 12px 0 var(--euc);transition:transform .3s ease,box-shadow .3s ease}
-.hx-ir-cov:hover img{transform:translate(-4px,-4px);box-shadow:18px 18px 0 var(--euc)}
-.hx-ir h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--euc-deep);line-height:1.15;margin:.8rem 0 1.2rem;max-width:20ch}
+.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;box-shadow:12px 12px 0 var(--reef-deep);transition:transform .3s ease,box-shadow .3s ease}
+.hx-ir-cov:hover img{transform:translate(-4px,-4px);box-shadow:18px 18px 0 var(--reef-deep)}
+.hx-ir h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--reef-deep);line-height:1.15;margin:.8rem 0 1.2rem;max-width:20ch}
 .hx-ir p{max-width:52ch;margin-bottom:1rem}
-.hx-ir-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--euc-soft);font-size:.92rem;font-weight:500;color:var(--char)}
+.hx-ir-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid rgba(32,47,84,.28);font-size:.92rem;font-weight:500;color:var(--char)}
 .hx-ir-trust span{display:inline-flex;align-items:center;gap:.45rem}
-.hx-ir-trust i{font-style:normal;color:var(--euc);font-weight:700}
+.hx-ir-trust i{font-style:normal;color:var(--reef-deep);font-weight:700}
+.hx-ir .ey{color:var(--reef-deep)}
+.hx-ir .ey::before{background:var(--reef-deep)}
+.hx-ir p{color:var(--char)}
+.hx-ir .btn-p{background:var(--reef-deep);color:#fff;border-color:var(--reef-deep)}
+.hx-ir .btn-p:hover{background:var(--reef);border-color:var(--reef);color:#fff;opacity:1}
+.hx-ir .hx-cta{color:var(--reef-deep)}
 
 /* --- newsletter --- */
 .hx-news{position:relative;overflow:hidden;padding:5rem 0;
