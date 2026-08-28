@@ -518,3 +518,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   .hx-tree-im img{min-height:280px;max-height:340px}
   .hx-tree-bd{padding:2.5rem 0 3.5rem}
 }
+
+/* ---- Give a Tree amount ladder (figures from gift-a-tree.fnpw.org.au, AUD) ---- */
+.hx-tree-ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin:.4rem 0 .3rem}
+.hx-amt{display:flex;flex-direction:column;gap:.25rem;padding:1rem .9rem;background:var(--white);border:1.5px solid var(--rule);text-decoration:none;color:inherit;transition:.22s}
+.hx-amt:hover{border-color:var(--euc);transform:translateY(-2px);opacity:1}
+.hx-amt-n{font-family:var(--ff-d);font-weight:800;font-size:1.35rem;letter-spacing:-.02em;color:var(--euc-deep);line-height:1}
+.hx-amt-t{font-size:.82rem;font-weight:600;color:var(--euc)}
+.hx-amt-l{font-size:.78rem;color:var(--stone);line-height:1.35}
+@media(max-width:860px){.hx-tree-ladder{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- Bring Back the Bush, demoted to a compact band ---- */
+.hx-camp.hx-camp-sm{padding:2.4rem 0}
+.hx-camp-sm-r{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.hx-camp-sm-r h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.15rem,2vw,1.5rem);color:#fff;margin-top:.4rem;max-width:24ch}
+.hx-camp-sm-a{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* ---- leadership quote ---- */
+.hx-quote{margin:2.4rem 0 0;padding-left:1.6rem;border-left:3px solid var(--wattle)}
+.hx-quote blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.45;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 .9rem}
+.hx-quote figcaption{font-size:.85rem;color:var(--stone)}
+.hx-quote figcaption strong{color:var(--char);font-weight:600}

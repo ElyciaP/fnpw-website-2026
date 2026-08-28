@@ -52,8 +52,8 @@
 .hx-archset{display:flex;gap:1rem;align-items:flex-end;justify-content:center}
 .hx-arch{border-radius:0;overflow:hidden;background:var(--euc-pale)}
 .hx-arch img{width:100%;height:100%;object-fit:cover;display:block}
-.hx-arch.a1{width:44%;aspect-ratio:3/4.6}
-.hx-arch.a2{width:33%;aspect-ratio:3/3.6;box-shadow:10px 10px 0 var(--wattle-soft)}
+.hx-arch.a1{width:52%;aspect-ratio:3/4.2}
+.hx-arch.a2{width:40%;aspect-ratio:3/3.4;box-shadow:10px 10px 0 var(--wattle-soft)}
 .hx-arch.a3{width:23%;aspect-ratio:3/4.2}
 
 /* --- pillars: expanding panels --- */
@@ -134,6 +134,11 @@
 .hx-row:hover .hx-row-tag{opacity:1}
 .hx-row-im{position:absolute;right:120px;top:50%;width:158px;aspect-ratio:4/3;object-fit:cover;border:5px solid #fff;box-shadow:0 20px 44px -18px rgba(15,49,50,.5);transform:translateY(-46%) rotate(-8deg) scale(.65);opacity:0;transition:transform .38s cubic-bezier(.22,.8,.24,1),opacity .28s ease;z-index:1;pointer-events:none}
 .hx-row:hover .hx-row-im{opacity:1;transform:translateY(-52%) rotate(-4deg) scale(1)}
+@media(hover:none){
+  /* these two are revealed on hover only, so they never appear on touch */
+  .hx-row-tag{opacity:1}
+  .hx-row-im{opacity:1;transform:translateY(-52%) rotate(-4deg) scale(1)}
+}
 @media(max-width:900px){.hx-row-im{display:none}}
 @media(max-width:700px){.hx-row{grid-template-columns:52px 1fr auto;padding:1.4rem .4rem}.hx-row-i{font-size:1.2rem}}
 
@@ -288,7 +293,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       <div class="hx-archset rv d1">
         <div class="hx-arch a1"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="Koala in the Southern Highlands" loading="lazy"></div>
         <div class="hx-arch a2"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg" alt="Black-chinned honeyeater" loading="lazy"></div>
-        <div class="hx-arch a3"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/EnigmaMoth-lge.jpg" alt="Kangaroo Island enigma moth" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -332,14 +336,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 <!-- IMPACT ========================================================== -->
 <section class="hx-impact">
-  <svg class="topo" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
-    <g fill="none" stroke="#51B593" stroke-width="1.2">
-      <path d="M-20,80 C240,20 420,150 720,90 C1020,30 1200,160 1460,100"/>
-      <path d="M-20,160 C260,100 460,230 760,170 C1060,110 1240,240 1460,180"/>
-      <path d="M-20,240 C240,180 420,310 720,250 C1020,190 1200,320 1460,260"/>
-      <path d="M-20,320 C260,260 460,390 760,330 C1060,270 1240,400 1460,340"/>
-    </g>
-  </svg>
   <div class="cw">
     <span class="ey rv">On the ground</span>
     <h2 class="hx-imp-h rv">What your support looks like on the ground.</h2>
@@ -425,36 +421,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
         <span class="hx-tree-tag">Christmas appeal</span>
         <h2>Give a Tree this Christmas.</h2>
         <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
-        <ul class="hx-tree-pts">
-          <li>Planted into restoration sites across Australia</li>
-          <li>Native species, chosen for the place they go into</li>
-          <li>Tax deductible from $2</li>
-        </ul>
+        <div class="hx-tree-ladder">
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$10</span><span class="hx-amt-t">1 native tree</span><span class="hx-amt-l">a seed of hope</span></a>
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$100</span><span class="hx-amt-t">10 native trees</span><span class="hx-amt-l">builds a haven</span></a>
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$500</span><span class="hx-amt-t">50 native trees</span><span class="hx-amt-l">a wildlife wonder</span></a>
+          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$1,000</span><span class="hx-amt-t">100 native trees</span><span class="hx-amt-l">a legacy canopy</span></a>
+        </div>
+        <p style="font-size:.86rem;color:var(--stone);margin-top:-.2rem">One native tree planted for every $10 donated. Tax deductible from $2.</p>
         <div class="hx-tree-btns">
-          <a class="hx-btn hx-btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Give a Tree</a>
+          <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
           <a class="hx-btn hx-btn-ghost" href="project-gift-a-tree-for-nature-conservation.html">How it works</a>
         </div>
-        <p class="port-note">To confirm before launch: the Christmas appeal Raisely page URL, gift price points, and whether a card is sent to the recipient.</p>
       </div>
     </div>
   </div>
 </section>
-<section class="hx-camp">
+<section class="hx-camp hx-camp-sm">
   <div class="cw">
-    <div class="hx-camp-g rv">
-      <div class="hx-camp-bd">
-        <span class="hx-camp-tag">Current campaign &#183; Bring Back the Bush</span>
-        <h2>Australia looks better with a full bush.</h2>
-        <p>Help us restore native habitat where it has been lost. Every gift plants, protects and heals.</p>
-        <div class="prog-wrap"><div class="prog"><i style="width:62%"></i></div>
-        <p class="prog-lbl" style="color:rgba(255,255,255,.85)"><strong>Campaign progress</strong> &#183; update live figure from Raisely</p></div>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:.4rem">
-          <a class="hx-btn hx-btn-don" href="https://bush.fnpw.org.au">Give to the campaign</a>
-          <a class="hx-btn hx-btn-ghost" href="campaign.html">Learn more</a>
-        </div>
+    <div class="hx-camp-sm-r rv">
+      <div>
+        <span class="hx-camp-tag">Also running &#183; Bring Back the Bush</span>
+        <h3>Australia looks better with a full bush.</h3>
       </div>
-      <div class="hx-camp-im">
-        <img src="assets/img/bbtb-emu.jpg" alt="Emu with a full crest of feathers" loading="lazy">
+      <div class="hx-camp-sm-a">
+        <a class="hx-btn hx-btn-don" href="https://bush.fnpw.org.au">Give to the campaign</a>
+        <a class="hx-btn hx-btn-ghost" href="campaign.html">Learn more</a>
       </div>
     </div>
   </div>
@@ -496,7 +487,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 <!-- STORY =========================================================== -->
 <section class="hx-story">
-  <span class="hx-ghost" aria-hidden="true">1970</span>
   <div class="cw">
     <div class="hx-story-g">
       <div class="hx-story-media rv">
@@ -508,7 +498,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
         <span class="ey">Since 1970</span>
         <h2>Fifty-five years of looking after the wild.</h2>
         <p>It started in 1970 with a single gift and a simple belief: that Australia&rsquo;s wild places, and the creatures found nowhere else, are worth standing up for. In the decades since, that belief has grown into real, lasting change, from securing land that will stay protected forever, to bringing threatened species back from the edge, to restoring landscapes wounded by fire and flood.</p>
-        <p>We&rsquo;ve never done it alone. Every hectare protected and every species recovered has been the work of First Nations peoples, scientists, supporters and local communities, caring for Country side by side. It&rsquo;s a story more than fifty-five years in the making, and the best chapters are still ahead.</p>
+        <p>We&rsquo;ve never done it alone. Every hectare protected and every species recovered has been the work of First Nations peoples, scientists, supporters and local communities, caring for Country side by side.</p>
+        <figure class="hx-quote">
+          <blockquote>We have never been the biggest conservation organisation in the country. We have been one of the most patient. Buying land takes years, recovering a species takes decades, and healing country takes longer than any funding cycle allows. Fifty-five years on, that patience is what our supporters have paid for, and it is the thing that has worked.</blockquote>
+          <figcaption><strong>Ian Darbyshire</strong>, Chief Executive Officer</figcaption>
+        </figure>
         <a class="hx-cta" href="about.html">Read our story<span class="hx-cta-line" aria-hidden="true"></span></a>
       </div>
     </div>
@@ -544,7 +538,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 <!-- NEWSLETTER ====================================================== -->
 <section class="hx-news">
-  <svg class="topo2" viewBox="0 0 460 260" aria-hidden="true"><g fill="none" stroke="#51B593" stroke-width="1.3"><path d="M0,40 C120,10 220,70 340,40 C400,26 440,50 470,38"/><path d="M0,100 C130,70 230,130 350,100 C410,86 450,110 470,98"/><path d="M0,160 C120,130 220,190 340,160 C400,146 440,170 470,158"/><path d="M0,220 C130,190 230,250 350,220 C410,206 450,230 470,218"/></g></svg>
   <div class="cw">
     <div class="hx-news-g">
       <div class="rv">
@@ -553,7 +546,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
         <p style="margin-top:.6rem">Project updates, species spotlights and ways to help. No noise, unsubscribe anytime.</p>
       </div>
       <div class="rv d1">
-        <div class="port-note">HubSpot signup form embed goes here (same embed as newsletters-sign-up.html).</div>
         <a class="btn-p" href="newsletters-sign-up.html">Sign up</a>
       </div>
     </div>
