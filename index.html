@@ -162,16 +162,14 @@
 .hx-story p{margin-bottom:1rem;max-width:52ch}
 
 /* --- impact report showcase --- */
-.hx-ir{background:var(--euc-pale);padding:7rem 0;position:relative;overflow:hidden}
+.hx-ir{background:var(--euc-pale);padding:5.2rem 0;position:relative;overflow:hidden}
 .hx-ir-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
-.hx-ir-cov{position:relative;justify-self:center;width:min(320px,82%)}
-.hx-ir-cov::before{content:"";position:absolute;inset:0;transform:rotate(4.5deg) translate(16px,12px);border:2px solid var(--euc);z-index:0}
-.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;transform:rotate(-3.5deg);box-shadow:0 34px 64px -22px rgba(15,49,50,.5);transition:transform .45s cubic-bezier(.22,.8,.24,1)}
-.hx-ir-cov:hover img{transform:rotate(0) scale(1.02)}
-.hx-ir-tag{position:absolute;top:-1.2rem;right:-1.4rem;z-index:2;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .9rem;transform:rotate(3deg)}
+.hx-ir-cov{position:relative;justify-self:center;width:min(330px,84%)}
+.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;box-shadow:12px 12px 0 var(--euc);transition:transform .3s ease,box-shadow .3s ease}
+.hx-ir-cov:hover img{transform:translate(-4px,-4px);box-shadow:18px 18px 0 var(--euc)}
 .hx-ir h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--euc-deep);line-height:1.15;margin:.8rem 0 1.2rem;max-width:20ch}
 .hx-ir p{max-width:52ch;margin-bottom:1rem}
-.hx-ir-trust{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--euc-soft);font-size:.85rem;color:var(--stone)}
+.hx-ir-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--euc-soft);font-size:.92rem;font-weight:500;color:var(--char)}
 .hx-ir-trust span{display:inline-flex;align-items:center;gap:.45rem}
 .hx-ir-trust i{font-style:normal;color:var(--euc);font-weight:700}
 
@@ -495,12 +493,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   <div class="cw">
     <div class="hx-ir-g">
       <div class="hx-ir-cov rv">
-        <span class="hx-ir-tag">Get the scoop</span>
         <img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025">
       </div>
       <div class="rv d1">
         <span class="ey">The stories</span>
-        <h2>Get to know the work on the ground.</h2>
+        <h2>The full year, in one place.</h2>
         <p>Our latest Impact Report is the easiest way to meet us properly: the places being protected, the species recovering, the seedlings going in, and the communities making it happen right across the country.</p>
         <p>Spend ten minutes with it and you will see exactly where your support goes and the difference it makes.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem">
