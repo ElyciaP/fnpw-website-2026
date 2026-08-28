@@ -98,6 +98,7 @@ supporting-community-led-treatment-to-protect-bare-nosed-wombats||species|Austra
 """.strip()
 
 TITLE_OVERRIDES = {
+    'gift-a-tree-for-nature-conservation': 'Give a Tree for Nature Conservation',
     'was-woylie-survival': "WA's Woylie Survival",
     'wa-bird-watering-stations': 'WA Bird Watering Stations',
     'nilpena-nationalpark': 'Nilpena National Park',

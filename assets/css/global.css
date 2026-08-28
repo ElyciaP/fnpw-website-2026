@@ -491,3 +491,30 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pcard-species{--pcard-c:var(--waratah-dk)}
 .pcard-healing{--pcard-c:var(--red-soil-dk)}
 @media(max-width:820px){.pcg{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ============================================================
+   CHRISTMAS APPEAL  ·  Give a Tree (homepage)
+   Warm block, sits directly above the green campaign section
+   so the two asks read as different moments, not competitors.
+   ============================================================ */
+.hx-tree{background:var(--sand);padding:0;position:relative}
+.hx-tree-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,4.5rem);align-items:center;min-height:460px}
+.hx-tree-im{align-self:stretch;overflow:hidden;background:var(--euc-pale)}
+.hx-tree-im img{display:block;width:100%;height:100%;object-fit:cover;min-height:460px}
+.hx-tree-bd{display:flex;flex-direction:column;justify-content:center;gap:1.1rem;padding:4.5rem 0}
+.hx-tree-tag{font-family:var(--ff-d);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--wattle-dk);display:inline-flex;align-items:center;gap:.6em}
+.hx-tree-tag::before{content:"";width:24px;height:2px;background:var(--wattle-dk);display:inline-block}
+.hx-tree-bd h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.08;letter-spacing:-.02em;color:var(--euc-deep);max-width:15ch}
+.hx-tree-bd p{color:var(--char);max-width:46ch}
+.hx-tree-pts{list-style:none;display:grid;gap:.55rem;margin:.2rem 0 .4rem}
+.hx-tree-pts li{position:relative;padding-left:1.5rem;font-size:.95rem;color:var(--char)}
+.hx-tree-pts li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--euc);border-radius:50%}
+.hx-tree-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+/* the ghost button is built for the dark campaign block; restate it for this light one */
+.hx-tree .hx-btn-ghost{color:var(--euc-deep);border-color:var(--euc-deep);background:transparent}
+.hx-tree .hx-btn-ghost:hover{background:var(--euc-deep);color:var(--cream)}
+@media(max-width:860px){
+  .hx-tree-g{grid-template-columns:1fr;min-height:0}
+  .hx-tree-im img{min-height:280px;max-height:340px}
+  .hx-tree-bd{padding:2.5rem 0 3.5rem}
+}
