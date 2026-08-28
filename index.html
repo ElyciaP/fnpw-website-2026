@@ -57,7 +57,7 @@
 .hx-arch.a3{width:23%;aspect-ratio:3/4.2}
 
 /* --- pillars: expanding panels --- */
-.hx-pils{padding:0 0 6rem;background:var(--cream)}
+.hx-pils{padding:6rem 0;background:var(--cream)}
 .hx-pils-head{margin-bottom:2.4rem}
 .hx-pilrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
 .hx-pil{display:block;text-decoration:none;color:inherit}
@@ -176,7 +176,10 @@
   background:radial-gradient(120% 90% at 50% -10%, #fffdfa 0%, var(--cream) 42%, var(--sand) 100%);
   border-top:1px solid var(--rule)}
 .hx-news .topo2{position:absolute;right:-50px;top:-20px;width:460px;opacity:.35;pointer-events:none}
-.hx-news-g{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hx-news-g{position:relative;display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+  .hx-news-g p{max-width:68ch}
+  .hx-news-g .btn-p{padding:1.2em 2.4em;font-size:1.02rem;min-width:250px;text-align:center;white-space:nowrap}
+  @media(max-width:820px){.hx-news-g{grid-template-columns:1fr;gap:1.8rem}}
 .hx-news h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--euc-deep);letter-spacing:-.02em}
 
 /* --- refinements --- */
@@ -306,7 +309,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
         <img src="https://fnpw.org.au/wp-content/uploads/2024/03/Plant-a-Tree-Australia.png" alt="A native seedling being planted" loading="lazy">
       </div>
       <div class="hx-tree-bd">
-        <span class="hx-tree-tag">Christmas appeal</span>
         <h2>Give a Tree this Christmas.</h2>
         <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
         <div class="hx-tree-ladder">
@@ -441,19 +443,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   <div class="cw">
     <div class="hx-camp-sm-r rv">
       <div class="hx-camp-sm-bd">
-        <span class="cmp-ey"><span class="cmp-ey-dot"></span>Also running</span>
-        <h3 class="hx-camp-h">Bring Back The <em>Bush.</em></h3>
-        <p class="hx-camp-sub">Australia looks better with a full bush.</p>
+        <h3 class="hx-camp-h">Australia looks better with a full bush.</h3>
         <p>Let&rsquo;s not beat around the bush any longer. Australia&rsquo;s wilderness and wildlife need our help.</p>
         <div class="hx-camp-acts">
           <a class="cmp-btn-p" href="https://bush.fnpw.org.au">Bring back the bush</a>
         </div>
       </div>
       <div class="hx-camp-sm-im">
-        <div class="hx-camp-disc">
-          <div class="hx-camp-disc-in"><img src="https://raisely-images.imgix.net/bring-back-the-bush/uploads/emu-blue-sky-v-2-png-5d1b82.png" alt="Emu with a full crest of feathers" loading="lazy"></div>
-          <span class="hx-camp-tagline">Full bush energy</span>
-        </div>
+        <img src="assets/img/emu-banner.png" alt="Emu with a full crest of feathers" loading="lazy">
       </div>
     </div>
   </div>
@@ -517,9 +514,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   <div class="cw">
     <div class="hx-news-g">
       <div class="rv">
-        <span class="ey">epaws newsletter</span>
+        <span class="ey">Newsletter</span>
         <h2>Stories from the bush, straight to your inbox.</h2>
-        <p style="margin-top:.6rem">Project updates, species spotlights and ways to help. No noise, unsubscribe anytime.</p>
+        <p style="margin-top:.7rem">Once a month we send project updates, species spotlights and the small wins that rarely make the news, written by the people doing the work on the ground.</p>
       </div>
       <div class="rv d1">
         <a class="btn-p" href="newsletters-sign-up.html">Sign up</a>
