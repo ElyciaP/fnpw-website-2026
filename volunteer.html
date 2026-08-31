@@ -34,25 +34,6 @@
 @media(max-width:780px){.fb-cred{display:none}}
 
 /* WHY IT MATTERS — two-column with SDG cards */
-.v-why{padding:clamp(4rem,7vw,6rem) 0;background:var(--cream)}
-.v-why-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
-@media(max-width:920px){.v-why-g{grid-template-columns:1fr}}
-.v-why-l h2{font-size:clamp(2rem,3.4vw,2.7rem);letter-spacing:-.025em;line-height:1.05;margin:1rem 0 1.3rem}
-.v-why-l h2 em{font-style:normal;font-family:var(--ff-d);color:var(--euc)}
-.v-why-l p{font-size:1.02rem;line-height:1.7;color:var(--char);margin-bottom:1.1rem}
-.v-why-l .frame-note{display:inline-flex;align-items:center;gap:.55em;background:var(--euc-pale);color:var(--euc-deep);font-size:.84rem;font-weight:500;padding:.5em .9em;border-radius:0;margin-top:.6rem;border:1px solid var(--euc-soft)}
-.v-why-l .frame-note svg{width:14px;height:14px;color:var(--euc)}
-.v-sdg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:560px){.v-sdg{grid-template-columns:1fr}}
-.v-sdg-card{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:1.5rem 1.4rem;position:relative;overflow:hidden;transition:.3s}
-.v-sdg-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(15,49,50,.18);border-color:var(--euc-soft)}
-.v-sdg-card::before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--euc)}
-.v-sdg-card.s2::before{background:var(--reef)}
-.v-sdg-card.s3::before{background:var(--wattle-dk)}
-.v-sdg-card.s4::before{background:var(--waratah)}
-.v-sdg-num{display:inline-block;font-family:var(--ff-d);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:.6rem}
-.v-sdg-card h4{font-size:1.02rem;font-weight:600;color:var(--euc-deep);margin-bottom:.4rem;letter-spacing:-.01em;line-height:1.25}
-.v-sdg-card p{font-size:.86rem;color:var(--char);line-height:1.5;margin:0}
 
 /* LOCATIONS strip */
 .v-locs{padding:clamp(3rem,6vw,5rem) 0;background:var(--paper);position:relative}
@@ -150,12 +131,13 @@
 .v-sticky-go:hover{background:var(--waratah-dk);color:#fff}
 @media(max-width:640px){.v-sticky-in span{display:none}.v-sticky-in{justify-content:center}}
 /* ── day timeline ─────────────────────────────────────────────── */
-.v-day{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);background:var(--white);margin:2.4rem 0 3rem}
+.v-day{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--rule);background:var(--white);margin:2.4rem 0 3rem}
 .v-day-i{padding:1.4rem 1.3rem;border-right:1px solid var(--rule)}
 .v-day-i:last-child{border-right:0}
 .v-day-i .s{font-family:var(--ff-d);font-weight:800;font-size:.78rem;color:var(--waratah);letter-spacing:.1em}
 .v-day-i h4{font-family:var(--ff-d);font-size:1rem;color:var(--euc-deep);margin:.35rem 0 .3rem;letter-spacing:-.01em}
 .v-day-i p{font-size:.87rem;color:var(--stone);margin:0;line-height:1.5}
+@media(max-width:1050px){.v-day{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:820px){.v-day{grid-template-columns:1fr 1fr}.v-day-i{border-bottom:1px solid var(--rule)}}
 /* ── where we run: tabs + panel ───────────────────────────────── */
 .v-where{padding:clamp(4rem,7vw,6rem) 0;background:var(--paper)}
@@ -181,16 +163,17 @@
 .v-panel-work{font-size:.94rem;color:var(--char);margin:0 0 1.5rem;line-height:1.6}
 .v-panel-btns{display:flex;gap:.8rem;flex-wrap:wrap}
 @media(max-width:880px){.v-panel{grid-template-columns:1fr}.v-panel-im{min-height:240px}.v-panel-facts{grid-template-columns:1fr 1fr}}
-/* ── how it works ─────────────────────────────────────────────── */
-.v-how{padding:clamp(4rem,7vw,5.5rem) 0;background:var(--cream)}
-.v-how-h{max-width:640px;margin-bottom:2.4rem}
-.v-how-h h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.022em;margin:1rem 0 0}
-.v-how-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
-.v-how-i{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--euc);padding:1.6rem 1.4rem}
-.v-how-i .n{font-family:var(--ff-d);font-weight:800;font-size:1.6rem;color:var(--euc-soft);line-height:1;display:block}
-.v-how-i h3{font-family:var(--ff-d);font-size:1.05rem;color:var(--euc-deep);margin:.5rem 0 .4rem;letter-spacing:-.01em}
-.v-how-i p{font-size:.9rem;color:var(--stone);margin:0;line-height:1.55}
-@media(max-width:900px){.v-how-g{grid-template-columns:1fr 1fr}}
+.v-align{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--rule)}
+.v-align-note{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-d);font-weight:600;font-size:.88rem;color:var(--euc-deep)}
+.v-align-note svg{width:18px;height:18px;color:var(--euc);flex:none}
+.v-align-sdg{font-size:.88rem;color:var(--stone);max-width:62ch}
+.v-align-sdg b{color:var(--euc-deep);font-weight:700}
+.v-steps{list-style:none;counter-reset:vs;margin:1.6rem 0 1.8rem;padding:0;display:grid;gap:.7rem}
+.v-steps li{counter-increment:vs;position:relative;padding-left:2.2rem;font-size:.9rem;color:var(--stone);line-height:1.5}
+.v-steps li::before{content:counter(vs,decimal-leading-zero);position:absolute;left:0;top:.05em;font-family:var(--ff-d);font-weight:800;font-size:.82rem;color:var(--euc-mid)}
+.v-steps b{display:block;font-family:var(--ff-d);font-weight:600;font-size:.95rem;color:var(--euc-deep)}
+.v-steps{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.4rem 0}
+/* ── how it works (module removed, styles kept out of the way) ── */
 .v-prog{padding:clamp(4rem,7vw,6rem) 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
 .v-prog::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle-soft),var(--waratah-soft),var(--euc-mid));z-index:3}
 .v-prog::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 100% at 90% 0%,rgba(196,169,39,.18),transparent 60%);pointer-events:none}
@@ -405,8 +388,9 @@
     <div class="v-day rv">
       <div class="v-day-i"><span class="s">1</span><h4>Arrive and brief</h4><p>Meet the ranger, learn the site, the species and why this patch matters.</p></div>
       <div class="v-day-i"><span class="s">2</span><h4>Hands on</h4><p>Propagating in the nursery, or restoring habitat in the park. Planting when it is the season for it.</p></div>
-      <div class="v-day-i"><span class="s">3</span><h4>Lunch on site</h4><p>Catering is included. This is usually where the team talking actually happens.</p></div>
-      <div class="v-day-i"><span class="s">4</span><h4>Wrap up</h4><p>The ranger talks through what got done and what happens on the site after you leave.</p></div>
+      <div class="v-day-i"><span class="s">3</span><h4>Lunch on site</h4><p>Catering is included, and about half an hour. This is usually where the team talking actually happens.</p></div>
+      <div class="v-day-i"><span class="s">4</span><h4>Back out</h4><p>The bigger stretch of the day. Most of what your team gets done happens after lunch.</p></div>
+      <div class="v-day-i"><span class="s">5</span><h4>Wrap up</h4><p>The ranger talks through what got done and what happens on the site after you leave.</p></div>
     </div>
 
     <!-- Activity 1 -->
@@ -450,7 +434,7 @@
         <span class="pn">Support Wildlife and Sanctuary Care</span>
         <h3>Keep a sanctuary running for a day.</h3>
         <p>At sites like the Kaarakin Black Cockatoo Conservation Centre in the Perth Hills, teams prepare and distribute food, clean aviaries and care areas, and keep the surrounding bushland in shape.</p>
-        <p>It is the least glamorous work on this page and the most immediately useful. Your team also learns what is driving three black cockatoo species towards the edge, from someone who works with them daily.</p>
+        <p>Your team also learns what is pushing three black cockatoo species towards the edge, from the people who work with them every day.</p>
         <div class="v-act-stat"><strong>40 acres</strong> of bushland &middot; <strong>3</strong> black cockatoo species</div>
       </div>
     </div>
@@ -481,7 +465,7 @@
   <div class="cw">
     <div class="v-where-h rv">
       <span class="ey">Where we run</span>
-      <h2>Five cities. Five very different days.</h2>
+      <h2>Our corporate volunteering sites across Australia.</h2>
       <p>Pick your city to see where your team would work and what the day involves. Each city has its own page with the full site list and how to book.</p>
     </div>
     <div class="v-tabs" role="tablist" id="vTabs"><button type="button" role="tab" aria-selected="true" data-city="sydney">Sydney</button><button type="button" role="tab" aria-selected="false" data-city="melbourne">Melbourne</button><button type="button" role="tab" aria-selected="false" data-city="brisbane">Brisbane</button><button type="button" role="tab" aria-selected="false" data-city="adelaide">Adelaide</button><button type="button" role="tab" aria-selected="false" data-city="perth">Perth</button></div>
@@ -502,22 +486,6 @@
           <a class="btn btn-o" href="corporate-volunteering-sydney.html" id="vpLink">See Sydney sites</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── How it works ─────────────────────────────────────────────── -->
-<section class="v-how">
-  <div class="cw">
-    <div class="v-how-h rv">
-      <span class="ey">How it works</span>
-      <h2>Four steps. We do the heavy lifting.</h2>
-    </div>
-    <div class="v-how-g">
-      <div class="v-how-i rv"><span class="n">01</span><h3>Enquire</h3><p>Use the form on this page, email or call. Tell us your city, team size and rough dates.</p></div>
-      <div class="v-how-i rv d1"><span class="n">02</span><h3>We match a site</h3><p>We come back with the site, the activity and the dates where your team will do the most good.</p></div>
-      <div class="v-how-i rv d2"><span class="n">03</span><h3>Logistics sorted</h3><p>Permits, insurance, tools, safety gear and catering, all arranged before you arrive.</p></div>
-      <div class="v-how-i rv d3"><span class="n">04</span><h3>Out in the field</h3><p>Our rangers and conservation staff run the day, from the welcome and safety briefing to the wrap-up. Your team brings closed shoes and a hat.</p></div>
     </div>
   </div>
 </section>
@@ -580,56 +548,13 @@
   </div>
 </section>
 
-<!-- ─── Why it matters + SDGs ────────────────────────────────────── -->
-<section class="v-why">
-  <div class="cw">
-    <div class="v-why-g">
-      <div class="v-why-l rv">
-        <span class="ey">Why corporate volunteering matters</span>
-        <h2>When we care for nature, <em>everyone benefits.</em></h2>
-        <p>Australia is home to extraordinary biodiversity, with hundreds of thousands of native species found nowhere else on Earth. The health of this natural heritage underpins the wellbeing, prosperity and quality of life of all Australians.</p>
-        <p>To protect it, Australia has committed to halt and reverse biodiversity loss by 2030, and to live in harmony with nature by 2050. Through corporate volunteering, your organisation can play a practical role in delivering on these commitments, strengthening team culture, deepening environmental awareness and contributing to real conservation outcomes.</p>
-        <span class="frame-note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          Signatory to the Kunming&ndash;Montreal Global Biodiversity Framework
-        </span>
-      </div>
-      <div class="v-why-r rv d2">
-        <span class="ey" style="display:block;margin-bottom:1.2rem">Supporting the UN Sustainable Development Goals</span>
-        <div class="v-sdg">
-          <div class="v-sdg-card s1">
-            <span class="v-sdg-num">SDG 15</span>
-            <h4>Life on Land</h4>
-            <p>Protecting and restoring terrestrial ecosystems and wildlife habitat.</p>
-          </div>
-          <div class="v-sdg-card s2">
-            <span class="v-sdg-num">SDG 13</span>
-            <h4>Climate Action</h4>
-            <p>Strengthening ecosystem resilience through nature-based solutions.</p>
-          </div>
-          <div class="v-sdg-card s3">
-            <span class="v-sdg-num">SDG 11</span>
-            <h4>Sustainable Cities &amp; Communities</h4>
-            <p>Enhancing green spaces and urban tree canopy.</p>
-          </div>
-          <div class="v-sdg-card s4">
-            <span class="v-sdg-num">SDG 3</span>
-            <h4>Good Health &amp; Wellbeing</h4>
-            <p>Supporting physical and mental wellbeing through connection with nature.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── Benefits ─────────────────────────────────────────────────── -->
 <section class="v-ben">
   <div class="cw">
     <div class="v-ben-h rv">
-      <span class="ey">The benefits</span>
+      <span class="ey">Why it is worth the day</span>
       <h2>Good for people. Good for business. Good for nature.</h2>
-      <p>Three audiences win when your team spends a day in the field.</p>
+      <p>Australia holds species found nowhere else on Earth, and has committed to halt and reverse biodiversity loss by 2030. A volunteering day is a practical way for your organisation to be part of that, and three groups get something out of it.</p>
     </div>
     <div class="v-ben-g">
       <div class="v-ben-card rv">
@@ -663,6 +588,13 @@
         </ul>
       </div>
     </div>
+    <div class="v-align rv">
+      <span class="v-align-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Signatory to the Kunming&ndash;Montreal Global Biodiversity Framework
+      </span>
+      <span class="v-align-sdg">Contributes to UN Sustainable Development Goals <b>15</b> Life on Land, <b>13</b> Climate Action, <b>11</b> Sustainable Cities and <b>3</b> Good Health and Wellbeing.</span>
+    </div>
   </div>
 </section>
 
@@ -679,6 +611,13 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             1800 898 626
           </a>
+          <span class="ey" style="display:flex;margin-bottom:.2rem">How it works</span>
+          <ol class="v-steps">
+            <li><b>Enquire</b> Tell us your city, team size and rough dates.</li>
+            <li><b>We match a site</b> We come back within two working days with the site, the activity and the dates.</li>
+            <li><b>Logistics sorted</b> Permits, insurance, tools, safety gear and catering, all arranged.</li>
+            <li><b>Out in the field</b> Our rangers run the day. You bring closed shoes and a hat.</li>
+          </ol>
           <div class="v-cta-info">
             <span class="v-cta-info-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>fnpw@fnpw.org.au</span>
             <span class="v-cta-info-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>21 days&rsquo; minimum notice required</span>
