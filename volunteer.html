@@ -119,6 +119,78 @@
 .v-map-help svg{width:14px;height:14px}
 
 /* PROGRAM DETAILS / INCLUSIONS */
+/* ── D1: hero enquiry card, proof bar, sticky bar ─────────────── */
+.fb-hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+@media(max-width:900px){.fb-hero-g{grid-template-columns:1fr}}
+.fb-hero-content h1{margin-bottom:1rem}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+.hero-chips span{font-size:.8rem;color:var(--cream);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:.4em .85em}
+.qcheck{background:var(--white);padding:1.6rem;box-shadow:0 30px 60px -34px rgba(0,0,0,.65);max-width:420px;width:100%}
+.qc-ey{font-family:var(--ff-d);font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--euc)}
+.qcheck h2{font-family:var(--ff-d);font-size:1.25rem;letter-spacing:-.02em;color:var(--euc-deep);margin:.5rem 0 .3rem}
+.qcheck>p{font-size:.86rem;color:var(--stone);margin:0 0 .9rem;line-height:1.5}
+.qcheck label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);font-weight:600;margin:.8rem 0 .3rem}
+.qcheck select,.qcheck input{width:100%;padding:.72em .8em;border:1px solid var(--rule);background:var(--cream);font-family:inherit;font-size:.93rem;color:var(--char);border-radius:0}
+.qcheck select:focus,.qcheck input:focus{outline:2px solid var(--euc);outline-offset:1px}
+.qc-go{margin-top:1.1rem;width:100%;background:var(--waratah);color:#fff;border:0;padding:.95em;font-family:var(--ff-d);font-weight:700;font-size:.95rem;cursor:pointer;transition:.2s}
+.qc-go:hover{background:var(--waratah-dk)}
+.qc-fine{font-size:.75rem;color:var(--stone);margin:.7rem 0 0}
+.qc-fine a{color:var(--euc);font-weight:600}
+.v-proof{background:var(--euc-deep);color:var(--cream);padding:1.6rem 0}
+.v-proof-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+.v-proof-g div{display:flex;flex-direction:column;gap:.15rem}
+.v-proof-g strong{font-family:var(--ff-d);font-weight:700;font-size:1.15rem;color:var(--wattle-soft);letter-spacing:-.01em}
+.v-proof-g span{font-size:.84rem;color:rgba(250,246,242,.82)}
+@media(max-width:760px){.v-proof-g{grid-template-columns:1fr 1fr;gap:1.1rem}}
+.v-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--euc-deep);color:var(--cream);transform:translateY(110%);transition:transform .35s ease;box-shadow:0 -10px 30px -18px rgba(0,0,0,.6)}
+.v-sticky.on{transform:none}
+.v-sticky-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 2rem;font-size:.9rem}
+.v-sticky-in b{font-family:var(--ff-d);color:var(--wattle-soft)}
+.v-sticky-go{background:var(--waratah);color:#fff;font-family:var(--ff-d);font-weight:700;font-size:.86rem;padding:.65em 1.35em;text-decoration:none;white-space:nowrap}
+.v-sticky-go:hover{background:var(--waratah-dk);color:#fff}
+@media(max-width:640px){.v-sticky-in span{display:none}.v-sticky-in{justify-content:center}}
+/* ── day timeline ─────────────────────────────────────────────── */
+.v-day{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);background:var(--white);margin:2.4rem 0 3rem}
+.v-day-i{padding:1.4rem 1.3rem;border-right:1px solid var(--rule)}
+.v-day-i:last-child{border-right:0}
+.v-day-i .s{font-family:var(--ff-d);font-weight:800;font-size:.78rem;color:var(--waratah);letter-spacing:.1em}
+.v-day-i h4{font-family:var(--ff-d);font-size:1rem;color:var(--euc-deep);margin:.35rem 0 .3rem;letter-spacing:-.01em}
+.v-day-i p{font-size:.87rem;color:var(--stone);margin:0;line-height:1.5}
+@media(max-width:820px){.v-day{grid-template-columns:1fr 1fr}.v-day-i{border-bottom:1px solid var(--rule)}}
+/* ── where we run: tabs + panel ───────────────────────────────── */
+.v-where{padding:clamp(4rem,7vw,6rem) 0;background:var(--paper)}
+.v-where-h{max-width:680px;margin-bottom:2rem}
+.v-where-h h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.022em;margin:1rem 0 .7rem}
+.v-where-h p{color:var(--stone);margin:0}
+.v-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.v-tabs button{font-family:var(--ff-d);font-weight:600;font-size:.94rem;padding:.62em 1.25em;border:1px solid var(--rule);background:var(--white);color:var(--euc-deep);cursor:pointer;transition:.2s}
+.v-tabs button:hover{border-color:var(--euc)}
+.v-tabs button[aria-selected=true]{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.v-panel{display:grid;grid-template-columns:.95fr 1.05fr;background:var(--white);border:1px solid var(--rule)}
+.v-panel-im{position:relative;min-height:340px;overflow:hidden}
+.v-panel-im img{width:100%;height:100%;object-fit:cover;display:block}
+.v-panel-tag{position:absolute;left:1rem;bottom:1rem;background:rgba(15,49,50,.9);color:var(--cream);font-family:var(--ff-d);font-weight:600;font-size:.78rem;padding:.5em 1em}
+.v-panel-bd{padding:2.2rem}
+.v-panel-bd h3{font-family:var(--ff-d);font-size:1.7rem;color:var(--euc-deep);letter-spacing:-.02em;margin:0}
+.v-panel-bd h3 span{font-size:.8rem;letter-spacing:.14em;color:var(--stone);font-weight:600;margin-left:.6em;vertical-align:middle}
+.v-panel-eco{font-size:1rem;color:var(--char);margin:.7rem 0 .5rem}
+.v-panel-sites{font-size:.92rem;color:var(--stone);margin:0 0 1.3rem;line-height:1.6}
+.v-panel-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.1rem 0;margin-bottom:1.2rem}
+.v-panel-facts b{display:block;font-family:var(--ff-d);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--euc);margin-bottom:.25rem}
+.v-panel-facts span{font-size:.92rem;color:var(--char)}
+.v-panel-work{font-size:.94rem;color:var(--char);margin:0 0 1.5rem;line-height:1.6}
+.v-panel-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+@media(max-width:880px){.v-panel{grid-template-columns:1fr}.v-panel-im{min-height:240px}.v-panel-facts{grid-template-columns:1fr 1fr}}
+/* ── how it works ─────────────────────────────────────────────── */
+.v-how{padding:clamp(4rem,7vw,5.5rem) 0;background:var(--cream)}
+.v-how-h{max-width:640px;margin-bottom:2.4rem}
+.v-how-h h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.022em;margin:1rem 0 0}
+.v-how-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.v-how-i{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--euc);padding:1.6rem 1.4rem}
+.v-how-i .n{font-family:var(--ff-d);font-weight:800;font-size:1.6rem;color:var(--euc-soft);line-height:1;display:block}
+.v-how-i h3{font-family:var(--ff-d);font-size:1.05rem;color:var(--euc-deep);margin:.5rem 0 .4rem;letter-spacing:-.01em}
+.v-how-i p{font-size:.9rem;color:var(--stone);margin:0;line-height:1.55}
+@media(max-width:900px){.v-how-g{grid-template-columns:1fr 1fr}}
 .v-prog{padding:clamp(4rem,7vw,6rem) 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
 .v-prog::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle-soft),var(--waratah-soft),var(--euc-mid));z-index:3}
 .v-prog::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 100% at 90% 0%,rgba(196,169,39,.18),transparent 60%);pointer-events:none}
@@ -273,60 +345,52 @@
     <img src="https://fnpw.org.au/wp-content/uploads/2021/02/Ascent-37-Woomargama-2000px-Copy.jpg" alt="Hands gently holding a native seedling above rich Australian soil" loading="eager">
   </div>
   <div class="cw fb-hero-content rv">
-    <nav class="breadcrumb"><a href="index.html">Home</a><span style="opacity:.4">/</span>Get Involved<span style="opacity:.4">/</span>Corporate Volunteering</nav>
-    <span class="ey">Hands-on conservation</span>
-    <h1>Corporate volunteering for Australia&rsquo;s <em>biodiversity.</em></h1>
-    <p class="lede">Make a meaningful impact. Connect your team to nature. Support national and global goals for people and planet.</p>
-    <div class="btns">
-      <a href="#enquire" class="btn btn-p">Plan your day</a>
-      <a href="#map" class="btn-g">See volunteer sites</a>
+    <div class="fb-hero-g">
+      <div class="fb-hero-l">
+        <nav class="breadcrumb"><a href="index.html">Home</a><span style="opacity:.4">/</span>Get Involved<span style="opacity:.4">/</span>Corporate Volunteering</nav>
+        <span class="ey">Hands-on conservation</span>
+        <h1>Give your team a day <em>in the field.</em></h1>
+        <p class="lede">A hands-on conservation day on a working restoration site, run with our rangers and community nurseries. Your team grows seedlings, repairs habitat and clears weeds from places that need it, and plants trees when the season allows.</p>
+        <div class="hero-chips">
+          <span>10&ndash;20 people</span><span>Weekdays, about 9 to 2</span><span>Tools and catering included</span><span>Tax deductible</span>
+        </div>
+      </div>
+      <form class="qcheck" id="qcheck">
+        <span class="qc-ey">Start here &middot; 30 seconds</span>
+        <h2>Check a date for your team</h2>
+        <p>Tell us the basics and we come back within two working days with sites and dates.</p>
+        <label for="qc-city">City</label>
+        <select id="qc-city"><option>Sydney</option><option>Melbourne</option><option>Brisbane</option><option>Adelaide</option><option>Perth</option></select>
+        <label for="qc-size">Team size</label>
+        <select id="qc-size"><option>Up to 10</option><option>10&ndash;15</option><option>15&ndash;20</option><option>20+ (combined group)</option></select>
+        <label for="qc-when">Rough month</label>
+        <input id="qc-when" type="text" placeholder="e.g. September 2026">
+        <button type="submit" class="qc-go">Check availability</button>
+        <p class="qc-fine">Or call <a href="tel:1800898626">1800 898 626</a>. Minimum 21 days&rsquo; notice.</p>
+      </form>
     </div>
   </div>
   <span class="fb-cred">Restoration in action &middot; FNPW Recovery Nursery</span>
 </section>
 
-<!-- ─── Why it matters + SDGs ────────────────────────────────────── -->
-<section class="v-why">
+<!-- ─── At a glance ──────────────────────────────────────────────── -->
+<section class="v-proof">
   <div class="cw">
-    <div class="v-why-g">
-      <div class="v-why-l rv">
-        <span class="ey">Why corporate volunteering matters</span>
-        <h2>When we care for nature, <em>everyone benefits.</em></h2>
-        <p>Australia is home to extraordinary biodiversity, with hundreds of thousands of native species found nowhere else on Earth. The health of this natural heritage underpins the wellbeing, prosperity and quality of life of all Australians.</p>
-        <p>To protect it, Australia has committed to halt and reverse biodiversity loss by 2030, and to live in harmony with nature by 2050. Through corporate volunteering, your organisation can play a practical role in delivering on these commitments, strengthening team culture, deepening environmental awareness and contributing to real conservation outcomes.</p>
-        <span class="frame-note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          Signatory to the Kunming&ndash;Montreal Global Biodiversity Framework
-        </span>
-      </div>
-      <div class="v-why-r rv d2">
-        <span class="ey" style="display:block;margin-bottom:1.2rem">Supporting the UN Sustainable Development Goals</span>
-        <div class="v-sdg">
-          <div class="v-sdg-card s1">
-            <span class="v-sdg-num">SDG 15</span>
-            <h4>Life on Land</h4>
-            <p>Protecting and restoring terrestrial ecosystems and wildlife habitat.</p>
-          </div>
-          <div class="v-sdg-card s2">
-            <span class="v-sdg-num">SDG 13</span>
-            <h4>Climate Action</h4>
-            <p>Strengthening ecosystem resilience through nature-based solutions.</p>
-          </div>
-          <div class="v-sdg-card s3">
-            <span class="v-sdg-num">SDG 11</span>
-            <h4>Sustainable Cities &amp; Communities</h4>
-            <p>Enhancing green spaces and urban tree canopy.</p>
-          </div>
-          <div class="v-sdg-card s4">
-            <span class="v-sdg-num">SDG 3</span>
-            <h4>Good Health &amp; Wellbeing</h4>
-            <p>Supporting physical and mental wellbeing through connection with nature.</p>
-          </div>
-        </div>
-      </div>
+    <div class="v-proof-g">
+      <div><strong>10&ndash;20</strong><span>people per day</span></div>
+      <div><strong>About 9&ndash;2</strong><span>weekdays, timings vary by state</span></div>
+      <div><strong>$3,500 + GST</strong><span>per day, fully tax deductible</span></div>
+      <div><strong>5 cities</strong><span>NSW &middot; VIC &middot; QLD &middot; SA &middot; WA</span></div>
     </div>
   </div>
 </section>
+
+<div class="v-sticky" id="vSticky" aria-hidden="true">
+  <div class="cw v-sticky-in">
+    <span>Corporate volunteering &middot; <b>$3,500 + GST</b> &middot; 10&ndash;20 people &middot; weekdays</span>
+    <a href="#enquire" class="v-sticky-go">Check availability</a>
+  </div>
+</div>
 
 <!-- ─── What your team will do — two activity types ──────────────── -->
 <section class="v-acts">
@@ -334,7 +398,15 @@
     <div class="v-acts-h rv">
       <span class="ey">What your team will do</span>
       <h2>Practical work, real impact.</h2>
-      <p>Each volunteering experience is hands-on, rewarding and designed to create meaningful outcomes for nature, communities and your people.</p>
+      <p>Most days are nursery work or on-ground restoration. Tree planting is seasonal, so it is one option rather than the whole story. We match your team to the site and the activity where the need is greatest on your date.</p>
+    </div>
+
+
+    <div class="v-day rv">
+      <div class="v-day-i"><span class="s">1</span><h4>Arrive and brief</h4><p>Meet the ranger, learn the site, the species and why this patch matters.</p></div>
+      <div class="v-day-i"><span class="s">2</span><h4>Hands on</h4><p>Propagating in the nursery, or restoring habitat in the park. Planting when it is the season for it.</p></div>
+      <div class="v-day-i"><span class="s">3</span><h4>Lunch on site</h4><p>Catering is included. This is usually where the team talking actually happens.</p></div>
+      <div class="v-day-i"><span class="s">4</span><h4>Wrap up</h4><p>What went in, what got cleared, and what happens on the site after you leave.</p></div>
     </div>
 
     <!-- Activity 1 -->
@@ -368,6 +440,21 @@
     </div>
 
     <!-- Gallery: PLACEHOLDER images and quote. Swap for real photos and a signed-off quote before launch. -->
+    <!-- Activity 3 -->
+    <div class="v-act rv">
+      <div class="v-act-im">
+        <span class="badge">Activity 3</span>
+        <img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="Native wildlife in care" loading="lazy">
+      </div>
+      <div class="v-act-bd">
+        <span class="pn">Support Wildlife and Sanctuary Care</span>
+        <h3>Keep a sanctuary running for a day.</h3>
+        <p>At sites like the Kaarakin Black Cockatoo Conservation Centre in the Perth Hills, teams prepare and distribute food, clean aviaries and care areas, and keep the surrounding bushland in shape.</p>
+        <p>It is the least glamorous work on this page and the most immediately useful. Your team also learns what is driving three black cockatoo species towards the edge, from someone who works with them daily.</p>
+        <div class="v-act-stat"><strong>40 acres</strong> of bushland &middot; <strong>3</strong> black cockatoo species</div>
+      </div>
+    </div>
+
     <div class="v-gal rv">
       <div class="v-gal-h">
         <span class="ey">A day in the field</span>
@@ -388,58 +475,49 @@
   </div>
 </section>
 
-<!-- ─── MAP (Alpaca embed) ───────────────────────────────────────── -->
-<section class="v-map" id="map">
+<!-- ─── Where we run (city switcher) ─────────────────────────────── -->
+<!-- Copy is from the live city pages. PLACEHOLDER: panel photos are stand-ins except Sydney (Lane Cove) and Brisbane (koala) — swap in real site photos per city. -->
+<section class="v-where" id="where">
   <div class="cw">
-    <div class="v-map-h rv">
-      <span class="ey">Explore</span>
-      <h2>Find a volunteer site across the map.</h2>
-      <p>Pan, zoom and tap a pin to see the volunteer sites in your city, from coastal national parks to inner-city restoration sites.</p>
+    <div class="v-where-h rv">
+      <span class="ey">Where we run</span>
+      <h2>Five cities. Five very different days.</h2>
+      <p>Pick your city to see where your team would work and what the day involves. Each city has its own page with the full site list and how to book.</p>
     </div>
-    <div class="v-map-frame rv">
-      <iframe
-        src="https://made.withalpaca.travel/view/itinerary/07yOM5SrS1EAQSvbVhjEAY?utm_source=alpaca&amp;utm_medium=embed&amp;utm_campaign=launch_from_preview"
-        title="FNPW Corporate Volunteering: volunteer sites map"
-        loading="lazy"
-        allow="geolocation; fullscreen"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="v-tabs" role="tablist" id="vTabs"><button type="button" role="tab" aria-selected="true" data-city="sydney">Sydney</button><button type="button" role="tab" aria-selected="false" data-city="melbourne">Melbourne</button><button type="button" role="tab" aria-selected="false" data-city="brisbane">Brisbane</button><button type="button" role="tab" aria-selected="false" data-city="adelaide">Adelaide</button><button type="button" role="tab" aria-selected="false" data-city="perth">Perth</button></div>
+    <div class="v-panel rv">
+      <div class="v-panel-im"><img id="vpImg" src="https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg" alt="Corporate volunteering site" loading="lazy"><span class="v-panel-tag" id="vpTag">8 sites</span></div>
+      <div class="v-panel-bd">
+        <h3 id="vpName">Sydney <span id="vpState">NSW</span></h3>
+        <p class="v-panel-eco" id="vpHab">Harbour bushland, coastal heath, wetlands and community nurseries.</p>
+        <p class="v-panel-sites" id="vpSites">Sydney Harbour National Park (Middle Head), Kamay Botany Bay, Lane Cove National Park, Tempe Wetlands, Hawkesbury and Robin Davies community nurseries, Stonequarry Bush Tucker, Bargo River Reserve.</p>
+        <div class="v-panel-facts">
+          <div><b>Day runs</b><span id="vpHours">9:30am &ndash; 2:00pm</span></div>
+          <div><b>Group size</b><span>10&ndash;20 people</span></div>
+          <div><b>Notice</b><span>21 days minimum</span></div>
+        </div>
+        <p class="v-panel-work" id="vpWork">Removing invasive plants, restoring bushland and wetland habitat, and growing natives in the community nurseries. Planting is seasonal and only runs at some sites.</p>
+        <div class="v-panel-btns">
+          <a class="btn btn-p" href="#enquire" id="vpCta">Enquire for Sydney</a>
+          <a class="btn btn-o" href="corporate-volunteering-sydney.html" id="vpLink">See Sydney sites</a>
+        </div>
+      </div>
     </div>
-    <p class="v-map-help">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-      Map by Alpaca Travel &middot; pan and zoom to explore active volunteer sites
-    </p>
   </div>
 </section>
 
-<!-- ─── Locations ─────────────────────────────────────────────────── -->
-<section class="v-locs">
+<!-- ─── How it works ─────────────────────────────────────────────── -->
+<section class="v-how">
   <div class="cw">
-    <div class="v-locs-h rv">
-      <span class="ey">Where we run</span>
-      <h2>Five cities. Five ecosystems.</h2>
-      <p>Corporate volunteering days run across New South Wales, Victoria, Queensland, South Australia and Western Australia. Choose a city to see the sites, activities and dates near you.</p>
+    <div class="v-how-h rv">
+      <span class="ey">How it works</span>
+      <h2>Four steps. We do the heavy lifting.</h2>
     </div>
-    <div class="v-locs-g">
-      <a class="v-loc rv" href="corporate-volunteering-sydney.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Sydney
-      </a>
-      <a class="v-loc rv d1" href="corporate-volunteering-brisbane.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Brisbane
-      </a>
-      <a class="v-loc rv d2" href="corporate-volunteering-melbourne.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Melbourne
-      </a>
-      <a class="v-loc rv d3" href="corporate-volunteering-adelaide.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Adelaide
-      </a>
-      <a class="v-loc rv d3" href="corporate-volunteering-perth.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Perth
-      </a>
+    <div class="v-how-g">
+      <div class="v-how-i rv"><span class="n">01</span><h3>Enquire</h3><p>Use the form on this page, email or call. Tell us your city, team size and rough dates.</p></div>
+      <div class="v-how-i rv d1"><span class="n">02</span><h3>We match a site</h3><p>We come back with the site, the activity and the dates where your team will do the most good.</p></div>
+      <div class="v-how-i rv d2"><span class="n">03</span><h3>Logistics sorted</h3><p>Permits, insurance, tools, safety gear, catering and a briefing for your people. You bring closed shoes.</p></div>
+      <div class="v-how-i rv d3"><span class="n">04</span><h3>Out in the field</h3><p>Our rangers and conservation staff run the day. Ask us afterwards for what your team achieved on site, for your reporting.</p></div>
     </div>
   </div>
 </section>
@@ -497,6 +575,49 @@
         <div class="v-prog-cancel-i"><strong>25%</strong>8&ndash;20 days</div>
         <div class="v-prog-cancel-i"><strong>50%</strong>4&ndash;7 days</div>
         <div class="v-prog-cancel-i"><strong>100%</strong>0&ndash;3 days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Why it matters + SDGs ────────────────────────────────────── -->
+<section class="v-why">
+  <div class="cw">
+    <div class="v-why-g">
+      <div class="v-why-l rv">
+        <span class="ey">Why corporate volunteering matters</span>
+        <h2>When we care for nature, <em>everyone benefits.</em></h2>
+        <p>Australia is home to extraordinary biodiversity, with hundreds of thousands of native species found nowhere else on Earth. The health of this natural heritage underpins the wellbeing, prosperity and quality of life of all Australians.</p>
+        <p>To protect it, Australia has committed to halt and reverse biodiversity loss by 2030, and to live in harmony with nature by 2050. Through corporate volunteering, your organisation can play a practical role in delivering on these commitments, strengthening team culture, deepening environmental awareness and contributing to real conservation outcomes.</p>
+        <span class="frame-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Signatory to the Kunming&ndash;Montreal Global Biodiversity Framework
+        </span>
+      </div>
+      <div class="v-why-r rv d2">
+        <span class="ey" style="display:block;margin-bottom:1.2rem">Supporting the UN Sustainable Development Goals</span>
+        <div class="v-sdg">
+          <div class="v-sdg-card s1">
+            <span class="v-sdg-num">SDG 15</span>
+            <h4>Life on Land</h4>
+            <p>Protecting and restoring terrestrial ecosystems and wildlife habitat.</p>
+          </div>
+          <div class="v-sdg-card s2">
+            <span class="v-sdg-num">SDG 13</span>
+            <h4>Climate Action</h4>
+            <p>Strengthening ecosystem resilience through nature-based solutions.</p>
+          </div>
+          <div class="v-sdg-card s3">
+            <span class="v-sdg-num">SDG 11</span>
+            <h4>Sustainable Cities &amp; Communities</h4>
+            <p>Enhancing green spaces and urban tree canopy.</p>
+          </div>
+          <div class="v-sdg-card s4">
+            <span class="v-sdg-num">SDG 3</span>
+            <h4>Good Health &amp; Wellbeing</h4>
+            <p>Supporting physical and mental wellbeing through connection with nature.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -691,6 +812,55 @@
   </div>
 </section>
 
+<script>
+(function(){
+  var CITY={"sydney": {"name": "Sydney", "state": "NSW", "hours": "9:30am &ndash; 2:00pm", "n": "8 sites", "habitat": "Harbour bushland, coastal heath, wetlands and community nurseries.", "sites": "Sydney Harbour National Park (Middle Head), Kamay Botany Bay, Lane Cove National Park, Tempe Wetlands, Hawkesbury and Robin Davies community nurseries, Stonequarry Bush Tucker, Bargo River Reserve.", "work": "Removing invasive plants, restoring bushland and wetland habitat, and growing natives in the community nurseries. Planting is seasonal and only runs at some sites.", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg"}, "melbourne": {"name": "Melbourne", "state": "VIC", "hours": "9:30am &ndash; 2:00pm", "n": "10 sites", "habitat": "Metropolitan parkland, bushland and wetlands.", "sites": "Albert Park, Brimbank Park, Wattle Park, Jells Park, Koomba Park, Yarra Bend Park, Maroondah Reserve, Corhanwarrabul Wetlands, Shepherds Bush Park and Nursery.", "work": "Weed removal, bushland and wetland restoration, and nursery propagation. Days open with a Welcome and Acknowledgment of Country and close with a guided bushwalk where the site allows.", "img": "assets/img/planting-day.jpg"}, "brisbane": {"name": "Brisbane", "state": "QLD", "hours": "8:30am &ndash; 2:00pm", "n": "Koala country", "habitat": "Eucalypt forest and koala habitat at Daisy Hill, about 25km from the CBD.", "sites": "Daisy Hill Conservation Park, a refuge for one of South East Queensland&rsquo;s largest koala populations, recently expanded by 213 hectares.", "work": "Identifying natives and weeds, weeding and land care for habitat health, and bushland and wetland restoration. The day includes a visit to the Daisy Hill Koala Centre.", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg"}, "adelaide": {"name": "Adelaide", "state": "SA", "hours": "9:30am &ndash; 2:30pm", "n": "54 hectares", "habitat": "The Forktree Project on the Fleurieu Peninsula, about 70km from the CBD.", "sites": "54 hectares of degraded farmland being turned back into native habitat for rare and threatened species.", "work": "Weeding and preparing ground for future plantings, removing invasive species, building raised beds for the seed orchard out of recycled materials, and clearing old fencing. Tree planting runs June to September.", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg"}, "perth": {"name": "Perth", "state": "WA", "hours": "9:30am &ndash; 2:30pm", "n": "Wildlife care", "habitat": "Kaarakin Black Cockatoo Conservation Centre, 40 acres of bushland in the Perth Hills.", "sites": "Home to Carnaby&rsquo;s, Baudin&rsquo;s and Forest Red-tailed black cockatoos, all under pressure from habitat loss and urban development.", "work": "Preparing and distributing food for the cockatoos, cleaning aviaries and care areas, and site and bushland maintenance. No planting here at all, this one is wildlife care.", "img": "assets/img/pillar-parks.jpg"}};
+  var tabs=document.getElementById('vTabs');
+  if(tabs){
+    tabs.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      var k=b.dataset.city, d=CITY[k]; if(!d) return;
+      Array.prototype.forEach.call(tabs.children,function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+      document.getElementById('vpImg').src=d.img;
+      document.getElementById('vpTag').innerHTML=d.n;
+      document.getElementById('vpName').firstChild.nodeValue=d.name+' ';
+      document.getElementById('vpState').innerHTML=d.state;
+      document.getElementById('vpHab').innerHTML=d.habitat;
+      document.getElementById('vpSites').innerHTML=d.sites;
+      document.getElementById('vpHours').innerHTML=d.hours;
+      document.getElementById('vpWork').innerHTML=d.work;
+      document.getElementById('vpCta').textContent='Enquire for '+d.name;
+      var l=document.getElementById('vpLink');
+      l.textContent='See '+d.name+' sites';
+      l.href='corporate-volunteering-'+k+'.html';
+      var c=document.getElementById('vf-city'); if(c) c.value=d.name;
+    });
+  }
+  // quick check: carry the answers into the main enquiry form
+  var qc=document.getElementById('qcheck');
+  if(qc) qc.addEventListener('submit',function(e){
+    e.preventDefault();
+    var city=document.getElementById('qc-city').value,
+        size=document.getElementById('qc-size').value,
+        when=document.getElementById('qc-when').value.trim();
+    var c=document.getElementById('vf-city'), z=document.getElementById('vf-size'), m=document.getElementById('vf-msg');
+    if(c) c.value=city;
+    if(z) z.value=size;
+    if(m && when) m.value=(m.value?m.value+' ':'')+'Looking at '+when+'.';
+    var t=document.getElementById('enquire');
+    if(t){ t.scrollIntoView({behavior:'smooth',block:'start'});
+      setTimeout(function(){var n=document.getElementById('vf-name'); if(n) n.focus({preventScroll:true});},650); }
+  });
+  // sticky bar: show once the hero is gone, hide over the enquiry form
+  var bar=document.getElementById('vSticky'), hero=document.querySelector('.fb-hero'), cta=document.getElementById('enquire');
+  if(bar&&hero&&'IntersectionObserver' in window){
+    var pastHero=false, atForm=false;
+    function paint(){ bar.classList.toggle('on', pastHero && !atForm); bar.setAttribute('aria-hidden', (pastHero&&!atForm)?'false':'true'); }
+    new IntersectionObserver(function(es){ pastHero=!es[0].isIntersecting; paint(); },{threshold:0}).observe(hero);
+    if(cta) new IntersectionObserver(function(es){ atForm=es[0].isIntersecting; paint(); },{threshold:0}).observe(cta);
+  }
+})();
+</script>
 </main>
 
 <!-- @footer --><footer class="ftr">
