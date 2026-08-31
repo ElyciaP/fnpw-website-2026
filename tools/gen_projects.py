@@ -366,8 +366,8 @@ def main():
     EXTRA = {
         'parks': dict(
             tint='parks',
-            hero_img=U + '2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg',
-            hero_alt='Sturt National Park at dusk',
+            hero_img='assets/img/pillar-parks.jpg',
+            hero_alt='River gorge country at sunrise, Western Australia',
             stat=('29,479', 'hectares', 'of land added to National Park status'),
             stat_label='Hectares protected',
             stat_desc='Land bought and transferred into the national parks estate. '
@@ -384,8 +384,8 @@ def main():
                   'one vast, connected park precinct for South Australia, co-managed with the Nukunu Nation.')),
         'species': dict(
             tint='species',
-            hero_img=U + '2021/02/Woylie.jpg',
-            hero_alt='Woylie, the brush-tailed bettong',
+            hero_img='assets/img/pillar-species-COMP.jpg',
+            hero_alt='Koala resting in a eucalypt',
             stat=('18,582', 'treatments', 'delivered to wombats with mange'),
             stat_label='Treatments delivered',
             stat_desc='Wombats treated for mange through the Curb Wombat Mange Program. '
@@ -404,8 +404,8 @@ def main():
                   'right-way fire and feral animal management.')),
         'healing': dict(
             tint='healing',
-            hero_img='assets/img/bongil.jpg',
-            hero_alt='Forest in Bongil Bongil National Park',
+            hero_img='assets/img/pillar-healing-COMP.jpg',
+            hero_alt='Newly planted native seedlings in tree guards on a restoration site',
             stat=('1.2M', 'plantings', 'trees, shrubs and seedlings in key areas'),
             stat_label='Plants in the ground',
             stat_desc='Trees, shrubs and seedlings planted across priority restoration sites. '
