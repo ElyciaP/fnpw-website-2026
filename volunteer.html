@@ -93,6 +93,20 @@
 .v-act.flip .v-act-stat strong{color:var(--wattle-dk)}
 
 /* MAP section */
+.v-gal{margin-top:clamp(3rem,5vw,4.5rem)}
+.v-gal-h{margin-bottom:1.6rem}
+.v-gal-h h3{font-size:clamp(1.4rem,2.4vw,1.9rem);letter-spacing:-.02em;color:var(--euc-deep);margin:.8rem 0 0}
+.v-gal-g{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:1rem}
+.v-gal-i{overflow:hidden;background:var(--sand)}
+.v-gal-i img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.v-gal-i:hover img{transform:scale(1.04)}
+.v-gal-i.g1{grid-column:span 2;grid-row:span 2}
+.v-gal-i.g2{grid-column:span 2}
+.v-gal-i.g4{grid-column:span 2}
+.v-gal-q{grid-column:span 2;margin:0;background:var(--wattle-soft);padding:1.6rem;display:flex;flex-direction:column;justify-content:center}
+.v-gal-q p{margin:0;font-family:var(--ff-d);font-weight:600;font-size:1.02rem;line-height:1.38;color:var(--euc-deep)}
+.v-gal-q cite{font-style:normal;font-size:.8rem;color:var(--stone);margin-top:.9rem}
+@media(max-width:900px){.v-gal-g{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.v-gal-i.g1{grid-row:span 2}}
 .v-map{padding:clamp(4rem,7vw,6rem) 0;background:var(--paper)}
 .v-map-h{text-align:center;max-width:720px;margin:0 auto 2.5rem}
 .v-map-h h2{font-size:clamp(2rem,3.2vw,2.6rem);margin:1rem 0 .8rem;letter-spacing:-.022em;line-height:1.05}
@@ -350,6 +364,25 @@
         <p>Take part in on-ground restoration activities that directly support the health, maintenance and cleanup of Australia&rsquo;s parks and urban green spaces.</p>
         <p>Your team will work outdoors to <strong>remove invasive species</strong>, <strong>plant native vegetation</strong>, and <strong>restore habitats</strong> that support wildlife and improve community green spaces. These sessions not only protect nature, but help maintain parks as places for connection, wellbeing and shared enjoyment.</p>
         <div class="v-act-stat"><strong>Outdoor</strong> on-ground restoration &middot; <strong>All</strong> equipment provided</div>
+      </div>
+    </div>
+
+    <!-- Gallery: PLACEHOLDER images and quote. Swap for real photos and a signed-off quote before launch. -->
+    <div class="v-gal rv">
+      <div class="v-gal-h">
+        <span class="ey">A day in the field</span>
+        <h3>What the day actually looks like.</h3>
+      </div>
+      <div class="v-gal-g">
+        <div class="v-gal-i g1"><img src="assets/img/planting-day.jpg" alt="Volunteers planting native seedlings in tree guards" loading="lazy"></div>
+        <div class="v-gal-i g2"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia.png" alt="Seedlings in a community nursery" loading="lazy"></div>
+        <blockquote class="v-gal-q">
+          <p>&ldquo;The whole team came back talking about it for weeks. It was the first offsite where nobody checked their phone.&rdquo;</p>
+          <cite>Placeholder quote &middot; replace with a real one</cite>
+        </blockquote>
+        <div class="v-gal-i g4"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg" alt="Volunteers working on a bushcare site" loading="lazy"></div>
+        <div class="v-gal-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg" alt="Restored wetland habitat" loading="lazy"></div>
+        <div class="v-gal-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Australian bushland" loading="lazy"></div>
       </div>
     </div>
   </div>
