@@ -12,10 +12,10 @@
 
 <style>
 /* About hero — matches Projects hero pattern: image bg, compact size, overlay text */
-.ab-hero{position:relative;padding:5rem 0 4rem;background:var(--euc-deep);overflow:hidden;isolation:isolate}
+.ab-hero{position:relative;padding:7rem 0 6rem;background:var(--euc-deep);overflow:hidden;isolation:isolate}
 .ab-hero-bg{position:absolute;inset:0;z-index:-2}
-.ab-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right 65%}
-.ab-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,42,43,.85) 0%,rgba(10,42,43,.7) 40%,rgba(10,42,43,.4) 65%,rgba(10,42,43,.25) 100%),linear-gradient(180deg,rgba(10,42,43,.35) 0%,transparent 30%,transparent 70%,rgba(10,42,43,.45) 100%);z-index:1}
+.ab-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.ab-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,42,43,.86) 0%,rgba(10,42,43,.68) 38%,rgba(10,42,43,.3) 62%,rgba(10,42,43,.12) 100%),linear-gradient(180deg,rgba(10,42,43,.35) 0%,transparent 30%,transparent 70%,rgba(10,42,43,.45) 100%);z-index:1}
 .ab-hero .cw{position:relative;z-index:2}
 .ab-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,247,243,.7);margin-bottom:1.5rem}
 .ab-hero .breadcrumb a{color:var(--euc-soft)}
@@ -121,6 +121,7 @@
 /* About: story / how-we-work image splits */
 .ab-split{display:grid;grid-template-columns:1.15fr .85fr;gap:4.5rem;align-items:center}
 .ab-split.rev{grid-template-columns:.85fr 1.15fr}
+.ab-split.ab-split-big{grid-template-columns:1fr 1fr;gap:4rem}
 .ab-split .framed img{width:100%;display:block}
 .ab-p{font-size:1.05rem;line-height:1.7}
 @media(max-width:820px){.ab-split,.ab-split.rev{grid-template-columns:1fr;gap:2.6rem}}
@@ -183,8 +184,8 @@
 </header><!-- /@header -->
 <main>
 <section class="ab-hero">
-  <div class="ab-hero-bg"><img src="assets/img/about-hero-gum-COMP.jpg" alt="Pink flowering gum blossoms against a deep blue sky" width="2048" height="1366" decoding="async"></div>
-  <span class="ab-hero-cred">Photo: Josh Fotheringham</span>
+  <div class="ab-hero-bg"><img src="assets/img/about-hero-cockatoos-COMP.jpg" alt="Three yellow-tailed black cockatoos in flight against a bright sky" width="2560" height="1000" decoding="async"></div>
+  <span class="ab-hero-cred">Photo: Andrew Peacock</span>
   <div class="cw rv">
     <nav class="breadcrumb"><a href="index.html">Home</a><span style="opacity:.4">/</span>About</nav>
     <span class="ey">Who we are</span>
@@ -210,7 +211,7 @@
 
 <section class="sec" style="background:var(--paper);padding:6rem 0">
   <div class="cw">
-    <div class="ab-split">
+    <div class="ab-split ab-split-big">
       <div class="rv">
         <span class="ey">How we make it happen</span>
         <h2 style="margin:1rem 0 1.4rem">Organising the work, and seeing it through.</h2>
@@ -223,7 +224,7 @@
           <div><strong>55</strong><span>years of doing it</span></div>
         </div>
       </div>
-      <div class="rv d2 framed wt"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/K2W-GER-Aerial.jpg" alt="Aerial view of a protected landscape in the Kanangra-Boyd to Wyangala wildlife corridor" loading="lazy"></div>
+      <div class="rv d2 framed wt"><img src="assets/img/planting-day.jpg" alt="Volunteers planting native seedlings in tree guards along a coastal paddock" width="1500" height="1125" loading="lazy"></div>
     </div>
   </div>
 </section>
