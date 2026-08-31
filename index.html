@@ -46,15 +46,12 @@
 /* --- editorial statement --- */
 .hx-state{padding:7rem 0 5.5rem;background:var(--cream);position:relative}
 .hx-state-g{display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.hx-state-g.hx-state-solo{grid-template-columns:1fr;max-width:980px;margin:0 auto;text-align:center}
+.hx-state-solo h2{max-width:26ch;margin:1.1rem auto 0}
+.hx-state-solo .ey{justify-content:center}
 .hx-state h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.22;letter-spacing:-.02em;color:var(--euc-deep);max-width:24ch}
 .hx-state h2 em{font-style:normal;color:var(--euc)}
 .hx-note{font-family:var(--ff-h);font-size:1.5rem;color:var(--bark);transform:rotate(-2deg);display:inline-block;margin-top:1.6rem}
-.hx-archset{display:flex;gap:1rem;align-items:flex-end;justify-content:center}
-.hx-arch{border-radius:0;overflow:hidden;background:var(--euc-pale)}
-.hx-arch img{width:100%;height:100%;object-fit:cover;display:block}
-.hx-arch.a1{width:52%;aspect-ratio:3/4.2}
-.hx-arch.a2{width:40%;aspect-ratio:3/3.4;box-shadow:10px 10px 0 var(--wattle-soft)}
-.hx-arch.a3{width:23%;aspect-ratio:3/4.2}
 
 /* --- pillars: expanding panels --- */
 .hx-pils{padding:6rem 0;background:var(--cream)}
@@ -187,7 +184,8 @@
   .hx-news-g p{max-width:68ch}
   .hx-news-g .btn-p{padding:1.2em 2.4em;font-size:1.02rem;min-width:250px;text-align:center;white-space:nowrap}
   @media(max-width:820px){.hx-news-g{grid-template-columns:1fr;gap:1.8rem}}
-.hx-news h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--euc-deep);letter-spacing:-.02em}
+.hx-news h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--euc-deep);letter-spacing:-.02em;margin:1rem 0 0}
+main:has(.hx-news)+.ftr{margin-top:0}
 
 /* --- refinements --- */
 .hx-h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--euc-deep)}
@@ -207,7 +205,6 @@
   .hx-camp-g{grid-template-columns:1fr}
   .hx-camp-im{min-height:230px}
   .hx-stamp{display:none}
-  .hx-archset{max-width:420px;margin:0 auto}
 }
 a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){
@@ -295,14 +292,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <!-- STATEMENT ======================================================= -->
 <section class="hx-state">
   <div class="cw">
-    <div class="hx-state-g">
+    <div class="hx-state-g hx-state-solo">
       <div class="rv">
         <span class="ey">Why we exist</span>
         <h2>Australia is home to life that exists <em>nowhere else on Earth</em>. Together, we can keep it that way.</h2>
-      </div>
-      <div class="hx-archset rv d1">
-        <div class="hx-arch a1"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="Koala in the Southern Highlands" loading="lazy"></div>
-        <div class="hx-arch a2"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg" alt="Black-chinned honeyeater" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -313,18 +306,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   <div class="cw">
     <div class="hx-tree-g rv">
       <div class="hx-tree-im">
-        <img src="assets/img/give-a-tree-koala.jpg" alt="A koala asleep in a eucalypt, wearing a Santa hat" width="1400" height="1980" decoding="async">
+        <img src="assets/img/give-a-tree-koala-COMP.jpg" alt="A koala feeding on eucalyptus leaves" width="1022" height="1363" decoding="async">
       </div>
       <div class="hx-tree-bd">
         <h2>Give a Tree this Christmas.</h2>
         <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
+        <ul class="hx-tree-pts">
+          <li>Comes with a personalised digital certificate, in Thank You, In Honour Of or In Memory Of</li>
+          <li>Add your own dedication for a friend, a loved one, a colleague or someone you have lost</li>
+          <li>Custom certificates for corporate teams and clients, with your company logo</li>
+        </ul>
         <div class="hx-tree-ladder">
           <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$10</span><span class="hx-amt-t">1 native tree</span><span class="hx-amt-l">a seed of hope</span></a>
           <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$100</span><span class="hx-amt-t">10 native trees</span><span class="hx-amt-l">builds a haven</span></a>
           <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$500</span><span class="hx-amt-t">50 native trees</span><span class="hx-amt-l">a wildlife wonder</span></a>
           <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au"><span class="hx-amt-n">$1,000</span><span class="hx-amt-t">100 native trees</span><span class="hx-amt-l">a legacy canopy</span></a>
         </div>
-        <p style="font-size:.86rem;color:var(--stone);margin-top:-.2rem">One native tree planted for every $10 donated. Tax deductible from $2.</p>
+        <p style="font-size:.86rem;color:var(--stone);margin-top:-.2rem">One native tree planted for every $10 donated. Tax deductible from $2. Gifting for a team or need more than one certificate? Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call 1800 898 626.</p>
         <div class="hx-tree-btns">
           <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
           <a class="hx-btn hx-btn-ghost" href="project-gift-a-tree-for-nature-conservation.html">How it works</a>
@@ -349,7 +347,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
         <span class="hx-pil-go">See the projects &#8594;</span>
       </a>
       <a class="hx-pil" href="saving-species.html" style="--pilc:var(--waratah)">
-        <div class="hx-pil-im"><img src="assets/img/pillar-species-COMP.jpg" alt="Koala resting in a eucalypt" loading="lazy"></div>
+        <div class="hx-pil-im"><img src="assets/img/species-wren-COMP.jpg" alt="Superb fairy-wren perched on a slender branch" loading="lazy"></div>
         <span class="hx-pil-bar"></span>
         <h3>Saving Species</h3>
         <p>We protect Australia's most vulnerable species by restoring habitats, creating wildlife corridors, and supporting targeted conservation programs.</p>
@@ -523,10 +521,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       <div class="rv">
         <span class="ey">Newsletter</span>
         <h2>Stories from the bush, straight to your inbox.</h2>
-        <p style="margin-top:.7rem">Once a month we send project updates, species spotlights and the small wins that rarely make the news, written by the people doing the work on the ground.</p>
+        <p style="margin-top:1.1rem">Once a month we send project updates, species spotlights and the small wins that rarely make the news, written by the people doing the work on the ground.</p>
       </div>
       <div class="rv d1">
-        <a class="btn-p" href="newsletters-sign-up.html">Sign up</a>
+        <a class="btn-p" href="newsletters-sign-up.html">Get our newsletter</a>
       </div>
     </div>
   </div>
