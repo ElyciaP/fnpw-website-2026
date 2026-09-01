@@ -12,7 +12,7 @@
 
 <style>
 /* SHARED full-bleed image hero (used on all sub-pages) */
-.fb-hero{position:relative;min-height:clamp(420px,58vh,560px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
+.fb-hero{position:relative;min-height:clamp(360px,46vh,470px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.86) 0%,rgba(15,49,50,.58) 52%,rgba(15,49,50,.18) 100%);z-index:1}
@@ -27,19 +27,19 @@
 @media(max-width:780px){.fb-cred{display:none}}
 
 /* OPENING REASSURANCE */
-.dl-open{padding:5.5rem 0 4.5rem;background:var(--cream)}
+.dl-open{padding:4.4rem 0 3.8rem;background:var(--cream)}
 .dl-open-g{display:grid;grid-template-columns:1.15fr 1fr;gap:4.5rem;align-items:center}
 @media(max-width:900px){.dl-open-g{grid-template-columns:1fr;gap:2.8rem}}
 .dl-open h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-top:1rem;max-width:18ch}
 .dl-open p{font-size:1.04rem;line-height:1.72;color:var(--char);margin-top:1.2rem;max-width:54ch}
-.dl-open-im{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bark)}
+.dl-open-im{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bark)}
 .dl-open-im img{width:100%;height:100%;object-fit:cover}
 .dl-open-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(36,25,20,.45))}
 .dl-open-im .stamp{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;color:var(--cream);font-family:var(--ff-h);font-size:1.35rem;line-height:1.2;z-index:2}
 .dl-open-im .stamp small{font-family:var(--ff-b);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;display:block;color:var(--wattle-soft);margin-top:.45rem}
 
 /* THREE PATHS */
-.dl-paths{padding:5.5rem 0;background:var(--paper)}
+.dl-paths{padding:4.2rem 0;background:var(--paper)}
 .dl-paths-head{text-align:center;max-width:640px;margin:0 auto}
 .dl-paths-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:3.2rem}
 @media(max-width:920px){.dl-paths-g{grid-template-columns:1fr}}
@@ -55,7 +55,7 @@
 .dl-path .fine a{color:var(--euc);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 /* PROCESS TIMELINE */
-.dl-proc{padding:5.5rem 0;background:var(--cream)}
+.dl-proc{padding:4.2rem 0;background:var(--cream)}
 .dl-proc-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:start}
 @media(max-width:920px){.dl-proc-g{grid-template-columns:1fr;gap:2.6rem}}
 .dl-steps{position:relative;padding-left:2.6rem}
@@ -71,7 +71,7 @@
 .dl-time p{font-size:.94rem;line-height:1.65;color:var(--char)}
 
 /* COSTS */
-.dl-cost{padding:5.5rem 0;background:var(--paper)}
+.dl-cost{padding:4.2rem 0;background:var(--paper)}
 .dl-cost-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;margin-top:2.8rem}
 @media(max-width:820px){.dl-cost-g{grid-template-columns:1fr}}
 .dl-cost-card{background:var(--white);border:1px solid var(--rule);padding:2rem 1.9rem}
@@ -83,30 +83,15 @@
 .dl-cost-card.them li::before{background:var(--bark)}
 .dl-cost-note{margin-top:1.8rem;font-size:.95rem;line-height:1.7;color:var(--char);max-width:70ch}
 
-/* OUTCOMES */
-.dl-after{padding:5.5rem 0;background:var(--euc-deep);color:var(--euc-soft);position:relative;overflow:hidden}
-.dl-after::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--bark),var(--euc-mid))}
-.dl-after h2{color:var(--white)}
-.dl-after .lede{color:rgba(250,246,242,.85)}
-.dl-after-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:3rem}
-@media(max-width:920px){.dl-after-g{grid-template-columns:1fr}}
-.dl-out{background:rgba(255,255,255,.06);border:1px solid rgba(250,246,242,.15);padding:2rem 1.8rem;backdrop-filter:blur(8px)}
-.dl-out .n{font-family:var(--ff-d);font-weight:800;font-size:2.2rem;line-height:1;color:transparent;-webkit-text-stroke:1.3px var(--wattle);display:block;margin-bottom:.8rem}
-.dl-out h3{color:var(--white);font-size:1.08rem;margin-bottom:.6rem}
-.dl-out p{font-size:.94rem;line-height:1.65;color:rgba(250,246,242,.82)}
-.dl-promise{margin-top:2.6rem;background:rgba(196,169,39,.12);border:1px solid rgba(225,205,74,.35);padding:1.6rem 1.9rem}
-.dl-promise p{color:var(--cream);font-size:1rem;line-height:1.7;margin:0}
-.dl-promise strong{color:var(--wattle-soft)}
-
 /* STORY */
-.dl-story{padding:5.5rem 0;background:var(--cream)}
+.dl-story{padding:4.2rem 0;background:var(--cream)}
 .dl-story-card{border:1px solid var(--rule);background:var(--white)}
 .dl-story-g{display:grid;grid-template-columns:1fr 1.15fr}
 @media(max-width:880px){.dl-story-g{grid-template-columns:1fr}}
-.dl-story-im{position:relative;min-height:320px;background:var(--euc)}
+.dl-story-im{position:relative;min-height:280px;background:var(--euc)}
 .dl-story-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .dl-story-im figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(15,49,50,.6);color:rgba(250,246,242,.85);font-size:.75rem;padding:.5rem .8rem;z-index:2}
-.dl-story-body{padding:2.8rem 3rem}
+.dl-story-body{padding:2.3rem 2.5rem}
 @media(max-width:600px){.dl-story-body{padding:2rem 1.6rem}}
 .dl-story-body .lab{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-weight:700;margin-bottom:.7rem}
 .dl-story-body h2{font-size:clamp(1.4rem,2.2vw,1.9rem);margin-bottom:1.2rem}
@@ -114,17 +99,13 @@
 .dl-story-pull{font-family:var(--ff-h);font-size:1.5rem;color:var(--euc);line-height:1.35;margin:1.5rem 0;border-left:3px solid var(--wattle);padding-left:1.1rem}
 
 /* TAX */
-.dl-tax{padding:5.5rem 0;background:var(--sand)}
+.dl-tax{padding:4.2rem 0;background:var(--sand)}
 .dl-tax-g{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem;align-items:start}
 @media(max-width:900px){.dl-tax-g{grid-template-columns:1fr;gap:2.4rem}}
-.dl-tax-list{display:flex;flex-direction:column;gap:1.4rem}
-.dl-tax-item{background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--euc);padding:1.4rem 1.6rem}
-.dl-tax-item h3{font-size:1.02rem;margin-bottom:.45rem}
-.dl-tax-item p{font-size:.94rem;line-height:1.65;color:var(--char)}
 .dl-tax-disc{margin-top:1.6rem;font-size:.88rem;line-height:1.65;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.2rem}
 
 /* FAQ */
-.dl-faq{padding:5.5rem 0;background:var(--cream)}
+.dl-faq{padding:4.2rem 0;background:var(--cream)}
 .dl-faq-list{max-width:820px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.7rem}
 .dl-faq details{background:var(--white);border:1px solid var(--rule);overflow:hidden}
 .dl-faq summary{padding:1.25rem 1.6rem;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);cursor:pointer;font-size:1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;list-style:none}
@@ -135,7 +116,7 @@
 .dl-faq .body a{color:var(--euc);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 /* CONTACT */
-.dl-contact{padding:5.5rem 0;background:var(--paper)}
+.dl-contact{padding:4.2rem 0;background:var(--paper)}
 .dl-contact-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
 @media(max-width:900px){.dl-contact-g{grid-template-columns:1fr;gap:2.4rem}}
 .dl-person{background:var(--white);border:1px solid var(--rule);padding:2rem;margin-top:2rem;display:flex;gap:1.4rem;align-items:flex-start}
@@ -207,6 +188,7 @@
       </div>
     </div>
     <a href="contact.html" class="">Contact</a>
+    <a href="donate-land.html" class="btn btn-o btn-land">Donate Land</a>
     <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
   </nav>
 </div></div>
@@ -262,24 +244,21 @@
       <div class="dl-path rv">
         <div class="sit">&ldquo;I am ready to hand it on now.&rdquo;</div>
         <h3>Give the land in your lifetime</h3>
-        <p>You transfer the property to us, and we take on the cost, the care and the responsibility from that point forward. It is the most direct route, and it is the only one where you get to see what happens next: the first survey, the first plantings, the first season the birds come back.</p>
-        <p>It also lifts a genuine weight. Many of the people who talk to us are managing land they love and can no longer look after the way they would like.</p>
+        <p>You transfer the property to us, and we take on the cost, the care and the responsibility from that point forward. It is the most direct route, and the only one where you get to see what happens next. It also lifts a genuine weight, which matters to people managing land they love and can no longer look after the way they would like.</p>
         <div class="fine">Best if you no longer use the land, or you would like the certainty settled while you are here to see it done.</div>
       </div>
 
       <div class="dl-path p2 rv d1">
         <div class="sit">&ldquo;I want to stay, but I want it safe.&rdquo;</div>
         <h3>Protect it, and keep living on it</h3>
-        <p>You do not have to give up your land to protect it. A conservation covenant is a legal agreement registered on the title, which means the protection travels with the land to every owner who comes after you. You keep the property. You keep living there. You can usually keep farming the parts of it that are farmed.</p>
-        <p>Covenants are granted by state bodies rather than by us, and we will point you to the right one and help you work out whether it fits.</p>
+        <p>You do not have to give up your land to protect it. A conservation covenant is registered on the title, so the protection travels with the land to every owner who comes after you. You keep the property, you keep living there, and you can usually keep farming the parts of it that are farmed. Covenants are granted by state bodies rather than by us, and we will point you to the right one.</p>
         <div class="fine">Best if the land is your home, or you want it to stay in the family with its future settled.</div>
       </div>
 
       <div class="dl-path p3 rv d2">
         <div class="sit">&ldquo;I want to keep it for now.&rdquo;</div>
         <h3>Leave the land in your Will</h3>
-        <p>Nothing changes today. You own and manage the property exactly as you do now, and the transfer happens only when you no longer need it. You can change your mind at any point, for any reason, and you never have to tell us.</p>
-        <p>It is worth talking to us before you write it in, so that we understand what you want for the place and your executors are not left guessing at the hardest possible moment.</p>
+        <p>Nothing changes today. You own and manage the property exactly as you do now, and the transfer happens only when you no longer need it. You can change your mind at any point, for any reason, and you never have to tell us. It is still worth a conversation first, so your executors are not left guessing at the hardest possible moment.</p>
         <div class="fine">Best if the land is still in use, or the decision feels like one for later. <a href="bequests.html">More on gifts in your Will</a></div>
       </div>
 
@@ -315,7 +294,7 @@
       </div>
       <div class="dl-step">
         <h3>04. Agreeing what happens to it</h3>
-        <p>Before anything is signed, we agree together what the land is for and where it is headed, whether that is addition to a national park, protection under a covenant, or another route. Your wishes are written down, not assumed.</p>
+        <p>Before anything is signed, we agree together what the land is for and where it is headed, whether that is addition to a national park, protection under a covenant, or another route. Your wishes are written down, not assumed, and nothing is ever sold without your agreement.</p>
       </div>
       <div class="dl-step">
         <h3>05. Transfer, and then the long work</h3>
@@ -357,37 +336,6 @@
   </div>
 </section>
 
-<!-- ============ WHAT HAPPENS AFTERWARDS ============ -->
-<section class="dl-after">
-  <div class="cw">
-    <div class="rv" style="max-width:660px">
-      <span class="ey">Afterwards</span>
-      <h2 style="margin-top:1rem">Where land goes when you give it to us.</h2>
-      <p class="lede" style="margin-top:1.2rem">There are three honest answers, and we will tell you which one applies to your place before you decide anything.</p>
-    </div>
-    <div class="dl-after-g">
-      <div class="dl-out rv">
-        <span class="n">01</span>
-        <h3>Into the protected estate</h3>
-        <p>Where the land adjoins or extends a park, we work with the relevant parks service to add it to the national park estate. This is the outcome we push hardest for, and it is the one that cannot be undone. It is also how the map of wild Australia gets stitched back together, one piece at a time.</p>
-      </div>
-      <div class="dl-out rv d1">
-        <span class="n">02</span>
-        <h3>Protected in private hands</h3>
-        <p>Some country is better cared for by someone living on it. Here the land can be protected on title and passed to an owner who takes on that protection as a condition, so it stays in good hands and stays safe, with the proceeds going back into conservation.</p>
-      </div>
-      <div class="dl-out rv d2">
-        <span class="n">03</span>
-        <h3>Sold, with everything going to the work</h3>
-        <p>If the land does not carry conservation value, it can still do a great deal of good. With your agreement, it is sold and the full proceeds fund the protection and restoration of country elsewhere. A suburban house has bought a lot of habitat before now.</p>
-      </div>
-    </div>
-    <div class="dl-promise rv">
-      <p><strong>Our promise on this.</strong> We will not sell land you have given us without having agreed that with you first. If our assessment says the best future for your property is one you are not comfortable with, we will tell you before anything is signed, and you are free to walk away with our respect and our thanks.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ STORY ============ -->
 <section class="dl-story">
   <div class="cw">
@@ -404,11 +352,10 @@
         <div class="dl-story-body">
           <div class="lab">Mundoo Island, South Australia</div>
           <h2>The gift that closed the gap.</h2>
-          <p>At the Murray Mouth, where the Coorong&rsquo;s freshwater meets the sea, Mundoo Island had been farmed for more than a century. In 2025 the whole of it, 1,900 hectares of wetland, saltmarsh and coastal habitat, came onto the market in a narrow and time-critical window. The future of the island and the islands around it hung on whether the money could be found in time.</p>
-          <p>It was found, and a large part of it came from one person who had decided, years earlier, that what she left behind should go to the natural world. Building on that gift we mobilised the rest, and working alongside the Australian and South Australian Governments, the Ngarrindjeri Aboriginal Corporation and our conservation partners, we secured the whole island and transferred it into Coorong National Park.</p>
+          <p>At the Murray Mouth, where the Coorong&rsquo;s freshwater meets the sea, Mundoo Island had been farmed for more than a century. In 2025 the whole of it, 1,900 hectares of wetland, saltmarsh and coastal habitat, came onto the market in a narrow and time-critical window.</p>
+          <p>A large part of what secured it came from one person who had decided, years earlier, that what she left behind should go to the natural world. Building on that gift we mobilised the rest, and working alongside the Australian and South Australian Governments, the Ngarrindjeri Aboriginal Corporation and our conservation partners, we secured the whole island and transferred it into Coorong National Park.</p>
           <p class="dl-story-pull">Sixty-five nationally threatened species. A refuge on the East Asian-Australasian Flyway. Protected now, and for good.</p>
-          <p>For thousands of years Mundoo has held deep cultural and spiritual meaning for the Ngarrindjeri people, whose connection to this Country continues to guide its care. Where the land was grazed, restoration has already started: rebuilding the island&rsquo;s natural hydrology, healing the wetlands, strengthening the habitat the threatened species depend on.</p>
-          <p>Land is not the only thing that protects land. But it is the thing that lasts longest.</p>
+          <p>For thousands of years Mundoo has held deep cultural and spiritual meaning for the Ngarrindjeri people, whose connection to this Country continues to guide its care.</p>
         </div>
       </div>
     </div>
@@ -417,34 +364,13 @@
 
 <!-- ============ TAX ============ -->
 <section class="dl-tax">
-  <div class="cw"><div class="dl-tax-g">
-    <div class="rv">
-      <span class="ey">Tax and legal</span>
-      <h2 style="margin-top:1rem">What we can tell you, and what we cannot.</h2>
-      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">We are not able to give you legal, tax or financial advice, and we would be doing you a disservice if we tried. What we can do is set out the questions worth putting to your own solicitor or accountant, so you walk into that meeting knowing what to ask.</p>
-      <p style="font-size:1.02rem;line-height:1.72;color:var(--char)">The Foundation for National Parks &amp; Wildlife is a registered charity with the ACNC and is endorsed by the Australian Taxation Office as a Deductible Gift Recipient. That status matters for how a gift of property is treated, so it is worth confirming with your adviser at the outset.</p>
-    </div>
-    <div class="rv d1">
-      <div class="dl-tax-list">
-        <div class="dl-tax-item">
-          <h3>Giving land during your lifetime</h3>
-          <p>Gifts of property above a set value may attract an income tax deduction, and the deduction is based on a valuation obtained through the Australian Taxation Office rather than a private one. There can also be capital gains consequences for you as the giver, even though no money changes hands. Both points are worth raising with your accountant before you commit.</p>
-        </div>
-        <div class="dl-tax-item">
-          <h3>Spreading a deduction</h3>
-          <p>Where a deduction is available, there are provisions allowing it to be spread across several income years. For a large gift of land this can matter a great deal, because a deduction cannot be used to create a tax loss. Your accountant can tell you whether it applies to you.</p>
-        </div>
-        <div class="dl-tax-item">
-          <h3>Leaving land in your Will</h3>
-          <p>The treatment of a gift of property made through a Will is different again, and the fact that the recipient is a Deductible Gift Recipient can be significant for the estate. This is worth getting right at the drafting stage rather than leaving to your executors.</p>
-        </div>
-        <div class="dl-tax-item">
-          <h3>Duty, and other state costs</h3>
-          <p>Transfer duty is a state matter and the treatment is not the same everywhere, nor is relief automatic. Your solicitor will know the position in the state where the land sits.</p>
-        </div>
-      </div>
-      <p class="dl-tax-disc">This page is general information only. It is not legal, tax or financial advice, it does not take account of your circumstances, and it should not be relied on in place of advice from your own solicitor, accountant or financial adviser. Tax law changes, and what applies to one gift may not apply to another.</p>
-    </div>
+  <div class="cw"><div class="col rv" style="max-width:66ch">
+    <span class="ey">Tax and legal</span>
+    <h2 style="margin-top:1rem">What we can tell you, and what we cannot.</h2>
+    <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">We are not able to give you legal, tax or financial advice, and we would be doing you a disservice if we tried. What we can do is tell you which questions are worth putting to your own solicitor or accountant, so you walk into that meeting knowing what to ask.</p>
+    <p style="font-size:1.02rem;line-height:1.72;color:var(--char)">There are three. Giving land in your lifetime and leaving it in your Will are treated quite differently, and they are not interchangeable. Any valuation needed for tax purposes has its own process and its own cost. And transfer duty is a state matter, handled differently depending on where the land sits. Raise all three early, before anything is decided.</p>
+    <p style="font-size:1.02rem;line-height:1.72;color:var(--char)">The Foundation for National Parks &amp; Wildlife is a registered charity with the ACNC and is endorsed by the Australian Taxation Office as a Deductible Gift Recipient. That status affects how a gift of property is treated, so it is worth confirming with your adviser at the outset.</p>
+    <p class="dl-tax-disc">This page is general information only. It is not legal, tax or financial advice, it does not take account of your circumstances, and it should not be relied on in place of advice from your own solicitor, accountant or financial adviser.</p>
   </div></div>
 </section>
 
@@ -458,12 +384,9 @@
     <div class="dl-faq-list">
       <details class="rv"><summary>How much land do I need to have?</summary><div class="body">There is no minimum. What matters is what is on the land and what is around it. A small block adjoining an existing reserve can be worth more to conservation than a large one in the middle of cleared country. If you are close to a national park, a reserve or a wildlife corridor, please do get in touch, whatever the size.</div></details>
       <details class="rv"><summary>Will you definitely accept it?</summary><div class="body">Not always, and we would rather say so here than let you find out late. We have to be confident we can protect and care for a property permanently, and that means looking at habitat value, condition, access, what adjoins it and whether the ongoing costs can be met. If we cannot take it on ourselves, we will tell you why, and we will point you towards the organisation or the pathway that suits the land better. Nobody who offers us land is sent away empty-handed.</div></details>
-      <details class="rv"><summary>Can I keep living on the property?</summary><div class="body">In many cases yes, through a conservation covenant, where you keep the title and the protection is registered on it. There are also arrangements where land is gifted with a right for you to remain there. Which of these works depends on the property and the state it is in, and it is one of the first things we will work through with you.</div></details>
       <details class="rv"><summary>What if my family have views about this?</summary><div class="body">They usually do, and that is right and proper. Land carries family history in a way money does not. We would always encourage you to have that conversation before you have it with us, and we are very glad to talk to your family alongside you if that would help. A gift that causes hurt at home is not one we want.</div></details>
       <details class="rv"><summary>Can I say what the land should be used for?</summary><div class="body">You can tell us what matters to you and we will take it seriously, and where we can we will write it into what we agree. What we will not do is promise something we cannot guarantee decades from now. Conditions attached to a gift can also affect its tax treatment, which is another reason to talk it through early with us and with your adviser.</div></details>
-      <details class="rv"><summary>Do I have to decide anything now?</summary><div class="body">No. Most people who contact us are not ready to act, and some are simply thinking ahead. A first conversation is free, private and has no obligation attached to it whatsoever, and it is genuinely fine for it to lead nowhere.</div></details>
-      <details class="rv"><summary>Would it be easier to leave it in my Will?</summary><div class="body">For many people, yes. Nothing changes while you are alive, you keep full control, and you can revise it whenever you like. It is still worth a conversation now so we understand your wishes for the land and your executors are not left to work it out alone. <a href="bequests.html">Read more about gifts in your Will</a>.</div></details>
-      <details class="rv"><summary>What if my land is not right for conservation?</summary><div class="body">It can still do a great deal of good. Property without conservation value can be gifted and sold, with the proceeds going into protecting and restoring country elsewhere. Houses, units and blocks of no ecological interest at all have funded serious conservation work. We never sell without agreeing it with you first.</div></details>
+      <details class="rv"><summary>What if my land is not right for conservation?</summary><div class="body">It can still do a great deal of good. Property without conservation value can be gifted and sold, with the full proceeds going into protecting and restoring country elsewhere. Houses, units and blocks of no ecological interest at all have funded serious conservation work. We never sell without agreeing it with you first, and if we think another organisation would serve the land better, we will say so and point you to them.</div></details>
     </div>
   </div>
 </section>
