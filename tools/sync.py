@@ -11,6 +11,7 @@ ACTIVE = {
     'projects.html': 'projects.html', 'contact.html': 'contact.html',
     'partner.html': 'partner.html', 'volunteer.html': 'volunteer.html',
     'bequests.html': 'bequests.html',
+    'donate-land.html': 'donate-land.html',
     # no active nav item: articles, news, reports, donate, gift-a-tree, bring-back-the-bush
 }
 PILLARS = ('growing-national-parks.html', 'saving-species.html', 'healing-the-land.html')
