@@ -7,7 +7,7 @@
 <meta name="description" content="If you own land with wild value, you can give it a future that outlasts all of us. Talk to the Foundation for National Parks &amp; Wildlife about gifting land, protecting it with a covenant, or leaving it in your Will.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
 
 <style>
@@ -28,14 +28,14 @@
 
 /* OPENING REASSURANCE */
 .dl-open{padding:4.4rem 0 3.8rem;background:var(--cream)}
-.dl-open-g{display:grid;grid-template-columns:1.15fr 1fr;gap:4.5rem;align-items:center}
+.dl-open-g{display:grid;grid-template-columns:1.15fr 1fr;gap:4.5rem;align-items:stretch}
 @media(max-width:900px){.dl-open-g{grid-template-columns:1fr;gap:2.8rem}}
-.dl-open h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-top:1rem;max-width:18ch}
+.dl-open h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-top:1rem;max-width:24ch;text-wrap:balance}
 .dl-open p{font-size:1.04rem;line-height:1.72;color:var(--char);margin-top:1.2rem;max-width:54ch}
-.dl-open-im{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bark)}
+.dl-open-im{position:relative;height:100%;min-height:360px;overflow:hidden;background:var(--bark)}
 .dl-open-im img{width:100%;height:100%;object-fit:cover}
 .dl-open-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(36,25,20,.45))}
-.dl-open-im .stamp{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;color:var(--cream);font-family:var(--ff-h);font-size:1.35rem;line-height:1.2;z-index:2}
+.dl-open-im .stamp{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;color:var(--cream);font-family:var(--ff-d);font-weight:600;font-size:1.02rem;line-height:1.3;z-index:2;letter-spacing:-.01em}
 .dl-open-im .stamp small{font-family:var(--ff-b);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;display:block;color:var(--wattle-soft);margin-top:.45rem}
 
 /* THREE PATHS */
@@ -46,7 +46,7 @@
 .dl-path{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:2.1rem 1.9rem 2rem;display:flex;flex-direction:column}
 .dl-path.p2{border-top-color:var(--bark)}
 .dl-path.p3{border-top-color:var(--wattle)}
-.dl-path .sit{font-family:var(--ff-h);font-size:1.25rem;color:var(--euc);line-height:1.25;margin-bottom:.9rem}
+.dl-path .sit{font-family:var(--ff-d);font-weight:500;font-size:1.02rem;color:var(--euc);line-height:1.35;margin-bottom:.9rem;letter-spacing:-.01em}
 .dl-path.p2 .sit{color:var(--red-soil-dk)}
 .dl-path.p3 .sit{color:var(--euc-deep)}
 .dl-path h3{font-size:1.16rem;margin-bottom:.7rem}
@@ -96,13 +96,7 @@
 .dl-story-body .lab{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-weight:700;margin-bottom:.7rem}
 .dl-story-body h2{font-size:clamp(1.4rem,2.2vw,1.9rem);margin-bottom:1.2rem}
 .dl-story-body p{font-size:1rem;line-height:1.72;color:var(--char);margin-bottom:1rem}
-.dl-story-pull{font-family:var(--ff-h);font-size:1.5rem;color:var(--euc);line-height:1.35;margin:1.5rem 0;border-left:3px solid var(--wattle);padding-left:1.1rem}
-
-/* TAX */
-.dl-tax{padding:4.2rem 0;background:var(--sand)}
-.dl-tax-g{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem;align-items:start}
-@media(max-width:900px){.dl-tax-g{grid-template-columns:1fr;gap:2.4rem}}
-.dl-tax-disc{margin-top:1.6rem;font-size:.88rem;line-height:1.65;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.2rem}
+.dl-story-pull{font-family:var(--ff-d);font-weight:500;font-size:1.12rem;color:var(--euc-deep);line-height:1.45;margin:1.5rem 0;border-left:3px solid var(--wattle);padding-left:1.1rem;letter-spacing:-.012em}
 
 /* FAQ */
 .dl-faq{padding:4.2rem 0;background:var(--cream)}
@@ -126,7 +120,6 @@
 .dl-person-nm{font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:1.06rem;display:block;margin-bottom:.2rem}
 .dl-person-rl{font-size:.88rem;color:var(--stone);margin-bottom:.7rem}
 .dl-person a{color:var(--euc);font-size:.92rem;display:block;font-weight:500}
-.dl-commit{margin-top:1.6rem;background:var(--euc-pale);border-left:3px solid var(--euc);padding:1.2rem 1.4rem;font-size:.93rem;line-height:1.65;color:var(--char)}
 .dl-next{margin-top:1.8rem}
 .dl-next h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-family:var(--ff-b);margin-bottom:1.1rem}
 .dl-next ol{list-style:none;counter-reset:n;padding:0}
@@ -205,7 +198,7 @@
       <nav class="breadcrumb"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span style="opacity:.4">/</span>Gifts of Land</nav>
       <span class="ey">Gifts of land</span>
       <h1>A gift you can walk through.</h1>
-      <p class="lede">Most gifts to nature are counted in dollars. A few are counted in hectares. If you hold land with wild value in it, there is a way to give that land a future none of us will be here to see.</p>
+      <p class="lede">Most gifts to nature are counted in dollars. A few are counted in hectares. If you hold land with wild value in it, there is a way to protect it for good.</p>
     </div>
   </div>
   <div class="fb-cred">Placeholder image</div>
@@ -216,16 +209,16 @@
   <div class="cw"><div class="dl-open-g">
     <div class="rv">
       <span class="ey">Where to begin</span>
-      <h2>Your land does not have to look like a national park.</h2>
+      <h2>Not sure your land counts? That is worth a conversation.</h2>
       <p>People often assume we are only interested in the spectacular. In truth, some of the most valuable country in Australia is quiet and unremarkable to look at: a paddock with the last remnant scrub in the district, a scrappy gully that happens to hold a creek, forty hectares of regrowth sitting between two reserves that have been waiting decades to be joined up.</p>
-      <p>If you are wondering whether your place counts, that is exactly the question worth asking us, and there is no cost and no obligation in asking it. We would far rather have the conversation and tell you honestly what we think than have you decide on our behalf that it was not worth raising.</p>
+      <p>There is no cost and no obligation in asking, and no question is too small to put to us. We would far rather have the conversation and tell you honestly what we think than have you decide on our behalf that it was not worth raising.</p>
       <p>Some of what we are offered becomes part of a national park. Some is protected while staying in private hands. Some is not right for conservation at all, and there is still a good path for that. We will explain all of it before you commit to anything.</p>
       <a class="btn btn-p" href="#talk" style="margin-top:1.4rem">Start a conversation</a>
     </div>
     <div class="rv d1">
       <div class="dl-open-im">
         <img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Australian bushland, placeholder image">
-        <div class="stamp">the quiet places count too<small>Placeholder image</small></div>
+        <div class="stamp">The quiet places count too<small>Placeholder image</small></div>
       </div>
     </div>
   </div></div>
@@ -282,7 +275,7 @@
     <div class="dl-steps rv d1">
       <div class="dl-step">
         <h3>01. A conversation, in confidence</h3>
-        <p>You tell us where the land is, roughly how big it is and what you know about it. Nothing you tell us goes anywhere else, and nothing at this stage commits you to a thing. Plenty of these conversations end with a person deciding the timing is not right, and that is a completely fine outcome.</p>
+        <p>You tell us where the land is, roughly how big it is and what you know about it. Nothing you tell us goes anywhere else, and nothing at this stage commits you to a thing.</p>
       </div>
       <div class="dl-step">
         <h3>02. We come and look</h3>
@@ -310,29 +303,29 @@
     <div class="rv" style="max-width:640px">
       <span class="ey">The practical part</span>
       <h2 style="margin-top:1rem">What it costs, and who pays for what.</h2>
-      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">This is the part most organisations leave out, and it is the part people most want to know. Every gift is different, so the split below is a starting point for the conversation rather than a fixed rule.</p>
+      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">Every gift of land is a little different, so treat this as a starting point rather than a fixed rule. If something here does not fit your situation, tell us and we will work it out together.</p>
     </div>
     <div class="dl-cost-g">
       <div class="dl-cost-card rv">
-        <h3>Generally ours</h3>
+        <h3>What we cover</h3>
         <ul>
           <li>The conservation assessment of the property</li>
           <li>Our own legal and conveyancing costs</li>
-          <li>Any ecological survey work we need for our own decision</li>
-          <li>Every cost of caring for the land from the day it transfers, in perpetuity</li>
+          <li>Any survey work we need to make our decision</li>
+          <li>Every cost of caring for the land from the day it changes hands, for good</li>
         </ul>
       </div>
       <div class="dl-cost-card them rv d1">
-        <h3>Generally yours</h3>
+        <h3>What you cover</h3>
         <ul>
-          <li>Your own legal advice and conveyancing</li>
-          <li>Your own tax or financial advice</li>
+          <li>Your own solicitor</li>
+          <li>Your own accountant or financial adviser</li>
           <li>Any valuation you need for tax purposes</li>
-          <li>Clearing any mortgage or encumbrance on the title before transfer</li>
+          <li>Paying out any mortgage or other claim on the title first</li>
         </ul>
       </div>
     </div>
-    <p class="dl-cost-note rv">If cost is what is standing in the way, please say so early rather than quietly withdrawing. A great many people who own land worth protecting are not cash rich, and we would far rather work out how to share the load than lose the land over conveyancing fees. Where a property has real conservation value, we will look at what we can carry.</p>
+    <p class="dl-cost-note rv">If cost is the thing standing in the way, please tell us. Plenty of people who own land worth protecting do not have much spare cash, and we would far rather work out how to share the load than lose the land over legal fees. Where a property has real conservation value, we will look at what we can carry.</p>
   </div>
 </section>
 
@@ -360,18 +353,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ============ TAX ============ -->
-<section class="dl-tax">
-  <div class="cw"><div class="col rv" style="max-width:66ch">
-    <span class="ey">Tax and legal</span>
-    <h2 style="margin-top:1rem">What we can tell you, and what we cannot.</h2>
-    <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">We are not able to give you legal, tax or financial advice, and we would be doing you a disservice if we tried. What we can do is tell you which questions are worth putting to your own solicitor or accountant, so you walk into that meeting knowing what to ask.</p>
-    <p style="font-size:1.02rem;line-height:1.72;color:var(--char)">There are three. Giving land in your lifetime and leaving it in your Will are treated quite differently, and they are not interchangeable. Any valuation needed for tax purposes has its own process and its own cost. And transfer duty is a state matter, handled differently depending on where the land sits. Raise all three early, before anything is decided.</p>
-    <p style="font-size:1.02rem;line-height:1.72;color:var(--char)">The Foundation for National Parks &amp; Wildlife is a registered charity with the ACNC and is endorsed by the Australian Taxation Office as a Deductible Gift Recipient. That status affects how a gift of property is treated, so it is worth confirming with your adviser at the outset.</p>
-    <p class="dl-tax-disc">This page is general information only. It is not legal, tax or financial advice, it does not take account of your circumstances, and it should not be relied on in place of advice from your own solicitor, accountant or financial adviser.</p>
-  </div></div>
 </section>
 
 <!-- ============ FAQ ============ -->
@@ -408,8 +389,6 @@
           <a href="tel:1800898626">1800 898 626</a>
         </div>
       </div>
-
-      <div class="dl-commit">Everything you tell us is treated in confidence, and we will never add you to a mailing list off the back of a land enquiry.</div>
 
       <div class="dl-next">
         <h4>What happens after you send this</h4>
