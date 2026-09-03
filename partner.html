@@ -82,10 +82,19 @@
 .case-strip .btn-p:hover{background:var(--wattle-dk);border-color:var(--wattle-dk);color:var(--cream)}
 
 .partners-now{padding:4.5rem 0;background:var(--cream);text-align:center}
-.partners-now .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));justify-items:center;align-items:center;gap:2.8rem 2rem;margin-top:2.8rem}
-.partners-now .row img{max-width:100%;max-height:66px;width:auto;height:auto;object-fit:contain;opacity:.92;transition:.25s}
-.partners-now .row img:hover{opacity:1;transform:scale(1.04)}
-@media(max-width:600px){.partners-now .row{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:2.2rem 1.4rem}.partners-now .row img{max-height:54px}}
+.partners-now .lmq{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.6rem;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.lmq-row{overflow:hidden}
+.lmq-track{display:flex;align-items:center;width:max-content;animation:lmq-scroll var(--dur,72s) linear infinite}
+.lmq-track.lmq-rev{animation-direction:reverse}
+.lmq:hover .lmq-track,.lmq:focus-within .lmq-track{animation-play-state:paused}
+.lmq-i{width:158px;height:58px;flex-shrink:0;margin-right:3.6rem;display:flex;align-items:center;justify-content:center}
+.lmq-i img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;opacity:.92;transition:opacity .25s}
+.lmq-i img:hover{opacity:1}
+@keyframes lmq-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(max-width:700px){.lmq-i{width:112px;height:44px;margin-right:2.2rem}.partners-now .lmq{gap:1.2rem}}
+@media(prefers-reduced-motion:reduce){.lmq-track{animation:none}.lmq-row{overflow-x:auto}}
 
 .cta-form{padding:5rem 0;background:var(--paper)}
 .cf-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
@@ -230,26 +239,128 @@
 <section class="partners-now">
   <div class="cw">
     <h4 style="color:var(--stone);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600">Trusted by Australia&rsquo;s leading partners</h4>
-    <div class="row">
-      <img src="assets/img/partners/partner-01.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-02.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-03.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-04.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-05.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-06.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-07.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-08.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-09.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-10.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-11.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-12.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-13.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-14.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-15.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-16.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-17.png" alt="Partner logo" loading="lazy">
-      <img src="assets/img/partners/partner-18.png" alt="Partner logo" loading="lazy">
+  <div class="lmq" aria-label="Our partners and supporters">
+    <div class="lmq-row">
+      <div class="lmq-track" style="--dur:72s">
+        <div class="lmq-i"><img src="assets/img/partners/partner-01.png" alt="AnchorMark" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-03.png" alt="GlobalGiving" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-05.png" alt="NAB Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-07.png" alt="Microequities Asset Management" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-09.png" alt="Docusign" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-11.png" alt="Virtuoso" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-13.png" alt="veritree" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-15.png" alt="Aon" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-17.png" alt="Firesticks" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-19.png" alt="AGA Aktionsgemeinschaft Artenschutz" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-22.png" alt="Queensland Government, Department of the Environment, Tourism, Science and Innovation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-24.png" alt="NSW Biodiversity Conservation Trust" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-26.png" alt="Australian Government, Department of Climate Change, Energy, the Environment and Water" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-28.png" alt="National Parks and Wildlife Service South Australia" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-30.png" alt="Australian Philanthropic Services" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-32.png" alt="Bartier Perry Lawyers" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-34.png" alt="Coombes Property Group" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-36.png" alt="Chrysanthemum Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-39.png" alt="&Eacute;toile" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-41.png" alt="Dicker Data" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-43.png" alt="FactSet" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-45.png" alt="Hilton" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-47.png" alt="LGT Crestone" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-49.png" alt="Little Feet Early Learning and Childcare" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-51.png" alt="Mulberry Lane Vet Hospital" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-54.png" alt="Skipper Jacobs Charitable Trust" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-56.png" alt="V2" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-58.png" alt="VMware" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-01.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-03.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-05.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-07.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-09.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-11.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-13.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-15.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-17.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-19.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-22.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-24.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-26.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-28.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-30.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-32.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-34.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-36.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-39.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-41.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-43.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-45.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-47.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-49.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-51.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-54.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-56.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-58.png" alt="" aria-hidden="true" loading="lazy"></div>
+      </div>
     </div>
+    <div class="lmq-row">
+      <div class="lmq-track lmq-rev" style="--dur:86s">
+        <div class="lmq-i"><img src="assets/img/partners/partner-02.png" alt="Zorali" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-04.png" alt="Dell Technologies" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-06.png" alt="AirTrunk" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-08.png" alt="Maple Brown Family Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-10.png" alt="Re:wild" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-12.png" alt="EthicalJobs" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-14.png" alt="One Tree Planted" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-16.png" alt="L&rsquo;Occitane en Provence" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-18.png" alt="Gowing Bros" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-20.png" alt="Quercus &amp; Co." loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-23.png" alt="NSW National Parks and Wildlife Service" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-25.png" alt="Victoria State Government, Energy, Environment and Climate Action" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-27.png" alt="Government of South Australia, South Australian Fire and Emergency Services Commission" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-29.png" alt="Government of South Australia, Department for Environment and Water" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-31.png" alt="Catalina Consultants" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-33.png" alt="Beswick Family Fund" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-35.png" alt="Consult Australia" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-38.png" alt="Deloitte" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-40.png" alt="Dick and Pip Smith Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-42.png" alt="Equity Trustees" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-44.png" alt="Flavourtech" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-46.png" alt="IMC" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-48.png" alt="Lifework Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-50.png" alt="Michael Page International" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-52.png" alt="Outdoors NSW &amp; ACT" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-55.png" alt="The Broinowski Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-57.png" alt="Xero" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-59.png" alt="Spark Renewables" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-02.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-04.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-06.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-08.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-10.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-12.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-14.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-16.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-18.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-20.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-23.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-25.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-27.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-29.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-31.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-33.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-35.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-38.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-40.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-42.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-44.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-46.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-48.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-50.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-52.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-55.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-57.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-59.png" alt="" aria-hidden="true" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
