@@ -1,0 +1,266 @@
+<title>FNPW Colour Contrast Audit</title>
+<style>
+:root{--euc:#0F7768;--euc-deep:#0F3132;--euc-soft:#C6EBCA;--waratah:#C23747;--wattle:#C4A927;
+--cream:#FAF6F2;--sand:#EEE8E1;--paper:#F4EEE6;--rule:#E5DFD3;--char:#2a2a2a;--stone:#6B6459;--soil:#241914;}
+body{background:var(--cream);color:var(--char);font:15px/1.6 'Figtree',system-ui,-apple-system,sans-serif;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:3rem 1.5rem 5rem}
+h1{font-family:'Sora',system-ui,sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--euc-deep);letter-spacing:-.02em;line-height:1.1;margin:0 0 .6rem}
+h2{font-family:'Sora',system-ui,sans-serif;font-size:1.3rem;color:var(--euc-deep);margin:3rem 0 .4rem;letter-spacing:-.01em}
+.ey{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc-deep);display:block;margin-bottom:.8rem}
+.lede{font-size:1.05rem;max-width:70ch;color:var(--char)}
+.sub{color:var(--stone);max-width:72ch;margin:.3rem 0 1rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
+.stat{background:#fff;border:1px solid var(--rule);border-top:3px solid var(--euc);padding:1.1rem 1.2rem}
+.stat b{font-family:'Sora',system-ui,sans-serif;font-size:1.9rem;color:var(--euc-deep);display:block;line-height:1;letter-spacing:-.03em}
+.stat span{font-size:.82rem;color:var(--stone)}
+.stat.r{border-top-color:var(--waratah)} .stat.w{border-top-color:var(--wattle)}
+.tbl{width:100%;overflow-x:auto;display:block}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:860px}
+th{text-align:left;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);
+padding:.8rem .9rem;border-bottom:2px solid var(--rule);font-weight:700}
+td{padding:1rem .9rem;border-bottom:1px solid var(--rule);vertical-align:top;font-size:.9rem}
+.num{font-family:'Sora',system-ui,sans-serif;font-weight:700;color:var(--stone)}
+.what{font-weight:600;color:var(--euc-deep)}
+.where{font-size:.8rem;color:var(--stone);margin-top:.15rem}
+.why{font-size:.85rem;color:var(--char);margin:.5rem 0 0;max-width:44ch;line-height:1.55}
+.sw{display:inline-block;padding:.5em .8em;font-size:.78rem;font-weight:700;white-space:nowrap}
+.need{font-size:.72rem;color:var(--stone);margin:.35rem 0 .5rem}
+.after .sw{outline:2px solid var(--euc);outline-offset:1px}
+.after.none{font-size:.78rem;color:var(--stone);font-style:italic}
+.sev{display:inline-block;padding:.3em .7em;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.s-high{background:#FFE5E8;color:#8C1422} .s-med{background:#F8EEA9;color:#241914}
+.s-low{background:var(--sand);color:var(--euc-deep)} .s-chk{background:#E5EDF8;color:#202F54}
+.s-cta{background:#EEE8E1;color:var(--stone)}
+.pg{font-size:.75rem;color:var(--stone);margin-top:.4rem}
+.fix{font-size:.85rem;max-width:26ch}
+code{background:var(--paper);padding:.15em .4em;font-size:.85em;font-family:ui-monospace,Menlo,monospace}
+.callout{background:#fff;border-left:3px solid var(--wattle);padding:1.3rem 1.5rem;margin:1.2rem 0}
+.callout p{margin:.5rem 0 0;max-width:70ch}
+.ok-large{color:var(--stone);font-size:.85rem}
+.foot{margin-top:3rem;font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1rem;max-width:70ch}
+@media(max-width:640px){.wrap{padding:2rem 1rem 3rem}}
+</style>
+<div class="wrap">
+<span class="ey">Foundation for National Parks &amp; Wildlife &middot; Brand Guidelines v1.0, section 5.2</span>
+<h1>Colour contrast audit</h1>
+<p class="lede">Every page on the site was rendered in a browser and each piece of text measured against the background actually painted behind it, then checked against the WCAG AA thresholds the AA badges in the guidelines encode.</p>
+
+<div class="stats">
+  <div class="stat"><b>120</b><span>pages rendered</span></div>
+  <div class="stat"><b>15</b><span>real problems found</span></div>
+  <div class="stat r"><b>106</b><span>pages hit by one of them</span></div>
+  <div class="stat w"><b>5</b><span>trace to one palette gap</span></div>
+</div>
+
+<h2>The one that matters most</h2>
+<p class="sub">Issue 1 below accounts for 106 of the 120 pages. It is a single missing line in global.css, and the site already solves the same problem correctly in four other places. Fixing it is a one-line change.</p>
+
+<h2>Findings</h2>
+<div class="tbl">
+<table>
+<thead><tr><th>#</th><th>What and where</th><th>Measured</th><th>Severity</th><th>Fix</th></tr></thead>
+<tbody>
+    <tr>
+      <td class="num">1</td>
+      <td>
+        <div class="what">Section eyebrow, e.g. ABOUT US, OUR WORK</div>
+        <div class="where">Every page using the .chi hero (106 pages)</div>
+        <p class="why">global.css has no .chi .ey rule, so the eyebrow falls back to --euc on the deep green hero. The same pattern is handled correctly on .fb-hero-content, .ph, .ab-hero and .sec.dark, it was just never added for .chi.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#0F3132;color:#0F7768">2.56:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#0F3132;color:#C6EBCA">After 10.72:1</span></div>
+      </td>
+      <td><span class="sev s-high">High</span><div class="pg">106 pages</div></td>
+      <td class="fix">Add <code>.chi .ey{color:var(--euc-soft)}</code> to global.css</td>
+    </tr>
+    <tr>
+      <td class="num">2</td>
+      <td>
+        <div class="what">“Read the full story” link inside a dark section</div>
+        <div class="where">growing-national-parks, saving-species, healing-the-land</div>
+        <p class="why">.hx-cta is set to --euc-deep, which is the same colour as the dark section it sits in. The link is invisible until hover. Same fault as the Partnership story button.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#0F3132;color:#0F3132">1.0:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#0F3132;color:#C4A927">After 6.01:1</span></div>
+      </td>
+      <td><span class="sev s-high">High</span><div class="pg">3 pages</div></td>
+      <td class="fix">Add <code>.sec.dark .hx-cta{color:var(--wattle)}</code></td>
+    </tr>
+    <tr>
+      <td class="num">3</td>
+      <td>
+        <div class="what">Breadcrumb and its Home link on the dark hero</div>
+        <div class="where">projects.html</div>
+        <p class="why">The page already has correct rules (.proj-hero .breadcrumb and its link colour), but an inline style on the nav overrides them with --stone and --euc.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#0F3132;color:#6B6459">2.39:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#0F3132;color:#FAF7F3">After 13.1:1</span></div>
+      </td>
+      <td><span class="sev s-high">High</span><div class="pg">1 page</div></td>
+      <td class="fix">Delete the inline colours so the page CSS applies</td>
+    </tr>
+    <tr>
+      <td class="num">4</td>
+      <td>
+        <div class="what">Healing the Land chip</div>
+        <div class="where">index.html</div>
+        <p class="why">pb-healing is --bark in global.css but --wattle-dk on the projects page, so one pillar has two colours. Neither carries white text at 10.6px, and nothing in the palette reaches 4.5:1 on #AB7341 at all.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#AB7341;color:#FFFFFF">3.99:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#F8EEA9;color:#241914">After 14.5:1</span></div>
+      </td>
+      <td><span class="sev s-med">Medium</span><div class="pg">1 page</div></td>
+      <td class="fix">No palette colour carries small text on #AB7341. Move the chip to a wattle tint with <code>--soil</code> text, matching the project tiles</td>
+    </tr>
+    <tr>
+      <td class="num">5</td>
+      <td>
+        <div class="what">Healing Land category chip on article cards</div>
+        <div class="where">articles.html, project pages</div>
+        <p class="why">Wattle-dark on a pale wattle tint. Nothing in the Wattle family is dark enough for 10.6px text.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#F3F1D3;color:#9F8506">3.14:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#F3F1D3;color:#241914">After 14.98:1</span></div>
+      </td>
+      <td><span class="sev s-med">Medium</span><div class="pg">2 pages</div></td>
+      <td class="fix">Keep the wattle tint, set the text to --soil</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td>
+        <div class="what">“Example” label on the third way-to-give card</div>
+        <div class="where">bequests.html</div>
+        <p class="why">Same root cause: wattle-dark is the darkest Wattle tone and it does not reach AA on white for small text.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#FFFFFF;color:#9F8506">3.6:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after none">needs your call</div>
+      </td>
+      <td><span class="sev s-med">Medium</span><div class="pg">1 page</div></td>
+      <td class="fix">Needs a decision, see the palette gap below</td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td>
+        <div class="what">Stat figure in the flipped activity card</div>
+        <div class="where">volunteer.html</div>
+        <p class="why">Same root cause as above.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#F4EEE6;color:#9F8506">3.12:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after none">needs your call</div>
+      </td>
+      <td><span class="sev s-med">Medium</span><div class="pg">1 page</div></td>
+      <td class="fix">Needs a decision, see the palette gap below</td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td>
+        <div class="what">Handwritten caption under the story image</div>
+        <div class="where">index.html</div>
+        <p class="why">Earth/tan on cream. At 21.6px it sits just under the 24px large-text threshold, so it needs the full 4.5.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#FAF6F2;color:#AB7341">3.71:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#FAF6F2;color:#241914">After 15.4:1</span></div>
+      </td>
+      <td><span class="sev s-med">Medium</span><div class="pg">1 page</div></td>
+      <td class="fix">Either take it to 24px, or darken to --soil</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td>
+        <div class="what">Eyebrow and link on the sand panel</div>
+        <div class="where">about.html, growing-national-parks.html</div>
+        <p class="why">Eucalyptus primary on the sand neutral lands at 4.47 against a 4.5 requirement. Fails by 0.03.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#EEE8E1;color:#0F7768">4.47:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#EEE8E1;color:#0F3132">After 12.4:1</span></div>
+      </td>
+      <td><span class="sev s-low">Marginal</span><div class="pg">2 pages</div></td>
+      <td class="fix">Use --euc-deep for eyebrows on tinted panels</td>
+    </tr>
+    <tr>
+      <td class="num">10</td>
+      <td>
+        <div class="what">“Explore the work” eyebrow on the green map band</div>
+        <div class="where">projects.html</div>
+        <p class="why">My doing. Moving that block onto the green band earlier today took it from 4.72 on paper to 4.39 on the band.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#DEEBD3;color:#0F7768">4.39:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after"><span class="sw" style="background:#DEEBD3;color:#0F3132">After 12.1:1</span></div>
+      </td>
+      <td><span class="sev s-low">Marginal</span><div class="pg">1 page</div></td>
+      <td class="fix">Set that eyebrow to --euc-deep</td>
+    </tr>
+    <tr>
+      <td class="num">11</td>
+      <td>
+        <div class="what">Caption over the placeholder image block</div>
+        <div class="where">donate-land.html</div>
+        <p class="why">This text sits over a photo that is still a placeholder. Worth re-checking once the real image is in, since the photo, not the tan, will be the backdrop.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#AB7341;color:#F8EEA9">3.38:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after none">needs your call</div>
+      </td>
+      <td><span class="sev s-chk">Re-check</span><div class="pg">1 page</div></td>
+      <td class="fix">Re-check when the image lands</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td>
+        <div class="what">“Join Habitat Heroes” button</div>
+        <div class="where">donate.html</div>
+        <p class="why">Flagged for completeness only. You have said CTAs stay bright to stand out, so this is out of scope.</p>
+      </td>
+      <td class="pair">
+        <span class="sw" style="background:#E26539;color:#FFFFFF">3.41:1</span>
+        <div class="need">needs 4.5:1</div>
+        <div class="after none">needs your call</div>
+      </td>
+      <td><span class="sev s-cta">Out of scope</span><div class="pg">1 page</div></td>
+      <td class="fix">Left alone by your direction</td>
+    </tr></tbody>
+</table>
+</div>
+
+<h2>A gap in the palette itself</h2>
+<div class="callout">
+<strong>No Wattle or Earth/tan tone is dark enough to carry small text on a light background.</strong>
+<p>Wattle&rsquo;s darkest tone (#9F8506) reaches 3.60:1 on white. Earth/tan&rsquo;s darkest (#AB7341) reaches 3.99:1. Both fall short of the 4.5:1 that body text needs, so any small text in those colours on cream, paper or white fails no matter which tone you pick. That single gap is behind issues 5, 6, 7 and 8.</p>
+<p>This matters beyond the website, because Healing the Land is the wattle pillar and Wattle is a named primary. Three options: add a darker tone to each family in the guidelines, restrict those two families to headings and backgrounds only, or pair them with #241914 text as I have suggested above. The first is the real fix and worth raising when the guidelines are next revised.</p>
+</div>
+
+<h2>Guideline pairings that only work at heading size</h2>
+<p class="sub">These pairs carry an AA badge in section 5.2 and they are correct, but only above the large-text threshold. Used at body size they fail. Worth annotating in the guidelines so the distinction is not lost.</p>
+<div class="tbl">
+<table>
+<thead><tr><th>Sample</th><th>Family</th><th>Pairing</th><th>Safe for</th></tr></thead>
+<tbody><tr><td><span class="sw" style="background:#AB7341;color:#FFFFFF">3.99:1</span></td><td>Earth/tan primary</td><td>#AB7341 with white</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#956F6F;color:#FFFFFF">4.39:1</span></td><td>Deep brown tone 3</td><td>#956F6F with white</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#5D7BC1;color:#FFFFFF">4.14:1</span></td><td>Blue tone 3</td><td>#5D7BC1 with white</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#ED4E61;color:#FFFFFF">3.58:1</span></td><td>Waratah tone 3</td><td>#ED4E61 with white</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#E26539;color:#FFFFFF">3.41:1</span></td><td>Terracotta tone 3</td><td>#E26539 with white</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#9F8506;color:#FFFFFF">3.6:1</span></td><td>Wattle tone 2</td><td>#9F8506 with white</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#0F7768;color:#C6EBCA">4.18:1</span></td><td>Eucalyptus primary + pale</td><td>#0F7768 with #C6EBCA</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr><tr><td><span class="sw" style="background:#C23747;color:#FFADB7">3.03:1</span></td><td>Waratah primary + pale</td><td>#C23747 with #FFADB7</td><td class="ok-large">Headings only, 24px+ or 18.7px bold</td></tr></tbody>
+</table>
+</div>
+
+<h2>What was excluded</h2>
+<p class="sub">39 flags were checked by eye and set aside: text on the purple campaign gradient and the dark hero photographs, where the audit could not resolve the painted backdrop, and the large outlined numerals, where a stroke rather than a fill supplies the contrast. Donate and Send enquiry buttons were left out by your direction, and the one CTA listed above is there for completeness only.</p>
+
+<div class="foot">Thresholds are WCAG 2.1 AA: 4.5:1 for body text, 3:1 for text at 24px or above, or 18.7px and bold. Ratios were computed from rendered pixel colours, including transparency compositing, not from stylesheet values.</div>
+</div>

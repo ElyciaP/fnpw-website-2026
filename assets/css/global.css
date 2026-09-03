@@ -108,6 +108,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .sec.dark .ey{color:var(--wattle)}.sec.dark .ey::before{background:var(--wattle)}
 .sec.paper{background:var(--paper)}
 .sec.sand{background:var(--sand)}
+.sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
 .deco{position:absolute;pointer-events:none;opacity:.12}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}
 .rv.in{opacity:1;transform:translateY(0)}
@@ -128,6 +129,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .chi .cw{position:relative}
 .chi h1{color:#fff}
 .chi .lede{color:rgba(255,255,255,.85)}
+.chi .ey{color:var(--euc-soft)}
 .port-note{border:2px dashed var(--wattle-dk);background:var(--wattle-soft);color:var(--ink);padding:.9rem 1.1rem;border-radius:0;font-size:.9rem;margin:1.2rem 0}
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
 .pc-link{display:block;color:inherit;text-decoration:none;height:100%}
@@ -168,7 +170,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .pc-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,49,50,.45))}
 .pc-pb{position:absolute;top:1rem;left:1rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:.4em .9em;border-radius:0;color:var(--euc-deep);z-index:2}
 .pc-pb.sp{color:var(--waratah-dk);background:rgba(255,236,238,.95)}
-.pc-pb.hl{color:var(--wattle-dk);background:rgba(255,247,217,.95)}
+.pc-pb.hl{color:var(--soil);background:rgba(255,247,217,.95)}
 .pc-lo{position:absolute;bottom:.9rem;left:1rem;font-size:.76rem;color:var(--white);z-index:2}
 .pc-bd{padding:1.5rem;flex:1;display:flex;flex-direction:column}
 .pc-bd h3{font-size:1.15rem;line-height:1.2;margin-bottom:.5rem}
@@ -332,6 +334,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-cta-line{position:relative;width:58px;height:2px;background:currentColor;transition:width .3s ease}
 .hx-cta-line::after{content:"";position:absolute;right:0;top:-4.5px;width:10px;height:10px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
 .hx-cta:hover{color:var(--euc)}
+.sec.dark .hx-cta{color:var(--wattle)}
+.sec.dark .hx-cta:hover{color:var(--wattle-mid)}
 .hx-cta:hover .hx-cta-line{width:92px}
 /* editorial index list (Get Involved pattern) */
 .hx-help-list{margin-top:2.4rem;border-top:1px solid var(--euc-deep)}
@@ -392,7 +396,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .art:hover .art-im img{transform:scale(1.06)}
 .art-im .cat{position:absolute;top:1rem;left:1rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.94);padding:.4em .9em;color:var(--euc-deep);backdrop-filter:blur(8px);z-index:2}
 .art-im .cat.sp,.art-im .cat.species{color:var(--waratah-dk);background:rgba(255,236,238,.95)}
-.art-im .cat.hl,.art-im .cat.heal{color:var(--wattle-dk);background:rgba(255,247,217,.95)}
+.art-im .cat.hl,.art-im .cat.heal{color:var(--soil);background:rgba(255,247,217,.95)}
 .art-im .cat.news{color:var(--hovea);background:rgba(238,232,255,.95)}
 .art-bd{padding:1.5rem 1.5rem 1.6rem;flex:1;display:flex;flex-direction:column}
 .art-date{font-size:.78rem;color:var(--stone);margin-bottom:.5rem;letter-spacing:.04em}
@@ -449,7 +453,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pil-stats .pst-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1;color:var(--ps-c,var(--euc));display:block;margin-bottom:.7rem}
 .pil-stats .pst-l{display:block;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
 .pil-stats .pst-d{font-size:.92rem;line-height:1.55;color:var(--stone)}
-.pil-stats .pst-d a{color:var(--ps-c,var(--euc));font-weight:600}
+.pil-stats .pst-d a{color:var(--euc-deep);font-weight:600}
 .ps-parks{--ps-c:var(--euc)}
 .ps-species{--ps-c:var(--waratah-dk)}
 .ps-healing{--ps-c:var(--red-soil-dk)}
