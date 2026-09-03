@@ -56,8 +56,7 @@
 .bespoke-card li{font-size:.92rem;color:var(--char);padding:.6em 0;display:flex;align-items:flex-start;gap:.7em;line-height:1.5;border-bottom:1px dashed var(--rule)}
 .bespoke-card li:last-child{border-bottom:0}
 .bespoke-card li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--euc-pale);color:var(--euc);font-size:.7rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-top:.1em}
-.bespoke-card li:nth-child(odd)::before{content:"✓";background:var(--euc-pale);color:var(--euc)}
-.bespoke-card li:nth-child(even)::before{content:"✓";background:var(--waratah-pale);color:var(--waratah)}
+.bespoke-card li::before{content:"✓"}
 .bespoke-card .btn{justify-content:center;width:100%;margin-top:.6rem}
 
 /* Approach pillars (right column) */
@@ -79,11 +78,14 @@
 .case-im img{width:100%;height:100%;object-fit:cover}
 .case-strip h2{color:var(--white)}
 .case-strip p{color:rgba(250,246,242,.88);font-size:1.02rem;line-height:1.65}
+.case-strip .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--euc-deep)}
+.case-strip .btn-p:hover{background:var(--wattle-dk);border-color:var(--wattle-dk);color:var(--cream)}
 
 .partners-now{padding:4.5rem 0;background:var(--cream);text-align:center}
-.partners-now .row{display:flex;justify-content:center;align-items:center;gap:2.4rem 3.2rem;flex-wrap:wrap;margin-top:2.5rem}
-.partners-now .row img{height:48px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;transition:.25s}
-.partners-now .row img:hover{filter:grayscale(0);opacity:1}
+.partners-now .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));justify-items:center;align-items:center;gap:2.8rem 2rem;margin-top:2.8rem}
+.partners-now .row img{max-width:100%;max-height:66px;width:auto;height:auto;object-fit:contain;opacity:.92;transition:.25s}
+.partners-now .row img:hover{opacity:1;transform:scale(1.04)}
+@media(max-width:600px){.partners-now .row{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:2.2rem 1.4rem}.partners-now .row img{max-height:54px}}
 
 .cta-form{padding:5rem 0;background:var(--paper)}
 .cf-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
@@ -91,6 +93,8 @@
 .cf-form{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.5rem;position:relative}
 .cf-form::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--waratah));border-radius:0}
 .cf-form h3{margin-bottom:1.4rem;font-size:1.3rem}
+.cf-person{display:flex;align-items:center;gap:1.1rem;margin-top:2rem}
+.cf-person img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--sand)}
 .cf-form .ff{margin-bottom:1.2rem}
 .cf-form label{display:block;font-size:.82rem;font-weight:600;color:var(--euc-deep);margin-bottom:.5rem}
 .cf-form input,.cf-form textarea,.cf-form select{width:100%;padding:.85em 1.1em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink)}
@@ -161,7 +165,7 @@
     <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span>Get Involved<span style="opacity:.4">/</span>Become a Partner</nav>
     <span class="ey">For business &amp; philanthropy</span>
     <h1 style="margin:1rem 0 1.2rem;max-width:20ch">Partner with us to protect Australia&rsquo;s wild places.</h1>
-    <p class="lede">FNPW partners with leading Australian businesses, foundations and philanthropic groups to deliver measurable conservation outcomes. With 55 years of experience, we know how to translate funding into impact.</p>
+    <p class="lede">We partner with leading Australian businesses, foundations and philanthropic groups to deliver measurable conservation outcomes. With 55 years of experience, we know how to translate funding into impact.</p>
     <a href="#contact-form" class="btn btn-p" style="margin-top:1.6rem">Get in touch</a>
   </div>
 </section>
@@ -195,7 +199,7 @@
           <li>Named sponsorship of FNPW programs: species, landscapes or initiatives</li>
           <li>Co-branded storytelling &middot; impact reports &middot; campaign assets</li>
           <li>Employee engagement, volunteering days and Country-based experiences</li>
-          <li>Executive engagement with our team, Board and conservation partners</li>
+          <li>Executive engagement with our team</li>
           <li>Dedicated partnerships lead with quarterly reviews and annual impact reporting</li>
         </ul>
         <a href="#contact-form" class="btn btn-p">Start a conversation</a>
@@ -215,8 +219,9 @@
     <div class="case-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg" alt="Corporate volunteers planting native trees"></div>
     <div>
       <span class="ey" style="color:var(--wattle)">Partnership story</span>
-      <h2 style="margin:1rem 0 1.2rem">Building 1 million trees, together.</h2>
-      <p>Over five years, our corporate partners have helped fund the planting of more than 1.2 million native trees, shrubs and seedlings across Australia, restoring habitat, sequestering carbon, and building resilient ecosystems for the future.</p>
+      <h2 style="margin:1rem 0 1.2rem">Nine million trees by 2028.</h2>
+      <p>We have 1.2 million native plants in the ground so far. Our strategy takes that to nine million by 2028, restoring habitat, reconnecting wildlife corridors and building landscapes that hold up under fire, flood and drought.</p>
+      <p style="margin-top:1rem">Partners fund plantings at the scale that suits them, from a single site through to a multi-year program across several states. Every planting is monitored and reported, so you can see exactly what your investment put back.</p>
       <a href="#contact-form" class="btn btn-p" style="margin-top:1.4rem">Start a conversation</a>
     </div>
   </div></div>
@@ -226,31 +231,31 @@
   <div class="cw">
     <h4 style="color:var(--stone);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600">Trusted by Australia&rsquo;s leading partners</h4>
     <div class="row">
-      <img src="Logos%20Artwork-01.png" alt="Partner logo">
-      <img src="Logos%20Artwork-02.png" alt="Partner logo">
-      <img src="Logos%20Artwork-03.png" alt="Partner logo">
-      <img src="Logos%20Artwork-04.png" alt="Partner logo">
-      <img src="Logos%20Artwork-05.png" alt="Partner logo">
-      <img src="Logos%20Artwork-06.png" alt="Partner logo">
-      <img src="Logos%20Artwork-07.png" alt="Partner logo">
-      <img src="Logos%20Artwork-08.png" alt="Partner logo">
-      <img src="Logos%20Artwork-09.png" alt="Partner logo">
-      <img src="Logos%20Artwork-10.png" alt="Partner logo">
-      <img src="Logos%20Artwork-11.png" alt="Partner logo">
-      <img src="Logos%20Artwork-12.png" alt="Partner logo">
-      <img src="Logos%20Artwork-13.png" alt="Partner logo">
-      <img src="Logos%20Artwork-14.png" alt="Partner logo">
-      <img src="Logos%20Artwork-15.png" alt="Partner logo">
-      <img src="Logos%20Artwork-16.png" alt="Partner logo">
-      <img src="Logos%20Artwork-17.png" alt="Partner logo">
-      <img src="Logos%20Artwork-18.png" alt="Partner logo">
+      <img src="assets/img/partners/partner-01.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-02.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-03.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-04.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-05.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-06.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-07.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-08.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-09.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-10.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-11.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-12.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-13.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-14.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-15.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-16.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-17.png" alt="Partner logo" loading="lazy">
+      <img src="assets/img/partners/partner-18.png" alt="Partner logo" loading="lazy">
     </div>
   </div>
 </section>
 
 <section class="cta-form" id="contact-form">
   <div class="cw"><div class="cf-g">
-    <div class="rv"><span class="ey">Start the conversation</span><h2 style="margin-top:1rem">Let&rsquo;s talk about partnership.</h2><p style="color:var(--char);font-size:1.02rem;line-height:1.65;margin-top:1rem">Our partnerships team will get back to you within two working days. We tailor every partnership to your goals, values and capacity.</p><div style="margin-top:2rem"><strong style="display:block;color:var(--euc-deep);font-family:var(--ff-d);margin-bottom:.3rem">Mandy Kraffczyk</strong><div style="font-size:.9rem;color:var(--stone)">Head of Partnerships</div><div style="font-size:.9rem;margin-top:.4rem"><a href="mailto:partners@fnpw.org.au" style="color:var(--euc)">partners@fnpw.org.au</a></div></div></div>
+    <div class="rv"><span class="ey">Start the conversation</span><h2 style="margin-top:1rem">Let&rsquo;s talk about partnership.</h2><p style="color:var(--char);font-size:1.02rem;line-height:1.65;margin-top:1rem">Our partnerships team will get back to you to discuss what a partnership could look like. We tailor every partnership to your goals, values and capacity.</p><div class="cf-person"><img src="assets/img/team/ian-laing.jpg" alt="Ian Laing" onerror="this.style.display='none'"><div><strong style="display:block;color:var(--euc-deep);font-family:var(--ff-d);margin-bottom:.3rem">Ian Laing</strong><div style="font-size:.9rem;color:var(--stone)">Chief Commercial Officer</div><div style="font-size:.9rem;margin-top:.4rem"><a href="mailto:ilaing@fnpw.org.au" style="color:var(--euc)">ilaing@fnpw.org.au</a></div></div></div></div>
     <form class="cf-form rv d1" onsubmit="alert('Thank you! Our partnerships team will be in touch.');return false">
       <h3>Partnership enquiry</h3>
       <div class="ff"><label>Your name</label><input type="text" required></div>
