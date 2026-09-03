@@ -256,9 +256,10 @@
 <!-- /@map-pins -->
   <div class="im-pop" id="imPop" hidden>
     <button class="im-x" id="imX" aria-label="Close">&#215;</button>
-    <span class="hx-chip" id="imChip"></span>
+    <span class="im-chip" id="imChip"></span>
     <h4 id="imTitle"></h4>
     <p id="imState"></p>
+    <img class="im-thumb" id="imThumb" alt="" hidden>
     <a class="btn-p" id="imGo" href="#">View project</a>
   </div>
 </div>
@@ -300,6 +301,12 @@
 .im-pop{position:absolute;width:264px;background:#fff;border:1px solid var(--rule);box-shadow:0 24px 54px -18px rgba(15,49,50,.4);padding:1.1rem 1.1rem 1.2rem;z-index:6}
 .im-pop h4{font-family:var(--ff-d);font-size:1.02rem;font-weight:700;color:var(--euc-deep);margin:.55rem 0 .2rem;line-height:1.3}
 .im-pop p{font-size:.85rem;color:var(--stone);margin-bottom:.8rem}
+.im-chip{display:inline-block;font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1}
+.im-chip.pc-parks{color:var(--euc-deep)}
+.im-chip.pc-species{color:var(--waratah-dk)}
+.im-chip.pc-healing{color:var(--wattle-dk)}
+.im-thumb{width:100%;height:124px;object-fit:cover;display:block;margin:0 0 .9rem;background:var(--sand)}
+.im-thumb[hidden]{display:none}
 .im-pop .btn-p{font-size:.8rem;padding:.6em 1.2em}
 .im-x{position:absolute;top:.4rem;right:.55rem;background:none;border:0;font-size:1.25rem;color:var(--stone);cursor:pointer;line-height:1}
 .im-legend{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.2rem;font-size:.85rem;color:var(--char)}
@@ -485,10 +492,15 @@ var IMAP=/*@map-data*/[{"s": "garners-beach-cassowary-rehabilitation-centre-proj
   function show(i,pin){
     var p=IMAP[i];
     document.getElementById('imChip').textContent=p.pl;
-    document.getElementById('imChip').className='hx-chip '+p.pc;
+    document.getElementById('imChip').className='im-chip '+p.pc.replace('pb-','pc-');
     document.getElementById('imTitle').textContent=p.t;
     document.getElementById('imState').textContent=p.st;
     document.getElementById('imGo').href='project-'+p.s+'.html';
+    var th=document.getElementById('imThumb');
+    var tile=document.querySelector('.pc-link[href="project-'+p.s+'.html"] img');
+    var src=tile?tile.getAttribute('src'):'';
+    if(src){th.src=src;th.alt=p.t;th.hidden=false;}
+    else{th.removeAttribute('src');th.alt='';th.hidden=true;}
     var x=parseFloat(pin.style.left),y=parseFloat(pin.style.top);
     pop.style.left=(x>62? x-30 : x+3)+'%';
     pop.style.top=Math.min(Math.max(y-8,2),70)+'%';
