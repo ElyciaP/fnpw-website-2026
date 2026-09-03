@@ -306,6 +306,7 @@
 .im-chip.pc-species{color:var(--waratah-dk)}
 .im-chip.pc-healing{color:var(--wattle-dk)}
 .im-thumb{width:100%;height:124px;object-fit:cover;display:block;margin:0 0 .9rem;background:var(--sand)}
+@media(max-width:700px){.im-pop{width:236px;padding:.9rem .9rem 1rem}.im-thumb{height:88px;margin-bottom:.7rem}}
 .im-thumb[hidden]{display:none}
 .im-pop .btn-p{font-size:.8rem;padding:.6em 1.2em}
 .im-x{position:absolute;top:.4rem;right:.55rem;background:none;border:0;font-size:1.25rem;color:var(--stone);cursor:pointer;line-height:1}
@@ -489,6 +490,7 @@ var IMAP=/*@map-data*/[{"s": "garners-beach-cassowary-rehabilitation-centre-proj
 (function(){
   var pop=document.getElementById('imPop');if(!pop)return;
   var box=pop.parentNode;
+  var current=null;
   function show(i,pin){
     var p=IMAP[i];
     document.getElementById('imChip').textContent=p.pl;
@@ -501,18 +503,41 @@ var IMAP=/*@map-data*/[{"s": "garners-beach-cassowary-rehabilitation-centre-proj
     var src=tile?tile.getAttribute('src'):'';
     if(src){th.src=src;th.alt=p.t;th.hidden=false;}
     else{th.removeAttribute('src');th.alt='';th.hidden=true;}
-    var x=parseFloat(pin.style.left),y=parseFloat(pin.style.top);
-    pop.style.left=(x>62? x-30 : x+3)+'%';
-    pop.style.top=Math.min(Math.max(y-8,2),70)+'%';
     pop.hidden=false;
+    place(pin);
     document.querySelectorAll('.im-pin.on').forEach(function(q){q.classList.remove('on')});
     pin.classList.add('on');
+    current=pin;
+  }
+  /* keep the card inside the map: flip sides near the right edge, sit it
+     off the bottom edge rather than over the legend, and shrink the image
+     if the map is shorter than the card (small screens) */
+  function place(pin){
+    var wrap=pop.parentNode,pad=10;
+    var cw=wrap.clientWidth,ch=wrap.clientHeight;
+    var px=parseFloat(pin.style.left)/100*cw,py=parseFloat(pin.style.top)/100*ch;
+    var th=document.getElementById('imThumb');
+    th.style.height='';
+    var pw=pop.offsetWidth,phh=pop.offsetHeight;
+    if(!th.hidden&&phh>ch-pad*2){
+      th.style.height=Math.max(60,th.offsetHeight-(phh-(ch-pad*2)))+'px';
+      phh=pop.offsetHeight;
+    }
+    var left=px+16;
+    if(left+pw>cw-pad)left=px-pw-16;
+    if(left<pad)left=Math.max(pad,(cw-pw)/2);
+    var top=py-24;
+    if(top+phh>ch-pad)top=ch-phh-pad;
+    if(top<pad)top=pad;
+    pop.style.left=left+'px';
+    pop.style.top=top+'px';
   }
   document.querySelectorAll('.im-pin').forEach(function(b){
     b.addEventListener('click',function(e){e.stopPropagation();show(parseInt(b.dataset.i,10),b)});
   });
-  document.getElementById('imX').addEventListener('click',function(){pop.hidden=true});
-  document.addEventListener('click',function(e){if(!box.contains(e.target))pop.hidden=true});
+  document.getElementById('imX').addEventListener('click',function(){pop.hidden=true;current=null});
+  document.addEventListener('click',function(e){if(!box.contains(e.target)){pop.hidden=true;current=null}});
+  window.addEventListener('resize',function(){if(current&&!pop.hidden)place(current)});
 })();
 </script>
 </body>
