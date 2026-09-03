@@ -603,6 +603,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-qband figcaption{font-size:.88rem;color:var(--stone)}
 .pj-qband figcaption strong{color:var(--char);font-weight:600}
 @media(max-width:880px){.pj-band-g{grid-template-columns:1fr}.pj-band.flip .pj-band-im{order:0}}
+.pj-credit{font-size:.78rem;color:var(--stone);margin-top:.8rem;letter-spacing:.02em}
+.pj-feature figcaption{font-size:.82rem;color:var(--stone);margin-top:.7rem;line-height:1.45}
+.pj-feature img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:var(--sand)}
 .pj-feature{margin:0 0 1.6rem}
 .pj-feature img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--sand)}
 .pj-gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
