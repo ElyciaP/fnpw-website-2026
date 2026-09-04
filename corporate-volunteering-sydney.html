@@ -58,25 +58,100 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="ch chi" style="--chi:url('https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg')">
+<section class="pj-hero">
+  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg" alt="Volunteers restoring bushland in Lane Cove National Park"></figure>
   <div class="cw rv">
-    <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span>Corporate Volunteering / Sydney</nav>
+    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="volunteer.html">Corporate Volunteering</a><span style="opacity:.4">/</span>Sydney</nav>
     <span class="ey">Corporate volunteering</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">Volunteering days in Sydney.</h1>
-    <p class="lede">Bring your team out of the office and into the bush. Planting and restoration days near Sydney, run with our project partners.</p>
+    <h1>Volunteering days in Sydney</h1>
+    <p class="pj-hero-meta">New South Wales &nbsp;&nbsp;&middot;&nbsp;&nbsp; 9:30am to 2:00pm</p>
+    <p class="lede">Harbour bushland, coastal heath, wetlands and community nurseries. Choose the site that suits your team.</p>
   </div>
-</section><section class="sec ">
+</section>
+<section class="sec paper">
   <div class="cw rv">
-<div class="two">
-<div><h2>A day in the field, NSW</h2><p>Your team plants natives, clears weeds or builds habitat alongside our project partners, with all tools, guidance and safety covered. Most groups tell us it is the best team day they have done.</p><div class="port-note"><strong>To port from live site:</strong> site details, photos and dates from fnpw.org.au/corporate-volunteering/sydney/</div></div>
-<div><h3>Book a day</h3><p>Days fill early, especially in planting season. <a href="contact.html">Contact us</a> to check dates near Sydney.</p><p><a class="btn-p" href="contact.html">Enquire now</a></p></div>
-</div>
+    <span class="ey">Choose your site</span>
+    <h2 style="margin:.8rem 0 .4rem">Eight places your team can work.</h2>
+    <p style="color:var(--stone);max-width:62ch">Pick one to see where it is and what the work involves. We confirm availability and group size for that site when you enquire.</p>
+    <div class="sb">
+      <div class="sb-list" role="tablist"><button class="sb-item" role="tab" aria-selected="true" data-i="0"><span class="sb-n">Sydney Harbour National Park</span><span class="sb-l">Middle Head</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="1"><span class="sb-n">Kamay Botany Bay National Park</span><span class="sb-l">Kurnell</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="2"><span class="sb-n">Lane Cove National Park</span><span class="sb-l">Lane Cove</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="3"><span class="sb-n">Tempe Wetlands</span><span class="sb-l">Tempe</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="4"><span class="sb-n">Hawkesbury Community Nursery</span><span class="sb-l">Hawkesbury</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="5"><span class="sb-n">Robin Davies Community Nursery</span><span class="sb-l">Sydney</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="6"><span class="sb-n">Stonequarry Bush Tucker</span><span class="sb-l">Picton</span></button><button class="sb-item" role="tab" aria-selected="false" data-i="7"><span class="sb-n">Bargo River Reserve</span><span class="sb-l">Bargo</span></button></div>
+      <div class="sb-panel">
+        <div class="sb-im" id="sbIm"><div class="pj-ph"><span>Site photo<br>Sydney Harbour National Park</span></div></div>
+        <div class="sb-bd">
+          <span class="ey" id="sbTag">Bushland restoration</span>
+          <h3 id="sbName">Sydney Harbour National Park</h3>
+          <p>Across the Sydney sites your team removes invasive plants, restores bushland and wetland habitat, and grows natives in the community nurseries. Planting is seasonal and only runs at some sites, so the activity follows what your chosen site needs on the day.</p>
+          <div class="sb-meta">
+            <div><b>Where</b><span id="sbLoc">Middle Head</span></div>
+            <div><b>Hours</b><span>9:30am to 2:00pm</span></div>
+            <div><b>Group size</b><span>Confirmed on enquiry</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section><section class="sec dark">
+</section>
+<script>
+var SD=[{"n": "Sydney Harbour National Park", "loc": "Middle Head", "tag": "Bushland restoration"}, {"n": "Kamay Botany Bay National Park", "loc": "Kurnell", "tag": "Bushland restoration"}, {"n": "Lane Cove National Park", "loc": "Lane Cove", "tag": "Bushland restoration"}, {"n": "Tempe Wetlands", "loc": "Tempe", "tag": "Wetland restoration"}, {"n": "Hawkesbury Community Nursery", "loc": "Hawkesbury", "tag": "Nursery propagation"}, {"n": "Robin Davies Community Nursery", "loc": "Sydney", "tag": "Nursery propagation"}, {"n": "Stonequarry Bush Tucker", "loc": "Picton", "tag": "Bushland restoration"}, {"n": "Bargo River Reserve", "loc": "Bargo", "tag": "Bushland restoration"}];
+function sbSet(i){var s=SD[i];
+ document.getElementById('sbName').textContent=s.n;
+ document.getElementById('sbLoc').textContent=s.loc;
+ document.getElementById('sbTag').textContent=s.tag;
+ var im=document.getElementById('sbIm');
+ im.innerHTML='<div class="pj-ph"><span>Site photo<br>'+s.n+'</span></div>';
+ document.querySelectorAll('.sb-item').forEach(function(b,j){b.setAttribute('aria-selected', j===i?'true':'false')});
+ var f=document.getElementById('cvSite'); if(f) f.value=s.n;
+}
+document.querySelectorAll('.sb-item').forEach(function(b){b.addEventListener('click',function(){sbSet(+b.dataset.i)})});
+</script>
+<section class="sec ">
+  <div class="cw rv">
+    <div class="pj-body" style="max-width:none">
+      <span class="ey">Practical details</span>
+      <div class="cv-facts">
+        <div><b>Cost</b><span>$3,500 + GST per day, fully tax-deductible. $3,700 + GST if catering is required at NSW National Parks, also fully tax-deductible.</span></div>
+        <div><b>When</b><span>Weekdays, 9:30am to 2:00pm. Minimum 21 days notice.</span></div>
+        <div><b>Included</b><span>Tools, safety gear, guidance from our rangers, permits, insurance and catering.</span></div>
+        <div><b>More questions</b><span><a href="volunteer.html#faqs">Read the full FAQs</a> on the corporate volunteering page.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec paper" id="enquire">
+  <div class="cw rv">
+    <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:start">
+      <div>
+        <span class="ey">Start a day</span>
+        <h2 style="margin:.8rem 0 1rem">Tell us which site and roughly when.</h2>
+        <p style="color:var(--char);max-width:44ch">We come back with availability, the group size that site can take, and what the work looks like on your date. Days fill early in planting season.</p>
+        <p style="margin-top:1.4rem;font-size:.9rem;color:var(--stone)">Prefer to talk? <a href="tel:1800898626" style="color:var(--euc-deep);font-weight:600">1800 898 626</a> or <a href="mailto:fnpw@fnpw.org.au" style="color:var(--euc-deep);font-weight:600">fnpw@fnpw.org.au</a></p>
+      </div>
+      <form class="cv-form" onsubmit="alert('Thank you. Our team will be in touch about your volunteering day.');return false">
+        <h3>Enquire about a day in Sydney</h3>
+        <div class="cv-form-r">
+          <div><label for="cvName">Your name</label><input id="cvName" type="text" required></div>
+          <div><label for="cvOrg">Organisation</label><input id="cvOrg" type="text" required></div>
+        </div>
+        <div class="cv-form-r">
+          <div><label for="cvEmail">Email</label><input id="cvEmail" type="email" required></div>
+          <div><label for="cvTeam">Team size</label><input id="cvTeam" type="text" placeholder="Approximate"></div>
+        </div>
+        <div class="cv-form-r">
+          <div><label for="cvSite">Preferred site</label><select id="cvSite"><option>Sydney Harbour National Park</option><option>Kamay Botany Bay National Park</option><option>Lane Cove National Park</option><option>Tempe Wetlands</option><option>Hawkesbury Community Nursery</option><option>Robin Davies Community Nursery</option><option>Stonequarry Bush Tucker</option><option>Bargo River Reserve</option></select></div>
+          <div><label for="cvDate">Rough dates</label><input id="cvDate" type="text" placeholder="Month or quarter"></div>
+        </div>
+        <div style="margin-bottom:1rem"><label for="cvMsg">Anything else</label><textarea id="cvMsg" placeholder="Accessibility needs, preferred activity, anything we should know"></textarea></div>
+        <button type="submit">Send enquiry</button>
+        <p class="cv-form-note">Minimum 21 days notice. We will confirm the group size your chosen site can take.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 style="max-width:24ch;margin:0 auto 1rem">Ready to make a difference?</h2>
-    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Your donation grows national parks, saves species and heals the land.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate now</a><a class="btn-o" href="https://habitat-heroes.raiselysite.com/">Become a Habitat Hero</a></div>
+    <h2 style="max-width:26ch;margin:0 auto 1rem">Every day in the field funds the work.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Your contribution grows national parks, saves species and heals the land.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a><a class="btn-o" href="volunteer.html">All cities</a></div>
   </div>
 </section>
 </main>
