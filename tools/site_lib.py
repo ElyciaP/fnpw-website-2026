@@ -138,10 +138,22 @@ def card(slug, title, img, pillar_label, pillar_class, state, blurb, data_pil=''
   </a>
 </article>'''
 
-# Pages owned by gen_exemplars.py; gen_projects.py must not overwrite them.
+# Pages owned by gen_exemplars.py or hand-built; gen_projects.py must not overwrite them.
 EXEMPLAR_SLUGS = {'remarkable-southern-flinders',
                   'southern-highlands-koala-conservation',
-                  'warddeken-mayh'}
+                  'warddeken-mayh',
+                  # hand-built project pages using the pj-* layout system
+                  '1-million-turtles',
+                  'bandicoot-superhighway-project',
+                  'cultivating-koala-habitat',
+                  'curb-wombat-mange-program',
+                  'fire-wise',
+                  'genetic-code-of-koalas',
+                  'mundoo-island-station',
+                  'native-plant-nurseries',
+                  'nectar-sippers',
+                  'nilpena-nationalpark',
+                  'tangaroa-blue'}
 
 RAISELY_DONATE = 'https://foundation-for-national-parks-and-wildlife.raiselysite.com/'
 RAISELY_HERO = 'https://habitat-heroes.raiselysite.com/'

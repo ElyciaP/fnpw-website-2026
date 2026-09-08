@@ -12,6 +12,7 @@ U = 'https://fnpw.org.au/wp-content/uploads/'
 
 # slug | image path (under wp-content/uploads/) | pillar | state
 DATA = """
+mundoo-island-station|assets/img/projects/mundoo-hero.jpg|parks|SA
 garners-beach-cassowary-rehabilitation-centre-project|2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg|species|QLD
 tangaroa-blue|2021/01/Dugong-fish-CYMK.jpg|healing|QLD
 genetic-code-of-koalas|2021/02/Koala-mum-bub-scaled.jpg|species|Australia
@@ -266,7 +267,7 @@ def related_section(key):
 # Fields that are curated by hand or by another tool and must survive a re-run.
 # gen_map.py reads lat/lon/on_map from data/projects.json; regenerating the file
 # without carrying them across silently empties the projects map.
-CURATED_FIELDS = ('lat', 'lon', 'on_map', 'pillar_confirmed', 'year')
+CURATED_FIELDS = ('lat', 'lon', 'on_map', 'pillar_confirmed', 'year', 'img', 'live_url')
 
 
 def _preserve_curated(projects, path):
