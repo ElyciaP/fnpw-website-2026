@@ -12,7 +12,7 @@ U = 'https://fnpw.org.au/wp-content/uploads/'
 
 # slug | image path (under wp-content/uploads/) | pillar | state
 DATA = """
-mundoo-island-station|assets/img/projects/mundoo-hero.jpg|parks|SA
+mundoo-island-acquisition|assets/img/projects/mundoo-hero.jpg|parks|SA
 garners-beach-cassowary-rehabilitation-centre-project|2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg|species|QLD
 tangaroa-blue|2021/01/Dugong-fish-CYMK.jpg|healing|QLD
 genetic-code-of-koalas|2021/02/Koala-mum-bub-scaled.jpg|species|Australia
@@ -158,7 +158,8 @@ RELATED = {
         (U_ART + '2022/02/torrens-Island-bird.jpg', '08 May 2026 &middot; Story',
          'Mundoo Island: a once-in-a-generation conservation victory',
          'From the Murray Mouth, 1,900 hectares of Ramsar wetlands have been secured for '
-         'Coorong National Park, with the Ngarrindjeri at the heart of decision-making.'),
+         'Coorong National Park, with the Ngarrindjeri at the heart of decision-making.',
+         'project-mundoo-island-acquisition.html'),
         (U_ART + '2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Jul 2026 &middot; Story',
          'A wildlife corridor is only as wide as its narrowest point',
          'Development keeps narrowing the routes wildlife depend on, and it is the tightest '
@@ -233,10 +234,12 @@ FILTER_JS = """<script>
 def related_section(key):
     heading, catcls, catlabel, items = RELATED[key]
     cards = []
-    for i, (img, date, title, para) in enumerate(items):
+    for i, item in enumerate(items):
+        img, date, title, para = item[:4]
+        href = item[4] if len(item) > 4 else '#'
         d = '' if i == 0 else ' d%d' % i
         cards.append(
-            f'      <a href="#" class="art rv{d}">\n'
+            f'      <a href="{href}" class="art rv{d}">\n'
             f'        <div class="art-im"><img src="{img}" alt="{title}" loading="lazy">'
             f'<span class="cat {catcls}">{catlabel}</span></div>\n'
             f'        <div class="art-bd">\n'
@@ -267,7 +270,7 @@ def related_section(key):
 # Fields that are curated by hand or by another tool and must survive a re-run.
 # gen_map.py reads lat/lon/on_map from data/projects.json; regenerating the file
 # without carrying them across silently empties the projects map.
-CURATED_FIELDS = ('lat', 'lon', 'on_map', 'pillar_confirmed', 'year', 'img', 'live_url')
+CURATED_FIELDS = ('lat', 'lon', 'on_map', 'pillar_confirmed', 'year', 'img', 'live_url', 'title')
 
 
 def _preserve_curated(projects, path):
