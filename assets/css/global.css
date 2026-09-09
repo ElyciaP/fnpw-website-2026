@@ -1,3 +1,4 @@
+:root{--sec-y:clamp(2.5rem,4vw,3.5rem)}
 :root{
   /* Eucalyptus family (primary) */
   --euc:#0F7768;--euc-deep:#0F3132;--euc-mid:#51B593;--euc-soft:#C6EBCA;--euc-pale:#EAF4ED;
@@ -102,12 +103,11 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .ftr-b{border-top:1px solid rgba(198,235,202,.16);padding-top:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:var(--euc-mid)}
 
 /* ---- UTILITIES ---- */
-.sec{padding:5.5rem 0;position:relative}
+.sec{padding:var(--sec-y) 0;position:relative}
 .sec.dark{background:var(--euc-deep);color:var(--euc-soft)}
 .sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4{color:var(--white)}
 .sec.dark .ey{color:var(--wattle)}.sec.dark .ey::before{background:var(--wattle)}
 .sec.paper{background:var(--paper)}
-.sec.lead{padding:4.5rem 0 0}  /* article lead-in: no double padding against the first band */
 .sec.sand{background:var(--sand)}
 .sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
 .deco{position:absolute;pointer-events:none;opacity:.12}
@@ -451,7 +451,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 /* ============================================================
    PILLAR STATS BAND  ·  sits directly under the hero
    ============================================================ */
-.pil-stats{background:var(--sand);padding:3.5rem 0}
+.pil-stats{background:var(--sand);padding:var(--sec-y) 0}
 .pil-stats .psg{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
 .pil-stats .pst{border-top:2px solid var(--ps-c,var(--euc));padding-top:1.4rem}
 .pil-stats .pst-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1;color:var(--ps-c,var(--euc));display:block;margin-bottom:.7rem}
@@ -603,7 +603,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-duo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
 .pj-duo figcaption{font-size:.82rem;color:var(--stone);margin-top:.6rem;line-height:1.45}
 @media(max-width:700px){.pj-duo{grid-template-columns:1fr}}
-.pj-story{background:var(--euc-deep);color:var(--cream);padding:clamp(3.4rem,6vw,5.5rem) 0}
+.pj-story{background:var(--euc-deep);color:var(--cream);padding:var(--sec-y) 0}
 .pj-story-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:center}
 .pj-story-im{margin:0}
 .pj-story-im img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
@@ -626,7 +626,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-list li{font-size:.94rem;padding:.42em 0;border-bottom:1px dashed var(--rule);break-inside:avoid;color:var(--char)}
 .pj-list li em{color:var(--stone);font-style:italic}
 @media(max-width:640px){.pj-list{columns:1}}
-.pj-band{padding:clamp(3.2rem,6vw,5.5rem) 0}
+.pj-band{padding:var(--sec-y) 0}
 .pj-band.alt{background:var(--paper)}
 .pj-band-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .pj-band.flip .pj-band-im{order:2}
@@ -636,7 +636,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-band-bd h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.35rem,2.3vw,1.85rem);color:var(--euc-deep);letter-spacing:-.015em;line-height:1.15;margin:.75rem 0 1.1rem;max-width:22ch}
 .pj-band-bd p{margin-bottom:1rem;max-width:56ch}
 .pj-band-bd p:last-child{margin-bottom:0}
-.pj-qband{padding:clamp(3rem,5vw,4.5rem) 0;background:var(--paper)}
+.pj-qband{padding:var(--sec-y) 0;background:var(--paper)}
 .pj-qband .pj-q{max-width:58ch;margin:0 auto;text-align:center}
 .pj-qband blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.42;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 1.1rem}
 .pj-qband figcaption{font-size:.88rem;color:var(--stone)}
@@ -675,7 +675,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-rcard p{font-size:.88rem;line-height:1.55;color:var(--char);margin:0}
 .pj-rcard .pj-rgo{margin-top:auto;padding-top:.4rem;font-size:.82rem;font-weight:700;color:var(--euc-deep)}
 .pj-src{font-size:.82rem;color:var(--stone);margin-top:1.8rem}
-.pj-back{padding:3rem 0;text-align:center;background:var(--cream)}
+.pj-back{padding:var(--sec-y) 0;text-align:center;background:var(--cream)}
 
 /* CITY SITE CHOOSER =========================================== */
 .sb{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,4vw,3.4rem);margin-top:2.4rem;align-items:start}
