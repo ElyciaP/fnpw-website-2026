@@ -107,6 +107,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4{color:var(--white)}
 .sec.dark .ey{color:var(--wattle)}.sec.dark .ey::before{background:var(--wattle)}
 .sec.paper{background:var(--paper)}
+.sec.lead{padding:4.5rem 0 0}  /* article lead-in: no double padding against the first band */
 .sec.sand{background:var(--sand)}
 .sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
 .deco{position:absolute;pointer-events:none;opacity:.12}
