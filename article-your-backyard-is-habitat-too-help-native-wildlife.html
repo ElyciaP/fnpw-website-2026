@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,166 +161,69 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg" alt="A green and brown bird with a pale bill and a blue eye, perched on a garden fence with palm fronds behind it."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Your Backyard Is Habitat Too: Help Native Wildlife</nav>
-    <span class="ey">Story</span>
-    <h1>Your Backyard Is Habitat Too: Help Native Wildlife</h1>
-    <p class="pj-hero-meta">July 2026</p>
-    <p class="lede">A quarter-acre block, a shared courtyard, three pots on a balcony rail. To a sugar glider hunting for somewhere safe to land, any of them might be the difference between making the crossing and turning back. Here is how a small patch of Australian natives starts pulling its weight.</p>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/18-1024x537.jpg" alt="An aerial view of suburban rooftops and a curving street, with almost no tree canopy between the houses." loading="lazy">
-      <figcaption>Zoom in on any Australian city and the green bits look generous: parks, ovals, the odd remnant of bush.</figcaption>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/8-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/8-1536x806.jpg 1536w" sizes="100vw" alt="A green and brown bird with a pale bill and a blue eye, perched on a garden fence with palm fronds behind it." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Your Backyard Is Habitat Too: Help Native Wildlife</h1>
+      <p class="ed-stand">A quarter-acre block, a shared courtyard, three pots on a balcony rail. To a sugar glider hunting for somewhere safe to land, any of them might be the difference between making the crossing and turning back. Here is how a small patch of Australian natives starts pulling its weight.</p>
+      <p class="ed-meta">July 2026 &nbsp;&middot;&nbsp; 4 min read</p>
+    </div>
+  </header>
+  <div class="ed">
+    <span class="ed-kicker">The problem</span>
+    <h2>The map is emptier than it looks</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/18-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/18-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/18-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/18-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="An aerial view of suburban rooftops and a curving street, with almost no tree canopy between the houses." width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The problem</span>
-      <h3>The map is emptier than it looks</h3>
-      <p>Zoom in on any Australian city and the green bits look generous: parks, ovals, the odd remnant of bush. Look closer and most of it is mown grass and imported hedges, which to a native animal is about as useful as a car park. Real bushland has been cut into islands, and a lot of our wildlife simply can’t get between them. A pardalote won’t cross a wide stretch of open lawn. A native bee rarely forages more than a few hundred metres from where it nested.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>This is where you come in, and it is less grand than it sounds. You plant one flowering grevillea. Someone two streets over plants a bottlebrush. A council street tree sits in between. Suddenly there is a chain of feeding and resting spots, a set of stepping stones an animal can hop along without ever breaking cover. Ecologists have measured this: gardens full of local native plants carry more insects, more birds and more small mammals than the tidiest exotic yard on the block. Your backyard doesn’t have to be a national park. It only has to be the next safe step.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Garden visitors</span>
-      <h3>Who turns up when you plant the right thing</h3>
-      <p>The guest list is stranger and more charming than you’d expect.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/12-1024x537.jpg" alt="A blue-banded bee gripping a purple flower." loading="lazy">
+    <p>Zoom in on any Australian city and the green bits look generous: parks, ovals, the odd remnant of bush. Look closer and most of it is mown grass and imported hedges, which to a native animal is about as useful as a car park. Real bushland has been cut into islands, and a lot of our wildlife simply can’t get between them. A pardalote won’t cross a wide stretch of open lawn. A native bee rarely forages more than a few hundred metres from where it nested.</p>
+    <p>This is where you come in, and it is less grand than it sounds. You plant one flowering grevillea. Someone two streets over plants a bottlebrush. A council street tree sits in between. Suddenly there is a chain of feeding and resting spots, a set of stepping stones an animal can hop along without ever breaking cover. Ecologists have measured this: gardens full of local native plants carry more insects, more birds and more small mammals than the tidiest exotic yard on the block. Your backyard doesn’t have to be a national park. It only has to be the next safe step.</p>
+    <span class="ed-kicker">Garden visitors</span>
+    <h2>Who turns up when you plant the right thing</h2>
+    <p>The guest list is stranger and more charming than you’d expect.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/12-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/12-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/12-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="A blue-banded bee gripping a purple flower." width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>Take the blue-banded bee, a fuzzy native with iridescent stripes and a genuine party trick. Some flowers lock their pollen away and release it only to a very particular vibration. The blue-banded bee clamps on and shivers its flight muscles at around 350 beats a second, a technique called buzz pollination, and the pollen comes loose in a puff. Introduced honeybees can’t do it at all. Your tomatoes, as it happens, adore a blue-banded bee.</p>
-      <p>Australia has close to 2,000 native bee species, and most are solitary, stingless, or both. In warmer regions you might host a hive of sugarbag bees, tiny black stingless natives that store honey in little wax pots and defend the nest by gluing intruders in place with resin.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/13-1024x537.jpg" alt="A blue-tongue lizard resting in leaf litter beneath flowering wattle." loading="lazy">
+    <p>Take the blue-banded bee, a fuzzy native with iridescent stripes and a genuine party trick. Some flowers lock their pollen away and release it only to a very particular vibration. The blue-banded bee clamps on and shivers its flight muscles at around 350 beats a second, a technique called buzz pollination, and the pollen comes loose in a puff. Introduced honeybees can’t do it at all. Your tomatoes, as it happens, adore a blue-banded bee.</p>
+    <p>Australia has close to 2,000 native bee species, and most are solitary, stingless, or both. In warmer regions you might host a hive of sugarbag bees, tiny black stingless natives that store honey in little wax pots and defend the nest by gluing intruders in place with resin.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/13-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/13-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/13-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="A blue-tongue lizard resting in leaf litter beneath flowering wattle." width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>Then there is the blue-tongue lizard, the slow, sun-loving reptile that treats a garden like an all-you-can-eat buffet for snails and slugs. Keep a few blue-tongues happy and you barely need snail bait. You certainly shouldn’t use it either, because the poison travels straight up the food chain and into them.</p>
-      <p>After dark, a single insect-eating microbat can put away close to half its body weight in mosquitoes and moths in one night. Plant for the insects and the bats feed themselves.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/14-1024x537.jpg" alt="A honeyeater feeding among red and orange kangaroo paw flowers." loading="lazy">
+    <p>Then there is the blue-tongue lizard, the slow, sun-loving reptile that treats a garden like an all-you-can-eat buffet for snails and slugs. Keep a few blue-tongues happy and you barely need snail bait. You certainly shouldn’t use it either, because the poison travels straight up the food chain and into them.</p>
+    <p>After dark, a single insect-eating microbat can put away close to half its body weight in mosquitoes and moths in one night. Plant for the insects and the bats feed themselves.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/14-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/14-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/14-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="A honeyeater feeding among red and orange kangaroo paw flowers." width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>And for sheer romance, watch a honeyeater work a kangaroo paw. The flower dabs pollen onto the precise spot on the bird’s forehead that will brush the next bloom, turning the bird into an unpaid courier. Superb fairy-wrens go one better in the courtship stakes: the males pluck bright yellow petals and present them to the females, which is either deeply sweet or wildly try-hard, depending on your mood.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Wild over tidy</span>
-      <h3>Wild is doing more work than tidy</h3>
-      <p>Here is the good news for anyone who resents weekend garden chores. A slightly messy patch is better habitat than a manicured one.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>Leave the leaf litter under your shrubs and you give skinks, spiders and beetles somewhere to shelter and breed, which feeds everything above them. Plant in layers, groundcover beneath shrubs beneath a small tree, and you hand different animals different rooms in the same house. Set out a shallow dish of water with a rock in the middle and keep it topped up through summer, and you have built a lifeline for the cost of nothing. Skip the pesticides completely; a garden full of predators sorts out its own pests inside a season or two.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/9-1024x537.jpg" alt="A bird perched on a timber balcony railing, with garden foliage behind it." loading="lazy">
+    <p>And for sheer romance, watch a honeyeater work a kangaroo paw. The flower dabs pollen onto the precise spot on the bird’s forehead that will brush the next bloom, turning the bird into an unpaid courier. Superb fairy-wrens go one better in the courtship stakes: the males pluck bright yellow petals and present them to the females, which is either deeply sweet or wildly try-hard, depending on your mood.</p>
+    <span class="ed-kicker">Wild over tidy</span>
+    <h2>Wild is doing more work than tidy</h2>
+    <p>Here is the good news for anyone who resents weekend garden chores. A slightly messy patch is better habitat than a manicured one.</p>
+    <p>Leave the leaf litter under your shrubs and you give skinks, spiders and beetles somewhere to shelter and breed, which feeds everything above them. Plant in layers, groundcover beneath shrubs beneath a small tree, and you hand different animals different rooms in the same house. Set out a shallow dish of water with a rock in the middle and keep it topped up through summer, and you have built a lifeline for the cost of nothing. Skip the pesticides completely; a garden full of predators sorts out its own pests inside a season or two.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/9-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/9-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/9-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="A bird perched on a timber balcony railing, with garden foliage behind it." width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>No garden at all? A balcony still counts. One pot of correa flowers right through the cold months when almost nothing else does, feeding birds in the lean season. Native violet spreads happily in shade. A kangaroo paw or a compact grevillea in a decent pot will pull nectar-feeders in several storeys up. Bees and birds find balconies far more often than you would guess, and a rail full of natives becomes another stepping stone above the street.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/3-3-1024x537.jpg" alt="Rows of seedlings and shrubs growing on at a community nursery, with people working among them." loading="lazy">
-      <figcaption>One catch: not all natives are equal.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">Local seed</span>
-      <h3>The secret ingredient is local</h3>
+    <p>No garden at all? A balcony still counts. One pot of correa flowers right through the cold months when almost nothing else does, feeding birds in the lean season. Native violet spreads happily in shade. A kangaroo paw or a compact grevillea in a decent pot will pull nectar-feeders in several storeys up. Bees and birds find balconies far more often than you would guess, and a rail full of natives becomes another stepping stone above the street.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/07/3-3-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/3-3-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/3-3-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/3-3-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Rows of seedlings and shrubs growing on at a community nursery, with people working among them." width="1024" height="537" loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">Local seed</span>
+      <h2>The secret ingredient is local</h2>
       <p>One catch: not all natives are equal. A plant bred for a nursery three states away might flower at the wrong time for your local pollinators, or feed nothing much at all. What our wildlife evolved alongside are local-provenance plants, grown from seed collected nearby and matched to the exact birds and insects already living in your postcode.</p>
       <p>The people who understand this best are community-led native plant nurseries. These are small, often volunteer-run outfits that collect local seed, propagate the right species for their patch, and put affordable, genuinely useful plants into the hands of the people around them. They are rebuilding habitat one tubestock tray at a time, and they are almost always short of hands.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
       <p>We back this work through our community of native plant nurseries, because a nursery growing local species is a habitat factory for an entire suburb. Visit one, ask what belongs where you live, and take home a plant or two. Better still, offer them a Saturday morning.</p>
-    </div>
+      </div>
+    </section>
+    <span class="ed-kicker">Where to start</span>
+    <h2>Start with one plant</h2>
+    <p>You don’t need to rewild an acre. Put in a single flowering native this weekend, let the leaf litter lie where it falls, and set out a dish of water. Something small and winged and entirely Australian will find it. Multiply that by a street, then a suburb, then a city, and the map starts filling back in.</p>
   </div>
-</section>
+</article>
 
-<section class="sec paper">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Where to start</span>
-      <p>You don’t need to rewild an acre. Put in a single flowering native this weekend, let the leaf litter lie where it falls, and set out a dish of water. Something small and winged and entirely Australian will find it. Multiply that by a street, then a suburb, then a city, and the map starts filling back in.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -284,6 +290,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Your Backyard Is Habitat Too: Help Native Wildlife", "description": "Most of the green on a city map is mown lawn and imported hedge, which native animals cannot use. A backyard, a courtyard or a balcony planted with local natives becomes the next safe step for bees, lizards, microbats and birds.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg"], "datePublished": "2026-07", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-your-backyard-is-habitat-too-help-native-wildlife.html"}}</script>
 </body>
 </html>

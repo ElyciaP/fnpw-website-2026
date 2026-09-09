@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,151 +161,98 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/03/3-1-1024x578.jpg" alt="Bushland stretching to the horizon inside an Australian national park."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Why Expanding National Parks Matters for Australia’s Future</nav>
-    <span class="ey">Story</span>
-    <h1>Why Expanding National Parks Matters for Australia’s Future</h1>
-    <p class="pj-hero-meta">March 2026</p>
-    <p class="lede">From the air, Australia’s landscapes look vast and uninterrupted. But on the ground, many ecosystems are now broken into smaller and smaller pieces.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>A woodland might survive on one side of a road, while cleared paddocks stretch out on the other. A wetland may still fill with water after rain, but the surrounding habitat that once supported birds, fish and amphibians has disappeared. A forest may remain standing, but the animals that once moved freely through it now encounter fences, farmland or towns.</p>
-      <p>For wildlife, these invisible boundaries matter.</p>
-      <p>Animals that once travelled kilometres across a landscape in search of food, water or breeding partners now find themselves confined to isolated pockets of habitat. Over time, those pockets shrink, species disappear and ecological systems begin to unravel.</p>
-      <p>Expanding national parks is one of the few tools we have to reverse that process.</p>
-      <p>When land is added to the national park estate, those fragments begin to reconnect. Landscapes become larger and more continuous again. Rivers flow through protected catchments. Forests link to woodlands. Wetlands reconnect with floodplains.</p>
-      <p>Instead of protecting nature in small islands, we begin protecting whole systems.</p>
-      <p>National parks are not simply scenic places set aside for recreation. They are landscapes where ecological processes are allowed to continue largely uninterrupted. Fire cycles, animal migrations, pollination, seed dispersal and soil regeneration all play out across space and time.</p>
-      <p>And when these processes are protected, nature has the chance to recover.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/03/3-1-1024x578.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/03/3-1-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/03/3-1-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/03/3-1-1536x806.jpg 1536w" sizes="100vw" alt="Bushland stretching to the horizon inside an Australian national park." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Why Expanding National Parks Matters for Australia’s Future</h1>
+      <p class="ed-stand">From the air, Australia’s landscapes look vast and uninterrupted. But on the ground, many ecosystems are now broken into smaller and smaller pieces.</p>
+      <p class="ed-meta">March 2026 &nbsp;&middot;&nbsp; 5 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/6.jpg" alt="A national park sign at the edge of protected bushland." loading="lazy">
-      <figcaption>Across Australia, national parks are areas of land legally reserved for conservation.</figcaption>
+  </header>
+  <div class="ed">
+    <p>A woodland might survive on one side of a road, while cleared paddocks stretch out on the other. A wetland may still fill with water after rain, but the surrounding habitat that once supported birds, fish and amphibians has disappeared. A forest may remain standing, but the animals that once moved freely through it now encounter fences, farmland or towns.</p>
+    <p>For wildlife, these invisible boundaries matter.</p>
+    <p>Animals that once travelled kilometres across a landscape in search of food, water or breeding partners now find themselves confined to isolated pockets of habitat. Over time, those pockets shrink, species disappear and ecological systems begin to unravel.</p>
+    <p>Expanding national parks is one of the few tools we have to reverse that process.</p>
+    <p>When land is added to the national park estate, those fragments begin to reconnect. Landscapes become larger and more continuous again. Rivers flow through protected catchments. Forests link to woodlands. Wetlands reconnect with floodplains.</p>
+    <p>Instead of protecting nature in small islands, we begin protecting whole systems.</p>
+    <p>National parks are not simply scenic places set aside for recreation. They are landscapes where ecological processes are allowed to continue largely uninterrupted. Fire cycles, animal migrations, pollination, seed dispersal and soil regeneration all play out across space and time.</p>
+    <p>And when these processes are protected, nature has the chance to recover.</p>
+    <span class="ed-kicker">The basics</span>
+    <h2>What a National Park Actually Is</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/6.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A national park sign at the edge of protected bushland." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The basics</span>
-      <h3>What a National Park Actually Is</h3>
-      <p>Across Australia, national parks are areas of land legally reserved for conservation. They are established under state and federal legislation and managed to protect biodiversity, ecosystems and cultural heritage.</p>
-      <p>Unlike most other land uses, conservation becomes the primary purpose of the landscape. Development pressures are reduced, and long-term management plans guide how the park is protected and restored.</p>
-      <p>Australia’s first national park, Royal National Park south of Sydney, was created in 1879, making it one of the earliest national parks in the world. Over time, the system expanded to include alpine regions, rainforests, arid landscapes and marine ecosystems.</p>
-      <p>Today, national parks form part of Australia’s protected area network, which conservation scientists consider the most effective tool for ensuring threatened species and ecosystems can survive and recover.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">New protection</span>
-      <h3>What Changes When Land Becomes a National Park</h3>
-      <p>When land is added to a national park, its future changes dramatically.</p>
-      <p>Instead of being managed for agriculture, development or extraction, the focus shifts to ecological protection and long-term restoration. Park managers develop detailed management plans to identify the landscape’s key ecological values and the threats that need to be addressed.</p>
-      <p>These plans guide everything from fire management and weed control to wildlife monitoring and habitat restoration.</p>
-      <p>In many cases, newly protected landscapes require significant ecological repair. Areas that were previously cleared or heavily grazed often need revegetation and soil stabilisation before native ecosystems can return.</p>
-      <p>Over time, natural regeneration begins. Native plants recolonise the landscape, soil health improves, and habitats become suitable again for wildlife.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/5.jpg" alt="A native marsupial moving through low understorey." loading="lazy">
-      <figcaption>One of the most important roles national parks play is supporting the recovery of threatened species.</figcaption>
+    <p>Across Australia, national parks are areas of land legally reserved for conservation. They are established under state and federal legislation and managed to protect biodiversity, ecosystems and cultural heritage.</p>
+    <p>Unlike most other land uses, conservation becomes the primary purpose of the landscape. Development pressures are reduced, and long-term management plans guide how the park is protected and restored.</p>
+    <p>Australia’s first national park, Royal National Park south of Sydney, was created in 1879, making it one of the earliest national parks in the world. Over time, the system expanded to include alpine regions, rainforests, arid landscapes and marine ecosystems.</p>
+    <p>Today, national parks form part of Australia’s protected area network, which conservation scientists consider the most effective tool for ensuring threatened species and ecosystems can survive and recover.</p>
+    <span class="ed-kicker">New protection</span>
+    <h2>What Changes When Land Becomes a National Park</h2>
+    <p>When land is added to a national park, its future changes dramatically.</p>
+    <p>Instead of being managed for agriculture, development or extraction, the focus shifts to ecological protection and long-term restoration. Park managers develop detailed management plans to identify the landscape’s key ecological values and the threats that need to be addressed.</p>
+    <p>These plans guide everything from fire management and weed control to wildlife monitoring and habitat restoration.</p>
+    <p>In many cases, newly protected landscapes require significant ecological repair. Areas that were previously cleared or heavily grazed often need revegetation and soil stabilisation before native ecosystems can return.</p>
+    <p>Over time, natural regeneration begins. Native plants recolonise the landscape, soil health improves, and habitats become suitable again for wildlife.</p>
+    <span class="ed-kicker">Species recovery</span>
+    <h2>Bringing Wildlife Back</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/5.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A native marsupial moving through low understorey." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Species recovery</span>
-      <h3>Bringing Wildlife Back</h3>
-      <p>One of the most important roles national parks play is supporting the recovery of threatened species.</p>
-      <p>Australia has lost more mammals than any other continent since European settlement. Many species declined after habitat clearing and the arrival of introduced predators such as foxes and feral cats.</p>
-      <p>Protected landscapes allow conservation programs to reverse some of these losses.</p>
-      <p>In South Australia’s Flinders Ranges, the long-running Bounceback program removed feral goats, foxes and rabbits from national parks to allow native ecosystems to recover. The work has helped restore habitat and made it possible to reintroduce locally extinct species.</p>
-      <p>In recent years, species such as western quolls and brushtail possums have been successfully reintroduced to protected areas in the region and are now breeding in the wild again.</p>
-      <p>These kinds of projects show what becomes possible when landscapes are protected and actively managed.</p>
-      <p>National parks also support wildlife corridors that allow animals to move between habitats. This connectivity is increasingly important as species shift their ranges in response to climate change.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/4.jpg" alt="Layers of native vegetation in a healthy woodland." loading="lazy">
-      <figcaption>Conservation is not only about individual species.</figcaption>
+    <p>One of the most important roles national parks play is supporting the recovery of threatened species.</p>
+    <p>Australia has lost more mammals than any other continent since European settlement. Many species declined after habitat clearing and the arrival of introduced predators such as foxes and feral cats.</p>
+    <p>Protected landscapes allow conservation programs to reverse some of these losses.</p>
+    <p>In South Australia’s Flinders Ranges, the long-running Bounceback program removed feral goats, foxes and rabbits from national parks to allow native ecosystems to recover. The work has helped restore habitat and made it possible to reintroduce locally extinct species.</p>
+    <p>In recent years, species such as western quolls and brushtail possums have been successfully reintroduced to protected areas in the region and are now breeding in the wild again.</p>
+    <p>These kinds of projects show what becomes possible when landscapes are protected and actively managed.</p>
+    <p>National parks also support wildlife corridors that allow animals to move between habitats. This connectivity is increasingly important as species shift their ranges in response to climate change.</p>
+    <span class="ed-kicker">Whole systems</span>
+    <h2>Protecting Entire Ecosystems</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/4.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Layers of native vegetation in a healthy woodland." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Whole systems</span>
-      <h3>Protecting Entire Ecosystems</h3>
-      <p>Conservation is not only about individual species. It is about protecting the ecological systems that sustain life.</p>
-      <p>Healthy ecosystems are built on complex interactions between plants, animals, insects, fungi and microorganisms. Pollinators support flowering plants. Fungi recycle nutrients. Vegetation stabilises soils and protects waterways.</p>
-      <p>National parks protect these relationships by safeguarding large areas where natural processes can continue.</p>
-      <p>These landscapes also provide important environmental services that people rely on. Intact ecosystems help filter water, store carbon, reduce erosion and buffer the impacts of extreme weather.</p>
-      <p>In a warming climate, protected areas can also act as climate refuges, providing cooler, more stable habitats where species can persist as surrounding landscapes change.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/8.jpg" alt="A rocky outcrop in a protected landscape of cultural significance." loading="lazy">
-      <figcaption>Many national parks are also places of deep cultural significance.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">Culture and Country</span>
-      <h3>Protecting Culture and Country</h3>
+    <p>Conservation is not only about individual species. It is about protecting the ecological systems that sustain life.</p>
+    <p>Healthy ecosystems are built on complex interactions between plants, animals, insects, fungi and microorganisms. Pollinators support flowering plants. Fungi recycle nutrients. Vegetation stabilises soils and protects waterways.</p>
+    <p>National parks protect these relationships by safeguarding large areas where natural processes can continue.</p>
+    <p>These landscapes also provide important environmental services that people rely on. Intact ecosystems help filter water, store carbon, reduce erosion and buffer the impacts of extreme weather.</p>
+    <p>In a warming climate, protected areas can also act as climate refuges, providing cooler, more stable habitats where species can persist as surrounding landscapes change.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/03/8.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A rocky outcrop in a protected landscape of cultural significance." loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">Culture and Country</span>
+      <h2>Protecting Culture and Country</h2>
       <p>Many national parks are also places of deep cultural significance.</p>
       <p>Across Australia, protected landscapes contain Aboriginal cultural sites, rock art, ceremonial grounds and places tied to thousands of years of cultural knowledge.</p>
       <p>Increasingly, national parks are being co-managed with Traditional Owners. These partnerships recognise the role First Nations peoples have played in caring for Country for tens of thousands of years and ensure that cultural knowledge continues to guide land management.</p>
       <p>Traditional fire practices, seasonal knowledge and cultural stewardship are increasingly recognised as critical parts of modern conservation.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Scale matters</span>
-      <h3>Why Expanding National Parks Matters</h3>
-      <p>Land outside protected areas can change quickly.</p>
-      <p>It can be cleared, developed or fragmented as economic pressures shift. National park designation provides a stronger level of long-term protection and ensures landscapes are managed primarily for ecological health.</p>
-      <p>Expanding protected areas also improves connectivity across landscapes. Larger, linked ecosystems allow wildlife populations to move, adapt and maintain genetic diversity.</p>
-      <p>For conservation scientists, scale matters.</p>
-      <p>Small, isolated reserves can protect individual sites, but large connected landscapes are far more effective at sustaining biodiversity over the long term.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band alt">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/7.jpg" alt="Regenerating bushland on land added to a national park." loading="lazy">
-      <figcaption>At FNPW, expanding protected areas is a key part of how we help nature recover.</figcaption>
+      </div>
+    </section>
+    <span class="ed-kicker">Scale matters</span>
+    <h2>Why Expanding National Parks Matters</h2>
+    <p>Land outside protected areas can change quickly.</p>
+    <p>It can be cleared, developed or fragmented as economic pressures shift. National park designation provides a stronger level of long-term protection and ensures landscapes are managed primarily for ecological health.</p>
+    <p>Expanding protected areas also improves connectivity across landscapes. Larger, linked ecosystems allow wildlife populations to move, adapt and maintain genetic diversity.</p>
+    <p>For conservation scientists, scale matters.</p>
+    <p>Small, isolated reserves can protect individual sites, but large connected landscapes are far more effective at sustaining biodiversity over the long term.</p>
+    <span class="ed-kicker">Where we come in</span>
+    <h2>Creating Space for Nature to Recover</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/7.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Regenerating bushland on land added to a national park." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Where we come in</span>
-      <h3>Creating Space for Nature to Recover</h3>
-      <p>At FNPW, expanding protected areas is a key part of how we help nature recover.</p>
-      <p>By acquiring and protecting land adjacent to existing national parks, we can strengthen entire landscapes rather than protecting isolated pockets of habitat. These additions expand wildlife corridors, protect critical ecosystems and allow restoration work to occur at scale.</p>
-      <p>Healthy ecosystems take time to recover. But when land is protected, given space to regenerate and managed carefully, nature has a remarkable ability to bounce back.</p>
-      <p>Expanding national parks is ultimately about giving that recovery a chance.</p>
-      <p>Because protecting landscapes today helps ensure Australia’s wildlife, ecosystems and natural heritage continue to thrive long into the future.</p>
-    </div>
-  </div></div>
-</section>
+    <p>At FNPW, expanding protected areas is a key part of how we help nature recover.</p>
+    <p>By acquiring and protecting land adjacent to existing national parks, we can strengthen entire landscapes rather than protecting isolated pockets of habitat. These additions expand wildlife corridors, protect critical ecosystems and allow restoration work to occur at scale.</p>
+    <p>Healthy ecosystems take time to recover. But when land is protected, given space to regenerate and managed carefully, nature has a remarkable ability to bounce back.</p>
+    <p>Expanding national parks is ultimately about giving that recovery a chance.</p>
+    <p>Because protecting landscapes today helps ensure Australia’s wildlife, ecosystems and natural heritage continue to thrive long into the future.</p>
+  </div>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -269,6 +319,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why Expanding National Parks Matters for Australia’s Future", "description": "Australia's ecosystems are broken into smaller and smaller pieces, and wildlife pays the price. Adding land to the national park estate reconnects those fragments, protects whole systems and gives threatened species room to recover.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/03/3-1-1024x578.jpg"], "datePublished": "2026-03", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-why-expanding-national-parks-matters-for-australias-future.html"}}</script>
 </body>
 </html>

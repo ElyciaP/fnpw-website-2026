@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,101 +161,67 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/03/25.03.25_J0A2484_MP-1-e1750214884916.jpg" alt="A student holding a freshwater turtle hatchling at the wetland edge."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Students release turtle hatchlings in a conservation first</nav>
-    <span class="ey">News</span>
-    <h1>Students release turtle hatchlings in a conservation first</h1>
-    <p class="pj-hero-meta">March 2025 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Oatlands, NSW</p>
-    <p class="lede">It starts with curious minds, a walk to the wetlands, and a turtle in hand.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>On Tuesday morning, students from Presbyterian Ladies’ College (PLC) Sydney gathered under the late-summer sun at Oatlands Golf Course to release eastern long-necked turtle hatchlings into the wild—hatchlings they had incubated, monitored, and cared for over the past five weeks.</p>
-      <p>This was no ordinary field trip. It was the culmination of months of learning, nurturing, and hands-on science. But more importantly, it marked a real-world environmental impact: where science class became species recovery, and students became conservationists.</p>
-      <p>The event is part of Turtles in Schools, a national education and conservation program supported by the Foundation for National Parks &amp; Wildlife (FNPW) and delivered through the 1 Million Turtles Project, led by Professor Ricky Spencer of Western Sydney University. A long-time champion of citizen science and student-led conservation, Professor Spencer has helped shape programs that turn local communities into active conservation partners.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/03/25.03.25_J0A2484_MP-1-e1750214884916.jpg" sizes="100vw" alt="A student holding a freshwater turtle hatchling at the wetland edge." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">News</span>
+      <h1>Students release turtle hatchlings in a conservation first</h1>
+      <p class="ed-stand">It starts with curious minds, a walk to the wetlands, and a turtle in hand.</p>
+      <p class="ed-meta">March 2025 &nbsp;&middot;&nbsp; Oatlands, NSW &nbsp;&middot;&nbsp; 3 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-01-02-am-2-e1743041970241-1024x596.jpg" alt="PLC students releasing a freshwater turtle into the wild." loading="lazy">
+  </header>
+  <div class="ed">
+    <p>On Tuesday morning, students from Presbyterian Ladies’ College (PLC) Sydney gathered under the late-summer sun at Oatlands Golf Course to release eastern long-necked turtle hatchlings into the wild—hatchlings they had incubated, monitored, and cared for over the past five weeks.</p>
+    <p>This was no ordinary field trip. It was the culmination of months of learning, nurturing, and hands-on science. But more importantly, it marked a real-world environmental impact: where science class became species recovery, and students became conservationists.</p>
+    <p>The event is part of Turtles in Schools, a national education and conservation program supported by the Foundation for National Parks &amp; Wildlife (FNPW) and delivered through the 1 Million Turtles Project, led by Professor Ricky Spencer of Western Sydney University. A long-time champion of citizen science and student-led conservation, Professor Spencer has helped shape programs that turn local communities into active conservation partners.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-01-02-am-2-e1743041970241-1024x596.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-01-02-am-2-e1743041970241-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-01-02-am-2-e1743041970241-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="PLC students releasing a freshwater turtle into the wild." width="1024" height="596" loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">The problem</span>
-      <h3>A Species in Decline</h3>
-      <p>Freshwater turtles across Australia are disappearing—largely unnoticed. In some regions, their populations have collapsed by over 90%. Foxes destroy most nests. Wetland habitat is vanishing. Climate change and disease are adding pressure.</p>
-      <p>These animals are far from ornamental. They recycle nutrients, control algae, and help keep rivers clean. When turtles decline, the health of our wetlands begins to break down.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-08-57-am-e1743041842421-1024x476.jpg" alt="PLC Sydney students at the Oatlands Golf Course wetlands." loading="lazy">
-      <figcaption>In November, PLC students worked alongside scientists and Oatlands Golf Course staff to relocate two vulnerable clutches of turtle eggs.</figcaption>
+    <span class="ed-kicker">The problem</span>
+    <h2>A Species in Decline</h2>
+    <p>Freshwater turtles across Australia are disappearing—largely unnoticed. In some regions, their populations have collapsed by over 90%. Foxes destroy most nests. Wetland habitat is vanishing. Climate change and disease are adding pressure.</p>
+    <p>These animals are far from ornamental. They recycle nutrients, control algae, and help keep rivers clean. When turtles decline, the health of our wetlands begins to break down.</p>
+    <span class="ed-kicker">In the classroom</span>
+    <h2>A Classroom That Changes Everything</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-08-57-am-e1743041842421-1024x476.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-08-57-am-e1743041842421-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-08-57-am-e1743041842421-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-08-57-am-e1743041842421-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="PLC Sydney students at the Oatlands Golf Course wetlands." width="1024" height="476" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">In the classroom</span>
-      <h3>A Classroom That Changes Everything</h3>
-      <p>In November, PLC students worked alongside scientists and Oatlands Golf Course staff to relocate two vulnerable clutches of turtle eggs. The eggs were incubated in a simple, school-based setup, maintained daily by students. The goal: protect them from predation and give them the best chance at survival. Five weeks later, every egg hatched.</p>
-      <p>On release day, students gently returned the hatchlings—now bright-eyed, alert, and strong—to the wetland where they were originally found.</p>
-      <p>Professor Spencer called it “education at its most powerful.”</p>
-      <p>“It’s a great opportunity for schools to demonstrate that they can be a major part of conservation outcomes.” Said Professor Spencer. “It’s a combination of community conservation in action. This is the first school that’s ever done this and really doing what zoos and wildlife parks do—raising turtles from eggs to this release point as hatchlings”.</p>
-      <p>Turtles in Schools works because it turns abstract environmental issues into something tangible and personal. Students aren’t just learning—they’re contributing to real species recovery.</p>
-      <p>CEO of the Foundation for National Parks &amp; Wildlife, Ian Darbyshire, said “What we’re hoping is this is the first of many, many, many future releases where we create a sustainable program of protecting the turtles of the Murray-Darling Basin by getting schools to do this every year forever, so that we can protect the population of turtles.”</p>
-      <p>He added, “The turtles were laid on the floating islands that Ricky Spencer has created in part of the sponsorship with the Foundation for National Parks and Wildlife.”</p>
-      <p>More schools are now introducing “hatchling hubs” into their classrooms, where students incubate eggs, monitor local wetlands, test water quality, and log turtle sightings through the national TurtleSAT platform.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec paper">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">The network</span>
-      <h3>A National Effort with Real Impact</h3>
-      <p>Turtles in Schools is one part of the broader 1 Million Turtles Project—a national collaboration uniting researchers, educators, governments, and communities.</p>
-      <p>Partners include:</p>
-      <ul class="pj-ul">
-        <li>Leading universities: Western Sydney, La Trobe, Sydney, Murdoch, New England, and Ohio University</li>
-        <li>Conservation groups: FNPW, Aussie Ark, WIRES, and Turtle Rescues NSW</li>
-        <li>Government agencies and local councils</li>
-        <li>Schools and community groups—beginning with the pioneering efforts of PLC Sydney</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-12-42-am-e1743042176306-1024x509.jpg" alt="PLC students with Ricky Spencer and FNPW CEO Ian Darbyshire at the release." loading="lazy">
-      <figcaption>At FNPW, we believe conservation is most effective when it’s hands-on, local, and connected to the next generation.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">What comes next</span>
-      <h3>A Scalable Model for the Future</h3>
+    <p>In November, PLC students worked alongside scientists and Oatlands Golf Course staff to relocate two vulnerable clutches of turtle eggs. The eggs were incubated in a simple, school-based setup, maintained daily by students. The goal: protect them from predation and give them the best chance at survival. Five weeks later, every egg hatched.</p>
+    <p>On release day, students gently returned the hatchlings—now bright-eyed, alert, and strong—to the wetland where they were originally found.</p>
+    <p>Professor Spencer called it “education at its most powerful.”</p>
+    <p>“It’s a great opportunity for schools to demonstrate that they can be a major part of conservation outcomes.” Said Professor Spencer. “It’s a combination of community conservation in action. This is the first school that’s ever done this and really doing what zoos and wildlife parks do—raising turtles from eggs to this release point as hatchlings”.</p>
+    <p>Turtles in Schools works because it turns abstract environmental issues into something tangible and personal. Students aren’t just learning—they’re contributing to real species recovery.</p>
+    <p>CEO of the Foundation for National Parks &amp; Wildlife, Ian Darbyshire, said “What we’re hoping is this is the first of many, many, many future releases where we create a sustainable program of protecting the turtles of the Murray-Darling Basin by getting schools to do this every year forever, so that we can protect the population of turtles.”</p>
+    <p>He added, “The turtles were laid on the floating islands that Ricky Spencer has created in part of the sponsorship with the Foundation for National Parks and Wildlife.”</p>
+    <p>More schools are now introducing “hatchling hubs” into their classrooms, where students incubate eggs, monitor local wetlands, test water quality, and log turtle sightings through the national TurtleSAT platform.</p>
+    <span class="ed-kicker">The network</span>
+    <h2>A National Effort with Real Impact</h2>
+    <p>Turtles in Schools is one part of the broader 1 Million Turtles Project—a national collaboration uniting researchers, educators, governments, and communities.</p>
+    <p>Partners include:</p>
+    <ul>
+      <li>Leading universities: Western Sydney, La Trobe, Sydney, Murdoch, New England, and Ohio University</li>
+      <li>Conservation groups: FNPW, Aussie Ark, WIRES, and Turtle Rescues NSW</li>
+      <li>Government agencies and local councils</li>
+      <li>Schools and community groups—beginning with the pioneering efforts of PLC Sydney</li>
+    </ul>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-12-42-am-e1743042176306-1024x509.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-12-42-am-e1743042176306-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-12-42-am-e1743042176306-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2025/03/Photo-25-3-2025-11-12-42-am-e1743042176306-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="PLC students with Ricky Spencer and FNPW CEO Ian Darbyshire at the release." width="1024" height="509" loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">What comes next</span>
+      <h2>A Scalable Model for the Future</h2>
       <p>At FNPW, we believe conservation is most effective when it’s hands-on, local, and connected to the next generation. Young people, with the right support, can lead real environmental change.</p>
       <p>Every turtle released this week was one that wouldn’t have survived without intervention. And every student involved walked away with a deeper understanding of nature—and their power to protect it.</p>
       <p>Turtles in Schools is more than a classroom initiative—it’s a scalable, national model for conservation education. And it’s proof that the next generation doesn’t have to wait to make a difference—they’re already leading it.</p>
-    </div>
-  </div></div>
-</section>
+      </div>
+    </section>
+  </div>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -219,6 +288,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Students release turtle hatchlings in a conservation first", "description": "Students from PLC Sydney released eastern long-necked turtle hatchlings they had incubated for five weeks, a first for the Turtles in Schools program supported by the Foundation for National Parks & Wildlife.", "image": ["https://fnpw.org.au/wp-content/uploads/2025/03/25.03.25_J0A2484_MP-1-e1750214884916.jpg"], "datePublished": "2025-03", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-students-release-turtle-hatchlings-in-conservation-first.html"}}</script>
 </body>
 </html>

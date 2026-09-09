@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,137 +161,99 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/11/7-1024x576.jpg" alt="Australian native bushland and garden vegetation in summer."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Planning for Fire Season Starts in the Garden</nav>
-    <span class="ey">Story</span>
-    <h1>Planning for Fire Season Starts in the Garden</h1>
-    <p class="pj-hero-meta">November 2025</p>
-    <p class="lede">As the Australia summer heat starts to build, so does the risk of bushfire, not just in remote forested areas, but around homes, properties and in our wider communities. At the same time, this is a powerful moment for community togetherness, land healing and supporting our native landscapes to recover and thrive. We can work hand-in-hand: preparing our homes, supporting our neighbours, restoring our land.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>In this blog we explore:</p>
-      <ul class="pj-ul">
-        <li>Why native plants matter in bushfire prevention and land-healing</li>
-        <li>What you can do at home or as a neighbourhood to make your place safer</li>
-        <li>How the Fire Wise Project and the Fire Wise Learning Hub offer resources and tools for action</li>
-      </ul>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/11/7-1024x576.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2025/11/7-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2025/11/7-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2025/11/7-1536x806.jpg 1536w" sizes="100vw" alt="Australian native bushland and garden vegetation in summer." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Planning for Fire Season Starts in the Garden</h1>
+      <p class="ed-stand">As the Australia summer heat starts to build, so does the risk of bushfire, not just in remote forested areas, but around homes, properties and in our wider communities. At the same time, this is a powerful moment for community togetherness, land healing and supporting our native landscapes to recover and thrive. We can work hand-in-hand: preparing our homes, supporting our neighbours, restoring our land.</p>
+      <p class="ed-meta">November 2025 &nbsp;&middot;&nbsp; 4 min read</p>
     </div>
+  </header>
+  <div class="ed">
+    <p>In this blog we explore:</p>
+    <ul>
+      <li>Why native plants matter in bushfire prevention and land-healing</li>
+      <li>What you can do at home or as a neighbourhood to make your place safer</li>
+      <li>How the Fire Wise Project and the Fire Wise Learning Hub offer resources and tools for action</li>
+    </ul>
+    <span class="ed-kicker">The science</span>
+    <h2>Why Native Plants &amp; Smart Vegetation Matter</h2>
+    <p>It’s tempting to think that bare ground or removing all vegetation is the safest route when fires loom. But fire science tells us a more nuanced story. Planting native vegetation with the right spacing and plant-types can actually help slow fires and save lives.</p>
+    <p>Here are a few key scientific points:</p>
+    <ul>
+      <li>Fires move fastest through fine dry fuels like grasses and exposed ground litter, especially when driven by wind.</li>
+      <li>A moderately dense canopy of native trees/shrubs can provide shade, maintain moist soil, reduce local wind speeds and offer a barrier to ember attack and radiant heat.</li>
+      <li>After a bushfire, the ecosystem goes through stages of recovery: first colonised by short-lived species that protect soil and provide shelter, then gradually more mature vegetation returns.</li>
+      <li>Native vegetation isn’t inherently a fire hazard; in fact, with the right design and management, it supports both biodiversity and resilience.</li>
+    </ul>
+    <p>So when we think about preparing for summer and restoring our land, the message is: don’t just clear everything, think about strategic planting, nurturing native plants, and working as a community.</p>
+    <span class="ed-kicker">At home</span>
+    <h2>What You Can Do at Home</h2>
+    <p>Here’s a checklist of practical steps you (and your neighbours/community) can take. Adapt them to your context, climate and local native plant list.</p>
+    <h3>Secure your property and create defensible space</h3>
+    <ul>
+      <li>Remove or regularly clear fine fuels: dry leaves, grass clippings, bark mulch near buildings.</li>
+      <li>Keep shrubs and trees spaced so fire doesn’t readily climb from ground to canopy.</li>
+      <li>Prune lower branches of trees to reduce ladder fuels.</li>
+      <li>Ensure your house/garden access is clear for fire-engine access and evacuation if required.</li>
+      <li>Make sure your emergency plan is up to date, and your household knows it.</li>
+    </ul>
+    <h3>Use native plants (and the right ones!)</h3>
+    <ul>
+      <li>Choose native plants with lower flammability and plant them in the right locations. The Fire Wise project emphasises the strategic use of native vegetation rather than wholesale clearing.</li>
+      <li>Use design logic: e.g., waterwise, shade-keeping, windbreaks.</li>
+      <li>Maintain your plantings: keep them healthy, irrigated (where appropriate), remove dead material.</li>
+      <li>Consider ground-covers that hold moisture and reduce fine fuels.</li>
+    </ul>
+    <h3>Community and neighbourhood involvement</h3>
+    <ul>
+      <li>Talk with your neighbours: a bushfire-safe community is a connected, informed one. Share ideas, join planting days, form local groups.</li>
+      <li>Host or attend community native-planting days: these build local ecosystem resilience and social cohesion.</li>
+      <li>Visit, support or volunteer at local seed banks (native seeds) or community nurseries to grow local plants for fire-wise landscaping.</li>
+      <li>Share resources and knowledge from the Learning Hub (see below) so everyone is on the same page.</li>
+    </ul>
+    <h3>After a fire or during recovery</h3>
+    <ul>
+      <li>Monitor the site: photograph and revisit. Drops in vegetation or structure need attention.</li>
+      <li>Control invasive species quickly – they can outcompete native seedlings and create new fuel loads.</li>
+      <li>Re-plant missing or keystone native species if natural regeneration isn’t sufficient.</li>
+      <li>Consider cultural burning or Indigenous-led practices if your local context allows, honouring Country and traditional knowledge.</li>
+    </ul>
+    <span class="ed-kicker">Working together</span>
+    <h2>The Science + The Community: How They Connect</h2>
+    <p>At its heart, fire-prevention and land-healing is both science (fire behaviour, ecology, vegetation management) and community care (neighbours, planting, shared land, Indigenous knowledge). Bridging these gives us real resilience.</p>
+    <p>For instance: the Fire Wise theory highlights three key fire risks: radiant heat, wind speed and ember attack. By planting the right natives, spaced and maintained, communities can reduce those risks: shade keeps ground moist, trees deflect wind/embers, and healthy vegetation slows flame spread. It’s a simple concept, but when executed across many properties in a neighbourhood, the effect multiplies.</p>
+    <p>And when a community plants together, shares seeds and knowledge, the social fabric becomes stronger. People know each other, share responsibilities, look out for each other, and that’s another layer of fire safety.</p>
+    <span class="ed-kicker">Go deeper</span>
+    <h2>Resources &amp; Links: Dive Deeper</h2>
+    <p>Here are some top resources to help you, your neighbourhood or your organisation get started:</p>
+    <ul>
+      <li>Fire Wise Learning Hub – Explore their learning resources, project case-studies and plant lists. Visit: https://firewisehub.online/</li>
+      <li>Fire Wise Resources page – https://firewisehub.online/resources/</li>
+      <li>FNPW Fire Wise Project – https://fnpw.org.au/project/fire-wise/ – gives project overview, science-background, how you can get involved.</li>
+      <li>Helping the Bush Recover (by Trust for Nature) – Good reading on ecological recovery, timing and weed control. trustfornature.org.au</li>
+      <li>Practical plant lists &amp; fire-wise landscaping reports (e.g., The Crossing Land’s NSW report) thecrossingland.org.au</li>
+    </ul>
+    <p>Tip: Bookmark those URLs, share them in your community newsletter or local social-media group, perhaps even organise a “bushfire-safe native planting” morning.</p>
+    <span class="ed-kicker">What's at stake</span>
+    <h2>Why It Matters And What’s At Stake</h2>
+    <p>When we don’t act, the stakes are high: the 2019-20 “Black Summer” fires illustrated how ecosystems, homes and communities can be devastated. Recovery takes years, biodiversity suffers, and our native species and cultural heritage are under threat.</p>
+    <p>But when we do act:</p>
+    <ul>
+      <li>Homes become safer</li>
+      <li>Landscapes become more resilient</li>
+      <li>Biodiversity is supported</li>
+      <li>Communities become stronger, connected, proactive</li>
+    </ul>
+    <p>And importantly: embracing native species and thoughtful vegetation means we’re healing our land, not just defending it.</p>
+    <p>This summer, let’s come together: behind our fences, in our streets, in our neighbourhoods. Let’s plant with purpose, look after our native landscapes, and support each other. Fire preparedness it’s about smart design, native planting, shared knowledge and community care.</p>
   </div>
-</section>
+</article>
 
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">The science</span>
-      <h3>Why Native Plants &amp; Smart Vegetation Matter</h3>
-      <p>It’s tempting to think that bare ground or removing all vegetation is the safest route when fires loom. But fire science tells us a more nuanced story. Planting native vegetation with the right spacing and plant-types can actually help slow fires and save lives.</p>
-      <p>Here are a few key scientific points:</p>
-      <ul class="pj-ul">
-        <li>Fires move fastest through fine dry fuels like grasses and exposed ground litter, especially when driven by wind.</li>
-        <li>A moderately dense canopy of native trees/shrubs can provide shade, maintain moist soil, reduce local wind speeds and offer a barrier to ember attack and radiant heat.</li>
-        <li>After a bushfire, the ecosystem goes through stages of recovery: first colonised by short-lived species that protect soil and provide shelter, then gradually more mature vegetation returns.</li>
-        <li>Native vegetation isn’t inherently a fire hazard; in fact, with the right design and management, it supports both biodiversity and resilience.</li>
-      </ul>
-      <p>So when we think about preparing for summer and restoring our land, the message is: don’t just clear everything, think about strategic planting, nurturing native plants, and working as a community.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">At home</span>
-      <h3>What You Can Do at Home</h3>
-      <p>Here’s a checklist of practical steps you (and your neighbours/community) can take. Adapt them to your context, climate and local native plant list.</p>
-      <h4>Secure your property and create defensible space</h4>
-      <ul class="pj-ul">
-        <li>Remove or regularly clear fine fuels: dry leaves, grass clippings, bark mulch near buildings.</li>
-        <li>Keep shrubs and trees spaced so fire doesn’t readily climb from ground to canopy.</li>
-        <li>Prune lower branches of trees to reduce ladder fuels.</li>
-        <li>Ensure your house/garden access is clear for fire-engine access and evacuation if required.</li>
-        <li>Make sure your emergency plan is up to date, and your household knows it.</li>
-      </ul>
-      <h4>Use native plants (and the right ones!)</h4>
-      <ul class="pj-ul">
-        <li>Choose native plants with lower flammability and plant them in the right locations. The Fire Wise project emphasises the strategic use of native vegetation rather than wholesale clearing.</li>
-        <li>Use design logic: e.g., waterwise, shade-keeping, windbreaks.</li>
-        <li>Maintain your plantings: keep them healthy, irrigated (where appropriate), remove dead material.</li>
-        <li>Consider ground-covers that hold moisture and reduce fine fuels.</li>
-      </ul>
-      <h4>Community and neighbourhood involvement</h4>
-      <ul class="pj-ul">
-        <li>Talk with your neighbours: a bushfire-safe community is a connected, informed one. Share ideas, join planting days, form local groups.</li>
-        <li>Host or attend community native-planting days: these build local ecosystem resilience and social cohesion.</li>
-        <li>Visit, support or volunteer at local seed banks (native seeds) or community nurseries to grow local plants for fire-wise landscaping.</li>
-        <li>Share resources and knowledge from the Learning Hub (see below) so everyone is on the same page.</li>
-      </ul>
-      <h4>After a fire or during recovery</h4>
-      <ul class="pj-ul">
-        <li>Monitor the site: photograph and revisit. Drops in vegetation or structure need attention.</li>
-        <li>Control invasive species quickly – they can outcompete native seedlings and create new fuel loads.</li>
-        <li>Re-plant missing or keystone native species if natural regeneration isn’t sufficient.</li>
-        <li>Consider cultural burning or Indigenous-led practices if your local context allows, honouring Country and traditional knowledge.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Working together</span>
-      <h3>The Science + The Community: How They Connect</h3>
-      <p>At its heart, fire-prevention and land-healing is both science (fire behaviour, ecology, vegetation management) and community care (neighbours, planting, shared land, Indigenous knowledge). Bridging these gives us real resilience.</p>
-      <p>For instance: the Fire Wise theory highlights three key fire risks: radiant heat, wind speed and ember attack. By planting the right natives, spaced and maintained, communities can reduce those risks: shade keeps ground moist, trees deflect wind/embers, and healthy vegetation slows flame spread. It’s a simple concept, but when executed across many properties in a neighbourhood, the effect multiplies.</p>
-      <p>And when a community plants together, shares seeds and knowledge, the social fabric becomes stronger. People know each other, share responsibilities, look out for each other, and that’s another layer of fire safety.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Go deeper</span>
-      <h3>Resources &amp; Links: Dive Deeper</h3>
-      <p>Here are some top resources to help you, your neighbourhood or your organisation get started:</p>
-      <ul class="pj-ul">
-        <li>Fire Wise Learning Hub – Explore their learning resources, project case-studies and plant lists. Visit: https://firewisehub.online/</li>
-        <li>Fire Wise Resources page – https://firewisehub.online/resources/</li>
-        <li>FNPW Fire Wise Project – https://fnpw.org.au/project/fire-wise/ – gives project overview, science-background, how you can get involved.</li>
-        <li>Helping the Bush Recover (by Trust for Nature) – Good reading on ecological recovery, timing and weed control. trustfornature.org.au</li>
-        <li>Practical plant lists &amp; fire-wise landscaping reports (e.g., The Crossing Land’s NSW report) thecrossingland.org.au</li>
-      </ul>
-      <p>Tip: Bookmark those URLs, share them in your community newsletter or local social-media group, perhaps even organise a “bushfire-safe native planting” morning.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">What's at stake</span>
-      <h3>Why It Matters And What’s At Stake</h3>
-      <p>When we don’t act, the stakes are high: the 2019-20 “Black Summer” fires illustrated how ecosystems, homes and communities can be devastated. Recovery takes years, biodiversity suffers, and our native species and cultural heritage are under threat.</p>
-      <p>But when we do act:</p>
-      <ul class="pj-ul">
-        <li>Homes become safer</li>
-        <li>Landscapes become more resilient</li>
-        <li>Biodiversity is supported</li>
-        <li>Communities become stronger, connected, proactive</li>
-      </ul>
-      <p>And importantly: embracing native species and thoughtful vegetation means we’re healing our land, not just defending it.</p>
-      <p>This summer, let’s come together: behind our fences, in our streets, in our neighbourhoods. Let’s plant with purpose, look after our native landscapes, and support each other. Fire preparedness it’s about smart design, native planting, shared knowledge and community care.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -255,6 +320,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Planning for Fire Season Starts in the Garden", "description": "Bushfire preparation is not only about clearing. Native plants, sensible spacing and connected neighbours all make a place safer, and this guide sets out what to do at home and with your street.", "image": ["https://fnpw.org.au/wp-content/uploads/2025/11/7-1024x576.jpg"], "datePublished": "2025-11", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-planning-for-fire-season-starts-in-the-garden.html"}}</script>
 </body>
 </html>

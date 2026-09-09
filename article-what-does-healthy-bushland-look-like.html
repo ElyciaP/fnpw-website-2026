@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,128 +161,83 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg" alt="Bushland with fallen logs, leaf litter and a dense understorey beneath the trees"></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>What does healthy bushland actually look like?</nav>
-    <span class="ey">Story</span>
-    <h1>What does healthy bushland actually look like?</h1>
-    <p class="pj-hero-meta">August 2026</p>
-    <p class="lede">It looks messier than you think. The science behind bringing back the bush.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>At the Mulligans Flat woodland experiment near Canberra, researchers added 2,000 tonnes of dead wood to the ground and waited.</p>
-      <p>Nine years later they counted significantly more reptile species than before. There was a clear dose response, so the more logs they had put down, the more lizards they found. And the effect was strongest exactly where the tree cover was thinnest.</p>
-      <p>This is awkward, because a healthy Australian bush looks, to most Australian eyes, like something that needs tidying up. Fallen timber. Leaf litter. Scrappy, prickly understorey. Almost every instinct we have about a well-kept landscape is wrong, and the science on this is not close.</p>
-      <p>It is National Science Week, and this year’s schools theme is Seeds of Science: Nurturing Knowledge for All, so it seems a good moment to say something we do not say loudly enough at the Foundation for National Parks &amp; Wildlife. Restoring the bush is not gardening at scale. It is applied science, it is harder than planting, and most of the difficulty sits in the parts nobody photographs.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1536x806.jpg 1536w" sizes="100vw" alt="Bushland with fallen logs, leaf litter and a dense understorey beneath the trees" fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>What does healthy bushland actually look like?</h1>
+      <p class="ed-stand">It looks messier than you think. The science behind bringing back the bush.</p>
+      <p class="ed-meta">August 2026 &nbsp;&middot;&nbsp; 7 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/2-1-1024x538.jpg" alt="Fallen timber and leaf litter on the floor of healthy bushland" loading="lazy">
-      <figcaption>The mess matters, and not for sentimental reasons.</figcaption>
+  </header>
+  <div class="ed">
+    <p>At the Mulligans Flat woodland experiment near Canberra, researchers added 2,000 tonnes of dead wood to the ground and waited.</p>
+    <p>Nine years later they counted significantly more reptile species than before. There was a clear dose response, so the more logs they had put down, the more lizards they found. And the effect was strongest exactly where the tree cover was thinnest.</p>
+    <p>This is awkward, because a healthy Australian bush looks, to most Australian eyes, like something that needs tidying up. Fallen timber. Leaf litter. Scrappy, prickly understorey. Almost every instinct we have about a well-kept landscape is wrong, and the science on this is not close.</p>
+    <p>It is National Science Week, and this year’s schools theme is Seeds of Science: Nurturing Knowledge for All, so it seems a good moment to say something we do not say loudly enough at the Foundation for National Parks &amp; Wildlife. Restoring the bush is not gardening at scale. It is applied science, it is harder than planting, and most of the difficulty sits in the parts nobody photographs.</p>
+    <span class="ed-kicker">Structure</span>
+    <h2>A bush is a building, not a lawn</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/2-1-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/08/2-1-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/08/2-1-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/08/2-1-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Fallen timber and leaf litter on the floor of healthy bushland" width="1024" height="538" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Structure</span>
-      <h3>A bush is a building, not a lawn</h3>
-      <p>The mess matters, and not for sentimental reasons.</p>
-      <p>When Australian researchers compared remnant woodland against two kinds of revegetation, woodlots of trees alone and ecological plantings with trees, shrubs and understorey, bird richness tracked structural complexity. Floristic richness on its own showed no significant effect. At around twenty years both planting types had caught up to the remnants on raw species counts. The composition had not, and the remnants still held species that appeared in no planting at all.</p>
-      <p>More recent work using ground-based and drone LiDAR arrived at the same place from a different direction. The strongest predictors of bird abundance in a restored woodland were canopy roughness, vertical complexity in the ground layer, total vegetation volume and canopy height. The understorey, in other words. The layer satellites are worst at seeing, and the layer humans are quickest to remove.</p>
-      <p>A bush is not a surface with trees on it. It is a building with several floors, and the wildlife lives on all of them. Which is why NSW Government revegetation guidance recommends planting around 60 per cent shrubs, ideally dense and prickly, and keeping linear plantings at least 30 metres wide. Not a canopy. A structure.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band alt flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/2-1024x538.jpg" alt="An old eucalypt carrying the hollows that take more than a century to form" loading="lazy">
-      <figcaption>Some of those floors can be re-established in a season.</figcaption>
+    <p>The mess matters, and not for sentimental reasons.</p>
+    <p>When Australian researchers compared remnant woodland against two kinds of revegetation, woodlots of trees alone and ecological plantings with trees, shrubs and understorey, bird richness tracked structural complexity. Floristic richness on its own showed no significant effect. At around twenty years both planting types had caught up to the remnants on raw species counts. The composition had not, and the remnants still held species that appeared in no planting at all.</p>
+    <p>More recent work using ground-based and drone LiDAR arrived at the same place from a different direction. The strongest predictors of bird abundance in a restored woodland were canopy roughness, vertical complexity in the ground layer, total vegetation volume and canopy height. The understorey, in other words. The layer satellites are worst at seeing, and the layer humans are quickest to remove.</p>
+    <p>A bush is not a surface with trees on it. It is a building with several floors, and the wildlife lives on all of them. Which is why NSW Government revegetation guidance recommends planting around 60 per cent shrubs, ideally dense and prickly, and keeping linear plantings at least 30 metres wide. Not a canopy. A structure.</p>
+    <span class="ed-kicker">Slow layers</span>
+    <h2>The floors you cannot rebuild</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/2-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/08/2-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/08/2-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/08/2-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="An old eucalypt carrying the hollows that take more than a century to form" width="1024" height="538" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Slow layers</span>
-      <h3>The floors you cannot rebuild</h3>
-      <p>Some of those floors can be re-established in a season. Others cannot be re-established inside a working lifetime, and those are precisely the ones that look most like neglect.</p>
-      <p>Dead wood is the first. In 2003, the NSW Scientific Committee formally listed the removal of dead wood and dead trees as a Key Threatening Process, alongside feral cats and land clearing. Not a shame. A listed threat. The determination names the broad-headed snake, the regent parrot, the pink cockatoo and the spotted-tailed quoll among the species affected, and notes that stripping dead wood out alters the soil microclimate and starves the invertebrate communities doing the nutrient recycling. Research at Mulligans Flat found soil beside fallen logs gained measurable carbon, nitrogen and phosphorus within two years, concentrated in the top centimetre. A log is not debris. It is shelter, slow-release fertiliser, and a nursery for the fungi that everything above ground depends on.</p>
-      <p>The second is older again. In eucalypts, hollows suitable for wildlife take between 120 and 200 years to form, through branch loss, fungal decay, termite activity and weather. Around 300 Australian vertebrate species use them. That timeline cannot be shortened with funding and the result cannot be manufactured. The powerful owl nesting somewhere tonight is in a tree that was already old when Australia became a country.</p>
-      <p>Put those two together and you have the real asymmetry of this work. A tree can be planted this winter. The hollow in it will not be available to wildlife until the 2200s. Which is why protection is not the cautious half of conservation. It is the only way to hold onto the parts of the system that nobody can replace.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/7-1024x538.jpg" alt="Ground layer plants and leaf litter over native soil" loading="lazy">
-      <figcaption>If the oldest layers cannot be rebuilt, the question becomes what a landscape can still do for itself.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">The seed bank</span>
-      <h3>What the soil remembers</h3>
+    <p>Some of those floors can be re-established in a season. Others cannot be re-established inside a working lifetime, and those are precisely the ones that look most like neglect.</p>
+    <p>Dead wood is the first. In 2003, the NSW Scientific Committee formally listed the removal of dead wood and dead trees as a Key Threatening Process, alongside feral cats and land clearing. Not a shame. A listed threat. The determination names the broad-headed snake, the regent parrot, the pink cockatoo and the spotted-tailed quoll among the species affected, and notes that stripping dead wood out alters the soil microclimate and starves the invertebrate communities doing the nutrient recycling. Research at Mulligans Flat found soil beside fallen logs gained measurable carbon, nitrogen and phosphorus within two years, concentrated in the top centimetre. A log is not debris. It is shelter, slow-release fertiliser, and a nursery for the fungi that everything above ground depends on.</p>
+    <p>The second is older again. In eucalypts, hollows suitable for wildlife take between 120 and 200 years to form, through branch loss, fungal decay, termite activity and weather. Around 300 Australian vertebrate species use them. That timeline cannot be shortened with funding and the result cannot be manufactured. The powerful owl nesting somewhere tonight is in a tree that was already old when Australia became a country.</p>
+    <p>Put those two together and you have the real asymmetry of this work. A tree can be planted this winter. The hollow in it will not be available to wildlife until the 2200s. Which is why protection is not the cautious half of conservation. It is the only way to hold onto the parts of the system that nobody can replace.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/08/7-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/08/7-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/08/7-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/08/7-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Ground layer plants and leaf litter over native soil" width="1024" height="538" loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">The seed bank</span>
+      <h2>What the soil remembers</h2>
       <p>If the oldest layers cannot be rebuilt, the question becomes what a landscape can still do for itself. Quite a lot, as it happens, by mechanisms stranger than most people expect.</p>
       <p>Take a seed from many Australian natives and give it perfect soil, water, warmth and light. Nothing will happen. It will sit there, alive and refusing. What it is waiting for is smoke.</p>
       <p>In 2004, chemists at the University of Western Australia isolated the compound in bushfire smoke that breaks seed dormancy. It works at concentrations as low as ten nanomolar. They named the family karrikins, after karrik, a Noongar word for smoke recorded in the Perth region in the 1830s. Australian plants are not passively waiting for rain. They are reading chemical signals in the soil, and much of the bush holds a store of dormant seed underground waiting for the right one.</p>
       <p>But that store is a partial archive. In a study of eucalypt wetland forest at Yellingbo in Victoria, researchers germinated more than 6,300 seedlings from soil samples and found only about 24 per cent floristic similarity between the standing vegetation and what was held beneath it. Very few seeds of the wetland trees and shrubs were present at all. Exotic species made up 32 per cent of the standing vegetation but 41 per cent of the seed bank.</p>
       <p>The soil remembers the ground layer. It remembers the weeds rather well. It does not reliably remember the canopy. That gap is exactly where the work sits, and it is why 145 living seedbanks and more than 30 community nurseries across four states sit inside our Fire Wise program, and why 110,000 fire-resilient natives have been propagated and planted rather than bought in from wherever was convenient.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Before planting</span>
-      <h3>The question that comes before planting</h3>
-      <p>All of which leads to a single diagnostic question, and it is not the one most people expect.</p>
-      <p>Australia’s national restoration standards set out a principle that should govern far more conservation spending than it currently does: restoration inputs will be dictated by level of resilience and degradation. Translated, the first question on any site is never what shall we plant. It is whether this place can still repair itself, and if not, what exactly is broken.</p>
-      <p>Get that wrong and you can spend a decade planting into a landscape that will not take it. On the Cumberland Plain west of Sydney, eleven years after planting and with 71 per cent of planted species established, species composition at all three restored sites remained significantly different from reference woodland. Only five planted species had produced recruits of their own. In the Western Australian wheatbelt, soil organic carbon under trees planted a decade earlier sat at 0.9 per cent, against 1.2 to 1.5 per cent under reference woodland. The trees were there. The system had not come back with them.</p>
-      <p>Planting is the beginning of the process. It is not the proof of it.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1024x538.jpg" alt="Bushland running unbroken across a wide landscape" loading="lazy">
-      <figcaption>There is one more variable, and it has nothing to do with the site itself.</figcaption>
+      </div>
+    </section>
+    <span class="ed-kicker">Before planting</span>
+    <h2>The question that comes before planting</h2>
+    <p>All of which leads to a single diagnostic question, and it is not the one most people expect.</p>
+    <p>Australia’s national restoration standards set out a principle that should govern far more conservation spending than it currently does: restoration inputs will be dictated by level of resilience and degradation. Translated, the first question on any site is never what shall we plant. It is whether this place can still repair itself, and if not, what exactly is broken.</p>
+    <p>Get that wrong and you can spend a decade planting into a landscape that will not take it. On the Cumberland Plain west of Sydney, eleven years after planting and with 71 per cent of planted species established, species composition at all three restored sites remained significantly different from reference woodland. Only five planted species had produced recruits of their own. In the Western Australian wheatbelt, soil organic carbon under trees planted a decade earlier sat at 0.9 per cent, against 1.2 to 1.5 per cent under reference woodland. The trees were there. The system had not come back with them.</p>
+    <p>Planting is the beginning of the process. It is not the proof of it.</p>
+    <span class="ed-kicker">Connection</span>
+    <h2>Distance is a habitat feature</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/08/3-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/08/3-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/08/3-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Bushland running unbroken across a wide landscape" width="1024" height="538" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Connection</span>
-      <h3>Distance is a habitat feature</h3>
-      <p>There is one more variable, and it has nothing to do with the site itself. It is where the site sits.</p>
-      <p>A systematic review of 80 Australian connectivity studies found a mean gap-crossing distance of around 106 metres, and a threshold for dispersal between patches of around 1,100 metres. Those two numbers decide whether two patches of bush are one habitat or two. When the answer is two, the losses arrive slowly enough to be missed. Ecologists call it extinction debt: species still present in a fragment, still being counted in surveys, but no longer viable there. On the Swan Coastal Plain in Western Australia, banksia woodland patches were found to carry an average extinction debt of 13 species each, equivalent to 28 per cent of mean species richness. The bill had not been paid. It had only been deferred.</p>
-      <p>Scale is the counterweight. Research across Victorian farmland found landscapes with 1 per cent revegetation held an average of 11 woodland bird species. At 15 per cent revegetation, the average was 25.</p>
-      <p>This is why Growing National Parks is an ecological strategy and not merely a real estate one. Our 23,000-hectare acquisition at Undilla Station sits adjacent to Boodjamulla. Mundoo Island’s 1,900 hectares went into Coorong National Park rather than standing alone. We added 29,479 hectares to national park status across the last year, and the question we ask of every hectare is what it connects to.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/5-1024x538.jpg" alt="Bushland with a full canopy, midstorey and ground layer" loading="lazy">
+    <p>There is one more variable, and it has nothing to do with the site itself. It is where the site sits.</p>
+    <p>A systematic review of 80 Australian connectivity studies found a mean gap-crossing distance of around 106 metres, and a threshold for dispersal between patches of around 1,100 metres. Those two numbers decide whether two patches of bush are one habitat or two. When the answer is two, the losses arrive slowly enough to be missed. Ecologists call it extinction debt: species still present in a fragment, still being counted in surveys, but no longer viable there. On the Swan Coastal Plain in Western Australia, banksia woodland patches were found to carry an average extinction debt of 13 species each, equivalent to 28 per cent of mean species richness. The bill had not been paid. It had only been deferred.</p>
+    <p>Scale is the counterweight. Research across Victorian farmland found landscapes with 1 per cent revegetation held an average of 11 woodland bird species. At 15 per cent revegetation, the average was 25.</p>
+    <p>This is why Growing National Parks is an ecological strategy and not merely a real estate one. Our 23,000-hectare acquisition at Undilla Station sits adjacent to Boodjamulla. Mundoo Island’s 1,900 hectares went into Coorong National Park rather than standing alone. We added 29,479 hectares to national park status across the last year, and the question we ask of every hectare is what it connects to.</p>
+    <span class="ed-kicker">The whole bush</span>
+    <h2>What a full bush actually means</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/08/5-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/08/5-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/08/5-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/08/5-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Bushland with a full canopy, midstorey and ground layer" width="1024" height="538" loading="lazy" decoding="async">
       <figcaption>A bush with all of its floors, not just its canopy.</figcaption>
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The whole bush</span>
-      <h3>What a full bush actually means</h3>
-      <p>All of it. The canopy, the midstorey, the prickly scrub, the litter, the logs on the ground and the fungal networks underneath. Gaps narrow enough to cross and patches large enough to hold. Old trees left standing long enough to go hollow.</p>
-      <p>We measure that against a local reference ecosystem using six attributes and a five-star scale, and we publish what it produces: 647 hectares under active restoration last year, 1,215,443 trees, shrubs and seedlings planted across priority landscapes, and 80 per cent delivery of purpose. Numbers we put in writing because they can be checked.</p>
-      <p>Growing National Parks, Saving Species and Healing the Land are three answers to one question, which is what does this particular landscape need, and in what order.</p>
-      <p>Australia looks better with a full bush. Not a tidy one.</p>
-    </div>
-  </div></div>
-</section>
+    <p>All of it. The canopy, the midstorey, the prickly scrub, the litter, the logs on the ground and the fungal networks underneath. Gaps narrow enough to cross and patches large enough to hold. Old trees left standing long enough to go hollow.</p>
+    <p>We measure that against a local reference ecosystem using six attributes and a five-star scale, and we publish what it produces: 647 hectares under active restoration last year, 1,215,443 trees, shrubs and seedlings planted across priority landscapes, and 80 per cent delivery of purpose. Numbers we put in writing because they can be checked.</p>
+    <p>Growing National Parks, Saving Species and Healing the Land are three answers to one question, which is what does this particular landscape need, and in what order.</p>
+    <p>Australia looks better with a full bush. Not a tidy one.</p>
+  </div>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -246,6 +304,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What does healthy bushland actually look like?", "description": "Researchers added 2,000 tonnes of dead wood to the ground at Mulligans Flat and found significantly more reptile species nine years later. Why structure, dead wood and hollows decide whether a planting ever becomes habitat.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg"], "datePublished": "2026-08", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-what-does-healthy-bushland-look-like.html"}}</script>
 </body>
 </html>

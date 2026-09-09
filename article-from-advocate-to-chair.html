@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,110 +161,67 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1024x527.jpg" alt="Kelly O&#x27;Shanassy outdoors, smiling to camera."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>From advocate to chair: nature, ambition, and what comes next</nav>
-    <span class="ey">News</span>
-    <h1>From advocate to chair: nature, ambition, and what comes next</h1>
-    <p class="pj-hero-meta">May 2026</p>
-    <p class="lede">After nearly 12 years as CEO of the Australian Conservation Foundation, Kelly O’Shanassy is stepping into a new role as President and Chair of FNPW. We sat down with her to find out what drew her here, and what she’s got planned.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>There’s a certain kind of person who walks into a room, whether that’s a boardroom, a parliamentary briefing, or even the mining lobby, and doesn’t adjust their message to suit the audience. They bring the audience to them.</p>
-      <p>Kelly O’Shanassy is that kind of person.</p>
-      <p>For those who follow the conservation sector, the appointment makes complete sense. For those meeting Kelly for the first time, it might just change how you think about what leadership in this space can look like.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1024x527.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1536x806.jpg 1536w" sizes="100vw" alt="Kelly O&#x27;Shanassy outdoors, smiling to camera." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">News</span>
+      <h1>From advocate to chair: nature, ambition, and what comes next</h1>
+      <p class="ed-stand">After nearly 12 years as CEO of the Australian Conservation Foundation, Kelly O’Shanassy is stepping into a new role as President and Chair of FNPW. We sat down with her to find out what drew her here, and what she’s got planned.</p>
+      <p class="ed-meta">May 2026 &nbsp;&middot;&nbsp; 8 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">A new role</span>
-      <h3>One chapter closes, another opens</h3>
-      <p>Leaving a job you love is never simple. Leaving one you’ve held for over a decade, where you watched a team achieve things people told you were impossible, is something else entirely.</p>
-      <p>“It was 11 years and we had kept innovating and changing things up because we needed to,” Kelly says. “In the end, I thought I’ve done everything I wanted to do.”</p>
-      <p>That decision led her toward boards, a way, she says, to have significant leadership impact across multiple organisations rather than within one. But when FNPW came into the picture, something specific caught her attention: the tangibility of the work.</p>
-      <p>“I wanted to experience working in an organisation that had very tangible impact,” she says. “Like you can go and touch the things that the foundation does.” After more than a decade of advocacy, pushing governments, shifting policy, trying to trace which strategy finally broke through, the idea of standing in a forest that is genuinely, physically protected felt like a different kind of reward entirely.</p>
-      <p>There is something about FNPW’s character that resonated with Kelly on a more personal level too. “The positive, joyful, solutions-focused nature of the foundation resonates very strongly with me,” she says. Throughout her career, Kelly has maintained that people should work in organisations where the goals align with their own values. FNPW’s clarity of purpose, protecting wildlife, growing national parks, healing land, was a big part of what drew her here.</p>
-      <p>So was the science. Kelly is a scientist by training, and she doesn’t soften the data. “Habitat destruction is the major driver of extinction in Australia. The last remaining habitats are absolutely critical to protect.” She also makes the connection between nature and people with a directness that cuts through the abstraction. “People love nature in Australia,” she says. “They don’t understand it’s in trouble.” That gap, between love and understanding, is where she sees the greatest opportunity.</p>
-      <h4>“I miss the opportunity to shape hearts and minds. But I’m going to have that in this role now. And I’m very excited.”</h4>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9818-scaled-e1779762372521-1024x672.jpg" alt="Kelly O&#x27;Shanassy in conversation, seated and gesturing as she speaks." loading="lazy">
+  </header>
+  <div class="ed">
+    <p>There’s a certain kind of person who walks into a room, whether that’s a boardroom, a parliamentary briefing, or even the mining lobby, and doesn’t adjust their message to suit the audience. They bring the audience to them.</p>
+    <p>Kelly O’Shanassy is that kind of person.</p>
+    <p>For those who follow the conservation sector, the appointment makes complete sense. For those meeting Kelly for the first time, it might just change how you think about what leadership in this space can look like.</p>
+    <span class="ed-kicker">A new role</span>
+    <h2>One chapter closes, another opens</h2>
+    <p>Leaving a job you love is never simple. Leaving one you’ve held for over a decade, where you watched a team achieve things people told you were impossible, is something else entirely.</p>
+    <p>“It was 11 years and we had kept innovating and changing things up because we needed to,” Kelly says. “In the end, I thought I’ve done everything I wanted to do.”</p>
+    <p>That decision led her toward boards, a way, she says, to have significant leadership impact across multiple organisations rather than within one. But when FNPW came into the picture, something specific caught her attention: the tangibility of the work.</p>
+    <p>“I wanted to experience working in an organisation that had very tangible impact,” she says. “Like you can go and touch the things that the foundation does.” After more than a decade of advocacy, pushing governments, shifting policy, trying to trace which strategy finally broke through, the idea of standing in a forest that is genuinely, physically protected felt like a different kind of reward entirely.</p>
+    <p>There is something about FNPW’s character that resonated with Kelly on a more personal level too. “The positive, joyful, solutions-focused nature of the foundation resonates very strongly with me,” she says. Throughout her career, Kelly has maintained that people should work in organisations where the goals align with their own values. FNPW’s clarity of purpose, protecting wildlife, growing national parks, healing land, was a big part of what drew her here.</p>
+    <p>So was the science. Kelly is a scientist by training, and she doesn’t soften the data. “Habitat destruction is the major driver of extinction in Australia. The last remaining habitats are absolutely critical to protect.” She also makes the connection between nature and people with a directness that cuts through the abstraction. “People love nature in Australia,” she says. “They don’t understand it’s in trouble.” That gap, between love and understanding, is where she sees the greatest opportunity.</p>
+    <h3>“I miss the opportunity to shape hearts and minds. But I’m going to have that in this role now. And I’m very excited.”</h3>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9818-scaled-e1779762372521-1024x672.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9818-scaled-e1779762372521-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9818-scaled-e1779762372521-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="Kelly O&#x27;Shanassy in conversation, seated and gesturing as she speaks." width="1024" height="672" loading="lazy" decoding="async">
     </figure>
+    <span class="ed-kicker">Business</span>
+    <h2>On business</h2>
+    <p>If there’s one thing Kelly has learned from years of working across NGOs, government, unions, and corporations, it’s that the boardroom is one of the most powerful rooms in the building, and that conservation has every right to be in it.</p>
+    <p>The shift, she says, is already underway. Climate hit boardrooms first, and even then it took the better part of a decade to be taken seriously. Nature is following the same trajectory, and faster. People don’t always see how it impacts their company, she observes, but with the global biodiversity framework now in place and nature risk disclosures moving toward mandatory status, that’s changing quickly. Businesses are being required to understand both their dependencies on nature and their impact on it, essentially producing a profit and loss statement for the natural world. The same rigour companies apply to their financial position is now being applied to their relationship with ecosystems.</p>
+    <p>Kelly is clear-eyed about why that matters. Corporations, she points out, are not people. They don’t have hearts and they don’t act out of goodness alone. Something can happen in workplaces, she observes, where the humanness of the people inside gets stripped away by the institution around them. But it is still humans making the decisions, and those humans are responsible to a wide circle of stakeholders: staff, customers, investors, shareholders, and the communities their business depends on. Nature risk disclosures make the stakes legible in the language boards actually respond to.</p>
+    <p>Her view on corporate partnerships is direct and grounded in what businesses actually respond to. “If you do this, you will benefit. And if you don’t, you are going to be exposed to pretty big risks.” She’s also quick to point out that sustainability can’t be reduced to double-sided printing and LED light bulbs. The business model itself has to drive the change. For companies that are heavily exposed to natural resources, that shift is not optional, and Kelly sees organisations like FNPW as essential partners in helping them get there. Whether that’s through corporate volunteering, land protection partnerships, or deeper strategic alignment, the through-line is always the same: this is good for your business, and it is also genuinely good for the world.</p>
+    <p>She’s also worried about something subtler than greenwashing: green hushing, where organisations become so afraid of scrutiny that they stop making environmental commitments at all. Her answer to that is characteristically practical. If a company is 70% of the way toward its environmental goals, staying quiet about it helps no one. “Seventy percent is all right,” she says. “We’ll get the next 30 and then we’ll get the next lot after that.” Progress matters more than perfection, and silence is not a strategy.</p>
+    <span class="ed-kicker">Unusual alliances</span>
+    <h2>Climate, nature, and the power of unusual alliances</h2>
+    <p>Kelly has been deeply embedded in national net zero planning, and she’s impatient with the idea that climate and nature are running on separate tracks. “Protecting land protects habitat. Protecting habitat protects species.” The reverse is equally true: when nature collapses, so do the systems humans rely on for food, water, clean air, and the landscapes we want our children to inherit.</p>
+    <p>She’s pointed about what’s at stake in the near term. “Kids aren’t going to be able to see koalas in the wild in New South Wales,” she says plainly. “They won’t. It’s very clear unless we change.” Her view is that the story of nature’s crisis needs to be told in exactly those terms, connected to now, connected to people, and always paired with a solution. “We have to link it to how it’s impacting people now,” she says. “It’s not a future problem.”</p>
+    <p>Getting that message through, she has found, works best when it comes from unexpected corners. One of the things Kelly is most proud of from her time at ACF is what happened when the environment movement and the business community stopped fighting each other over nature protection laws and started looking for common ground instead. “As much alignment as you can get as possible across unusual partners has always had the greatest impact,” she says.</p>
+    <p>After years of opposition, the two sides identified the 70% they agreed on and took that to government together, leaving the remaining 30% for ministers to navigate. The result was a reform that had stalled for nearly a decade. “There’s nothing like when an environmentalist and a business person agrees and goes in and talks to Parliament on that,” she says. It’s a model she brings with her to FNPW, rooted in the belief that big-picture ambition from the environment movement, combined with the know-how and resources of business, can genuinely accelerate change.</p>
+    <span class="ed-kicker">The best version</span>
+    <h2>What does the best version of FNPW look like?</h2>
+    <p>Kelly’s leadership philosophy is grounded in people, not titles. “Great organisations are about the collective of humans inside it, not just about the leader, not about the chair.” She talks about wanting every person connected to FNPW, staff, board, councillors, donors, volunteers, to see the positive impact they’re creating and to feel genuinely equipped to drive more of it.</p>
+    <p>Focus, she says, matters more than most people realise. “If you’re doing too many things, you’re not going to do any of those things very well.” The foundation has clear goals. Her job is to help everyone inside and around it feel themselves in those goals, and to have the systems in place that let people really shine.</p>
+    <h3>Nature is personal</h3>
+    <p>Outside of the work, Kelly kayaks, hikes, and plays the ukulele. “It’s a joyful little instrument,” she says. “You can’t take it too seriously.” She tells a story about the very beginning of her time at ACF, when she got so busy she went three months without kayaking. Walking to a workshop one morning, she crossed the Yarra River and felt the absence of it like something physical. “The love I had for that river.” After that, she protected the time.</p>
+    <p>Nature, in her experience, is not a backdrop to the work. It’s what motivates it. “Love and fury are both important,” she says. “But ultimately, everyone wants to have a happy life. Everyone wants to see a positive future. You need to have that joyful element.”</p>
+    <h3>“I look back to dream forward.”</h3>
+    <span class="ed-kicker">A message</span>
+    <h2>A message to the FNPW community</h2>
+    <p>For those meeting Kelly for the first time through this article, her message is both grounding and galvanising.</p>
+    <p>“What FNPW does, what we do together, is incredibly important to protect nature in Australia. It makes a difference, a big difference. You can feel and touch the places that it’s made a difference to.” And she’s not asking people to slow down and appreciate that. She’s asking them to use it as fuel. “We need to keep going and go as fast as we can because this works, but needs to work harder to achieve the goals that we need to achieve and protect those species that are at risk of extinction.”</p>
+    <p>For the moments when the scale of the challenge starts to feel too big, she offers a reframe rather than reassurance. Kelly invokes Nelson Mandela: things only seem impossible until they’re done. It’s not a platitude in her hands. It’s a pattern she has watched repeat across her career, in policy wins people said would never happen, in renewable energy targets that once seemed absurd, in rivers that ran dry and then ran again.</p>
+    <p>Her advice to anyone who needs it is the same advice she lives by: look back to dream forward.</p>
+    <p>Look back at when almost no land in Australia was protected. When renewable energy was a fringe idea. When the Murray-Darling ran so low you couldn’t move sediment through its mouth. Now look at where we stand. Twenty-two percent of land protected. Nearly half of Australia’s electricity coming from renewables at peak times. More than 3,200 billion litres of water flowing down the Murray again. “And then dream forward about where we’re going to be next,” she says.</p>
+    <p>The progress has not been fast or easy. But Kelly’s point is that the future doesn’t move in a straight line. “It continuously accelerates if we put the right effort in.” She was there for the hard early years. She watched the impossible become possible, more than once. And she is here, now, because she believes we can continue to increase that momentum.</p>
+    <p>Kelly O’Shanassy has officially taken up the role of President and Chair of FNPW at the latest AGM. We are so glad to have her.</p>
   </div>
-</section>
+</article>
 
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Business</span>
-      <h3>On business</h3>
-      <p>If there’s one thing Kelly has learned from years of working across NGOs, government, unions, and corporations, it’s that the boardroom is one of the most powerful rooms in the building, and that conservation has every right to be in it.</p>
-      <p>The shift, she says, is already underway. Climate hit boardrooms first, and even then it took the better part of a decade to be taken seriously. Nature is following the same trajectory, and faster. People don’t always see how it impacts their company, she observes, but with the global biodiversity framework now in place and nature risk disclosures moving toward mandatory status, that’s changing quickly. Businesses are being required to understand both their dependencies on nature and their impact on it, essentially producing a profit and loss statement for the natural world. The same rigour companies apply to their financial position is now being applied to their relationship with ecosystems.</p>
-      <p>Kelly is clear-eyed about why that matters. Corporations, she points out, are not people. They don’t have hearts and they don’t act out of goodness alone. Something can happen in workplaces, she observes, where the humanness of the people inside gets stripped away by the institution around them. But it is still humans making the decisions, and those humans are responsible to a wide circle of stakeholders: staff, customers, investors, shareholders, and the communities their business depends on. Nature risk disclosures make the stakes legible in the language boards actually respond to.</p>
-      <p>Her view on corporate partnerships is direct and grounded in what businesses actually respond to. “If you do this, you will benefit. And if you don’t, you are going to be exposed to pretty big risks.” She’s also quick to point out that sustainability can’t be reduced to double-sided printing and LED light bulbs. The business model itself has to drive the change. For companies that are heavily exposed to natural resources, that shift is not optional, and Kelly sees organisations like FNPW as essential partners in helping them get there. Whether that’s through corporate volunteering, land protection partnerships, or deeper strategic alignment, the through-line is always the same: this is good for your business, and it is also genuinely good for the world.</p>
-      <p>She’s also worried about something subtler than greenwashing: green hushing, where organisations become so afraid of scrutiny that they stop making environmental commitments at all. Her answer to that is characteristically practical. If a company is 70% of the way toward its environmental goals, staying quiet about it helps no one. “Seventy percent is all right,” she says. “We’ll get the next 30 and then we’ll get the next lot after that.” Progress matters more than perfection, and silence is not a strategy.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Unusual alliances</span>
-      <h3>Climate, nature, and the power of unusual alliances</h3>
-      <p>Kelly has been deeply embedded in national net zero planning, and she’s impatient with the idea that climate and nature are running on separate tracks. “Protecting land protects habitat. Protecting habitat protects species.” The reverse is equally true: when nature collapses, so do the systems humans rely on for food, water, clean air, and the landscapes we want our children to inherit.</p>
-      <p>She’s pointed about what’s at stake in the near term. “Kids aren’t going to be able to see koalas in the wild in New South Wales,” she says plainly. “They won’t. It’s very clear unless we change.” Her view is that the story of nature’s crisis needs to be told in exactly those terms, connected to now, connected to people, and always paired with a solution. “We have to link it to how it’s impacting people now,” she says. “It’s not a future problem.”</p>
-      <p>Getting that message through, she has found, works best when it comes from unexpected corners. One of the things Kelly is most proud of from her time at ACF is what happened when the environment movement and the business community stopped fighting each other over nature protection laws and started looking for common ground instead. “As much alignment as you can get as possible across unusual partners has always had the greatest impact,” she says.</p>
-      <p>After years of opposition, the two sides identified the 70% they agreed on and took that to government together, leaving the remaining 30% for ministers to navigate. The result was a reform that had stalled for nearly a decade. “There’s nothing like when an environmentalist and a business person agrees and goes in and talks to Parliament on that,” she says. It’s a model she brings with her to FNPW, rooted in the belief that big-picture ambition from the environment movement, combined with the know-how and resources of business, can genuinely accelerate change.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">The best version</span>
-      <h3>What does the best version of FNPW look like?</h3>
-      <p>Kelly’s leadership philosophy is grounded in people, not titles. “Great organisations are about the collective of humans inside it, not just about the leader, not about the chair.” She talks about wanting every person connected to FNPW, staff, board, councillors, donors, volunteers, to see the positive impact they’re creating and to feel genuinely equipped to drive more of it.</p>
-      <p>Focus, she says, matters more than most people realise. “If you’re doing too many things, you’re not going to do any of those things very well.” The foundation has clear goals. Her job is to help everyone inside and around it feel themselves in those goals, and to have the systems in place that let people really shine.</p>
-      <h4>Nature is personal</h4>
-      <p>Outside of the work, Kelly kayaks, hikes, and plays the ukulele. “It’s a joyful little instrument,” she says. “You can’t take it too seriously.” She tells a story about the very beginning of her time at ACF, when she got so busy she went three months without kayaking. Walking to a workshop one morning, she crossed the Yarra River and felt the absence of it like something physical. “The love I had for that river.” After that, she protected the time.</p>
-      <p>Nature, in her experience, is not a backdrop to the work. It’s what motivates it. “Love and fury are both important,” she says. “But ultimately, everyone wants to have a happy life. Everyone wants to see a positive future. You need to have that joyful element.”</p>
-      <h4>“I look back to dream forward.”</h4>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">A message</span>
-      <h3>A message to the FNPW community</h3>
-      <p>For those meeting Kelly for the first time through this article, her message is both grounding and galvanising.</p>
-      <p>“What FNPW does, what we do together, is incredibly important to protect nature in Australia. It makes a difference, a big difference. You can feel and touch the places that it’s made a difference to.” And she’s not asking people to slow down and appreciate that. She’s asking them to use it as fuel. “We need to keep going and go as fast as we can because this works, but needs to work harder to achieve the goals that we need to achieve and protect those species that are at risk of extinction.”</p>
-      <p>For the moments when the scale of the challenge starts to feel too big, she offers a reframe rather than reassurance. Kelly invokes Nelson Mandela: things only seem impossible until they’re done. It’s not a platitude in her hands. It’s a pattern she has watched repeat across her career, in policy wins people said would never happen, in renewable energy targets that once seemed absurd, in rivers that ran dry and then ran again.</p>
-      <p>Her advice to anyone who needs it is the same advice she lives by: look back to dream forward.</p>
-      <p>Look back at when almost no land in Australia was protected. When renewable energy was a fringe idea. When the Murray-Darling ran so low you couldn’t move sediment through its mouth. Now look at where we stand. Twenty-two percent of land protected. Nearly half of Australia’s electricity coming from renewables at peak times. More than 3,200 billion litres of water flowing down the Murray again. “And then dream forward about where we’re going to be next,” she says.</p>
-      <p>The progress has not been fast or easy. But Kelly’s point is that the future doesn’t move in a straight line. “It continuously accelerates if we put the right effort in.” She was there for the hard early years. She watched the impossible become possible, more than once. And she is here, now, because she believes we can continue to increase that momentum.</p>
-      <p>Kelly O’Shanassy has officially taken up the role of President and Chair of FNPW at the latest AGM. We are so glad to have her.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -228,6 +288,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "From advocate to chair: nature, ambition, and what comes next", "description": "Kelly O'Shanassy, who led the Australian Conservation Foundation for nearly 12 years, has taken up the role of President and Chair of the Foundation for National Parks & Wildlife. She talks about business, climate, and what she wants FNPW to become.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1024x527.jpg"], "datePublished": "2026-05", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-from-advocate-to-chair.html"}}</script>
 </body>
 </html>

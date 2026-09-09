@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,136 +161,74 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/03/6-1-1024x538.jpg" alt="A Growling Grass Frog at the edge of a wetland."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Bringing Back the Growling Grass Frog</nav>
-    <span class="ey">News</span>
-    <h1>Bringing Back the Growling Grass Frog</h1>
-    <p class="pj-hero-meta">March 2026 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Winton Wetlands, VIC</p>
-    <p class="lede">There is something quietly extraordinary about a frog call echoing across a restored wetland at dusk. For people who know what that sound means, and what it took to get there, it carries real weight.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>The Growling Grass Frog (Litoria raniformis) was once a familiar presence across the wetlands and waterways of south-eastern Australia. Today it is nationally listed as Vulnerable under the EPBC Act, its numbers diminished by habitat loss, altered water regimes, disease and declining water quality. In many parts of its former range, it has simply disappeared.</p>
-      <p>That is why what is happening at Winton Wetlands in north-east Victoria matters so much.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/03/6-1-1024x538.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/03/6-1-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/03/6-1-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/03/6-1-1536x806.jpg 1536w" sizes="100vw" alt="A Growling Grass Frog at the edge of a wetland." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">News</span>
+      <h1>Bringing Back the Growling Grass Frog</h1>
+      <p class="ed-stand">There is something quietly extraordinary about a frog call echoing across a restored wetland at dusk. For people who know what that sound means, and what it took to get there, it carries real weight.</p>
+      <p class="ed-meta">March 2026 &nbsp;&middot;&nbsp; Winton Wetlands, VIC &nbsp;&middot;&nbsp; 3 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/5-2-scaled-e1773958223913-1024x683.jpg" alt="A Growling Grass Frog, bright green with dark blotches." loading="lazy">
-      <figcaption>Despite its name, the Growling Grass Frog is actually one of Australia’s more striking amphibians.</figcaption>
+  </header>
+  <div class="ed">
+    <p>The Growling Grass Frog (Litoria raniformis) was once a familiar presence across the wetlands and waterways of south-eastern Australia. Today it is nationally listed as Vulnerable under the EPBC Act, its numbers diminished by habitat loss, altered water regimes, disease and declining water quality. In many parts of its former range, it has simply disappeared.</p>
+    <p>That is why what is happening at Winton Wetlands in north-east Victoria matters so much.</p>
+    <span class="ed-kicker">The species</span>
+    <h2>Meet the Growling Grass Frog</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/5-2-scaled-e1773958223913-1024x683.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/03/5-2-scaled-e1773958223913-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/03/5-2-scaled-e1773958223913-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/03/5-2-scaled-e1773958223913-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="A Growling Grass Frog, bright green with dark blotches." width="1024" height="683" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The species</span>
-      <h3>Meet the Growling Grass Frog</h3>
-      <p>Despite its name, the Growling Grass Frog is actually one of Australia’s more striking amphibians. It is large by local standards, reaching up to 10 centimetres, and is easily recognised by its bright green back marked with dark blotches, a pale belly and a distinctive dark stripe running through the eye. Its call is a low, rasping growl, which is where the name comes from, and during breeding season it can be heard carrying across open water on warm evenings.</p>
-      <p>It is also, ecologically speaking, a species that punches well above its weight. The Growling Grass Frog is considered an indicator species, meaning its presence, and its breeding success, reflect the broader health of the wetland system around it. When this frog thrives, it tells you that water quality is good, vegetation is functioning, and the hydrological cycles that underpin wetland life are working as they should. When it disappears, something significant has shifted.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/10-scaled.jpg" alt="Open water at Winton Wetlands in north-east Victoria." loading="lazy">
-      <figcaption>Located between Benalla and Glenrowan in north-east Victoria, Winton Wetlands has a story worth knowing.</figcaption>
+    <p>Despite its name, the Growling Grass Frog is actually one of Australia’s more striking amphibians. It is large by local standards, reaching up to 10 centimetres, and is easily recognised by its bright green back marked with dark blotches, a pale belly and a distinctive dark stripe running through the eye. Its call is a low, rasping growl, which is where the name comes from, and during breeding season it can be heard carrying across open water on warm evenings.</p>
+    <p>It is also, ecologically speaking, a species that punches well above its weight. The Growling Grass Frog is considered an indicator species, meaning its presence, and its breeding success, reflect the broader health of the wetland system around it. When this frog thrives, it tells you that water quality is good, vegetation is functioning, and the hydrological cycles that underpin wetland life are working as they should. When it disappears, something significant has shifted.</p>
+    <span class="ed-kicker">The place</span>
+    <h2>Why Winton Wetlands</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/10-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Open water at Winton Wetlands in north-east Victoria." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The place</span>
-      <h3>Why Winton Wetlands</h3>
-      <p>Located between Benalla and Glenrowan in north-east Victoria, Winton Wetlands has a story worth knowing. The site was once a water storage reservoir, decommissioned and left degraded for years. Over time, sustained investment and genuine commitment to ecological restoration has transformed it into a functioning natural swamp and wetland, receiving environmental water flows and supporting ongoing woodland recovery across the surrounding landscape.</p>
-      <p>It is exactly the kind of place where careful, science-led conservation can make a lasting difference. The wetland now supports a purpose-built amphibian breeding and quarantine facility, a dedicated interpretation centre for visitors, and an active restoration program. The groundwork has been laid thoughtfully and well.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/8-1-scaled.jpg" alt="Shallow water and wetland vegetation at the restored site." loading="lazy">
+    <p>Located between Benalla and Glenrowan in north-east Victoria, Winton Wetlands has a story worth knowing. The site was once a water storage reservoir, decommissioned and left degraded for years. Over time, sustained investment and genuine commitment to ecological restoration has transformed it into a functioning natural swamp and wetland, receiving environmental water flows and supporting ongoing woodland recovery across the surrounding landscape.</p>
+    <p>It is exactly the kind of place where careful, science-led conservation can make a lasting difference. The wetland now supports a purpose-built amphibian breeding and quarantine facility, a dedicated interpretation centre for visitors, and an active restoration program. The groundwork has been laid thoughtfully and well.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/8-1-scaled.jpg" sizes="(max-width: 42rem) 100vw, 608px" alt="Shallow water and wetland vegetation at the restored site." loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>Historically, the Growling Grass Frog was present in this region. The goal now is to bring it back.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/1-1-scaled.jpg" alt="The translocation site at Winton Wetlands." loading="lazy">
+    <p>Historically, the Growling Grass Frog was present in this region. The goal now is to bring it back.</p>
+    <span class="ed-kicker">The method</span>
+    <h2>How the translocation works</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/1-1-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="The translocation site at Winton Wetlands." loading="lazy" decoding="async">
       <figcaption>The translocation began in late 2025 with frogs collected near Bendigo.</figcaption>
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The method</span>
-      <h3>How the translocation works</h3>
-      <p>With support from FNPW, delivery partner Swamps, Rivers and Ranges, the Department of Energy, Environment and Climate Action (DEECA), and the Wettenhall Foundation, a carefully managed translocation program got underway in late 2025.</p>
-      <p>A cohort of 35 to 40 adult frogs was collected from an established population near Bendigo in central Victoria. After a 30-day quarantine and health screening at the Winton facility, they were released on site alongside the 25 frogs already living there, creating a founding population of 60 to 65 animals.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/4-2-scaled.jpg" alt="Habitat where the founding population was released." loading="lazy">
+    <p>With support from FNPW, delivery partner Swamps, Rivers and Ranges, the Department of Energy, Environment and Climate Action (DEECA), and the Wettenhall Foundation, a carefully managed translocation program got underway in late 2025.</p>
+    <p>A cohort of 35 to 40 adult frogs was collected from an established population near Bendigo in central Victoria. After a 30-day quarantine and health screening at the Winton facility, they were released on site alongside the 25 frogs already living there, creating a founding population of 60 to 65 animals.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/4-2-scaled.jpg" sizes="(max-width: 42rem) 100vw, 608px" alt="Habitat where the founding population was released." loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>From there, monitoring continues through to March 2026, tracking survival, movement, habitat use and most importantly, whether the frogs are breeding. Breeding success is the real measure. It signals not just that the frogs have survived the move, but that the wetland is genuinely capable of supporting the full life cycle of a sensitive amphibian species. That is a meaningful ecological threshold.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band alt flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/11-scaled.jpg" alt="The wider wetland system at Winton Wetlands." loading="lazy">
-      <figcaption>A restored wetland that can support a Growling Grass Frog population is a wetland that supports a lot of other life too.</figcaption>
+    <p>From there, monitoring continues through to March 2026, tracking survival, movement, habitat use and most importantly, whether the frogs are breeding. Breeding success is the real measure. It signals not just that the frogs have survived the move, but that the wetland is genuinely capable of supporting the full life cycle of a sensitive amphibian species. That is a meaningful ecological threshold.</p>
+    <span class="ed-kicker">Wider benefits</span>
+    <h2>More than one species</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/11-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="The wider wetland system at Winton Wetlands." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Wider benefits</span>
-      <h3>More than one species</h3>
-      <p>A restored wetland that can support a Growling Grass Frog population is a wetland that supports a lot of other life too. Waterbirds, invertebrates, native fish and riparian plants all benefit from the same conditions the frog needs. Investing in the recovery of an indicator species is, in a real sense, investing in the recovery of an entire ecosystem.</p>
-      <p>It is also about building knowledge. Every translocation generates practical data on quarantine protocols, release methods and monitoring approaches that will inform future recovery efforts across north-east Victoria and southern New South Wales, where the species has declined significantly.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/7-1-scaled-e1773958612958.jpg" alt="A Growling Grass Frog at the water&#x27;s edge." loading="lazy">
-      <figcaption>The Growling Grass Frog will not recover overnight.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">The long view</span>
-      <h3>A Future worth protecting</h3>
+    <p>A restored wetland that can support a Growling Grass Frog population is a wetland that supports a lot of other life too. Waterbirds, invertebrates, native fish and riparian plants all benefit from the same conditions the frog needs. Investing in the recovery of an indicator species is, in a real sense, investing in the recovery of an entire ecosystem.</p>
+    <p>It is also about building knowledge. Every translocation generates practical data on quarantine protocols, release methods and monitoring approaches that will inform future recovery efforts across north-east Victoria and southern New South Wales, where the species has declined significantly.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/03/7-1-scaled-e1773958612958.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A Growling Grass Frog at the water&#x27;s edge." loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">The long view</span>
+      <h2>A Future worth protecting</h2>
       <p>The Growling Grass Frog will not recover overnight. But with the right conditions, the right partners, and sustained care for the landscape it depends on, recovery is genuinely possible.</p>
       <p>That is what this project is about. Not just returning a species to a wetland, but demonstrating that large-scale ecological restoration, done well and done with patience, can rebuild the complexity that threatened wildlife needs to survive.</p>
       <p>When that growl echoes across Winton Wetlands again on a warm spring evening, it will mean something.</p>
       <p>FNPW contributed $36,000 to support the translocation and monitoring program at Winton Wetlands, delivered in partnership with Swamps, Rivers and Ranges and DEECA.</p>
-    </div>
-  </div></div>
-</section>
+      </div>
+    </section>
+  </div>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -254,6 +295,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Bringing Back the Growling Grass Frog", "description": "The Growling Grass Frog is listed as Vulnerable and has vanished from much of its former range. At Winton Wetlands in north-east Victoria, a founding population of 60 to 65 frogs is now in place, with monitoring running to March 2026 to see whether they breed.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/03/6-1-1024x538.jpg"], "datePublished": "2026-03", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-bringing-back-the-growling-grass-frog.html"}}</script>
 </body>
 </html>

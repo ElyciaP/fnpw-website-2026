@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,181 +161,104 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/12/6-scaled.jpg" alt="A pygmy bluetongue lizard at the entrance of a spider burrow in native grassland."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Lesser-Known Endangered Animals, and Why They Matter</nav>
-    <span class="ey">Story</span>
-    <h1>Lesser-Known Endangered Animals, and Why They Matter</h1>
-    <p class="pj-hero-meta">December 2025</p>
-    <p class="lede">Some of Australia’s most endangered animals are rarely seen, active at night or hidden within forests, grasslands and wetlands. Their stories aren’t always well known, yet their survival is tightly linked to the health of the landscapes we share.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>For many species, decline doesn’t happen all at once. It unfolds quietly as habitats fragment, food sources disappear and ecosystems lose their balance. Understanding these animals helps reveal how conservation works best when it focuses on whole landscapes, not just individual species, and why protecting habitat matters now more than ever.</p>
-      <p>Here are eight endangered Australian animals whose survival is deeply connected to healthy landscapes, functioning ecosystems and thoughtful conservation.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/12/6-scaled.jpg" sizes="100vw" alt="A pygmy bluetongue lizard at the entrance of a spider burrow in native grassland." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Lesser-Known Endangered Animals, and Why They Matter</h1>
+      <p class="ed-stand">Some of Australia’s most endangered animals are rarely seen, active at night or hidden within forests, grasslands and wetlands. Their stories aren’t always well known, yet their survival is tightly linked to the health of the landscapes we share.</p>
+      <p class="ed-meta">December 2025 &nbsp;&middot;&nbsp; 6 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/1-scaled.jpg" alt="A yellow-bellied glider clinging to the trunk of a mature eucalypt at night." loading="lazy">
-      <figcaption>At night, high in mature eucalypt forests, the yellow-bellied glider launches itself between trees, stretching a velvety membrane from wrist to ankle to glide distances of more than 100 metres.</figcaption>
+  </header>
+  <div class="ed">
+    <p>For many species, decline doesn’t happen all at once. It unfolds quietly as habitats fragment, food sources disappear and ecosystems lose their balance. Understanding these animals helps reveal how conservation works best when it focuses on whole landscapes, not just individual species, and why protecting habitat matters now more than ever.</p>
+    <p>Here are eight endangered Australian animals whose survival is deeply connected to healthy landscapes, functioning ecosystems and thoughtful conservation.</p>
+    <span class="ed-kicker">Old forests</span>
+    <h2>Yellow-bellied Glider</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/1-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A yellow-bellied glider clinging to the trunk of a mature eucalypt at night." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Old forests</span>
-      <h3>Yellow-bellied Glider</h3>
-      <p>At night, high in mature eucalypt forests, the yellow-bellied glider launches itself between trees, stretching a velvety membrane from wrist to ankle to glide distances of more than 100 metres. From a biomechanical perspective, this membrane (called a patagium) allows the glider to control lift, direction and landing with remarkable precision.</p>
-      <p>These gliders live in close-knit family groups, sharing large home ranges and denning together in old hollow-bearing trees. They are also among Australia’s most vocal marsupials, producing loud, haunting calls that can carry up to 500 metres through the forest. Scientists believe these calls help maintain territory boundaries and coordinate family members across large forested areas.</p>
-      <p>Yellow-bellied gliders are part of what ecologists call a sap-feeding guild. They chew distinctive V-shaped notches into tree bark to access sugary sap, a behaviour that also creates feeding sites used by other species. Their dependence on mature forests makes them particularly vulnerable. Logging, land clearing, intense bushfires and the loss of old trees reduce both shelter and food sources, while climate change alters flowering cycles and sap flow.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/2-scaled.jpg" alt="A bright green swift parrot perched among eucalypt blossom." loading="lazy">
-      <figcaption>Bright green and fast-moving, the swift parrot is one of Australia’s most striking birds, and one of its most endangered.</figcaption>
+    <p>At night, high in mature eucalypt forests, the yellow-bellied glider launches itself between trees, stretching a velvety membrane from wrist to ankle to glide distances of more than 100 metres. From a biomechanical perspective, this membrane (called a patagium) allows the glider to control lift, direction and landing with remarkable precision.</p>
+    <p>These gliders live in close-knit family groups, sharing large home ranges and denning together in old hollow-bearing trees. They are also among Australia’s most vocal marsupials, producing loud, haunting calls that can carry up to 500 metres through the forest. Scientists believe these calls help maintain territory boundaries and coordinate family members across large forested areas.</p>
+    <p>Yellow-bellied gliders are part of what ecologists call a sap-feeding guild. They chew distinctive V-shaped notches into tree bark to access sugary sap, a behaviour that also creates feeding sites used by other species. Their dependence on mature forests makes them particularly vulnerable. Logging, land clearing, intense bushfires and the loss of old trees reduce both shelter and food sources, while climate change alters flowering cycles and sap flow.</p>
+    <span class="ed-kicker">Migration</span>
+    <h2>Swift Parrot</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/2-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A bright green swift parrot perched among eucalypt blossom." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Migration</span>
-      <h3>Swift Parrot</h3>
-      <p>Bright green and fast-moving, the swift parrot is one of Australia’s most striking birds, and one of its most endangered. Each year, the entire global population breeds in Tasmania before migrating across Bass Strait to forage along the east coast of mainland Australia.</p>
-      <p>Swift parrots rely on flowering eucalypts for nectar, particularly blue gums and black gums. When these trees fail to flower, or are cleared, breeding success collapses. The loss of hollow-bearing trees also leaves them vulnerable, as they depend on tree hollows for nesting.</p>
-      <p>With fewer than a few thousand birds believed to remain, the species faces mounting threats from habitat loss, logging, climate-driven changes to flowering cycles, and predation in nesting areas. Protecting and restoring critical woodland habitat across their migratory range is essential to preventing extinction.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/3-scaled.jpg" alt="A Northern Hopping-mouse on sandy ground, with long hind feet and large ears." loading="lazy">
-      <figcaption>Once found across northern Australia, the Northern Hopping-mouse is now restricted almost entirely to Groote Eylandt.</figcaption>
+    <p>Bright green and fast-moving, the swift parrot is one of Australia’s most striking birds, and one of its most endangered. Each year, the entire global population breeds in Tasmania before migrating across Bass Strait to forage along the east coast of mainland Australia.</p>
+    <p>Swift parrots rely on flowering eucalypts for nectar, particularly blue gums and black gums. When these trees fail to flower, or are cleared, breeding success collapses. The loss of hollow-bearing trees also leaves them vulnerable, as they depend on tree hollows for nesting.</p>
+    <p>With fewer than a few thousand birds believed to remain, the species faces mounting threats from habitat loss, logging, climate-driven changes to flowering cycles, and predation in nesting areas. Protecting and restoring critical woodland habitat across their migratory range is essential to preventing extinction.</p>
+    <span class="ed-kicker">Island refuge</span>
+    <h2>Northern Hopping-mouse</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/3-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A Northern Hopping-mouse on sandy ground, with long hind feet and large ears." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Island refuge</span>
-      <h3>Northern Hopping-mouse</h3>
-      <p>Once found across northern Australia, the Northern Hopping-mouse is now restricted almost entirely to Groote Eylandt. With oversized hind legs, large eyes and a tufted tail, it is adapted for rapid, energy-efficient movement across sandy soils.</p>
-      <p>Hopping is not just a quirky trait. From a physiological standpoint, it allows the mouse to travel long distances while conserving energy and reducing contact with hot ground surfaces. This is critical in arid and tropical environments where heat stress can be lethal.</p>
-      <p>Despite these adaptations, the species has faced relentless pressure from intense fires, habitat disturbance and feral cats. Its disappearance from the mainland in the 1970s highlights how quickly specialised mammals can decline when fire regimes and predator balances are disrupted.</p>
-      <p>Current conservation efforts focus on fire management, predator control and partnerships with Traditional Owners and local ranger groups, combining cultural knowledge with ecological science.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/4-scaled.jpg" alt="A small wingless matchstick grasshopper resting on a grass stem." loading="lazy">
-      <figcaption>Thought to be extinct in Victoria and not seen since the 1960s, endangered Key’s Matchstick Grasshopper was rediscovered in 2018.</figcaption>
+    <p>Once found across northern Australia, the Northern Hopping-mouse is now restricted almost entirely to Groote Eylandt. With oversized hind legs, large eyes and a tufted tail, it is adapted for rapid, energy-efficient movement across sandy soils.</p>
+    <p>Hopping is not just a quirky trait. From a physiological standpoint, it allows the mouse to travel long distances while conserving energy and reducing contact with hot ground surfaces. This is critical in arid and tropical environments where heat stress can be lethal.</p>
+    <p>Despite these adaptations, the species has faced relentless pressure from intense fires, habitat disturbance and feral cats. Its disappearance from the mainland in the 1970s highlights how quickly specialised mammals can decline when fire regimes and predator balances are disrupted.</p>
+    <p>Current conservation efforts focus on fire management, predator control and partnerships with Traditional Owners and local ranger groups, combining cultural knowledge with ecological science.</p>
+    <span class="ed-kicker">Rediscovery</span>
+    <h2>Key’s Matchstick Grasshopper</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/4-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A small wingless matchstick grasshopper resting on a grass stem." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Rediscovery</span>
-      <h3>Key’s Matchstick Grasshopper</h3>
-      <p>Thought to be extinct in Victoria and not seen since the 1960s, endangered Key’s Matchstick Grasshopper was rediscovered in 2018.</p>
-      <p>Small, wingless and easily overlooked, they are a reminder that not all endangered species are large or charismatic. Evolution has shaped this insect for life close to the ground, with limited movement and a strong dependence on specific native grasslands.</p>
-      <p>Because they cannot fly, populations become genetically isolated when habitat is fragmented. This reduces genetic diversity and resilience, making recovery far more difficult. Since European settlement, more than 96 percent of their range has been lost due to land clearing and overgrazing.</p>
-      <p>Unlike many insects, these grasshoppers do not die off in winter. This makes them an important food source for birds and reptiles during colder months, when other insects are scarce. Their decline sends ripple effects through the food web.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/5-scaled.jpg" alt="A growling grass frog half submerged among reeds in still water." loading="lazy">
-      <figcaption>Named for its deep, growling call, this large frog was once common across south-eastern Australia.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">Wetlands</span>
-      <h3>Growling Grass Frog</h3>
+    <p>Thought to be extinct in Victoria and not seen since the 1960s, endangered Key’s Matchstick Grasshopper was rediscovered in 2018.</p>
+    <p>Small, wingless and easily overlooked, they are a reminder that not all endangered species are large or charismatic. Evolution has shaped this insect for life close to the ground, with limited movement and a strong dependence on specific native grasslands.</p>
+    <p>Because they cannot fly, populations become genetically isolated when habitat is fragmented. This reduces genetic diversity and resilience, making recovery far more difficult. Since European settlement, more than 96 percent of their range has been lost due to land clearing and overgrazing.</p>
+    <p>Unlike many insects, these grasshoppers do not die off in winter. This makes them an important food source for birds and reptiles during colder months, when other insects are scarce. Their decline sends ripple effects through the food web.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2025/12/5-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A growling grass frog half submerged among reeds in still water." loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">Wetlands</span>
+      <h2>Growling Grass Frog</h2>
       <p>Named for its deep, growling call, this large frog was once common across south-eastern Australia. Amphibians like the growling grass frog are considered ecological indicators, meaning their presence (or absence) reflects the health of wetlands.</p>
       <p>Growling grass frogs depend on still or slow-moving water with abundant vegetation. Their tadpoles can take up to 15 months to develop, an unusually long period that requires wetlands to persist through multiple seasons.</p>
       <p>Habitat loss, altered water flows, disease and introduced predators have driven sharp declines. Because frogs breathe partly through their skin, they are particularly sensitive to changes in water quality, making wetland protection and restoration critical.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band alt flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/6-scaled.jpg" alt="A pygmy bluetongue lizard looking out from a spider burrow in native grassland." loading="lazy">
-      <figcaption>The pygmy bluetongue is one of Australia’s smallest lizards and one of its rarest.</figcaption>
+      </div>
+    </section>
+    <span class="ed-kicker">Grasslands</span>
+    <h2>Pygmy Bluetongue Lizard</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/6-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A pygmy bluetongue lizard looking out from a spider burrow in native grassland." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Grasslands</span>
-      <h3>Pygmy Bluetongue Lizard</h3>
-      <p>The pygmy bluetongue is one of Australia’s smallest lizards and one of its rarest. Measuring just 15 centimetres long, it spends most of its life inside abandoned spider burrows, emerging only to ambush passing insects.</p>
-      <p>This species is a textbook example of ecological interdependence. It relies on native grasslands, healthy invertebrate populations and the presence of burrowing spiders. If any one of these elements disappears, the lizard disappears with it.</p>
-      <p>Once thought extinct, the pygmy bluetongue was rediscovered in the 1990s. Today, habitat fragmentation remains its greatest threat, reinforcing how even subtle changes to grassland ecosystems can have permanent consequences.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/7-scaled.jpg" alt="A Southern Emu-wren perched low in dense heath, its long filamentous tail raised." loading="lazy">
-      <figcaption>Weighing about as much as a teaspoon of sugar, the Southern Emu-wren is a master of concealment.</figcaption>
+    <p>The pygmy bluetongue is one of Australia’s smallest lizards and one of its rarest. Measuring just 15 centimetres long, it spends most of its life inside abandoned spider burrows, emerging only to ambush passing insects.</p>
+    <p>This species is a textbook example of ecological interdependence. It relies on native grasslands, healthy invertebrate populations and the presence of burrowing spiders. If any one of these elements disappears, the lizard disappears with it.</p>
+    <p>Once thought extinct, the pygmy bluetongue was rediscovered in the 1990s. Today, habitat fragmentation remains its greatest threat, reinforcing how even subtle changes to grassland ecosystems can have permanent consequences.</p>
+    <span class="ed-kicker">Concealment</span>
+    <h2>Southern Emu-wren</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/7-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A Southern Emu-wren perched low in dense heath, its long filamentous tail raised." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Concealment</span>
-      <h3>Southern Emu-wren</h3>
-      <p>Weighing about as much as a teaspoon of sugar, the Southern Emu-wren is a master of concealment. Its extraordinary tail, longer than its body and made up of fine filament-like feathers, helps with balance as it moves through dense vegetation.</p>
-      <p>These birds are weak fliers and spend most of their time running mouse-like through shrubs. This behaviour reduces energy expenditure but comes at a cost: they struggle to cross open or degraded areas.</p>
-      <p>Several subspecies are now listed as endangered or critically endangered, largely due to habitat fragmentation and fire. Their diet of insects also makes them vulnerable to pesticide use, which can quietly remove a critical food source.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/8-scaled.jpg" alt="A woylie foraging in leaf litter at night, digging with its front feet." loading="lazy">
-      <figcaption>The woylie is often described by ecologists as an ecosystem engineer.</figcaption>
+    <p>Weighing about as much as a teaspoon of sugar, the Southern Emu-wren is a master of concealment. Its extraordinary tail, longer than its body and made up of fine filament-like feathers, helps with balance as it moves through dense vegetation.</p>
+    <p>These birds are weak fliers and spend most of their time running mouse-like through shrubs. This behaviour reduces energy expenditure but comes at a cost: they struggle to cross open or degraded areas.</p>
+    <p>Several subspecies are now listed as endangered or critically endangered, largely due to habitat fragmentation and fire. Their diet of insects also makes them vulnerable to pesticide use, which can quietly remove a critical food source.</p>
+    <span class="ed-kicker">Soil engineer</span>
+    <h2>Woylie (Brush-tailed Bettong)</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/8-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A woylie foraging in leaf litter at night, digging with its front feet." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Soil engineer</span>
-      <h3>Woylie (Brush-tailed Bettong)</h3>
-      <p>The woylie is often described by ecologists as an ecosystem engineer. As it digs for underground fungi, tubers and roots, it turns over tonnes of soil each year, increasing water infiltration and spreading fungal spores essential for plant growth.</p>
-      <p>Despite weighing just over a kilogram, a single woylie can move up to six tonnes of soil annually. This soil turnover improves seed germination and helps forests recover after fire.</p>
-      <p>Once occupying more than half of mainland Australia, woylies are now restricted to small, intensively managed populations. Where foxes and cats are controlled, they recover rapidly, demonstrating how targeted, science-led conservation can restore ecological processes.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Why it matters</span>
-      <h3>The Quiet Backbone of Healthy Ecosystems</h3>
-      <p>Not all endangered animals are large, charismatic or well known. Many are quiet, hidden or active only at night. Yet each plays a role in keeping ecosystems functioning, from pollination and seed dispersal to soil health and food web stability.</p>
-      <p>Protecting endangered wildlife means protecting habitats, supporting long-term restoration and recognising that even the smallest species can have an outsized impact on the health of our landscapes.</p>
-    </div>
+    <p>The woylie is often described by ecologists as an ecosystem engineer. As it digs for underground fungi, tubers and roots, it turns over tonnes of soil each year, increasing water infiltration and spreading fungal spores essential for plant growth.</p>
+    <p>Despite weighing just over a kilogram, a single woylie can move up to six tonnes of soil annually. This soil turnover improves seed germination and helps forests recover after fire.</p>
+    <p>Once occupying more than half of mainland Australia, woylies are now restricted to small, intensively managed populations. Where foxes and cats are controlled, they recover rapidly, demonstrating how targeted, science-led conservation can restore ecological processes.</p>
+    <span class="ed-kicker">Why it matters</span>
+    <h2>The Quiet Backbone of Healthy Ecosystems</h2>
+    <p>Not all endangered animals are large, charismatic or well known. Many are quiet, hidden or active only at night. Yet each plays a role in keeping ecosystems functioning, from pollination and seed dispersal to soil health and food web stability.</p>
+    <p>Protecting endangered wildlife means protecting habitats, supporting long-term restoration and recognising that even the smallest species can have an outsized impact on the health of our landscapes.</p>
+    <span class="ed-kicker">How you can help</span>
+    <h2>How You Can Help This Christmas</h2>
+    <p>Across Australia, many of the species listed here are declining for the same reason: the loss and fragmentation of habitat. Old trees disappear, grasslands shrink, wetlands dry out and forests become harder to move through. When habitat breaks down, wildlife follows.</p>
+    <p>Through Gift a Tree, you can help change that.</p>
+    <p>Your gift supports on-ground restoration in high-priority regions, where threatened species are under the greatest pressure and where conservation action can make the biggest difference. By planting native trees and restoring landscapes, we’re rebuilding the food sources, shelter and movement pathways that endangered animals like gliders, parrots, frogs and small mammals rely on to survive.</p>
+    <p>This Christmas, a Gift a Tree is more than a gesture. It’s a practical way to support endangered wildlife, strengthen ecosystems and help protect Australia’s most vulnerable species where help is needed most.</p>
   </div>
-</section>
+</article>
 
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">How you can help</span>
-      <h3>How You Can Help This Christmas</h3>
-      <p>Across Australia, many of the species listed here are declining for the same reason: the loss and fragmentation of habitat. Old trees disappear, grasslands shrink, wetlands dry out and forests become harder to move through. When habitat breaks down, wildlife follows.</p>
-      <p>Through Gift a Tree, you can help change that.</p>
-      <p>Your gift supports on-ground restoration in high-priority regions, where threatened species are under the greatest pressure and where conservation action can make the biggest difference. By planting native trees and restoring landscapes, we’re rebuilding the food sources, shelter and movement pathways that endangered animals like gliders, parrots, frogs and small mammals rely on to survive.</p>
-      <p>This Christmas, a Gift a Tree is more than a gesture. It’s a practical way to support endangered wildlife, strengthen ecosystems and help protect Australia’s most vulnerable species where help is needed most.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -299,6 +325,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Lesser-Known Endangered Animals, and Why They Matter", "description": "Eight endangered Australian animals that rarely make the headlines, from the yellow-bellied glider to the woylie, and what each one does to keep its landscape working.", "image": ["https://fnpw.org.au/wp-content/uploads/2025/12/6-scaled.jpg"], "datePublished": "2025-12", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-lesser-known-endangered-animals.html"}}</script>
 </body>
 </html>

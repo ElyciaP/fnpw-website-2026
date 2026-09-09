@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,139 +161,76 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/06/3-1920x1080.jpg" alt="Endangered orange daisies flowering in restored ground at Hindmarsh Valley National Park"></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Years of restoration, written in layers</nav>
-    <span class="ey">Story</span>
-    <h1>Years of restoration, written in layers</h1>
-    <p class="pj-hero-meta">June 2026 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Hindmarsh Valley, South Australia</p>
-    <p class="lede">A morning in Hindmarsh Valley National Park, where a cleared paddock is becoming a forest again.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>A few years ago, this hillside off Hindmarsh Falls Road was nothing but pasture. Now it has layers: bushes, shrubs and trees taller than a person at the top of the hill, and new seedlings pushing through at knee height behind them. This is a 60 hectare section of Hindmarsh Valley National Park that was only recently brought into the park, and restoration here has been underway for a few years already. With the support of our partners at One Tree Planted, those layers are what years of steady, dedicated work look like on the ground.</p>
-      <p>We came down to the Fleurieu Peninsula in late May to walk the site with Anthony Abley, the regional ecologist leading this work for National Parks and Wildlife. What he showed us was a work in progress, done paddock by paddock as time and funding allow. You can never do it all at once, he told us, so you do it piece by piece and keep on top of it. But the pieces are starting to join up, and the species are starting to answer.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/06/3-1920x1080.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/06/3-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/06/3-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/06/3-1536x806.jpg 1536w" sizes="100vw" alt="Endangered orange daisies flowering in restored ground at Hindmarsh Valley National Park" fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Years of restoration, written in layers</h1>
+      <p class="ed-stand">A morning in Hindmarsh Valley National Park, where a cleared paddock is becoming a forest again.</p>
+      <p class="ed-meta">June 2026 &nbsp;&middot;&nbsp; Hindmarsh Valley, South Australia &nbsp;&middot;&nbsp; 6 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/1-1920x1080.jpg" alt="A restored hillside at Hindmarsh Valley with plantings of several different ages" loading="lazy">
+  </header>
+  <div class="ed">
+    <p>A few years ago, this hillside off Hindmarsh Falls Road was nothing but pasture. Now it has layers: bushes, shrubs and trees taller than a person at the top of the hill, and new seedlings pushing through at knee height behind them. This is a 60 hectare section of Hindmarsh Valley National Park that was only recently brought into the park, and restoration here has been underway for a few years already. With the support of our partners at One Tree Planted, those layers are what years of steady, dedicated work look like on the ground.</p>
+    <p>We came down to the Fleurieu Peninsula in late May to walk the site with Anthony Abley, the regional ecologist leading this work for National Parks and Wildlife. What he showed us was a work in progress, done paddock by paddock as time and funding allow. You can never do it all at once, he told us, so you do it piece by piece and keep on top of it. But the pieces are starting to join up, and the species are starting to answer.</p>
+    <span class="ed-kicker">The place</span>
+    <h2>A valley found nowhere else</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/1-1920x1080.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/06/1-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/06/1-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/06/1-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="A restored hillside at Hindmarsh Valley with plantings of several different ages" width="1920" height="1080" loading="lazy" decoding="async">
       <figcaption>Layers of planting from different seasons, which is where the title comes from.</figcaption>
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The place</span>
-      <h3>A valley found nowhere else</h3>
-      <p>To understand why this corner of South Australia matters so much, you have to go back millions of years. Hindmarsh Valley, along with the neighbouring Inman and Back Valleys, was shaped by ancient glacial activity. Those old valleys created natural breaks and boundaries that, over an enormous span of time, produced something unusual: a dense pocket of endemic species, plants and animals that live here and nowhere else on earth.</p>
-      <p>That uniqueness is what makes the work urgent. When a species exists in only one valley, fragmentation is not an inconvenience, but an existential threat. For years, many of these species had been written off, hanging on along roadsides and in scattered remnants. The arrival of this park changed the maths. With 500 hectares now available to restore across the broader Hindmarsh Valley landscape, there is a genuine chance these species can have a future rather than a slow managed decline.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/2-1920x1080.jpg" alt="Low, wet ground at the restoration site where swamp patches are being re-established" loading="lazy">
+    <p>To understand why this corner of South Australia matters so much, you have to go back millions of years. Hindmarsh Valley, along with the neighbouring Inman and Back Valleys, was shaped by ancient glacial activity. Those old valleys created natural breaks and boundaries that, over an enormous span of time, produced something unusual: a dense pocket of endemic species, plants and animals that live here and nowhere else on earth.</p>
+    <p>That uniqueness is what makes the work urgent. When a species exists in only one valley, fragmentation is not an inconvenience, but an existential threat. For years, many of these species had been written off, hanging on along roadsides and in scattered remnants. The arrival of this park changed the maths. With 500 hectares now available to restore across the broader Hindmarsh Valley landscape, there is a genuine chance these species can have a future rather than a slow managed decline.</p>
+    <span class="ed-kicker">The approach</span>
+    <h2>From pasture to a wet and dry mosaic</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/2-1920x1080.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/06/2-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/06/2-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/06/2-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Low, wet ground at the restoration site where swamp patches are being re-established" width="1920" height="1080" loading="lazy" decoding="async">
       <figcaption>The wet ground is not a problem to be drained. It is the habitat.</figcaption>
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The approach</span>
-      <h3>From pasture to a wet and dry mosaic</h3>
-      <p>The restoration here is not simply about putting trees in the ground. It is about rebuilding a whole ecosystem, including the parts you cannot see. The nationally endangered Fleurieu Swamps and their associated woodland are the heart of this site, and recreating them means recreating the way water moves through the land.</p>
-      <p>Walk the paddock at the end of winter and you would struggle to cross it without gumboots. It turns to bog. Rather than drain that away, the plan embraces it. The site has been mapped into a patchwork: forest along the watercourses, and discrete swamp patches set into the low, wet ground, each planted with a community of species suited to its conditions. The result, over time, is a gradient of habitat rather than a uniform block of trees, and that structural variety is what wildlife needs.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>It is already drawing life back. The native swamp rat, an animal with an unfairly grim name, is one of the gentlest creatures you could hope to meet. Nothing like the introduced black rat, it looks more like a small guinea pig and will often put its paws up on your leg for a sniff before wandering off. Bush rats are turning up too. These small native mammals are a quiet proxy for recovery: when they return, it tells us the food web underneath them is starting to function again.</p>
-      <h4>The hidden network underground</h4>
-      <p>Some of the most important players here never see daylight. Beneath the soil runs a vast web of fungi, with best estimates suggesting ten times as many fungal species underground as plant species above. Plants and fungi depend on each other, and many native animals feed on the fungi and spread them as they go. When we talk about restoring nutrients to degraded land, this is much of what we mean. You cannot rebuild a forest by planting the canopy alone.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg" alt="Connected bushland running between planting sites at Hindmarsh Valley" loading="lazy">
-      <figcaption>Connected landscapes around our planting sites.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">Why it matters</span>
-      <h3>Why corridors change everything</h3>
+    <p>The restoration here is not simply about putting trees in the ground. It is about rebuilding a whole ecosystem, including the parts you cannot see. The nationally endangered Fleurieu Swamps and their associated woodland are the heart of this site, and recreating them means recreating the way water moves through the land.</p>
+    <p>Walk the paddock at the end of winter and you would struggle to cross it without gumboots. It turns to bog. Rather than drain that away, the plan embraces it. The site has been mapped into a patchwork: forest along the watercourses, and discrete swamp patches set into the low, wet ground, each planted with a community of species suited to its conditions. The result, over time, is a gradient of habitat rather than a uniform block of trees, and that structural variety is what wildlife needs.</p>
+    <p>It is already drawing life back. The native swamp rat, an animal with an unfairly grim name, is one of the gentlest creatures you could hope to meet. Nothing like the introduced black rat, it looks more like a small guinea pig and will often put its paws up on your leg for a sniff before wandering off. Bush rats are turning up too. These small native mammals are a quiet proxy for recovery: when they return, it tells us the food web underneath them is starting to function again.</p>
+    <h3>The hidden network underground</h3>
+    <p>Some of the most important players here never see daylight. Beneath the soil runs a vast web of fungi, with best estimates suggesting ten times as many fungal species underground as plant species above. Plants and fungi depend on each other, and many native animals feed on the fungi and spread them as they go. When we talk about restoring nutrients to degraded land, this is much of what we mean. You cannot rebuild a forest by planting the canopy alone.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/06/6-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/06/6-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/06/6-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Connected bushland running between planting sites at Hindmarsh Valley" width="1920" height="1080" loading="lazy" decoding="async">
+        <figcaption>Connected landscapes around our planting sites.</figcaption>
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">Why it matters</span>
+      <h2>Why corridors change everything</h2>
       <p>The single most important idea on this site is connection. A patch of habitat on its own, no matter how healthy, can only hold so much. Genetic viability for most species needs something in the order of 500 interconnected individuals, breeding and moving freely across enough habitat to sustain themselves. In a fragmented landscape, that is almost impossible to achieve.</p>
       <p>Rosenberg's goanna makes the point vividly. It needs roughly 100 hectares per animal, which means this park on its own might support only a handful. The only way to build a viable population is to connect this land to neighbouring parks and willing farmers, stitching the fragments into something whole. By doubling a 200 hectare remnant toward a 500 hectare contiguous patch, we give every species more room, more genetic exchange and more resilience.</p>
       <p>Connected, multi-storied habitat does something else too. It gives animals a way to move when conditions turn dangerous. Plantings that include ground shrubs, a mid-storey and a canopy create escape routes through the landscape, koalas using the trees and smaller mammals using the cover below. It is the difference between a population that can survive a disturbance and one that gets wiped out with nowhere to run.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-qband">
-  <div class="cw"><figure class="pj-q rv">
-    <blockquote>It is no longer hanging on. It is spreading.</blockquote>
-    <figcaption>On the endangered orange daisy, once confined to roadsides, now coming up across the restored block</figcaption>
-  </figure></div>
-</section>
-
-<section class="pj-band alt">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/5-1920x1080.jpg" alt="Regenerating understorey at the Hindmarsh Valley restoration site" loading="lazy">
+      <blockquote class="ed-pull">It is no longer hanging on. It is spreading.
+        <cite>On the endangered orange daisy, once confined to roadsides, now coming up across the restored block</cite></blockquote>
+      </div>
+    </section>
+    <span class="ed-kicker">Fire</span>
+    <h2>Living with fire</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/5-1920x1080.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/06/5-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/06/5-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/06/5-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Regenerating understorey at the Hindmarsh Valley restoration site" width="1920" height="1080" loading="lazy" decoding="async">
       <figcaption>Understorey regenerating after a prescribed burn, which is the habitat bandicoots prefer.</figcaption>
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Fire</span>
-      <h3>Living with fire</h3>
-      <p>It would be easy to assume the great threat to all this new growth is fire. The reality is more interesting. Many of these species have evolved with fire over millions of years and actually depend on it. Some plants, including Banksia, need the heat of a burn to release their seed. The danger is not fire itself but fire in a broken landscape, where a single blaze can erase an isolated population with no neighbouring habitat left to recolonise from.</p>
-      <p>The southern brown bandicoot shows how recovery is supposed to work. When most of the Scott Creek and Mount Bold remnant network burned several years ago, with seventy to eighty per cent lost, the bandicoots vanished from the burnt ground. Within three years they had recolonised most of the burn scar, and within five they were back to pre-fire numbers. Done well, and increasingly in partnership with First Nations fire knowledge, fire becomes a tool for creating habitat rather than destroying it.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">What comes next</span>
-      <h4>A future worth planting for</h4>
-      <p>There is a lot of good news threaded through this landscape. The glossy black-cockatoo, doing well on nearby Kangaroo Island, is visiting the mainland more and more often, and the answer to keeping it here is gloriously simple: plant a great deal of she-oak for it to feed on. The local bandicoot is the subject of genetic studies likely to confirm it as a species in its own right, distinct from its eastern cousins, with a new name drawn from Aboriginal language, Marti, and the scientific name <em>Isoodon nauticus</em>. Recognising it as its own species means we can protect it properly, and even guide where animals are reintroduced to rebuild the strongest possible populations.</p>
-      <p>That endangered orange daisy we found flowering through the paddock tells the whole story in miniature. Once locked into the roadsides, it now has a new home in ground that was recently just pasture, coming up everywhere across the restored block. It is no longer hanging on. It is spreading.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/4-1920x1080.jpg" alt="An endangered orange daisy in flower in restored ground" loading="lazy">
+    <p>It would be easy to assume the great threat to all this new growth is fire. The reality is more interesting. Many of these species have evolved with fire over millions of years and actually depend on it. Some plants, including Banksia, need the heat of a burn to release their seed. The danger is not fire itself but fire in a broken landscape, where a single blaze can erase an isolated population with no neighbouring habitat left to recolonise from.</p>
+    <p>The southern brown bandicoot shows how recovery is supposed to work. When most of the Scott Creek and Mount Bold remnant network burned several years ago, with seventy to eighty per cent lost, the bandicoots vanished from the burnt ground. Within three years they had recolonised most of the burn scar, and within five they were back to pre-fire numbers. Done well, and increasingly in partnership with First Nations fire knowledge, fire becomes a tool for creating habitat rather than destroying it.</p>
+    <span class="ed-kicker">What comes next</span>
+    <h2>A future worth planting for</h2>
+    <p>There is a lot of good news threaded through this landscape. The glossy black-cockatoo, doing well on nearby Kangaroo Island, is visiting the mainland more and more often, and the answer to keeping it here is gloriously simple: plant a great deal of she-oak for it to feed on. The local bandicoot is the subject of genetic studies likely to confirm it as a species in its own right, distinct from its eastern cousins, with a new name drawn from Aboriginal language, Marti, and the scientific name <em>Isoodon nauticus</em>. Recognising it as its own species means we can protect it properly, and even guide where animals are reintroduced to rebuild the strongest possible populations.</p>
+    <p>That endangered orange daisy we found flowering through the paddock tells the whole story in miniature. Once locked into the roadsides, it now has a new home in ground that was recently just pasture, coming up everywhere across the restored block. It is no longer hanging on. It is spreading.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/06/4-1920x1080.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/06/4-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/06/4-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="An endangered orange daisy in flower in restored ground" width="1920" height="1080" loading="lazy" decoding="async">
       <figcaption>The daisy, coming up in ground that was pasture a few years ago.</figcaption>
     </figure>
+    <p>Stand on that hillside and look across to the cleared land opposite, and it is not hard to picture what it could become: a forested hill instead of bare ground, a new home for species that have spent decades surviving on the margins. Thanks to the support of partners like One Tree Planted and the people who fund this work, that picture is getting closer paddock by paddock. We intervene where the land needs a hand, and then we let nature do what it has always known how to do. What comes back is more than trees. It is a whole living system, finding its feet again.</p>
+    <p class="ed-credit">With thanks to Anthony Abley and National Parks and Wildlife South Australia, and to One Tree Planted, whose support funds the plantings described here.</p>
   </div>
-</section>
+</article>
 
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>Stand on that hillside and look across to the cleared land opposite, and it is not hard to picture what it could become: a forested hill instead of bare ground, a new home for species that have spent decades surviving on the margins. Thanks to the support of partners like One Tree Planted and the people who fund this work, that picture is getting closer paddock by paddock. We intervene where the land needs a hand, and then we let nature do what it has always known how to do. What comes back is more than trees. It is a whole living system, finding its feet again.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body"><p class="pj-src">With thanks to Anthony Abley and National Parks and Wildlife South Australia, and to One Tree Planted, whose support funds the plantings described here.</p></div>
-  </div>
-</section>
-
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -257,6 +297,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Years of restoration, written in layers", "description": "A morning in Hindmarsh Valley National Park, South Australia, where a cleared paddock is becoming a forest again, and why connection matters more than tree counts.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/06/3-1920x1080.jpg"], "datePublished": "2026-06", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-years-of-restoration-written-in-layers.html"}}</script>
 </body>
 </html>

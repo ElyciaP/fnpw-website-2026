@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,212 +161,154 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/12/10-1024x576.jpg" alt="A strip of native vegetation linking two patches of bushland across open country."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>The Importance of Wildlife Corridors This Summer</nav>
-    <span class="ey">Story</span>
-    <h1>The Importance of Wildlife Corridors This Summer</h1>
-    <p class="pj-hero-meta">December 2025</p>
-    <p class="lede">How connected habitat keeps native animals safer, healthier, and more resilient during Australia’s hottest months</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>Summer in Australia follows a familiar script: climbing temperatures, long dry spells, restless heatwaves, and a rising bushfire threat. For our native wildlife, these conditions can be brutal. When habitat is broken into isolated pockets, animals lose the freedom to move, hide, cool down, and recover.</p>
-      <p>Wildlife corridors change that. A connected landscape is not just good ecology. It is life support. Corridors help animals escape danger, find food and water, and bounce back after fire or extreme weather. And as summers get hotter, the value of these living pathways rises fast.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/12/10-1024x576.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2025/12/10-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2025/12/10-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2025/12/10-1536x806.jpg 1536w" sizes="100vw" alt="A strip of native vegetation linking two patches of bushland across open country." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>The Importance of Wildlife Corridors This Summer</h1>
+      <p class="ed-stand">How connected habitat keeps native animals safer, healthier, and more resilient during Australia’s hottest months</p>
+      <p class="ed-meta">December 2025 &nbsp;&middot;&nbsp; 5 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/11-scaled.jpg" alt="A vegetated wildlife corridor running through Tasmanian bushland after fire." loading="lazy">
-      <figcaption>During heatwaves, animals move instinctively toward shade, water, and cooler pockets in the landscape.</figcaption>
+  </header>
+  <div class="ed">
+    <p>Summer in Australia follows a familiar script: climbing temperatures, long dry spells, restless heatwaves, and a rising bushfire threat. For our native wildlife, these conditions can be brutal. When habitat is broken into isolated pockets, animals lose the freedom to move, hide, cool down, and recover.</p>
+    <p>Wildlife corridors change that. A connected landscape is not just good ecology. It is life support. Corridors help animals escape danger, find food and water, and bounce back after fire or extreme weather. And as summers get hotter, the value of these living pathways rises fast.</p>
+    <span class="ed-kicker">Summer pressure</span>
+    <h2>Why Wildlife Corridors matter more in Summer</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/11-scaled.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A vegetated wildlife corridor running through Tasmanian bushland after fire." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Summer pressure</span>
-      <h3>Why Wildlife Corridors matter more in Summer</h3>
-      <h4>Corridors give wildlife options when conditions turn extreme</h4>
-      <p>During heatwaves, animals move instinctively toward shade, water, and cooler pockets in the landscape. In heavily cleared or urbanised areas, those options often vanish.</p>
-      <p>Continuous habitat, even at a small scale, opens safe pathways that let:</p>
-      <ul class="pj-ul">
-        <li>Birds move between feeding and watering sites</li>
-        <li>Lizards and small mammals slip into shaded understorey</li>
-        <li>Pollinators track flowering resources</li>
-        <li>Nocturnal species cross open areas without overheating</li>
-      </ul>
-      <p>Without these routes, animals can become trapped in baking habitat. Heat stress, dehydration, and reduced survival quickly follow.</p>
-      <h4>Corridors improve survival during bushfires</h4>
-      <p>Research from CSIRO and the Bushfire and Natural Hazards CRC shows that wildlife corridors:</p>
-      <ul class="pj-ul">
-        <li>Offer escape routes during fire</li>
-        <li>Shelter animals in cooler, damp refuges</li>
-        <li>Help species return and rebuild after the flames pass</li>
-      </ul>
-      <p>Fragmented habitat leaves wildlife cornered with no safe exits. Connected habitat lets animals move around fire fronts and return once conditions settle. Even small plantings along streets or back fences add up, improving the odds of survival when fire strikes.</p>
-      <h4>Corridors keep food and water within reach</h4>
-      <p>Summer squeezes Australia’s natural food supply. Nectar dries up, insects retreat, seeds drop early, and freshwater shrinks.</p>
-      <p>Corridors create a chain of microhabitats where wildlife can move between:</p>
-      <ul class="pj-ul">
-        <li>Flowering shrubs</li>
-        <li>Shaded understorey</li>
-        <li>Water sources</li>
-        <li>Hollow-bearing trees</li>
-      </ul>
-      <p>This mobility is often the difference between making it through the season or not.</p>
-      <h4>Landscape elements that contribute to wildlife corridors</h4>
-      <p>The diagram below from the Department of Climate Change, Energy, the Environment and Water shows some important landscape elements contributing to wildlife corridors.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/diagram1-scaled.jpg" alt="Government diagram showing landscape elements that make up a wildlife corridor, including remnant patches, scattered trees, creek lines and roadside vegetation." loading="lazy">
+    <h3>Corridors give wildlife options when conditions turn extreme</h3>
+    <p>During heatwaves, animals move instinctively toward shade, water, and cooler pockets in the landscape. In heavily cleared or urbanised areas, those options often vanish.</p>
+    <p>Continuous habitat, even at a small scale, opens safe pathways that let:</p>
+    <ul>
+      <li>Birds move between feeding and watering sites</li>
+      <li>Lizards and small mammals slip into shaded understorey</li>
+      <li>Pollinators track flowering resources</li>
+      <li>Nocturnal species cross open areas without overheating</li>
+    </ul>
+    <p>Without these routes, animals can become trapped in baking habitat. Heat stress, dehydration, and reduced survival quickly follow.</p>
+    <h3>Corridors improve survival during bushfires</h3>
+    <p>Research from CSIRO and the Bushfire and Natural Hazards CRC shows that wildlife corridors:</p>
+    <ul>
+      <li>Offer escape routes during fire</li>
+      <li>Shelter animals in cooler, damp refuges</li>
+      <li>Help species return and rebuild after the flames pass</li>
+    </ul>
+    <p>Fragmented habitat leaves wildlife cornered with no safe exits. Connected habitat lets animals move around fire fronts and return once conditions settle. Even small plantings along streets or back fences add up, improving the odds of survival when fire strikes.</p>
+    <h3>Corridors keep food and water within reach</h3>
+    <p>Summer squeezes Australia’s natural food supply. Nectar dries up, insects retreat, seeds drop early, and freshwater shrinks.</p>
+    <p>Corridors create a chain of microhabitats where wildlife can move between:</p>
+    <ul>
+      <li>Flowering shrubs</li>
+      <li>Shaded understorey</li>
+      <li>Water sources</li>
+      <li>Hollow-bearing trees</li>
+    </ul>
+    <p>This mobility is often the difference between making it through the season or not.</p>
+    <h3>Landscape elements that contribute to wildlife corridors</h3>
+    <p>The diagram below from the Department of Climate Change, Energy, the Environment and Water shows some important landscape elements contributing to wildlife corridors.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/diagram1-scaled.jpg" sizes="(max-width: 42rem) 100vw, 608px" alt="Government diagram showing landscape elements that make up a wildlife corridor, including remnant patches, scattered trees, creek lines and roadside vegetation." loading="lazy" decoding="async">
       <figcaption>Diagram: Department of Climate Change, Energy, the Environment and Water.</figcaption>
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Start at home</span>
-      <h3>Wildlife Corridors Begin at Home</h3>
-      <p>Large reserves matter, but most biodiversity loss happens on private land. That means every backyard, balcony, courtyard, or verge can play a role in stitching fragmented landscapes back together.</p>
-      <p>Small habitat patches connect into bigger ones. And those networks keep wildlife moving.</p>
-      <h4>What you can do in your own yard</h4>
-      <h4>Shrubs and woody bushes</h4>
-      <ul class="pj-ul">
-        <li>Create shade and shelter</li>
-        <li>Support small birds, skinks, insects, pollinators</li>
-        <li>Offer privacy and noise buffering</li>
-      </ul>
-      <h4>Trees, both living and dead</h4>
-      <ul class="pj-ul">
-        <li>Living trees give food, cover, and nesting space</li>
-        <li>Safe standing dead trees provide hollows for birds and marsupials</li>
-        <li>Fallen logs feed fungi and boost soil nutrients</li>
-      </ul>
-      <h4>Leaf piles and compost</h4>
-      <p>Skip the green bin. Instead:</p>
-      <ul class="pj-ul">
-        <li>Keep contained compost piles away from fire-prone edges</li>
-        <li>Encourage the insects and moisture that form microhabitats</li>
-        <li>Add veg scraps and eggshells to build soil health</li>
-        <li>Healthy soil leads to stronger plants and better habitat</li>
-      </ul>
-      <h4>Wildflowers and native groundcovers</h4>
-      <ul class="pj-ul">
-        <li>Low maintenance</li>
-        <li>Nectar for pollinators</li>
-        <li>A base layer that supports the whole food web</li>
-      </ul>
-      <h4>Choose the right plants</h4>
-      <p>Use tools like the GroNATIVE app, local nurseries, or SEEK / Google Lens to identify local species. Think about the wildlife you love most and plant for them.</p>
-      <h4>Add water features</h4>
-      <ul class="pj-ul">
-        <li>Shallow ponds or dishes</li>
-        <li>Stones or marbles for safe insect landings</li>
-        <li>Slow-moving water to reduce mosquito risk</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/Copy-of-Untitled-Design-scaled.jpg" alt="Cockatoos feeding in a suburban backyard planted with native shrubs." loading="lazy">
+    <span class="ed-kicker">Start at home</span>
+    <h2>Wildlife Corridors Begin at Home</h2>
+    <p>Large reserves matter, but most biodiversity loss happens on private land. That means every backyard, balcony, courtyard, or verge can play a role in stitching fragmented landscapes back together.</p>
+    <p>Small habitat patches connect into bigger ones. And those networks keep wildlife moving.</p>
+    <h3>What you can do in your own yard</h3>
+    <h3>Shrubs and woody bushes</h3>
+    <ul>
+      <li>Create shade and shelter</li>
+      <li>Support small birds, skinks, insects, pollinators</li>
+      <li>Offer privacy and noise buffering</li>
+    </ul>
+    <h3>Trees, both living and dead</h3>
+    <ul>
+      <li>Living trees give food, cover, and nesting space</li>
+      <li>Safe standing dead trees provide hollows for birds and marsupials</li>
+      <li>Fallen logs feed fungi and boost soil nutrients</li>
+    </ul>
+    <h3>Leaf piles and compost</h3>
+    <p>Skip the green bin. Instead:</p>
+    <ul>
+      <li>Keep contained compost piles away from fire-prone edges</li>
+      <li>Encourage the insects and moisture that form microhabitats</li>
+      <li>Add veg scraps and eggshells to build soil health</li>
+      <li>Healthy soil leads to stronger plants and better habitat</li>
+    </ul>
+    <h3>Wildflowers and native groundcovers</h3>
+    <ul>
+      <li>Low maintenance</li>
+      <li>Nectar for pollinators</li>
+      <li>A base layer that supports the whole food web</li>
+    </ul>
+    <h3>Choose the right plants</h3>
+    <p>Use tools like the GroNATIVE app, local nurseries, or SEEK / Google Lens to identify local species. Think about the wildlife you love most and plant for them.</p>
+    <h3>Add water features</h3>
+    <ul>
+      <li>Shallow ponds or dishes</li>
+      <li>Stones or marbles for safe insect landings</li>
+      <li>Slow-moving water to reduce mosquito risk</li>
+    </ul>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/Copy-of-Untitled-Design-scaled.jpg" sizes="(max-width: 42rem) 100vw, 608px" alt="Cockatoos feeding in a suburban backyard planted with native shrubs." loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Without a yard</span>
-      <h3>If You Don’t Have a Yard</h3>
-      <p>You can still help connect the landscape.</p>
-      <h4>On a balcony</h4>
-      <ul class="pj-ul">
-        <li>Native grasses in pots</li>
-        <li>Flowering shrubs in containers</li>
-        <li>Water dishes for birds and insects</li>
-        <li>Window decals to prevent bird strike</li>
-        <li>Bee bricks for solitary native bees</li>
-      </ul>
-      <h4>In the community</h4>
-      <ul class="pj-ul">
-        <li>Join a community garden</li>
-        <li>Advocate for native vegetation in local parks</li>
-        <li>Encourage native plantings in apartment courtyards</li>
-        <li>Support wildlife-friendly verge projects</li>
-      </ul>
-      <p>Each small patch strengthens the bigger network. And that network keeps wildlife breathing, moving, and surviving Australia’s toughest months.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Fire safety</span>
-      <h3>How Wildlife Corridors Support Fire Safety</h3>
-      <p>Well-designed corridors do more than protect wildlife. They help create safer, more resilient landscapes by:</p>
-      <ul class="pj-ul">
-        <li>Slowing wind, which can reduce fire spread</li>
-        <li>Giving animals safer escape routes</li>
-        <li>Breaking the landscape into moist, diverse patches that are harder for fire to sweep through</li>
-        <li>Helping ecosystems recover faster after a burn</li>
-      </ul>
-      <p>At the landscape scale, we are already showing what successful wildlife corridors look like through projects such as the Bandicoot Superhighway in South Australia. Delivered in partnership with the Hills and Fleurieu Landscape Board, the Sturt Upper Reaches Landcare Group, the Nature Conservation Society of South Australia and the Australian Government, this community-led effort is reconnecting fragmented habitat for the endangered Southern Brown Bandicoot by creating a safe movement route through the Mount Lofty Ranges.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/52810632137_3684b4ee32_o-scaled.jpg" alt="A southern brown bandicoot foraging in leaf litter." loading="lazy">
+    <span class="ed-kicker">Without a yard</span>
+    <h2>If You Don’t Have a Yard</h2>
+    <p>You can still help connect the landscape.</p>
+    <h3>On a balcony</h3>
+    <ul>
+      <li>Native grasses in pots</li>
+      <li>Flowering shrubs in containers</li>
+      <li>Water dishes for birds and insects</li>
+      <li>Window decals to prevent bird strike</li>
+      <li>Bee bricks for solitary native bees</li>
+    </ul>
+    <h3>In the community</h3>
+    <ul>
+      <li>Join a community garden</li>
+      <li>Advocate for native vegetation in local parks</li>
+      <li>Encourage native plantings in apartment courtyards</li>
+      <li>Support wildlife-friendly verge projects</li>
+    </ul>
+    <p>Each small patch strengthens the bigger network. And that network keeps wildlife breathing, moving, and surviving Australia’s toughest months.</p>
+    <span class="ed-kicker">Fire safety</span>
+    <h2>How Wildlife Corridors Support Fire Safety</h2>
+    <p>Well-designed corridors do more than protect wildlife. They help create safer, more resilient landscapes by:</p>
+    <ul>
+      <li>Slowing wind, which can reduce fire spread</li>
+      <li>Giving animals safer escape routes</li>
+      <li>Breaking the landscape into moist, diverse patches that are harder for fire to sweep through</li>
+      <li>Helping ecosystems recover faster after a burn</li>
+    </ul>
+    <p>At the landscape scale, we are already showing what successful wildlife corridors look like through projects such as the Bandicoot Superhighway in South Australia. Delivered in partnership with the Hills and Fleurieu Landscape Board, the Sturt Upper Reaches Landcare Group, the Nature Conservation Society of South Australia and the Australian Government, this community-led effort is reconnecting fragmented habitat for the endangered Southern Brown Bandicoot by creating a safe movement route through the Mount Lofty Ranges.</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/52810632137_3684b4ee32_o-scaled.jpg" sizes="(max-width: 42rem) 100vw, 608px" alt="A southern brown bandicoot foraging in leaf litter." loading="lazy" decoding="async">
     </figure>
-  </div>
-</section>
-
-<section class="sec paper">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">On the ground</span>
-      <p>In just two years, the Bandicoot Superhighway delivered conservation outcomes across 216 hectares of priority habitat, restored and planted 34,699 native seedlings, and brought communities together through workshops, planting days and presentations attended by more than 900 people, including 215 hands-on volunteers.</p>
-      <p>The project also strengthened scientific knowledge. More than 110 bandicoot sightings were uploaded to a new citizen-science portal, supported by over 800 camera-trapping days across multiple properties. These records confirm how corridors help bandicoots move, forage and survive in increasingly fragmented landscapes.</p>
-      <p>The benefits reached well beyond ecology. The project invested over $211,000 into local biodiversity work and is projected to generate $1.3 million in economic activity within five years, showing how wildlife corridors support both nature and regional communities.</p>
-      <p>Working with landholders, partner organisations, community groups and government, we are demonstrating how restoring habitat connections reduces extinction risk, strengthens ecosystems and helps native wildlife move safely across the landscape. These connections matter even more during high-risk summer seasons when linked refuge zones can mean survival.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2025/12/Steven_Nowakowski_Reforestation_of_Tooheys_Creek_by_Rainforest_Reserves_2018.jpg" alt="A broad band of regrowing rainforest linking forest remnants in the Atherton Tablelands." loading="lazy">
-      <figcaption>An incredible wildlife corridor north of the Rainforest Rangers working sites in the Atherton Tablelands. Photo credit: Steven Nowakowski</figcaption>
-    </figure>
-    <div>
-      <span class="ey">Connection</span>
-      <h3>A Connected Landscape Is a Resilient Landscape</h3>
+    <p>In just two years, the Bandicoot Superhighway delivered conservation outcomes across 216 hectares of priority habitat, restored and planted 34,699 native seedlings, and brought communities together through workshops, planting days and presentations attended by more than 900 people, including 215 hands-on volunteers.</p>
+    <p>The project also strengthened scientific knowledge. More than 110 bandicoot sightings were uploaded to a new citizen-science portal, supported by over 800 camera-trapping days across multiple properties. These records confirm how corridors help bandicoots move, forage and survive in increasingly fragmented landscapes.</p>
+    <p>The benefits reached well beyond ecology. The project invested over $211,000 into local biodiversity work and is projected to generate $1.3 million in economic activity within five years, showing how wildlife corridors support both nature and regional communities.</p>
+    <p>Working with landholders, partner organisations, community groups and government, we are demonstrating how restoring habitat connections reduces extinction risk, strengthens ecosystems and helps native wildlife move safely across the landscape. These connections matter even more during high-risk summer seasons when linked refuge zones can mean survival.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2025/12/Steven_Nowakowski_Reforestation_of_Tooheys_Creek_by_Rainforest_Reserves_2018.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A broad band of regrowing rainforest linking forest remnants in the Atherton Tablelands." loading="lazy" decoding="async">
+        <figcaption>An incredible wildlife corridor north of the Rainforest Rangers working sites in the Atherton Tablelands. Photo credit: Steven Nowakowski</figcaption>
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">Connection</span>
+      <h2>A Connected Landscape Is a Resilient Landscape</h2>
       <p>Wildlife corridors boost biodiversity, support water and soil health, improve fire resilience, and give native species a real chance in a warming world.</p>
       <p>This summer and every summer ahead, the most powerful action we can take is simple: connect the habitat around us. Stitch together yards, balconies, verges, parks, and bushland. Build pathways. Build refuge.</p>
       <p>Build a landscape where wildlife has room to move and room to survive.</p>
-    </div>
-  </div></div>
-</section>
+      </div>
+    </section>
+  </div>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -330,6 +375,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Importance of Wildlife Corridors This Summer", "description": "Connected habitat is what lets native animals find shade, water and a way out of a fire through Australia's hottest months. What corridors do in summer, and how a yard, a balcony or a verge can add to one.", "image": ["https://fnpw.org.au/wp-content/uploads/2025/12/10-1024x576.jpg"], "datePublished": "2025-12", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-importance-of-wildlife-corridors-australia-summer.html"}}</script>
 </body>
 </html>

@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,136 +161,90 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/03/2.jpg" alt="The Field River valley at Hallett Cove, with open grassy slopes and scattered trees."></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>Caring for Country in Practice with Firesticks</nav>
-    <span class="ey">Story</span>
-    <h1>Caring for Country in Practice with Firesticks</h1>
-    <p class="pj-hero-meta">March 2026 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Field River, Hallett Cove, SA</p>
-    <p class="lede">Indigenous Land Management at Field River</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>At Field River in Hallett Cove, the land tells a long story.</p>
-      <p>The river runs west from the southern Mount Lofty Ranges to the Gulf St Vincent, cutting through steep rocky valleys and open grassy slopes before meeting the sea. Today it sits within suburban Adelaide, bordered by homes, roads and walking tracks. Visitors come for coastal views and open space. But for Kaurna people, this is Kaurna Yarta. It is Country with living cultural memory.</p>
-      <p>On this landscape, the Kaurna (Kauwi-marnirla) Land Management team at Firesticks is working on Country again.</p>
-      <p>This work is practical, on-ground Indigenous land management in action. Cultural Fire, ecological restoration, weed control, seasonal observation and community engagement are all part of daily practice. It is about restoring relationship as much as restoring landscape.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/03/2.jpg" sizes="100vw" alt="The Field River valley at Hallett Cove, with open grassy slopes and scattered trees." fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Caring for Country in Practice with Firesticks</h1>
+      <p class="ed-stand">Indigenous Land Management at Field River</p>
+      <p class="ed-meta">March 2026 &nbsp;&middot;&nbsp; Field River, Hallett Cove, SA &nbsp;&middot;&nbsp; 5 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/1.jpg" alt="Members of the Kaurna Firesticks team working on Country at Field River." loading="lazy">
-      <figcaption>The program at Field River, Igniting Kaurna Cultural Understanding for All, supports the Kaurna Firesticks Team to strengthen their knowledge, skills and reach.</figcaption>
+  </header>
+  <div class="ed">
+    <p>At Field River in Hallett Cove, the land tells a long story.</p>
+    <p>The river runs west from the southern Mount Lofty Ranges to the Gulf St Vincent, cutting through steep rocky valleys and open grassy slopes before meeting the sea. Today it sits within suburban Adelaide, bordered by homes, roads and walking tracks. Visitors come for coastal views and open space. But for Kaurna people, this is Kaurna Yarta. It is Country with living cultural memory.</p>
+    <p>On this landscape, the Kaurna (Kauwi-marnirla) Land Management team at Firesticks is working on Country again.</p>
+    <p>This work is practical, on-ground Indigenous land management in action. Cultural Fire, ecological restoration, weed control, seasonal observation and community engagement are all part of daily practice. It is about restoring relationship as much as restoring landscape.</p>
+    <span class="ed-kicker">The program</span>
+    <h2>Igniting Kaurna Cultural Understanding for All</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/1.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Members of the Kaurna Firesticks team working on Country at Field River." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">The program</span>
-      <h3>Igniting Kaurna Cultural Understanding for All</h3>
-      <p>The program at Field River, Igniting Kaurna Cultural Understanding for All, supports the Kaurna Firesticks Team to strengthen their knowledge, skills and reach. It builds on the broader strategy of Reigniting Kaurna Cultural Practices Through Fire and is delivered in partnership with Firesticks, Green Adelaide, National Parks and Wildlife Service and local councils.</p>
-      <p>The team at FNPW plays a supporting role, helping connect partners, secure resources and ensure that Kaurna leadership remains at the centre of the work.</p>
-      <p>Rayne Simpson, a Kaurna and Narungga man and Regional Coordinator with Firesticks, describes the approach:</p>
-      <p>“On Kaurna Yarta (Country), caring for land and water means recognising the deep cultural knowledge and responsibility that Kaurna Miyurna (People) have carried for thousands of years.</p>
-      <p>I believe that strong land management comes from genuine partnerships with the Kaurna community, where Traditional Owners guide how Yarta is cared for and their voices are central in decision-making.</p>
-      <p>By working together and respecting Kaurna knowledge, culture, and connection to Yarta, we can support healthier landscapes, protect cultural heritage, and build a shared future.”</p>
-      <p>At Field River, you can see that philosophy in action. The Kaurna Firesticks Team are leading land management work, on their own Country.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/2.jpg" alt="Grassy woodland along the Field River valley." loading="lazy">
-      <figcaption>Indigenous land management is often misunderstood as a single practice, most commonly Cultural Burning.</figcaption>
+    <p>The program at Field River, Igniting Kaurna Cultural Understanding for All, supports the Kaurna Firesticks Team to strengthen their knowledge, skills and reach. It builds on the broader strategy of Reigniting Kaurna Cultural Practices Through Fire and is delivered in partnership with Firesticks, Green Adelaide, National Parks and Wildlife Service and local councils.</p>
+    <p>The team at FNPW plays a supporting role, helping connect partners, secure resources and ensure that Kaurna leadership remains at the centre of the work.</p>
+    <p>Rayne Simpson, a Kaurna and Narungga man and Regional Coordinator with Firesticks, describes the approach:</p>
+    <p>“On Kaurna Yarta (Country), caring for land and water means recognising the deep cultural knowledge and responsibility that Kaurna Miyurna (People) have carried for thousands of years.</p>
+    <p>I believe that strong land management comes from genuine partnerships with the Kaurna community, where Traditional Owners guide how Yarta is cared for and their voices are central in decision-making.</p>
+    <p>By working together and respecting Kaurna knowledge, culture, and connection to Yarta, we can support healthier landscapes, protect cultural heritage, and build a shared future.”</p>
+    <p>At Field River, you can see that philosophy in action. The Kaurna Firesticks Team are leading land management work, on their own Country.</p>
+    <span class="ed-kicker">A living system</span>
+    <h2>Indigenous Land Management as a Living System</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/2.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Grassy woodland along the Field River valley." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">A living system</span>
-      <h3>Indigenous Land Management as a Living System</h3>
-      <p>Indigenous land management is often misunderstood as a single practice, most commonly Cultural Burning. In reality, it is a holistic system of care.</p>
-      <p>Land, water, fire, plants, animals and people are interconnected. Cultural Lore guides how and when to act. Deep seasonal observation informs decisions. The aim is not short-term intervention but long-term balance.</p>
-      <p>At Field River, the restoration vision recognises that before colonisation, this landscape was an open grassy woodland system. Grasses and low understorey species were maintained through regular Cultural Fire. These open systems supported biodiversity and allowed for movement, visibility and safety.</p>
-      <p>Following colonisation, agricultural clearing, grazing and later urban development disrupted these processes. When livestock were removed in the 1990s, woody weeds such as olives expanded rapidly. The absence of regular, low-intensity fire changed fuel structure and increased ecological imbalance.</p>
-      <p>Indigenous land management responds to these changes in an integrated way. Managing fuel is not separate from managing biodiversity. Water systems are not separate from plant communities. Cultural heritage is not separate from ecological health.</p>
-      <p>Each decision is made in relationship with Country.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/4-1.jpg" alt="A low cultural burn moving slowly through grass and leaf litter." loading="lazy">
-      <figcaption>Cultural Fire is one tool within this broader system.</figcaption>
+    <p>Indigenous land management is often misunderstood as a single practice, most commonly Cultural Burning. In reality, it is a holistic system of care.</p>
+    <p>Land, water, fire, plants, animals and people are interconnected. Cultural Lore guides how and when to act. Deep seasonal observation informs decisions. The aim is not short-term intervention but long-term balance.</p>
+    <p>At Field River, the restoration vision recognises that before colonisation, this landscape was an open grassy woodland system. Grasses and low understorey species were maintained through regular Cultural Fire. These open systems supported biodiversity and allowed for movement, visibility and safety.</p>
+    <p>Following colonisation, agricultural clearing, grazing and later urban development disrupted these processes. When livestock were removed in the 1990s, woody weeds such as olives expanded rapidly. The absence of regular, low-intensity fire changed fuel structure and increased ecological imbalance.</p>
+    <p>Indigenous land management responds to these changes in an integrated way. Managing fuel is not separate from managing biodiversity. Water systems are not separate from plant communities. Cultural heritage is not separate from ecological health.</p>
+    <p>Each decision is made in relationship with Country.</p>
+    <span class="ed-kicker">Cultural Fire</span>
+    <h2>Cultural Fire Within the Broader Practice</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/4-1.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="A low cultural burn moving slowly through grass and leaf litter." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Cultural Fire</span>
-      <h3>Cultural Fire Within the Broader Practice</h3>
-      <p>Cultural Fire is one tool within this broader system.</p>
-      <p>It differs fundamentally from conventional hazard reduction burning. Cultural Burning is applied at the right time, in the right conditions, informed by seasonal indicators, plant responses and knowledge held by Traditional Owners. It’s not simply about reducing fuel loads. It’s about promoting regeneration, encouraging specific species, and protecting cultural sites.</p>
-      <p>At Field River, Cultural Fire sits alongside targeted woody weed control and ecological restoration works. Together, these actions reduce extreme fuel loads while also supporting native grasslands and culturally significant plant communities.</p>
-      <p>Fire is guided by relationship, not solely by prescription.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Urban edge</span>
-      <h3>Why This Matters in an Urban Landscape</h3>
-      <p>Field River sits within metropolitan Adelaide. Suburbs such as Hallett Cove and Sheidow Park surround the valley. Visitor numbers are high, particularly during warmer months. Built assets, walking trails and adjacent residential areas increase the complexity of land management.</p>
-      <p>Historical fire management planning in the southern foothills has identified high fuel levels and the risks associated with urban interface landscapes</p>
-      <p>The Field River Restoration Plan similarly emphasises the importance of restoring ecological processes while protecting life and property.</p>
-      <p>Aboriginal land management offers a proactive pathway to resilience.</p>
-      <p>Rather than responding only when conditions become extreme, cultural practice seeks to prevent imbalance before disaster occurs. By reintroducing regular, controlled fire and addressing weed-driven fuel accumulation, the Kaurna Firesticks Team is reducing risk while strengthening biodiversity.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band alt flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/3-2.jpg" alt="Kaurna land management team members talking together on Country." loading="lazy">
-      <figcaption>Central to this work is governance.</figcaption>
+    <p>Cultural Fire is one tool within this broader system.</p>
+    <p>It differs fundamentally from conventional hazard reduction burning. Cultural Burning is applied at the right time, in the right conditions, informed by seasonal indicators, plant responses and knowledge held by Traditional Owners. It’s not simply about reducing fuel loads. It’s about promoting regeneration, encouraging specific species, and protecting cultural sites.</p>
+    <p>At Field River, Cultural Fire sits alongside targeted woody weed control and ecological restoration works. Together, these actions reduce extreme fuel loads while also supporting native grasslands and culturally significant plant communities.</p>
+    <p>Fire is guided by relationship, not solely by prescription.</p>
+    <span class="ed-kicker">Urban edge</span>
+    <h2>Why This Matters in an Urban Landscape</h2>
+    <p>Field River sits within metropolitan Adelaide. Suburbs such as Hallett Cove and Sheidow Park surround the valley. Visitor numbers are high, particularly during warmer months. Built assets, walking trails and adjacent residential areas increase the complexity of land management.</p>
+    <p>Historical fire management planning in the southern foothills has identified high fuel levels and the risks associated with urban interface landscapes</p>
+    <p>The Field River Restoration Plan similarly emphasises the importance of restoring ecological processes while protecting life and property.</p>
+    <p>Aboriginal land management offers a proactive pathway to resilience.</p>
+    <p>Rather than responding only when conditions become extreme, cultural practice seeks to prevent imbalance before disaster occurs. By reintroducing regular, controlled fire and addressing weed-driven fuel accumulation, the Kaurna Firesticks Team is reducing risk while strengthening biodiversity.</p>
+    <span class="ed-kicker">Cultural authority</span>
+    <h2>Governance and Cultural Authority</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/3-2.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Kaurna land management team members talking together on Country." loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Cultural authority</span>
-      <h3>Governance and Cultural Authority</h3>
-      <p>Central to this work is governance.</p>
-      <p>Cultural authority remains with the Kaurna Nation. Knowledge sovereignty is respected. Decisions are guided by Kaurna leadership, supported by Firesticks’ Indigenous governance structures and advisory mechanisms.</p>
-      <p>Partnerships with Green Adelaide, National Parks and Wildlife Service and other agencies are collaborative, but Kaurna leadership is not diluted within these arrangements. Practice informs policy, not the other way around.</p>
-      <p>Government agencies are engaged in conversations about how regulatory frameworks can better reflect on-ground Aboriginal land management. This includes acknowledging that traditional fire practice operates within a legal environment that has historically limited Indigenous access to Country.</p>
-      <p>Transparency and trust are foundational. This is long-term work that recognises that restoring both landscape and governance takes time.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/03/5-1.jpg" alt="Recovering grassy woodland at Field River, with the suburbs beyond the valley." loading="lazy">
-      <figcaption>At Field River, the impacts are already visible.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">What it builds</span>
-      <h3>What This Builds</h3>
+    <p>Central to this work is governance.</p>
+    <p>Cultural authority remains with the Kaurna Nation. Knowledge sovereignty is respected. Decisions are guided by Kaurna leadership, supported by Firesticks’ Indigenous governance structures and advisory mechanisms.</p>
+    <p>Partnerships with Green Adelaide, National Parks and Wildlife Service and other agencies are collaborative, but Kaurna leadership is not diluted within these arrangements. Practice informs policy, not the other way around.</p>
+    <p>Government agencies are engaged in conversations about how regulatory frameworks can better reflect on-ground Aboriginal land management. This includes acknowledging that traditional fire practice operates within a legal environment that has historically limited Indigenous access to Country.</p>
+    <p>Transparency and trust are foundational. This is long-term work that recognises that restoring both landscape and governance takes time.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/03/5-1.jpg" sizes="(max-width: 58rem) 100vw, 840px" alt="Recovering grassy woodland at Field River, with the suburbs beyond the valley." loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">What it builds</span>
+      <h2>What This Builds</h2>
       <p>At Field River, the impacts are already visible.</p>
       <p>Fuel loads are being reduced in a way that supports ecological outcomes. Culturally significant areas are being protected. Young Kaurna people are gaining employment, skills and pathways into leadership. The broader community is learning that Aboriginal land management is not historical knowledge, but contemporary practice.</p>
       <p>The Field River Restoration Project recognises that landscape recovery is a multi-decade process. Cultural revival operates on a similar timescale.</p>
       <p>This work builds resilience at multiple levels: ecological, cultural, social and institutional.</p>
       <p>Caring for Country is not an abstract concept at Field River. It is active, practical and grounded in place. It is Kaurna people working on Kaurna Yarta, supported by partners who recognise that meaningful change happens when Traditional Owners lead the care of their own lands.</p>
       <p>In the heart of urban Adelaide, that leadership is reshaping how land management is understood and practiced.</p>
-    </div>
-  </div></div>
-</section>
+      </div>
+    </section>
+  </div>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -254,6 +311,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Caring for Country in Practice with Firesticks", "description": "At Field River in Hallett Cove, the Kaurna Firesticks team is caring for Country with Cultural Fire, weed control and ecological restoration. The Foundation for National Parks & Wildlife supports the work, with Kaurna leadership at its centre.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/03/2.jpg"], "datePublished": "2026-03", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-caring-for-country-with-firesticks.html"}}</script>
 </body>
 </html>

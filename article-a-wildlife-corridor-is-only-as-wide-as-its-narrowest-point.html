@@ -11,6 +11,109 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -58,158 +161,88 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="pj-hero">
-  <figure class="pj-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg" alt="A koala crossing a road at the edge of a growing suburb"></figure>
-  <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="articles.html">Articles</a><span style="opacity:.4">/</span>A wildlife corridor is only as wide as its narrowest point</nav>
-    <span class="ey">Story</span>
-    <h1>A wildlife corridor is only as wide as its narrowest point</h1>
-    <p class="pj-hero-meta">July 2026</p>
-    <p class="lede">Urban sprawl rarely wipes out a wildlife corridor outright. It pinches them: a subdivision here, a road widening there, a reserve that takes decades to fully secure. Australia is good at identifying the corridors that matter. The harder part, the part that decides whether a population holds on, is delivering them at the width, length and permanence that actually works. Four of the country’s fastest growing regions show what that gap looks like on the ground, and what closes it.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <p>At dusk in Sydney’s south-west, a koala comes down out of a grey box and starts moving. She is not lost. She is doing what her mother did, and her mother before her, following a route between habitat patches her population has used for generations. The difference is what now sits across that route: roads, fences, and the steady spread of the city. Her population is one of the most important koala populations in the country, and its future depends on whether those old routes stay open.</p>
-      <p>We count habitat loss in hectares, because hectares are easy to count. Connectivity disappears without anyone tallying it, and connectivity is what keeps a population functioning. It lets young animals find territory. It keeps gene pools mixing. It gives species somewhere to go when fire or heat makes a patch unliveable. Remove it and you do not get a smaller version of the same population. You get islands, each one quietly running down.</p>
-      <p>None of which is an argument against building houses. Sydney, Melbourne, Perth and South East Queensland all need them, and pretending otherwise loses the argument before it starts. The choice in front of us was never koalas or first home buyers. It is whether the corridor written into the plan gets bought and protected before the estate is drawn, and whether we cluster development around contiguous open space or spread it thin across the routes wildlife already uses. Same dwellings. Very different outcome. Four regions show why.</p>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg" sizes="100vw" alt="A koala crossing a road at the edge of a growing suburb" fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>A wildlife corridor is only as wide as its narrowest point</h1>
+      <p class="ed-stand">Urban sprawl rarely wipes out a wildlife corridor outright. It pinches them: a subdivision here, a road widening there, a reserve that takes decades to fully secure. Australia is good at identifying the corridors that matter. The harder part, the part that decides whether a population holds on, is delivering them at the width, length and permanence that actually works. Four of the country’s fastest growing regions show what that gap looks like on the ground, and what closes it.</p>
+      <p class="ed-meta">July 2026 &nbsp;&middot;&nbsp; 8 min read</p>
     </div>
-  </div>
-</section>
-
-<section class="pj-band">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/2-1024x537.jpg" alt="A koala crossing a road at the edge of housing" loading="lazy">
-      <figcaption>South-west Sydney holds something rare: the only koala population in the Sydney Basin still free of chlamydia, the disease that has hollowed out koala numbers across the eastern states.</figcaption>
+  </header>
+  <div class="ed">
+    <p>At dusk in Sydney’s south-west, a koala comes down out of a grey box and starts moving. She is not lost. She is doing what her mother did, and her mother before her, following a route between habitat patches her population has used for generations. The difference is what now sits across that route: roads, fences, and the steady spread of the city. Her population is one of the most important koala populations in the country, and its future depends on whether those old routes stay open.</p>
+    <p>We count habitat loss in hectares, because hectares are easy to count. Connectivity disappears without anyone tallying it, and connectivity is what keeps a population functioning. It lets young animals find territory. It keeps gene pools mixing. It gives species somewhere to go when fire or heat makes a patch unliveable. Remove it and you do not get a smaller version of the same population. You get islands, each one quietly running down.</p>
+    <p>None of which is an argument against building houses. Sydney, Melbourne, Perth and South East Queensland all need them, and pretending otherwise loses the argument before it starts. The choice in front of us was never koalas or first home buyers. It is whether the corridor written into the plan gets bought and protected before the estate is drawn, and whether we cluster development around contiguous open space or spread it thin across the routes wildlife already uses. Same dwellings. Very different outcome. Four regions show why.</p>
+    <span class="ed-kicker">Genetics</span>
+    <h2>One: the last chlamydia-free koala stronghold in the Sydney Basin</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/2-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/2-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/2-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/2-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="A koala crossing a road at the edge of housing" width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Genetics</span>
-      <h3>One: the last chlamydia-free koala stronghold in the Sydney Basin</h3>
-      <p>South-west Sydney holds something rare: the only koala population in the Sydney Basin still free of chlamydia, the disease that has hollowed out koala numbers across the eastern states. Surveys through 2021 and 2023 confirmed the Campbelltown koalas remain free of it. That is a genuine stronghold, and it is worth everything to protect.</p>
-      <p>The catch is that being disease-free is not the same as being safe. Research published in early 2025 by the University of Sydney found these koalas are highly inbred, with low genetic diversity, precisely because roads and cleared land have cut them off from populations further afield. A population that cannot mix cannot refresh its gene pool, and a population with a narrow gene pool is less able to adapt when a new threat, chlamydia included, arrives at its edge.</p>
-      <p>This is the quiet argument for connectivity, and it is more important than any single road crossing. Corridors are how genes move. They let young koalas disperse, find unrelated mates and keep the population resilient. Narrow the connections and you do not just make the koalas harder to see. You make them more fragile in ways that only show up a generation later. For a population like this one, the movement route is not a convenience. It is the difference between a stronghold that endures and one that slowly closes in on itself.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Melbourne</span>
-      <h3>3,750 hectares: the reserve Melbourne is still assembling</h3>
-      <p>In 2010, in exchange for extending Melbourne’s urban growth boundary across the volcanic plains, the Victorian Government committed to a 15,000 hectare Western Grassland Reserve. Fifteen years on, roughly a quarter of that land has been secured. Call it 3,750 hectares of a 15,000 hectare commitment, with the rest still to come.</p>
-      <p>The lag is not a lack of will so much as a hard truth about this kind of conservation: buying land at scale is slow and expensive, and every year the acquisition takes, the land it is meant to protect keeps degrading under weeds and stock. Native temperate grassland is critically endangered, with around one per cent of its original extent remaining. The reserve is meant to hold what is left, along with the growling grass frog, the striped legless lizard, the spiny riceflower and the fat-tailed dunnart. This is exactly the kind of gap philanthropy and community effort exist to help close, alongside government, rather than wait on it.</p>
-      <p>The frogs show why the timing matters. Growling grass frogs survive as metapopulations strung along wetland chains, moving pond to pond across the Werribee, Merri and Darebin systems. Break the chain with a housing estate and the frogs upstream are not inconvenienced. They are alone.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Perth</span>
-      <h3>12 kilometres a day: why Perth’s corridor problem is really a food problem</h3>
-      <p>That is roughly how far a male Carnaby’s black cockatoo will fly in a day to feed his mate while she sits on the nest. A useful reminder that a corridor is not only a path. It is a food supply, spread across a distance an animal can physically cover.</p>
-      <p>Carnaby’s breed in the Wheatbelt and spend most of the year feeding on Perth’s Swan Coastal Plain, in banksia woodland now reduced to around 40 per cent of its original extent and listed as endangered. The plain as a whole retains less than a third of its native vegetation. Every new estate on the northern sandplain removes another feeding stop and stretches the gap between the ones still standing. Volunteer counts have tracked steep declines in the birds using the plain.</p>
-      <p>In Perth, you can lose the corridor without clearing a single one of the remaining patches. You only have to remove enough of the stepping stones between them.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/3-1-1024x537.jpg" alt="The planted wildlife overpass across Compton Road in Brisbane&#x27;s south" loading="lazy">
-      <figcaption>In 2004, Compton Road in Brisbane’s south was widened from two lanes to four.</figcaption>
+    <p>South-west Sydney holds something rare: the only koala population in the Sydney Basin still free of chlamydia, the disease that has hollowed out koala numbers across the eastern states. Surveys through 2021 and 2023 confirmed the Campbelltown koalas remain free of it. That is a genuine stronghold, and it is worth everything to protect.</p>
+    <p>The catch is that being disease-free is not the same as being safe. Research published in early 2025 by the University of Sydney found these koalas are highly inbred, with low genetic diversity, precisely because roads and cleared land have cut them off from populations further afield. A population that cannot mix cannot refresh its gene pool, and a population with a narrow gene pool is less able to adapt when a new threat, chlamydia included, arrives at its edge.</p>
+    <p>This is the quiet argument for connectivity, and it is more important than any single road crossing. Corridors are how genes move. They let young koalas disperse, find unrelated mates and keep the population resilient. Narrow the connections and you do not just make the koalas harder to see. You make them more fragile in ways that only show up a generation later. For a population like this one, the movement route is not a convenience. It is the difference between a stronghold that endures and one that slowly closes in on itself.</p>
+    <span class="ed-kicker">Melbourne</span>
+    <h2>3,750 hectares: the reserve Melbourne is still assembling</h2>
+    <p>In 2010, in exchange for extending Melbourne’s urban growth boundary across the volcanic plains, the Victorian Government committed to a 15,000 hectare Western Grassland Reserve. Fifteen years on, roughly a quarter of that land has been secured. Call it 3,750 hectares of a 15,000 hectare commitment, with the rest still to come.</p>
+    <p>The lag is not a lack of will so much as a hard truth about this kind of conservation: buying land at scale is slow and expensive, and every year the acquisition takes, the land it is meant to protect keeps degrading under weeds and stock. Native temperate grassland is critically endangered, with around one per cent of its original extent remaining. The reserve is meant to hold what is left, along with the growling grass frog, the striped legless lizard, the spiny riceflower and the fat-tailed dunnart. This is exactly the kind of gap philanthropy and community effort exist to help close, alongside government, rather than wait on it.</p>
+    <p>The frogs show why the timing matters. Growling grass frogs survive as metapopulations strung along wetland chains, moving pond to pond across the Werribee, Merri and Darebin systems. Break the chain with a housing estate and the frogs upstream are not inconvenienced. They are alone.</p>
+    <span class="ed-kicker">Perth</span>
+    <h2>12 kilometres a day: why Perth’s corridor problem is really a food problem</h2>
+    <p>That is roughly how far a male Carnaby’s black cockatoo will fly in a day to feed his mate while she sits on the nest. A useful reminder that a corridor is not only a path. It is a food supply, spread across a distance an animal can physically cover.</p>
+    <p>Carnaby’s breed in the Wheatbelt and spend most of the year feeding on Perth’s Swan Coastal Plain, in banksia woodland now reduced to around 40 per cent of its original extent and listed as endangered. The plain as a whole retains less than a third of its native vegetation. Every new estate on the northern sandplain removes another feeding stop and stretches the gap between the ones still standing. Volunteer counts have tracked steep declines in the birds using the plain.</p>
+    <p>In Perth, you can lose the corridor without clearing a single one of the remaining patches. You only have to remove enough of the stepping stones between them.</p>
+    <span class="ed-kicker">What works</span>
+    <h2>22 years: the crossing that has been working since 2004</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/3-1-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/3-1-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/3-1-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/3-1-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="The planted wildlife overpass across Compton Road in Brisbane&#x27;s south" width="1024" height="537" loading="lazy" decoding="async">
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">What works</span>
-      <h3>22 years: the crossing that has been working since 2004</h3>
-      <p>In 2004, Compton Road in Brisbane’s south was widened from two lanes to four. Rather than simply severing Karawatha Forest from the Kuraby bushlands, the upgrade included a vegetated land bridge over the road, underpasses beneath it, glider poles and a rope canopy bridge.</p>
-      <p>The overpass was planted out with local species, and by 2009 about 95 per cent of those plantings had survived. Monitoring by Griffith University and others has since recorded koalas, gliders, wallabies, echidnas, microbats, frogs and reptiles using it. It works because it was designed as a continuation of the forest rather than as an engineering afterthought, and it has been working for twenty-two years. Compton Road is proof that the science is settled and the outcome is achievable. The opportunity now is to make that standard the norm on every growth front, not the exception.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="pj-story">
-  <div class="cw"><div class="pj-story-g rv">
-    <figure class="pj-story-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/4-1024x537.jpg" alt="Kangaroos grazing on a suburban backyard lawn" loading="lazy">
-      <figcaption>Ask why a koala turns up in a backyard, or a wallaby on a school oval, and the honest answer is almost always that the interior it used to live in has gone, and the edge is what is left.</figcaption>
-    </figure>
-    <div>
-      <span class="ey">Edges</span>
-      <h3>The edge is not a choice</h3>
+    <p>In 2004, Compton Road in Brisbane’s south was widened from two lanes to four. Rather than simply severing Karawatha Forest from the Kuraby bushlands, the upgrade included a vegetated land bridge over the road, underpasses beneath it, glider poles and a rope canopy bridge.</p>
+    <p>The overpass was planted out with local species, and by 2009 about 95 per cent of those plantings had survived. Monitoring by Griffith University and others has since recorded koalas, gliders, wallabies, echidnas, microbats, frogs and reptiles using it. It works because it was designed as a continuation of the forest rather than as an engineering afterthought, and it has been working for twenty-two years. Compton Road is proof that the science is settled and the outcome is achievable. The opportunity now is to make that standard the norm on every growth front, not the exception.</p>
+    <section class="ed-break rv">
+      <figure class="ed-wide rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/07/4-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/4-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/4-1024x537.jpg 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/4-1536x806.jpg 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Kangaroos grazing on a suburban backyard lawn" width="1024" height="537" loading="lazy" decoding="async">
+      </figure>
+      <div class="ed-in">
+      <span class="ed-kicker">Edges</span>
+      <h2>The edge is not a choice</h2>
       <p>Ask why a koala turns up in a backyard, or a wallaby on a school oval, and the honest answer is almost always that the interior it used to live in has gone, and the edge is what is left. Animals are not moving into our suburbs. Our suburbs moved onto their range, and the strip between the last house and the last tree is now the only cover, food and passage available.</p>
       <p>Edges are hostile in ways a map never shows. Light, noise, weeds and traffic all push inward from the boundary, and so do our pets. Roaming pet cats reach densities of forty to seventy per square kilometre in Australian suburbs, killing thousands of native animals per square kilometre each year, and cats whose homes back onto bushland range into that bushland far more than cats living a few streets away.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <figure class="pj-wide">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/5-1024x537.jpg" alt="Native birds feeding in a suburban garden" loading="lazy">
-    </figure>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
+      <figure class="ed-col rv">
+        <img src="https://fnpw.org.au/wp-content/uploads/2026/07/5-1024x537.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/5-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2026/07/5-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="Native birds feeding in a suburban garden" width="1024" height="537" loading="lazy" decoding="async">
+      </figure>
       <p>Australia also has its own edge specialist, and it is a native bird. The noisy miner thrives in remnants with a high ratio of edge to interior, where it aggressively drives out smaller woodland birds. Its behaviour is listed as a key threatening process under national environment law, and the Commonwealth’s own abatement advice is blunt about the fix: avoid increasing the ratio of edge to interior habitat.</p>
       <p>A narrow corridor does precisely that. It is not a thin version of a forest. It is a long piece of edge.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Bad design</span>
-      <h3>The corridor that makes things worse</h3>
-      <p>A corridor can be designed so poorly that it does more harm than good. Drawn too narrowly, squeezed in around everything else on a busy site, it can end up working against the animals it is meant to help. It looks like habitat. It reads as green on the plan. It draws animals in, and then it can deliver them to a four-lane road, a dog fence or a dead end. Ecologists have understood this for decades: a strip that funnels wildlife toward danger concentrates mortality rather than preventing it.</p>
-      <p>The encouraging part is that this is entirely avoidable at the design stage. It is why width and continuity are not bureaucratic detail. They are the difference between a corridor and a funnel.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pj-band alt flip">
-  <div class="cw"><div class="pj-band-g rv">
-    <figure class="pj-band-im">
-      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/australian_habitat_fragmentation_and_corridor_design-1024x934.png" alt="Diagram comparing fragmented habitat patches with a wide, continuous corridor design" loading="lazy">
+      </div>
+    </section>
+    <span class="ed-kicker">Bad design</span>
+    <h2>The corridor that makes things worse</h2>
+    <p>A corridor can be designed so poorly that it does more harm than good. Drawn too narrowly, squeezed in around everything else on a busy site, it can end up working against the animals it is meant to help. It looks like habitat. It reads as green on the plan. It draws animals in, and then it can deliver them to a four-lane road, a dog fence or a dead end. Ecologists have understood this for decades: a strip that funnels wildlife toward danger concentrates mortality rather than preventing it.</p>
+    <p>The encouraging part is that this is entirely avoidable at the design stage. It is why width and continuity are not bureaucratic detail. They are the difference between a corridor and a funnel.</p>
+    <span class="ed-kicker">Design</span>
+    <h2>What separates a corridor from a green line on a plan</h2>
+    <figure class="ed-wide rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2026/07/australian_habitat_fragmentation_and_corridor_design-1024x934.png" srcset="https://fnpw.org.au/wp-content/uploads/2026/07/australian_habitat_fragmentation_and_corridor_design-768x403.png 768w, https://fnpw.org.au/wp-content/uploads/2026/07/australian_habitat_fragmentation_and_corridor_design-1024x537.png 1024w, https://fnpw.org.au/wp-content/uploads/2026/07/australian_habitat_fragmentation_and_corridor_design-1536x806.png 1536w" sizes="(max-width: 58rem) 100vw, 840px" alt="Diagram comparing fragmented habitat patches with a wide, continuous corridor design" width="1024" height="934" loading="lazy" decoding="async">
       <figcaption>Width, continuity, placement, permanence and buffers.</figcaption>
     </figure>
-    <div class="pj-band-bd">
-      <span class="ey">Design</span>
-      <h3>What separates a corridor from a green line on a plan</h3>
-      <p>Width. Narrow strips are all edge, and we have just seen what edge does. Width buys interior.</p>
-      <p>Continuity. A corridor with a break in it is a dead end, and a dead end is worse than nothing. It funnels animals into traffic and backyards.</p>
-      <p>Placement. Ridgelines, creek lines and wetland chains are where animals already move. Build across them and you sever the connection, no matter how much green space the plan contains in total.</p>
-      <p>Permanence. A corridor that can be rezoned is not yet secure. Land bought and reserved outperforms land still to be acquired, every single time. Melbourne’s grasslands show why locking in permanence early, and resourcing the acquisition to match, is worth the effort.</p>
-      <p>Buffers. Undeveloped land around high-value habitat lowers the edge to interior ratio and puts distance between wildlife and the things that kill it. Cluster the houses, keep the open space contiguous, and you get fewer collisions and fewer conflicts than the same number of dwellings spread thin across the same ground. It costs a developer very little, and it is one of the easiest wins to build into a plan from the start.</p>
-      <p>None of this is expensive next to the alternative. Retrofitting connectivity into a built-out suburb costs a fortune and rarely fully works. Protecting the route before the estate is drawn costs a fraction of it.</p>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec">
-  <div class="cw rv">
-    <div class="pj-body">
-      <span class="ey">Where we come in</span>
-      <h3>Where we come in</h3>
-      <p>We have spent more than fifty years doing the patient version of this work, in partnership with governments, landholders and communities: buying the land that links the parks, funding the revegetation that closes the gaps, and backing the people restoring habitat on private property in the places the growth fronts are heading next.</p>
-      <p>The Bandicoot Superhighway in South Australia’s Mount Lofty Ranges is what that looks like on the ground. Delivered with the Hills and Fleurieu Landscape Board, the Sturt Upper Reaches Landcare Group, the Nature Conservation Society of South Australia and the Australian Government, it reconnects fragmented habitat for the endangered southern brown bandicoot. In two years it restored connectivity across 216 hectares of priority habitat, put more than 34,000 native seedlings in the ground, and drew in over 900 people through planting days and workshops. Camera traps and citizen-science sightings have since confirmed the bandicoots are using the route to move, forage and survive. That is a corridor doing exactly what a corridor is for.</p>
-      <p>The science on connectivity is settled. What moves it from the plan to the ground is partnership, and the funding to buy and restore the ground before it is gone.</p>
-      <p>Which brings us back to the koala in south-west Sydney. Her stronghold will hold, or it will slowly close in around her. Either way, her daughters will need room to move and unrelated koalas to find, and the work in front of all of us is making sure the connections are still there for them.</p>
-    </div>
+    <p>Width. Narrow strips are all edge, and we have just seen what edge does. Width buys interior.</p>
+    <p>Continuity. A corridor with a break in it is a dead end, and a dead end is worse than nothing. It funnels animals into traffic and backyards.</p>
+    <p>Placement. Ridgelines, creek lines and wetland chains are where animals already move. Build across them and you sever the connection, no matter how much green space the plan contains in total.</p>
+    <p>Permanence. A corridor that can be rezoned is not yet secure. Land bought and reserved outperforms land still to be acquired, every single time. Melbourne’s grasslands show why locking in permanence early, and resourcing the acquisition to match, is worth the effort.</p>
+    <p>Buffers. Undeveloped land around high-value habitat lowers the edge to interior ratio and puts distance between wildlife and the things that kill it. Cluster the houses, keep the open space contiguous, and you get fewer collisions and fewer conflicts than the same number of dwellings spread thin across the same ground. It costs a developer very little, and it is one of the easiest wins to build into a plan from the start.</p>
+    <p>None of this is expensive next to the alternative. Retrofitting connectivity into a built-out suburb costs a fortune and rarely fully works. Protecting the route before the estate is drawn costs a fraction of it.</p>
+    <span class="ed-kicker">Where we come in</span>
+    <h2>Where we come in</h2>
+    <p>We have spent more than fifty years doing the patient version of this work, in partnership with governments, landholders and communities: buying the land that links the parks, funding the revegetation that closes the gaps, and backing the people restoring habitat on private property in the places the growth fronts are heading next.</p>
+    <p>The Bandicoot Superhighway in South Australia’s Mount Lofty Ranges is what that looks like on the ground. Delivered with the Hills and Fleurieu Landscape Board, the Sturt Upper Reaches Landcare Group, the Nature Conservation Society of South Australia and the Australian Government, it reconnects fragmented habitat for the endangered southern brown bandicoot. In two years it restored connectivity across 216 hectares of priority habitat, put more than 34,000 native seedlings in the ground, and drew in over 900 people through planting days and workshops. Camera traps and citizen-science sightings have since confirmed the bandicoots are using the route to move, forage and survive. That is a corridor doing exactly what a corridor is for.</p>
+    <p>The science on connectivity is settled. What moves it from the plan to the ground is partnership, and the funding to buy and restore the ground before it is gone.</p>
+    <p>Which brings us back to the koala in south-west Sydney. Her stronghold will hold, or it will slowly close in around her. Either way, her daughters will need room to move and unrelated koalas to find, and the work in front of all of us is making sure the connections are still there for them.</p>
   </div>
-</section>
+</article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -276,6 +309,18 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A wildlife corridor is only as wide as its narrowest point", "description": "Urban sprawl rarely wipes out a wildlife corridor outright, it pinches it. Four of Australia's fastest growing regions show what width, continuity and permanence actually decide, from a chlamydia free koala population in south west Sydney to an overpass in Brisbane that has worked since 2004.", "image": ["https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg"], "datePublished": "2026-07", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html"}}</script>
 </body>
 </html>
