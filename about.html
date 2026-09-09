@@ -134,8 +134,10 @@
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .ht{padding-top:3.5rem}
 .rap-art{align-self:start}
-.rap-art img{display:block;width:100%;height:auto;box-shadow:12px 12px 0 var(--bark)}
-.rap-cred{font-size:.82rem;color:var(--stone);margin-top:1.5rem;max-width:36ch}
+.two.rap-row{grid-template-columns:1.35fr 1fr;gap:3.5rem}
+@media(max-width:880px){.two.rap-row{grid-template-columns:1fr;gap:2.5rem}}
+.rap-art img{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;box-shadow:12px 12px 0 var(--bark)}
+.rap-cred{font-size:.82rem;color:var(--stone);margin:1.5rem auto 0;max-width:400px}
 </style>
 </head>
 <body>
@@ -242,7 +244,7 @@
 
 <section class="sec sand" style="padding:6rem 0">
   <div class="cw">
-    <div class="two">
+    <div class="two rap-row">
       <div class="rv">
         <span class="ey">Reconciliation Action Plan</span>
         <h2 style="margin:1rem 0 1.4rem">Our commitment to reconciliation.</h2>
