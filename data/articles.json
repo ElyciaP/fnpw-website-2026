@@ -11,58 +11,245 @@
   "description": "A morning in Hindmarsh Valley National Park, South Australia, where a cleared paddock is becoming a forest again, and why connection matters more than tree counts.",
   "credit": "With thanks to Anthony Abley and National Parks and Wildlife South Australia, and to One Tree Planted, whose support funds the plantings described here.",
   "blocks": [
-   {"type":"lead","paras":[
+   {
+    "type": "lead",
+    "paras": [
      "A few years ago, this hillside off Hindmarsh Falls Road was nothing but pasture. Now it has layers: bushes, shrubs and trees taller than a person at the top of the hill, and new seedlings pushing through at knee height behind them. This is a 60 hectare section of Hindmarsh Valley National Park that was only recently brought into the park, and restoration here has been underway for a few years already. With the support of our partners at One Tree Planted, those layers are what years of steady, dedicated work look like on the ground.",
-     "We came down to the Fleurieu Peninsula in late May to walk the site with Anthony Abley, the regional ecologist leading this work for National Parks and Wildlife. What he showed us was a work in progress, done paddock by paddock as time and funding allow. You can never do it all at once, he told us, so you do it piece by piece and keep on top of it. But the pieces are starting to join up, and the species are starting to answer."]},
-   {"type":"band","eyebrow":"The place","heading":"A valley found nowhere else",
-    "img":"https://fnpw.org.au/wp-content/uploads/2026/06/1-1920x1080.jpg",
-    "alt":"A restored hillside at Hindmarsh Valley with plantings of several different ages",
-    "caption":"Layers of planting from different seasons, which is where the title comes from.",
-    "paras":[
+     "We came down to the Fleurieu Peninsula in late May to walk the site with Anthony Abley, the regional ecologist leading this work for National Parks and Wildlife. What he showed us was a work in progress, done paddock by paddock as time and funding allow. You can never do it all at once, he told us, so you do it piece by piece and keep on top of it. But the pieces are starting to join up, and the species are starting to answer."
+    ]
+   },
+   {
+    "type": "band",
+    "eyebrow": "The place",
+    "heading": "A valley found nowhere else",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/1-1920x1080.jpg",
+    "alt": "A restored hillside at Hindmarsh Valley with plantings of several different ages",
+    "caption": "Layers of planting from different seasons, which is where the title comes from.",
+    "paras": [
      "To understand why this corner of South Australia matters so much, you have to go back millions of years. Hindmarsh Valley, along with the neighbouring Inman and Back Valleys, was shaped by ancient glacial activity. Those old valleys created natural breaks and boundaries that, over an enormous span of time, produced something unusual: a dense pocket of endemic species, plants and animals that live here and nowhere else on earth.",
-     "That uniqueness is what makes the work urgent. When a species exists in only one valley, fragmentation is not an inconvenience, but an existential threat. For years, many of these species had been written off, hanging on along roadsides and in scattered remnants. The arrival of this park changed the maths. With 500 hectares now available to restore across the broader Hindmarsh Valley landscape, there is a genuine chance these species can have a future rather than a slow managed decline."]},
-   {"type":"band","flip":true,"eyebrow":"The approach","heading":"From pasture to a wet and dry mosaic",
-    "img":"https://fnpw.org.au/wp-content/uploads/2026/06/2-1920x1080.jpg",
-    "alt":"Low, wet ground at the restoration site where swamp patches are being re-established",
-    "caption":"The wet ground is not a problem to be drained. It is the habitat.",
-    "paras":[
+     "That uniqueness is what makes the work urgent. When a species exists in only one valley, fragmentation is not an inconvenience, but an existential threat. For years, many of these species had been written off, hanging on along roadsides and in scattered remnants. The arrival of this park changed the maths. With 500 hectares now available to restore across the broader Hindmarsh Valley landscape, there is a genuine chance these species can have a future rather than a slow managed decline."
+    ]
+   },
+   {
+    "type": "band",
+    "flip": true,
+    "eyebrow": "The approach",
+    "heading": "From pasture to a wet and dry mosaic",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/2-1920x1080.jpg",
+    "alt": "Low, wet ground at the restoration site where swamp patches are being re-established",
+    "caption": "The wet ground is not a problem to be drained. It is the habitat.",
+    "paras": [
      "The restoration here is not simply about putting trees in the ground. It is about rebuilding a whole ecosystem, including the parts you cannot see. The nationally endangered Fleurieu Swamps and their associated woodland are the heart of this site, and recreating them means recreating the way water moves through the land.",
-     "Walk the paddock at the end of winter and you would struggle to cross it without gumboots. It turns to bog. Rather than drain that away, the plan embraces it. The site has been mapped into a patchwork: forest along the watercourses, and discrete swamp patches set into the low, wet ground, each planted with a community of species suited to its conditions. The result, over time, is a gradient of habitat rather than a uniform block of trees, and that structural variety is what wildlife needs."]},
-   {"type":"text","heading":"The hidden network underground","heading_after":1,"paras":[
+     "Walk the paddock at the end of winter and you would struggle to cross it without gumboots. It turns to bog. Rather than drain that away, the plan embraces it. The site has been mapped into a patchwork: forest along the watercourses, and discrete swamp patches set into the low, wet ground, each planted with a community of species suited to its conditions. The result, over time, is a gradient of habitat rather than a uniform block of trees, and that structural variety is what wildlife needs."
+    ]
+   },
+   {
+    "type": "text",
+    "heading": "The hidden network underground",
+    "heading_after": 1,
+    "paras": [
      "It is already drawing life back. The native swamp rat, an animal with an unfairly grim name, is one of the gentlest creatures you could hope to meet. Nothing like the introduced black rat, it looks more like a small guinea pig and will often put its paws up on your leg for a sniff before wandering off. Bush rats are turning up too. These small native mammals are a quiet proxy for recovery: when they return, it tells us the food web underneath them is starting to function again.",
-     "Some of the most important players here never see daylight. Beneath the soil runs a vast web of fungi, with best estimates suggesting ten times as many fungal species underground as plant species above. Plants and fungi depend on each other, and many native animals feed on the fungi and spread them as they go. When we talk about restoring nutrients to degraded land, this is much of what we mean. You cannot rebuild a forest by planting the canopy alone."]},
-   {"type":"story","eyebrow":"Why it matters","heading":"Why corridors change everything",
-    "img":"https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg",
-    "alt":"Connected bushland running between planting sites at Hindmarsh Valley",
-    "caption":"Connected landscapes around our planting sites.",
-    "paras":[
+     "Some of the most important players here never see daylight. Beneath the soil runs a vast web of fungi, with best estimates suggesting ten times as many fungal species underground as plant species above. Plants and fungi depend on each other, and many native animals feed on the fungi and spread them as they go. When we talk about restoring nutrients to degraded land, this is much of what we mean. You cannot rebuild a forest by planting the canopy alone."
+    ]
+   },
+   {
+    "type": "story",
+    "eyebrow": "Why it matters",
+    "heading": "Why corridors change everything",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg",
+    "alt": "Connected bushland running between planting sites at Hindmarsh Valley",
+    "caption": "Connected landscapes around our planting sites.",
+    "paras": [
      "The single most important idea on this site is connection. A patch of habitat on its own, no matter how healthy, can only hold so much. Genetic viability for most species needs something in the order of 500 interconnected individuals, breeding and moving freely across enough habitat to sustain themselves. In a fragmented landscape, that is almost impossible to achieve.",
      "Rosenberg's goanna makes the point vividly. It needs roughly 100 hectares per animal, which means this park on its own might support only a handful. The only way to build a viable population is to connect this land to neighbouring parks and willing farmers, stitching the fragments into something whole. By doubling a 200 hectare remnant toward a 500 hectare contiguous patch, we give every species more room, more genetic exchange and more resilience.",
-     "Connected, multi-storied habitat does something else too. It gives animals a way to move when conditions turn dangerous. Plantings that include ground shrubs, a mid-storey and a canopy create escape routes through the landscape, koalas using the trees and smaller mammals using the cover below. It is the difference between a population that can survive a disturbance and one that gets wiped out with nowhere to run."]},
-   {"type":"quote","text":"It is no longer hanging on. It is spreading.","attrib":"On the endangered orange daisy, once confined to roadsides, now coming up across the restored block"},
-   {"type":"band","paper":true,"eyebrow":"Fire","heading":"Living with fire",
-    "img":"https://fnpw.org.au/wp-content/uploads/2026/06/5-1920x1080.jpg",
-    "alt":"Regenerating understorey at the Hindmarsh Valley restoration site",
-    "caption":"Understorey regenerating after a prescribed burn, which is the habitat bandicoots prefer.",
-    "paras":[
+     "Connected, multi-storied habitat does something else too. It gives animals a way to move when conditions turn dangerous. Plantings that include ground shrubs, a mid-storey and a canopy create escape routes through the landscape, koalas using the trees and smaller mammals using the cover below. It is the difference between a population that can survive a disturbance and one that gets wiped out with nowhere to run."
+    ]
+   },
+   {
+    "type": "quote",
+    "text": "It is no longer hanging on. It is spreading.",
+    "attrib": "On the endangered orange daisy, once confined to roadsides, now coming up across the restored block"
+   },
+   {
+    "type": "band",
+    "paper": true,
+    "eyebrow": "Fire",
+    "heading": "Living with fire",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/5-1920x1080.jpg",
+    "alt": "Regenerating understorey at the Hindmarsh Valley restoration site",
+    "caption": "Understorey regenerating after a prescribed burn, which is the habitat bandicoots prefer.",
+    "paras": [
      "It would be easy to assume the great threat to all this new growth is fire. The reality is more interesting. Many of these species have evolved with fire over millions of years and actually depend on it. Some plants, including Banksia, need the heat of a burn to release their seed. The danger is not fire itself but fire in a broken landscape, where a single blaze can erase an isolated population with no neighbouring habitat left to recolonise from.",
-     "The southern brown bandicoot shows how recovery is supposed to work. When most of the Scott Creek and Mount Bold remnant network burned several years ago, with seventy to eighty per cent lost, the bandicoots vanished from the burnt ground. Within three years they had recolonised most of the burn scar, and within five they were back to pre-fire numbers. Done well, and increasingly in partnership with First Nations fire knowledge, fire becomes a tool for creating habitat rather than destroying it."]},
-   {"type":"text","eyebrow":"What comes next","heading":"A future worth planting for","paras":[
+     "The southern brown bandicoot shows how recovery is supposed to work. When most of the Scott Creek and Mount Bold remnant network burned several years ago, with seventy to eighty per cent lost, the bandicoots vanished from the burnt ground. Within three years they had recolonised most of the burn scar, and within five they were back to pre-fire numbers. Done well, and increasingly in partnership with First Nations fire knowledge, fire becomes a tool for creating habitat rather than destroying it."
+    ]
+   },
+   {
+    "type": "text",
+    "eyebrow": "What comes next",
+    "heading": "A future worth planting for",
+    "paras": [
      "There is a lot of good news threaded through this landscape. The glossy black-cockatoo, doing well on nearby Kangaroo Island, is visiting the mainland more and more often, and the answer to keeping it here is gloriously simple: plant a great deal of she-oak for it to feed on. The local bandicoot is the subject of genetic studies likely to confirm it as a species in its own right, distinct from its eastern cousins, with a new name drawn from Aboriginal language, Marti, and the scientific name <em>Isoodon nauticus</em>. Recognising it as its own species means we can protect it properly, and even guide where animals are reintroduced to rebuild the strongest possible populations.",
-     "That endangered orange daisy we found flowering through the paddock tells the whole story in miniature. Once locked into the roadsides, it now has a new home in ground that was recently just pasture, coming up everywhere across the restored block. It is no longer hanging on. It is spreading."]},
-   {"type":"wide","img":"https://fnpw.org.au/wp-content/uploads/2026/06/4-1920x1080.jpg",
-    "alt":"An endangered orange daisy in flower in restored ground",
-    "caption":"The daisy, coming up in ground that was pasture a few years ago."},
-   {"type":"text","paras":[
-     "Stand on that hillside and look across to the cleared land opposite, and it is not hard to picture what it could become: a forested hill instead of bare ground, a new home for species that have spent decades surviving on the margins. Thanks to the support of partners like One Tree Planted and the people who fund this work, that picture is getting closer paddock by paddock. We intervene where the land needs a hand, and then we let nature do what it has always known how to do. What comes back is more than trees. It is a whole living system, finding its feet again."]}
+     "That endangered orange daisy we found flowering through the paddock tells the whole story in miniature. Once locked into the roadsides, it now has a new home in ground that was recently just pasture, coming up everywhere across the restored block. It is no longer hanging on. It is spreading."
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/4-1920x1080.jpg",
+    "alt": "An endangered orange daisy in flower in restored ground",
+    "caption": "The daisy, coming up in ground that was pasture a few years ago."
+   },
+   {
+    "type": "text",
+    "paras": [
+     "Stand on that hillside and look across to the cleared land opposite, and it is not hard to picture what it could become: a forested hill instead of bare ground, a new home for species that have spent decades surviving on the margins. Thanks to the support of partners like One Tree Planted and the people who fund this work, that picture is getting closer paddock by paddock. We intervene where the land needs a hand, and then we let nature do what it has always known how to do. What comes back is more than trees. It is a whole living system, finding its feet again."
+    ]
+   }
   ],
   "related": [
-   {"href":"articles.html","date":"July 2026","title":"A wildlife corridor is only as wide as its narrowest point",
-    "blurb":"Urban sprawl rarely wipes out a corridor outright. It pinches them, and the tightest point decides whether it works at all.",
-    "img":"https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg","cta":"Read the story"},
-   {"href":"healing-the-land.html","date":"Healing the Land","title":"Bringing back the bush",
-    "blurb":"The wider programme this restoration sits inside, from community nurseries to landscape-scale replanting.",
-    "img":"assets/img/pillar-healing-COMP.jpg","cta":"See the pillar"}
+   {
+    "href": "articles.html",
+    "date": "July 2026",
+    "title": "A wildlife corridor is only as wide as its narrowest point",
+    "blurb": "Urban sprawl rarely wipes out a corridor outright. It pinches them, and the tightest point decides whether it works at all.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg",
+    "cta": "Read the story"
+   },
+   {
+    "href": "healing-the-land.html",
+    "date": "Healing the Land",
+    "title": "Bringing back the bush",
+    "blurb": "The wider programme this restoration sits inside, from community nurseries to landscape-scale replanting.",
+    "img": "assets/img/pillar-healing-COMP.jpg",
+    "cta": "See the pillar"
+   }
+  ]
+ },
+ {
+  "slug": "the-science-of-plant-selection",
+  "title": "The science of plant selection, and why the species matters",
+  "eyebrow": "Story",
+  "date": "August 2026",
+  "place": "",
+  "standfirst": "Who are you planting it for?",
+  "hero": "https://fnpw.org.au/wp-content/uploads/2026/08/4-2-1024x538.jpg",
+  "hero_alt": "Native plantings in a restoration site, chosen for the species that depend on them",
+  "description": "Put a Glossy Black-Cockatoo in a healthy forest and it can still starve. Why the species list, the seed source and the genetic spread decide whether a planting becomes habitat.",
+  "credit": "",
+  "blocks": [
+   {
+    "type": "lead",
+    "paras": [
+     "Put a Glossy Black-Cockatoo in a healthy forest and it can still starve.",
+     "Not because the forest is degraded. Because it is the wrong forest.",
+     "Last time we wrote that a bush is a building, and that its structure matters more than its tree count. This is the part where you decide who moves in. Because “we planted a bunch of trees” is a volume statistic. The ecological question is narrower, and much harder. Which trees, and for whom."
+    ]
+   },
+   {
+    "type": "band",
+    "eyebrow": "The problem",
+    "heading": "One bird, two trees, no substitutes",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/1-1-1024x538.jpg",
+    "alt": "A Glossy Black-Cockatoo feeding on drooping sheoak cones",
+    "paras": [
+     "The South Australian Glossy Black-Cockatoo feeds almost exclusively on the seed of the drooping sheoak, Allocasuarina verticillata. Not sheoaks in general. That one. And it does not forage evenly across the trees available to it either. Researchers on Kangaroo Island have spent years working out which cone and tree characteristics decide where these birds will and will not feed.",
+     "Then there is the second requirement, and it has nothing to do with food. Glossies nest in hollows, in large old eucalypts.",
+     "So the bird needs two entirely unrelated species, delivering two entirely different things, on two entirely different timelines. Plant only sheoaks and you have fed a bird that cannot breed. Plant only eucalypts and you have housed a bird that cannot eat. Plant both this decade and the food arrives in years, while the nest sites arrive next century."
+    ],
+    "caption": "The South Australian Glossy Black-Cockatoo feeds almost exclusively on the seed of the drooping sheoak."
+   },
+   {
+    "type": "text",
+    "paras": [
+     "The South Australian population climbed from 158 birds in 1995 to around 453 by 2023, which is a genuine recovery story. Then the Black Summer fires destroyed at least 54 per cent of their feeding habitat and 38.5 per cent of known nests in a single season.",
+     "That is what a species list is really deciding."
+    ]
+   },
+   {
+    "type": "band",
+    "eyebrow": "Timing",
+    "heading": "Timing is a species trait",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/2-2-1024x538.jpg",
+    "alt": "A Regent Honeyeater feeding on flowering eucalypt blossom",
+    "paras": [
+     "Fewer than 400 Regent Honeyeaters remain in the wild. They are critically endangered, they depend on flowering eucalypts, particularly yellow box and mugga ironbark, and they range across more than half a million square kilometres chasing blossom.",
+     "They have to, because eucalypts are unreliable. Flowering is irregular, heavy in some years and absent in others, and it varies between individual trees in the same stand. A nectar feeder cannot settle down. It follows the food or it does not eat.",
+     "Which means a species list is not only what you plant. It is when those plants flower. A revegetation site that blooms gloriously in spring and offers nothing in July is a feast followed by a famine, and the famine is the part that decides whether anything stays."
+    ],
+    "caption": "Fewer than 400 Regent Honeyeaters remain in the wild.",
+    "flip": true
+   },
+   {
+    "type": "band",
+    "eyebrow": "Habitat",
+    "heading": "Sometimes the plant is not the food",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/3-2-1024x538.jpg",
+    "alt": "Wetland vegetation and open basking ground at Winton Wetlands",
+    "paras": [
+     "At Winton Wetlands in Victoria, we funded the translocation of around 60 Growling Grass Frogs to establish a new population, in a targeted recovery plan.",
+     "Frogs do not eat the vegetation. They need it for something else entirely. Growling Grass Frogs require cover in and around the water, and they also need to bask. Raising their body temperature helps them resist chytrid fungus, the disease behind amphibian collapses worldwide. So habitat work for this species means planting for shelter while deliberately leaving open, sunlit places to warm up in, and adding rock.",
+     "Same principle, completely different logic. Here the vegetation is chosen for what it physically does, not for what it feeds."
+    ],
+    "caption": "At Winton Wetlands in Victoria, we funded the translocation of around 60 Growling Grass Frogs."
+   },
+   {
+    "type": "story",
+    "eyebrow": "Genetics",
+    "heading": "A thousand plants can be one plant",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/5-1-1024x538.jpg",
+    "alt": "Seedlings growing on in trays at a community nursery",
+    "paras": [
+     "Collect seed from three convenient trees, grow a thousand seedlings, and you have not planted a thousand plants. You have planted a very small number of plants, a thousand times over. The genetic variation that lets a population survive drought, disease and heat is simply not in the box.",
+     "And it gets worse in exactly the places restoration tends to happen. Small, isolated remnants produce less seed, of poorer quality, with narrower genetic diversity, because the plants that remain are increasingly related to each other. A landmark Australian paper by Broadhurst and colleagues concluded that the emphasis on strictly local seed sourcing will, in many cases, lead to poor restoration outcomes, and argued for concentrating less on how local the seed is and more on how genetically diverse and high quality it is.",
+     "This is why “locally sourced” in our reporting means seed collected across many parent plants, not simply seed collected nearby. It is also why community nurseries and seedbanks are infrastructure rather than sentiment."
+    ],
+    "caption": "Collect seed from three convenient trees and you have planted a very small number of plants, a thousand times over."
+   },
+   {
+    "type": "band",
+    "eyebrow": "The open question",
+    "heading": "Planting for a climate that has not arrived yet",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/4-2-1024x538.jpg",
+    "alt": "Young plantings established in dry, open country",
+    "paras": [
+     "The traditional rule is local provenance. Use seed from as close to the site as possible, because local plants are adapted to local conditions. It is sound logic and it has guided planting for decades.",
+     "But the conditions are moving. So Australian researchers have proposed alternatives, most prominently climate-adjusted provenancing, which mixes local seed with seed collected from populations lying in the direction the climate is travelling, typically hotter and drier. The aim is to give a planting the genetic raw material for the climate it will face in fifty years, not only the one it faces today.",
+     "Both positions carry real risk. Stay strictly local and you may plant something exquisitely adapted to a climate that is on its way out. Move seed too far and you risk outbreeding depression, where mixing distant populations produces less fit offspring.",
+     "There is no settled answer yet, and anyone who tells you there is has stopped reading."
+    ],
+    "caption": "The conditions are moving, and the seed has to move with them.",
+    "flip": true,
+    "paper": true
+   },
+   {
+    "type": "band",
+    "eyebrow": "Where we come in",
+    "heading": "Which is why the nursery matters",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/6-1024x538.jpg",
+    "alt": "Volunteers working among seedling trays at a community nursery",
+    "paras": [
+     "We support community nurseries across four states, with living seedbanks and community groups that tend to them, and we have propagated and planted more than 110,000 fire-resilient natives.",
+     "Not because growing plants locally is charming. Because the species list, the seed source and the genetic spread are the three decisions that determine whether a planting becomes habitat, or just becomes trees."
+    ],
+    "caption": "We support community nurseries across four states, with living seedbanks and the community groups that tend them."
+   }
+  ],
+  "related": [
+   {
+    "href": "article-what-does-healthy-bushland-actually-look-like.html",
+    "date": "August 2026",
+    "title": "What does healthy bushland actually look like?",
+    "blurb": "It looks messier than you think. The science behind bringing back the bush.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg",
+    "cta": "Read the story"
+   },
+   {
+    "href": "healing-the-land.html",
+    "date": "Healing the Land",
+    "title": "Bringing back the bush",
+    "blurb": "The programme behind the nurseries, the seedbanks and the planting.",
+    "img": "assets/img/pillar-healing-COMP.jpg",
+    "cta": "See the pillar"
+   }
   ]
  }
 ]
