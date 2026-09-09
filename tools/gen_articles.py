@@ -161,10 +161,15 @@ def build(a):
     meta = ' &nbsp;&middot;&nbsp; '.join(x for x in
                                         [a.get('date', ''), a.get('place', ''), '%d min read' % read] if x)
 
-    # the site's standard hero: photograph behind the words, text at page width
-    hero = ('  <header class="ed-hero">%s'
-            '    <figure class="ed-hero-im"><img src="%s"%s sizes="100vw" alt="%s" '
-            'fetchpriority="high" decoding="async"></figure>%s'
+    # the site's standard hero: photograph behind the words, text at page width.
+    # A feature image narrower than 1200px cannot carry a full-bleed hero without
+    # visible stretching, so those articles get the flat green header instead.
+    small = 0 < a.get('hero_w', 0) < 1200
+    fig = '' if small else ('    <figure class="ed-hero-im"><img src="%s"%s sizes="100vw" alt="%s" '
+                            'fetchpriority="high" decoding="async"></figure>%s'
+                            % (a['hero'], srcset(a['hero'], 'wide'), html.escape(a['hero_alt']), NL))
+    hero = ('  <header class="ed-hero%s">%s'
+            '%s'
             '    <div class="cw">%s'
             '      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span>'
             '<a href="articles.html">Articles</a></nav>%s'
@@ -172,7 +177,7 @@ def build(a):
             '      <h1>%s</h1>%s'
             '      <p class="ed-stand">%s</p>%s'
             '      <p class="ed-meta">%s</p>%s    </div>%s  </header>'
-            % (NL, a['hero'], srcset(a['hero'], 'wide'), html.escape(a['hero_alt']), NL, NL, NL,
+            % (' ed-hero-flat' if small else '', NL, fig, NL, NL,
                esc(a.get('eyebrow', 'Story')), NL, esc(a['title']), NL,
                esc(a['standfirst']), NL, meta, NL, NL))
 
@@ -265,6 +270,8 @@ CSS = '''
 .ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
 .ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
 .ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero-flat{min-height:auto}
+.ed-hero-flat::after{display:none}
 .ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
 .ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
 .ed-crumb a{color:var(--euc-soft)}

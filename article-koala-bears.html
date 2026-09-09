@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>We once killed 600,000 koalas in a year. Now they’re Australia’s ‘teddy bears’. What changed? | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="Ruby Ekkel, Australian National University">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero-flat{min-height:auto}
+.ed-hero-flat::after{display:none}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="partner.html" class="">Become a Partner</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2023/12/Feature-Images-for-website.png" sizes="100vw" alt="" fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">News</span>
+      <h1>We once killed 600,000 koalas in a year. Now they’re Australia’s ‘teddy bears’. What changed?</h1>
+      <p class="ed-stand">Ruby Ekkel, Australian National University</p>
+      <p class="ed-meta">2024-02-06 &nbsp;&middot;&nbsp; 5 min read</p>
+    </div>
+  </header>
+  <div class="ed">
+    <figure class="ed-wide rv">
+      <img src="https://images.theconversation.com/files/565032/original/file-20231211-89932-1rjncc.jpg?ixlib=rb-1.1.0&rect=44%2C25%2C4220%2C2813&q=45&auto=format&w=754&fit=clip" sizes="(max-width: 58rem) 100vw, 840px" alt="" loading="lazy" decoding="async">
+      <figcaption>Shutterstock</figcaption>
+    </figure>
+    <p>Koalas are one of the world’s most beloved animal species. They serve as symbols for everything from <a href="https://theconversation.com/scientists-find-burnt-starving-koalas-weeks-after-the-bushfires-133519">bushfire destruction</a> to Australian tourism to caramel chocolate bars. These tree-dwelling marsupials get far more attention than many other endangered native species. But Australians haven’t always felt this way about our seemingly cuddly teddy-bear lookalikes. Far from it.</p>
+    <p>Almost a century ago, Queensland announced open season on koalas. Over the next month, well over 600,000 koalas were shot, trapped or poisoned in <a href="https://www.abc.net.au/news/2017-08-30/killing-koalas-90-years-since-qld-month-long-open-season/8839720">what has been dubbed</a> “Black August”.</p>
+    <p>These numbers seem shocking. That figure is about the same as the total number of koalas alive today, using the <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/species/koalas/national-koala-monitoring-program">most generous estimate</a>. Today, the koala is endangered in New South Wales, Queensland and the Australian Capital Territory.</p>
+    <p>Why did it happen? Back then, koalas were far more plentiful in Queensland. And there was an established tradition of killing Australian marsupials for their pelts, which could be sold on the lucrative international fur market. At least a million koala pelts were sold in the previous 1919 open season.</p>
+    <p>As attachment to native wildlife has grown and the koala’s numbers have dwindled, we have come to think very differently about this creature.</p>
+    <figure class="ed-col rv">
+      <img src="https://images.theconversation.com/files/571825/original/file-20240129-17-5qnrow.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" sizes="(max-width: 42rem) 100vw, 608px" alt="truck with koala skins on it" loading="lazy" decoding="async">
+      <figcaption>This truckload of koala pelts was taken during the 1927 open season in Queensland. State Library of Queensland, CC BY-ND</figcaption>
+    </figure>
+    <h2>A political miscalculation</h2>
+    <p>Even in 1927, the koala kill was a gamble. Other koala-inhabited states had stopped licensed koala kills, alarmed by <a href="http://nla.gov.au/nla.news-article244037211">plummeting numbers</a> caused by the fur trade, deforestation, bushfire, and disease. As early as the 1880s, worried locals shipped koalas to French Island near Melbourne as an insurance policy against fire and disease. Today, as historian <a href="https://www.livescience.com/animals/land-mammals/koalas-are-both-endangered-and-so-plentiful-theyre-causing-problems-howd-that-happen">Danielle Clode has written</a>, koalas in South Australia and Victoria are largely descended from these island refugees.</p>
+    <p>So why did Queensland launch its kill? The economy was not doing well, and the Labor government hoped the open season would tackle high unemployment rates, raise revenue and win votes. Warm, waterproof koala fur was prized in Europe and the United States, where it was put to use in coats, gloves and even sleeping bags.</p>
+    <figure class="ed-col rv">
+      <img src="https://images.theconversation.com/files/571828/original/file-20240129-27-f4jyp5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" sizes="(max-width: 42rem) 100vw, 608px" alt="man hunting koalas" loading="lazy" decoding="async">
+      <figcaption>Victorian trapper Cyril Grant Lane hunted koalas for many years. State Library of Victoria, CC BY-ND</figcaption>
+    </figure>
+    <p>But the open season came as a shock to many. Scientists knew koala populations were already plummeting at the beginning of the twentieth century. And among the public, affection was growing for the koala.</p>
+    <p>The backlash was swift –&nbsp;and intense. Brisbane’s Anglican Archbishop Gerald Sharp called for protest, and a remarkable range of organisations responded, from city and shire councils to religious groups, women’s organisations, universities, scientific bodies, returned soldiers and children’s scouts groups.</p>
+    <p>The Brisbane Courier newspaper ran a “<a href="http://nla.gov.au/nla.news-article21862261">Spare the Bear</a>” campaign, publishing hundreds of protests from indignant readers. Angry constituents deluged the acting premier, William Forgan Smith, with letters. Some deplored the cruelty of hunters who left baby koalas attempting to suckle from their dead, skinless mothers. Others focused their anger on the government. One caustic letter writer suggested an “<a href="http://nla.gov.au/nla.news-page1644974">open season for Cabinet Ministers</a>” might be more appropriate.</p>
+    <p>Critics were united in their disgust at the mass killing of such a “lovable, non-destructive and quite unique little native animal” which posed no threat to human interests. Koala trappers had their masculinity questioned – no “true Bushman” would kill a defenceless animal.</p>
+    <p>We should be sceptical about one letter writer’s claim that “99% of Queenslanders” opposed the killings. But opposition was powerful and widespread.</p>
+    <p>The government tried to blame the furious response on out-of-touch city dwellers who did not live in Queensland. In fact, locals dominated the protests. At the time, many rural families kept koalas as <a href="http://nla.gov.au/nla.news-article76859138">beloved pets</a>, which made the thought of killing them even more outrageous.</p>
+    <figure class="ed-col rv">
+      <img src="https://images.theconversation.com/files/571830/original/file-20240129-27-9ackwz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=237&fit=clip" sizes="(max-width: 42rem) 100vw, 608px" alt="cover of magazine, man with rifle and koala skin" loading="lazy" decoding="async">
+      <figcaption>The backlash against the koala cull was fast – and intense. Garnet Agnew, The Queenslander, September 22nd 1927/State Library of Queensland, CC BY-ND</figcaption>
+    </figure>
+    <h2>A question of national identity</h2>
+    <p>When British colonists first came to Australia, many found the native animals freakish and backward. One unimpressed naturalist called koalas “torpid and senseless” and <a href="https://archive.org/details/arcanaormuseumof00perr/page/n109/mode/2up?view=theater">doubted their place</a> in “God’s plan”.</p>
+    <p>But by the early 1900s, koalas, emus and kangaroos were becoming national symbols. They seemed to represent Australia’s new status as a federated nation, and helped settlers feel connected to the land. There was also a growing awareness that native species needed protection from environmental threats.</p>
+    <p>Books such as Norman Lindsay’s <em>Magic Pudding</em> (1918) encouraged readers to care for native animals. In 1925, James Barrett published a book begging for the “right use of our flora and fauna” and stressing their endangered state. He titled it <a href="http://nla.gov.au/nla.news-article245255968">Save Australia</a>.</p>
+    <p>Perhaps because of their <a href="https://theconversation.com/why-do-we-love-koalas-so-much-because-they-look-like-baby-humans-153619">baby-like features</a>, koalas were often depicted by authors and illustrators as good-natured and childlike friends. (In reality, they can be quite grumpy and their screams at night startle many campers). This might explain why fewer people protested to protect possums, the furs of which were also sought during open seasons.</p>
+    <h2>The great U-turn</h2>
+    <p>The 1927 koala open season would be Australia’s last. After the backlash, the koala was finally afforded lasting protection in Queensland. The acting premier promised to restock areas stripped of native animals. Even so, the government lost the election it had been trying to salvage.</p>
+    <p>Hundreds of thousands of koalas were killed before the government reversed course. Newspapers reported an estimated 600,000 koalas died due to the “massacre”, but this doesn’t account for koalas whose skins were not sold to dealers or young koalas killed with their parents or who starved without them. The total is likely close to 800,000.</p>
+    <p>The movement against koala-killing was perhaps the first organised conservationist campaign in Australia. It fostered the creation of wildlife societies, campaigns for national parks and nature studies for school students.</p>
+    <p>You can see the evidence even today. Sydney man Noel Burnett was so appalled by the killing that he opened his own sanctuary, <a href="https://koalapark-sanctuary.com.au/australias-first-koala-hospital/#:%7E:text=Koala%20Park%20was%20created%20in,the%20large%20export%20fur%20trade.">Koala Park</a>, which is still operating.</p>
+    <p>And whenever <a href="https://www.thecourier.com.au/story/8499935/">news breaks</a> about koala deaths in blue gum plantations, we respond with outrage.</p>
+    <h2>New threats, old choices</h2>
+    <p>Today, koalas are safe from hunters. They’re so well known we use them as <a href="https://theconversation.com/koalas-platypuses-and-pandas-and-the-power-of-soft-diplomacy-42051">cuddly diplomats</a>, similar to China’s <a href="https://www.abc.net.au/news/2023-12-09/what-is-china-panda-diplomacy/103185260">panda diplomacy</a>. But they face new threats –&nbsp;increasingly severe bushfires, disease, and habitat destruction.</p>
+    <p>Even as we have grown to love koalas, we have not yet been able to save them. It is now entirely possible these beloved national symbols could be facing a <a href="https://theconversation.com/stopping-koala-extinction-is-agonisingly-simple-but-heres-why-im-not-optimistic-141696">preventable extinction</a>.</p>
+    <p><a href="https://theconversation.com/profiles/ruby-ekkel-1493529">Ruby Ekkel</a>, PhD student in Australian History, <em><a href="https://theconversation.com/institutions/australian-national-university-877">Australian National University</a></em></p>
+    <p>This article is republished from <a href="https://theconversation.com">The Conversation</a> under a Creative Commons license. Read the <a href="https://theconversation.com/we-once-killed-600-000-koalas-in-a-year-now-theyre-australias-teddy-bears-what-changed-219609">original article</a>.</p>
+  </div>
+</article>
+
+<section class="sec paper ed-more">
+  <div class="cw rv">
+    <span class="ey">Keep reading</span>
+    <h2>More from the field.</h2>
+    <div class="pj-readgrid">
+      <a class="pj-rcard" href="article-saving-the-northern-quoll.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2024/09/The-Northern-Quoll-1024x791.png" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2024-09-06</span>
+          <h3>Saving the Northern Quoll</h3>
+          <p>The Northern Quoll is one of Australia’s most unique and fascinating animals. Known for its feisty temperament, this small carnivorous marsupial plays a vital role in maintaining the health of...</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-hindmarsh-island-ecological-restoration.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2024/10/Lawari-conservation-park-1024x768.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2024-10-04</span>
+          <h3>Hindmarsh Island (Kumerangk)</h3>
+          <p>L’OCCITANE partners with the Foundation for National Parks &amp; Wildlife (FNPW) for the 5th year to restore an international biodiversity hotspot in South Australia.</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-2022-impact-report.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2023/05/ImpactReport_22_thumbnail_2-02-1024x683.png" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2023-05-22</span>
+          <h3>2022 Impact Report</h3>
+          <p>DOWNLOAD THE 2022 impact report &nbsp; We are delighted to present the annual Impact Report for 2022, showcasing the remarkable achievements of the Foundation for National Parks &amp; Wildlife in...</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pj-back">
+  <div class="cw rv">
+    <a class="btn-o" href="articles.html">&#8592; All articles</a>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="cw rv" style="text-align:center">
+    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered by donations, bequests and partnerships.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a><a class="btn-o" href="partner.html">Become a partner</a></div>
+  </div>
+</section>
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:hello@fnpw.org.au">hello@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "We once killed 600,000 koalas in a year. Now they’re Australia’s ‘teddy bears’. What changed?", "description": "Ruby Ekkel, Australian National University", "image": ["https://fnpw.org.au/wp-content/uploads/2023/12/Feature-Images-for-website.png"], "datePublished": "2024", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-koala-bears.html"}}</script>
+</body>
+</html>

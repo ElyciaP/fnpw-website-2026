@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Quoll Headquarters Koala Recovery Project | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="The 2019/2020 bushfires had a devastating impact on already dwindling populations of koalas in the Tenterfield district and Quoll Headquarters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero-flat{min-height:auto}
+.ed-hero-flat::after{display:none}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="partner.html" class="">Become a Partner</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2022/12/Image-008.jpeg" sizes="100vw" alt="" fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">Story</span>
+      <h1>Quoll Headquarters Koala Recovery Project</h1>
+      <p class="ed-stand">The 2019/2020 bushfires had a devastating impact on already dwindling populations of koalas in the Tenterfield district and Quoll Headquarters.</p>
+      <p class="ed-meta">2022-12-08 &nbsp;&middot;&nbsp; 2 min read</p>
+    </div>
+  </header>
+  <div class="ed">
+    <p>The 2019/2020 bushfires had a devastating impact on already dwindling populations of koalas in the Tenterfield district and <a href="https://www.quollheadquarters.com.au/">Quoll Headquarters</a>. A 160 Ha exclusion fenced nature reserve has been planned to help koala recovery and reverse the decline with a multi-faceted facility dedicated to the recovery of Koalas. With grant support from the Foundation for National Parks &amp; Wildlife, we have completed a pre-release rehabilitation enclosure for orphaned and injured koalas and also a koala food tree plantation.</p>
+    <p><b>Enclosure to help Koala recovery&nbsp;</b></p>
+    <p>The 8 hectare pre-release enclosure is prime New England koala habitat of tall, old growth eucalypts now surrounded by a predator proof fence. This area will be utilised for the transition of both orphaned joeys and also recovering sick and injured koalas from a wildlife carer environment to a natural but predator proof ecosystem with all the requirements they need for further rehabilitation before release. The enclosure will provide a vital step to getting koalas back into the wild.</p>
+    <p><b>New koala food tree plantation&nbsp;</b></p>
+    <p>Our new koala food tree plantation will also be crucial in the care and rehabilitation of the species. This plantation of endemic koala food trees, chosen by local botanist Sarah Caldwell, will be maintained for maximum leaf production and available for all koalas in care throughout the district.</p>
+    <p>With the help of our dedicated volunteers we have completed the project and we are working with local wildlife carers to give them the facilities they need to get koalas in their care rehabilitated and ready for release back into the wild.</p>
+    <p>This project will make a real positive and lasting impact on koala recovery in the New England district.</p>
+    <p><b>About the Quoll Headquarters</b></p>
+    <p>Quoll Headquarters Mission statement is ‘Protect, preserve and educate, creating a future for Australians threatened species whilst providing an educational facility for the public to understand, appreciate and learn about our unique wildlife’.</p>
+    <p>Thanks to the Foundation for National Parks &amp; Wildlife the New England district now has the facilities to care for and rehabilitate our precious koalas in the event of future catastrophic bushfires.</p>
+    <p><strong>Steve Haslam</strong><br> Founder of Quoll Headquarters</p>
+    <p>&nbsp;</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2022/12/QH-Planting-Prep-300x200.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2022/12/QH-Planting-Prep-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2022/12/QH-Planting-Prep-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="" width="300" height="200" loading="lazy" decoding="async">
+      <figcaption>Quoll Headquarters Koala Tree Planting Preparation</figcaption>
+    </figure>
+    <p>&nbsp;</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2022/12/QH-Koala-Tree-Planting-300x225.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2022/12/QH-Koala-Tree-Planting-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2022/12/QH-Koala-Tree-Planting-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="" width="300" height="225" loading="lazy" decoding="async">
+      <figcaption>Quoll Headquarters Koala Tree Planting</figcaption>
+    </figure>
+    <p>&nbsp;</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2022/12/QH-Site-Area-300x225.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2022/12/QH-Site-Area-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2022/12/QH-Site-Area-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="" width="300" height="225" loading="lazy" decoding="async">
+      <figcaption>Quoll Headquarters Site Area Koala Habitat Map</figcaption>
+    </figure>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>Organisation <!--ap-custom-label--> Quoll Headquarters <!--ap-custom-value--> <!--ap-each-custom--></p>
+  </div>
+</article>
+
+<section class="sec paper ed-more">
+  <div class="cw rv">
+    <span class="ey">Keep reading</span>
+    <h2>More from the field.</h2>
+    <div class="pj-readgrid">
+      <a class="pj-rcard" href="article-rewilding.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2022/10/Jack-Francis-1024x768.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2022-10-18</span>
+          <h3>Rewilding</h3>
+          <p>Through on going assistance from FNPW we have been able to continue the legacy of regenerating our family property now for three generations.</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-planting-parties-key-to-success-on-small-properties.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2022/07/Burra02May2022_BRN.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2022-07-28</span>
+          <h3>Planting parties key to success on small properties</h3>
+          <p>In a family first, on the morning of Sunday 22 of May, Burra landholders Rachel Clarke and Lee Georgeson hosted neighbours, friends and family for their first ever planting party.</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-riverina-highlands-landcare-nursery-upgrade.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2022/09/52195377209_a7851177e4_c.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2022-09-21</span>
+          <h3>Riverina Highlands Landcare nursery upgrade</h3>
+          <p>Riverina Highlands Landcare nursery upgrade plans are becoming more concrete with a start made on new irrigation, shedding, and slabs.</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pj-back">
+  <div class="cw rv">
+    <a class="btn-o" href="articles.html">&#8592; All articles</a>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="cw rv" style="text-align:center">
+    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered by donations, bequests and partnerships.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a><a class="btn-o" href="partner.html">Become a partner</a></div>
+  </div>
+</section>
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:hello@fnpw.org.au">hello@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Quoll Headquarters Koala Recovery Project", "description": "The 2019/2020 bushfires had a devastating impact on already dwindling populations of koalas in the Tenterfield district and Quoll Headquarters.", "image": ["https://fnpw.org.au/wp-content/uploads/2022/12/Image-008.jpeg"], "datePublished": "2022", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-quoll-headquarters-koala-recovery-project.html"}}</script>
+</body>
+</html>

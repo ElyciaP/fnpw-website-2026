@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>ABC Radio Interview: Eco Rangers Program | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="Recently, our very own Projects &amp; Education Manager Kylie Piper was interviewed by Kia Handley on ABC Radio about the Boonigyah Eco Rangers program.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+
+/* ---------------------------------------------------------------------------
+   Editorial article layout.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
+   --------------------------------------------------------------------------- */
+.ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
+
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero-flat{min-height:auto}
+.ed-hero-flat::after{display:none}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.ed-crumb a{color:var(--euc-soft)}
+.ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
+.ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
+
+.ed{
+  --m:38rem;   /* text measure, about 66 characters at 19px */
+  --w:52.5rem; /* wide breakout, 840px */
+  display:grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem,1fr)
+    [wide-start] minmax(0,calc((var(--w) - var(--m)) / 2))
+    [text-start] min(var(--m),100% - 2.5rem) [text-end]
+    minmax(0,calc((var(--w) - var(--m)) / 2)) [wide-end]
+    minmax(1.25rem,1fr) [full-end];
+  font-size:19px;
+  line-height:1.65;
+  color:var(--char);
+  padding:var(--sec-y) 0;
+}
+.ed > *{grid-column:text}
+.ed > .ed-wide{grid-column:wide}
+.ed > .ed-bleed,.ed > .ed-break{grid-column:full}
+
+.ed p{margin:0 0 1em}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
+.ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:1.9rem 0 .45rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
+.ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
+.ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
+
+.ed ul,.ed ol{margin:0 0 1.15em;padding-left:1.25rem}
+.ed li{margin:0 0 .45rem;padding-left:.15rem}
+.ed li:last-child{margin-bottom:0}
+.ed li::marker{color:var(--euc)}
+
+.ed-pull{margin:2.3rem 0;padding:1.2rem 0 0;border-top:2px solid var(--wattle);font-family:var(--ff-d);font-weight:500;font-size:1.3em;line-height:1.38;letter-spacing:-.015em;color:var(--euc-deep)}
+.ed-pull cite{display:block;margin-top:.7rem;font-family:var(--ff-b);font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--stone)}
+.ed-break .ed-pull cite{color:rgba(250,246,242,.6)}
+.ed-credit{font-size:.82rem;color:var(--stone);border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2.6rem}
+
+.ed figure{margin:2.4rem 0}
+.ed figure img{width:100%;height:auto;display:block;background:var(--sand)}
+.ed figcaption{font-size:.78rem;line-height:1.5;color:var(--stone);margin-top:.7rem;max-width:52ch}
+.ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
+
+/* the one chapter break, kept from the project pages because it earns its place */
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
+.ed-break h2{color:var(--cream);margin:0 0 1rem}
+.ed-break h3{color:var(--cream)}
+.ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
+.ed-break p:last-child{margin-bottom:0}
+.ed-break figcaption{color:rgba(250,246,242,.62)}
+.ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
+
+@media(max-width:640px){
+  .ed{font-size:17.5px}
+  .ed figure{margin:1.9rem 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ed-prog{display:none}
+}
+
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="partner.html" class="">Become a Partner</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<article class="ed-art">
+  <header class="ed-hero">
+    <figure class="ed-hero-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/12/PXL_20211022_233747949.PORTRAIT-scaled.jpg" sizes="100vw" alt="" fetchpriority="high" decoding="async"></figure>
+    <div class="cw">
+      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">Articles</a></nav>
+      <span class="ed-kicker ed-kicker-top">News</span>
+      <h1>ABC Radio Interview: Eco Rangers Program</h1>
+      <p class="ed-stand">Recently, our very own Projects &amp; Education Manager Kylie Piper was interviewed by Kia Handley on ABC Radio about the Boonigyah Eco Rangers program. The project was given a Community Conservation grant from us last year and is run by Green Heroes and the Tweed Aboriginal Land Council.</p>
+      <p class="ed-meta">2022-02-14 &nbsp;&middot;&nbsp; 7 min read</p>
+    </div>
+  </header>
+  <div class="ed">
+    <p>Read the full interview transcript below to learn more about this incredible project.</p>
+    <h2>Transcript</h2>
+    <p>KIA: “It’s something that’s inspiring young people, helping the environment, learning about culture, let’s learn about it all together: Kylie Piper is from the Foundation for National Parks &amp; Wildlife, good morning!”</p>
+    <p>KYLIE: “Good morning!”</p>
+    <p>KIA: “You run, or are part of running a great eco ranger program at Fingal Head. Tell me about it, what do you do?”</p>
+    <p>KYLIE: (Laughs) “Well I can’t take credit for it! (Laughs) So the Boonigyah Eco Ranger is a junior Indigenous ranger program that we were so lucky to hear about and support through our Community Conservation Grants last year. It’s just been such a successful program, I’m so excited to talk to you about it.”</p>
+    <p>KIA: “Alright so tell me how it works, where’s it come from? What’s the history of the Eco Ranger program first?”</p>
+    <p>KYLIE: “So, the program is situated up in Letitia Spit, and for those who don’t know that’s around the Tweed Heads area. The local indigenous group up there has been fighting for the conservation of this area for years, since the 70’s, and now the Elders have been really, really keen to get young people involved and learn about the cultural heritage, but also the natural heritage there. Not just on land, but also in the sea. So, a fantastic woman, Sarah Jantos, from an organisation called Green Heroes called me last year and told me all about this project. She’s working really closely with the Tweed/Byron local Aboriginal land council to develop a project so that these young kids can be involved and really get out there and get amongst it. Get their hands dirty, get in the water, learn everything they can about the native species that are up there and really learn from the Elders about the importance of the land, sea, animals and plants, and the importance of protecting them. It’s just fantastic.”</p>
+    <p>KIA: “Yeah, by focusing on the younger generation and I guess bringing together that Elders knowledge and our, you know, our next generation who get to pass that on and try to keep it up, like what’s the benefit of that Kylie?</p>
+    <figure class="ed-col rv">
+      <img src="https://fnpw.org.au/wp-content/uploads/2021/12/PXL_20211022_233747949.PORTRAIT-300x169.jpg" srcset="https://fnpw.org.au/wp-content/uploads/2021/12/PXL_20211022_233747949.PORTRAIT-768x403.jpg 768w, https://fnpw.org.au/wp-content/uploads/2021/12/PXL_20211022_233747949.PORTRAIT-1024x537.jpg 1024w" sizes="(max-width: 42rem) 100vw, 608px" alt="" width="300" height="169" loading="lazy" decoding="async">
+      <figcaption>Booningbah Junior Rangers are now Certified PADI Divers.</figcaption>
+    </figure>
+    <p>KYLIE: “Oh it’s impossible to overstate the importance of the impact when you integrate traditional knowledge into conservation programs. Not only do you get that range of people being involved, but also the long term benefit for conservation and the natural history but also outcome for the kids themselves. So, there were eight participants last year. It was the first year that it was run, eight participants did some amazing stuff. They went out there, they were planting, they were learning, they did some nest boxes so they could protect some of the birds and mammals around there, but they also did a dive course. Which I found just astounding! That these kids are out there learning about stuff in the water so they actually went out and did their Dive course. From there, at least two of the kids are now going on to do their Dive Masters. I call them kids I shouldn’t say- KIA: (Laughs) “I was about to say how old are we talking about here? Have we got five year olds in the water with their like scuba pack on?” KYLIE: (Laughs) “I shouldn’t say that, they are amazing young men and women who are out here doing this. They’ve been in the water, they’ve got their divers license, now there’s a couple of them that are going on to do their diver masters certificate, which if anyone out there is a diver they know how difficult that is, and have already been offered employment to continue marine conservation with some of the local organisations around Tweed Head. There’s a couple of others doing their other certificates so that they can be out on the boat, out there continuing doing stuff in the water. But the really important stuff is that these people are going to be mentors for next year. So, they are continuing their involvement with the program by mentoring the next cohort of people who are coming through, which I think is just fantastic.” KIA:” Yeah so what do the young people say when they’ve been through this program? What sort of feedback are you hearing from them?” KYLIE: “They love it! They absolutely love it. A lot of them that have never been diving before so just getting in the water and one of them said it just opened their eyes to a whole new world, which it does, if you’ve been underwater you just realise it is a completely new world when you get under there. And for them to be able to connect so much with their traditional land, I think, it’s just an amazing program and we’re so happy that it can continue to grow. We funded this through our Community Grants program, we gave them a tiny little bit of money to get going and we’re so happy that they’ve now go the support from their local council and from other funders as well to continue this because it’s been such a success and everyone can see how much these people who are engaged with it, are benefitting from it. And the traditional owners are benefiting from it, it’s just great.” KIA: “Yeah cause basically you get to, you know, create young ambassadors who yes get to mentor and go on and maybe find jobs but they’re also, every time they have a conversation with someone in the community that helps too when they’re like ‘Oh hey no this is actually what I learnt”. That is invaluable. You can’t really measure that Ambassadorship when it comes to conservation.” KYLIE: “Exactly, and part of this program is also making those communications campaigns so they learn how to talk to people about the natural and cultural heritage, they get out there in their community, they teach other people, even without being involved in the program itself. It’s teaching the local community about what’s happening there. They do simple things like marine debris, picking up rubbish, those sorts of stuff, which is so essential in preserving these really precious marine habitats, and once they start talking to local people, get them engaged, it’s amazing where it could go from here.” KIA: “How do you think it could work? You know, obviously the Foundation for National Parks &amp; Wildlife does work right around New South Wales, how do you think you can take a model like this and maybe see how it can work in other areas Kylie?” KYLIE: “Well we’re actually a national organisation and we fund a number of programs across Australia through our Community Grants program, and in fact we have our community grants program open at the moment. So if there’s anyone out there, who is working with junior rangers, who is an Indigenous organisation or an Aboriginal land council who is looking to work with junior rangers, grants are currently open fnpw.org.au/grants. Head in there, we’d love to hear from you because there’s a real opportunity to build these junior programs. They work so well, getting young people engaged on the ground is such a simple way to get them involved in conservation and long term work with the traditional owners and the Elders. The Green Heroes guys have done such a good job working closely with the traditional owners up there. They don’t do anything, absolutely nothing that isn’t directed from the local Aboriginal land council and the Elders themselves, and that is the most important thing. So that’s why we’d love to hear from any land councils out there or any Indigenous organisations who are working with young people. KIA:” How long do they have to get that application in fort a grant Kylie?” KYLIE: “It doesn’t close for another month, so plenty of time.” KIA: “Perfect. Excellent, well hopefully we’re inspiring a heap of amazing applications coming through and we make it really hard for you and the team to pick which ones get grants! KYLIE: “Please give me more work! (Laughs)” KIA: “Well you heard that here first, it’s an exclusive- Kylie Piper wants more work. Hope your boss isn’t listening this morning Kylie.” KYLIE: “Yeah so do I! (Laughs) KIA: “Lovely to catch up with you and hear more about this. Thank you for telling us about it.” KYLIE: “Thank you so much”.</p>
+    <p>For more information or to apply for our current round of Community Conservation Grants, head to ttps://fnpw.org.au/grant/community-conservation-grants/</p>
+    <p>***REMINDER 2022 COMMUNITY GRANTS ROUND CLOSING SOON!***</p>
+    <p>Applications for the 2022 Community Grants round must be submitted no later than <strong>8pm AEST* on Friday February 25, 2022</strong></p>
+    <p>&nbsp;</p>
+  </div>
+</article>
+
+<section class="sec paper ed-more">
+  <div class="cw rv">
+    <span class="ey">Keep reading</span>
+    <h2>More from the field.</h2>
+    <div class="pj-readgrid">
+      <a class="pj-rcard" href="article-bombay-bossiaea-post-fire-survey-success.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2022/12/bossiaea-seedling.JPG" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2022-12-12</span>
+          <h3>Bombay Bossiaea Post-Fire Survey Success</h3>
+          <p>Braving some tough terrain, staff from the Department of Planning of Environment (DPE), Upper Shoalhaven Landcare, Threatened Species Conservancy and an independent botanist have been searching for...</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-10000-native-give-away-trees-and-shrubs-hit-the-ground.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2022/06/carol-white-trees94.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2022-07-06</span>
+          <h3>10,000 Native Give-Away Trees and Shrubs Hit the Ground</h3>
+          <p>The Foundation for National Parks &amp; Wildlife (FNPW) has been very active with bushfire recovery and restoration, providing funds to Greening Australia along with many other nurseries in the...</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-browsers-not-just-grazers.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2022/07/Swamp-Wallaby-Graham-van-der-Wielen.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">2022-07-06</span>
+          <h3>Browsers, not just grazers</h3>
+          <p>A government adviser said not to use tree-guards in our revegetation; we had de-stocked and rabbits, hares or wallabies would graze on kikuyu, not seedlings.</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pj-back">
+  <div class="cw rv">
+    <a class="btn-o" href="articles.html">&#8592; All articles</a>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="cw rv" style="text-align:center">
+    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered by donations, bequests and partnerships.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a><a class="btn-o" href="partner.html">Become a partner</a></div>
+  </div>
+</section>
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:hello@fnpw.org.au">hello@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var art=document.querySelector('.ed'); if(!art)return;
+  var bar=document.createElement('div'); bar.className='ed-prog'; document.body.appendChild(bar);
+  var tick=function(){
+    var r=art.getBoundingClientRect(), h=window.innerHeight;
+    var total=r.height-h, done=Math.min(Math.max(-r.top,0),Math.max(total,1));
+    bar.style.width=(total<=0?0:(done/total)*100)+'%';
+  };
+  tick(); addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ABC Radio Interview: Eco Rangers Program", "description": "Recently, our very own Projects &amp; Education Manager Kylie Piper was interviewed by Kia Handley on ABC Radio about the Boonigyah Eco Rangers program.", "image": ["https://fnpw.org.au/wp-content/uploads/2021/12/PXL_20211022_233747949.PORTRAIT-scaled.jpg"], "datePublished": "2022", "publisher": {"@type": "Organization", "name": "Foundation for National Parks & Wildlife"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fnpw.org.au/article-abc-radio-interview-with-kylie-piper.html"}}</script>
+</body>
+</html>
