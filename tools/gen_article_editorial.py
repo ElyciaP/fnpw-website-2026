@@ -8,8 +8,8 @@ blocks put the text in a half-width column beside the picture. That moves the
 body copy's left edge several times per article, which is what makes a long read
 feel restless.
 
-This template treats an article as one document. There is a single grid with a
-fixed text column, and images break out of that column rather than sitting
+This template treats an article as one document. The body is a single grid with
+a fixed text column, and images break out of that column rather than sitting
 beside it, so the left edge is identical from the first word to the last.
 
     python3 tools/gen_article_editorial.py <slug>
@@ -18,9 +18,9 @@ beside it, so the left edge is identical from the first word to the last.
 Writes article-<slug>-editorial.html.
 
 Structure it builds, in order:
-  header      dark block, same measure as the body, so the page has one spine
-  hero        full-bleed photograph
-  article     kicker + h2 per section, three image scales, one chapter break
+  hero        the site's standard full-bleed hero, photograph behind the words,
+              text at normal page width
+  article     kicker + h2 per section, two image scales, one chapter break
   furniture   keep reading, back, donate, all shared with the rest of the site
 """
 import json, os, sys, re, html
@@ -152,19 +152,20 @@ def build(a):
     meta = ' &nbsp;&middot;&nbsp; '.join(x for x in
                                         [a.get('date', ''), a.get('place', ''), '%d min read' % read] if x)
 
-    head = ('  <header class="ed-top">%s    <div class="ed-in">%s'
+    # the site's standard hero: photograph behind the words, text at page width
+    hero = ('  <header class="ed-hero">%s'
+            '    <figure class="ed-hero-im"><img src="%s"%s sizes="100vw" alt="%s" '
+            'fetchpriority="high" decoding="async"></figure>%s'
+            '    <div class="cw">%s'
             '      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span>'
             '<a href="articles.html">Articles</a></nav>%s'
             '      <span class="ed-kicker ed-kicker-top">%s</span>%s'
             '      <h1>%s</h1>%s'
             '      <p class="ed-stand">%s</p>%s'
             '      <p class="ed-meta">%s</p>%s    </div>%s  </header>'
-            % (NL, NL, NL, esc(a.get('eyebrow', 'Story')), NL, esc(a['title']), NL,
+            % (NL, a['hero'], srcset(a['hero'], 'wide'), html.escape(a['hero_alt']), NL, NL, NL,
+               esc(a.get('eyebrow', 'Story')), NL, esc(a['title']), NL,
                esc(a['standfirst']), NL, meta, NL, NL))
-
-    hero = ('  <figure class="ed-hero">%s    <img src="%s"%s sizes="100vw" alt="%s" '
-            'width="1024" height="537" fetchpriority="high" decoding="async">%s  </figure>'
-            % (NL, a['hero'], srcset(a['hero'], 'wide'), html.escape(a['hero_alt']), NL))
 
     secs = split_sections(a)
     body = []
@@ -182,8 +183,8 @@ def build(a):
             # the picture leads the chapter break, then the whole section runs inside it
             lead_fig = [p for p in parts if p.lstrip().startswith('<figure')][:1]
             rest = [p for p in parts if p not in lead_fig]
-            body.append('  <section class="ed-break rv">%s%s%s    <div class="ed-in">%s%s%s    </div>%s  </section>'
-                        % (NL, (lead_fig[0].replace(pad, '    ', 1) if lead_fig else ''), NL,
+            body.append('    <section class="ed-break rv">%s%s%s      <div class="ed-in">%s%s%s      </div>%s    </section>'
+                        % (NL, (lead_fig[0].replace(pad, '      ', 1) if lead_fig else ''), NL,
                            NL, NL.join(title + rest), NL, NL))
         else:
             body += title + parts
@@ -191,8 +192,8 @@ def build(a):
     if a.get('credit'):
         body.append('    <p class="ed-credit">%s</p>' % esc(a['credit']))
 
-    art = '<article class="ed-art">%s%s%s%s%s  <div class="ed">%s%s%s  </div>%s</article>' % (
-        NL, head, NL, hero, NL, NL, NL.join(body), NL, NL)
+    art = '<article class="ed-art">%s%s%s  <div class="ed">%s%s%s  </div>%s</article>' % (
+        NL, hero, NL, NL, NL.join(body), NL, NL)
 
     out = [art]
 
@@ -245,25 +246,29 @@ def build(a):
 CSS = '''
 /* ---------------------------------------------------------------------------
    Editorial article layout.
-   One grid, one text column, images break out of it. The left edge of the body
-   copy is identical from the first word to the last, which is the whole point.
+   The hero is the site's standard one, photograph behind the words at normal
+   page width. Below it, one grid and one text column, with images breaking out
+   of it, so the left edge of the body copy never moves.
    --------------------------------------------------------------------------- */
 .ed-prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--euc);z-index:41}
 
-/* opening block: same measure as the body, so the page has a single spine */
-.ed-top{background:var(--euc-deep);padding:clamp(3rem,6vw,4.6rem) 0 clamp(2.4rem,4vw,3.2rem)}
-.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
-.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.62);margin-bottom:1.5rem}
+.ed-hero{position:relative;min-height:clamp(430px,58vh,580px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
+.ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding:calc(var(--sec-y) + 4rem) 0 var(--sec-y)}
+.ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
 .ed-crumb a{color:var(--euc-soft)}
 .ed-crumb span{opacity:.45}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
+.ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
 .ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
-.ed-kicker-top{color:var(--wattle);margin-bottom:.5rem}
-.ed-top h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(1.9rem,4.4vw,2.75rem);font-weight:600;line-height:1.08;letter-spacing:-.028em;margin:0 0 1.05rem}
-.ed-stand{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.55;color:rgba(250,246,242,.88);margin:0 0 1.6rem}
-.ed-meta{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.62);margin:0}
-
-.ed-hero{margin:0;background:var(--sand)}
-.ed-hero img{width:100%;height:auto;display:block;aspect-ratio:3/1;max-height:30rem;object-fit:cover;object-position:center 45%}
+.ed-kicker-top{color:var(--wattle);margin-bottom:.55rem}
+@media(max-width:820px){
+  .ed-hero-im img{object-position:60% 45%}
+  .ed-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.6) 0%,rgba(15,49,50,.78) 55%,rgba(15,49,50,.94) 100%)}
+}
 
 .ed{
   --m:38rem;   /* text measure, about 66 characters at 19px */
@@ -278,18 +283,24 @@ CSS = '''
   font-size:19px;
   line-height:1.68;
   color:var(--char);
-  padding:clamp(2.6rem,5vw,3.6rem) 0 1rem;
+  padding:var(--sec-y) 0;
 }
 .ed > *{grid-column:text}
 .ed > .ed-wide{grid-column:wide}
 .ed > .ed-bleed,.ed > .ed-break{grid-column:full}
 
 .ed p{margin:0 0 1.25em}
-.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:3.4rem 0 1rem}
+.ed h2{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.16;letter-spacing:-.022em;color:var(--euc-deep);margin:var(--sec-y) 0 1rem}
 .ed h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(1.08rem,1.5vw,1.2rem);line-height:1.32;letter-spacing:-.01em;color:var(--euc-deep);margin:2.2rem 0 .5rem}
-.ed .ed-kicker{margin:3.4rem 0 .4rem}
+.ed .ed-kicker{margin:var(--sec-y) 0 .4rem}
 .ed .ed-kicker + h2{margin-top:0}
+/* every gap between one section and the next is exactly --sec-y, top and bottom.
+   The element before a section boundary drops its own bottom margin so the two
+   never add together. */
+.ed > *:has(+ .ed-kicker),.ed > *:has(+ h2),.ed > *:has(+ .ed-break){margin-bottom:0}
+.ed-break + *{margin-top:0}
 .ed > *:first-child{margin-top:0}
+.ed > *:last-child{margin-bottom:0}
 
 .ed ul,.ed ol{margin:0 0 1.4em;padding-left:1.25rem}
 .ed li{margin:0 0 .6rem;padding-left:.15rem}
@@ -305,7 +316,8 @@ CSS = '''
 .ed .ed-bleed figcaption{max-width:min(38rem,100% - 2.5rem);margin-left:auto;margin-right:auto}
 
 /* the one chapter break, kept from the project pages because it earns its place */
-.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:clamp(3rem,6vw,4.4rem) 0;margin:3.6rem 0}
+.ed-in{max-width:min(38rem,100% - 2.5rem);margin:0 auto}
+.ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:var(--sec-y) 0;margin:var(--sec-y) 0}
 .ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
 .ed-break h2{color:var(--cream);margin:0 0 1rem}
 .ed-break h3{color:var(--cream)}
@@ -315,10 +327,8 @@ CSS = '''
 .ed-break li::marker{color:var(--euc-mid)}
 
 @media(max-width:640px){
-  .ed-hero img{aspect-ratio:auto;max-height:none}
   .ed{font-size:17.5px}
   .ed figure{margin:2.2rem 0}
-  .ed h2,.ed .ed-kicker{margin-top:2.8rem}
 }
 @media(prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
