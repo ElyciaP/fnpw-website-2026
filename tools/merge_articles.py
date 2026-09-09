@@ -1,14 +1,21 @@
 """Merge authored article entries into data/articles.json.
 
-Reads every ~/harvest/entries/*.json, merges them into data/articles.json by
-slug (an existing entry is replaced, a new one is added), sorts the file newest
-first, and fills in the "Keep reading" cards for any entry that has none.
+Reads every ~/harvest/entries/*.json, adds any article not already in
+data/articles.json, sorts the file newest first, and tops up the "Keep reading"
+cards so every article has three.
 
-An entry that already carries a hand-written "related" list keeps it, so a
-curated pair of cards survives a re-run.
+data/articles.json is the source of truth. An article that is already in it is
+NOT re-imported, because the file carries later editing (image cuts, corrected
+alt text, pillars) that the raw harvest entries do not have. Pass --reimport to
+deliberately overwrite from the entries again.
 
-    python3 tools/merge_articles.py            # merge and sort
-    python3 tools/merge_articles.py --relink   # also rebuild every related list
+A hand-written "related" list is kept and simply filled out to three, so a
+curated pair of cards survives a re-run. Pass --relink to throw those away and
+rebuild every list from the dates.
+
+    python3 tools/merge_articles.py             # add new articles, top up related
+    python3 tools/merge_articles.py --relink    # rebuild every related list
+    python3 tools/merge_articles.py --reimport  # re-read entries over existing articles
 """
 import json, os, sys, glob, re
 
@@ -17,6 +24,7 @@ os.chdir(ROOT)
 
 ENTRIES = os.path.expanduser('~/harvest/entries')
 DATA = 'data/articles.json'
+N_RELATED = 3
 
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
           'august', 'september', 'october', 'november', 'december']
@@ -44,45 +52,54 @@ def card(a, cta='Read the story'):
             'cta': cta}
 
 
-def relink(arts):
-    """Two 'keep reading' cards: the articles either side of this one by date."""
+def relink(arts, force=False):
+    """Top every article's 'keep reading' list up to N_RELATED cards.
+
+    Existing cards are kept and the list is filled from the nearest articles by
+    date, skipping the article itself and anything already linked. force throws
+    the existing cards away and rebuilds from scratch.
+    """
     for i, a in enumerate(arts):
-        picks = []
-        for j in (i + 1, i - 1, i + 2, i - 2):
-            if 0 <= j < len(arts) and j != i and arts[j]['slug'] not in [p['slug'] for p in picks]:
-                picks.append(arts[j])
-            if len(picks) == 2:
+        have = [] if force else list(a.get('related') or [])
+        seen = {r.get('href') for r in have}
+        seen.add('article-%s.html' % a['slug'])
+        for j in (i + 1, i - 1, i + 2, i - 2, i + 3, i - 3, i + 4, i - 4):
+            if len(have) >= N_RELATED:
                 break
-        a['related'] = [card(p) for p in picks]
+            if 0 <= j < len(arts):
+                c = card(arts[j])
+                if c['href'] not in seen:
+                    have.append(c)
+                    seen.add(c['href'])
+        a['related'] = have[:N_RELATED]
 
 
 def main():
     arts = json.load(open(DATA, encoding='utf-8')) if os.path.exists(DATA) else []
     by_slug = {a['slug']: a for a in arts}
 
-    added, replaced = [], []
+    reimport = '--reimport' in sys.argv
+    added, replaced, skipped = [], [], []
     for f in sorted(glob.glob(os.path.join(ENTRIES, '*.json'))):
         e = json.load(open(f, encoding='utf-8'))
         if e['slug'] in by_slug:
-            e.setdefault('related', by_slug[e['slug']].get('related', []))
+            if not reimport:
+                skipped.append(e['slug'])       # data/articles.json is the source of truth
+                continue
+            for k in ('related', 'pillar'):     # keep the fields the entries never carried
+                if k in by_slug[e['slug']]:
+                    e.setdefault(k, by_slug[e['slug']][k])
             replaced.append(e['slug'])
         else:
             added.append(e['slug'])
         by_slug[e['slug']] = e
 
     arts = sorted(by_slug.values(), key=sortkey)
-
-    force = '--relink' in sys.argv
-    missing = [a for a in arts if force or not a.get('related')]
-    if missing:
-        keep = {a['slug']: a.get('related') for a in arts if a.get('related') and not force}
-        relink(arts)
-        for a in arts:
-            if a['slug'] in keep and keep[a['slug']]:
-                a['related'] = keep[a['slug']]
+    relink(arts, force='--relink' in sys.argv)
 
     json.dump(arts, open(DATA, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print('articles.json: %d entries (%d added, %d replaced)' % (len(arts), len(added), len(replaced)))
+    print('articles.json: %d entries (%d added, %d replaced, %d already present and left alone)'
+          % (len(arts), len(added), len(replaced), len(skipped)))
     for a in arts:
         print('  %-58s %-16s %2d blocks' % (a['slug'], a.get('date', ''), len(a['blocks'])))
 

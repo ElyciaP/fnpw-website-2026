@@ -23,7 +23,7 @@
 .ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
 .ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
 .ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
-.ed-hero > .cw{position:relative;z-index:2;width:100%;padding:calc(var(--sec-y) + 4rem) 0 var(--sec-y)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
 .ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
 .ed-crumb a{color:var(--euc-soft)}
 .ed-crumb span{opacity:.45}
@@ -92,6 +92,16 @@
 .ed-break p:last-child{margin-bottom:0}
 .ed-break figcaption{color:rgba(250,246,242,.62)}
 .ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
 
 @media(max-width:640px){
   .ed{font-size:17.5px}
@@ -211,7 +221,7 @@
   </div>
 </article>
 
-<section class="sec paper">
+<section class="sec paper ed-more">
   <div class="cw rv">
     <span class="ey">Keep reading</span>
     <h2>More from the field.</h2>
@@ -231,6 +241,15 @@
           <span class="pj-rd">July 2026</span>
           <h3>Caring for Country Starts with Listening</h3>
           <p>Our partnership with Kaurna Kardla on Kaurna Yarta begins before any planting does. Kaurna knowledge holders on how Country is read, what healthy Country looks like, and what listening makes possible.</p>
+          <span class="pj-rgo">Read the story &#8594;</span>
+        </div>
+      </a>
+      <a class="pj-rcard" href="article-years-of-restoration-written-in-layers.html">
+        <img class="pj-rcard-im" src="https://fnpw.org.au/wp-content/uploads/2026/06/3-1920x1080.jpg" alt="" loading="lazy">
+        <div class="pj-rcard-bd">
+          <span class="pj-rd">June 2026</span>
+          <h3>Years of restoration, written in layers</h3>
+          <p>A morning in Hindmarsh Valley National Park, South Australia, where a cleared paddock is becoming a forest again, and why connection matters more than tree counts.</p>
           <span class="pj-rgo">Read the story &#8594;</span>
         </div>
       </a>

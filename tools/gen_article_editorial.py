@@ -210,7 +210,7 @@ def build(a):
                          '        </div>%s      </a>'
                          % (r['href'], NL, r['img'], NL, NL, r['date'], NL, esc(r['title']), NL,
                             esc(r['blurb']), NL, r.get('cta', 'Read the story'), NL, NL))
-        out.append('<section class="sec paper">%s  <div class="cw rv">%s'
+        out.append('<section class="sec paper ed-more">%s  <div class="cw rv">%s'
                    '    <span class="ey">Keep reading</span>%s'
                    '    <h2>More from the field.</h2>%s'
                    '    <div class="pj-readgrid">%s%s%s    </div>%s  </div>%s</section>'
@@ -256,7 +256,7 @@ CSS = '''
 .ed-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
 .ed-hero-im img{width:100%;height:100%;object-fit:cover;object-position:66% 45%;display:block}
 .ed-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(99deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.88) 30%,rgba(15,49,50,.52) 62%,rgba(15,49,50,.14) 100%)}
-.ed-hero > .cw{position:relative;z-index:2;width:100%;padding:calc(var(--sec-y) + 4rem) 0 var(--sec-y)}
+.ed-hero > .cw{position:relative;z-index:2;width:100%;padding-top:calc(var(--sec-y) + 4rem);padding-bottom:var(--sec-y)}
 .ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
 .ed-crumb a{color:var(--euc-soft)}
 .ed-crumb span{opacity:.45}
@@ -325,6 +325,16 @@ CSS = '''
 .ed-break p:last-child{margin-bottom:0}
 .ed-break figcaption{color:rgba(250,246,242,.62)}
 .ed-break li::marker{color:var(--euc-mid)}
+
+/* keep reading: three up, and tighter than the project page cards */
+.ed-more .pj-readgrid{grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:1.8rem}
+.ed-more .pj-rcard-bd{padding:1rem 1.1rem;gap:.45rem}
+.ed-more .pj-rcard .pj-rd{font-size:.68rem}
+.ed-more .pj-rcard h3{font-size:.95rem;line-height:1.32}
+.ed-more .pj-rcard p{font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ed-more .pj-rcard .pj-rgo{font-size:.78rem}
+@media(max-width:860px){.ed-more .pj-readgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ed-more .pj-readgrid{grid-template-columns:1fr}}
 
 @media(max-width:640px){
   .ed{font-size:17.5px}
