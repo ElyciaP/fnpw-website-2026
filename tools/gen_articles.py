@@ -175,11 +175,10 @@ def build(a):
             '<a href="articles.html">Articles</a></nav>%s'
             '      <span class="ed-kicker ed-kicker-top">%s</span>%s'
             '      <h1>%s</h1>%s'
-            '      <p class="ed-stand">%s</p>%s'
             '      <p class="ed-meta">%s</p>%s    </div>%s  </header>'
             % (' ed-hero-flat' if small else '', NL, fig, NL, NL,
                esc(a.get('eyebrow', 'Story')), NL, esc(a['title']), NL,
-               esc(a['standfirst']), NL, meta, NL, NL))
+               meta, NL, NL))
 
     secs = split_sections(a)
     body = []
@@ -276,7 +275,7 @@ CSS = '''
 .ed-crumb{display:flex;gap:.5em;font-size:.8rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
 .ed-crumb a{color:var(--euc-soft)}
 .ed-crumb span{opacity:.45}
-.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.1rem}
+.ed-hero h1{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;max-width:20ch;margin:0 0 1.3rem}
 .ed-stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.5;color:rgba(250,246,242,.9);max-width:54ch;margin:0 0 1.5rem}
 .ed-meta{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.7);margin:0}
 .ed-kicker{display:block;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}

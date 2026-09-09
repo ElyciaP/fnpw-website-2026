@@ -1,8 +1,9 @@
 """Convert the WordPress harvest in ~/harvest2 into data/articles.json entries.
 
-    python3 tools/import_wp.py            # import everything not already curated
-    python3 tools/import_wp.py --force    # re-import, overwriting existing entries
-    python3 tools/import_wp.py --report   # print what it would do, write nothing
+    python3 tools/import_wp.py             # import everything not already curated
+    python3 tools/import_wp.py <slug> ...  # re-import just these, curated fields kept
+    python3 tools/import_wp.py --force     # re-import everything
+    python3 tools/import_wp.py --report    # print what it would do, write nothing
 
 What it does that the first import did not:
 
@@ -65,6 +66,7 @@ PILLAR_WORDS = {
 
 CURATED = ('pillar', 'related', 'eyebrow', 'place', 'credit',
            'standfirst', 'description', 'hero_alt')
+MARK = '\x00OPEN\x00'
 AMP = re.compile(r'&(?![a-zA-Z][a-zA-Z0-9]{1,9};|#[0-9]{1,6};|#x[0-9a-fA-F]{1,6};)')
 
 
@@ -118,17 +120,21 @@ def fix_links(h, slugs, projects, stats):
         new, unwrap = rewrite_href(href, slugs, projects)
         if unwrap:
             stats['unwrapped'] += 1
-            return '\x00OPEN\x00'
+            return MARK
         if new != href:
             stats['rewritten'] += 1
         stats['kept'] += 1
         return '<a href="%s">' % htmlmod.escape(new, quote=True)
     out = re.sub(r'<a\s[^>]*href="([^"]*)"[^>]*>', sub, h or '')
-    # drop the closing tag of any anchor we unwrapped
-    while '\x00OPEN\x00' in out:
-        i = out.index('\x00OPEN\x00')
+    # drop the closing tag of any anchor we unwrapped, keeping every character of
+    # the link text (MARK is 6 chars, not 7; getting that wrong ate a letter)
+    while MARK in out:
+        i = out.index(MARK)
         j = out.find('</a>', i)
-        out = out[:i] + out[i + 7:j] + out[j + 4:] if j != -1 else out.replace('\x00OPEN\x00', '', 1)
+        if j == -1:
+            out = out.replace(MARK, '', 1)
+        else:
+            out = out[:i] + out[i + len(MARK):j] + out[j + 4:]
     return out
 
 
@@ -290,6 +296,11 @@ def main():
     projects = {re.sub(r'^project-|\.html$', '', f) for f in glob.glob('project-*.html')}
     posts = [json.load(open(f, encoding='utf-8'))
              for f in sorted(glob.glob(os.path.join(HARVEST, '*.json')))]
+    renames = json.load(open('data/slug-changes.json', encoding='utf-8')) \
+        if os.path.exists('data/slug-changes.json') else {}
+    for post in posts:
+        post['slug'] = renames.get(post['slug'], post['slug'])
+    only = {x for x in sys.argv[1:] if not x.startswith('-')}
     slugs = {p['slug'] for p in posts}
     stats = {'kept': 0, 'rewritten': 0, 'unwrapped': 0, 'tables': 0}
 
@@ -303,7 +314,7 @@ def main():
                           'url': p['url'], 'words': words,
                           'blurb': describe(next((strip(x['v']) for x in p['b'] if x['t'] == 'p'), ''))})
             continue
-        if p['slug'] in existing and not force:
+        if p['slug'] in existing and not force and p['slug'] not in only:
             skipped.append(p['slug'])
             arts.append(existing[p['slug']])
             continue
