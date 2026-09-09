@@ -221,12 +221,9 @@
     ]
    },
    {
-    "type": "band",
+    "type": "text",
     "eyebrow": "Genetics",
     "heading": "One: the last chlamydia-free koala stronghold in the Sydney Basin",
-    "img": "https://fnpw.org.au/wp-content/uploads/2026/07/2-1024x537.jpg",
-    "alt": "A koala crossing a road at the edge of housing",
-    "caption": "South-west Sydney holds something rare: the only koala population in the Sydney Basin still free of chlamydia, the disease that has hollowed out koala numbers across the eastern states.",
     "flow": [
      {
       "p": "South-west Sydney holds something rare: the only koala population in the Sydney Basin still free of chlamydia, the disease that has hollowed out koala numbers across the eastern states. Surveys through 2021 and 2023 confirmed the Campbelltown koalas remain free of it. That is a genuine stronghold, and it is worth everything to protect."
@@ -278,7 +275,6 @@
    {
     "type": "band",
     "eyebrow": "What works",
-    "flip": true,
     "heading": "22 years: the crossing that has been working since 2004",
     "img": "https://fnpw.org.au/wp-content/uploads/2026/07/3-1-1024x537.jpg",
     "alt": "The planted wildlife overpass across Compton Road in Brisbane's south",
@@ -343,7 +339,6 @@
    {
     "type": "band",
     "eyebrow": "Design",
-    "flip": true,
     "paper": true,
     "heading": "What separates a corridor from a green line on a plan",
     "img": "https://fnpw.org.au/wp-content/uploads/2026/07/australian_habitat_fragmentation_and_corridor_design-1024x934.png",
@@ -2352,10 +2347,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2026/03/2.jpg",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "Indigenous land management is often misunderstood as a single practice, most commonly Cultural Burning. In reality, it is a holistic system of care."
@@ -2680,10 +2672,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/4-2-1024x538.jpg",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "Which brings us to the most interesting unresolved question in Australian restoration right now."
@@ -3431,12 +3420,9 @@
     ]
    },
    {
-    "type": "band",
+    "type": "text",
     "eyebrow": "Grasslands",
     "heading": "Pygmy Bluetongue Lizard",
-    "img": "https://fnpw.org.au/wp-content/uploads/2025/12/6-scaled.jpg",
-    "alt": "A pygmy bluetongue lizard looking out from a spider burrow in native grassland.",
-    "caption": "The pygmy bluetongue is one of Australia’s smallest lizards and one of its rarest.",
     "flow": [
      {
       "p": "The pygmy bluetongue is one of Australia’s smallest lizards and one of its rarest. Measuring just 15 centimetres long, it spends most of its life inside abandoned spider burrows, emerging only to ambush passing insects."
@@ -3448,7 +3434,6 @@
       "p": "Once thought extinct, the pygmy bluetongue was rediscovered in the 1990s. Today, habitat fragmentation remains its greatest threat, reinforcing how even subtle changes to grassland ecosystems can have permanent consequences."
      }
     ],
-    "flip": true,
     "paper": true
    },
    {
@@ -3468,7 +3453,8 @@
      {
       "p": "Several subspecies are now listed as endangered or critically endangered, largely due to habitat fragmentation and fire. Their diet of insects also makes them vulnerable to pesticide use, which can quietly remove a critical food source."
      }
-    ]
+    ],
+    "flip": true
    },
    {
     "type": "band",
@@ -3487,8 +3473,7 @@
      {
       "p": "Once occupying more than half of mainland Australia, woylies are now restricted to small, intensively managed populations. Where foxes and cats are controlled, they recover rapidly, demonstrating how targeted, science-led conservation can restore ecological processes."
      }
-    ],
-    "flip": true
+    ]
    },
    {
     "type": "text",
@@ -6250,13 +6235,6 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2021/03/3.png",
-    "alt": "",
-    "caption": "Photo by Karrkad Kanjdji Trust",
-    "flow": []
-   },
-   {
     "type": "text",
     "flow": [
      {
@@ -6466,10 +6444,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2024/08/Koala-Food.png",
-    "alt": "",
-    "caption": "Bloom &amp; Ivy. Photo by Friends of the Koala",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -7142,10 +7117,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2024/09/The-Northern-Quoll.png",
-    "alt": "",
-    "caption": "Photo by Henry Cook",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -7593,13 +7565,6 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2023/09/Greater-Glider-Endangered-Species-Mark-Cairns.png",
-    "alt": "",
-    "caption": "Greater Glider, Endangered Mammal Species (EPBC Act) – Photo by Mark Cairns",
-    "flow": []
-   },
-   {
     "type": "text",
     "flow": [
      {
@@ -7951,10 +7916,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/Acacia-Melanoxylon-Fire-retardant-tree-300x212.png",
-    "alt": "",
-    "caption": "Acacia melanoxylon, Fire Retardant Plant. -It’s essential to understand that no plant can be considered completely fireproof, and no fire mitigation strategy is fail-safe. In the event of a bushfire, your safety should be the utmost priority. Always follow official emergency safety advice provided by local authorities and fire services, as their guidance is crucial for your well-being.",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -8274,10 +8236,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2024/01/gold-coast-hinterland-national-parks.jpg",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -8687,10 +8646,7 @@
     "paper": true
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2023/07/buy-a-tree-300x232.png",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -8808,10 +8764,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2023/06/Kangaroo-Island-Plant-Nursery-Manager-300x200.webp",
-    "alt": "",
-    "caption": "KI Native Plant Nursery Manager Jo McPhee sorting this years seedlings",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -11132,10 +11085,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://images.theconversation.com/files/502055/original/file-20221220-17-xwj8ci.jpg?ixlib=rb-1.1.0&rect=13%2C48%2C4587%2C3400&q=45&auto=format&w=754&fit=clip",
-    "alt": "",
-    "caption": "Anissa Terry/Unsplash, CC BY",
+    "type": "text",
     "flow": [
      {
       "p": "Billed as the event that’ll determine the fate of the entire living world, the United Nations’ COP15 nature summit has wrapped up in Canada with a <a href=\"https://www.cbd.int/doc/c/e6d3/cd1d/daf663719a03902a9b116c34/cop-15-l-25-en.pdf\">historic deal</a>, which includes protecting roughly a third of nature by 2030."
@@ -11899,10 +11849,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2022/10/52410047743_0ba0e368db_k-1-300x200.jpg",
-    "alt": "",
-    "caption": "Box-leaf Wattle, possible fire retardant species. Photo courtesy of Mark Cairns",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -12369,10 +12316,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2022/11/Picture2_perons-frog-300x199.jpg",
-    "alt": "",
-    "caption": "Common Species – Peron’s Tree Frog Litoria peronii Credit: Mark Cairns",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -12823,10 +12767,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2020/09/Boodjamulla-NP_5-CYMK-300x200.jpg",
-    "alt": "Boodjamulla National Park - Wildlife Project - FNPW",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "&nbsp;"
@@ -14004,10 +13945,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2021/11/4b77deafrankie_randy_and_wilton6191e84b7c1a7-300x225.jpg",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "Organisation <!--ap-custom-label--> Warddeken Land Management Limited <!--ap-custom-value--> <!--ap-each-custom-->"
@@ -14387,10 +14325,7 @@
   "credit": "",
   "blocks": [
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2022/05/stacey-pic-225x300.jpg",
-    "alt": "Wildlife-Heroes-Project-Manager-Stacey",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "Wildlife Heroes Project Manager, Stacey Mole (pictured above), has been out on the road visiting with NSW volunteer wildlife rescue and rehabilitation groups. Currently, the Wildlife Heroes project is funded until the end of 2023, and there is an Action Implementation Plan to be written. This plan will underpin what the Wildlife Heroes Project will undertake over the next year and a half. Gaining insight into how groups are going, their needs, issues, and wish lists by meeting with members of wildlife groups in person will help inform this plan. Here is an update from Stacey about the trip so far:"
@@ -15501,10 +15436,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2021/03/DSCN6012-1-1024x768.jpg",
-    "alt": "Kosciuszko National Park Recovery",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "<b>The Recovery</b>"
@@ -15918,10 +15850,7 @@
     ]
    },
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2021/08/Trees-in-Newcastle-300x187.png",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "<br> Since the bushfires of 2019 – 2020, TIN has been involved with landowners in the Laguna-Wollombi area, Port Stephens and Merriwa in seed collection, planting advice and the supply of native trees. With the grant provided by FNPW, the Nursery will expand its capacity by an additional 10,000 trees to plant a total of 33,000 native trees. These trees will support the Wollemi NP, Lower and Upper Hunter, Central Coast and Blue Mountains World Heritage Area regions."
@@ -16247,10 +16176,7 @@
   "credit": "",
   "blocks": [
    {
-    "type": "wide",
-    "img": "https://fnpw.org.au/wp-content/uploads/2021/12/pxl_20210422_0319410872.jpg",
-    "alt": "",
-    "caption": "",
+    "type": "text",
     "flow": [
      {
       "p": "The Wollombi Landcare Group and 20 students from the Laguna Public School planted around 90 plants as part of the FNPW Bushfire Recovery Program on Earth Day 2021. The trees were provided by the Hawkesbury Community Nursery as part of a project supporting nurseries to grow bushfire restoration trees. Whilst the background may look green and “treed” this is a badly degraded part of Wollombi Brook where there are only a few native trees which were themselves planted years ago. It is also only a few kilometres from the 2019 fire fronts. Wollombi Landcare Group have been doing a lot of woody weed control it was the right time to plant as this has been the first good planting season we’ve had for at least five years. The school is just across the road and the kids love the planting. Their enthusiasm is exhausting for us oldies but wonderfully infectious at the same time."

@@ -171,8 +171,19 @@ def pillar_for(post, text):
     return best
 
 
+def upload_key(url):
+    """Basename with the WordPress rendition suffix removed, so 8-1024x537.jpg
+    and 8-2560x1344.jpg are recognised as the same upload."""
+    if not url:
+        return ''
+    return re.sub(r'-\d+x\d+(?=\.\w+$)', '', os.path.basename(url.split('?')[0])).lower()
+
+
 def blocks_for(post, slugs, projects, stats):
-    b = post['b']
+    # the feature image runs as the hero, so drop it where it also sits in the body
+    hero_key = upload_key(post.get('og', ''))
+    b = [x for x in post['b']
+         if not (x['t'] == 'img' and hero_key and upload_key(x['v']) == hero_key)]
     levels = [int(x['t'][1]) for x in b if re.fullmatch(r'h[1-6]', x['t'])]
     top = min(levels) if levels else 0
 

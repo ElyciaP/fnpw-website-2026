@@ -40,7 +40,7 @@
 .hx-tickwrap{background:var(--cream);border-bottom:1px solid var(--rule);overflow:hidden;padding:1.05rem 0}
 .hx-tick{display:flex;gap:3.2rem;width:max-content;animation:hxtick 46s linear infinite;font-family:var(--ff-d);font-weight:600;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;color:var(--euc)}
 .hx-tick span{display:flex;align-items:center;gap:3.2rem;white-space:nowrap}
-.hx-tick i{font-style:normal;color:var(--wattle-dk);font-size:.7rem}
+.hx-tick i{font-style:normal;color:var(--euc);font-size:.7rem}
 @keyframes hxtick{to{transform:translateX(-50%)}}
 
 /* --- editorial statement --- */
@@ -103,7 +103,9 @@
 .hx-pcard .pl{font-size:.8rem;color:var(--stone);margin:0 .2rem}
 
 /* --- campaign block --- */
-.hx-camp{background:#0E7969;color:#fff;padding:0}
+.hx-camp{background:var(--euc);color:#fff;padding:0}
+.cmp-btn-p{display:inline-block;background:var(--wattle-soft);color:var(--soil-deep);padding:1em 1.9em;font-family:var(--ff-d);font-weight:600;font-size:.95rem;transition:.25s;border:none}
+.cmp-btn-p:hover{background:var(--cream);opacity:1}
 .hx-camp-g{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,4rem);align-items:end;min-height:480px}
 .hx-camp-bd{display:flex;flex-direction:column;justify-content:center;gap:1.2rem;padding:5.5rem 0}
 .hx-camp-tag{font-family:var(--ff-d);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--wattle-soft)}
@@ -178,7 +180,7 @@
 
 /* --- newsletter --- */
 .hx-news{position:relative;overflow:hidden;padding:5rem 0;
-  background:radial-gradient(120% 90% at 50% -10%, #fffdfa 0%, var(--cream) 42%, var(--sand) 100%);
+  background:radial-gradient(120% 90% at 50% -10%, #FAF6F2 0%, var(--cream) 42%, var(--sand) 100%);
   border-top:1px solid var(--rule)}
 .hx-news .topo2{position:absolute;right:-50px;top:-20px;width:460px;opacity:.35;pointer-events:none}
 .hx-news-g{position:relative;display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,4vw,3.5rem);align-items:center}
