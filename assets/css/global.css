@@ -675,6 +675,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-rcard p{font-size:.88rem;line-height:1.55;color:var(--char);margin:0}
 .pj-rcard .pj-rgo{margin-top:auto;padding-top:.4rem;font-size:.82rem;font-weight:700;color:var(--euc-deep)}
 .pj-src{font-size:.82rem;color:var(--stone);margin-top:1.8rem}
+/* --- section rhythm: inner margins must not leak into section padding --- */
+.sec > .cw > :first-child,.sec .pj-body > :first-child,.pj-band-bd > :first-child,.pj-story-g > div > :first-child{margin-top:0}
+.sec > .cw > :last-child,.sec .pj-body > :last-child,.pj-band-bd > :last-child,.pj-story-g > div > :last-child{margin-bottom:0}
+.pj-body > :last-child,.pj-body p:last-child{margin-bottom:0}
 .pj-back{padding:var(--sec-y) 0;text-align:center;background:var(--cream)}
 
 /* CITY SITE CHOOSER =========================================== */
