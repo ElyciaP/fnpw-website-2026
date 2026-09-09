@@ -167,7 +167,8 @@ RELATED = {
         (U_ART + '2021/02/KNP-recovery-1-scaled.jpg', 'Jun 2026 &middot; Story',
          'Years of restoration, written in layers',
          'Hindmarsh Valley has gone from cleared paddock to returning forest, and the layers '
-         'of that recovery are now readable on the ground.')]),
+         'of that recovery are now readable on the ground.',
+         'article-years-of-restoration-written-in-layers.html')]),
     'species': ('Stories from the species we\u2019re saving', 'species', 'Saving Species', [
         (U_ART + '2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg',
          '02 May 2026 &middot; Update', '18,582 wombat mange treatments delivered',
