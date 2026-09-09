@@ -39,7 +39,7 @@ AMP = re.compile(r'&(?![a-zA-Z][a-zA-Z0-9]{1,9};|#[0-9]{1,6};|#x[0-9a-fA-F]{1,6}
 WIDE_SET = ((768, 403), (1024, 537), (1536, 806))
 COL_SET = ((768, 403), (1024, 537))     # a 608px column never needs 1536, and these files are heavy
 SIZES = {'col': '(max-width: 42rem) 100vw, 608px',
-         'wide': '(max-width: 66rem) 100vw, 960px',
+         'wide': '(max-width: 58rem) 100vw, 840px',
          'bleed': '100vw'}
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
           'august', 'september', 'october', 'november', 'december']
@@ -263,11 +263,11 @@ CSS = '''
 .ed-meta{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.62);margin:0}
 
 .ed-hero{margin:0;background:var(--sand)}
-.ed-hero img{width:100%;height:auto;display:block;max-height:74vh;object-fit:cover}
+.ed-hero img{width:100%;height:auto;display:block;aspect-ratio:3/1;max-height:30rem;object-fit:cover;object-position:center 45%}
 
 .ed{
   --m:38rem;   /* text measure, about 66 characters at 19px */
-  --w:60rem;   /* wide breakout */
+  --w:52.5rem; /* wide breakout, 840px */
   display:grid;
   grid-template-columns:
     [full-start] minmax(1.25rem,1fr)
@@ -306,7 +306,7 @@ CSS = '''
 
 /* the one chapter break, kept from the project pages because it earns its place */
 .ed-break{background:var(--euc-deep);color:rgba(250,246,242,.9);padding:clamp(3rem,6vw,4.4rem) 0;margin:3.6rem 0}
-.ed-break > figure{margin:0 auto 2.4rem;max-width:min(60rem,100% - 2.5rem)}
+.ed-break > figure{margin:0 auto 2.4rem;max-width:min(52.5rem,100% - 2.5rem)}
 .ed-break h2{color:var(--cream);margin:0 0 1rem}
 .ed-break h3{color:var(--cream)}
 .ed-break .ed-kicker{color:var(--wattle-mid);margin:0 0 .4rem}
@@ -315,6 +315,7 @@ CSS = '''
 .ed-break li::marker{color:var(--euc-mid)}
 
 @media(max-width:640px){
+  .ed-hero img{aspect-ratio:auto;max-height:none}
   .ed{font-size:17.5px}
   .ed figure{margin:2.2rem 0}
   .ed h2,.ed .ed-kicker{margin-top:2.8rem}
