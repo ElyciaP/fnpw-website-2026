@@ -1,4 +1,56 @@
-<!DOCTYPE html>
+"""Build gift-a-tree.html, the Give a Tree page.
+
+Follows Mali's EOY2026 wireframe: hero with the Raisely donate form embedded,
+a certificate pitch, a succinct How it works band, a removable seasonal band,
+a corporate block, an in-memory block and the FAQ.
+
+The campaign is branded "Give a Tree"; the filename stays gift-a-tree.html so
+existing links keep working.
+
+Header and footer come from partials/, wrapped in the @header / @footer markers
+that tools/sync.py looks for, so this page stays in step with every other page.
+
+    python3 tools/build_gat.py
+"""
+import os, re
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(ROOT)
+OUT = 'gift-a-tree.html'
+NL = chr(10)
+
+header = ('<!-- @header -->' + open('partials/header.html', encoding='utf-8').read().rstrip()
+          + '<!-- /@header -->')
+footer = ('<!-- @footer -->' + open('partials/footer.html', encoding='utf-8').read().rstrip()
+          + '<!-- /@footer -->')
+
+# The nav dropdowns are not in main.js, so every page carries this small block.
+navjs = """(function(){
+  var ngs=document.querySelectorAll('.ng');
+  ngs.forEach(function(ng){
+    var btn=ng.querySelector('button');
+    if(!btn)return;
+    btn.setAttribute('aria-haspopup','true');
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=ng.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      ngs.forEach(function(other){if(other!==ng)other.classList.remove('open')});
+    });
+  });
+  document.addEventListener('click',function(){
+    ngs.forEach(function(ng){
+      ng.classList.remove('open');
+      var b=ng.querySelector('button');if(b)b.setAttribute('aria-expanded','false');
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')ngs.forEach(function(ng){ng.classList.remove('open')});
+  });
+})();"""
+
+HEAD = '''<!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -147,50 +199,9 @@
 </head>
 
 <body>
-<!-- @header -->
+'''
 
-<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
-<header class="hdr" id="hdr">
-<div class="cw"><div class="hdr-in">
-  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
-  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
-  <nav class="nav" id="mn">
-    <a href="index.html" class="">Home</a>
-    <a href="about.html" class="">About</a>
-    <div class="ng">
-      <button>Projects <span class="ar">▾</span></button>
-      <div class="dd">
-        <a href="projects.html" class="">All Projects</a>
-        <a href="growing-national-parks.html" class="">Growing National Parks</a>
-        <a href="saving-species.html" class="">Saving Species</a>
-        <a href="healing-the-land.html" class="">Healing the Land</a>
-      </div>
-    </div>
-    <div class="ng">
-      <button>Stories <span class="ar">▾</span></button>
-      <div class="dd">
-        <a href="articles.html" class="">Articles</a>
-        <a href="reports.html" class="">Reports</a>
-      </div>
-    </div>
-    <div class="ng">
-      <button>Get Involved <span class="ar">▾</span></button>
-      <div class="dd">
-        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
-        <a href="partner.html" class="">Become a Partner</a>
-        <a href="volunteer.html" class="">Corporate Volunteering</a>
-        <a href="workplace-giving.html" class="">Workplace Giving</a>
-        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
-        <a href="bequests.html" class="">Bequests</a>
-        <a href="donate-land.html" class="">Donate Land</a>
-      </div>
-    </div>
-    <a href="contact.html" class="">Contact</a>
-    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
-  </nav>
-</div></div>
-</header><!-- /@header -->
-
+HERO = '''
 <main>
 <section class="gt-hero">
   <div class="gt-hero-bg"><img src="assets/img/give-a-tree-koala-COMP.jpg" alt="A koala resting in the fork of a eucalypt in open forest" fetchpriority="high" decoding="async"></div>
@@ -232,7 +243,9 @@
     </div>
   </div>
 </section>
+'''
 
+MEANING = '''
 <section class="gt-split white">
   <div class="cw">
     <div class="gt-split-g">
@@ -247,7 +260,9 @@
     </div>
   </div>
 </section>
+'''
 
+HOW = '''
 <section class="gt-how">
   <div class="cw">
     <div class="head rv">
@@ -263,7 +278,9 @@
     <p class="gt-how-note"><em>A little note from us:</em> to help reduce unnecessary printing, we recommend printed certificates for gifts of $100 or more. For gifts under $100 you are very welcome to print the certificate yourself at home or at work. Organising more than one certificate, or want your company logo on it? Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a>.</p>
   </div>
 </section>
+'''
 
+SEASON = '''
 <!-- SEASONAL SLOT: swap this section for Valentine&rsquo;s Day, Father&rsquo;s Day or Mother&rsquo;s Day,
      or delete it entirely out of season. Nothing else on the page depends on it. -->
 <section class="gt-season">
@@ -281,7 +298,9 @@
     </div>
   </div>
 </section>
+'''
 
+CORP = '''
 <section class="gt-split white">
   <div class="cw">
     <div class="gt-split-g flip">
@@ -300,7 +319,9 @@
     </div>
   </div>
 </section>
+'''
 
+MEMORY = '''
 <section class="gt-memory">
   <div class="cw">
     <div class="gt-split-g">
@@ -316,7 +337,51 @@
     </div>
   </div>
 </section>
+'''
 
+FAQ_ITEMS = [
+    ('When will I get my digital certificate?',
+     'Your digital certificate is emailed to you the next business day after your gift is '
+     'received. If you asked us to send it straight to the recipient, it goes to their inbox '
+     'instead, on the date you nominated.'),
+    ('I&rsquo;ve requested a physical certificate. When will it arrive?',
+     'Printed certificates are posted within five business days and usually arrive within a '
+     'week or two, depending on where you are in Australia. If you need one by a set date, '
+     'let us know when you give and we will do our best to get it there in time.'),
+    ('Can physical certificates be sent overseas?',
+     'Yes. International post takes longer and delivery times vary by country, so we recommend '
+     'sending the digital certificate as well, so your recipient has something to open on the day.'),
+    ('I&rsquo;ve noticed an error on my certificate. What should I do?',
+     'Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> with your gift reference and '
+     'the correction, and we will reissue it for you. There is no charge to have a certificate '
+     'corrected and reissued.'),
+    ('Where will my gifted tree be planted? Can I choose the site?',
+     'Trees are planted in the priority landscapes where they will do the most good, which means '
+     'we cannot allocate an individual tree to a site you choose. Our environmental team selects '
+     'native species suited to the local ecology of each planting site, so the trees survive and '
+     'rebuild functioning habitat rather than a monoculture.'),
+    ('Will a plaque or dedication be placed on my tree?',
+     'No. Restoration sites are working landscapes and often remote, so we do not place plaques '
+     'or markers on individual trees. Your dedication lives on the certificate instead, which is '
+     'yours to keep, frame or pass on.'),
+    ('I&rsquo;m having trouble completing my donation. What should I do?',
+     'Try refreshing the page first, and check that your browser is not blocking third-party '
+     'content. If it still will not go through, call us on <a href="tel:1800898626">1800 898 626</a> '
+     'or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will take your gift over the phone.'),
+    ('Is my gift tax deductible?',
+     'Yes. The Foundation for National Parks &amp; Wildlife is a registered Australian charity '
+     '(ABN 51 248 905 949) with Deductible Gift Recipient status. Gifts of $2 or more are tax '
+     'deductible in Australia, and your receipt is emailed with your certificate.'),
+]
+
+
+def faq():
+    rows = []
+    for n, (q, a) in enumerate(FAQ_ITEMS):
+        d = ' d1' if n % 2 else ''
+        rows.append('      <details class="gt-faq-i rv%s"><summary>%s</summary><p>%s</p></details>'
+                    % (d, q, a))
+    return ('''
 <section class="gt-faq">
   <div class="cw">
     <div class="head rv">
@@ -324,36 +389,15 @@
       <h2>Frequently asked</h2>
     </div>
     <div class="gt-faq-list">
-      <details class="gt-faq-i rv"><summary>When will I get my digital certificate?</summary><p>Your digital certificate is emailed to you the next business day after your gift is received. If you asked us to send it straight to the recipient, it goes to their inbox instead, on the date you nominated.</p></details>
-      <details class="gt-faq-i rv d1"><summary>I&rsquo;ve requested a physical certificate. When will it arrive?</summary><p>Printed certificates are posted within five business days and usually arrive within a week or two, depending on where you are in Australia. If you need one by a set date, let us know when you give and we will do our best to get it there in time.</p></details>
-      <details class="gt-faq-i rv"><summary>Can physical certificates be sent overseas?</summary><p>Yes. International post takes longer and delivery times vary by country, so we recommend sending the digital certificate as well, so your recipient has something to open on the day.</p></details>
-      <details class="gt-faq-i rv d1"><summary>I&rsquo;ve noticed an error on my certificate. What should I do?</summary><p>Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> with your gift reference and the correction, and we will reissue it for you. There is no charge to have a certificate corrected and reissued.</p></details>
-      <details class="gt-faq-i rv"><summary>Where will my gifted tree be planted? Can I choose the site?</summary><p>Trees are planted in the priority landscapes where they will do the most good, which means we cannot allocate an individual tree to a site you choose. Our environmental team selects native species suited to the local ecology of each planting site, so the trees survive and rebuild functioning habitat rather than a monoculture.</p></details>
-      <details class="gt-faq-i rv d1"><summary>Will a plaque or dedication be placed on my tree?</summary><p>No. Restoration sites are working landscapes and often remote, so we do not place plaques or markers on individual trees. Your dedication lives on the certificate instead, which is yours to keep, frame or pass on.</p></details>
-      <details class="gt-faq-i rv"><summary>I&rsquo;m having trouble completing my donation. What should I do?</summary><p>Try refreshing the page first, and check that your browser is not blocking third-party content. If it still will not go through, call us on <a href="tel:1800898626">1800 898 626</a> or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will take your gift over the phone.</p></details>
-      <details class="gt-faq-i rv d1"><summary>Is my gift tax deductible?</summary><p>Yes. The Foundation for National Parks &amp; Wildlife is a registered Australian charity (ABN 51 248 905 949) with Deductible Gift Recipient status. Gifts of $2 or more are tax deductible in Australia, and your receipt is emailed with your certificate.</p></details>
+%s
     </div>
   </div>
 </section>
 </main>
+''' % NL.join(rows))
 
-<!-- @footer --><footer class="ftr">
-  
-  
-  <div class="cw">
-    <div class="ftr-g">
-      <div>
-        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
-        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
-      </div>
-      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
-      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
-    </div>
-    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
-  </div>
-</footer><!-- /@footer -->
 
+SCRIPT = '''
 <script src="assets/js/main.js"></script>
 <script>
 /* The Raisely form is a cross-origin iframe, so it cannot be measured from here.
@@ -373,7 +417,7 @@
   window.addEventListener('message', function (e) {
     var host;
     try { host = new URL(e.origin).hostname; } catch (err) { return; }
-    if (!/(^|\.)raiselysite\.com$|(^|\.)raisely\.com$/.test(host)) return;
+    if (!/(^|\\.)raiselysite\\.com$|(^|\\.)raisely\\.com$/.test(host)) return;
     var d = e.data, h = null;
     if (typeof d === 'number') h = d;
     else if (d && typeof d === 'object') h = d.height || d.frameHeight || (d.payload && d.payload.height);
@@ -382,30 +426,26 @@
   });
 })();
 
-(function(){
-  var ngs=document.querySelectorAll('.ng');
-  ngs.forEach(function(ng){
-    var btn=ng.querySelector('button');
-    if(!btn)return;
-    btn.setAttribute('aria-haspopup','true');
-    btn.setAttribute('aria-expanded','false');
-    btn.addEventListener('click',function(e){
-      e.stopPropagation();
-      var open=ng.classList.toggle('open');
-      btn.setAttribute('aria-expanded',open?'true':'false');
-      ngs.forEach(function(other){if(other!==ng)other.classList.remove('open')});
-    });
-  });
-  document.addEventListener('click',function(){
-    ngs.forEach(function(ng){
-      ng.classList.remove('open');
-      var b=ng.querySelector('button');if(b)b.setAttribute('aria-expanded','false');
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape')ngs.forEach(function(ng){ng.classList.remove('open')});
-  });
-})();
+%s
 </script>
 </body>
 </html>
+''' % navjs
+
+page = (HEAD + header + NL + HERO + MEANING + HOW + SEASON + CORP + MEMORY + faq()
+        + NL + footer + NL + SCRIPT)
+
+open(OUT, 'w', encoding='utf-8').write(page)
+print('wrote %s, %d lines, %d bytes' % (OUT, page.count(NL) + 1, len(page)))
+
+# ---- checks ----
+bad = [w for w in ('—', ' and Wildlife', 'Kaurna Yerta') if w in page]
+print('house-rule breaches:', bad or 'none')
+for t in ('section', 'div', 'main', 'details', 'ul', 'li', 'nav', 'p'):
+    o = len(re.findall(r'<%s[\s>]' % t, page))
+    c = len(re.findall(r'</%s>' % t, page))
+    if o != c and t != 'p':
+        print('  UNBALANCED %s: %d open, %d close' % (t, o, c))
+print('script blocks:', page.count('<script>'), 'closes:', page.count('</script>'))
+print('nav IIFEs:', page.count('var ngs=document.querySelectorAll'))
+print('orphan ids referenced:', [i for i in ('raiselyFrame',) if 'id="%s"' % i not in page])

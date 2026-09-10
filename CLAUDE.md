@@ -74,3 +74,21 @@ Contact (contact.html)
 ## Images
 
 All images are sourced from Unsplash via URL (e.g. `https://images.unsplash.com/photo-…?w=1800&q=80`). The FNPW logos are real files in `assets/img/`.
+
+## Contact details (do not change these)
+
+- Email: **fnpw@fnpw.org.au**. Not `hello@fnpw.org.au`, which was wrong and has been
+  corrected across every page and in `partials/footer.html`.
+- Phone: 1800 898 626. ABN: 51 248 905 949.
+
+## Give a Tree
+
+`gift-a-tree.html` keeps its filename but the campaign is branded **Give a Tree**
+(tagline: Bring Back the Bush). The page is built by `tools/build_gat.py`, not by hand.
+
+The donation form is an iframe pointing at `https://gift-a-tree.raiselysite.com/embed/donate`.
+That is the only embeddable endpoint: `/` and `/donate` both send `X-Frame-Options: DENY`
+and cannot be framed from our domain.
+
+The home page tier tiles link in as `gift-a-tree.html?amount=100#give`; the page forwards
+that amount to Raisely as a query parameter.
