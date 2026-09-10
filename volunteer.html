@@ -77,17 +77,23 @@
 .v-gal{margin-top:clamp(3rem,5vw,4.5rem)}
 .v-gal-h{margin-bottom:1.6rem}
 .v-gal-h h3{font-size:clamp(1.4rem,2.4vw,1.9rem);letter-spacing:-.02em;color:var(--euc-deep);margin:.8rem 0 0}
-.v-gal-g{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:1rem}
-.v-gal-i{overflow:hidden;background:var(--sand)}
-.v-gal-i img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
-.v-gal-i:hover img{transform:scale(1.04)}
-.v-gal-i.g1{grid-column:span 2;grid-row:span 2}
-.v-gal-i.g2{grid-column:span 2}
-.v-gal-i.g4{grid-column:span 2}
-.v-gal-q{grid-column:span 2;margin:0;background:var(--wattle-soft);padding:1.6rem;display:flex;flex-direction:column;justify-content:center}
-.v-gal-q p{margin:0;font-family:var(--ff-d);font-weight:600;font-size:1.02rem;line-height:1.38;color:var(--euc-deep)}
-.v-gal-q cite{font-style:normal;font-size:.8rem;color:var(--stone);margin-top:.9rem}
-@media(max-width:900px){.v-gal-g{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.v-gal-i.g1{grid-row:span 2}}
+.v-car{position:relative}
+.v-car-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:.2rem}
+.v-car-track::-webkit-scrollbar{display:none}
+.v-car-track:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
+.v-car-s{flex:0 0 min(72%,780px);scroll-snap-align:center;margin:0;background:var(--sand);overflow:hidden}
+.v-car-s img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.v-car-nav{display:flex;align-items:center;gap:.7rem;margin-top:1.1rem}
+.v-car-b{width:44px;height:44px;border:1.5px solid var(--bark-mid);background:var(--cream);color:var(--euc-deep);display:grid;place-items:center;cursor:pointer;transition:.25s;font-size:1.05rem;line-height:1}
+.v-car-b:hover{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream);opacity:1}
+.v-car-b:focus-visible{outline:2px solid var(--euc);outline-offset:2px}
+.v-car-count{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--stone);margin-left:.5rem}
+.v-car-dots{display:flex;gap:.4rem;margin-left:auto;align-items:center}
+.v-car-d{flex:0 0 auto;width:9px;height:9px;border-radius:999px;border:none;padding:0;background:var(--soil-soft);cursor:pointer;transition:width .3s ease,background .3s ease}
+.v-car-dots .v-car-d[aria-current="true"]{background:var(--euc);width:28px}
+.v-car-d:focus-visible{outline:2px solid var(--euc);outline-offset:2px}
+@media(max-width:900px){.v-car-s{flex-basis:86%}.v-car-dots{display:none}}
+@media(prefers-reduced-motion:reduce){.v-car-track{scroll-behavior:auto}}
 .v-map{padding:clamp(4rem,7vw,6rem) 0;background:var(--paper)}
 .v-map-h{text-align:center;max-width:720px;margin:0 auto 2.5rem}
 .v-map-h h2{font-size:clamp(2rem,3.2vw,2.6rem);margin:1rem 0 .8rem;letter-spacing:-.022em;line-height:1.05}
@@ -423,7 +429,6 @@
       </div>
     </div>
 
-    <!-- Gallery: PLACEHOLDER images and quote. Swap for real photos and a signed-off quote before launch. -->
     <!-- Activity 3 -->
     <div class="v-act rv">
       <div class="v-act-im">
@@ -444,16 +449,31 @@
         <span class="ey">A day in the field</span>
         <h3>What the day actually looks like.</h3>
       </div>
-      <div class="v-gal-g">
-        <div class="v-gal-i g1"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg" alt="Volunteers working on a bushcare site" loading="lazy"></div>
-        <div class="v-gal-i g2"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia.png" alt="Seedlings in a community nursery" loading="lazy"></div>
-        <blockquote class="v-gal-q">
-          <p>&ldquo;The whole team came back talking about it for weeks. It was the first offsite where nobody checked their phone.&rdquo;</p>
-          <cite>Placeholder quote &middot; replace with a real one</cite>
-        </blockquote>
-        <div class="v-gal-i g4"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg" alt="Restored wetland habitat" loading="lazy"></div>
-        <div class="v-gal-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Australian bushland" loading="lazy"></div>
-        <div class="v-gal-i"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="A koala in restored habitat" loading="lazy"></div>
+      <div class="v-car" role="region" aria-roledescription="carousel" aria-label="Corporate volunteering photographs">
+        <div class="v-car-track" id="volTrack" tabindex="0">
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-01.jpg" alt="A team potting seedlings on the bench of a community nursery" loading="eager" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-02.jpg" alt="A team filling a wheelbarrow with mulch on a wet morning" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-03.jpg" alt="Two people in high-visibility shirts talking beside a work site" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-04.jpg" alt="A large group holding seedlings outside a community nursery" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-05.jpg" alt="Volunteers planting across an open paddock lined with tree guards" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-06.jpg" alt="People working under a nursery shelter with trays of seedlings" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-07.jpg" alt="A group with trolleys of seedlings ready to go out to a planting site" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-08.jpg" alt="A volunteer in a wide-brimmed hat working among low scrub" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-09.jpg" alt="Volunteers planting along a grassy hillside above the coast" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-10.jpg" alt="Two volunteers settling a seedling in beside green tree guards" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-11.jpg" alt="Volunteers planting across a paddock dotted with green guards" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-12.jpg" alt="Volunteers planting through a valley, seedlings staked and guarded" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-13.jpg" alt="A volunteer raising his arms beside bags of cleared weeds" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-14.jpg" alt="People kneeling to plant seedlings in an open field" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-15.jpg" alt="A group planting among rows of green tree guards" loading="lazy" decoding="async"></figure>
+        <figure class="v-car-s"><img src="assets/img/volunteering/vol-16.jpg" alt="A gloved hand firming a seedling into the soil" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="v-car-nav">
+          <button class="v-car-b" type="button" data-dir="-1" aria-label="Previous photograph">&#8592;</button>
+          <button class="v-car-b" type="button" data-dir="1" aria-label="Next photograph">&#8594;</button>
+          <span class="v-car-count" id="volCount" aria-live="polite"></span>
+          <div class="v-car-dots" id="volDots"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -819,5 +839,6 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/carousel.js"></script>
 </body>
 </html>
