@@ -10,6 +10,16 @@ from site_lib import (ROOT, write_page, hero, hero_img, sec, two, port, cta_band
 
 U = 'https://fnpw.org.au/wp-content/uploads/'
 
+# Slugs whose detail pages now carry real content, ported from the live site by
+# tools/gen_project_pages.py. This generator only ever wrote placeholder stubs,
+# so it must not write over them. It still rebuilds the three pillar pages.
+try:
+    PORTED = {r['slug'] for r in json.load(
+        open(os.path.join(ROOT, 'data/projects-content.json'), encoding='utf-8'))
+        if not r.get('error')}
+except Exception:
+    PORTED = set()
+
 # slug | image path (under wp-content/uploads/) | pillar | state
 DATA = """
 mundoo-island-acquisition|assets/img/projects/mundoo-hero.jpg|parks|SA
@@ -331,6 +341,8 @@ def main():
 {cta_band('Help fund work like this.',
           'Every FNPW project is powered by donations, bequests and partnerships.',
           [('Donate', RAISELY_DONATE, 'btn-p'), ('Become a partner', 'partner.html', 'btn-o')])}'''
+        if p['slug'] in PORTED:
+            continue
         write_page(f"project-{p['slug']}.html", p['title'],
                    f"{p['title']}: a Foundation for National Parks & Wildlife project. {pil['label']}.",
                    body)
