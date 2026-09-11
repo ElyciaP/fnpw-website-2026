@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>NSW Volunteering Sites | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="14 corporate volunteering sites across New South Wales, from national parks and community nurseries to wetlands and conservation centres.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+
+.vs-hero{background:var(--euc-deep);color:var(--cream);padding:var(--sec-y) 0}
+.vs-hero .ey{color:var(--euc-soft)}.vs-hero .ey::before{background:var(--euc-soft)}
+.vs-hero h1{color:var(--cream);font-size:clamp(2rem,4.2vw,3.1rem);font-weight:600;
+  letter-spacing:-.028em;line-height:1.05;margin:1rem 0 0;max-width:18ch}
+.vs-hero .lede{color:rgba(250,246,242,.88);margin-top:1.1rem;max-width:56ch}
+.vs-crumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.72);
+  margin-bottom:1.3rem;flex-wrap:wrap}
+.vs-crumb a{color:var(--euc-soft)}
+.vs-tally{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;padding:0;list-style:none}
+.vs-tally li{font-size:.8rem;font-weight:600;color:var(--euc-deep);background:var(--euc-soft);
+  padding:.45em .85em}
+
+.vs-wrap{padding:var(--sec-y) 0;background:var(--paper)}
+.vs-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+@media(max-width:1000px){.vs-split{grid-template-columns:1fr;gap:2rem}}
+
+.vs-mapcol{position:sticky;top:92px}
+@media(max-width:1000px){.vs-mapcol{position:static}}
+.vm{background:var(--cream);border:1px solid var(--rule);padding:.6rem}
+.vm-svg{display:block;width:100%;height:auto}
+.vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
+.vm-hit{fill:transparent}
+.vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
+.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
+  text-anchor:middle;pointer-events:none}
+.vm-pin{cursor:pointer}
+.vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
+.vm-pin:focus{outline:none}
+.vm-pin:focus .vm-dot{stroke:var(--euc-deep);stroke-width:3}
+.vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
+.vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
+.vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
+.vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
+
+.vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
+.vs-filter button{font-size:.78rem;font-weight:600;padding:.5em .9em;border:1.5px solid var(--bark-mid);
+  background:transparent;color:var(--euc-deep);cursor:pointer;transition:.2s}
+.vs-filter button:hover{border-color:var(--euc-deep)}
+.vs-filter button.on{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
+
+.vs-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
+.vs-card{display:flex;gap:1rem;background:var(--white);border:1px solid var(--rule);
+  border-left:3px solid var(--euc-soft);padding:1.1rem 1.2rem;transition:.2s;cursor:default}
+.vs-card:hover,.vs-card:focus,.vs-card.on{border-left-color:var(--waratah);
+  box-shadow:0 10px 26px -18px rgba(15,49,50,.4);outline:none}
+.vs-num{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--euc-deep);
+  color:var(--cream);display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-d);font-weight:700;font-size:.8rem;margin-top:.15rem;transition:.2s}
+.vs-card:hover .vs-num,.vs-card:focus .vs-num,.vs-card.on .vs-num{background:var(--waratah)}
+.vs-bd{min-width:0}
+.vs-bd h3{font-size:1.02rem;margin:0 0 .35rem;color:var(--euc-deep);line-height:1.25}
+.vs-meta{margin:0 0 .35rem;font-size:.82rem;color:var(--euc);font-weight:600;
+  display:flex;align-items:center;gap:.5em;flex-wrap:wrap}
+.vs-dot{width:3px;height:3px;border-radius:50%;background:var(--bark-mid);display:inline-block}
+.vs-addr{margin:0 0 .35rem;font-size:.86rem;color:var(--char);line-height:1.5}
+.vs-mgr{margin:0;font-size:.8rem;color:var(--stone);line-height:1.5}
+.vs-mgr span{font-weight:700;color:var(--euc-deep)}
+.vs-count{font-size:.82rem;color:var(--stone);margin:0 0 1rem}
+
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="partner.html" class="">Become a Partner</a>
+        <a href="volunteer.html" class=" on">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<section class="vs-hero">
+  <div class="cw rv">
+    <nav class="vs-crumb"><a href="index.html">Home</a><span style="opacity:.45">/</span><a href="volunteer.html">Corporate Volunteering</a><span style="opacity:.45">/</span>New South Wales</nav>
+    <span class="ey">Corporate volunteering</span>
+    <h1>New South Wales sites</h1>
+    <p class="lede">14 sites across New South Wales where your team can spend a day on the ground. Pick one from the map or the list, then tell us your dates and we will arrange the rest.</p>
+      <ul class="vs-tally">
+        <li>1 Conservation Areas</li>
+        <li>4 National Parks</li>
+        <li>4 Nurserys</li>
+        <li>3 Parks</li>
+        <li>1 Reserves</li>
+        <li>1 Wetlands</li>
+      </ul>
+  </div>
+</section>
+
+<section class="vs-wrap">
+  <div class="cw">
+    <div class="vs-split">
+      <div class="vs-mapcol rv">
+        <div class="vm">
+    <svg class="vm-svg" viewBox="0 0 760 620" role="img" aria-label="Map of the New South Wales region showing 14 corporate volunteering sites, with a locator map of New South Wales">
+      <path class="vm-land" d="M-2410.1,-1206.7L-2404.6,461.9L-2400.2,455.0L-2385.4,468.5L-2384.0,459.9L-2367.8,461.2L-2359.0,473.4L-2343.1,463.5L-2320.5,488.9L-2311.2,479.7L-2287.6,498.5L-2273.3,494.5L-2269.4,514.7L-2244.1,506.1L-2249.4,493.2L-2239.7,494.5L-2223.8,476.4L-2169.1,488.3L-2161.7,479.7L-2153.2,488.6L-2124.6,476.1L-2126.8,484.7L-2114.2,486.3L-2112.2,500.5L-2094.1,492.2L-2089.4,503.5L-2072.4,505.4L-2070.2,544.4L-2026.0,554.6L-2038.6,574.1L-2038.0,598.1L-2029.5,600.4L-2036.1,607.7L-2027.1,605.7L-2032.0,613.0L-2025.1,615.3L-2033.9,617.9L-2010.8,635.7L-2006.4,629.5L-2010.8,651.9L-2002.0,653.2L-2004.2,665.1L-1993.3,661.8L-1997.9,686.9L-1991.1,693.8L-1959.2,700.4L-1965.2,683.6L-1942.7,681.9L-1948.5,667.7L-1939.7,666.1L-1942.7,640.7L-1926.5,641.0L-1929.5,633.4L-1919.9,634.4L-1917.7,623.2L-1912.5,628.2L-1918.8,637.7L-1896.5,649.9L-1898.7,662.5L-1891.3,667.4L-1881.1,656.9L-1867.7,672.4L-1863.3,661.8L-1849.5,675.0L-1829.2,667.7L-1830.8,674.3L-1800.1,683.6L-1798.7,693.5L-1785.0,691.5L-1791.0,697.8L-1784.1,704.4L-1764.6,704.4L-1771.8,785.2L-1752.8,835.3L-1736.9,835.3L-1730.6,845.2L-1703.3,841.3L-1697.9,866.0L-1705.8,884.2L-1689.9,900.7L-1653.9,901.0L-1624.2,931.3L-1593.7,937.9L-1588.2,956.1L-1556.6,968.0L-1512.1,1021.4L-1504.1,1016.1L-1489.6,1026.0L-1480.8,1054.1L-1472.5,1056.4L-1473.3,1071.2L-1442.6,1093.0L-1443.7,1101.6L-1416.2,1113.4L-1415.6,1128.3L-1411.5,1118.7L-1405.5,1127.6L-1396.1,1123.0L-1397.5,1134.2L-1387.9,1131.3L-1385.7,1141.8L-1363.4,1143.8L-1348.3,1122.3L-1315.6,1127.0L-1331.6,1099.3L-1312.9,1054.1L-1275.5,1043.8L-1212.8,1059.0L-1163.7,1037.6L-1125.5,1078.5L-1088.1,1099.9L-1062.5,1087.4L-1048.5,1090.3L-1043.6,1108.2L-998.8,1103.9L-984.8,1116.7L-958.1,1106.5L-958.1,1116.7L-942.7,1111.5L-934.5,1119.7L-919.9,1091.7L-899.0,1099.9L-897.9,1089.0L-885.0,1100.2L-866.3,1094.3L-847.4,1116.4L-834.7,1110.8L-829.8,1123.0L-796.0,1127.3L-776.5,1141.2L-772.9,1128.6L-746.5,1138.2L-727.3,1101.2L-721.5,1115.4L-673.2,1123.0L-650.1,1084.4L-625.3,1084.4L-609.7,1104.2L-600.6,1097.6L-610.0,1091.3L-595.9,1096.0L-566.5,1079.5L-510.5,1101.2L-507.2,1117.1L-486.3,1118.1L-488.8,1143.1L-475.9,1149.4L-476.7,1205.2L-470.4,1208.5L-475.9,1231.9L-452.2,1255.6L-449.5,1289.9L-426.7,1300.2L-456.3,1367.1L-432.4,1365.5L72.4,1607.0L67.4,1555.2L94.9,1518.6L80.3,1472.0L66.9,1459.2L64.4,1376.7L98.7,1289.6L103.4,1227.3L118.8,1203.8L135.0,1202.5L143.0,1191.0L138.6,1171.5L117.1,1166.2L124.8,1070.9L142.7,1056.7L172.1,982.1L194.1,955.7L188.9,932.3L213.6,902.6L213.9,877.6L229.5,852.2L257.0,855.5L279.8,843.3L309.8,799.4L312.8,773.0L294.4,757.5L286.4,724.8L304.8,709.0L317.7,656.2L328.5,645.3L322.1,626.2L339.5,600.1L330.1,579.0L335.6,552.6L421.6,451.0L447.7,325.3L475.5,281.4L493.3,229.6L513.4,211.5L539.0,136.3L575.2,82.8L678.3,44.6L694.8,20.8L694.2,7.0L720.0,-3.3L714.5,-29.0L750.5,-48.8L770.0,-45.2L780.2,-58.7L780.8,-107.5L773.6,-121.0L786.0,-147.4L768.7,-170.9L795.6,-227.3L834.4,-259.9L833.5,-280.1L861.8,-330.2L862.7,-355.9L886.3,-385.3L881.6,-413.7L897.0,-439.4L898.7,-489.9L917.6,-514.0L921.7,-532.8L914.6,-544.6L931.9,-565.7L922.0,-596.1L904.1,-606.3L900.6,-640.3L912.4,-709.6L945.4,-765.7L944.8,-782.2L976.4,-802.6L960.2,-849.5L977.2,-864.3L975.0,-890.7L978.9,-896.6L997.9,-882.5L1011.0,-894.7L1002.2,-919.4L977.5,-919.7L1004.7,-1044.4L1006.6,-1087.3L997.3,-1103.8L1012.7,-1133.5L1030.6,-1144.1L1023.7,-1178.0L1069.6,-1251.6L1067.1,-1279.0L1078.9,-1327.2L1055.3,-1365.8L1064.4,-1451.2L1053.6,-1489.5L1034.7,-1477.6L1018.7,-1484.5L985.8,-1453.8L936.6,-1454.8L917.6,-1418.2L854.7,-1434.0L819.2,-1416.2L788.2,-1433.7L781.9,-1447.2L772.0,-1424.5L757.4,-1435.4L759.6,-1449.5L740.4,-1450.9L718.9,-1414.6L698.1,-1416.6L672.5,-1388.2L657.1,-1393.5L617.5,-1363.1L600.8,-1365.1L615.6,-1316.9L633.8,-1302.7L624.7,-1294.8L617.0,-1255.6L623.3,-1250.9L615.6,-1236.8L589.8,-1229.8L571.4,-1236.8L566.7,-1219.6L551.9,-1219.6L539.8,-1248.6L532.4,-1248.6L488.1,-1221.9L474.9,-1199.5L476.3,-1183.3L446.3,-1147.7L424.9,-1151.6L415.0,-1172.8L413.4,-1226.9L366.4,-1260.2L350.2,-1257.9L340.8,-1291.9L269.7,-1327.2L237.0,-1313.0L184.7,-1317.3L143.0,-1359.2L121.8,-1347.0L105.3,-1354.9L67.4,-1344.6L57.0,-1333.8L-13.4,-1335.4L-18.1,-1327.2L-50.2,-1347.3L-73.0,-1347.0L-87.3,-1340.0L-105.2,-1306.7L-129.9,-1302.1L-189.2,-1258.5L-202.7,-1220.6L-223.0,-1206.7L-2410.1,-1206.7Z"></path>
+      <g class="vm-inset" transform="translate(576,502)" aria-hidden="true">
+        <rect class="vm-inset-bg" x="-8" y="-8" width="184" height="118"></rect>
+        <path class="vm-inset-land" d="M13.4,15.9L13.6,62.2L13.7,62.0L14.1,62.4L14.1,62.1L14.6,62.2L14.8,62.5L15.3,62.2L15.9,62.9L16.2,62.7L16.8,63.2L17.2,63.1L17.3,63.7L18.1,63.4L17.9,63.1L18.2,63.1L18.6,62.6L20.2,62.9L20.4,62.7L20.6,62.9L21.4,62.6L21.3,62.8L21.7,62.9L21.7,63.3L22.3,63.0L22.4,63.4L22.9,63.4L22.9,64.5L24.2,64.8L23.8,65.3L23.8,66.0L24.1,66.0L23.9,66.2L24.1,66.2L24.0,66.4L24.2,66.5L23.9,66.5L24.6,67.0L24.7,66.9L24.6,67.5L24.8,67.5L24.8,67.8L25.1,67.8L25.0,68.4L25.1,68.6L26.0,68.8L25.9,68.4L26.5,68.3L26.3,67.9L26.6,67.9L26.5,67.2L27.0,67.2L26.9,67.0L27.1,67.0L27.2,66.7L27.3,66.8L27.2,67.1L27.8,67.4L27.7,67.8L27.9,67.9L28.2,67.6L28.6,68.0L28.7,67.8L29.1,68.1L29.7,67.9L29.6,68.1L30.5,68.4L30.5,68.6L30.9,68.6L30.7,68.7L30.9,68.9L31.5,68.9L31.3,71.2L31.8,72.6L32.3,72.6L32.4,72.8L33.2,72.7L33.4,73.4L33.1,73.9L33.6,74.4L34.6,74.4L35.4,75.2L36.3,75.4L36.4,75.9L37.3,76.3L38.6,77.7L38.8,77.6L39.2,77.9L39.4,78.6L39.7,78.7L39.6,79.1L40.5,79.7L40.5,80.0L41.2,80.3L41.3,80.7L41.4,80.4L41.6,80.7L41.8,80.6L41.8,80.9L42.0,80.8L42.1,81.1L42.7,81.1L43.2,80.5L44.1,80.7L43.6,79.9L44.1,78.6L45.2,78.4L46.9,78.8L48.3,78.2L49.4,79.3L50.4,79.9L51.2,79.6L51.6,79.7L51.7,80.1L52.9,80.0L53.3,80.4L54.1,80.1L54.1,80.4L54.5,80.2L54.7,80.5L55.2,79.7L55.7,79.9L55.8,79.6L56.1,79.9L56.7,79.8L57.2,80.4L57.5,80.2L57.7,80.6L58.6,80.7L59.2,81.1L59.3,80.7L60.0,81.0L60.5,80.0L60.7,80.3L62.1,80.6L62.7,79.5L63.4,79.5L63.8,80.0L64.1,79.9L63.8,79.7L64.2,79.8L65.1,79.3L66.6,80.0L66.7,80.4L67.3,80.4L67.2,81.1L67.6,81.3L67.6,82.8L67.7,82.9L67.6,83.6L68.3,84.2L68.3,85.2L69.0,85.5L68.1,87.3L68.8,87.3L83.0,94.0L82.8,92.6L83.6,91.5L83.2,90.3L82.8,89.9L82.7,87.6L83.7,85.2L83.8,83.5L84.3,82.8L84.7,82.8L84.9,82.4L84.8,81.9L84.2,81.8L84.4,79.1L84.9,78.7L85.7,76.6L86.4,75.9L86.2,75.3L86.9,74.4L86.9,73.7L87.4,73.0L88.1,73.1L88.8,72.8L89.6,71.6L89.7,70.8L89.2,70.4L88.9,69.5L89.5,69.1L89.8,67.6L90.1,67.3L89.9,66.8L90.4,66.0L90.2,65.5L90.3,64.7L92.7,61.9L93.5,58.4L94.2,57.2L94.7,55.7L95.3,55.2L96.0,53.2L97.0,51.7L99.9,50.6L100.4,49.9L100.4,49.6L101.1,49.3L100.9,48.6L102.0,48.0L102.5,48.1L102.8,47.7L102.8,46.4L102.6,46.0L102.9,45.3L102.5,44.6L103.2,43.1L104.3,42.2L104.3,41.6L105.1,40.2L105.1,39.5L105.8,38.7L105.6,37.9L106.1,37.2L106.1,35.8L106.6,35.1L106.7,34.6L106.5,34.2L107.0,33.7L106.8,32.8L106.3,32.5L106.2,31.6L106.5,29.7L107.4,28.1L107.4,27.6L108.3,27.1L107.8,25.8L108.3,25.4L108.2,24.6L108.3,24.5L108.9,24.9L109.2,24.5L109.0,23.8L108.3,23.8L109.1,20.4L109.1,19.2L108.9,18.7L109.3,17.9L109.8,17.6L109.6,16.7L110.9,14.6L110.8,13.8L111.2,12.5L110.5,11.4L110.7,9.1L110.4,8.0L109.9,8.3L109.5,8.1L108.5,9.0L107.2,9.0L106.6,10.0L104.9,9.5L103.9,10.0L103.0,9.6L102.8,9.2L102.6,9.8L102.1,9.5L102.2,9.1L101.7,9.1L101.1,10.1L100.5,10.0L99.8,10.8L99.3,10.7L98.2,11.5L97.8,11.5L98.2,12.8L98.7,13.2L98.4,13.4L98.2,14.5L98.4,14.6L98.2,15.0L97.4,15.2L96.9,15.0L96.8,15.5L96.4,15.5L96.0,14.7L95.8,14.7L94.6,15.4L94.2,16.1L94.3,16.5L93.4,17.5L92.8,17.4L92.6,16.8L92.5,15.3L91.2,14.4L90.7,14.4L90.5,13.5L88.5,12.5L87.6,12.9L86.1,12.8L84.9,11.6L84.3,12.0L83.9,11.7L82.8,12.0L82.5,12.3L80.5,12.3L80.4,12.5L79.5,12.0L78.9,12.0L78.5,12.2L78.0,13.1L77.3,13.2L75.6,14.4L75.2,15.5L74.7,15.9L13.4,15.9Z"></path>
+        <rect class="vm-inset-box" x="81.8" y="50.1" width="19.5" height="15.8"></rect>
+      </g>
+      <g class="vm-pin" data-i="1" tabindex="0" role="button" aria-label="Belmont Nursery, Redhead">
+        <circle class="vm-hit" cx="526.6" cy="121.4" r="18"></circle>
+        <circle class="vm-dot" cx="526.6" cy="121.4" r="11.5"></circle>
+        <text class="vm-num" x="526.6" y="125.2">1</text>
+      </g>
+      <g class="vm-pin" data-i="2" tabindex="0" role="button" aria-label="Congwong Beach, Kamay-Botany Bay National Park, La Perouse">
+        <circle class="vm-hit" cx="402.7" cy="439.5" r="18"></circle>
+        <circle class="vm-dot" cx="402.7" cy="439.5" r="11.5"></circle>
+        <text class="vm-num" x="402.7" y="443.3">2</text>
+      </g>
+      <g class="vm-pin" data-i="3" tabindex="0" role="button" aria-label="Glenrock State Conservation Area, Highfields">
+        <circle class="vm-hit" cx="538.7" cy="97.2" r="18"></circle>
+        <circle class="vm-dot" cx="538.7" cy="97.2" r="11.5"></circle>
+        <text class="vm-num" x="538.7" y="101.0">3</text>
+      </g>
+      <g class="vm-pin" data-i="4" tabindex="0" role="button" aria-label="Hawkesbury Community Nursery, Mulgrave">
+        <circle class="vm-hit" cx="291.4" cy="319.3" r="18"></circle>
+        <circle class="vm-dot" cx="291.4" cy="319.3" r="11.5"></circle>
+        <text class="vm-num" x="291.4" y="323.1">4</text>
+      </g>
+      <g class="vm-pin" data-i="5" tabindex="0" role="button" aria-label="Lane Cove National Park, Chatswood West">
+        <circle class="vm-hit" cx="383.2" cy="355.2" r="18"></circle>
+        <circle class="vm-dot" cx="383.2" cy="355.2" r="11.5"></circle>
+        <text class="vm-num" x="383.2" y="359.0">5</text>
+      </g>
+      <g class="vm-pin" data-i="6" tabindex="0" role="button" aria-label="Lane Cove National Park, Chatswood West">
+        <circle class="vm-hit" cx="387.3" cy="394.5" r="18"></circle>
+        <circle class="vm-dot" cx="387.3" cy="394.5" r="11.5"></circle>
+        <text class="vm-num" x="387.3" y="398.3">6</text>
+      </g>
+      <g class="vm-pin" data-i="7" tabindex="0" role="button" aria-label="Magdala Park, North Ryde">
+        <circle class="vm-hit" cx="366.9" cy="376.8" r="18"></circle>
+        <circle class="vm-dot" cx="366.9" cy="376.8" r="11.5"></circle>
+        <text class="vm-num" x="366.9" y="380.6">7</text>
+      </g>
+      <g class="vm-pin" data-i="8" tabindex="0" role="button" aria-label="Middle Head - Gubbuh Gubbuh, Mosman">
+        <circle class="vm-hit" cx="412.6" cy="385.1" r="18"></circle>
+        <circle class="vm-dot" cx="412.6" cy="385.1" r="11.5"></circle>
+        <text class="vm-num" x="412.6" y="388.90000000000003">8</text>
+      </g>
+      <g class="vm-pin" data-i="9" tabindex="0" role="button" aria-label="Morgans Creek Picnic Area, Georges River NP, Reversby Heights">
+        <circle class="vm-hit" cx="340.5" cy="434.5" r="18"></circle>
+        <circle class="vm-dot" cx="340.5" cy="434.5" r="11.5"></circle>
+        <text class="vm-num" x="340.5" y="438.3">9</text>
+      </g>
+      <g class="vm-pin" data-i="10" tabindex="0" role="button" aria-label="Tempe Wetlands, Tempe">
+        <circle class="vm-hit" cx="381.3" cy="420.8" r="18"></circle>
+        <circle class="vm-dot" cx="381.3" cy="420.8" r="11.5"></circle>
+        <text class="vm-num" x="381.3" y="424.6">10</text>
+      </g>
+      <g class="vm-pin" data-i="11" tabindex="0" role="button" aria-label="Wildplant Community Nursery, Ourimbah">
+        <circle class="vm-hit" cx="442.7" cy="231.1" r="18"></circle>
+        <circle class="vm-dot" cx="442.7" cy="231.1" r="11.5"></circle>
+        <text class="vm-num" x="442.7" y="234.9">11</text>
+      </g>
+      <g class="vm-pin" data-i="12" tabindex="0" role="button" aria-label="Wollondilly Shire - Bargo River Reserve, Tahmoor">
+        <circle class="vm-hit" cx="218.4" cy="525.6" r="18"></circle>
+        <circle class="vm-dot" cx="218.4" cy="525.6" r="11.5"></circle>
+        <text class="vm-num" x="218.4" y="529.4">12</text>
+      </g>
+      <g class="vm-pin" data-i="13" tabindex="0" role="button" aria-label="Wollondilly Shire - Robin Davies Community Nursery, Picton">
+        <circle class="vm-hit" cx="241.1" cy="511.1" r="18"></circle>
+        <circle class="vm-dot" cx="241.1" cy="511.1" r="11.5"></circle>
+        <text class="vm-num" x="241.1" y="514.9">13</text>
+      </g>
+      <g class="vm-pin" data-i="14" tabindex="0" role="button" aria-label="Wollondilly Shire - Stonequarry Bush Tucker Garden, Picton">
+        <circle class="vm-hit" cx="226.1" cy="488.6" r="18"></circle>
+        <circle class="vm-dot" cx="226.1" cy="488.6" r="11.5"></circle>
+        <text class="vm-num" x="226.1" y="492.40000000000003">14</text>
+      </g>
+    </svg>
+        </div>
+        <p class="vm-cap">The map is zoomed to where the sites actually are; the small inset shows that area within New South Wales. Pin positions are approximate. Hover a pin to find it in the list, or tap one to jump straight to it.</p>
+      </div>
+      <div class="rv d1">
+        <div class="vs-filter">
+        <button type="button" data-f="all" class="on">All sites</button>
+        <button type="button" data-f="Conservation Area">Conservation Area</button>
+        <button type="button" data-f="National Park">National Park</button>
+        <button type="button" data-f="Nursery">Nursery</button>
+        <button type="button" data-f="Park">Park</button>
+        <button type="button" data-f="Reserve">Reserve</button>
+        <button type="button" data-f="Wetlands">Wetlands</button>
+        </div>
+        <p class="vs-count" id="vsCount">14 sites</p>
+        <ul class="vs-list">
+        <li class="vs-card" data-i="1" data-type="Nursery" tabindex="0">
+          <span class="vs-num">1</span>
+          <div class="vs-bd">
+            <h3>Belmont Nursery</h3>
+            <p class="vs-meta"><span class="vs-type">Nursery</span><span class="vs-dot"></span><span class="vs-city">Redhead</span></p>
+            <p class="vs-addr">119 Kalaroo Road, Belmont State Wetland Park, 2290</p>
+            <p class="vs-mgr"><span>Managed with</span> Trees in Newcastle</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="2" data-type="National Park" tabindex="0">
+          <span class="vs-num">2</span>
+          <div class="vs-bd">
+            <h3>Congwong Beach, Kamay-Botany Bay National Park</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">La Perouse</span></p>
+            <p class="vs-addr">1532R Anzac Parade, 2038</p>
+            <p class="vs-mgr"><span>Managed with</span> National Parks &amp; Wildlife Service - NSW</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="3" data-type="Conservation Area" tabindex="0">
+          <span class="vs-num">3</span>
+          <div class="vs-bd">
+            <h3>Glenrock State Conservation Area</h3>
+            <p class="vs-meta"><span class="vs-type">Conservation Area</span><span class="vs-dot"></span><span class="vs-city">Highfields</span></p>
+            <p class="vs-addr">Yuelarbah Track, 2289</p>
+            <p class="vs-mgr"><span>Managed with</span> Trees in Newcastle</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="4" data-type="Nursery" tabindex="0">
+          <span class="vs-num">4</span>
+          <div class="vs-bd">
+            <h3>Hawkesbury Community Nursery</h3>
+            <p class="vs-meta"><span class="vs-type">Nursery</span><span class="vs-dot"></span><span class="vs-city">Mulgrave</span></p>
+            <p class="vs-addr">10 Mulgrave Road, 2756</p>
+            <p class="vs-mgr"><span>Managed with</span> Hawkesbury City Council</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="5" data-type="National Park" tabindex="0">
+          <span class="vs-num">5</span>
+          <div class="vs-bd">
+            <h3>Lane Cove National Park</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">Chatswood West</span></p>
+            <p class="vs-addr">Koonjerie Picnic Area, Riverside Drive, 2067</p>
+            <p class="vs-mgr"><span>Managed with</span> National Parks &amp; Wildlife Service - NSW</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="6" data-type="National Park" tabindex="0">
+          <span class="vs-num">6</span>
+          <div class="vs-bd">
+            <h3>Lane Cove National Park</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">Chatswood West</span></p>
+            <p class="vs-addr">River Road, 2067</p>
+            <p class="vs-mgr"><span>Managed with</span> Friends of Lane Cove National Park</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="7" data-type="Park" tabindex="0">
+          <span class="vs-num">7</span>
+          <div class="vs-bd">
+            <h3>Magdala Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">North Ryde</span></p>
+            <p class="vs-addr">Magdala Road, 2113</p>
+            <p class="vs-mgr"><span>Managed with</span> National Parks &amp; Wildlife Service - NSW</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="8" data-type="Reserve" tabindex="0">
+          <span class="vs-num">8</span>
+          <div class="vs-bd">
+            <h3>Middle Head - Gubbuh Gubbuh</h3>
+            <p class="vs-meta"><span class="vs-type">Reserve</span><span class="vs-dot"></span><span class="vs-city">Mosman</span></p>
+            <p class="vs-addr">2 Governors Road, 2088</p>
+            <p class="vs-mgr"><span>Managed with</span> National Parks &amp; Wildlife Service - NSW</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="9" data-type="National Park" tabindex="0">
+          <span class="vs-num">9</span>
+          <div class="vs-bd">
+            <h3>Morgans Creek Picnic Area, Georges River NP</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">Reversby Heights</span></p>
+            <p class="vs-addr">Georges River Jetty, Burrawang Reach Road, 2212</p>
+            <p class="vs-mgr"><span>Managed with</span> National Parks &amp; Wildlife Service - NSW</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="10" data-type="Wetlands" tabindex="0">
+          <span class="vs-num">10</span>
+          <div class="vs-bd">
+            <h3>Tempe Wetlands</h3>
+            <p class="vs-meta"><span class="vs-type">Wetlands</span><span class="vs-dot"></span><span class="vs-city">Tempe</span></p>
+            <p class="vs-addr">Holbeach Avenue, 2044</p>
+            <p class="vs-mgr"><span>Managed with</span> National Parks &amp; Wildlife Service - NSW</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="11" data-type="Nursery" tabindex="0">
+          <span class="vs-num">11</span>
+          <div class="vs-bd">
+            <h3>Wildplant Community Nursery</h3>
+            <p class="vs-meta"><span class="vs-type">Nursery</span><span class="vs-dot"></span><span class="vs-city">Ourimbah</span></p>
+            <p class="vs-addr">Loop Road, 2258</p>
+            <p class="vs-mgr"><span>Managed with</span> Community Environment Network</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="12" data-type="Park" tabindex="0">
+          <span class="vs-num">12</span>
+          <div class="vs-bd">
+            <h3>Wollondilly Shire - Bargo River Reserve</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Tahmoor</span></p>
+            <p class="vs-addr">Bargo River Road, 2573</p>
+            <p class="vs-mgr"><span>Managed with</span> Wollondilly Shire Council</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="13" data-type="Nursery" tabindex="0">
+          <span class="vs-num">13</span>
+          <div class="vs-bd">
+            <h3>Wollondilly Shire - Robin Davies Community Nursery</h3>
+            <p class="vs-meta"><span class="vs-type">Nursery</span><span class="vs-dot"></span><span class="vs-city">Picton</span></p>
+            <p class="vs-addr">38 Wonga Road, 2571</p>
+            <p class="vs-mgr"><span>Managed with</span> Wollondilly Shire Council</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="14" data-type="Park" tabindex="0">
+          <span class="vs-num">14</span>
+          <div class="vs-bd">
+            <h3>Wollondilly Shire - Stonequarry Bush Tucker Garden</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Picton</span></p>
+            <p class="vs-addr">4 Downing Street, 2571</p>
+            <p class="vs-mgr"><span>Managed with</span> Wollondilly Shire Council</p>
+          </div>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="cw rv" style="text-align:center">
+    <h2 style="max-width:22ch;margin:0 auto 1rem">Bring your team to one of these sites.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Tell us your team size and rough dates and we will match you to a site and a land manager.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="volunteer.html#enquire">Enquire about a day</a><a class="btn-o" href="volunteer.html">All corporate volunteering</a></div>
+  </div>
+</section>
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var pins = [].slice.call(document.querySelectorAll('.vm-pin'));
+  var cards = [].slice.call(document.querySelectorAll('.vs-card'));
+  if (!pins.length) return;
+
+  function mark(i, on) {
+    pins.forEach(function (p) { if (+p.dataset.i === i) p.classList.toggle('on', on); });
+    cards.forEach(function (c) { if (+c.dataset.i === i) c.classList.toggle('on', on); });
+  }
+  function wire(el) {
+    var i = +el.dataset.i;
+    el.addEventListener('mouseenter', function () { mark(i, true); });
+    el.addEventListener('mouseleave', function () { mark(i, false); });
+    el.addEventListener('focus', function () { mark(i, true); });
+    el.addEventListener('blur', function () { mark(i, false); });
+  }
+  pins.forEach(wire);
+  cards.forEach(wire);
+
+  // Clicking a pin brings its entry into view, which is the point of the map
+  // on a phone, where the two are stacked rather than side by side.
+  pins.forEach(function (p) {
+    p.addEventListener('click', function () {
+      var c = cards.filter(function (x) { return x.dataset.i === p.dataset.i; })[0];
+      if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.focus({ preventScroll: true }); }
+    });
+    p.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
+    });
+  });
+
+  var btns = [].slice.call(document.querySelectorAll('.vs-filter button'));
+  var count = document.getElementById('vsCount');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      var f = b.dataset.f, shown = 0;
+      cards.forEach(function (c) {
+        var hit = (f === 'all' || c.dataset.type === f);
+        c.hidden = !hit;
+        if (hit) shown++;
+        pins.forEach(function (p) {
+          if (p.dataset.i === c.dataset.i) p.style.opacity = hit ? '' : '.18';
+        });
+      });
+      if (count) count.textContent = shown + (shown === 1 ? ' site' : ' sites');
+    });
+  });
+})();
+</script>
+</body>
+</html>

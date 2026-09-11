@@ -29,9 +29,6 @@
 .hx-btn-don{background:var(--waratah);color:var(--cream);box-shadow:0 10px 30px -10px rgba(194,55,71,.5)}
 .hx-btn-ghost{border:1.5px solid rgba(250,246,242,.55);color:var(--cream)}
 .hx-btn-ghost:hover{border-color:var(--cream);background:rgba(250,246,242,.08)}
-/* rotating est. stamp */
-.hx-stamp{position:absolute;right:clamp(1rem,6vw,6rem);top:8.5rem;width:150px;z-index:2}
-.hx-stamp img{width:100%;height:auto;display:block;filter:drop-shadow(0 2px 12px rgba(15,49,50,.55))}
 /* organic bottom edge */
 .hx-hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:70px}
 .hx-hero-curve svg{display:block;width:100%;height:100%}
@@ -207,11 +204,10 @@ main:has(.hx-news)+.ftr{margin-top:0}
   .hx-state-g,.hx-story-g,.hx-news-g,.hx-ir-g{grid-template-columns:1fr}
   .hx-camp-g{grid-template-columns:1fr}
   .hx-camp-im{min-height:230px}
-  .hx-stamp{display:none}
 }
 a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){
-  .hx-tick,.hx-stamp svg{animation:none}
+  .hx-tick{animation:none}
   .hx-pil,.hx-pil img,.hx-pcard .im img{transition:none}
 }
 </style>
@@ -266,9 +262,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <section class="hx-hero">
   <div class="hx-hero-bg">
     <img src="assets/img/hero-beeeaters.jpg" alt="Two rainbow bee-eaters on a branch">
-  </div>
-  <div class="hx-stamp">
-    <img src="assets/img/55-badge.png" alt="55 years of conservation" loading="lazy" onerror="this.parentNode.style.display='none'">
   </div>
   <div class="cw rv">
     <span class="hx-kicker">Foundation for National Parks &amp; Wildlife</span>

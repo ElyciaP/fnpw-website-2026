@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>SA Volunteering Sites | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="13 corporate volunteering sites across South Australia, from national parks and community nurseries to wetlands and conservation centres.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+
+.vs-hero{background:var(--euc-deep);color:var(--cream);padding:var(--sec-y) 0}
+.vs-hero .ey{color:var(--euc-soft)}.vs-hero .ey::before{background:var(--euc-soft)}
+.vs-hero h1{color:var(--cream);font-size:clamp(2rem,4.2vw,3.1rem);font-weight:600;
+  letter-spacing:-.028em;line-height:1.05;margin:1rem 0 0;max-width:18ch}
+.vs-hero .lede{color:rgba(250,246,242,.88);margin-top:1.1rem;max-width:56ch}
+.vs-crumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.72);
+  margin-bottom:1.3rem;flex-wrap:wrap}
+.vs-crumb a{color:var(--euc-soft)}
+.vs-tally{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;padding:0;list-style:none}
+.vs-tally li{font-size:.8rem;font-weight:600;color:var(--euc-deep);background:var(--euc-soft);
+  padding:.45em .85em}
+
+.vs-wrap{padding:var(--sec-y) 0;background:var(--paper)}
+.vs-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+@media(max-width:1000px){.vs-split{grid-template-columns:1fr;gap:2rem}}
+
+.vs-mapcol{position:sticky;top:92px}
+@media(max-width:1000px){.vs-mapcol{position:static}}
+.vm{background:var(--cream);border:1px solid var(--rule);padding:.6rem}
+.vm-svg{display:block;width:100%;height:auto}
+.vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
+.vm-hit{fill:transparent}
+.vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
+.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
+  text-anchor:middle;pointer-events:none}
+.vm-pin{cursor:pointer}
+.vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
+.vm-pin:focus{outline:none}
+.vm-pin:focus .vm-dot{stroke:var(--euc-deep);stroke-width:3}
+.vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
+.vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
+.vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
+.vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
+
+.vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
+.vs-filter button{font-size:.78rem;font-weight:600;padding:.5em .9em;border:1.5px solid var(--bark-mid);
+  background:transparent;color:var(--euc-deep);cursor:pointer;transition:.2s}
+.vs-filter button:hover{border-color:var(--euc-deep)}
+.vs-filter button.on{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
+
+.vs-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
+.vs-card{display:flex;gap:1rem;background:var(--white);border:1px solid var(--rule);
+  border-left:3px solid var(--euc-soft);padding:1.1rem 1.2rem;transition:.2s;cursor:default}
+.vs-card:hover,.vs-card:focus,.vs-card.on{border-left-color:var(--waratah);
+  box-shadow:0 10px 26px -18px rgba(15,49,50,.4);outline:none}
+.vs-num{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--euc-deep);
+  color:var(--cream);display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-d);font-weight:700;font-size:.8rem;margin-top:.15rem;transition:.2s}
+.vs-card:hover .vs-num,.vs-card:focus .vs-num,.vs-card.on .vs-num{background:var(--waratah)}
+.vs-bd{min-width:0}
+.vs-bd h3{font-size:1.02rem;margin:0 0 .35rem;color:var(--euc-deep);line-height:1.25}
+.vs-meta{margin:0 0 .35rem;font-size:.82rem;color:var(--euc);font-weight:600;
+  display:flex;align-items:center;gap:.5em;flex-wrap:wrap}
+.vs-dot{width:3px;height:3px;border-radius:50%;background:var(--bark-mid);display:inline-block}
+.vs-addr{margin:0 0 .35rem;font-size:.86rem;color:var(--char);line-height:1.5}
+.vs-mgr{margin:0;font-size:.8rem;color:var(--stone);line-height:1.5}
+.vs-mgr span{font-weight:700;color:var(--euc-deep)}
+.vs-count{font-size:.82rem;color:var(--stone);margin:0 0 1rem}
+
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="partner.html" class="">Become a Partner</a>
+        <a href="volunteer.html" class=" on">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<section class="vs-hero">
+  <div class="cw rv">
+    <nav class="vs-crumb"><a href="index.html">Home</a><span style="opacity:.45">/</span><a href="volunteer.html">Corporate Volunteering</a><span style="opacity:.45">/</span>South Australia</nav>
+    <span class="ey">Corporate volunteering</span>
+    <h1>South Australia sites</h1>
+    <p class="lede">13 sites across South Australia where your team can spend a day on the ground. Pick one from the map or the list, then tell us your dates and we will arrange the rest.</p>
+      <ul class="vs-tally">
+        <li>1 Beachs</li>
+        <li>3 National Parks</li>
+        <li>2 Nurserys</li>
+        <li>7 Parks</li>
+      </ul>
+  </div>
+</section>
+
+<section class="vs-wrap">
+  <div class="cw">
+    <div class="vs-split">
+      <div class="vs-mapcol rv">
+        <div class="vm">
+    <svg class="vm-svg" viewBox="0 0 760 620" role="img" aria-label="Map of the South Australia region showing 13 corporate volunteering sites, with a locator map of South Australia">
+      <path class="vm-land" d="M-2636.2,-950.2L-2273.8,-993.8L-2068.4,-983.1L-1994.5,-1011.0L-1962.9,-1036.6L-1798.4,-952.1L-1686.9,-868.3L-1660.0,-834.3L-1677.2,-797.9L-1666.6,-779.2L-1640.3,-786.1L-1625.9,-821.6L-1568.3,-828.1L-1402.9,-786.5L-1362.5,-749.0L-1315.8,-631.2L-1324.0,-615.9L-1338.4,-625.0L-1354.7,-618.9L-1353.1,-589.5L-1305.5,-584.9L-1289.5,-605.2L-1094.4,-556.2L-1046.8,-451.4L-1014.6,-425.8L-1003.3,-392.1L-979.5,-377.6L-868.9,-252.1L-868.6,-225.3L-827.0,-218.5L-726.1,-129.0L-739.3,-116.3L-738.0,-98.4L-721.1,-86.9L-703.6,-96.4L-689.8,-59.7L-714.5,73.0L-736.8,100.2L-742.4,141.1L-699.5,170.2L-755.9,186.6L-766.8,203.0L-764.3,223.3L-739.0,232.5L-686.0,193.1L-669.4,204.6L-641.2,197.3L-624.3,209.9L-598.3,244.7L-609.0,257.7L-606.8,272.7L-582.1,280.3L-579.9,310.9L-555.7,315.9L-277.0,672.7L-250.1,684.2L-240.7,725.2L-223.2,730.5L-192.5,712.1L-131.4,705.6L-87.5,710.6L-56.9,691.5L-24.9,698.4L0.1,725.2L20.2,725.9L27.7,743.1L45.2,746.6L59.6,727.8L44.6,708.7L78.1,688.8L82.8,652.5L122.0,641.4L200.3,660.5L367.2,548.8L476.5,542.7L552.6,602.4L631.8,690.3L681.9,769.5L718.9,852.5L736.1,905.7L691.3,1024.6L668.8,1026.2L661.9,1047.2L671.3,1061.4L705.1,1073.2L704.5,1133.3L756.2,1223.9L803.8,1279.4L863.6,1326.4L901.2,1407.5L923.1,1433.1L1009.8,1485.9L1111.0,1484.8L1110.4,-93.8L1122.6,-78.5L1121.3,-3148.0L-2635.9,-3146.8L-2636.2,-950.2Z"></path>
+      <g class="vm-inset" transform="translate(576,414)" aria-hidden="true">
+        <rect class="vm-inset-bg" x="-8" y="-8" width="184" height="206"></rect>
+        <path class="vm-inset-land" d="M11.0,90.5L25.0,88.9L33.0,89.3L35.9,88.2L37.1,87.3L43.5,90.4L47.9,93.6L48.9,94.9L48.2,96.2L48.6,96.9L49.7,96.7L50.2,95.3L52.5,95.1L58.9,96.7L60.5,98.1L62.3,102.5L62.0,103.1L61.4,102.7L60.8,102.9L60.8,104.0L62.7,104.2L63.3,103.5L70.9,105.3L72.7,109.2L74.0,110.2L74.4,111.5L75.3,112.0L79.6,116.7L79.7,117.7L81.3,118.0L85.2,121.3L84.7,121.8L84.7,122.5L85.4,122.9L86.1,122.6L86.6,123.9L85.6,128.9L84.8,129.9L84.6,131.5L86.2,132.6L84.0,133.2L83.6,133.8L83.7,134.6L84.7,134.9L86.7,133.4L87.4,133.9L88.5,133.6L89.1,134.1L90.2,135.4L89.7,135.9L89.8,136.4L90.8,136.7L90.9,137.9L91.8,138.0L102.6,151.4L103.7,151.9L104.1,153.4L104.7,153.6L105.9,152.9L108.3,152.7L110.0,152.9L111.2,152.1L112.4,152.4L113.4,153.4L114.2,153.4L114.5,154.1L115.2,154.2L115.7,153.5L115.1,152.8L116.4,152.0L116.6,150.7L118.2,150.3L121.2,151.0L127.7,146.8L131.9,146.6L134.9,148.8L138.0,152.1L139.9,155.1L141.3,158.2L142.0,160.2L140.3,164.6L139.4,164.7L139.1,165.5L139.5,166.0L140.8,166.5L140.8,168.7L142.8,172.1L144.6,174.2L147.0,176.0L148.4,179.0L149.3,180.0L152.7,182.0L156.6,181.9L156.6,122.7L157.0,123.2L157.0,8.0L11.0,8.0L11.0,90.5Z"></path>
+        <rect class="vm-inset-box" x="114.6" y="127.2" width="27.1" height="21.3"></rect>
+      </g>
+      <g class="vm-pin" data-i="1" tabindex="0" role="button" aria-label="Anstey Hill Recreation Park, Tea Tree Gully">
+        <circle class="vm-hit" cx="409.4" cy="225.4" r="18"></circle>
+        <circle class="vm-dot" cx="409.4" cy="225.4" r="11.5"></circle>
+        <text class="vm-num" x="409.4" y="229.20000000000002">1</text>
+      </g>
+      <g class="vm-pin" data-i="2" tabindex="0" role="button" aria-label="Belair National Park, Belair">
+        <circle class="vm-hit" cx="381.8" cy="302.2" r="18"></circle>
+        <circle class="vm-dot" cx="381.8" cy="302.2" r="11.5"></circle>
+        <text class="vm-num" x="381.8" y="306.0">2</text>
+      </g>
+      <g class="vm-pin" data-i="3" tabindex="0" role="button" aria-label="Black Hill Conservation Park, Athelstone">
+        <circle class="vm-hit" cx="416.9" cy="251.3" r="18"></circle>
+        <circle class="vm-dot" cx="416.9" cy="251.3" r="11.5"></circle>
+        <text class="vm-num" x="416.9" y="255.10000000000002">3</text>
+      </g>
+      <g class="vm-pin" data-i="4" tabindex="0" role="button" aria-label="Charleston Conservation Park, Charleston">
+        <circle class="vm-hit" cx="464.5" cy="263.8" r="18"></circle>
+        <circle class="vm-dot" cx="464.5" cy="263.8" r="11.5"></circle>
+        <text class="vm-num" x="464.5" y="267.6">4</text>
+      </g>
+      <g class="vm-pin" data-i="5" tabindex="0" role="button" aria-label="Glenthorne National Park - Ityamaiitpinna Yarta, O&#x27;Halloran Hill">
+        <circle class="vm-hit" cx="355.4" cy="316.7" r="18"></circle>
+        <circle class="vm-dot" cx="355.4" cy="316.7" r="11.5"></circle>
+        <text class="vm-num" x="355.4" y="320.5">5</text>
+      </g>
+      <g class="vm-pin" data-i="6" tabindex="0" role="button" aria-label="Morialta Conservation Park, Woodforde">
+        <circle class="vm-hit" cx="391.5" cy="260.5" r="18"></circle>
+        <circle class="vm-dot" cx="391.5" cy="260.5" r="11.5"></circle>
+        <text class="vm-num" x="391.5" y="264.3">6</text>
+      </g>
+      <g class="vm-pin" data-i="7" tabindex="0" role="button" aria-label="Onkaparinga River National Park, Port Noarlunga South">
+        <circle class="vm-hit" cx="357.2" cy="357.0" r="18"></circle>
+        <circle class="vm-dot" cx="357.2" cy="357.0" r="11.5"></circle>
+        <text class="vm-num" x="357.2" y="360.8">7</text>
+      </g>
+      <g class="vm-pin" data-i="8" tabindex="0" role="button" aria-label="Para Wirra Conservation Park, Yattalunga">
+        <circle class="vm-hit" cx="442.4" cy="174.3" r="18"></circle>
+        <circle class="vm-dot" cx="442.4" cy="174.3" r="11.5"></circle>
+        <text class="vm-num" x="442.4" y="178.10000000000002">8</text>
+      </g>
+      <g class="vm-pin" data-i="9" tabindex="0" role="button" aria-label="Sandy Creek Conservation Park, Sandy Creek">
+        <circle class="vm-hit" cx="451.4" cy="147.5" r="18"></circle>
+        <circle class="vm-dot" cx="451.4" cy="147.5" r="11.5"></circle>
+        <text class="vm-num" x="451.4" y="151.3">9</text>
+      </g>
+      <g class="vm-pin" data-i="10" tabindex="0" role="button" aria-label="Semaphore Largs Dunes Group, Semaphore">
+        <circle class="vm-hit" cx="333.8" cy="234.4" r="18"></circle>
+        <circle class="vm-dot" cx="333.8" cy="234.4" r="11.5"></circle>
+        <text class="vm-num" x="333.8" y="238.20000000000002">10</text>
+      </g>
+      <g class="vm-pin" data-i="11" tabindex="0" role="button" aria-label="The Forktree Project, Carrickalinga">
+        <circle class="vm-hit" cx="295.4" cy="447.8" r="18"></circle>
+        <circle class="vm-dot" cx="295.4" cy="447.8" r="11.5"></circle>
+        <text class="vm-num" x="295.4" y="451.6">11</text>
+      </g>
+      <g class="vm-pin" data-i="12" tabindex="0" role="button" aria-label="Wangkuntila-Aldinga Conservation Park, Aldinga Beach">
+        <circle class="vm-hit" cx="323.1" cy="406.3" r="18"></circle>
+        <circle class="vm-dot" cx="323.1" cy="406.3" r="11.5"></circle>
+        <text class="vm-num" x="323.1" y="410.1">12</text>
+      </g>
+      <g class="vm-pin" data-i="13" tabindex="0" role="button" aria-label="Yankalilla Community Nursery, Yankalilla">
+        <circle class="vm-hit" cx="305.4" cy="472.8" r="18"></circle>
+        <circle class="vm-dot" cx="305.4" cy="472.8" r="11.5"></circle>
+        <text class="vm-num" x="305.4" y="476.6">13</text>
+      </g>
+    </svg>
+        </div>
+        <p class="vm-cap">The map is zoomed to where the sites actually are; the small inset shows that area within South Australia. Pin positions are approximate. Hover a pin to find it in the list, or tap one to jump straight to it.</p>
+      </div>
+      <div class="rv d1">
+        <div class="vs-filter">
+        <button type="button" data-f="all" class="on">All sites</button>
+        <button type="button" data-f="Beach">Beach</button>
+        <button type="button" data-f="National Park">National Park</button>
+        <button type="button" data-f="Nursery">Nursery</button>
+        <button type="button" data-f="Park">Park</button>
+        </div>
+        <p class="vs-count" id="vsCount">13 sites</p>
+        <ul class="vs-list">
+        <li class="vs-card" data-i="1" data-type="Park" tabindex="0">
+          <span class="vs-num">1</span>
+          <div class="vs-bd">
+            <h3>Anstey Hill Recreation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Tea Tree Gully</span></p>
+            <p class="vs-addr">Perseverance Road, 5091</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="2" data-type="National Park" tabindex="0">
+          <span class="vs-num">2</span>
+          <div class="vs-bd">
+            <h3>Belair National Park</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">Belair</span></p>
+            <p class="vs-addr">Upper Sturt Road, 5052</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="3" data-type="Park" tabindex="0">
+          <span class="vs-num">3</span>
+          <div class="vs-bd">
+            <h3>Black Hill Conservation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Athelstone</span></p>
+            <p class="vs-addr">Ghost Tree Gully Trail, 5076</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="4" data-type="Park" tabindex="0">
+          <span class="vs-num">4</span>
+          <div class="vs-bd">
+            <h3>Charleston Conservation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Charleston</span></p>
+            <p class="vs-addr">Park Road, 5244</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="5" data-type="National Park" tabindex="0">
+          <span class="vs-num">5</span>
+          <div class="vs-bd">
+            <h3>Glenthorne National Park - Ityamaiitpinna Yarta</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">O&#x27;Halloran Hill</span></p>
+            <p class="vs-addr">Majors Road, 5158</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="6" data-type="Park" tabindex="0">
+          <span class="vs-num">6</span>
+          <div class="vs-bd">
+            <h3>Morialta Conservation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Woodforde</span></p>
+            <p class="vs-addr">Morialta Falls Road, 5072</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="7" data-type="National Park" tabindex="0">
+          <span class="vs-num">7</span>
+          <div class="vs-bd">
+            <h3>Onkaparinga River National Park</h3>
+            <p class="vs-meta"><span class="vs-type">National Park</span><span class="vs-dot"></span><span class="vs-city">Port Noarlunga South</span></p>
+            <p class="vs-addr">Piggott Range Road, 5167</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="8" data-type="Park" tabindex="0">
+          <span class="vs-num">8</span>
+          <div class="vs-bd">
+            <h3>Para Wirra Conservation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Yattalunga</span></p>
+            <p class="vs-addr">Para Wirra Drive, 5114</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="9" data-type="Park" tabindex="0">
+          <span class="vs-num">9</span>
+          <div class="vs-bd">
+            <h3>Sandy Creek Conservation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Sandy Creek</span></p>
+            <p class="vs-addr">Barossa Valley Highway, 5350</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="10" data-type="Beach" tabindex="0">
+          <span class="vs-num">10</span>
+          <div class="vs-bd">
+            <h3>Semaphore Largs Dunes Group</h3>
+            <p class="vs-meta"><span class="vs-type">Beach</span><span class="vs-dot"></span><span class="vs-city">Semaphore</span></p>
+            <p class="vs-addr">Semaphore Road, 5019</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="11" data-type="Nursery" tabindex="0">
+          <span class="vs-num">11</span>
+          <div class="vs-bd">
+            <h3>The Forktree Project</h3>
+            <p class="vs-meta"><span class="vs-type">Nursery</span><span class="vs-dot"></span><span class="vs-city">Carrickalinga</span></p>
+            <p class="vs-addr">103 Whitelaw Road, 5204</p>
+            <p class="vs-mgr"><span>Managed with</span> The Forktree Project</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="12" data-type="Park" tabindex="0">
+          <span class="vs-num">12</span>
+          <div class="vs-bd">
+            <h3>Wangkuntila-Aldinga Conservation Park</h3>
+            <p class="vs-meta"><span class="vs-type">Park</span><span class="vs-dot"></span><span class="vs-city">Aldinga Beach</span></p>
+            <p class="vs-addr">Dover Street, 5173</p>
+            <p class="vs-mgr"><span>Managed with</span> NPWS (DEW) - SA Friends of Parks South Australia Group</p>
+          </div>
+        </li>
+        <li class="vs-card" data-i="13" data-type="Nursery" tabindex="0">
+          <span class="vs-num">13</span>
+          <div class="vs-bd">
+            <h3>Yankalilla Community Nursery</h3>
+            <p class="vs-meta"><span class="vs-type">Nursery</span><span class="vs-dot"></span><span class="vs-city">Yankalilla</span></p>
+            <p class="vs-addr">1 Kemmiss Hill Road, 5203</p>
+            <p class="vs-mgr"><span>Managed with</span> District Council of Yankalilla</p>
+          </div>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="cw rv" style="text-align:center">
+    <h2 style="max-width:22ch;margin:0 auto 1rem">Bring your team to one of these sites.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Tell us your team size and rough dates and we will match you to a site and a land manager.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="volunteer.html#enquire">Enquire about a day</a><a class="btn-o" href="volunteer.html">All corporate volunteering</a></div>
+  </div>
+</section>
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var pins = [].slice.call(document.querySelectorAll('.vm-pin'));
+  var cards = [].slice.call(document.querySelectorAll('.vs-card'));
+  if (!pins.length) return;
+
+  function mark(i, on) {
+    pins.forEach(function (p) { if (+p.dataset.i === i) p.classList.toggle('on', on); });
+    cards.forEach(function (c) { if (+c.dataset.i === i) c.classList.toggle('on', on); });
+  }
+  function wire(el) {
+    var i = +el.dataset.i;
+    el.addEventListener('mouseenter', function () { mark(i, true); });
+    el.addEventListener('mouseleave', function () { mark(i, false); });
+    el.addEventListener('focus', function () { mark(i, true); });
+    el.addEventListener('blur', function () { mark(i, false); });
+  }
+  pins.forEach(wire);
+  cards.forEach(wire);
+
+  // Clicking a pin brings its entry into view, which is the point of the map
+  // on a phone, where the two are stacked rather than side by side.
+  pins.forEach(function (p) {
+    p.addEventListener('click', function () {
+      var c = cards.filter(function (x) { return x.dataset.i === p.dataset.i; })[0];
+      if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.focus({ preventScroll: true }); }
+    });
+    p.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
+    });
+  });
+
+  var btns = [].slice.call(document.querySelectorAll('.vs-filter button'));
+  var count = document.getElementById('vsCount');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      var f = b.dataset.f, shown = 0;
+      cards.forEach(function (c) {
+        var hit = (f === 'all' || c.dataset.type === f);
+        c.hidden = !hit;
+        if (hit) shown++;
+        pins.forEach(function (p) {
+          if (p.dataset.i === c.dataset.i) p.style.opacity = hit ? '' : '.18';
+        });
+      });
+      if (count) count.textContent = shown + (shown === 1 ? ' site' : ' sites');
+    });
+  });
+})();
+</script>
+</body>
+</html>
