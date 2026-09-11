@@ -337,7 +337,7 @@ PAGE_JS = '''<script>
   function matchHeight() {
     if (!mapcol || touchLayout.matches) { list.style.maxHeight = ''; return; }
     var h = mapcol.getBoundingClientRect().bottom - list.getBoundingClientRect().top;
-    list.style.maxHeight = Math.max(620, Math.round(h)) + 'px';   // never fewer than about four cards
+    list.style.maxHeight = Math.max(340, Math.round(h)) + 'px';
   }
 
   function fade() {

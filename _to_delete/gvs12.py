@@ -238,7 +238,7 @@ PAGE_CSS = '''
 /* Desktop: the list scrolls inside a panel the height of the map beside it, so the
    two columns stay level instead of the list running on down the page. */
 @media(min-width:1001px){
-  .vs-list{max-height:600px;overflow-y:auto;padding-right:.7rem;
+  .vs-list{max-height:625px;overflow-y:auto;padding-right:.7rem;
     scrollbar-width:thin;scrollbar-color:var(--bark-mid) transparent;overscroll-behavior:contain}
   .vs-list::-webkit-scrollbar{width:8px}
   .vs-list::-webkit-scrollbar-thumb{background:var(--bark-mid)}
@@ -331,25 +331,13 @@ PAGE_JS = '''<script>
   var STEP = 4, expanded = false;
   var touchLayout = window.matchMedia('(max-width: 1000px)');
 
-  // The map scales with the column, so the list is measured against it rather
-  // than given a fixed height. Both columns then finish on the same line.
-  var mapcol = document.querySelector('.vs-mapcol');
-  function matchHeight() {
-    if (!mapcol || touchLayout.matches) { list.style.maxHeight = ''; return; }
-    var h = mapcol.getBoundingClientRect().bottom - list.getBoundingClientRect().top;
-    list.style.maxHeight = Math.max(620, Math.round(h)) + 'px';   // never fewer than about four cards
-  }
-
   function fade() {
     if (!wrap) return;
     var atEnd = list.scrollTop + list.clientHeight >= list.scrollHeight - 4;
     wrap.classList.toggle('at-end', atEnd || list.scrollHeight <= list.clientHeight + 4);
   }
   list.addEventListener('scroll', fade, { passive: true });
-  window.addEventListener('resize', function () { matchHeight(); render(); });
-  if (window.ResizeObserver && mapcol) new ResizeObserver(function () {
-    matchHeight(); fade();
-  }).observe(mapcol);
+  window.addEventListener('resize', function () { render(); });
 
   var btns = [].slice.call(document.querySelectorAll('.vs-filter button'));
   var count = document.getElementById('vsCount');
@@ -390,7 +378,6 @@ PAGE_JS = '''<script>
       more.textContent = expanded ? 'Show fewer sites'
         : 'Show all ' + shown + (shown === 1 ? ' site' : ' sites');
     }
-    matchHeight();
     fade();
   }
 

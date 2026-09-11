@@ -51,7 +51,27 @@
 .vs-filter button:hover{border-color:var(--euc-deep)}
 .vs-filter button.on{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
 
+.vs-listwrap{position:relative}
 .vs-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
+
+/* Desktop: the list scrolls inside a panel the height of the map beside it, so the
+   two columns stay level instead of the list running on down the page. */
+@media(min-width:1001px){
+  .vs-list{max-height:600px;overflow-y:auto;padding-right:.7rem;
+    scrollbar-width:thin;scrollbar-color:var(--bark-mid) transparent;overscroll-behavior:contain}
+  .vs-list::-webkit-scrollbar{width:8px}
+  .vs-list::-webkit-scrollbar-thumb{background:var(--bark-mid)}
+  .vs-list::-webkit-scrollbar-track{background:transparent}
+  .vs-listwrap::after{content:"";position:absolute;left:0;right:.7rem;bottom:0;height:64px;
+    pointer-events:none;opacity:1;transition:opacity .25s ease;
+    background:linear-gradient(to bottom,rgba(244,238,230,0),var(--paper))}
+  .vs-listwrap.at-end::after{opacity:0}
+}
+.vs-more{display:none;width:100%;margin-top:.9rem;padding:.85em 1.2em;background:transparent;
+  border:1.5px solid var(--euc-deep);color:var(--euc-deep);font-weight:700;font-size:.82rem;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.vs-more:hover{background:var(--euc-deep);color:var(--cream)}
+@media(max-width:1000px){.vs-more.on{display:block}}
 .vs-card{display:flex;gap:1rem;background:var(--white);border:1px solid var(--rule);
   border-left:3px solid var(--euc-soft);padding:1.1rem 1.2rem;transition:.2s;cursor:default}
 .vs-card:hover,.vs-card:focus,.vs-card.on{border-left-color:var(--waratah);
@@ -272,6 +292,7 @@
             </select>
           </label>
         </div>
+        <div class="vs-listwrap">
         <ul class="vs-list">
         <li class="vs-card" data-i="1" data-type="Park" data-km="3" data-name="albert park" tabindex="0">
           <span class="vs-num">1</span>
@@ -394,6 +415,8 @@
           </div>
         </li>
         </ul>
+        </div>
+        <button class="vs-more" id="vsMore" type="button" hidden>Show all 12 sites</button>
         <p class="vs-empty" id="vsEmpty" hidden>No sites of that type in Victoria. Choose another type, or pick All.</p>
       </div>
     </div>
@@ -525,6 +548,35 @@
     });
   });
 
+  // On a phone the map sits above the list, and a scrolling box inside a
+  // scrolling page is horrible to use, so there the list shows four and expands.
+  // On desktop it is a scroll panel matched to the map, and the fade at the
+  // bottom edge switches off once you reach the end.
+  var wrap = document.querySelector('.vs-listwrap');
+  var more = document.getElementById('vsMore');
+  var STEP = 4, expanded = false;
+  var touchLayout = window.matchMedia('(max-width: 1000px)');
+
+  // The map scales with the column, so the list is measured against it rather
+  // than given a fixed height. Both columns then finish on the same line.
+  var mapcol = document.querySelector('.vs-mapcol');
+  function matchHeight() {
+    if (!mapcol || touchLayout.matches) { list.style.maxHeight = ''; return; }
+    var h = mapcol.getBoundingClientRect().bottom - list.getBoundingClientRect().top;
+    list.style.maxHeight = Math.max(620, Math.round(h)) + 'px';   // never fewer than about four cards
+  }
+
+  function fade() {
+    if (!wrap) return;
+    var atEnd = list.scrollTop + list.clientHeight >= list.scrollHeight - 4;
+    wrap.classList.toggle('at-end', atEnd || list.scrollHeight <= list.clientHeight + 4);
+  }
+  list.addEventListener('scroll', fade, { passive: true });
+  window.addEventListener('resize', function () { matchHeight(); render(); });
+  if (window.ResizeObserver && mapcol) new ResizeObserver(function () {
+    matchHeight(); fade();
+  }).observe(mapcol);
+
   var btns = [].slice.call(document.querySelectorAll('.vs-filter button'));
   var count = document.getElementById('vsCount');
   var sort = document.getElementById('vsSort');
@@ -550,7 +602,25 @@
     }).forEach(function (c) { list.appendChild(c); });
     if (count) count.textContent = shown + (shown === 1 ? ' site' : ' sites');
     if (empty) empty.hidden = shown > 0;
+
+    var capped = touchLayout.matches && !expanded && shown > STEP;
+    var n = 0;
+    cards.forEach(function (c) {
+      if (c.hidden) return;
+      n++;
+      if (capped && n > STEP) c.hidden = true;
+    });
+    if (more) {
+      more.classList.toggle('on', touchLayout.matches && shown > STEP);
+      more.hidden = !(touchLayout.matches && shown > STEP);
+      more.textContent = expanded ? 'Show fewer sites'
+        : 'Show all ' + shown + (shown === 1 ? ' site' : ' sites');
+    }
+    matchHeight();
+    fade();
   }
+
+  if (more) more.addEventListener('click', function () { expanded = !expanded; render(); });
 
   btns.forEach(function (b) {
     b.addEventListener('click', function () {
