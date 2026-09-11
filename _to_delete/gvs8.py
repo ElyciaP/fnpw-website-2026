@@ -261,9 +261,7 @@ PAGE_CSS = '''
   font-size:.9rem;color:var(--stone);text-align:center}
 
 .vs-gal{padding:var(--sec-y) 0;background:var(--white)}
-.vs-gal-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
-@media(max-width:820px){.vs-gal-g{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.vs-gal-g{grid-template-columns:1fr}}
+.vs-gal-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-top:1.5rem}
 .vs-gal-g figure{margin:0}
 .vs-gal-g img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
 .vs-gal-note{margin:1.2rem 0 0;font-size:.8rem;color:var(--stone)}
@@ -637,8 +635,7 @@ def patch_hub(by):
         jb = t.index('  // quick check', ja)
         t = t[:ja] + t[jb:]
 
-    # guard on the handler itself: the markup above has already added 'vwTabs'
-    if "getElementById('vwTabs')" not in t:
+    if 'vwTabs' not in t:
         anchor = '  // quick check'
         t = t.replace(anchor, HUB_JS + anchor, 1)
 
@@ -672,10 +669,9 @@ def patch_hub(by):
     open(f, 'w', encoding='utf-8').write(t)
     print('volunteer.html: where-we-run section rebuilt by state (%d bytes -> %d)'
           % (len(orig), len(t)))
-    leftover = [w for w in ('qc-city', 'vf-city', 'var CITY=', 'data-city') if w in t]
-    print('  tab handler wired    : %s' % ("yes" if "getElementById('vwTabs')" in t else 'NO'))
+    leftover = [w for w in ('qc-city', 'vf-city', 'var CITY=', 'vTabs', 'data-city') if w in t]
     print('  leftover city wiring : %s' % (leftover or 'none'))
-    print('  section styles       : %s' % ('present' if '.vw-tabs{' in t else 'MISSING'))
+    print('  section styles       : %s' % ('present' if '.vw-states{' in t else 'MISSING'))
 
 
 if __name__ == '__main__':

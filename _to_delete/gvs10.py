@@ -675,7 +675,7 @@ def patch_hub(by):
     leftover = [w for w in ('qc-city', 'vf-city', 'var CITY=', 'data-city') if w in t]
     print('  tab handler wired    : %s' % ("yes" if "getElementById('vwTabs')" in t else 'NO'))
     print('  leftover city wiring : %s' % (leftover or 'none'))
-    print('  section styles       : %s' % ('present' if '.vw-tabs{' in t else 'MISSING'))
+    print('  section styles       : %s' % ('present' if '.vw-states{' in t else 'MISSING'))
 
 
 if __name__ == '__main__':

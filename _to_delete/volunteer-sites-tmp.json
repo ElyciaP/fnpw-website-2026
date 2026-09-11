@@ -12,9 +12,7 @@
   "manager_short": "TIN",
   "lat": -33.01758,
   "lon": 151.69026,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 105
+  "geo_match": "address"
  },
  {
   "id": "congwong-beach-kamay-botany-bay-national-park",
@@ -29,9 +27,7 @@
   "manager_short": "",
   "lat": -33.98902,
   "lon": 151.23504,
-  "geo_match": "name",
-  "cbd": "Sydney",
-  "km": 14
+  "geo_match": "name"
  },
  {
   "id": "glenrock-state-conservation-area",
@@ -46,9 +42,7 @@
   "manager_short": "TIN",
   "lat": -32.95891,
   "lon": 151.72562,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 112
+  "geo_match": "address"
  },
  {
   "id": "hawkesbury-community-nursery",
@@ -63,9 +57,7 @@
   "manager_short": "",
   "lat": -33.62488,
   "lon": 150.83016,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 44
+  "geo_match": "address"
  },
  {
   "id": "lane-cove-national-park",
@@ -80,9 +72,7 @@
   "manager_short": "",
   "lat": -33.79259,
   "lon": 151.15637,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 10
+  "geo_match": "address"
  },
  {
   "id": "lane-cove-national-park-chatswood-west",
@@ -97,9 +87,7 @@
   "manager_short": "Fof LCNP",
   "lat": -33.79294,
   "lon": 151.15634,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 10
+  "geo_match": "address"
  },
  {
   "id": "magdala-park",
@@ -114,9 +102,7 @@
   "manager_short": "",
   "lat": -33.80312,
   "lon": 151.14022,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 10
+  "geo_match": "address"
  },
  {
   "id": "middle-head-gubbuh-gubbuh",
@@ -131,9 +117,7 @@
   "manager_short": "NPWS NSW",
   "lat": -33.82618,
   "lon": 151.26527,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 7
+  "geo_match": "address"
  },
  {
   "id": "morgans-creek-picnic-area-georges-river-np",
@@ -148,9 +132,7 @@
   "manager_short": "",
   "lat": -33.97385,
   "lon": 151.00894,
-  "geo_match": "name",
-  "cbd": "Sydney",
-  "km": 22
+  "geo_match": "name"
  },
  {
   "id": "tempe-wetlands",
@@ -165,9 +147,7 @@
   "manager_short": "",
   "lat": -33.92718,
   "lon": 151.15887,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 8
+  "geo_match": "address"
  },
  {
   "id": "wildplant-community-nursery",
@@ -182,9 +162,7 @@
   "manager_short": "CEN",
   "lat": -33.35746,
   "lon": 151.38088,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 59
+  "geo_match": "address"
  },
  {
   "id": "wollondilly-shire-bargo-river-reserve",
@@ -199,9 +177,7 @@
   "manager_short": "",
   "lat": -34.23427,
   "lon": 150.5795,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 71
+  "geo_match": "address"
  },
  {
   "id": "wollondilly-shire-robin-davies-community-nursery",
@@ -216,9 +192,7 @@
   "manager_short": "",
   "lat": -34.19444,
   "lon": 150.61209,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 66
+  "geo_match": "address"
  },
  {
   "id": "wollondilly-shire-stonequarry-bush-tucker-garden",
@@ -233,9 +207,7 @@
   "manager_short": "",
   "lat": -34.16566,
   "lon": 150.61239,
-  "geo_match": "address",
-  "cbd": "Sydney",
-  "km": 64
+  "geo_match": "address"
  },
  {
   "id": "daisy-hill-conservation-park",
@@ -250,9 +222,7 @@
   "manager_short": "",
   "lat": -27.64143,
   "lon": 153.15387,
-  "geo_match": "address",
-  "cbd": "Brisbane",
-  "km": 23
+  "geo_match": "address"
  },
  {
   "id": "anstey-hill-recreation-park",
@@ -267,9 +237,7 @@
   "manager_short": "",
   "lat": -34.83091,
   "lon": 138.72632,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 16
+  "geo_match": "address"
  },
  {
   "id": "belair-national-park",
@@ -284,9 +252,7 @@
   "manager_short": "",
   "lat": -35.01617,
   "lon": 138.63756,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 10
+  "geo_match": "address"
  },
  {
   "id": "black-hill-conservation-park",
@@ -301,9 +267,7 @@
   "manager_short": "",
   "lat": -34.87504,
   "lon": 138.72598,
-  "geo_match": "name",
-  "cbd": "Adelaide",
-  "km": 13
+  "geo_match": "name"
  },
  {
   "id": "charleston-conservation-park",
@@ -318,9 +282,7 @@
   "manager_short": "",
   "lat": -34.91591,
   "lon": 138.90177,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 27
+  "geo_match": "address"
  },
  {
   "id": "glenthorne-national-park-ityamaiitpinna-yarta",
@@ -335,9 +297,7 @@
   "manager_short": "",
   "lat": -35.05401,
   "lon": 138.55322,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 15
+  "geo_match": "address"
  },
  {
   "id": "morialta-conservation-park",
@@ -352,9 +312,7 @@
   "manager_short": "",
   "lat": -34.89974,
   "lon": 138.69133,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 9
+  "geo_match": "address"
  },
  {
   "id": "onkaparinga-river-national-park",
@@ -369,9 +327,7 @@
   "manager_short": "",
   "lat": -35.15939,
   "lon": 138.55912,
-  "geo_match": "name",
-  "cbd": "Adelaide",
-  "km": 26
+  "geo_match": "name"
  },
  {
   "id": "para-wirra-conservation-park",
@@ -386,9 +342,7 @@
   "manager_short": "",
   "lat": -34.68181,
   "lon": 138.83113,
-  "geo_match": "name",
-  "cbd": "Adelaide",
-  "km": 35
+  "geo_match": "name"
  },
  {
   "id": "sandy-creek-conservation-park",
@@ -403,9 +357,7 @@
   "manager_short": "",
   "lat": -34.61186,
   "lon": 138.85998,
-  "geo_match": "name",
-  "cbd": "Adelaide",
-  "km": 42
+  "geo_match": "name"
  },
  {
   "id": "semaphore-largs-dunes-group",
@@ -420,9 +372,7 @@
   "manager_short": "",
   "lat": -34.83894,
   "lon": 138.48438,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 15
+  "geo_match": "address"
  },
  {
   "id": "the-forktree-project",
@@ -437,9 +387,7 @@
   "manager_short": "",
   "lat": -35.39769,
   "lon": 138.36204,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 57
+  "geo_match": "address"
  },
  {
   "id": "wangkuntila-aldinga-conservation-park",
@@ -454,9 +402,7 @@
   "manager_short": "",
   "lat": -35.28851,
   "lon": 138.45019,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 42
+  "geo_match": "address"
  },
  {
   "id": "yankalilla-community-nursery",
@@ -471,9 +417,7 @@
   "manager_short": "",
   "lat": -35.46137,
   "lon": 138.39342,
-  "geo_match": "address",
-  "cbd": "Adelaide",
-  "km": 62
+  "geo_match": "address"
  },
  {
   "id": "albert-park",
@@ -488,9 +432,7 @@
   "manager_short": "",
   "lat": -37.84065,
   "lon": 144.96355,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 3
+  "geo_match": "address"
  },
  {
   "id": "brimbank-park",
@@ -505,9 +447,7 @@
   "manager_short": "",
   "lat": -37.73941,
   "lon": 144.85223,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 13
+  "geo_match": "address"
  },
  {
   "id": "corhanwarrabul-wetlands",
@@ -522,9 +462,7 @@
   "manager_short": "",
   "lat": -37.91512,
   "lon": 145.20886,
-  "geo_match": "name",
-  "cbd": "Melbourne",
-  "km": 24
+  "geo_match": "name"
  },
  {
   "id": "jell-s-park",
@@ -539,9 +477,7 @@
   "manager_short": "",
   "lat": -37.89028,
   "lon": 145.1765,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 21
+  "geo_match": "address"
  },
  {
   "id": "koomba-park",
@@ -556,9 +492,7 @@
   "manager_short": "",
   "lat": -37.84909,
   "lon": 145.22704,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 24
+  "geo_match": "address"
  },
  {
   "id": "maroondah-reservoir-park",
@@ -573,9 +507,7 @@
   "manager_short": "",
   "lat": -37.67713,
   "lon": 145.49338,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 49
+  "geo_match": "address"
  },
  {
   "id": "shepherd-s-bush-community-garden",
@@ -590,9 +522,7 @@
   "manager_short": "",
   "lat": -37.88393,
   "lon": 145.18373,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 21
+  "geo_match": "address"
  },
  {
   "id": "shepherds-bush",
@@ -607,9 +537,7 @@
   "manager_short": "",
   "lat": -37.88133,
   "lon": 145.19298,
-  "geo_match": "name",
-  "cbd": "Melbourne",
-  "km": 22
+  "geo_match": "name"
  },
  {
   "id": "studley-park",
@@ -624,9 +552,7 @@
   "manager_short": "",
   "lat": -37.80085,
   "lon": 145.01097,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 4
+  "geo_match": "address"
  },
  {
   "id": "wattle-park",
@@ -641,9 +567,7 @@
   "manager_short": "",
   "lat": -37.83761,
   "lon": 145.1103,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 13
+  "geo_match": "address"
  },
  {
   "id": "woodlands-historic-park",
@@ -658,9 +582,7 @@
   "manager_short": "",
   "lat": -37.62957,
   "lon": 144.8369,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 23
+  "geo_match": "address"
  },
  {
   "id": "yarra-bend-park",
@@ -675,9 +597,7 @@
   "manager_short": "",
   "lat": -37.79531,
   "lon": 145.00823,
-  "geo_match": "address",
-  "cbd": "Melbourne",
-  "km": 4
+  "geo_match": "address"
  },
  {
   "id": "kaarakin-black-cockatoo-conservation-centre",
@@ -692,9 +612,7 @@
   "manager_short": "",
   "lat": -32.07468,
   "lon": 116.02011,
-  "geo_match": "address",
-  "cbd": "Perth",
-  "km": 20
+  "geo_match": "address"
  },
  {
   "id": "south-east-regional-centre-for-urban-landcare",
@@ -709,9 +627,7 @@
   "manager_short": "",
   "lat": -32.03671,
   "lon": 115.95453,
-  "geo_match": "address",
-  "cbd": "Perth",
-  "km": 13
+  "geo_match": "address"
  },
  {
   "id": "the-wetlands-centre-cockburn",
@@ -726,8 +642,6 @@
   "manager_short": "",
   "lat": -32.08553,
   "lon": 115.83825,
-  "geo_match": "address",
-  "cbd": "Perth",
-  "km": 15
+  "geo_match": "address"
  }
 ]
