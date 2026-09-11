@@ -26,8 +26,8 @@
 .gt-hero-bg::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(100deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 46%,rgba(15,49,50,.42) 100%)}
 .gt-hero > .cw{position:relative;z-index:2;padding-top:var(--sec-y);padding-bottom:var(--sec-y)}
-.gt-hero-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,30rem);gap:3rem;align-items:center}
-@media(max-width:1080px){.gt-hero-g{grid-template-columns:1fr;gap:2.2rem}}
+.gt-hero-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,36rem);gap:2.6rem;align-items:center}
+@media(max-width:1140px){.gt-hero-g{grid-template-columns:1fr;gap:2.2rem}}
 
 .gt-crumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem;flex-wrap:wrap}
 .gt-crumb a{color:var(--euc-soft)}
@@ -72,6 +72,8 @@
 .gt-split-g.flip .gt-split-im{order:2}
 @media(max-width:900px){.gt-split-g.flip .gt-split-im{order:0}}
 .gt-split-im{aspect-ratio:4/3;overflow:hidden;background:var(--paper)}
+.gt-split-im.doc{aspect-ratio:auto;overflow:visible;background:none}
+.gt-split-im.doc img{height:auto;object-fit:contain;border:1px solid var(--rule);box-shadow:0 22px 50px -26px rgba(15,49,50,.45)}
 .gt-split-im img{width:100%;height:100%;object-fit:cover}
 .gt-split h2{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:.9rem 0 1.1rem;max-width:20ch}
 .gt-split p{font-size:1.02rem;line-height:1.68;margin:0 0 1.1rem;max-width:52ch}
@@ -99,6 +101,8 @@
 @media(max-width:900px){.gt-how-g{grid-template-columns:repeat(2,1fr);gap:2.2rem}}
 @media(max-width:520px){.gt-how-g{grid-template-columns:1fr}}
 .gt-step{text-align:center}
+.gt-ic{width:56px;height:56px;display:block;margin:0 auto 1.1rem;color:var(--cream);opacity:.95}
+@media(max-width:520px){.gt-ic{width:48px;height:48px}}
 .gt-step .n{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
   border:1.5px solid var(--euc-soft);color:var(--euc-soft);font-family:var(--ff-d);font-weight:700;
   font-size:.95rem;margin-bottom:1.1rem}
@@ -216,23 +220,16 @@
     <div class="gt-hero-g">
       <div>
         <nav class="gt-crumb"><a href="index.html">Home</a><span style="opacity:.45">/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span style="opacity:.45">/</span>Give a Tree</nav>
-        <span class="ey">Give a Tree. Bring Back the Bush.</span>
-        <h1>The best gifts don&rsquo;t sit under a tree. They <em>grow into one.</em></h1>
+        <h1>Give a Tree. <em>Bring Back the Bush.</em></h1>
         <p class="lede">Give a tree and help bring back native bushland across Australia. Your gift supports on-ground restoration, creating habitat for wildlife and helping our landscapes become healthier and more resilient.</p>
-        <ul class="gt-tiers">
-          <li><b>$10</b> can plant one tree</li>
-          <li><b>$100</b> can plant 10 trees</li>
-          <li><b>$500</b> can plant 50 trees</li>
-          <li><b>$1,000</b> can plant 100 trees</li>
-        </ul>
       </div>
 
       <div class="gt-form" id="give">
         <div class="gt-form-head">
           <h2>Give a Tree. Grow a little more bush.</h2>
-          <p>100% of the trees are native and planted in Australia&rsquo;s priority landscapes. Minimum gift $10.</p>
+          <p>All amounts in Australian dollars (AUD). 100% of the trees are native and planted in Australia&rsquo;s priority landscapes. Minimum gift $10.</p>
         </div>
-        <iframe id="raiselyFrame" class="gt-form-frame" src="https://gift-a-tree.raiselysite.com/embed/donate" title="Give a Tree donation form" allow="payment *" referrerpolicy="no-referrer-when-downgrade" loading="eager"></iframe>
+        <iframe id="raiselyFrame" class="gt-form-frame" src="https://gift-a-tree.raiselysite.com/embed/donate?currency=AUD" title="Give a Tree donation form" allow="payment *" referrerpolicy="no-referrer-when-downgrade" loading="eager"></iframe>
         <p class="gt-form-fb">Form not loading? <a href="https://gift-a-tree.raiselysite.com/#donate" target="_blank" rel="noopener">Open the Give a Tree donation page</a> in a new tab.</p>
       </div>
     </div>
@@ -272,10 +269,10 @@
       <h2 style="margin-top:1rem">Four steps, and the bush gets a little bigger.</h2>
     </div>
     <div class="gt-how-g">
-      <div class="gt-step rv"><span class="n">1</span><h3>Choose your gift</h3><p>Pick the size of your gift, from $10 for a single tree, or enter your own amount.</p></div>
-      <div class="gt-step rv d1"><span class="n">2</span><h3>Write a dedication</h3><p>Write a dedication to your recipient, in honour of, in memory of, or as a thank you.</p></div>
-      <div class="gt-step rv d2"><span class="n">3</span><h3>Get the certificate</h3><p>Keep the certificate yourself, or choose to send it straight to your recipient.</p></div>
-      <div class="gt-step rv d3"><span class="n">4</span><h3>We plant your trees</h3><p>We plant your trees in key priority landscapes, where they do the most good.</p></div>
+      <div class="gt-step rv"><svg class="gt-ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 54C32 54 12 42.5 12 28.5 12 21.6 17.4 16 24 16c3.6 0 6.8 1.7 8.9 4.3l-.9.9M32 54c0 0 20-11.5 20-25.5C52 21.6 46.6 16 40 16c-2 0-3.9.5-5.5 1.5"/><path d="M32 24v18M36.5 28.5c0-2-2-3.2-4.5-3.2s-4.5 1.2-4.5 3.2 2 2.9 4.5 3.4 4.5 1.4 4.5 3.4-2 3.2-4.5 3.2-4.5-1.2-4.5-3.2"/><path d="M20 46c-4.5 0-8 3.2-8 7.5 4.5 0 8-3.2 8-7.5ZM44 46c4.5 0 8 3.2 8 7.5-4.5 0-8-3.2-8-7.5Z"/></svg><h3>Choose your gift</h3><p>Pick the size of your gift, from A$10 for a single tree, or enter your own amount.</p></div>
+      <div class="gt-step rv d1"><svg class="gt-ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 24.5C12 18.7 17.6 14 24.5 14h9C40.4 14 46 18.7 46 24.5S40.4 35 33.5 35h-9l-8.5 7v-7.9C13.4 32.2 12 28.6 12 24.5Z"/><circle cx="45" cy="41" r="9"/><path d="M45 50l6 5v-5"/></svg><h3>Write a dedication</h3><p>Write a dedication to your recipient, in honour of, in memory of, or as a thank you.</p></div>
+      <div class="gt-step rv d2"><svg class="gt-ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M26 10h14l8 8v22H26z"/><path d="M40 10v8h8"/><path d="M31 24h12M31 30h12M31 36h8"/><path d="M10 46c3-2 6-2 9 0l6 4h10c2 0 3.5 1.4 3.5 3.2S37 56.5 35 56.5H22"/></svg><h3>Get the certificate</h3><p>Keep the certificate yourself, or choose to send it straight to your recipient.</p></div>
+      <div class="gt-step rv d3"><svg class="gt-ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 56V32"/><path d="M32 34c0-9 7-16 16-16 0 9-7 16-16 16ZM32 34c0-9-7-16-16-16 0 9 7 16 16 16Z"/><path d="M18 18.5C15 16 13 12.2 13 8.4 13 4.9 15.8 2 19.3 2c2.6 0 4.8 1.5 5.8 3.7M46 18.5c3-2.5 5-6.3 5-10.1C51 4.9 48.2 2 44.7 2c-2.6 0-4.8 1.5-5.8 3.7"/></svg><h3>We plant your trees</h3><p>We plant your trees in key priority landscapes, where they do the most good.</p></div>
     </div>
     <p class="gt-how-note"><em>A little note from us:</em> to help reduce unnecessary printing, we recommend printed certificates for gifts of $100 or more. For gifts under $100 you are very welcome to print the certificate yourself at home or at work. If you are a business wanting more than one certificate, or personalisation with your company logo, email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> to organise your gift.</p>
     <p class="gt-how-note" style="border-top:0;padding-top:0;margin-top:1.2rem;font-weight:600">From one tree to thousands, every contribution helps us restore native landscapes and create a better future for Australia&rsquo;s nature.</p>
@@ -342,7 +339,7 @@
         <p class="lead-out">A living tribute to someone who will always be remembered.</p>
         <a class="gt-cta solid" href="#give">Give a Tree in memory of</a>
       </div>
-      <div class="gt-split-im rv d1"><img src="assets/img/hero-golden.jpg" alt="Late afternoon light through open eucalypt woodland" loading="lazy" decoding="async"></div>
+      <div class="gt-split-im doc rv d1"><img src="assets/img/gift-a-tree-certificate.jpg" alt="Give a Tree certificate reading &lsquo;A tree grows in memory of&rsquo;, showing the number of trees planted, the Foundation for National Parks &amp; Wildlife logo and the CEO&rsquo;s signature" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
