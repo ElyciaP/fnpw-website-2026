@@ -50,11 +50,8 @@
 .gt-form-head{padding:1.2rem 1.5rem .95rem;border-bottom:1px solid var(--rule)}
 .gt-form-head h2{font-size:1.25rem;color:var(--euc-deep);margin:0}
 .gt-form-head p{margin:.5rem 0 0;font-size:.86rem;line-height:1.55;color:var(--stone)}
-.gt-form-frame{display:block;width:100%;height:920px;border:0;background:var(--white)}
-@media(max-width:600px){.gt-form-frame{height:1040px}}
-.gt-form-fb{margin:0;padding:.75rem 1.5rem .85rem;border-top:1px solid var(--rule);
-  font-size:.8rem;color:var(--stone);line-height:1.5;background:var(--cream)}
-.gt-form-fb a{color:var(--euc-deep);font-weight:700;border-bottom:1px solid currentColor}
+.gt-form-frame{display:block;width:100%;height:760px;border:0;background:var(--white);transition:height .25s ease}
+@media(max-width:600px){.gt-form-frame{height:980px}}
 
 /* ---- Proof band ---- */
 .gt-stats{padding:var(--sec-y) 0;background:var(--sand);color:var(--euc-deep)}
@@ -232,7 +229,6 @@
           <p>All amounts in Australian dollars (AUD). 100% of the trees are native and planted in Australia&rsquo;s priority landscapes. Minimum gift $10.</p>
         </div>
         <iframe id="raiselyFrame" class="gt-form-frame" src="https://gift-a-tree.raiselysite.com/embed/donate?currency=AUD" title="Give a Tree donation form" allow="payment *" referrerpolicy="no-referrer-when-downgrade" loading="eager"></iframe>
-        <p class="gt-form-fb">Form not loading? <a href="https://gift-a-tree.raiselysite.com/#donate" target="_blank" rel="noopener">Open the Give a Tree donation page</a> in a new tab.</p>
       </div>
     </div>
   </div>
@@ -396,7 +392,7 @@
      If Raisely ignores the parameter the form simply opens on its default. */
   var amt = parseInt((location.search.match(/[?&]amount=(\d+)/) || [])[1], 10);
   if (amt > 0 && amt <= 1000000) {
-    frame.src = frame.src.split('?')[0] + '?amount=' + amt;
+    frame.src = frame.src.split('?')[0] + '?currency=AUD&amount=' + amt;
   }
   window.addEventListener('message', function (e) {
     var host;
@@ -434,6 +430,7 @@
     if(e.key==='Escape')ngs.forEach(function(ng){ng.classList.remove('open')});
   });
 })();
+
 </script>
 </body>
 </html>
