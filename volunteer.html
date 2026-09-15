@@ -314,6 +314,16 @@
 .vw-sites .vw-ty{color:var(--euc);font-weight:600}
 .vw-sites .vw-km{color:var(--bark-mid)}
 /* @vw-end */
+/* @hs-start */
+.hsform{background:var(--sand);padding:1.8rem}
+@media(max-width:600px){.hsform{padding:1.3rem 1.1rem}}
+.hsform h3{font-size:1.15rem;color:var(--euc-deep);margin:0 0 1.2rem}
+.hsform-slot{min-height:220px}
+.hsform-slot iframe{width:100%!important;border:0;display:block}
+.hsform-fallback{margin:1rem 0 0;font-size:.88rem;line-height:1.6;color:var(--char)}
+.hsform-fallback a{color:var(--euc-deep);font-weight:700;border-bottom:1px solid currentColor}
+.hsform .vform-small{margin:1rem 0 0;font-size:.78rem;color:var(--stone);line-height:1.5}
+/* @hs-end */
 </style>
 </head>
 <body>
@@ -766,34 +776,18 @@
             <span class="v-cta-info-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>GPO Box 2666, Sydney NSW 2001</span>
           </div>
         </div>
-        <div class="vform">
+        <div class="hsform">
           <h3>Plan your volunteering day</h3>
-          <div class="vform-row">
-            <div><label for="vf-name">Your name</label><input id="vf-name" type="text" placeholder="Jane Doe"></div>
-            <div><label for="vf-org">Organisation</label><input id="vf-org" type="text" placeholder="Company Pty Ltd"></div>
+          <div id="hsform" class="hsform-slot">
+            <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email
+              <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
+              <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
           </div>
-          <div class="vform-row">
-            <div><label for="vf-email">Email</label><input id="vf-email" type="email" placeholder="you@company.com"></div>
-            <div><label for="vf-phone">Phone</label><input id="vf-phone" type="tel" placeholder="+61 ..."></div>
-          </div>
-          <div class="vform-row">
-            <div>
-              <label for="vf-state">Preferred state</label>
-              <select id="vf-state">
-                <option value="NSW">New South Wales</option><option value="SA">South Australia</option><option value="VIC">Victoria</option><option value="WA">Western Australia</option><option value="QLD">Queensland</option>
-              </select>
-            </div>
-            <div>
-              <label for="vf-size">Group size</label>
-              <select id="vf-size">
-                <option>Up to 10</option><option>10&ndash;15</option><option>15&ndash;20</option><option>20+ (combined group)</option>
-              </select>
-            </div>
-          </div>
-          <label for="vf-msg">Anything we should know?</label>
-          <textarea id="vf-msg" placeholder="Preferred dates, activities, accessibility needs, etc."></textarea>
-          <button type="button">Submit enquiry</button>
-          <p class="vform-small">We&rsquo;ll be in touch within two working days. By submitting you consent to FNPW contacting you about your enquiry.</p>
+          <p class="hsform-fallback" id="hsFallback" hidden>The form is taking a while to load. Email
+            <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
+            <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p>
+          <p class="vform-small">We&rsquo;ll be in touch within two working days. By submitting you
+            consent to FNPW contacting you about your enquiry.</p>
         </div>
       </div>
     </div>
@@ -927,13 +921,11 @@
     var state=document.getElementById('qc-state').value,
         size=document.getElementById('qc-size').value,
         when=document.getElementById('qc-when').value.trim();
-    var c=document.getElementById('vf-state'), z=document.getElementById('vf-size'), m=document.getElementById('vf-msg');
-    if(c) c.value=state;
-    if(z) z.value=size;
-    if(m && when) m.value=(m.value?m.value+' ':'')+'Looking at '+when+'.';
+    var opt=document.querySelector('#qc-state option[value="'+state+'"]');
+    if(window.fnpwSetVolState) window.fnpwSetVolState(state, opt?opt.textContent:'');
+    window.FNPW_VOL_SIZE=size; window.FNPW_VOL_WHEN=when;
     var t=document.getElementById('enquire');
-    if(t){ t.scrollIntoView({behavior:'smooth',block:'start'});
-      setTimeout(function(){var n=document.getElementById('vf-name'); if(n) n.focus({preventScroll:true});},650); }
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
   });
   // sticky bar: show once the hero is gone, hide over the enquiry form
   var bar=document.getElementById('vSticky'), hero=document.querySelector('.fb-hero'), cta=document.getElementById('enquire');
@@ -965,5 +957,65 @@
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/carousel.js"></script>
+<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+/* Corporate Volunteering enquiry form, HubSpot portal 441704788, region ap1.
+   The state pages set window.FNPW_VOL_STATE before this runs, so the person
+   arrives with their state already chosen. HubSpot renders into a same-origin
+   iframe, so the callback can reach the field; everything here is guarded in
+   case the field is renamed or the script is blocked. */
+(function () {
+  var slot = document.getElementById('hsform');
+  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
+  var liveForm = null;
+
+  function showFallback() {
+    var f = document.getElementById('hsFallback');
+    if (f) f.hidden = false;
+  }
+
+  /* Preferred Location is a combobox backed by a hidden input named "0-1/state",
+     whose options are exactly our state codes. Writing to that hidden input is
+     what actually posts. It has to go through the native value setter, because
+     the form is React-rendered and a plain assignment is ignored. The visible
+     control stays blank, which is why the field is left optional: anyone can
+     still pick it themselves. */
+  function applyState(form) {
+    var code = window.FNPW_VOL_STATE;
+    if (!form || !code) return;
+    try {
+      var doc = form.ownerDocument, win = doc.defaultView;
+      var el = form.querySelector('input[name$="/state"], input[name="state"]');
+      if (!el) return;
+      var setter = Object.getOwnPropertyDescriptor(win.HTMLInputElement.prototype, 'value').set;
+      setter.call(el, code);
+      el.dispatchEvent(new win.Event('input', { bubbles: true }));
+      el.dispatchEvent(new win.Event('change', { bubbles: true }));
+    } catch (e) { /* HubSpot changed the form; the person picks the state themselves */ }
+  }
+
+  // lets the state tabs on this page update a form that has already rendered
+  window.fnpwSetVolState = function (code, name) {
+    window.FNPW_VOL_STATE = code;
+    window.FNPW_VOL_STATE_NAME = name;
+    applyState(liveForm);
+  };
+
+  hbspt.forms.create({
+    region: 'ap1',
+    portalId: '441704788',
+    formId: '5275a663-85fc-43d4-8400-b17d34ece7fa',
+    target: '#hsform',
+    onFormReady: function (form) {
+      liveForm = (form && form.querySelector) ? form : (form && form[0]);
+      applyState(liveForm);
+    }
+  });
+
+  setTimeout(function () {
+    if (!slot.querySelector('iframe, form')) showFallback();
+  }, 8000);
+})();
+</script>
 </body>
 </html>

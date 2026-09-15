@@ -439,7 +439,7 @@ def extract_form(state_name=None):
     markup = v[a:b]
 
     style = v[v.index('<style>'):v.index('</style>')]
-    want = ('.v-cta', '.vform', '.v-steps')
+    want = ('.v-cta', '.vform', '.v-steps', '.hsform')
     rules = []
     for chunk in re.findall(r'(?m)^(?:@media[^{]*\{(?:[^{}]|\{[^{}]*\})*\}|[^@\n][^{]*\{[^{}]*\})', style):
         if any(w in chunk.split('{')[0] for w in want) or (
@@ -447,10 +447,15 @@ def extract_form(state_name=None):
             rules.append(chunk.strip())
     css = NL.join(rules)
 
+    # the embed script lives at the foot of volunteer.html; the state pages need it too
+    ea = v.index('<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net')
+    eb = v.index('</script>', v.index('hbspt.forms.create', ea)) + len('</script>')
+    embed = v[ea:eb]
+
     if state_name:
         markup = markup.replace('Pick from the sites listed above',
                                 'Pick from the %s sites above' % state_name)
-    return css, markup
+    return css, markup, embed
 
 
 def gallery(code, idx):
@@ -506,7 +511,7 @@ def state_page(code, outline, sites, idx):
     filters = ''.join(
         '        <button type="button" data-f="%s">%s <span>%d</span></button>%s'
         % (esc(t), esc(t), counts[t], NL) for t in types)
-    form_css, form_html = extract_form(outline['name'])
+    form_css, form_html, form_embed = extract_form(outline['name'])
 
     body = NL.join([
         '<section class="vs-hero">',
@@ -571,7 +576,14 @@ def state_page(code, outline, sites, idx):
             'nurseries to wetlands and conservation centres.' % (len(sites), outline['name']))
     write_page(slug_state(code), '%s Volunteering Sites' % code, esc(desc), body,
                page_css=PAGE_CSS + NL + form_css,
-               extra_js='<script src="assets/js/gallery.js"></script>' + NL + PAGE_JS)
+               extra_js=NL.join([
+                   '<script src="assets/js/gallery.js"></script>',
+                   # tells the embed which state to preselect, before it runs
+                   '<script>window.FNPW_VOL_STATE=%r;window.FNPW_VOL_STATE_NAME=%r;</script>'
+                   % (code, outline['name']),
+                   form_embed,
+                   PAGE_JS,
+               ]))
     return len(sites)
 
 
@@ -652,8 +664,8 @@ HUB_JS = '''
         x.setAttribute('aria-selected', x === b ? 'true' : 'false');
       });
       panels.forEach(function (p) { p.hidden = p.dataset.s !== b.dataset.s; });
-      var sel = document.getElementById('vf-state');
-      if (sel) sel.value = b.dataset.s;
+      var label = b.firstChild && b.firstChild.nodeValue ? b.firstChild.nodeValue.trim() : '';
+      if (window.fnpwSetVolState) window.fnpwSetVolState(b.dataset.s, label);
     });
     wt.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
@@ -757,6 +769,24 @@ def patch_hub(by):
                   "var state=document.getElementById('qc-state').value,")
     t = t.replace("var c=document.getElementById('vf-city'), z=", "var c=document.getElementById('vf-state'), z=")
     t = t.replace('if(c) c.value=city;', 'if(c) c.value=state;')
+
+    # the hand-built fields are gone, so the quick check feeds the HubSpot form
+    old_qc = ("    var c=document.getElementById('vf-state'), z=document.getElementById('vf-size'), "
+              "m=document.getElementById('vf-msg');" + NL
+              + "    if(c) c.value=state;" + NL
+              + "    if(z) z.value=size;" + NL
+              + "    if(m && when) m.value=(m.value?m.value+' ':'')+'Looking at '+when+'.';" + NL
+              + "    var t=document.getElementById('enquire');" + NL
+              + "    if(t){ t.scrollIntoView({behavior:'smooth',block:'start'});" + NL
+              + "      setTimeout(function(){var n=document.getElementById('vf-name'); "
+              "if(n) n.focus({preventScroll:true});},650); }")
+    new_qc = ("    var opt=document.querySelector('#qc-state option[value=\"'+state+'\"]');" + NL
+              + "    if(window.fnpwSetVolState) window.fnpwSetVolState(state, opt?opt.textContent:'');" + NL
+              + "    window.FNPW_VOL_SIZE=size; window.FNPW_VOL_WHEN=when;" + NL
+              + "    var t=document.getElementById('enquire');" + NL
+              + "    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});")
+    if old_qc in t:
+        t = t.replace(old_qc, new_qc)
     t = t.replace('<b>Enquire</b> Tell us your city, team size and rough dates.',
                   '<b>Enquire</b> Tell us your state, team size and rough dates.')
 
