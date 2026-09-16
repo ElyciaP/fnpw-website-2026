@@ -8,9 +8,27 @@ from site_lib import (ROOT, write_page, hero, sec, two, port, cta_band, faq,
                       RAISELY_DONATE, RAISELY_HERO)
 
 GAT = 'https://gift-a-tree.fnpw.org.au'
+SKIPPED = []
 P = []  # (fname, title) collected for the search index
 
 def add(fname, title, desc, body, **kw):
+    """Write a page, unless a real one has been built over the stub.
+
+    Everything this file produces is a placeholder carrying a "To port from
+    live site" note. Once someone replaces a page with the real thing that note
+    is gone, and regenerating would silently throw the work away. That is
+    exactly what happened to donate-land.html on 11 September 2026, so the rule
+    now is: never overwrite a page that no longer looks like a stub.
+
+    Set FNPW_FORCE_STUBS=1 if you genuinely want the placeholder back.
+    """
+    path = os.path.join(ROOT, fname)
+    if os.path.exists(path) and not os.environ.get('FNPW_FORCE_STUBS'):
+        current = open(path, encoding='utf-8').read()
+        if 'To port from live site' not in current and 'port-note' not in current:
+            SKIPPED.append(fname)
+            P.append((fname, title))
+            return
     write_page(fname, title, desc, body, **kw)
     P.append((fname, title))
 
@@ -454,3 +472,8 @@ q.addEventListener('input', () => {
 
 if __name__ == '__main__':
     main()
+
+if SKIPPED:
+    print('pages left alone because a real one has been built over the stub: %d' % len(SKIPPED))
+    for f in SKIPPED:
+        print('    ' + f)
