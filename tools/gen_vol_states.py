@@ -719,9 +719,7 @@ def hub_section(by):
         '    <div class="v-where-h rv">',
         '      <span class="ey">Where we run</span>',
         '      <h2>Our corporate volunteering sites across Australia.</h2>',
-        '      <p>%d sites in five states, from harbour bushland and community nurseries to '
-        'wetlands, conservation parks and a black cockatoo rehabilitation centre. Pick a state to '
-        'see its sites, then open it to see them on a map.</p>' % sum(len(v) for v in by.values()),
+        '      <p>Pick a state to see its sites, then open it to see them on a map.</p>',
         '    </div>',
         '    <div class="vw-tabs" role="tablist" id="vwTabs" aria-label="Choose a state">',
         NL.join(tabs),
