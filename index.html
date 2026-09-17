@@ -21,7 +21,7 @@
 .hx-kicker{display:inline-flex;align-items:center;gap:.6rem;color:var(--euc-soft);font-family:var(--ff-d);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem}
 .hx-kicker::before{content:"";width:2.2rem;height:2px;background:var(--wattle)}
 .hx-h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.6rem,6.5vw,5.4rem);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:13ch;margin:0 0 1.4rem}
-.hx-h1 .wild{font-family:var(--ff-h);font-weight:700;font-size:1.18em;color:var(--wattle-soft);letter-spacing:0;padding:0 .06em}
+.hx-h1 .wild{color:var(--wattle-soft)}
 .hx-lede{color:rgba(250,246,242,.88);font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:46ch;line-height:1.6;margin-bottom:2.2rem}
 .hx-hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 .hx-btn{font-family:var(--ff-d);font-weight:600;font-size:1rem;padding:1rem 2rem;border-radius:0;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;display:inline-block}
@@ -147,8 +147,8 @@
 .hx-ghost{position:absolute;left:-1.5rem;top:1rem;font-family:var(--ff-d);font-weight:800;font-size:clamp(9rem,21vw,18rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--rule);letter-spacing:-.04em;user-select:none;pointer-events:none}
 .hx-story-g{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;position:relative}
 .hx-story-media{position:relative;padding:0 clamp(2rem,4vw,3.4rem) clamp(2rem,4vw,3.4rem) 0}
-.hx-story-media .m1{display:block;width:100%;aspect-ratio:4/4.7;object-fit:cover}
-.hx-story-media .m2{position:absolute;right:0;bottom:0;width:54%;aspect-ratio:1/1;object-fit:cover;border:8px solid var(--cream);box-shadow:0 26px 60px -26px rgba(15,49,50,.4)}
+.hx-story-media .m1{display:block;width:100%;aspect-ratio:5/6;object-fit:cover}
+.hx-story-media .m2{position:absolute;right:0;bottom:0;width:58%;aspect-ratio:4/3;object-fit:cover;border:8px solid var(--cream);box-shadow:0 26px 60px -26px rgba(15,49,50,.4)}
 .hx-cta{display:inline-flex;align-items:center;gap:1rem;margin-top:1.3rem;font-family:var(--ff-d);font-weight:700;font-size:1.02rem;color:var(--euc-deep);text-decoration:none;transition:color .25s ease}
 .hx-cta-line{position:relative;width:58px;height:2px;background:currentColor;transition:width .3s ease}
 .hx-cta-line::after{content:"";position:absolute;right:0;top:-4.5px;width:10px;height:10px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
@@ -265,7 +265,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
   <div class="cw rv">
     <span class="hx-kicker">Foundation for National Parks &amp; Wildlife</span>
-    <h1 class="hx-h1">Keeping Australia <span class="wild">wild</span> since 1970.</h1>
+    <h1 class="hx-h1">Keeping Australia <span class="wild">wild</span> since 1970</h1>
     <p class="hx-lede">With over 55 years of experience, we work to protect endangered species, restore vital ecosystems, and ensure the long-term health of Country.</p>
     <div class="hx-hero-cta">
       <a class="hx-btn hx-btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>
@@ -464,8 +464,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   <div class="cw">
     <div class="hx-story-g">
       <div class="hx-story-media rv">
-        <img class="m1" src="https://fnpw.org.au/wp-content/uploads/2021/01/children-Biodiversity-discovery-native-flora-banksia-seed-cones.jpg" alt="Children discovering native flora and banksia seed cones" loading="lazy">
-        <img class="m2" src="https://fnpw.org.au/wp-content/uploads/2021/01/feeding.jpg" alt="A wildlife carer hand-feeding a rescued animal" loading="lazy">
+        <img class="m1" src="assets/img/home-story-planting.jpg" alt="Two volunteers planting seedlings on a hillside, rows of green tree guards running away behind them" width="1000" height="1200" loading="lazy">
+        <img class="m2" src="assets/img/home-story-nursery.jpg" alt="Three people talking under shadecloth in a community nursery, one holding a potted seedling" width="1200" height="900" loading="lazy">
         <span class="hx-cap" style="position:absolute;left:0;bottom:-.6rem">then, now, and what comes next</span>
       </div>
       <div class="rv d1">
