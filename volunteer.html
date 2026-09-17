@@ -14,11 +14,11 @@
 /* ════ Volunteer page — aligned with fnpw.org.au/corporate-volunteering ══ */
 
 /* HERO (shared full-bleed) */
-.fb-hero{position:relative;min-height:clamp(440px,60vh,580px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
+.fb-hero{position:relative;min-height:clamp(400px,52vh,500px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 50%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.86) 0%,rgba(15,49,50,.62) 48%,rgba(15,49,50,.22) 100%);z-index:1}
-.fb-hero-content{position:relative;z-index:3;padding:5rem 0;width:100%}
+.fb-hero-content{position:relative;z-index:3;padding:clamp(3.2rem,6vw,4.5rem) 0;width:100%}
 .fb-hero-content .breadcrumb{color:rgba(250,246,242,.7);font-size:.82rem;display:flex;gap:.5em;margin-bottom:1.4rem}
 .fb-hero-content .breadcrumb a{color:var(--euc-soft)}
 .fb-hero-content .ey{color:var(--waratah-soft)}
@@ -56,6 +56,7 @@
 .v-acts-h h2{font-size:clamp(2rem,3.2vw,2.6rem);margin:1rem 0 .8rem;letter-spacing:-.022em;line-height:1.05}
 .v-acts-h p{color:var(--stone);font-size:1rem;line-height:1.6}
 .v-act{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;margin-bottom:4.5rem;position:relative}
+.v-act:last-of-type{margin-bottom:0}
 .v-act:last-child{margin-bottom:0}
 .v-act.flip{grid-template-columns:1fr 1.1fr}
 .v-act.flip .v-act-im{order:2}
@@ -113,8 +114,6 @@
 .hero-cta{display:inline-block;margin-top:1.6rem;background:var(--waratah);color:var(--cream);padding:.95em 2.2em;font-family:var(--ff-d);font-weight:700;font-size:.98rem;letter-spacing:-.01em;text-decoration:none;transition:.2s;border:0}
 .hero-cta:hover{background:var(--waratah-dk);color:var(--cream);opacity:1;transform:translateY(-1px)}
 .hero-cta:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
-.hero-fine{font-size:.82rem;color:rgba(250,246,242,.75);margin:.9rem 0 0}
-.hero-fine a{color:var(--cream);font-weight:600;border-bottom:1px solid rgba(250,246,242,.5)}
 .v-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--euc-deep);color:var(--cream);transform:translateY(110%);transition:transform .35s ease;box-shadow:0 -10px 30px -18px rgba(0,0,0,.6)}
 .v-sticky.on{transform:none}
 .v-sticky-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 2rem;font-size:.9rem}
@@ -195,7 +194,7 @@
 .v-prog-cancel-i strong{display:block;font-family:var(--ff-d);font-weight:700;color:var(--wattle-soft);font-size:1.05rem;letter-spacing:-.01em;margin-bottom:.15em}
 
 /* FAQ accordion */
-.v-faq{padding:clamp(4rem,7vw,6rem) 0;background:var(--cream)}
+.v-faq{padding:0 0 clamp(4rem,7vw,6rem);background:var(--cream)}
 .v-faq-h{text-align:center;max-width:640px;margin:0 auto 3rem}
 .v-faq-h h2{font-size:clamp(2rem,3.2vw,2.6rem);margin:1rem 0 .8rem;letter-spacing:-.022em;line-height:1.05}
 .v-faq-h p{color:var(--stone);font-size:1rem;line-height:1.6}
@@ -371,7 +370,6 @@
         <h1>Give your team a day <em>in the field.</em></h1>
         <p class="lede">A hands-on conservation day on a working restoration site, run with our rangers and community nurseries. Your team grows seedlings, repairs habitat and clears weeds from places that need it, and plants trees when the season allows.</p>
         <a class="hero-cta" href="#enquire">Enquire now</a>
-        <p class="hero-fine">Or call <a href="tel:1800898626">1800 898 626</a>. Minimum 21 days&rsquo; notice.</p>
       </div>
     </div>
   </div>
@@ -412,9 +410,9 @@
       <div class="v-act-bd">
         <span class="pn">Support Bushfire Recovery Nurseries</span>
         <h3>Grow thousands of natives in a single day.</h3>
-        <p>Volunteer with our network of community-led bushfire and flood recovery nurseries, which supported the planting of over <strong>one million trees in 2024</strong>. By 2030, we aim to have <strong>nine million trees</strong> in the ground, helping rebuild ecosystems and strengthen landscape resilience.</p>
+        <p>Volunteer with our network of community-led bushfire and flood recovery nurseries, which supported the planting of over <strong>one million trees in 2024</strong>. By 2030, we aim to plant <strong>eight million more</strong>, helping rebuild ecosystems and strengthen landscape resilience.</p>
         <p>Your team will nurture seedlings, learn from experts about native species, and understand the critical role these plants play in healthy ecosystems. A hands-on experience that aligns with your ESG or CSR goals.</p>
-        <div class="v-act-stat"><strong>1M+</strong> trees planted in 2024 &middot; <strong>9M</strong> goal by 2030</div>
+        <div class="v-act-stat"><strong>1M+</strong> trees planted in 2024 &middot; <strong>8M</strong> more by 2030</div>
       </div>
     </div>
 
@@ -430,21 +428,6 @@
         <p>Take part in on-ground restoration activities that directly support the health, maintenance and cleanup of Australia&rsquo;s parks and urban green spaces.</p>
         <p>Your team will work outdoors to <strong>remove invasive species</strong>, <strong>plant native vegetation</strong>, and <strong>restore habitats</strong> that support wildlife and improve community green spaces. These sessions not only protect nature, but help maintain parks as places for connection, wellbeing and shared enjoyment.</p>
         <div class="v-act-stat"><strong>Outdoor</strong> on-ground restoration &middot; <strong>All</strong> equipment provided</div>
-      </div>
-    </div>
-
-    <!-- Activity 3 -->
-    <div class="v-act rv">
-      <div class="v-act-im">
-        <span class="badge">Activity 3</span>
-        <img src="https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg" alt="Native wildlife in care" loading="lazy">
-      </div>
-      <div class="v-act-bd">
-        <span class="pn">Support Wildlife and Sanctuary Care</span>
-        <h3>Keep a sanctuary running for a day.</h3>
-        <p>At sites like the Kaarakin Black Cockatoo Conservation Centre in the Perth Hills, teams prepare and distribute food, clean aviaries and care areas, and keep the surrounding bushland in shape.</p>
-        <p>Your team also learns what is pushing three black cockatoo species towards the edge, from the people who work with them every day.</p>
-        <div class="v-act-stat"><strong>40 acres</strong> of bushland &middot; <strong>3</strong> black cockatoo species</div>
       </div>
     </div>
 
