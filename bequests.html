@@ -17,7 +17,7 @@
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 50%,rgba(15,49,50,.2) 100%);z-index:1}
 .fb-hero-content{position:relative;z-index:3;padding:4.5rem 0;width:100%}
-.fb-hero-content .breadcrumb{color:rgba(250,246,242,.7)}
+.fb-hero-content .breadcrumb{color:rgba(250,246,242,.7);display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .fb-hero-content .breadcrumb a{color:var(--euc-soft)}
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
@@ -132,13 +132,19 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="bh">
-  
-  <div class="cw rv">
-    <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span>Get Involved<span style="opacity:.4">/</span>Bequests</nav>
-    <span class="ey">Leave a gift in your Will</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:20ch">A gift that lasts longer than a lifetime.</h1>
-    <p class="lede">A bequest to FNPW is one of the most meaningful gifts you can make. It allows you to protect the wild places you love, for the people who come after you.</p>
+<!-- ============ HERO (a-feature) ============ -->
+<section class="fb-hero">
+  <div class="fb-hero-bg">
+    <img src="assets/img/bequests-hero.jpg" alt="Rainforest ridges running away into hazy blue ranges, with a rainbow falling across the valley">
+  </div>
+  <div class="fb-cred">Photo: Border Ranges</div>
+  <div class="fb-hero-content">
+    <div class="cw rv">
+      <nav class="breadcrumb"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span style="opacity:.4">/</span>Bequests</nav>
+      <span class="ey">Leave a gift in your Will</span>
+      <h1>A gift that lasts longer than a lifetime.</h1>
+      <p class="lede">A bequest to the Foundation for National Parks &amp; Wildlife is one of the most meaningful gifts you can make. It allows you to protect the wild places you love, for the people who come after you.</p>
+    </div>
   </div>
 </section>
 
@@ -175,8 +181,8 @@
       <h2>Margaret's bush, protected forever.</h2>
       <div class="cs-grid">
         <figure class="cs-img">
-          <img src="assets/img/bongil.jpg" alt="Australian bushland — placeholder image">
-          <figcaption>Placeholder image — Australian bushland</figcaption>
+          <img src="assets/img/bongil.jpg" alt="Australian bushland, placeholder image">
+          <figcaption>Placeholder image, Australian bushland</figcaption>
         </figure>
         <div class="cs-body">
           <p>Margaret Halloran spent every school holiday at her grandmother&rsquo;s property on the edge of Ku-ring-gai Chase National Park. She learned the names of the banksias before she learned her times tables, and she never quite got over the smell of eucalyptus oil after rain.</p>
