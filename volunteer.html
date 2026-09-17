@@ -110,25 +110,11 @@
 .fb-hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
 @media(max-width:900px){.fb-hero-g{grid-template-columns:1fr}}
 .fb-hero-content h1{margin-bottom:1rem}
-.hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
-.hero-chips span{font-size:.8rem;color:var(--cream);background:rgba(250,246,242,.1);border:1px solid rgba(250,246,242,.22);padding:.4em .85em}
-.qcheck{background:var(--white);padding:1.6rem;box-shadow:0 30px 60px -34px rgba(0,0,0,.65);max-width:420px;width:100%}
-.qc-ey{font-family:var(--ff-d);font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--euc)}
-.qcheck h2{font-family:var(--ff-d);font-size:1.25rem;letter-spacing:-.02em;color:var(--euc-deep);margin:.5rem 0 .3rem}
-.qcheck>p{font-size:.86rem;color:var(--stone);margin:0 0 .9rem;line-height:1.5}
-.qcheck label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);font-weight:600;margin:.8rem 0 .3rem}
-.qcheck select,.qcheck input{width:100%;padding:.72em .8em;border:1px solid var(--rule);background:var(--cream);font-family:inherit;font-size:.93rem;color:var(--char);border-radius:0}
-.qcheck select:focus,.qcheck input:focus{outline:2px solid var(--euc);outline-offset:1px}
-.qc-go{margin-top:1.1rem;width:100%;background:var(--waratah);color:var(--cream);border:0;padding:.95em;font-family:var(--ff-d);font-weight:700;font-size:.95rem;cursor:pointer;transition:.2s}
-.qc-go:hover{background:var(--waratah-dk)}
-.qc-fine{font-size:.75rem;color:var(--stone);margin:.7rem 0 0}
-.qc-fine a{color:var(--euc);font-weight:600}
-.v-proof{background:var(--euc-deep);color:var(--cream);padding:1.6rem 0}
-.v-proof-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
-.v-proof-g div{display:flex;flex-direction:column;gap:.15rem}
-.v-proof-g strong{font-family:var(--ff-d);font-weight:700;font-size:1.15rem;color:var(--wattle-soft);letter-spacing:-.01em}
-.v-proof-g span{font-size:.84rem;color:rgba(250,246,242,.82)}
-@media(max-width:760px){.v-proof-g{grid-template-columns:1fr 1fr;gap:1.1rem}}
+.hero-cta{display:inline-block;margin-top:1.6rem;background:var(--waratah);color:var(--cream);padding:.95em 2.2em;font-family:var(--ff-d);font-weight:700;font-size:.98rem;letter-spacing:-.01em;text-decoration:none;transition:.2s;border:0}
+.hero-cta:hover{background:var(--waratah-dk);color:var(--cream);opacity:1;transform:translateY(-1px)}
+.hero-cta:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+.hero-fine{font-size:.82rem;color:rgba(250,246,242,.75);margin:.9rem 0 0}
+.hero-fine a{color:var(--cream);font-weight:600;border-bottom:1px solid rgba(250,246,242,.5)}
 .v-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--euc-deep);color:var(--cream);transform:translateY(110%);transition:transform .35s ease;box-shadow:0 -10px 30px -18px rgba(0,0,0,.6)}
 .v-sticky.on{transform:none}
 .v-sticky-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 2rem;font-size:.9rem}
@@ -384,44 +370,18 @@
         <span class="ey">Hands-on conservation</span>
         <h1>Give your team a day <em>in the field.</em></h1>
         <p class="lede">A hands-on conservation day on a working restoration site, run with our rangers and community nurseries. Your team grows seedlings, repairs habitat and clears weeds from places that need it, and plants trees when the season allows.</p>
-        <div class="hero-chips">
-          <span>Group size varies by site</span><span>Weekdays, about 9 to 2</span><span>Tools and catering included</span><span>Tax deductible</span>
-        </div>
+        <a class="hero-cta" href="#enquire">Enquire now</a>
+        <p class="hero-fine">Or call <a href="tel:1800898626">1800 898 626</a>. Minimum 21 days&rsquo; notice.</p>
       </div>
-      <form class="qcheck" id="qcheck">
-        <span class="qc-ey">Start here &middot; 30 seconds</span>
-        <h2>Check a date for your team</h2>
-        <p>Tell us the basics and we come back within two working days with sites and dates.</p>
-        <label for="qc-state">State</label>
-        <select id="qc-state"><option value="NSW">New South Wales</option><option value="SA">South Australia</option><option value="VIC">Victoria</option><option value="WA">Western Australia</option><option value="QLD">Queensland</option></select>
-        <label for="qc-size">Team size</label>
-        <select id="qc-size"><option>Up to 10</option><option>10&ndash;15</option><option>15&ndash;20</option><option>20+ (combined group)</option></select>
-        <label for="qc-when">Rough month</label>
-        <input id="qc-when" type="text" placeholder="e.g. September 2026">
-        <button type="submit" class="qc-go">Check availability</button>
-        <p class="qc-fine">Or call <a href="tel:1800898626">1800 898 626</a>. Minimum 21 days&rsquo; notice.</p>
-      </form>
     </div>
   </div>
   <span class="fb-cred">Restoration in action &middot; FNPW Recovery Nursery</span>
 </section>
 
-<!-- ─── At a glance ──────────────────────────────────────────────── -->
-<section class="v-proof">
-  <div class="cw">
-    <div class="v-proof-g">
-      <div><strong>Varies</strong><span>group size by site</span></div>
-      <div><strong>About 9&ndash;2</strong><span>weekdays, timings vary by state</span></div>
-      <div><strong>$3,500 + GST</strong><span>per day, fully tax deductible</span></div>
-      <div><strong>5 cities</strong><span>NSW &middot; VIC &middot; QLD &middot; SA &middot; WA</span></div>
-    </div>
-  </div>
-</section>
-
 <div class="v-sticky" id="vSticky" aria-hidden="true">
   <div class="cw v-sticky-in">
     <span>Corporate volunteering &middot; <b>$3,500 + GST</b> &middot; weekdays</span>
-    <a href="#enquire" class="v-sticky-go">Check availability</a>
+    <a href="#enquire" class="v-sticky-go">Enquire now</a>
   </div>
 </div>
 
@@ -914,19 +874,6 @@
       n.focus(); n.click();
     });
   }
-  // quick check: carry the answers into the main enquiry form
-  var qc=document.getElementById('qcheck');
-  if(qc) qc.addEventListener('submit',function(e){
-    e.preventDefault();
-    var state=document.getElementById('qc-state').value,
-        size=document.getElementById('qc-size').value,
-        when=document.getElementById('qc-when').value.trim();
-    var opt=document.querySelector('#qc-state option[value="'+state+'"]');
-    if(window.fnpwSetVolState) window.fnpwSetVolState(state, opt?opt.textContent:'');
-    window.FNPW_VOL_SIZE=size; window.FNPW_VOL_WHEN=when;
-    var t=document.getElementById('enquire');
-    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
   // sticky bar: show once the hero is gone, hide over the enquiry form
   var bar=document.getElementById('vSticky'), hero=document.querySelector('.fb-hero'), cta=document.getElementById('enquire');
   if(bar&&hero&&'IntersectionObserver' in window){
