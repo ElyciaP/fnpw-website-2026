@@ -93,7 +93,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 }
 
 /* ---- FOOTER ---- */
-.ftr{background:var(--euc-deep);color:var(--euc-soft);padding:5rem 0 2rem;margin-top:6rem;position:relative;overflow:hidden}
+.ftr{background:var(--euc-deep);color:var(--euc-soft);padding:5rem 0 2rem;position:relative;overflow:hidden}
 .ftr::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--euc-mid),transparent)}
 .ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 @media(max-width:880px){.ftr-g{grid-template-columns:1fr 1fr;gap:2.4rem}}
