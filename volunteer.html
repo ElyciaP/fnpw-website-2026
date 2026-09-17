@@ -213,9 +213,9 @@
 .v-faq-h{text-align:center;max-width:640px;margin:0 auto 3rem}
 .v-faq-h h2{font-size:clamp(2rem,3.2vw,2.6rem);margin:1rem 0 .8rem;letter-spacing:-.022em;line-height:1.05}
 .v-faq-h p{color:var(--stone);font-size:1rem;line-height:1.6}
-.v-faq-list{max-width:1080px;margin:0 auto;columns:2;column-gap:1.2rem}
-.v-faq-list .v-faq-item{break-inside:avoid;-webkit-column-break-inside:avoid;width:100%}
-@media(max-width:820px){.v-faq-list{columns:1;max-width:820px}}
+.v-faq-list{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem 1.2rem;align-items:start}
+.v-faq-list .v-faq-item{width:100%;margin-bottom:0}
+@media(max-width:820px){.v-faq-list{grid-template-columns:1fr;max-width:820px}}
 .v-faq-item{background:var(--white);border:1px solid var(--rule);border-radius:0;margin-bottom:.8rem;overflow:hidden;transition:.3s}
 .v-faq-item[open]{border-color:var(--euc-soft);box-shadow:0 16px 30px -20px rgba(15,49,50,.18)}
 .v-faq-item summary{padding:1.1rem 3rem 1.1rem 1.4rem;cursor:pointer;font-family:var(--ff-d);font-weight:600;font-size:1rem;color:var(--euc-deep);letter-spacing:-.01em;list-style:none;position:relative;transition:.25s}
@@ -258,7 +258,7 @@
 .v-cta{padding:clamp(4rem,7vw,6rem) 0;background:var(--cream);position:relative}
 .v-cta-card{background:var(--white);border-radius:0;border:1px solid var(--rule);padding:clamp(2.5rem,5vw,4rem) clamp(2rem,4vw,3rem);position:relative;overflow:hidden;box-shadow:0 28px 60px -30px rgba(15,49,50,.22)}
 .v-cta-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc) 0,var(--wattle) 50%,var(--waratah) 100%)}
-.v-cta-g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.v-cta-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 @media(max-width:880px){.v-cta-g{grid-template-columns:1fr;gap:2rem}}
 .v-cta-l h2{font-size:clamp(1.9rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1.05;margin:.8rem 0 1.2rem}
 .v-cta-l h2 em{font-style:italic;font-family:var(--ff-d);color:var(--euc);font-weight:500}
@@ -1001,6 +1001,68 @@
     applyState(liveForm);
   };
 
+
+  /* HubSpot stacks every field, which made a ten field form a very long strip.
+     The form renders into a same-origin iframe, so we can lay it out in two
+     columns from here. Class names inside that iframe are HubSpot's and change
+     without notice, so nothing below depends on them: we find the element that
+     actually contains the field rows by walking up from the fields themselves,
+     and anything we cannot read is left exactly as HubSpot rendered it. */
+  function pairUpFields(form) {
+    if (!form) return;
+    try {
+      var doc = form.ownerDocument;
+
+      if (!doc.getElementById('fnpwFormGrid')) {
+        var s = doc.createElement('style');
+        s.id = 'fnpwFormGrid';
+        s.textContent =
+          '[data-fnpw-grid]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));' +
+          'column-gap:1.1rem;align-items:start}' +
+          '[data-fnpw-grid] > [data-fnpw-wide]{grid-column:1/-1}' +
+          '@media(max-width:620px){[data-fnpw-grid]{grid-template-columns:1fr}}';
+        (doc.head || doc.body).appendChild(s);
+      }
+
+      var ctrls = [].slice.call(form.querySelectorAll('input,select,textarea'))
+        .filter(function (el) {
+          return el.type !== 'hidden' && el.type !== 'submit' && el.type !== 'button' &&
+                 el.offsetParent !== null;
+        });
+      if (ctrls.length < 4) return;   // too few to be worth pairing
+
+      // the deepest element that contains every field: its children are the rows
+      function chain(el) {
+        var a = [];
+        for (var n = el.parentElement; n; n = n.parentElement) {
+          a.push(n);
+          if (n === form) break;
+        }
+        return a;
+      }
+      var lists = ctrls.map(chain), box = null, first = lists[0];
+      for (var i = 0; i < first.length; i++) {
+        var cand = first[i];
+        var all = lists.every(function (l) { return l.indexOf(cand) > -1; });
+        if (all) { box = cand; break; }
+      }
+      if (!box || box.children.length < 4) return;
+
+      [].slice.call(box.children).forEach(function (row) {
+        // a row goes full width if it holds a textarea, the submit, the captcha,
+        // or no field at all (consent text, error summaries, headings)
+        var wide = !!row.querySelector('textarea,iframe,[type=submit],button') ||
+                   !row.querySelector('input,select,textarea');
+        if (wide) row.setAttribute('data-fnpw-wide', '');
+        else row.removeAttribute('data-fnpw-wide');
+      });
+      box.setAttribute('data-fnpw-grid', '');
+
+      // the embed sizes its own iframe, so tell it the height just changed
+      try { (doc.defaultView || window).dispatchEvent(new Event('resize')); } catch (e) {}
+    } catch (e) { /* HubSpot changed the form: leave it as rendered */ }
+  }
+
   hbspt.forms.create({
     region: 'ap1',
     portalId: '441704788',
@@ -1009,6 +1071,16 @@
     onFormReady: function (form) {
       liveForm = (form && form.querySelector) ? form : (form && form[0]);
       applyState(liveForm);
+      pairUpFields(liveForm);
+      // the form re-renders on validation and on step changes, so re-apply
+      [250, 900, 2500].forEach(function (ms) {
+        setTimeout(function () { pairUpFields(liveForm); }, ms);
+      });
+      try {
+        var mo = new MutationObserver(function () { pairUpFields(liveForm); });
+        mo.observe(liveForm, { childList: true, subtree: true });
+        setTimeout(function () { mo.disconnect(); }, 20000);
+      } catch (e) {}
     }
   });
 

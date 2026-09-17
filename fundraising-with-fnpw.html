@@ -10,6 +10,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
+/* ===== A-FEATURE HERO ===== */
+.fb-hero{position:relative;min-height:clamp(420px,56vh,540px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
+.fb-hero-bg{position:absolute;inset:0;z-index:-2}
+.fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 50%,rgba(15,49,50,.2) 100%);z-index:1}
+.fb-hero-content{position:relative;z-index:3;padding:4.5rem 0;width:100%}
+.fb-hero-content .breadcrumb{color:rgba(250,246,242,.7);display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.fb-hero-content .breadcrumb a{color:var(--euc-soft)}
+.fb-hero-content .ey{color:var(--waratah-soft)}
+.fb-hero-content .ey::before{background:var(--waratah-soft)}
+.fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:22ch;margin-top:1rem}
+.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
+.fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
+@media(max-width:780px){.fb-cred{display:none}}
+
 /* ===== FUNDRAISING ===== */
 .fw-intro{padding:4.6rem 0;background:var(--cream)}
 .fw-g{display:grid;grid-template-columns:1.15fr .85fr;gap:3.4rem;align-items:start}
@@ -104,12 +119,19 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="ch chi" style="--chi:url('https://fnpw.org.au/wp-content/uploads/2021/02/Fundraising-with-FNPW-1920x1080.png')">
-  <div class="cw rv">
-    <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span><a href="ways-you-can-get-involved.html" style="color:var(--euc)">Get Involved</a><span style="opacity:.4">/</span>Fundraising</nav>
-    <span class="ey">Fundraise with us</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:24ch">Make a difference for wildlife and conservation.</h1>
-    <p class="lede">There are many ways to fundraise on our behalf, in your community or in your workplace. The sky is the limit, and we would love to hear your idea.</p>
+<!-- ============ HERO (a-feature) ============ -->
+<section class="fb-hero">
+  <div class="fb-hero-bg">
+    <img src="assets/img/fundraising-hero.jpg" alt="A Rainbow Lorikeet perched on a leafy branch, its blue head and orange breast bright against soft green bush">
+  </div>
+  <div class="fb-cred">Rainbow Lorikeet</div>
+  <div class="fb-hero-content">
+    <div class="cw rv">
+      <nav class="breadcrumb"><a href="index.html">Home</a><span style="opacity:.4">/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span style="opacity:.4">/</span>Fundraising</nav>
+      <span class="ey">Fundraise with us</span>
+      <h1>Make a difference for wildlife and conservation.</h1>
+      <p class="lede">There are many ways to fundraise on our behalf, in your community or in your workplace. The sky is the limit, and we would love to hear your idea.</p>
+    </div>
   </div>
 </section>
 
