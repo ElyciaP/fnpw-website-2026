@@ -4,13 +4,59 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>Fundraising with FNPW | Foundation for National Parks &amp; Wildlife</title>
-<meta name="description" content="Run, bake, climb or host an event in support of FNPW.">
+<meta name="description" content="Fundraise for us in your community or workplace. Download the Community Fundraising Kit, then send us your Proposal to Fundraise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
+/* ===== FUNDRAISING ===== */
+.fw-intro{padding:4.6rem 0;background:var(--cream)}
+.fw-g{display:grid;grid-template-columns:1.15fr .85fr;gap:3.4rem;align-items:start}
+@media(max-width:900px){.fw-g{grid-template-columns:1fr;gap:2.4rem}}
+.fw-g p{font-size:1.02rem;line-height:1.76;color:var(--char);margin-bottom:1.1rem}
+.fw-g p:last-child{margin-bottom:0}
+.fw-dl{background:var(--sand);padding:1.7rem 1.6rem}
+.fw-dl h3{font-family:var(--ff-d);font-size:1rem;color:var(--euc-deep);margin:0 0 .3rem;letter-spacing:-.01em}
+.fw-dl a{display:flex;align-items:flex-start;gap:.75rem;padding:.95rem 0;border-bottom:1px solid rgba(36,25,20,.12);color:var(--euc-deep);font-size:.95rem;font-weight:600;text-decoration:none;line-height:1.35}
+.fw-dl a:last-of-type{border-bottom:0;padding-bottom:0}
+.fw-dl a:hover{color:var(--euc)}
+.fw-dl a svg{width:18px;height:18px;flex:0 0 18px;margin-top:.1rem;stroke:var(--euc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fw-dl a small{display:block;font-weight:400;color:var(--stone);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem}
 
+.fw-ways{padding:4.6rem 0;background:var(--paper)}
+.fw-wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1.5rem;margin-top:2.3rem}
+.fw-w{background:var(--white);border:1px solid var(--rule);padding:1.7rem 1.6rem}
+.fw-w h3{font-family:var(--ff-d);font-size:1.12rem;color:var(--euc-deep);margin:0 0 .5rem;line-height:1.3;letter-spacing:-.01em}
+.fw-w p{font-size:.94rem;line-height:1.62;color:var(--char);margin:0}
+.fw-note{margin-top:2.1rem;font-size:.97rem;line-height:1.7;color:var(--char)}
+.fw-note a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
+
+.fw-paths{padding:4.6rem 0;background:var(--cream)}
+.fw-pg{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.3rem}
+@media(max-width:900px){.fw-pg{grid-template-columns:1fr;gap:2.4rem}}
+.fw-p{border-top:4px solid var(--euc);padding-top:1.4rem}
+.fw-p.b{border-top-color:var(--wattle)}
+.fw-p h3{font-family:var(--ff-d);font-size:1.28rem;color:var(--euc-deep);margin:0 0 .9rem;letter-spacing:-.01em}
+.fw-p p{font-size:.98rem;line-height:1.74;color:var(--char);margin-bottom:.9rem}
+.fw-p p:last-child{margin-bottom:0}
+.fw-p a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
+
+.fw-thanks{padding:4.6rem 0;background:var(--euc-deep);color:var(--cream)}
+.fw-thanks h2{color:var(--cream);margin:.8rem 0 0}
+.fw-thanks p{color:rgba(250,246,242,.88);font-size:1.05rem;line-height:1.76;margin-top:1.3rem;max-width:64ch}
+
+.fw-form{padding:4.6rem 0;background:var(--paper)}
+.fw-fg{display:grid;grid-template-columns:.85fr 1.15fr;gap:3rem;align-items:start}
+@media(max-width:900px){.fw-fg{grid-template-columns:1fr;gap:2.2rem}}
+.fw-fg p{font-size:1rem;line-height:1.72;color:var(--char);margin-top:1.1rem}
+.hsform{background:var(--white);border:1px solid var(--rule);padding:1.8rem}
+@media(max-width:600px){.hsform{padding:1.3rem 1.1rem}}
+.hsform-slot{min-height:220px}
+.hsform-slot iframe{width:100%!important;border:0;display:block}
+.hsform-fallback{margin:1rem 0 0;font-size:.88rem;line-height:1.6;color:var(--char)}
+.hsform-fallback a{color:var(--euc-deep);font-weight:700;border-bottom:1px solid currentColor}
+.hsform .fw-small{margin:1rem 0 0;font-size:.78rem;color:var(--stone);line-height:1.5}
 </style>
 </head>
 <body>
@@ -58,26 +104,104 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<section class="ch chi" style="--chi:url('https://fnpw.org.au/wp-content/uploads/2021/02/Phillip-Island-Ambassadors.jpg')">
+<section class="ch chi" style="--chi:url('https://fnpw.org.au/wp-content/uploads/2021/02/Fundraising-with-FNPW-1920x1080.png')">
   <div class="cw rv">
-    <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span>Fundraising</nav>
-    <span class="ey">Get involved</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">Fundraise for the bush.</h1>
-    <p class="lede">Birthdays, fun runs, morning teas, mountain climbs. Turn your thing into habitat for wildlife.</p>
+    <nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span><a href="ways-you-can-get-involved.html" style="color:var(--euc)">Get Involved</a><span style="opacity:.4">/</span>Fundraising</nav>
+    <span class="ey">Fundraise with us</span>
+    <h1 style="margin:1rem 0 1.2rem;max-width:24ch">Make a difference for wildlife and conservation.</h1>
+    <p class="lede">There are many ways to fundraise on our behalf, in your community or in your workplace. The sky is the limit, and we would love to hear your idea.</p>
   </div>
-</section><section class="sec ">
+</section>
+
+<section class="fw-intro">
+  <div class="cw"><div class="fw-g">
+    <div class="rv">
+      <span class="ey">Interested in fundraising?</span>
+      <h2 style="margin:.8rem 0 1.4rem">Thank you.</h2>
+      <p>There are many ways you can choose to fundraise on our behalf in your community or in your workplace. We have set out some examples below, but the sky is the limit and we would love you to tell us your own fundraiser ideas.</p>
+      <p>Please download and fill out our Proposal to Fundraise document and let us know what you would like to do. Need some ideas first? Keep reading below, or download our Community Fundraising Kit, which has plenty of tips to get you started.</p>
+    </div>
+    <div class="fw-dl rv d1">
+      <h3>Download</h3>
+      <a href="https://fnpw.org.au/wp-content/uploads/2021/02/FNPW-Fundraising-Guidelines.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg><span>Fundraising Guidelines<small>PDF</small></span></a>
+      <a href="https://fnpw.org.au/wp-content/uploads/2021/02/FNPW-Community-Fundraising-Kit.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg><span>Community Fundraising Kit<small>PDF</small></span></a>
+      <a href="https://fnpw.org.au/wp-content/uploads/2021/02/FNPW-Proposal-to-Fundraise-Form.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg><span>Proposal to Fundraise<small>PDF</small></span></a>
+    </div>
+  </div></div>
+</section>
+
+<section class="fw-ways">
   <div class="cw rv">
-<span class="ey">Pick your thing</span><h2 style="margin:.8rem 0 2.2rem">Any excuse works.</h2><div class="lcg"><a class="lc rv" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/"><h3>Move for it</h3><p>Fun runs, ocean swims, mountain climbs and long rides. Every kilometre earns habitat.</p><span class="lc-go">&rsaquo;</span></a><a class="lc rv" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/"><h3>Host for it</h3><p>Morning teas, trivia nights, movie screenings, bush dances. Gather people, raise the roof.</p><span class="lc-go">&rsaquo;</span></a><a class="lc rv" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/"><h3>Give your day</h3><p>Birthdays, weddings and milestones: ask for donations instead of gifts.</p><span class="lc-go">&rsaquo;</span></a><a class="lc rv" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/"><h3>Challenge yourself</h3><p>Give something up, take something on, let your friends sponsor the suffering.</p><span class="lc-go">&rsaquo;</span></a></div>
+    <span class="ey">There are many ways</span>
+    <h2 style="margin:.8rem 0 1.1rem">You can fundraise for us.</h2>
+    <p style="font-size:1.02rem;line-height:1.76;color:var(--char);max-width:64ch">There are many varied opportunities for people to fundraise for us, personally, creatively, and some with a challenge.</p>
+    <div class="fw-wg">
+        <div class="fw-w rv"><h3>Community event</h3><p>A garage or bake sale, a sausage sizzle.</p></div>
+        <div class="fw-w rv"><h3>Workplace event</h3><p>A coffee donation or a morning tea.</p></div>
+        <div class="fw-w rv"><h3>Raffle or auction</h3><p>Gather prizes, sell tickets, raise the room.</p></div>
+        <div class="fw-w rv"><h3>Sale of products</h3><p>Make something, sell it, send the proceeds our way.</p></div>
+        <div class="fw-w rv"><h3>Challenge event</h3><p>A fun run, a cycle, a hike.</p></div>
+        <div class="fw-w rv"><h3>School fundraiser</h3><p>A whole-school effort or a fundraising stall.</p></div>
+    </div>
+    <p class="fw-note">For more tips and tricks, download the <a href="https://fnpw.org.au/wp-content/uploads/2021/02/FNPW-Community-Fundraising-Kit.pdf" target="_blank" rel="noopener">Community Fundraising Kit</a>.</p>
   </div>
-</section><section class="sec paper">
+</section>
+
+<section class="fw-paths">
   <div class="cw rv">
-<span class="ey">How it works</span><h2 style="margin:.8rem 0 2.4rem">From idea to impact in three steps.</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.2rem"><div class="rv"><span style="font-family:var(--ff-d);font-weight:800;font-size:2.6rem;color:transparent;-webkit-text-stroke:1.3px var(--euc)">01</span><h3 style="font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .4rem">Create your page</h3><p style="font-size:.94rem">Set up a fundraising page in minutes, set a goal, tell your story.</p></div><div class="rv"><span style="font-family:var(--ff-d);font-weight:800;font-size:2.6rem;color:transparent;-webkit-text-stroke:1.3px var(--euc)">02</span><h3 style="font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .4rem">Share it around</h3><p style="font-size:.94rem">Friends, family, workmates. We can supply logos, photos and impact stats to make it look sharp.</p></div><div class="rv"><span style="font-family:var(--ff-d);font-weight:800;font-size:2.6rem;color:transparent;-webkit-text-stroke:1.3px var(--euc)">03</span><h3 style="font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .4rem">Watch it land</h3><p style="font-size:.94rem">Every dollar goes to growing national parks, saving species and healing the land.</p></div></div><p style="margin-top:2.2rem"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Start fundraising</a> <a class="btn-o" href="contact.html" style="margin-left:.6rem">Talk to us first</a></p>
+    <span class="ey">Two ways in</span>
+    <h2 style="margin:.8rem 0 0">Start your own, or join one that exists.</h2>
+    <div class="fw-pg">
+      <div class="fw-p rv">
+        <h3>Create your own event</h3>
+        <p>Whether you are collecting in lieu of wedding presents, setting yourself a personal challenge, or simply asking for a donation, you can make a big difference for our wilderness and wildlife.</p>
+        <p>You can even set up your own fundraising page and raise money securely online through <a href="https://www.gofundraise.com.au/beneficiary/FNPW" target="_blank" rel="noopener">GoFundraise</a>, or directly with us. <a href="contact.html">Get in touch</a> and we will help you set it up.</p>
+      </div>
+      <div class="fw-p b rv d1">
+        <h3>Join an existing event</h3>
+        <p>There are marathons, swim events, cycling and many other challenges you can take part in. The results are rewarding and the possibilities are endless. Take it on by yourself, or put together a team with colleagues, friends or family so everyone can be part of it.</p>
+        <p>We can also set up a fundraising page for your company or team event, collecting donations securely online and issuing receipts to your donors automatically. <a href="contact.html">Get in touch</a> for more information.</p>
+      </div>
+    </div>
   </div>
-</section><section class="sec dark">
+</section>
+
+<section class="fw-thanks">
+  <div class="cw rv">
+    <span class="ey" style="color:var(--wattle)">We cannot thank you enough</span>
+    <h2>For loving Australia the way you do.</h2>
+    <p>Thank you for loving Australia&rsquo;s unique environment and taking that extra step to help its ongoing conservation and protection. Together we can protect habitat and the animals that live there, ensuring a lasting legacy for future generations to be inspired by.</p>
+    <p>Don&rsquo;t forget to fill out and submit your Proposal to Fundraise. We look forward to hearing what you have planned.</p>
+  </div>
+</section>
+
+<section class="fw-form" id="enquiry">
+  <div class="cw"><div class="fw-fg">
+    <div class="rv">
+      <span class="ey">Let&rsquo;s go</span>
+      <h2 style="margin:.8rem 0 0">Fundraising enquiries and proposals.</h2>
+      <p>For all fundraising enquiries, or to submit your Proposal to Fundraise, fill out the form and our fundraising team will be with you shortly.</p>
+      <p style="font-size:.94rem">You can also email <a href="mailto:fnpw@fnpw.org.au" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">1800 898 626</a>.</p>
+    </div>
+    <div class="hsform rv d1">
+      <div id="hsform" class="hsform-slot">
+        <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email
+          <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
+          <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
+      </div>
+      <p class="hsform-fallback" id="hsFallback" hidden>The form is taking a while to load. Email
+        <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
+        <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p>
+      <p class="fw-small">By submitting you consent to us contacting you about your enquiry.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec dark">
   <div class="cw rv" style="text-align:center">
     <h2 style="max-width:24ch;margin:0 auto 1rem">Ready to make a difference?</h2>
     <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Your donation grows national parks, saves species and heals the land.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate now</a><a class="btn-o" href="https://habitat-heroes.raiselysite.com/">Become a Habitat Hero</a></div>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://bush.fnpw.org.au">Donate now</a><a class="btn-o" href="https://habitat-heroes.raiselysite.com/">Become a Habitat Hero</a></div>
   </div>
 </section>
 </main>
@@ -99,5 +223,28 @@
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 
+<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+/* Fundraising enquiry / Proposal to Fundraise, HubSpot portal 441704788,
+   region ap1, form eca5e898-c9f5-429d-aa0f-1f4986c079c1. Same form the live
+   site uses. Falls back to email and phone if the embed is blocked. */
+(function () {
+  var slot = document.getElementById('hsform');
+  function showFallback() {
+    var f = document.getElementById('hsFallback');
+    if (f) f.hidden = false;
+  }
+  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
+  hbspt.forms.create({
+    region: 'ap1',
+    portalId: '441704788',
+    formId: 'eca5e898-c9f5-429d-aa0f-1f4986c079c1',
+    target: '#hsform'
+  });
+  setTimeout(function () {
+    if (!slot.querySelector('iframe, form')) showFallback();
+  }, 8000);
+})();
+</script>
 </body>
 </html>
