@@ -267,8 +267,9 @@ PAGE_CSS = '''
 .vg-track::-webkit-scrollbar{display:none}
 .vg-track:focus{outline:2px solid var(--euc);outline-offset:4px}
 .vg-page{flex:0 0 100%;scroll-snap-align:start;display:grid;
-  grid-template-columns:repeat(3,1fr);gap:1rem}
-@media(max-width:820px){.vg-page{grid-template-columns:repeat(2,1fr)}}
+  grid-template-columns:repeat(4,1fr);grid-template-rows:1fr;gap:1rem}
+@media(max-width:1000px){.vg-page{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.vg-page{grid-template-columns:repeat(2,1fr)}}
 .vg-page figure{margin:0}
 .vg-page img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
 .vg-nav{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
@@ -472,7 +473,7 @@ PAGE_JS = '''<script>
 </script>'''
 
 
-PER_PAGE = 6          # photographs shown at once, before it advances
+PER_PAGE = 4          # photographs shown at once, in a single row, before it advances
 
 
 def extract_form(state_name=None):

@@ -108,8 +108,9 @@
 .vg-track::-webkit-scrollbar{display:none}
 .vg-track:focus{outline:2px solid var(--euc);outline-offset:4px}
 .vg-page{flex:0 0 100%;scroll-snap-align:start;display:grid;
-  grid-template-columns:repeat(3,1fr);gap:1rem}
-@media(max-width:820px){.vg-page{grid-template-columns:repeat(2,1fr)}}
+  grid-template-columns:repeat(4,1fr);grid-template-rows:1fr;gap:1rem}
+@media(max-width:1000px){.vg-page{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.vg-page{grid-template-columns:repeat(2,1fr)}}
 .vg-page figure{margin:0}
 .vg-page img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
 .vg-nav{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem}
@@ -403,26 +404,28 @@
     <div class="vg" role="region" aria-roledescription="carousel" aria-label="Corporate volunteering photographs">
       <div class="vg-track" id="galTrack" tabindex="0">
         <div class="vg-page">
-          <figure><img src="assets/img/volunteering/vol-13.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-14.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-15.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-16.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-01.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-02.jpg" alt="" loading="lazy" decoding="async"></figure>
-        </div>
-        <div class="vg-page">
-          <figure><img src="assets/img/volunteering/vol-03.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-04.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-05.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-06.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-07.jpg" alt="" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/img/volunteering/vol-08.jpg" alt="" loading="lazy" decoding="async"></figure>
-        </div>
-        <div class="vg-page">
           <figure><img src="assets/img/volunteering/vol-09.jpg" alt="" loading="lazy" decoding="async"></figure>
           <figure><img src="assets/img/volunteering/vol-10.jpg" alt="" loading="lazy" decoding="async"></figure>
           <figure><img src="assets/img/volunteering/vol-11.jpg" alt="" loading="lazy" decoding="async"></figure>
           <figure><img src="assets/img/volunteering/vol-12.jpg" alt="" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="vg-page">
+          <figure><img src="assets/img/volunteering/vol-13.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-14.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-15.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-16.jpg" alt="" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="vg-page">
+          <figure><img src="assets/img/volunteering/vol-01.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-02.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-03.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-04.jpg" alt="" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="vg-page">
+          <figure><img src="assets/img/volunteering/vol-05.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-06.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-07.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/img/volunteering/vol-08.jpg" alt="" loading="lazy" decoding="async"></figure>
         </div>
       </div>
       <div class="vg-nav">
