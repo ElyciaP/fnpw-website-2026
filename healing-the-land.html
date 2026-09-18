@@ -13,7 +13,14 @@
 .pil-hero{position:relative}
 /* the hero image is set here, not through --chi: a relative url() in a
    custom property resolves against global.css, not this page. */
-.pil-hero::before{background-image:url('assets/img/pillar-healing-planting.jpg')}
+/* full-strength image: the global .chi rule runs it at .68 opacity over
+   --euc-deep, which is what was tinting these heroes green. */
+.pil-hero::before{background-image:url('assets/img/pillar-healing-planting.jpg');opacity:1}
+/* neutral scrim instead of the green gradient, only as dark as the
+   headline and lede need to stay legible. */
+.pil-hero::after{background:
+  linear-gradient(100deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.38) 32%,rgba(0,0,0,.10) 60%,rgba(0,0,0,0) 78%),
+  linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.30) 100%)}
 .pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);
   font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 @media(max-width:780px){.pil-cred{display:none}}
