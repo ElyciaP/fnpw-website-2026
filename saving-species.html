@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 .pil-hero{position:relative}
+/* the hero image is set here, not through --chi: a relative url() in a
+   custom property resolves against global.css, not this page. */
+.pil-hero::before{background-image:url('assets/img/pillar-species-koala.jpg')}
 .pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);
   font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 @media(max-width:780px){.pil-cred{display:none}}
