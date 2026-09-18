@@ -10,7 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
-
+.cg-sec{padding:4.2rem 0;background:var(--cream)}
+.cg-sec.alt{background:var(--paper)}
+.cg-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+@media(max-width:900px){.cg-g{grid-template-columns:1fr;gap:1.4rem}}
+.cg-g h2{font-family:var(--ff-d);font-size:clamp(1.4rem,2.3vw,1.85rem);font-weight:700;
+  letter-spacing:-.02em;color:var(--euc-deep);margin:.5rem 0 0;line-height:1.15}
+.cg-list{list-style:none;padding:0;margin:0;display:grid;gap:1.1rem}
+.cg-list li{position:relative;padding-left:1.7rem;font-size:1rem;line-height:1.72;color:var(--char)}
+.cg-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;background:var(--euc-mid)}
+.cg-list a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
+.cg-facts{background:var(--sand);padding:1.8rem 1.7rem;display:grid;gap:.9rem}
+.cg-facts div{display:grid;gap:.15rem}
+.cg-facts dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:700}
+.cg-facts dd{margin:0;font-family:var(--ff-d);font-size:.98rem;color:var(--euc-deep);font-weight:600}
 </style>
 </head>
 <body>
@@ -65,13 +78,77 @@
     <h1 style="margin:1rem 0 1.2rem;max-width:22ch">Corporate governance.</h1>
     <p class="lede">We are accountable to our supporters, our partners and the ACNC. Here is how the organisation is run.</p>
   </div>
-</section><section class="sec ">
-  <div class="cw rv">
-<div class="two">
-<div><h2>Our board and policies</h2><div class="port-note"><strong>To port from live site:</strong> board structure, constitution, policies from fnpw.org.au/corporate-governance/</div></div>
-<div><h3>Reports and financials</h3><p>Our annual reports and audited financials are available on the <a href="reports.html">Reports</a> page. FNPW is registered with the ACNC and endorsed as a Deductible Gift Recipient. ABN 90 107 744 771.</p></div>
-</div>
-  </div>
+</section>
+
+<section class="cg-sec">
+  <div class="cw"><div class="cg-g">
+    <div class="rv"><h2>Our legal status</h2><dl class="cg-facts" style="margin-top:1.4rem">
+      <div><dt>Incorporated</dt><dd>29 June 1970</dd></div>
+      <div><dt>ACN</dt><dd>000 744 516</dd></div>
+      <div><dt>ABN</dt><dd>51 248 905 949</dd></div>
+      <div><dt>Status</dt><dd>Company limited by guarantee</dd></div>
+    </dl></div>
+    <div class="rv d1">
+      <ul class="cg-list">
+          <li>We were incorporated on 29 June 1970 as a company limited by guarantee ACN 000 744 516, regulated by the Australian Securities and Investment Commission to protect consumers, investors and creditors.</li>
+          <li>We were established as a national not-for-profit organisation to grow appreciation of and raise funds for the benefit of the natural environment and cultural heritage of Australia, under our Constitution as amended 2 February 2000.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<section class="cg-sec alt">
+  <div class="cw"><div class="cg-g">
+    <div class="rv"><h2>How we are governed</h2></div>
+    <div class="rv d1">
+      <ul class="cg-list">
+          <li>We have a voluntary, unremunerated President, Treasurer and Secretary, and Board of Directors. These positions are elected annually to oversee our activities.</li>
+          <li>The Board is supported by the Finance &amp; Risk Committee, Fundraising &amp; Marketing Committee, Projects Committee, and Nominations Committee. The committees are comprised of staff, board members, and external representatives as appropriate.</li>
+          <li>The Board meets six times a year and its Committees meet between three and six times a year. They are guided by our Constitution, corporate strategies, annual business plans, as well as supporting marketing and other strategies and plans.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<section class="cg-sec">
+  <div class="cw"><div class="cg-g">
+    <div class="rv"><h2>Reporting and accountability</h2></div>
+    <div class="rv d1">
+      <ul class="cg-list">
+          <li>We provide an annual report on the previous year&rsquo;s performance with externally audited financial accounts to our Members, the Governors and Life Members, at our Annual General Meeting.</li>
+          <li>A copy of our <a href="reports.html">annual report and financial statement</a> is provided to the Commonwealth Department of Environment and Heritage as part of our statutory requirements.</li>
+          <li>As a national entity, we also seek approval in each relevant State and Territory to undertake fundraising activities.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<section class="cg-sec alt">
+  <div class="cw"><div class="cg-g">
+    <div class="rv"><h2>Registrations and tax status</h2></div>
+    <div class="rv d1">
+      <ul class="cg-list">
+          <li>We are registered with the Australian Charities and Not-for-profits Commission (ACNC) as a charity focused on advancing the natural environment.</li>
+          <li>We hold an Authority to Fundraise for Charitable Purposes with the Department of Gaming and Racing.</li>
+          <li>We are registered with the Australian Taxation Office for Goods and Services Tax (GST), ABN 51 248 905 949.</li>
+          <li>We are endorsed by the Australian Taxation Office as a Deductible Gift Recipient (DGR) as a public museum, and as an Income Tax Exempt Charitable Entity (ITEC) as a charitable institution.</li>
+          <li>We are exempted by the Office of State Revenue from pay-roll tax.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<section class="cg-sec">
+  <div class="cw"><div class="cg-g">
+    <div class="rv"><h2>Related entities</h2></div>
+    <div class="rv d1">
+      <ul class="cg-list">
+          <li>We are the Trustee of the FNPW Gift Fund Trust ABN 42 651 974 301 (Deed of Settlement 2 February 2000, DGR, ITEC), entered into the Register of Environmental Organisations kept by the Commonwealth Department of Environment and Heritage on 9 February 2001 and entitled to receive tax deductible donations of money and property.</li>
+          <li>We are the registered office of The Gondwana Program BRN T2383504, a membership loyalty program for national parks and wildlife supporters.</li>
+          <li>We are the registered office of Friends of National Parks BRN R3566341, a community-based volunteer program for conservation of national parks and wildlife.</li>
+      </ul>
+    </div>
+  </div></div>
 </section>
 </main>
 <!-- @footer --><footer class="ftr">

@@ -1,0 +1,147 @@
+{
+ "url": "https://fnpw.org.au/workplace-giving/",
+ "title": "Workplace Giving – Support Through Your Job | FNPW",
+ "status": 200,
+ "blocks": [
+  {
+   "t": "p",
+   "v": "The Foundation for National Parks & Wildlife, our corporate supporters and their employees understand that together we can make a positive difference to improve our environment and help protect natural Australia for future generations."
+  },
+  {
+   "t": "p",
+   "v": "We invest Workplace Giving (WPG) donations to support projects that will protect and preserve our national parks, as well as rehabilitate our precious native species and their vital habitats across Australia. Because… without our help, they’ll disappear."
+  },
+  {
+   "t": "h4",
+   "v": "What is workplace giving?"
+  },
+  {
+   "t": "p",
+   "v": "Workplace Giving (also known as payroll giving) provides you with an opportunity to make tax deductible donations to charities from your regular pay. A small regular donation can make a big difference when combined with other regular donors, helping us to protect and care for our unique wildlife."
+  },
+  {
+   "t": "p",
+   "v": "WPG donations are deducted from your salary before tax and you receive the tax benefit immediately, rather than having to wait until the end of the financial year. In some cases, your employer may match your donation dollar-for-dollar – so please be sure to ask your company to match your donation!"
+  },
+  {
+   "t": "h4",
+   "v": "How to donate through an existing Workplace Giving Program"
+  },
+  {
+   "t": "p",
+   "v": "To donate regularly to FNPW, simply ask your payroll department to deduct your nominated donation from your gross (pre-tax) salary each pay period. It really is that easy!"
+  },
+  {
+   "t": "p",
+   "v": "For details about how you can implement a WPG program or questions about setting up a workplace donation to FNPW, please contact us and we can provide you with more information."
+  },
+  {
+   "t": "h4",
+   "v": "If you are an employer…. we would be happy to work with you to grow your employee engagement program"
+  },
+  {
+   "t": "p",
+   "v": "Workplace Giving is a win-win-win for employees, employers and FNPW. Employees understand the impact of giving small pre-tax amounts can make a big difference collectively. While companies appreciate that a WPG program brings organisational values to life, increases employee morale and helps to improve staff retention rates. FNPW will work with your company to harness the collective generosity of your employees."
+  },
+  {
+   "t": "p",
+   "v": "Don’t forget by matching employee donations, you will demonstrate a real commitment to your employees, help build engagement and of course double the financial support towards protecting natural Australia for future generations."
+  },
+  {
+   "t": "h4",
+   "v": "FNPW works with our Workplace Giving Partners to deliver a number of benefits:"
+  },
+  {
+   "t": "li",
+   "v": "Recognition of your company and employees supporting FNPW on our social media channels"
+  },
+  {
+   "t": "li",
+   "v": "Educational Presentations – Invite FNPW to a morning tea so we can educate and engage your employees about the work we undertake and the impact of FNPW’s projects over the last 50 years"
+  },
+  {
+   "t": "li",
+   "v": "Impact reports that demonstrate your company’s CSR impact and employee engagement initiatives and impact of the funded WPG projects your company makes possible"
+  },
+  {
+   "t": "li",
+   "v": "Corporate Volunteering event opportunities"
+  },
+  {
+   "t": "h4",
+   "v": "How to donate if your company doesn’t offer a Workplace Giving Program"
+  },
+  {
+   "t": "p",
+   "v": "If your company doesn’t offer a Workplace Giving Program, why not become a special supporter of FNPW by making a regular donation as a Habitat Hero? Learn more about our Habitat Hero program here."
+  },
+  {
+   "t": "h4",
+   "v": "Need to know more about how to start a Workplace Giving Program?"
+  },
+  {
+   "t": "p",
+   "v": "If your company or business does not have a Workplace Giving Program, let us help you! Our friendly fundraising team would be happy to speak with you about your workplace giving options."
+  },
+  {
+   "t": "p",
+   "v": "Contact us on 1800 898 626 or simply fill out the form below and we will be in touch with you shortly."
+  },
+  {
+   "t": "h2",
+   "v": "Contact Us"
+  },
+  {
+   "t": "label",
+   "v": "First name *"
+  },
+  {
+   "t": "label",
+   "v": "Last name *"
+  },
+  {
+   "t": "label",
+   "v": "Email *"
+  },
+  {
+   "t": "label",
+   "v": "Company name *"
+  },
+  {
+   "t": "label",
+   "v": "Phone *"
+  },
+  {
+   "t": "label",
+   "v": "Enquiries *"
+  },
+  {
+   "t": "label",
+   "v": "reCAPTCHA"
+  },
+  {
+   "t": "button",
+   "v": "Submit"
+  }
+ ],
+ "links": [
+  {
+   "text": "here",
+   "href": "https://fnpw.org.au/donation-thank-you-habitat-hero-monthly-gift/"
+  }
+ ],
+ "images": [
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/01/Banksia-robur-seedlings-72-DPI-only-300x225.jpg",
+   "alt": ""
+  }
+ ],
+ "forms": [
+  "Formidable Forms (in-page): id=form_contact-formd4fecef8a3, form_key=contact-form, fields: First name, Last name, Email, Company name, Phone, Enquiries, reCAPTCHA, Submit",
+  "hubspot tracking script (site-wide, no form embed) portalId: 441704788"
+ ],
+ "notes": [
+  "No h1 on this page - first content element is a paragraph.",
+  "No Good2Give / Benevity / external workplace-giving platform links present on this page."
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "url": "https://fnpw.org.au/media-enquiry/",
+ "title": "Media Enquiries | Contact FNPW Press and PR Team",
+ "status": 200,
+ "blocks": [
+  {
+   "t": "h1",
+   "v": "Media Enquiry"
+  },
+  {
+   "t": "p",
+   "v": "The Foundation for National Parks & Wildlife is the charity partner of Australia’s national parks. Our programs and conservation efforts, including grant funding, support the broader mission of safeguarding Australia’s wilderness and wildlife for future generations."
+  },
+  {
+   "t": "p",
+   "v": "For further information and to get in touch with the Foundation for National & Wildlife, please fill out the contact form below."
+  },
+  {
+   "t": "p",
+   "v": "For media specific enquiries, including interview requests, please contact media@fnpw.org.au"
+  },
+  {
+   "t": "p",
+   "v": "Scroll Down"
+  },
+  {
+   "t": "p",
+   "v": "Please fill out the media enquiry form below and we will be in touch with you shortly. Thank you."
+  }
+ ],
+ "links": [
+  {
+   "text": "media@fnpw.org.au",
+   "href": "mailto:media@fnpw.org.au"
+  },
+  {
+   "text": "Scroll Down",
+   "href": "https://fnpw.org.au/media-enquiry/#sectionContactForm"
+  }
+ ],
+ "images": [
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2020/11/galah-img.png",
+   "alt": ""
+  }
+ ],
+ "forms": [
+  "HubSpot form embed: portalId 441704788, formId e9e550ed-025f-474c-b214-a5cb3c0511eb, region ap1 (div.hs-form-frame)",
+  "hubspot tracking script (site-wide) portalId: 441704788"
+ ]
+}

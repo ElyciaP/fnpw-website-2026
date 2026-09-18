@@ -10,7 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
-
+.hc-open{padding:4.6rem 0 1rem;background:var(--cream)}
+.hc-open p{font-size:1.08rem;line-height:1.76;color:var(--char);max-width:64ch}
+.hc-band{padding:3.4rem 0;background:var(--cream)}
+.hc-band.alt{background:var(--paper)}
+.hc-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+@media(max-width:900px){.hc-g{grid-template-columns:1fr;gap:1.3rem}}
+.hc-n{font-family:var(--ff-d);font-weight:800;font-size:2rem;color:transparent;
+  -webkit-text-stroke:1.4px var(--euc);line-height:1;display:block;margin-bottom:.5rem}
+.hc-g h2{font-family:var(--ff-d);font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:700;
+  letter-spacing:-.02em;color:var(--euc-deep);margin:0;line-height:1.16}
+.hc-bd p{font-size:1.01rem;line-height:1.74;color:var(--char);margin-bottom:1rem;max-width:60ch}
+.hc-bd p:last-of-type{margin-bottom:1.4rem}
+.hc-go{display:inline-block;font-family:var(--ff-d);font-weight:600;font-size:.95rem;
+  color:var(--euc-deep);text-decoration:none;border-bottom:2px solid var(--wattle);padding-bottom:.15rem}
+.hc-go:hover{color:var(--euc);opacity:1}
+.hc-stat{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid var(--rule);
+  font-size:.9rem;color:var(--stone);line-height:1.6}
+.hc-stat b{font-family:var(--ff-d);color:var(--euc-deep);font-weight:700}
 </style>
 </head>
 <body>
@@ -65,15 +82,69 @@
     <h1 style="margin:1rem 0 1.2rem;max-width:22ch">Where your money goes.</h1>
     <p class="lede">Every donation is put to work across our three pillars. Here is what that looks like.</p>
   </div>
-</section><section class="sec ">
+</section>
+
+<section class="hc-open">
   <div class="cw rv">
-<div class="lcg"><a class="lc rv" href="growing-national-parks.html"><h3>Growing National Parks</h3><p>Buying high-value land and adding it to the protected estate.</p><span class="lc-go">&rsaquo;</span></a><a class="lc rv" href="saving-species.html"><h3>Saving Species</h3><p>Funding recovery programs for threatened plants and animals.</p><span class="lc-go">&rsaquo;</span></a><a class="lc rv" href="healing-the-land.html"><h3>Healing the Land</h3><p>Restoring habitat, waterways and cultural land management.</p><span class="lc-go">&rsaquo;</span></a></div><div class="port-note"><strong>To port from live site:</strong> impact stats and examples from fnpw.org.au/how-your-contributions-help/</div>
+    <span class="ey">Where your money goes</span>
+    <h2 style="font-family:var(--ff-d);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;letter-spacing:-.022em;color:var(--euc-deep);margin:.9rem 0 1.3rem;max-width:24ch;line-height:1.1">Your support has an enormous impact on conservation.</h2>
+    <p>We rely on your help to fund critical conservation projects Australia-wide, partnering with community groups, rangers and scientists, First Nations groups, individuals and government agencies to have a direct impact on growing and protecting natural Australia.</p>
   </div>
-</section><section class="sec dark">
+</section>
+
+<section class="hc-band">
+  <div class="cw"><div class="hc-g">
+    <div class="rv"><span class="hc-n">01</span><h2>Projects to protect our future environment</h2></div>
+    <div class="hc-bd rv d1">
+      <p>We support a range of projects to protect natural Australia for future generations. Since the 2019 and 2020 bushfires we have focused on healing our land in bushfire affected areas of Australia.</p>
+      <p>To see the impact we have on our environment, take a look at the diverse range of projects we are currently involved in.</p>
+      <a class="hc-go" href="projects.html">See our projects &#8594;</a>
+      <p class="hc-stat"><b>84</b> projects currently funded across every state and territory.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="hc-band alt">
+  <div class="cw"><div class="hc-g">
+    <div class="rv"><span class="hc-n">02</span><h2>Land acquisitions to grow our national parks</h2></div>
+    <div class="hc-bd rv d1">
+      <p>To conserve nature, we must preserve the land and water of our country, the lifeblood of environmental balance.</p>
+      <p>Species, including our own, cannot survive without a healthy habitat. That is why we add land to Australia&rsquo;s national parks for permanent protection. We are not about locking nature up. We are about protecting it in the most secure way possible.</p>
+      <a class="hc-go" href="growing-national-parks.html">How we grow national parks &#8594;</a>
+      <p class="hc-stat"><b>29,479 hectares</b> added to national park status in the last year, including the 1,900 hectares of Mundoo Island secured for Coorong National Park.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="hc-band">
+  <div class="cw"><div class="hc-g">
+    <div class="rv"><span class="hc-n">03</span><h2>Grants that make a difference</h2></div>
+    <div class="hc-bd rv d1">
+      <p>We provide grants for conservation projects run by government agencies, private landholders, community groups and scientists.</p>
+      <p>Are you planning a project that will help conserve Australia&rsquo;s native plants, animals or cultural heritage? A grant from us could help you get it off the ground.</p>
+      <a class="hc-go" href="contact.html">Ask about grants &#8594;</a>
+      <p class="hc-stat">Our Community Conservation Grants have funded work from seed collection to species monitoring.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="hc-band alt">
+  <div class="cw"><div class="hc-g">
+    <div class="rv"><span class="hc-n">04</span><h2>Environmental education for future generations</h2></div>
+    <div class="hc-bd rv d1">
+      <p>Learning about what you see outside encourages you to care, and to practise more positive environmental behaviours.</p>
+      <p>We believe environmental education is central to the projects and grants we fund. Backyard Buddies is our best known educational initiative.</p>
+      <a class="hc-go" href="project-backyard-buddies.html">See Backyard Buddies &#8594;</a>
+      <p class="hc-stat"><b>1,215,443</b> trees, shrubs and seedlings planted across priority landscapes, many of them grown by community nurseries and school groups.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec dark">
   <div class="cw rv" style="text-align:center">
     <h2 style="max-width:24ch;margin:0 auto 1rem">Ready to make a difference?</h2>
     <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Your donation grows national parks, saves species and heals the land.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate now</a><a class="btn-o" href="https://habitat-heroes.raiselysite.com/">Become a Habitat Hero</a></div>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p" href="https://bush.fnpw.org.au">Donate now</a><a class="btn-o" href="ways-you-can-get-involved.html">Ways to get involved</a></div>
   </div>
 </section>
 </main>

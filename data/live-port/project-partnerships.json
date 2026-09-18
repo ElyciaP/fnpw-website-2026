@@ -1,0 +1,150 @@
+{
+ "url": "https://fnpw.org.au/project-partnerships/",
+ "title": "Partnerships for Wildlife Protection | FNPW",
+ "status": 200,
+ "blocks": [
+  {
+   "t": "h1",
+   "v": "Our project partners in wildlife, land and environment protection"
+  },
+  {
+   "t": "p",
+   "v": "FNPW is the charity partner of Australia’s national parks and wildlife services and environment departments in states and territories. FNPW works with local, state and federal governments to gain permanent protection for habitats and species to grow Australia’s national parks system."
+  },
+  {
+   "t": "p",
+   "v": "We execute this work in partnership with scientists, indigenous and community groups, as well as corporates and individuals working to conserve Australia’s unique habitats, species and cultural heritage. By working in partnership, we can protect natural Australia for future generations."
+  },
+  {
+   "t": "p",
+   "v": "Every project we partner on delivers tangible outcomes for conservation. To learn more, please visit our List of Current Projects"
+  },
+  {
+   "t": "h4",
+   "v": "How we work with partners"
+  },
+  {
+   "t": "h5",
+   "v": "Partnerships for the Goals"
+  },
+  {
+   "t": "p",
+   "v": "Through our partnerships we are working towards supporting the United Nations Sustainable Development Goal 17 of “Partnerships for the Goals”. Multistakeholder partnerships will be crucial to leverage the inter-linkages between the Sustainable Development Goals to enhance their effectiveness and impact and accelerate progress in achieving the Goals."
+  },
+  {
+   "t": "h5",
+   "v": "We respect expertise"
+  },
+  {
+   "t": "p",
+   "v": "We know that investing in scientific expertise and deep local knowledge is the best way to create long-term impact. Our partners have the experience to deliver the best conservation projects where they are needed most. While FNPW raises awareness and funds, our partners pull weeds, plant trees, conserve heritage, and protect species every day."
+  },
+  {
+   "t": "h5",
+   "v": "United we stand"
+  },
+  {
+   "t": "p",
+   "v": "Without our partners around Australia, their dedicated teams and passionate staff members, FNPW’s work would not be possible. Each year, we count as our partners scientists, volunteers, PhD students, national park rangers, community groups, indigenous communities, individual landowners, government agencies and others. We work with local partners on conservation projects Australia-wide."
+  },
+  {
+   "t": "h5",
+   "v": "We believe in responsible management"
+  },
+  {
+   "t": "p",
+   "v": "We make sure that our partners have top-notch experience and expertise. We assess the project management and planning underpinning each project to ensure it will deliver high quality, tangible and sustainable outcomes for Australian conservation. Project managers report back on every dollar they spend."
+  },
+  {
+   "t": "h5",
+   "v": "We know people are the solution"
+  },
+  {
+   "t": "p",
+   "v": "Our partners share our vision of a healthy, thriving Australian environment capable of sustaining future generations. They are dedicated to providing effective conservation action to protect species, habitat, and heritage. Our partners are living proof that people are the solution. We expect our partners to work closely with local communities, governments, corporate partners and others to make a real difference for conservation."
+  },
+  {
+   "t": "h3",
+   "v": "Government Partners"
+  },
+  {
+   "t": "h3",
+   "v": "Australian Government"
+  },
+  {
+   "t": "p",
+   "v": "Through the Australian Government Caring for Country program, FNPW managed the acquisition of over 530 properties for the Heritage Estates project to incorporate into the national reserve system and increase the size of Jervis Bay National Park. In 2020 following the tragedy of the Black Summer fires, FNPW were part of the Australian Government Bushfire Response through the Wildlife Heroes project, supporting wildlife volunteers across Australia."
+  },
+  {
+   "t": "h3",
+   "v": "NSW Department of Planning, Industry and Environment"
+  },
+  {
+   "t": "p",
+   "v": "From our inception, FNPW has worked to support the NSW government to protect and conserve the states natural heritage. To date the partnership has secured over 50 land acquisitions to significantly increase the area of the state reserve system. Throughout our history we have supported community, conservation and cultural heritage projects in partnership with the National Parks & Wildlife Service in NSW."
+  },
+  {
+   "t": "h3",
+   "v": "SA Department of Environment and Water"
+  },
+  {
+   "t": "p",
+   "v": "For over 20 years we have worked to support national parks and conservation projects in South Australia. Through partnership with the SA Department of Environment and Water we continue to support land acquisitions for national parks and large scale conservation projects, including the Remarkable Southern Flinders project that commenced in 2020."
+  },
+  {
+   "t": "h3",
+   "v": "QLD Department of Environment and Science"
+  },
+  {
+   "t": "p",
+   "v": "Working closely with the Queensland Parks and Wildlife Service, FNPW aims to support long term conservation works involving Traditional Owner groups and identifying areas of high biodiversity for potential land acquisitions for the states reserve system."
+  },
+  {
+   "t": "h3",
+   "v": "WA Department of Biodiversity, Conservation and Attractions"
+  },
+  {
+   "t": "p",
+   "v": "In 2020 FNPW partnered with the Western Australian Government to support the Wildlife Heroes Rehabilitation and Emergency Grants. Through the partnership over 60 volunteer wildlife rescue and rehabililtation grants were distributed across the state."
+  }
+ ],
+ "links": [
+  {
+   "text": "List of Current Projects",
+   "href": "https://fnpw.org.au/projects/"
+  }
+ ],
+ "images": [
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/01/Lamington-NP-1920x694.png",
+   "alt": "Project-Partners"
+  },
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/02/Languages_17-300x251.png",
+   "alt": ""
+  },
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/02/Aus_300-300x300.png",
+   "alt": ""
+  },
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW_white_300-300x300.png",
+   "alt": ""
+  },
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/02/SA_white_300-300x300.png",
+   "alt": ""
+  },
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/02/QLD_white_300-300x300.png",
+   "alt": ""
+  },
+  {
+   "src": "https://fnpw.org.au/wp-content/uploads/2021/02/WA_white_300-300x300.png",
+   "alt": ""
+  }
+ ],
+ "forms": [
+  "hubspot tracking (site-wide) portalId: 441704788"
+ ]
+}

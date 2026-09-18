@@ -549,6 +549,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-quote blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.45;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 .9rem}
 .hx-quote figcaption{font-size:.85rem;color:var(--stone)}
 .hx-quote figcaption strong{color:var(--char);font-weight:600}
+.hx-q-src{display:block;margin-top:.3rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);opacity:.85}
 
 /* ---- donate: Waratah, per the brand direction (urgency = waratah) ---- */
 .btn-don{background:var(--waratah);color:var(--cream);border-color:var(--waratah)}
