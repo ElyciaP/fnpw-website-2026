@@ -30,19 +30,21 @@
 .vs-mapcol{position:sticky;top:92px}
 @media(max-width:1000px){.vs-mapcol{position:static}}
 .vm{background:var(--cream);border:1px solid var(--rule);padding:.6rem}
-.vm-svg{display:block;width:100%;height:auto}
-.vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
-.vm-hit{fill:transparent}
-.vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
-.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
-  text-anchor:middle;pointer-events:none}
-.vm-pin{cursor:pointer}
-.vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
-.vm-pin:focus{outline:none}
-.vm-pin:focus .vm-dot{stroke:var(--euc-deep);stroke-width:3}
-.vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
-.vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
-.vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
+.vm-map{height:clamp(400px,54vh,580px);width:100%;background:var(--sand)}
+@media(max-width:1000px){.vm-map{height:380px}}
+.vm-map .leaflet-container{font-family:var(--ff-b);background:var(--sand)}
+.vm-map .leaflet-control-attribution{font-size:.62rem;background:rgba(250,246,242,.88);color:var(--stone)}
+.vm-map .leaflet-control-attribution a{color:var(--euc-deep)}
+.vm-map .leaflet-bar a{color:var(--euc-deep);border-bottom-color:var(--rule)}
+.vm-map .leaflet-bar a:hover{background:var(--sand)}
+.vm-pin{display:grid;place-items:center;width:28px;height:28px;border-radius:999px;
+  background:var(--euc-deep);color:var(--cream);font-family:var(--ff-d);font-weight:700;
+  font-size:12px;line-height:1;border:2px solid var(--cream);cursor:pointer;
+  box-shadow:0 2px 7px rgba(15,49,50,.4);transition:background .18s ease,transform .18s ease}
+.vm-pin:hover,.vm-pin:focus,.vm-pin.on{background:var(--waratah);transform:scale(1.2);outline:none}
+.vm-pin:focus{box-shadow:0 0 0 3px var(--wattle)}
+.vm-map .leaflet-popup-content{font-size:.86rem;line-height:1.45;margin:.7rem .9rem}
+.vm-map .leaflet-popup-content b{font-family:var(--ff-d);color:var(--euc-deep)}
 .vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
 
 .vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
@@ -124,16 +126,18 @@
 .v-steps li{counter-increment:vs;position:relative;padding-left:2.2rem;font-size:.9rem;color:var(--stone);line-height:1.5}
 .v-steps li::before{content:counter(vs,decimal-leading-zero);position:absolute;left:0;top:.05em;font-family:var(--ff-d);font-weight:800;font-size:.82rem;color:var(--euc-mid)}
 .v-steps b{display:block;font-family:var(--ff-d);font-weight:600;font-size:.95rem;color:var(--euc-deep)}
-.v-steps{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.4rem 0}
+.v-steps{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.4rem 0;margin-top:.9rem}
 /* CTA / Enquiry */
 .v-cta{padding:clamp(4rem,7vw,6rem) 0;background:var(--cream);position:relative}
 .v-cta-card{background:var(--white);border-radius:0;border:1px solid var(--rule);padding:clamp(2.5rem,5vw,4rem) clamp(2rem,4vw,3rem);position:relative;overflow:hidden;box-shadow:0 28px 60px -30px rgba(15,49,50,.22)}
 .v-cta-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc) 0,var(--wattle) 50%,var(--waratah) 100%)}
-.v-cta-g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.v-cta-head{max-width:62ch;margin-bottom:clamp(2rem,4vw,2.8rem)}
+.v-cta-g{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(2rem,4vw,3rem);align-items:start}
 @media(max-width:880px){.v-cta-g{grid-template-columns:1fr;gap:2rem}}
-.v-cta-l h2{font-size:clamp(1.9rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1.05;margin:.8rem 0 1.2rem}
-.v-cta-l h2 em{font-style:italic;font-family:var(--ff-d);color:var(--euc);font-weight:500}
-.v-cta-l p{color:var(--char);font-size:1.02rem;line-height:1.65;margin-bottom:1.5rem}
+.v-cta-head h2{font-size:clamp(1.9rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1.05;margin:.8rem 0 1.2rem}
+.v-cta-head h2 em{font-style:italic;font-family:var(--ff-d);color:var(--euc);font-weight:500}
+.v-cta-head p{color:var(--char);font-size:1.02rem;line-height:1.65;margin-bottom:1.5rem}
+.v-cta-head .v-cta-phone{margin-bottom:0}
 .v-cta-phone{display:inline-flex;align-items:center;gap:.7em;background:var(--euc-pale);color:var(--euc-deep);padding:.85em 1.3em;border-radius:0;font-family:var(--ff-d);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;border:1px solid var(--euc-soft);text-decoration:none;transition:.25s;margin-bottom:1.4rem}
 .v-cta-phone:hover{background:var(--euc);color:var(--cream);transform:translateY(-1px);opacity:1}
 .v-cta-phone svg{width:18px;height:18px}
@@ -228,81 +232,10 @@
     <div class="vs-split">
       <div class="vs-mapcol rv">
         <div class="vm">
-    <svg class="vm-svg" viewBox="0 0 760 620" role="img" aria-label="Map of the South Australia region showing 13 corporate volunteering sites, with a locator map of South Australia">
-      <path class="vm-land" d="M-2636.2,-950.2L-2273.8,-993.8L-2068.4,-983.1L-1994.5,-1011.0L-1962.9,-1036.6L-1798.4,-952.1L-1686.9,-868.3L-1660.0,-834.3L-1677.2,-797.9L-1666.6,-779.2L-1640.3,-786.1L-1625.9,-821.6L-1568.3,-828.1L-1402.9,-786.5L-1362.5,-749.0L-1315.8,-631.2L-1324.0,-615.9L-1338.4,-625.0L-1354.7,-618.9L-1353.1,-589.5L-1305.5,-584.9L-1289.5,-605.2L-1094.4,-556.2L-1046.8,-451.4L-1014.6,-425.8L-1003.3,-392.1L-979.5,-377.6L-868.9,-252.1L-868.6,-225.3L-827.0,-218.5L-726.1,-129.0L-739.3,-116.3L-738.0,-98.4L-721.1,-86.9L-703.6,-96.4L-689.8,-59.7L-714.5,73.0L-736.8,100.2L-742.4,141.1L-699.5,170.2L-755.9,186.6L-766.8,203.0L-764.3,223.3L-739.0,232.5L-686.0,193.1L-669.4,204.6L-641.2,197.3L-624.3,209.9L-598.3,244.7L-609.0,257.7L-606.8,272.7L-582.1,280.3L-579.9,310.9L-555.7,315.9L-277.0,672.7L-250.1,684.2L-240.7,725.2L-223.2,730.5L-192.5,712.1L-131.4,705.6L-87.5,710.6L-56.9,691.5L-24.9,698.4L0.1,725.2L20.2,725.9L27.7,743.1L45.2,746.6L59.6,727.8L44.6,708.7L78.1,688.8L82.8,652.5L122.0,641.4L200.3,660.5L367.2,548.8L476.5,542.7L552.6,602.4L631.8,690.3L681.9,769.5L718.9,852.5L736.1,905.7L691.3,1024.6L668.8,1026.2L661.9,1047.2L671.3,1061.4L705.1,1073.2L704.5,1133.3L756.2,1223.9L803.8,1279.4L863.6,1326.4L901.2,1407.5L923.1,1433.1L1009.8,1485.9L1111.0,1484.8L1110.4,-93.8L1122.6,-78.5L1121.3,-3148.0L-2635.9,-3146.8L-2636.2,-950.2Z"></path>
-      <g class="vm-inset" transform="translate(576,414)" aria-hidden="true">
-        <rect class="vm-inset-bg" x="-8" y="-8" width="184" height="206"></rect>
-        <path class="vm-inset-land" d="M11.0,90.5L25.0,88.9L33.0,89.3L35.9,88.2L37.1,87.3L43.5,90.4L47.9,93.6L48.9,94.9L48.2,96.2L48.6,96.9L49.7,96.7L50.2,95.3L52.5,95.1L58.9,96.7L60.5,98.1L62.3,102.5L62.0,103.1L61.4,102.7L60.8,102.9L60.8,104.0L62.7,104.2L63.3,103.5L70.9,105.3L72.7,109.2L74.0,110.2L74.4,111.5L75.3,112.0L79.6,116.7L79.7,117.7L81.3,118.0L85.2,121.3L84.7,121.8L84.7,122.5L85.4,122.9L86.1,122.6L86.6,123.9L85.6,128.9L84.8,129.9L84.6,131.5L86.2,132.6L84.0,133.2L83.6,133.8L83.7,134.6L84.7,134.9L86.7,133.4L87.4,133.9L88.5,133.6L89.1,134.1L90.2,135.4L89.7,135.9L89.8,136.4L90.8,136.7L90.9,137.9L91.8,138.0L102.6,151.4L103.7,151.9L104.1,153.4L104.7,153.6L105.9,152.9L108.3,152.7L110.0,152.9L111.2,152.1L112.4,152.4L113.4,153.4L114.2,153.4L114.5,154.1L115.2,154.2L115.7,153.5L115.1,152.8L116.4,152.0L116.6,150.7L118.2,150.3L121.2,151.0L127.7,146.8L131.9,146.6L134.9,148.8L138.0,152.1L139.9,155.1L141.3,158.2L142.0,160.2L140.3,164.6L139.4,164.7L139.1,165.5L139.5,166.0L140.8,166.5L140.8,168.7L142.8,172.1L144.6,174.2L147.0,176.0L148.4,179.0L149.3,180.0L152.7,182.0L156.6,181.9L156.6,122.7L157.0,123.2L157.0,8.0L11.0,8.0L11.0,90.5Z"></path>
-        <rect class="vm-inset-box" x="114.6" y="127.2" width="27.1" height="21.3"></rect>
-      </g>
-      <g class="vm-pin" data-i="1" tabindex="0" role="button" aria-label="Anstey Hill Recreation Park, Tea Tree Gully">
-        <circle class="vm-hit" cx="409.4" cy="225.4" r="18"></circle>
-        <circle class="vm-dot" cx="409.4" cy="225.4" r="11.5"></circle>
-        <text class="vm-num" x="409.4" y="229.20000000000002">1</text>
-      </g>
-      <g class="vm-pin" data-i="2" tabindex="0" role="button" aria-label="Belair National Park, Belair">
-        <circle class="vm-hit" cx="381.8" cy="302.2" r="18"></circle>
-        <circle class="vm-dot" cx="381.8" cy="302.2" r="11.5"></circle>
-        <text class="vm-num" x="381.8" y="306.0">2</text>
-      </g>
-      <g class="vm-pin" data-i="3" tabindex="0" role="button" aria-label="Black Hill Conservation Park, Athelstone">
-        <circle class="vm-hit" cx="416.9" cy="251.3" r="18"></circle>
-        <circle class="vm-dot" cx="416.9" cy="251.3" r="11.5"></circle>
-        <text class="vm-num" x="416.9" y="255.10000000000002">3</text>
-      </g>
-      <g class="vm-pin" data-i="4" tabindex="0" role="button" aria-label="Charleston Conservation Park, Charleston">
-        <circle class="vm-hit" cx="464.5" cy="263.8" r="18"></circle>
-        <circle class="vm-dot" cx="464.5" cy="263.8" r="11.5"></circle>
-        <text class="vm-num" x="464.5" y="267.6">4</text>
-      </g>
-      <g class="vm-pin" data-i="5" tabindex="0" role="button" aria-label="Glenthorne National Park - Ityamaiitpinna Yarta, O&#x27;Halloran Hill">
-        <circle class="vm-hit" cx="355.4" cy="316.7" r="18"></circle>
-        <circle class="vm-dot" cx="355.4" cy="316.7" r="11.5"></circle>
-        <text class="vm-num" x="355.4" y="320.5">5</text>
-      </g>
-      <g class="vm-pin" data-i="6" tabindex="0" role="button" aria-label="Morialta Conservation Park, Woodforde">
-        <circle class="vm-hit" cx="391.5" cy="260.5" r="18"></circle>
-        <circle class="vm-dot" cx="391.5" cy="260.5" r="11.5"></circle>
-        <text class="vm-num" x="391.5" y="264.3">6</text>
-      </g>
-      <g class="vm-pin" data-i="7" tabindex="0" role="button" aria-label="Onkaparinga River National Park, Port Noarlunga South">
-        <circle class="vm-hit" cx="357.2" cy="357.0" r="18"></circle>
-        <circle class="vm-dot" cx="357.2" cy="357.0" r="11.5"></circle>
-        <text class="vm-num" x="357.2" y="360.8">7</text>
-      </g>
-      <g class="vm-pin" data-i="8" tabindex="0" role="button" aria-label="Para Wirra Conservation Park, Yattalunga">
-        <circle class="vm-hit" cx="442.4" cy="174.3" r="18"></circle>
-        <circle class="vm-dot" cx="442.4" cy="174.3" r="11.5"></circle>
-        <text class="vm-num" x="442.4" y="178.10000000000002">8</text>
-      </g>
-      <g class="vm-pin" data-i="9" tabindex="0" role="button" aria-label="Sandy Creek Conservation Park, Sandy Creek">
-        <circle class="vm-hit" cx="451.4" cy="147.5" r="18"></circle>
-        <circle class="vm-dot" cx="451.4" cy="147.5" r="11.5"></circle>
-        <text class="vm-num" x="451.4" y="151.3">9</text>
-      </g>
-      <g class="vm-pin" data-i="10" tabindex="0" role="button" aria-label="Semaphore Largs Dunes Group, Semaphore">
-        <circle class="vm-hit" cx="333.8" cy="234.4" r="18"></circle>
-        <circle class="vm-dot" cx="333.8" cy="234.4" r="11.5"></circle>
-        <text class="vm-num" x="333.8" y="238.20000000000002">10</text>
-      </g>
-      <g class="vm-pin" data-i="11" tabindex="0" role="button" aria-label="The Forktree Project, Carrickalinga">
-        <circle class="vm-hit" cx="295.4" cy="447.8" r="18"></circle>
-        <circle class="vm-dot" cx="295.4" cy="447.8" r="11.5"></circle>
-        <text class="vm-num" x="295.4" y="451.6">11</text>
-      </g>
-      <g class="vm-pin" data-i="12" tabindex="0" role="button" aria-label="Wangkuntila-Aldinga Conservation Park, Aldinga Beach">
-        <circle class="vm-hit" cx="323.1" cy="406.3" r="18"></circle>
-        <circle class="vm-dot" cx="323.1" cy="406.3" r="11.5"></circle>
-        <text class="vm-num" x="323.1" y="410.1">12</text>
-      </g>
-      <g class="vm-pin" data-i="13" tabindex="0" role="button" aria-label="Yankalilla Community Nursery, Yankalilla">
-        <circle class="vm-hit" cx="305.4" cy="472.8" r="18"></circle>
-        <circle class="vm-dot" cx="305.4" cy="472.8" r="11.5"></circle>
-        <text class="vm-num" x="305.4" y="476.6">13</text>
-      </g>
-    </svg>
+          <div class="vm-map" id="volMap" data-sites='[{"i":1,"lat":-34.83091,"lon":138.72632,"name":"Anstey Hill Recreation Park","city":"Tea Tree Gully","type":"Park"},{"i":2,"lat":-35.01617,"lon":138.63756,"name":"Belair National Park","city":"Belair","type":"National Park"},{"i":3,"lat":-34.87504,"lon":138.72598,"name":"Black Hill Conservation Park","city":"Athelstone","type":"Park"},{"i":4,"lat":-34.91591,"lon":138.90177,"name":"Charleston Conservation Park","city":"Charleston","type":"Park"},{"i":5,"lat":-35.05401,"lon":138.55322,"name":"Glenthorne National Park - Ityamaiitpinna Yarta","city":"O&#39;Halloran Hill","type":"National Park"},{"i":6,"lat":-34.89974,"lon":138.69133,"name":"Morialta Conservation Park","city":"Woodforde","type":"Park"},{"i":7,"lat":-35.15939,"lon":138.55912,"name":"Onkaparinga River National Park","city":"Port Noarlunga South","type":"National Park"},{"i":8,"lat":-34.68181,"lon":138.83113,"name":"Para Wirra Conservation Park","city":"Yattalunga","type":"Park"},{"i":9,"lat":-34.61186,"lon":138.85998,"name":"Sandy Creek Conservation Park","city":"Sandy Creek","type":"Park"},{"i":10,"lat":-34.83894,"lon":138.48438,"name":"Semaphore Largs Dunes Group","city":"Semaphore","type":"Beach"},{"i":11,"lat":-35.39769,"lon":138.36204,"name":"The Forktree Project","city":"Carrickalinga","type":"Nursery"},{"i":12,"lat":-35.28851,"lon":138.45019,"name":"Wangkuntila-Aldinga Conservation Park","city":"Aldinga Beach","type":"Park"},{"i":13,"lat":-35.46137,"lon":138.39342,"name":"Yankalilla Community Nursery","city":"Yankalilla","type":"Nursery"}]'
+               role="application" aria-label="Map of corporate volunteering sites"></div>
         </div>
-        <p class="vm-cap">The map is zoomed to where the sites actually are; the small inset shows that area within South Australia. Pin positions are approximate. Hover a pin to find it in the list, or tap one to jump straight to it.</p>
+        <p class="vm-cap">Scroll the list or move around the map. Hover a pin to find it in the list, or tap one to jump straight to it. Click the map once to zoom with the scroll wheel.</p>
       </div>
       <div class="rv d1">
         <div class="vs-filter">
@@ -505,15 +438,17 @@
 <section class="v-cta" id="enquire">
   <div class="cw">
     <div class="v-cta-card rv">
+      <div class="v-cta-head">
+        <span class="ey">Get involved</span>
+        <h2>Ready to <em>get into the field?</em></h2>
+        <p>Submit an enquiry or call our team direct to chat about creating a corporate volunteering day that works for your organisation. Together, we can care for nature, strengthen communities and help shape a future where people and the environment thrive.</p>
+        <a href="tel:1800898626" class="v-cta-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          1800 898 626
+        </a>
+      </div>
       <div class="v-cta-g">
         <div class="v-cta-l">
-          <span class="ey">Get involved</span>
-          <h2>Ready to <em>get into the field?</em></h2>
-          <p>Submit an enquiry or call our team direct to chat about creating a corporate volunteering day that works for your organisation. Together, we can care for nature, strengthen communities and help shape a future where people and the environment thrive.</p>
-          <a href="tel:1800898626" class="v-cta-phone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            1800 898 626
-          </a>
           <span class="ey" style="display:flex;margin-bottom:.2rem">How it works</span>
           <ol class="v-steps">
             <li><b>Enquire</b> Tell us your state, team size and rough dates.</li>
@@ -562,6 +497,62 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/* The numbered pins from the list, placed on a real basemap.
+
+   Scroll-wheel zoom is off until the map is clicked, so the page still scrolls
+   normally when someone passes over it. Everything is guarded: if Leaflet or the
+   tiles do not load, the list below is still the whole story. */
+(function () {
+  var box = document.getElementById('volMap');
+  if (!box || typeof L === 'undefined') return;
+
+  var sites;
+  try { sites = JSON.parse(box.dataset.sites || '[]'); } catch (e) { return; }
+  if (!sites.length) return;
+
+  var map = L.map(box, { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' +
+                 ' contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  var byIndex = {};
+  sites.forEach(function (s) {
+    var m = L.marker([s.lat, s.lon], {
+      title: s.name,
+      alt: s.name + ', ' + s.city,
+      riseOnHover: true,
+      icon: L.divIcon({
+        className: '',
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        popupAnchor: [0, -16],
+        html: '<span class="vm-pin" data-i="' + s.i + '" tabindex="0" role="button" ' +
+              'aria-label="' + s.name + '">' + s.i + '</span>'
+      })
+    }).addTo(map);
+    m.bindPopup('<b>' + s.name + '</b><br>' + s.city + (s.type ? ' &middot; ' + s.type : ''));
+    byIndex[s.i] = m;
+  });
+
+  map.fitBounds(L.latLngBounds(sites.map(function (s) { return [s.lat, s.lon]; })),
+                { padding: [40, 40], maxZoom: 12 });
+
+  // sticky column and responsive breakpoints both resize the container
+  setTimeout(function () { map.invalidateSize(); }, 250);
+  window.addEventListener('resize', function () { map.invalidateSize(); });
+
+  // hand the pin elements to the hover-sync code below
+  window.FNPW_MAP = { map: map, markers: byIndex,
+                      pins: [].slice.call(box.querySelectorAll('.vm-pin')) };
+  document.dispatchEvent(new CustomEvent('fnpw:map-ready'));
+})();
+</script>
 <script src="assets/js/gallery.js"></script>
 <script>window.FNPW_VOL_STATE='SA';window.FNPW_VOL_STATE_NAME='South Australia';</script>
 <script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
@@ -608,6 +599,68 @@
     applyState(liveForm);
   };
 
+
+  /* HubSpot stacks every field, which made a ten field form a very long strip.
+     The form renders into a same-origin iframe, so we can lay it out in two
+     columns from here. Class names inside that iframe are HubSpot's and change
+     without notice, so nothing below depends on them: we find the element that
+     actually contains the field rows by walking up from the fields themselves,
+     and anything we cannot read is left exactly as HubSpot rendered it. */
+  function pairUpFields(form) {
+    if (!form) return;
+    try {
+      var doc = form.ownerDocument;
+
+      if (!doc.getElementById('fnpwFormGrid')) {
+        var s = doc.createElement('style');
+        s.id = 'fnpwFormGrid';
+        s.textContent =
+          '[data-fnpw-grid]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));' +
+          'column-gap:1.1rem;align-items:start}' +
+          '[data-fnpw-grid] > [data-fnpw-wide]{grid-column:1/-1}' +
+          '@media(max-width:620px){[data-fnpw-grid]{grid-template-columns:1fr}}';
+        (doc.head || doc.body).appendChild(s);
+      }
+
+      var ctrls = [].slice.call(form.querySelectorAll('input,select,textarea'))
+        .filter(function (el) {
+          return el.type !== 'hidden' && el.type !== 'submit' && el.type !== 'button' &&
+                 el.offsetParent !== null;
+        });
+      if (ctrls.length < 4) return;   // too few to be worth pairing
+
+      // the deepest element that contains every field: its children are the rows
+      function chain(el) {
+        var a = [];
+        for (var n = el.parentElement; n; n = n.parentElement) {
+          a.push(n);
+          if (n === form) break;
+        }
+        return a;
+      }
+      var lists = ctrls.map(chain), box = null, first = lists[0];
+      for (var i = 0; i < first.length; i++) {
+        var cand = first[i];
+        var all = lists.every(function (l) { return l.indexOf(cand) > -1; });
+        if (all) { box = cand; break; }
+      }
+      if (!box || box.children.length < 4) return;
+
+      [].slice.call(box.children).forEach(function (row) {
+        // a row goes full width if it holds a textarea, the submit, the captcha,
+        // or no field at all (consent text, error summaries, headings)
+        var wide = !!row.querySelector('textarea,iframe,[type=submit],button') ||
+                   !row.querySelector('input,select,textarea');
+        if (wide) row.setAttribute('data-fnpw-wide', '');
+        else row.removeAttribute('data-fnpw-wide');
+      });
+      box.setAttribute('data-fnpw-grid', '');
+
+      // the embed sizes its own iframe, so tell it the height just changed
+      try { (doc.defaultView || window).dispatchEvent(new Event('resize')); } catch (e) {}
+    } catch (e) { /* HubSpot changed the form: leave it as rendered */ }
+  }
+
   hbspt.forms.create({
     region: 'ap1',
     portalId: '441704788',
@@ -616,6 +669,16 @@
     onFormReady: function (form) {
       liveForm = (form && form.querySelector) ? form : (form && form[0]);
       applyState(liveForm);
+      pairUpFields(liveForm);
+      // the form re-renders on validation and on step changes, so re-apply
+      [250, 900, 2500].forEach(function (ms) {
+        setTimeout(function () { pairUpFields(liveForm); }, ms);
+      });
+      try {
+        var mo = new MutationObserver(function () { pairUpFields(liveForm); });
+        mo.observe(liveForm, { childList: true, subtree: true });
+        setTimeout(function () { mo.disconnect(); }, 20000);
+      } catch (e) {}
     }
   });
 
@@ -626,10 +689,10 @@
 </script>
 <script>
 (function () {
-  var pins = [].slice.call(document.querySelectorAll('.vm-pin'));
   var list = document.querySelector('.vs-list');
   var cards = [].slice.call(document.querySelectorAll('.vs-card'));
-  if (!pins.length || !list) return;
+  if (!list) return;
+  var pins = [];
 
   function mark(i, on) {
     pins.forEach(function (p) { if (+p.dataset.i === i) p.classList.toggle('on', on); });
@@ -637,17 +700,31 @@
   }
   function wire(el) {
     var i = +el.dataset.i;
+    if (el.classList.contains('vs-card')) {
+      el.addEventListener('click', function () {
+        var M = window.FNPW_MAP;
+        if (M && M.markers[i]) { M.map.panTo(M.markers[i].getLatLng()); M.markers[i].openPopup(); }
+      });
+    }
     el.addEventListener('mouseenter', function () { mark(i, true); });
     el.addEventListener('mouseleave', function () { mark(i, false); });
     el.addEventListener('focus', function () { mark(i, true); });
     el.addEventListener('blur', function () { mark(i, false); });
   }
-  pins.forEach(wire);
   cards.forEach(wire);
+
+  // the pins only exist once the map has drawn them
+  function adoptPins() {
+    pins = (window.FNPW_MAP && window.FNPW_MAP.pins) || [];
+    pins.forEach(wire);
+    pins.forEach(pinClick);
+  }
+  if (window.FNPW_MAP) { adoptPins(); }
+  else { document.addEventListener('fnpw:map-ready', adoptPins); }
 
   // Tapping a pin brings its entry into view. That is the point of the map on a
   // phone, where the two are stacked rather than side by side.
-  pins.forEach(function (p) {
+  function pinClick(p) {
     p.addEventListener('click', function () {
       var c = cards.filter(function (x) { return x.dataset.i === p.dataset.i; })[0];
       if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.focus({ preventScroll: true }); }
@@ -655,7 +732,7 @@
     p.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
     });
-  });
+  }
 
   // On a phone the map sits above the list, and a scrolling box inside a
   // scrolling page is horrible to use, so there the list shows four and expands.

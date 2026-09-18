@@ -30,19 +30,21 @@
 .vs-mapcol{position:sticky;top:92px}
 @media(max-width:1000px){.vs-mapcol{position:static}}
 .vm{background:var(--cream);border:1px solid var(--rule);padding:.6rem}
-.vm-svg{display:block;width:100%;height:auto}
-.vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
-.vm-hit{fill:transparent}
-.vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
-.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
-  text-anchor:middle;pointer-events:none}
-.vm-pin{cursor:pointer}
-.vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
-.vm-pin:focus{outline:none}
-.vm-pin:focus .vm-dot{stroke:var(--euc-deep);stroke-width:3}
-.vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
-.vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
-.vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
+.vm-map{height:clamp(400px,54vh,580px);width:100%;background:var(--sand)}
+@media(max-width:1000px){.vm-map{height:380px}}
+.vm-map .leaflet-container{font-family:var(--ff-b);background:var(--sand)}
+.vm-map .leaflet-control-attribution{font-size:.62rem;background:rgba(250,246,242,.88);color:var(--stone)}
+.vm-map .leaflet-control-attribution a{color:var(--euc-deep)}
+.vm-map .leaflet-bar a{color:var(--euc-deep);border-bottom-color:var(--rule)}
+.vm-map .leaflet-bar a:hover{background:var(--sand)}
+.vm-pin{display:grid;place-items:center;width:28px;height:28px;border-radius:999px;
+  background:var(--euc-deep);color:var(--cream);font-family:var(--ff-d);font-weight:700;
+  font-size:12px;line-height:1;border:2px solid var(--cream);cursor:pointer;
+  box-shadow:0 2px 7px rgba(15,49,50,.4);transition:background .18s ease,transform .18s ease}
+.vm-pin:hover,.vm-pin:focus,.vm-pin.on{background:var(--waratah);transform:scale(1.2);outline:none}
+.vm-pin:focus{box-shadow:0 0 0 3px var(--wattle)}
+.vm-map .leaflet-popup-content{font-size:.86rem;line-height:1.45;margin:.7rem .9rem}
+.vm-map .leaflet-popup-content b{font-family:var(--ff-d);color:var(--euc-deep)}
 .vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
 
 .vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
@@ -124,16 +126,18 @@
 .v-steps li{counter-increment:vs;position:relative;padding-left:2.2rem;font-size:.9rem;color:var(--stone);line-height:1.5}
 .v-steps li::before{content:counter(vs,decimal-leading-zero);position:absolute;left:0;top:.05em;font-family:var(--ff-d);font-weight:800;font-size:.82rem;color:var(--euc-mid)}
 .v-steps b{display:block;font-family:var(--ff-d);font-weight:600;font-size:.95rem;color:var(--euc-deep)}
-.v-steps{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.4rem 0}
+.v-steps{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.4rem 0;margin-top:.9rem}
 /* CTA / Enquiry */
 .v-cta{padding:clamp(4rem,7vw,6rem) 0;background:var(--cream);position:relative}
 .v-cta-card{background:var(--white);border-radius:0;border:1px solid var(--rule);padding:clamp(2.5rem,5vw,4rem) clamp(2rem,4vw,3rem);position:relative;overflow:hidden;box-shadow:0 28px 60px -30px rgba(15,49,50,.22)}
 .v-cta-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc) 0,var(--wattle) 50%,var(--waratah) 100%)}
-.v-cta-g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.v-cta-head{max-width:62ch;margin-bottom:clamp(2rem,4vw,2.8rem)}
+.v-cta-g{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(2rem,4vw,3rem);align-items:start}
 @media(max-width:880px){.v-cta-g{grid-template-columns:1fr;gap:2rem}}
-.v-cta-l h2{font-size:clamp(1.9rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1.05;margin:.8rem 0 1.2rem}
-.v-cta-l h2 em{font-style:italic;font-family:var(--ff-d);color:var(--euc);font-weight:500}
-.v-cta-l p{color:var(--char);font-size:1.02rem;line-height:1.65;margin-bottom:1.5rem}
+.v-cta-head h2{font-size:clamp(1.9rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1.05;margin:.8rem 0 1.2rem}
+.v-cta-head h2 em{font-style:italic;font-family:var(--ff-d);color:var(--euc);font-weight:500}
+.v-cta-head p{color:var(--char);font-size:1.02rem;line-height:1.65;margin-bottom:1.5rem}
+.v-cta-head .v-cta-phone{margin-bottom:0}
 .v-cta-phone{display:inline-flex;align-items:center;gap:.7em;background:var(--euc-pale);color:var(--euc-deep);padding:.85em 1.3em;border-radius:0;font-family:var(--ff-d);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;border:1px solid var(--euc-soft);text-decoration:none;transition:.25s;margin-bottom:1.4rem}
 .v-cta-phone:hover{background:var(--euc);color:var(--cream);transform:translateY(-1px);opacity:1}
 .v-cta-phone svg{width:18px;height:18px}
@@ -225,31 +229,10 @@
     <div class="vs-split">
       <div class="vs-mapcol rv">
         <div class="vm">
-    <svg class="vm-svg" viewBox="0 0 760 620" role="img" aria-label="Map of the Western Australia region showing 3 corporate volunteering sites, with a locator map of Western Australia">
-      <path class="vm-land" d="M-612.9,-2165.9L-596.4,-2083.3L-535.5,-1979.6L-536.1,-1943.7L-500.1,-1894.7L-488.8,-1845.4L-399.0,-1744.8L-334.2,-1647.3L-245.7,-1469.0L-212.3,-1361.2L-229.8,-1300.0L-205.5,-1192.9L-184.7,-1158.8L-155.9,-1141.6L-89.4,-1042.9L-63.8,-968.0L-77.4,-951.1L-76.1,-928.2L19.5,-809.6L31.5,-731.6L47.0,-717.4L59.4,-670.0L42.5,-622.2L47.0,-572.5L24.7,-579.0L12.7,-560.2L27.9,-535.7L52.5,-530.0L34.4,-471.9L49.0,-444.3L42.5,-418.3L57.1,-406.5L50.6,-365.9L65.5,-277.9L80.4,-242.4L95.7,-234.3L100.2,-198.0L121.6,-171.6L123.9,-150.6L146.9,-129.1L179.0,-54.6L178.3,0.1L201.7,9.3L225.3,52.2L223.4,71.3L242.2,82.8L295.3,197.9L288.5,220.5L304.4,248.4L233.1,265.2L203.9,296.2L214.9,314.2L268.1,325.6L281.4,395.6L266.2,419.0L281.4,434.3L280.4,457.6L298.3,466.0L266.8,505.4L256.4,545.6L280.4,690.9L280.4,766.6L248.7,831.7L196.8,892.9L151.7,899.8L97.0,855.4L77.5,851.2L62.3,862.7L66.5,905.1L51.2,931.5L56.4,970.1L46.1,987.3L56.4,1092.9L66.2,1111.7L58.4,1148.8L73.0,1181.7L130.0,1231.8L162.4,1226.4L167.3,1208.4L155.3,1191.2L173.1,1189.3L262.6,1235.2L367.9,1336.9L383.5,1386.3L404.9,1402.0L449.6,1395.5L492.7,1416.9L507.7,1437.2L526.5,1436.0L551.4,1465.1L632.8,1481.9L658.7,1466.6L702.5,1477.7L741.4,1466.2L776.4,1479.2L796.8,1465.8L847.7,1464.7L933.9,1504.9L962.1,1474.6L969.9,1490.7L987.1,1494.1L996.2,1522.1L1022.4,1525.1L1037.3,1504.9L1057.4,1505.6L1134.6,1452.1L1139.8,1421.9L1172.2,1433.7L1220.5,1427.6L1228.6,1395.1L1200.1,1373.3L1204.9,1361.0L1231.5,1343.1L1278.8,1335.4L1321.0,1295.3L1317.7,1268.9L1325.8,1264.3L1355.6,1261.6L1370.9,1243.6L1462.3,1275.0L1588.1,1213.4L1592.0,1185.5L1557.3,1174.8L1585.5,1114.7L1641.9,1082.2L1656.1,1060.0L1686.3,1061.9L1710.6,1045.5L1734.6,1056.6L1778.7,1045.5L1839.6,1060.0L1824.7,1091.0L1846.1,1108.2L1872.0,1095.6L1878.5,1065.8L1869.4,1050.5L1898.0,1032.5L1928.8,1042.0L1984.5,1018.3L2081.8,1024.1L2100.2,1012.2L2241.2,1099.8L2217.6,1115.9L2232.2,1138.0L2258.1,1131.5L2259.1,1108.2L2361.5,1157.9L2399.4,1156.4L2418.9,1170.6L2438.3,1153.0L2623.4,1120.8L2723.9,1134.2L2755.3,1109.4L2799.8,1030.6L2818.2,1033.6L2825.0,1071.1L2852.6,1077.6L2869.5,1056.6L2869.8,1036.3L2889.9,1035.2L2904.5,1005.3L2932.7,992.7L2949.8,936.5L3011.8,923.9L3015.0,907.4L3004.9,894.8L3014.3,840.5L3047.4,743.7L3082.4,694.4L3117.8,672.2L3269.5,637.4L3340.1,583.1L3502.5,513.4L3637.7,415.1L3721.3,399.1L3862.0,425.5L4057.5,410.2L4391.4,301.9L4617.3,187.9L4623.5,-6327.0L4603.4,-6317.5L4605.6,-6292.6L4570.9,-6298.7L4539.2,-6328.2L4517.1,-6321.7L4499.9,-6343.9L4430.9,-6314.0L4387.1,-6338.1L4378.4,-6361.8L4357.0,-6356.9L4346.0,-6376.8L4326.2,-6375.2L4268.8,-6430.3L4254.6,-6468.2L4213.1,-6524.8L4140.8,-6593.6L4121.3,-6634.6L4073.0,-6651.8L4078.2,-6674.0L4062.7,-6691.9L4040.9,-6687.0L4032.8,-6670.1L4009.8,-6669.4L3944.3,-6740.1L3908.4,-6718.7L3703.5,-6717.2L3688.9,-6724.1L3698.3,-6752.8L3690.2,-6779.9L3618.6,-6782.6L3607.9,-6768.4L3611.4,-6745.1L3654.9,-6732.9L3672.1,-6715.3L3575.5,-6702.6L3509.3,-6641.1L3486.3,-6573.4L3416.3,-6523.6L3300.9,-6466.3L3213.1,-6282.3L3161.8,-6238.7L3089.9,-6211.9L3058.8,-6134.3L3030.9,-6117.8L3034.4,-6089.5L2880.1,-5907.4L2768.3,-5839.7L2741.1,-5835.2L2735.6,-5815.3L2632.8,-5697.8L2611.1,-5651.2L2571.6,-5609.5L2561.2,-5555.9L2524.9,-5557.1L2482.4,-5490.1L2452.6,-5473.3L2445.8,-5448.8L2404.3,-5413.3L2402.3,-5381.1L2377.1,-5320.7L2377.7,-5233.5L2396.2,-5180.7L2390.0,-5150.5L2398.8,-5115.3L2387.8,-5082.0L2380.6,-4969.2L2312.2,-4911.4L2277.5,-4914.9L2256.5,-4875.9L2238.3,-4865.9L2235.7,-4846.8L2251.6,-4825.0L2199.4,-4808.2L2206.2,-4750.4L2170.9,-4659.8L2084.3,-4540.8L2014.3,-4475.8L1795.9,-4372.5L1680.1,-4356.1L1642.5,-4335.8L1619.5,-4339.2L1566.3,-4301.7L1540.7,-4321.6L1443.5,-4355.3L1400.1,-4348.4L1380.0,-4317.0L1367.0,-4323.9L1362.1,-4361.0L1336.2,-4371.7L1317.7,-4340.8L1347.9,-4302.1L1349.8,-4276.1L1305.1,-4225.6L1264.6,-4211.1L1242.5,-4219.9L1168.9,-4205.7L1138.1,-4190.1L1104.8,-4196.6L1044.8,-4146.8L1018.5,-4143.0L981.6,-4104.8L885.9,-4055.4L843.5,-4053.9L818.5,-4066.5L770.2,-4153.0L723.5,-4160.6L678.5,-4187.8L574.1,-4140.7L279.5,-4167.5L247.0,-4190.8L228.2,-4185.5L208.1,-4117.8L203.6,-4058.5L173.8,-4024.1L149.5,-3919.6L-9.7,-3736.4L-131.3,-3698.2L-163.3,-3659.2L-258.0,-3610.2L-285.5,-3576.9L-321.9,-3442.3L-386.0,-3295.8L-375.7,-3240.0L-356.5,-3228.9L-339.0,-3193.7L-336.4,-3143.6L-349.7,-3122.9L-335.5,-2981.0L-381.2,-2936.6L-433.7,-2819.2L-437.6,-2777.9L-450.2,-2758.0L-443.4,-2708.7L-460.6,-2689.5L-455.7,-2592.4L-540.0,-2479.9L-563.3,-2290.2L-609.4,-2197.7L-612.9,-2165.9Z M-401.9,-1133.6L-373.1,-1054.8L-348.1,-930.8L-290.4,-857.0L-248.3,-848.2L-224.3,-893.4L-215.2,-946.5L-265.8,-1013.1L-291.7,-1080.4L-372.7,-1158.8L-392.8,-1155.8L-401.9,-1133.6Z"></path>
-      <g class="vm-inset" transform="translate(576,414)" aria-hidden="true">
-        <rect class="vm-inset-bg" x="-8" y="-8" width="184" height="206"></rect>
-        <path class="vm-inset-land" d="M25.1,104.7L25.5,106.4L26.8,108.6L26.8,109.4L27.6,110.4L27.9,111.4L29.9,113.5L31.4,115.6L33.4,119.3L34.1,121.6L33.7,122.8L34.3,125.1L34.7,125.8L35.4,126.2L36.9,128.2L37.5,129.8L37.1,130.1L37.2,130.6L39.3,133.1L39.6,134.7L39.9,135.0L40.2,136.0L39.8,137.0L39.9,138.1L39.4,137.9L39.2,138.3L39.5,138.8L40.1,139.0L39.7,140.2L40.0,140.7L39.8,141.3L40.2,141.5L40.0,142.4L40.4,144.2L40.7,145.0L41.0,145.1L41.1,145.9L41.6,146.5L41.7,146.9L42.2,147.3L42.9,148.9L42.9,150.0L43.4,150.2L44.0,151.1L43.9,151.5L44.3,151.8L45.5,154.2L45.4,154.7L45.7,155.2L44.1,155.6L43.5,156.2L43.7,156.6L44.9,156.9L45.2,158.3L44.9,158.8L45.2,159.1L45.2,159.6L45.6,159.8L44.9,160.6L44.7,161.5L45.2,164.5L45.2,166.1L44.5,167.5L43.3,168.7L42.3,168.9L41.1,168.0L40.6,167.9L40.3,168.1L40.4,169.0L40.0,169.5L40.2,170.4L39.9,170.7L40.2,172.9L40.4,173.3L40.2,174.1L40.5,174.8L41.8,175.8L42.5,175.7L42.7,175.3L42.4,175.0L42.8,174.9L44.8,175.9L47.2,178.0L47.5,179.1L48.0,179.4L49.0,179.3L50.0,179.7L50.3,180.1L50.7,180.1L51.3,180.7L53.1,181.1L53.7,180.7L54.7,181.0L55.6,180.7L56.4,181.0L56.8,180.7L58.0,180.7L59.9,181.5L60.5,180.9L60.7,181.2L61.1,181.3L61.3,181.9L61.9,182.0L62.2,181.5L62.7,181.6L64.4,180.4L64.5,179.8L65.3,180.1L66.3,179.9L66.5,179.2L65.9,178.8L66.0,178.5L66.6,178.2L67.7,178.0L68.6,177.2L68.5,176.6L68.7,176.5L69.4,176.5L69.7,176.1L71.8,176.7L74.6,175.4L74.7,174.9L73.9,174.6L74.6,173.4L75.8,172.7L76.1,172.2L76.8,172.3L77.4,171.9L77.9,172.2L78.9,171.9L80.3,172.2L79.9,172.9L80.4,173.2L81.0,173.0L81.2,172.4L80.9,172.0L81.6,171.7L82.3,171.9L83.5,171.4L85.7,171.5L86.1,171.2L89.3,173.1L88.8,173.4L89.1,173.9L89.7,173.7L89.7,173.2L92.0,174.3L92.9,174.3L93.3,174.5L93.7,174.2L97.9,173.5L100.2,173.8L100.9,173.3L101.9,171.6L102.3,171.7L102.4,172.5L103.1,172.6L103.4,172.2L103.4,171.7L103.9,171.7L104.2,171.1L104.9,170.8L105.3,169.6L106.6,169.4L106.7,169.0L106.5,168.8L106.7,167.6L107.4,165.6L108.2,164.6L109.0,164.1L112.4,163.4L114.0,162.3L117.7,160.8L120.7,158.7L122.6,158.4L125.8,159.0L130.2,158.6L137.7,156.4L142.8,154.0L142.9,17.6L142.4,17.8L142.5,18.3L141.7,18.2L141.0,17.6L140.5,17.7L140.1,17.3L138.6,17.9L137.6,17.4L137.4,16.9L136.9,17.0L136.7,16.6L136.2,16.6L134.9,15.5L134.6,14.7L133.7,13.5L132.0,12.0L131.6,11.2L130.5,10.8L130.6,10.4L130.3,10.0L129.8,10.1L129.6,10.4L129.1,10.5L127.6,9.0L126.8,9.4L122.2,9.5L121.9,9.3L122.1,8.7L121.9,8.1L120.3,8.1L120.1,8.4L120.1,8.9L121.1,9.1L121.5,9.5L119.3,9.8L117.8,11.0L117.3,12.5L115.7,13.5L113.1,14.7L111.2,18.6L110.0,19.5L108.4,20.0L107.7,21.7L107.1,22.0L107.2,22.6L103.7,26.4L101.2,27.8L100.6,27.9L100.4,28.3L98.1,30.8L97.6,31.8L96.7,32.6L96.5,33.8L95.7,33.7L94.7,35.1L94.1,35.5L93.9,36.0L93.0,36.7L92.9,37.4L92.4,38.7L92.4,40.5L92.8,41.6L92.7,42.2L92.9,43.0L92.6,43.7L92.4,46.0L90.9,47.2L90.1,47.2L89.7,48.0L89.2,48.2L89.2,48.6L89.5,49.1L88.4,49.4L88.5,50.6L87.7,52.5L85.8,55.0L84.2,56.4L79.3,58.5L76.7,58.9L75.8,59.3L75.3,59.2L74.1,60.0L73.6,59.6L71.4,58.9L70.4,59.0L69.9,59.7L69.6,59.5L69.5,58.8L69.0,58.5L68.5,59.2L69.2,60.0L69.3,60.5L68.3,61.6L67.3,61.9L66.8,61.7L65.2,62.0L64.5,62.3L63.7,62.2L62.4,63.3L61.8,63.3L61.0,64.1L58.8,65.2L57.9,65.2L57.3,64.9L56.2,63.1L55.2,63.0L54.2,62.4L51.8,63.4L45.2,62.8L44.4,62.3L44.0,62.4L43.6,63.9L43.5,65.1L42.8,65.8L42.3,68.0L38.7,71.8L35.9,72.6L35.2,73.5L33.1,74.5L32.5,75.2L31.7,78.0L30.2,81.1L30.4,82.2L30.9,82.5L31.3,83.2L31.3,84.3L31.0,84.7L31.3,87.7L30.3,88.6L29.1,91.0L29.0,91.9L28.8,92.3L28.9,93.4L28.5,93.8L28.6,95.8L26.7,98.1L26.2,102.1L25.2,104.0L25.1,104.7Z M29.8,126.3L30.5,128.0L31.1,130.6L32.4,132.1L33.3,132.3L33.8,131.3L34.0,130.2L32.9,128.8L32.3,127.4L30.5,125.8L30.1,125.9L29.8,126.3Z"></path>
-        <rect class="vm-inset-box" x="39.6" y="150.6" width="15.7" height="11.9"></rect>
-      </g>
-      <g class="vm-pin" data-i="1" tabindex="0" role="button" aria-label="Kaarakin Black Cockatoo Conservation Centre, Martin">
-        <circle class="vm-hit" cx="410.0" cy="315.5" r="18"></circle>
-        <circle class="vm-dot" cx="410.0" cy="315.5" r="11.5"></circle>
-        <text class="vm-num" x="410.0" y="319.3">1</text>
-      </g>
-      <g class="vm-pin" data-i="2" tabindex="0" role="button" aria-label="South East Regional Centre for Urban Landcare, Beckenham">
-        <circle class="vm-hit" cx="387.7" cy="300.4" r="18"></circle>
-        <circle class="vm-dot" cx="387.7" cy="300.4" r="11.5"></circle>
-        <text class="vm-num" x="387.7" y="304.2">2</text>
-      </g>
-      <g class="vm-pin" data-i="3" tabindex="0" role="button" aria-label="The Wetlands Centre Cockburn, Bibra Lake">
-        <circle class="vm-hit" cx="350.5" cy="319.3" r="18"></circle>
-        <circle class="vm-dot" cx="350.5" cy="319.3" r="11.5"></circle>
-        <text class="vm-num" x="350.5" y="323.1">3</text>
-      </g>
-    </svg>
+          <div class="vm-map" id="volMap" data-sites='[{"i":1,"lat":-32.07468,"lon":116.02011,"name":"Kaarakin Black Cockatoo Conservation Centre","city":"Martin","type":"Conservation Centre"},{"i":2,"lat":-32.03671,"lon":115.95453,"name":"South East Regional Centre for Urban Landcare","city":"Beckenham","type":"Conservation Centre"},{"i":3,"lat":-32.08553,"lon":115.83825,"name":"The Wetlands Centre Cockburn","city":"Bibra Lake","type":"Conservation Centre"}]'
+               role="application" aria-label="Map of corporate volunteering sites"></div>
         </div>
-        <p class="vm-cap">The map is zoomed to where the sites actually are; the small inset shows that area within Western Australia. Pin positions are approximate. Hover a pin to find it in the list, or tap one to jump straight to it.</p>
+        <p class="vm-cap">Scroll the list or move around the map. Hover a pin to find it in the list, or tap one to jump straight to it. Click the map once to zoom with the scroll wheel.</p>
       </div>
       <div class="rv d1">
         <div class="vs-filter">
@@ -349,15 +332,17 @@
 <section class="v-cta" id="enquire">
   <div class="cw">
     <div class="v-cta-card rv">
+      <div class="v-cta-head">
+        <span class="ey">Get involved</span>
+        <h2>Ready to <em>get into the field?</em></h2>
+        <p>Submit an enquiry or call our team direct to chat about creating a corporate volunteering day that works for your organisation. Together, we can care for nature, strengthen communities and help shape a future where people and the environment thrive.</p>
+        <a href="tel:1800898626" class="v-cta-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          1800 898 626
+        </a>
+      </div>
       <div class="v-cta-g">
         <div class="v-cta-l">
-          <span class="ey">Get involved</span>
-          <h2>Ready to <em>get into the field?</em></h2>
-          <p>Submit an enquiry or call our team direct to chat about creating a corporate volunteering day that works for your organisation. Together, we can care for nature, strengthen communities and help shape a future where people and the environment thrive.</p>
-          <a href="tel:1800898626" class="v-cta-phone">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            1800 898 626
-          </a>
           <span class="ey" style="display:flex;margin-bottom:.2rem">How it works</span>
           <ol class="v-steps">
             <li><b>Enquire</b> Tell us your state, team size and rough dates.</li>
@@ -406,6 +391,62 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/* The numbered pins from the list, placed on a real basemap.
+
+   Scroll-wheel zoom is off until the map is clicked, so the page still scrolls
+   normally when someone passes over it. Everything is guarded: if Leaflet or the
+   tiles do not load, the list below is still the whole story. */
+(function () {
+  var box = document.getElementById('volMap');
+  if (!box || typeof L === 'undefined') return;
+
+  var sites;
+  try { sites = JSON.parse(box.dataset.sites || '[]'); } catch (e) { return; }
+  if (!sites.length) return;
+
+  var map = L.map(box, { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' +
+                 ' contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  var byIndex = {};
+  sites.forEach(function (s) {
+    var m = L.marker([s.lat, s.lon], {
+      title: s.name,
+      alt: s.name + ', ' + s.city,
+      riseOnHover: true,
+      icon: L.divIcon({
+        className: '',
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        popupAnchor: [0, -16],
+        html: '<span class="vm-pin" data-i="' + s.i + '" tabindex="0" role="button" ' +
+              'aria-label="' + s.name + '">' + s.i + '</span>'
+      })
+    }).addTo(map);
+    m.bindPopup('<b>' + s.name + '</b><br>' + s.city + (s.type ? ' &middot; ' + s.type : ''));
+    byIndex[s.i] = m;
+  });
+
+  map.fitBounds(L.latLngBounds(sites.map(function (s) { return [s.lat, s.lon]; })),
+                { padding: [40, 40], maxZoom: 12 });
+
+  // sticky column and responsive breakpoints both resize the container
+  setTimeout(function () { map.invalidateSize(); }, 250);
+  window.addEventListener('resize', function () { map.invalidateSize(); });
+
+  // hand the pin elements to the hover-sync code below
+  window.FNPW_MAP = { map: map, markers: byIndex,
+                      pins: [].slice.call(box.querySelectorAll('.vm-pin')) };
+  document.dispatchEvent(new CustomEvent('fnpw:map-ready'));
+})();
+</script>
 <script src="assets/js/gallery.js"></script>
 <script>window.FNPW_VOL_STATE='WA';window.FNPW_VOL_STATE_NAME='Western Australia';</script>
 <script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
@@ -452,6 +493,68 @@
     applyState(liveForm);
   };
 
+
+  /* HubSpot stacks every field, which made a ten field form a very long strip.
+     The form renders into a same-origin iframe, so we can lay it out in two
+     columns from here. Class names inside that iframe are HubSpot's and change
+     without notice, so nothing below depends on them: we find the element that
+     actually contains the field rows by walking up from the fields themselves,
+     and anything we cannot read is left exactly as HubSpot rendered it. */
+  function pairUpFields(form) {
+    if (!form) return;
+    try {
+      var doc = form.ownerDocument;
+
+      if (!doc.getElementById('fnpwFormGrid')) {
+        var s = doc.createElement('style');
+        s.id = 'fnpwFormGrid';
+        s.textContent =
+          '[data-fnpw-grid]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));' +
+          'column-gap:1.1rem;align-items:start}' +
+          '[data-fnpw-grid] > [data-fnpw-wide]{grid-column:1/-1}' +
+          '@media(max-width:620px){[data-fnpw-grid]{grid-template-columns:1fr}}';
+        (doc.head || doc.body).appendChild(s);
+      }
+
+      var ctrls = [].slice.call(form.querySelectorAll('input,select,textarea'))
+        .filter(function (el) {
+          return el.type !== 'hidden' && el.type !== 'submit' && el.type !== 'button' &&
+                 el.offsetParent !== null;
+        });
+      if (ctrls.length < 4) return;   // too few to be worth pairing
+
+      // the deepest element that contains every field: its children are the rows
+      function chain(el) {
+        var a = [];
+        for (var n = el.parentElement; n; n = n.parentElement) {
+          a.push(n);
+          if (n === form) break;
+        }
+        return a;
+      }
+      var lists = ctrls.map(chain), box = null, first = lists[0];
+      for (var i = 0; i < first.length; i++) {
+        var cand = first[i];
+        var all = lists.every(function (l) { return l.indexOf(cand) > -1; });
+        if (all) { box = cand; break; }
+      }
+      if (!box || box.children.length < 4) return;
+
+      [].slice.call(box.children).forEach(function (row) {
+        // a row goes full width if it holds a textarea, the submit, the captcha,
+        // or no field at all (consent text, error summaries, headings)
+        var wide = !!row.querySelector('textarea,iframe,[type=submit],button') ||
+                   !row.querySelector('input,select,textarea');
+        if (wide) row.setAttribute('data-fnpw-wide', '');
+        else row.removeAttribute('data-fnpw-wide');
+      });
+      box.setAttribute('data-fnpw-grid', '');
+
+      // the embed sizes its own iframe, so tell it the height just changed
+      try { (doc.defaultView || window).dispatchEvent(new Event('resize')); } catch (e) {}
+    } catch (e) { /* HubSpot changed the form: leave it as rendered */ }
+  }
+
   hbspt.forms.create({
     region: 'ap1',
     portalId: '441704788',
@@ -460,6 +563,16 @@
     onFormReady: function (form) {
       liveForm = (form && form.querySelector) ? form : (form && form[0]);
       applyState(liveForm);
+      pairUpFields(liveForm);
+      // the form re-renders on validation and on step changes, so re-apply
+      [250, 900, 2500].forEach(function (ms) {
+        setTimeout(function () { pairUpFields(liveForm); }, ms);
+      });
+      try {
+        var mo = new MutationObserver(function () { pairUpFields(liveForm); });
+        mo.observe(liveForm, { childList: true, subtree: true });
+        setTimeout(function () { mo.disconnect(); }, 20000);
+      } catch (e) {}
     }
   });
 
@@ -470,10 +583,10 @@
 </script>
 <script>
 (function () {
-  var pins = [].slice.call(document.querySelectorAll('.vm-pin'));
   var list = document.querySelector('.vs-list');
   var cards = [].slice.call(document.querySelectorAll('.vs-card'));
-  if (!pins.length || !list) return;
+  if (!list) return;
+  var pins = [];
 
   function mark(i, on) {
     pins.forEach(function (p) { if (+p.dataset.i === i) p.classList.toggle('on', on); });
@@ -481,17 +594,31 @@
   }
   function wire(el) {
     var i = +el.dataset.i;
+    if (el.classList.contains('vs-card')) {
+      el.addEventListener('click', function () {
+        var M = window.FNPW_MAP;
+        if (M && M.markers[i]) { M.map.panTo(M.markers[i].getLatLng()); M.markers[i].openPopup(); }
+      });
+    }
     el.addEventListener('mouseenter', function () { mark(i, true); });
     el.addEventListener('mouseleave', function () { mark(i, false); });
     el.addEventListener('focus', function () { mark(i, true); });
     el.addEventListener('blur', function () { mark(i, false); });
   }
-  pins.forEach(wire);
   cards.forEach(wire);
+
+  // the pins only exist once the map has drawn them
+  function adoptPins() {
+    pins = (window.FNPW_MAP && window.FNPW_MAP.pins) || [];
+    pins.forEach(wire);
+    pins.forEach(pinClick);
+  }
+  if (window.FNPW_MAP) { adoptPins(); }
+  else { document.addEventListener('fnpw:map-ready', adoptPins); }
 
   // Tapping a pin brings its entry into view. That is the point of the map on a
   // phone, where the two are stacked rather than side by side.
-  pins.forEach(function (p) {
+  function pinClick(p) {
     p.addEventListener('click', function () {
       var c = cards.filter(function (x) { return x.dataset.i === p.dataset.i; })[0];
       if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.focus({ preventScroll: true }); }
@@ -499,7 +626,7 @@
     p.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
     });
-  });
+  }
 
   // On a phone the map sits above the list, and a scrolling box inside a
   // scrolling page is horrible to use, so there the list shows four and expands.
