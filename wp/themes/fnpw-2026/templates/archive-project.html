@@ -1,0 +1,36 @@
+<!-- wp:template-part {"slug":"header","tagName":"div","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained","contentSize":"1240px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"}}}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:paragraph {"className":"ey","textColor":"eucalyptus","style":{"typography":{"fontSize":"0.82rem","textTransform":"uppercase","letterSpacing":"0.08em","fontWeight":"600"}}} -->
+<p class="ey has-eucalyptus-color has-text-color" style="font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Our work</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:query-title {"type":"archive","level":1,"fontSize":"h1"} /-->
+
+<!-- wp:paragraph {"className":"lede","fontSize":"lede"} -->
+<p class="lede has-lede-font-size">Every project we fund is delivered with partners on the ground, across Growing National Parks, Saving Species and Healing the Land.</p>
+<!-- /wp:paragraph -->
+
+<!-- TODO Phase 2: interactive map pattern slots in here. R5 fallback is this filtered grid, which already works without JavaScript. -->
+
+<!-- wp:query {"queryId":2,"query":{"perPage":24,"postType":"project","inherit":true},"layout":{"type":"default"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-query" style="margin-top:var(--wp--preset--spacing--50)"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"className":"card proj-card","layout":{"type":"constrained"},"style":{"spacing":{"blockGap":"0.7rem"}}} -->
+<div class="wp-block-group card proj-card"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":"12px"}}} /-->
+<!-- wp:post-terms {"term":"pillar","className":"ey","textColor":"eucalyptus","style":{"typography":{"fontSize":"0.78rem","textTransform":"uppercase","letterSpacing":"0.08em"}}} /-->
+<!-- wp:post-title {"isLink":true,"level":3,"fontSize":"h4"} /-->
+<!-- wp:post-excerpt {"excerptLength":20,"fontSize":"sm"} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}}} -->
+<!-- wp:query-pagination-previous /--><!-- wp:query-pagination-numbers /--><!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph --><p>No projects match that filter yet.</p><!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"div","area":"footer"} /-->

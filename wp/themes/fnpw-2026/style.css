@@ -1,0 +1,17 @@
+/*
+Theme Name: FNPW 2026
+Theme URI: https://fnpw.org.au
+Author: Foundation for National Parks & Wildlife
+Description: Native WordPress block theme for the Foundation for National Parks & Wildlife. Design system, components and content model converted from the in-house static build. No page builder, no proprietary framework.
+Version: 0.1.0
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fnpw-2026
+Tags: block-theme, full-site-editing, accessibility-ready, one-column, custom-colors, custom-menu
+*/
+
+/* Block themes take their design system from theme.json.
+   Component CSS ported from the static build lives in assets/css/global.css. */
