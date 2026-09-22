@@ -21,6 +21,7 @@ define( 'FNPW_CORE_VERSION', '0.1.0' );
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/taxonomies.php';
 require_once __DIR__ . '/inc/fields.php';
+require_once __DIR__ . '/inc/redirects.php';
 
 /**
  * Flush rewrite rules on activation and deactivation only.

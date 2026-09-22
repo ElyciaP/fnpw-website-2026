@@ -548,15 +548,15 @@
   "on_map": true
  },
  {
-  "slug": "nectarlovers",
-  "title": "Nectarlovers",
-  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg",
+  "slug": "nectar-sippers",
+  "title": "Nectar Sippers",
+  "img": "assets/img/projects/nectar-hero-paddock-tree.jpg",
   "pillar": "species",
   "state": "NSW",
   "pillar_confirmed": true,
-  "live_url": "https://fnpw.org.au/project/nectarlovers/",
-  "lat": -32.0,
-  "lon": 150.8,
+  "live_url": "",
+  "lat": -35.98,
+  "lon": 146.62,
   "on_map": true
  },
  {

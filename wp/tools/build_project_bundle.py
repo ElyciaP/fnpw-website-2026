@@ -103,6 +103,8 @@ def main():
     for path in sorted(glob.glob(os.path.join(ROOT, "project-*.html"))):
         slug = os.path.basename(path)[len("project-"):-5]
         page = open(path, encoding="utf-8").read()
+        if 'http-equiv="refresh"' in page:
+            continue  # redirect stub for a renamed project, not a project itself
         main_html = first(r"<main[^>]*>(.*)</main>", page)
         if not main_html:
             warnings.append("%s: no <main> element, skipped" % slug)

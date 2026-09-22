@@ -1178,10 +1178,10 @@
   "title": "Nectar Sippers",
   "excerpt": "Three woodland birds that follow the flowering, a farming landscape they can no longer cross, and four years spent giving them somewhere to land.",
   "pillar": "saving-species",
-  "state": "",
-  "lat": 0,
-  "lon": 0,
-  "on_map": false,
+  "state": "NSW",
+  "lat": -35.98,
+  "lon": 146.62,
+  "on_map": true,
   "legacy_url": "",
   "hero_image": "assets/img/projects/nectar-hero-paddock-tree.jpg",
   "hero_alt": "An old paddock tree standing inside new stock-proof fencing, with tree guards on young plantings in the foreground",
@@ -1209,27 +1209,6 @@
    "assets/img/projects/nectar-woodland-wide.jpg"
   ],
   "source_modified": 1789073258
- },
- {
-  "slug": "nectarlovers",
-  "title": "Nectarlovers",
-  "excerpt": "The nectivorous birds conservation project restores native flowering plants and habitats to support the survival of honeyeaters and other nectar feeders.",
-  "pillar": "saving-species",
-  "state": "NSW",
-  "lat": -32.0,
-  "lon": 150.8,
-  "on_map": true,
-  "legacy_url": "https://fnpw.org.au/project/nectarlovers/",
-  "hero_image": "https://fnpw.org.au/wp-content/uploads/2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK-1024x768.jpg",
-  "hero_alt": "",
-  "credit": "",
-  "sections": [
-   "<section class=\"sec\">\n  <div class=\"cw rv\">\n    <div class=\"pj-body\">\n        <span class=\"ey\">The project</span>\n        <h2 style=\"margin:.8rem 0 1.2rem\">A Saving Our Species Project</h2>\n        <p>This co-funded Saving Our Species project will target a core set of recovery strategies shared by several nectivorous bird species: Painted and Black-chinned honeyeaters, Little Lorikeet, Swift Parrot, and Dusky Woodswallow. Associated benefits will likely extend to other species (e.g. Regent Honeyeater, Grey-headed Flying Fox, Squirrel Glider, Brown Treecreeper).</p>\n      </div>\n  </div>\n</section>",
-   "<section class=\"pj-band\">\n  <div class=\"cw\"><div class=\"pj-band-g rv\">\n    <figure class=\"pj-band-im\">\n      <img src=\"https://fnpw.org.au/wp-content/uploads/2021/01/corowa4-1024x498.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\">\n    </figure>\n    <div class=\"pj-band-bd\">\n      <h3>Project overview</h3>\n      <p>Little is known about the movement patterns and local habitat use of nectivorous birds, while formal records of their presence on a local scale are sparse in a number of important districts. A concerted effort is needed to build knowledge about the location and habitat use of threatened nectivorous species.</p>\n      <p>The conservation plan, which is currently being developed, highlights the importance of community engagement and data collection as complementing on-ground restoration and enhancement of core habitat and foraging areas through:</p>\n      <p>Engagement of landholders and volunteer community groups in survey and mapping activities to encourage communities to become more aware of the importance of their district for supporting often poorly-recognised threatened species;</p>\n      <p>Encouraging targeted management of key food resources and other habitat resources (hollow-bearing trees, understory structure, etc.) to ensure sites remain viable to support transit stops and breeding sites key times of the year; and</p>\n      <p>Preparation for infill plantings and other active site restoration in priority locations where outcomes can be maintained and enhanced through ongoing effort.</p>\n      <p>The project will address a significant knowledge gap about the health of woodland bird populations on private land. For the landholders, the project will provide them with</p>\n      <p>(a) better knowledge and appreciation of the birds on different parts of their property,</p>\n      <p>(b) guidelines and encouragement for targeted actions to improve their farm’s health and long-term sustainability,</p>\n      <p>(c) the opportunity to contribute to citizen science on their home turf, and</p>\n      <p>(d) exposure to and involvement in large-scale not-for-profit conservation initiatives.</p>    </div>\n  </div></div>\n</section>",
-   "<section class=\"sec\" style=\"padding:2.8rem 0\">\n  <div class=\"cw rv\">\n    <p class=\"pj-src\" style=\"margin-top:0\">This project has been supported by the New South Wales Government’s Saving our Species program. Visit the following link for more information about the Saving Our Species program: www.environment.nsw.gov.au.</p>\n  </div>\n</section>"
-  ],
-  "images": [],
-  "source_modified": 1789135727
  },
  {
   "slug": "nest-boxes-in-plenty-gorge-park",
