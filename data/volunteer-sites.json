@@ -578,6 +578,23 @@
   "km": 49
  },
  {
+  "id": "point-cook-coastal-park",
+  "name": "Point Cook Coastal Park",
+  "type": "Park",
+  "address": "Main Drive",
+  "city": "Point Cook",
+  "state": "VIC",
+  "state_name": "Victoria",
+  "postcode": "3030",
+  "manager": "VIC Parks",
+  "manager_short": "",
+  "lat": -37.9178,
+  "lon": 144.8095,
+  "geo_match": "approximate",
+  "cbd": "Melbourne",
+  "km": 18
+ },
+ {
   "id": "shepherd-s-bush-community-garden",
   "name": "Shepherd's Bush Community Garden",
   "type": "Nursery",
@@ -644,6 +661,23 @@
   "geo_match": "address",
   "cbd": "Melbourne",
   "km": 13
+ },
+ {
+  "id": "werribee-park",
+  "name": "Werribee Park",
+  "type": "Park",
+  "address": "Main Drive",
+  "city": "Werribee South",
+  "state": "VIC",
+  "state_name": "Victoria",
+  "postcode": "3030",
+  "manager": "VIC Parks",
+  "manager_short": "",
+  "lat": -37.9355,
+  "lon": 144.6725,
+  "geo_match": "approximate",
+  "cbd": "Melbourne",
+  "km": 29
  },
  {
   "id": "woodlands-historic-park",

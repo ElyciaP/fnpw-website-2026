@@ -1,0 +1,11 @@
+/* Page-level styles from the static build that are not in global.css.
+   Moved here so they load once, sitewide, instead of per page. */
+
+/* Used on remarkable-southern-flinders and two other project pages */
+.ackb{background:var(--euc-pale);border-left:5px solid var(--euc);border-radius:0 12px 12px 0;padding:1.4rem 1.6rem;margin:2rem 0}
+.ackb .ey{margin-bottom:.4rem;display:block}
+.upd{border:1px solid var(--rule);border-radius:14px;background:#fff;padding:1.6rem;margin-bottom:1.2rem}
+.upd h3{color:var(--euc-deep);margin-bottom:.7rem}
+.upd img{border-radius:8px;max-width:300px;height:auto;margin:.8rem .8rem 0 0}
+.spl{columns:2;gap:2rem;font-size:.92rem}
+@media(max-width:700px){.spl{columns:1}}
