@@ -299,8 +299,8 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--hovea);transition:.3s}
 .cmp-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px -18px rgba(112,57,133,.22);border-color:var(--hovea-soft);opacity:1}
 .cmp-card:hover::before{height:5px}
-.cmp-card .ic{width:48px;height:48px;border-radius:50%;background:var(--hovea-pale);color:var(--hovea);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
-.cmp-card .ic svg{width:24px;height:24px}
+.cmp-card .ic{height:56px;margin-bottom:1.2rem}
+.cmp-card .ic img{height:56px;width:auto;display:block}
 .cmp-card h3{font-size:1.18rem;font-weight:600;letter-spacing:-.015em;margin-bottom:.6rem;color:var(--euc-deep)}
 .cmp-card p{font-size:.92rem;color:var(--stone);line-height:1.55;margin-bottom:1.4rem;flex:1}
 .cmp-card .al{display:inline-flex;align-items:center;gap:.45em;color:var(--hovea);font-weight:600;font-size:.88rem;letter-spacing:-.005em;margin-top:auto}
@@ -309,7 +309,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 /* Social sharing in get-involved card */
 .cmp-card.share{background:linear-gradient(135deg,var(--hovea) 0%,var(--hovea-deep) 100%);color:var(--cream);border-color:var(--hovea)}
 .cmp-card.share::before{background:#F8EEA9}
-.cmp-card.share .ic{background:rgba(248,238,169,.22);color:#F8EEA9}
+
 .cmp-card.share h3{color:var(--cream)}
 .cmp-card.share p{color:rgba(250,246,242,.85)}
 .cmp-card.share .al{color:#F8EEA9}
@@ -756,3 +756,6 @@ input,select,textarea,.psel,.btn-o,.fp{border-color:var(--bark-mid)}
 p.gt-cert-cap{background:var(--wattle-soft)!important;color:var(--soil-deep)!important;padding:.5em .8em;display:inline-block}
 .pa-btn.btn-don,.btn.btn-p.btn-don{background:var(--waratah)!important;border-color:var(--waratah)!important;color:var(--cream)!important}
 .pa-btn.btn-don:hover,.btn.btn-p.btn-don:hover{background:var(--waratah-dk)!important;border-color:var(--waratah-dk)!important}
+/* Closing call-to-action band: one step lighter than the footer (same Eucalyptus family) so the two read as separate blocks */
+main > section.sec.dark:last-child{background:var(--euc)}
+main > section.sec.dark:last-child .lede,main > section.sec.dark:last-child p{color:var(--cream)!important}

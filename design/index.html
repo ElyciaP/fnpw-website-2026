@@ -312,8 +312,8 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--hovea);transition:.3s}
 .cmp-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px -18px rgba(112,57,133,.22);border-color:var(--hovea-soft);opacity:1}
 .cmp-card:hover::before{height:5px}
-.cmp-card .ic{width:48px;height:48px;border-radius:50%;background:var(--hovea-pale);color:var(--hovea);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
-.cmp-card .ic svg{width:24px;height:24px}
+.cmp-card .ic{height:56px;margin-bottom:1.2rem}
+.cmp-card .ic img{height:56px;width:auto;display:block}
 .cmp-card h3{font-size:1.18rem;font-weight:600;letter-spacing:-.015em;margin-bottom:.6rem;color:var(--euc-deep)}
 .cmp-card p{font-size:.92rem;color:var(--stone);line-height:1.55;margin-bottom:1.4rem;flex:1}
 .cmp-card .al{display:inline-flex;align-items:center;gap:.45em;color:var(--hovea);font-weight:600;font-size:.88rem;letter-spacing:-.005em;margin-top:auto}
@@ -322,7 +322,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 /* Social sharing in get-involved card */
 .cmp-card.share{background:linear-gradient(135deg,var(--hovea) 0%,var(--hovea-deep) 100%);color:var(--cream);border-color:var(--hovea)}
 .cmp-card.share::before{background:#F8EEA9}
-.cmp-card.share .ic{background:rgba(248,238,169,.22);color:#F8EEA9}
+
 .cmp-card.share h3{color:var(--cream)}
 .cmp-card.share p{color:rgba(250,246,242,.85)}
 .cmp-card.share .al{color:#F8EEA9}
@@ -769,6 +769,9 @@ input,select,textarea,.psel,.btn-o,.fp{border-color:var(--bark-mid)}
 p.gt-cert-cap{background:var(--wattle-soft)!important;color:var(--soil-deep)!important;padding:.5em .8em;display:inline-block}
 .pa-btn.btn-don,.btn.btn-p.btn-don{background:var(--waratah)!important;border-color:var(--waratah)!important;color:var(--cream)!important}
 .pa-btn.btn-don:hover,.btn.btn-p.btn-don:hover{background:var(--waratah-dk)!important;border-color:var(--waratah-dk)!important}
+/* Closing call-to-action band: one step lighter than the footer (same Eucalyptus family) so the two read as separate blocks */
+main > section.sec.dark:last-child{background:var(--euc)}
+main > section.sec.dark:last-child .lede,main > section.sec.dark:last-child p{color:var(--cream)!important}
 
 </style>
 <style>
@@ -838,7 +841,7 @@ p.gt-cert-cap{background:var(--wattle-soft)!important;color:var(--soil-deep)!imp
 .hx-chip{display:inline-block;font-family:var(--ff-d);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);padding:.32rem .78rem;border-radius:0}
 .hx-chip.pb-healing{background:var(--sand);color:var(--soil)}
 .hx-imp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:2rem;padding-top:1.2rem}
-  .hx-imp-year{margin-top:.6rem}
+  .hx-imp-year{margin-top:.6rem}.hx-imp-ic{display:block;margin-bottom:1rem}.hx-imp-ic img{height:52px;width:auto;display:block}
   .hx-imp-year-l{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-b);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--wattle);margin-top:1.7rem}
   .hx-imp-year-l::before{content:"";width:22px;height:1.5px;background:var(--wattle);display:inline-block}
   .hx-imp-year .hx-imp-g{padding-top:1.4rem}
@@ -1128,14 +1131,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <h2 class="hx-imp-h rv">What your support looks like on the ground.</h2>
     <div class="hx-imp-lead rv">
       <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-terrain-light-soil-rgb.svg" alt="" aria-hidden="true"></span>
         <div class="hx-imp-ln"><span data-count="600000" data-suf="+">0</span><span class="hx-imp-u">hectares</span></div>
         <p>protected for national parks and reserves</p>
       </div>
       <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-landscape-light-bark-rgb.svg" alt="" aria-hidden="true"></span>
         <div class="hx-imp-ln"><span data-count="50">0</span></div>
         <p>national parks and reserves created or expanded</p>
       </div>
       <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-plants-growing-light-soil-rgb.svg" alt="" aria-hidden="true"></span>
         <div class="hx-imp-ln"><span data-count="1.2" data-dec="1" data-suf="M">0</span></div>
         <p>trees, shrubs and seedlings planted in key priority landscapes</p>
       </div>
