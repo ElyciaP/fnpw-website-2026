@@ -340,7 +340,7 @@ def main():
 {sec(f'<span class="ey">More from this pillar</span><h2 style="margin:.8rem 0 1.6rem">Related projects</h2><div class="pg">{related}</div>', 'paper')}
 {cta_band('Help fund work like this.',
           'Every FNPW project is powered by donations, bequests and partnerships.',
-          [('Donate', RAISELY_DONATE, 'btn-p'), ('Become a partner', 'partner.html', 'btn-o')])}'''
+          [('Donate', RAISELY_DONATE, 'btn-p btn-don'), ('Become a partner', 'partner.html', 'btn-o')])}'''
         if p['slug'] in PORTED:
             continue
         write_page(f"project-{p['slug']}.html", p['title'],
@@ -536,7 +536,7 @@ def main():
 {sec(f"<span class='ey'>Keep exploring</span><h2 style='margin:.8rem 0 2.4rem'>The other pillars</h2><div class='pcg'>{cross}</div>")}
 {cta_band(f"Support {pil['label']}.",
           'Donate to this pillar directly, or explore the other ways to get involved.',
-          [('Donate', RAISELY_DONATE, 'btn-p'), ('Ways to get involved', 'ways-you-can-get-involved.html', 'btn-o')])}'''
+          [('Donate', RAISELY_DONATE, 'btn-p btn-don'), ('Ways to get involved', 'ways-you-can-get-involved.html', 'btn-o')])}'''
         write_page(pil['page'], pil['label'], pil['desc'], body,
                    page_css='''
 .pil-hero{padding:10rem 0 5rem}

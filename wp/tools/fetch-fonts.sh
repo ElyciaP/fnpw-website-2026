@@ -31,5 +31,4 @@ fetch() {
 echo "Fetching fonts into ${DEST}"
 fetch "Sora"    "wght@100..800" "sora-variable.woff2"
 fetch "Figtree" "wght@300..900" "figtree-variable.woff2"
-fetch "Caveat"  "wght@400..700" "caveat-variable.woff2"
 echo "Done. Commit these files."

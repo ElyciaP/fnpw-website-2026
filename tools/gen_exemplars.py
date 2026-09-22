@@ -38,7 +38,7 @@ def related(slug, pillar, label, cls):
 
 CTA = cta_band('Help fund work like this.',
                'Every FNPW project is powered by donations, bequests and partnerships.',
-               [('Donate', RAISELY_DONATE, 'btn-p'), ('Become a partner', 'partner.html', 'btn-o')])
+               [('Donate', RAISELY_DONATE, 'btn-p btn-don'), ('Become a partner', 'partner.html', 'btn-o')])
 
 def main():
     # ---------- 1. Remarkable Southern Flinders (Growing National Parks) ----------

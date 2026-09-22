@@ -184,7 +184,7 @@ def build(a):
                 '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is '
                 'powered by donations, bequests and partnerships.</p>%s'
                 '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
-                '<a class="btn-p" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>'
+                '<a class="btn-p btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>'
                 '<a class="btn-o" href="partner.html">Become a partner</a></div>%s  </div>%s</section>'
                 % (NL, NL, NL, NL, NL, NL))
     name = 'article-%s.html' % a['slug']

@@ -127,7 +127,7 @@ function fnpw_google_fonts_fallback() {
 
 	wp_enqueue_style(
 		'fnpw-google-fonts',
-		'https://fonts.googleapis.com/css2?family=Sora:wght@300..800&family=Figtree:wght@300..900&family=Caveat:wght@400..700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Sora:wght@300..800&family=Figtree:wght@300..900&display=swap',
 		array(),
 		null
 	);

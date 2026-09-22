@@ -365,7 +365,7 @@ def build(rec, meta):
         '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered '
         'by donations, bequests and partnerships.</p>%s'
         '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
-        '<a class="btn-p" href="https://bush.fnpw.org.au">Donate</a>'
+        '<a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a>'
         '<a class="btn-o" href="bequests.html">Leave a gift in your Will</a></div>%s  </div>%s</section>'
         % (NL, NL, NL, NL, NL, NL))
 
