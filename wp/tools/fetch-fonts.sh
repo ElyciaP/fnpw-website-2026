@@ -17,7 +17,9 @@ fetch() {
   local family="$1" axis="$2" out="$3"
   local css url
   css=$(curl -fsS -A "$UA" "https://fonts.googleapis.com/css2?family=${family}:${axis}&display=swap")
-  url=$(printf '%s' "$css" | grep -o 'https://[^)]*\.woff2' | head -1)
+  # Google returns several subsets. Take the one marked /* latin */, which is
+  # the one with ordinary English letters in it.
+  url=$(printf '%s' "$css" | awk '/\/\* latin \*\//{f=1} f' | grep -o 'https://[^)]*\.woff2' | head -1)
   if [ -z "$url" ]; then
     echo "Could not resolve a woff2 URL for ${family}" >&2
     return 1

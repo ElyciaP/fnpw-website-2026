@@ -46,6 +46,13 @@ function fnpw_assets() {
 		(string) filemtime( $dir . '/assets/css/global.css' )
 	);
 
+	wp_enqueue_style(
+		'fnpw-components',
+		$uri . '/assets/css/components.css',
+		array( 'fnpw-global' ),
+		(string) filemtime( $dir . '/assets/css/components.css' )
+	);
+
 	wp_enqueue_script(
 		'fnpw-main',
 		$uri . '/assets/js/main.js',

@@ -42,12 +42,16 @@ the editing loop runs against a local WordPress.
    ```
 
 3. Activate FNPW Core, then the FNPW 2026 theme.
-4. Import the projects:
+4. Import the projects. Your static project pages are the source, so
+   whatever is on the page is what comes across, rewrites included:
 
    ```bash
-   wp eval-file wp/tools/import-projects.php "$PWD" --dry-run
-   wp eval-file wp/tools/import-projects.php "$PWD"
+   bash wp/tools/sync.sh
+   wp eval-file "$PWD/wp/tools/import-projects.php" "$PWD" --dry-run
+   wp eval-file "$PWD/wp/tools/import-projects.php" "$PWD"
    ```
+
+   Re-run both any time you edit a project page. Nothing duplicates.
 
 5. Self-host the fonts once, which the theme then picks up automatically:
 
@@ -93,9 +97,14 @@ live install. The database is never overwritten, so nothing published during
 the build is lost, and the previous theme stays installed for single-action
 rollback.
 
+## Keeping it up to date
+
+`bash wp/tools/sync.sh` copies global.css and main.js into the theme and
+rebuilds the project bundle from the static pages. Run it after any design or
+content change, then commit.
+
 ## Still to do in Phase 2
 
-- Featured images on the imported projects, and the partner credit line.
 - The interactive project map. The R5 fallback, a filtered grid, is already in
   `archive-project.html` and works without JavaScript.
 - HubSpot form embeds, confirmed against real form IDs.
