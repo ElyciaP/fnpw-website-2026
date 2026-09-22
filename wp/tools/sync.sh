@@ -11,6 +11,8 @@ cd "$(dirname "$0")/../.."
 
 cp assets/css/global.css wp/themes/fnpw-2026/assets/css/global.css
 cp assets/js/main.js     wp/themes/fnpw-2026/assets/js/main.js
-echo "Copied global.css and main.js into the theme"
+mkdir -p wp/themes/fnpw-2026/assets/icons
+cp assets/icons/*.svg wp/themes/fnpw-2026/assets/icons/
+echo "Copied global.css, main.js and the icon set into the theme"
 
 python3 wp/tools/build_project_bundle.py
