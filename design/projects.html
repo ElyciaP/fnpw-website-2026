@@ -11,23 +11,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 /* === global.css (inlined for design) === */
+:root{--sec-y:clamp(2.5rem,4vw,3.5rem)}
 :root{
   /* Eucalyptus family (primary) */
-  --euc:#0F7768;--euc-deep:#0F3132;--euc-mid:#51B593;--euc-soft:#C6EBCA;--euc-pale:#EAF4ED;
+  --euc:#0F7768;--euc-deep:#0F3132;--euc-mid:#51B593;--euc-soft:#C6EBCA;--euc-pale:#C6EBCA;
   /* Waratah family (red-pink) */
-  --waratah:#C23747;--waratah-dk:#8C1422;--waratah-soft:#FFADB7;--waratah-pale:#FFE5E8;
+  --waratah:#C23747;--waratah-mid:#ED4E61;--waratah-dk:#8C1422;--waratah-soft:#FFADB7;--waratah-pale:#FFADB7;
   /* Reef (blue) */
-  --reef:#2C4B89;--reef-mid:#5A78B5;--reef-soft:#A8C4F3;--reef-pale:#E5EDF8;
+  --reef:#2C4B89;--reef-deep:#202F54;--reef-mid:#5D7BC1;--reef-soft:#A8C4F3;--reef-pale:#A8C4F3;
   /* Hovea (purple-pink) */
-  --hovea:#703985;--hovea-mid:#9A5FAD;--hovea-soft:#DBD1EC;--hovea-pale:#F2EBF6;
+  --hovea:#703985;--hovea-deep:#47243A;--hovea-mid:#B790DE;--hovea-soft:#DBD1EC;--hovea-pale:#DBD1EC;
   /* Earthy warms */
-  --bark:#AB7341;--bark-mid:#85735E;--bark-soft:#D9C4A6;
-  --red-soil:#B64629;--red-soil-bright:#E26539;--red-soil-soft:#FFAA8A;
-  --wattle:#C4A927;--wattle-dk:#9F8506;--wattle-soft:#F8EEA9;
-  --soil:#241914;
+  --bark:#AB7341;--bark-mid:#85735E;--bark-soft:#EEE8E1;
+  --red-soil:#B64629;--red-soil-dk:#8E3821;--red-soil-bright:#E26539;--red-soil-soft:#FFAA8A;
+  --wattle:#C4A927;--wattle-mid:#E1CD4A;--wattle-dk:#9F8506;--wattle-soft:#F8EEA9;
+  --soil:#371F1D;--soil-deep:#241914;--soil-mid:#956F6F;--soil-soft:#CBABAB;
   /* Neutrals */
   --cream:#FAF6F2;--sand:#EEE8E1;--paper:#F4EEE6;
-  --ink:#141414;--char:#2a2a2a;--stone:#7a7367;--rule:#E5DFD3;--white:#fff;
+  --ink:#241914;--char:#241914;--stone:rgba(36,25,20,.74);--rule:#E5DFD3;--white:#fff;
   /* Type */
   --ff-d:'Sora',sans-serif;--ff-b:'Figtree',sans-serif;--ff-h:'Caveat',cursive;
   --mw:1240px;
@@ -74,7 +75,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .dd::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--white);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 .dd a{display:block;padding:.65rem .85rem;border-radius:4px;font-size:.9rem;color:var(--char)}
 .dd a:hover{background:var(--euc-pale);color:var(--euc-deep);opacity:1}
-.dd a.on{background:var(--euc-pale);color:var(--euc);font-weight:600}
+.dd a.on{background:var(--euc-pale);color:var(--euc-deep);font-weight:600}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;border-radius:0;border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;letter-spacing:.01em;white-space:nowrap;text-decoration:none}
@@ -88,6 +89,13 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .btn-g::after{content:"→";display:inline-block;transition:.25s}
 .btn-g:hover{opacity:1;color:var(--euc)}.btn-g:hover::after{transform:translateX(4px)}
 
+/* Header nav buttons: .nav>a (0,1,1) out-specifies .btn (0,1,0), so restate at 0,2,1 */
+.nav>a.btn{padding:.62em 1.15em;border:1.5px solid transparent;border-radius:0;font-size:.84rem;font-weight:600;letter-spacing:.01em;line-height:1.2}
+.nav>a.btn::after{display:none}
+.nav>a.btn-don{background:var(--waratah);border-color:var(--waratah);color:var(--cream)}
+.nav>a.btn-don:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--cream);opacity:1}
+@media(max-width:980px){.nav>a.btn{width:100%;justify-content:center;margin-top:.2rem}}
+
 .mt{display:none;flex-direction:column;gap:5px;padding:8px}
 .mt span{width:22px;height:2px;background:var(--char);transition:.25s}
 @media(max-width:980px){
@@ -98,22 +106,23 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 }
 
 /* ---- FOOTER ---- */
-.ftr{background:var(--euc-deep);color:var(--euc-soft);padding:5rem 0 2rem;margin-top:6rem;position:relative;overflow:hidden}
+.ftr{background:var(--euc-deep);color:var(--euc-soft);padding:5rem 0 2rem;position:relative;overflow:hidden}
 .ftr::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--euc-mid),transparent)}
 .ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 @media(max-width:880px){.ftr-g{grid-template-columns:1fr 1fr;gap:2.4rem}}
 @media(max-width:520px){.ftr-g{grid-template-columns:1fr}}
-.ftr h4{color:var(--white);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2em;font-weight:600;font-family:var(--ff-b)}
+.ftr h4{color:var(--cream);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2em;font-weight:600;font-family:var(--ff-b)}
 .ftr ul{list-style:none}.ftr li{margin-bottom:.6em}.ftr li a{color:var(--euc-soft);font-size:.94rem;opacity:.85}.ftr li a:hover{color:var(--wattle-soft);opacity:1}
 .ftr-b{border-top:1px solid rgba(198,235,202,.16);padding-top:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:var(--euc-mid)}
 
 /* ---- UTILITIES ---- */
-.sec{padding:5.5rem 0;position:relative}
+.sec{padding:var(--sec-y) 0;position:relative}
 .sec.dark{background:var(--euc-deep);color:var(--euc-soft)}
-.sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4{color:var(--white)}
+.sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4{color:var(--cream)}
 .sec.dark .ey{color:var(--wattle)}.sec.dark .ey::before{background:var(--wattle)}
 .sec.paper{background:var(--paper)}
 .sec.sand{background:var(--sand)}
+.sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
 .deco{position:absolute;pointer-events:none;opacity:.12}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}
 .rv.in{opacity:1;transform:translateY(0)}
@@ -129,11 +138,14 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 /* === v2 shared components (generated) === */
 
 .ch{padding:8.5rem 0 4rem;background:var(--paper)}
-.chi{position:relative;background:var(--euc-deep);color:#fff}
+.chi{position:relative;background:var(--euc-deep);color:var(--cream)}
 .chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.28}
 .chi .cw{position:relative}
-.chi h1{color:#fff}
-.chi .lede{color:rgba(255,255,255,.85)}
+.chi h1{color:var(--cream)}
+.chi .lede{color:rgba(250,246,242,.85)}
+.chi .ey{color:var(--euc-soft)}
+.chi .breadcrumb{color:rgba(250,246,242,.75)}
+.chi .breadcrumb a{color:var(--euc-soft)}
 .port-note{border:2px dashed var(--wattle-dk);background:var(--wattle-soft);color:var(--ink);padding:.9rem 1.1rem;border-radius:0;font-size:.9rem;margin:1.2rem 0}
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
 .pc-link{display:block;color:inherit;text-decoration:none;height:100%}
@@ -154,7 +166,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .fq[open] summary::after{content:"\2212"}
 .fq-a{padding:0 1.3rem 1.1rem;color:var(--char)}
 .prog-wrap{margin-top:1.6rem;max-width:420px}
-.prog{height:13px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}
+.prog{height:13px;background:rgba(250,246,242,.25);border-radius:99px;overflow:hidden}
 .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--wattle),var(--wattle-soft));border-radius:99px}
 .prog-lbl{font-size:.9rem;margin-top:.5rem}
 .statrow{display:flex;gap:2.4rem;flex-wrap:wrap;margin:1.6rem 0}
@@ -172,10 +184,10 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .pc-im img{width:100%;height:100%;object-fit:cover;transition:1.2s}
 .pc:hover .pc-im img{transform:scale(1.06)}
 .pc-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,49,50,.45))}
-.pc-pb{position:absolute;top:1rem;left:1rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:.4em .9em;border-radius:0;color:var(--euc-deep);z-index:2}
-.pc-pb.sp{color:var(--waratah-dk);background:rgba(255,236,238,.95)}
-.pc-pb.hl{color:var(--wattle-dk);background:rgba(255,247,217,.95)}
-.pc-lo{position:absolute;bottom:.9rem;left:1rem;font-size:.76rem;color:var(--white);z-index:2}
+.pc-pb{position:absolute;top:1rem;left:1rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(250,246,242,.92);backdrop-filter:blur(8px);padding:.4em .9em;border-radius:0;color:var(--euc-deep);z-index:2}
+.pc-pb.sp{color:var(--waratah-dk);background:rgba(255,173,183,.95)}
+.pc-pb.hl{color:var(--soil);background:rgba(248,238,169,.95)}
+.pc-lo{position:absolute;bottom:.9rem;left:1rem;font-size:.76rem;color:var(--cream);z-index:2}
 .pc-bd{padding:1.5rem;flex:1;display:flex;flex-direction:column}
 .pc-bd h3{font-size:1.15rem;line-height:1.2;margin-bottom:.5rem}
 .pc-bd p{font-size:.9rem;line-height:1.5;color:var(--char);flex:1;margin-bottom:1rem}
@@ -188,32 +200,32 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .pp-sts .ps{text-align:center}
 /* ════ Bring Back The Bush — campaign landing page ════════════════════ */
 /* Hero */
-.cmp-hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(5rem,9vw,8rem) 0 clamp(4rem,7vw,6rem);color:var(--white)}
-.cmp-hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 100% at 75% 20%,#C49EDE 0,var(--hovea-mid) 30%,var(--hovea) 60%,#4a225c 100%)}
+.cmp-hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(5rem,9vw,8rem) 0 clamp(4rem,7vw,6rem);color:var(--cream)}
+.cmp-hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 100% at 75% 20%,var(--hovea-mid) 0,var(--hovea-mid) 30%,var(--hovea) 60%,var(--hovea-deep) 100%)}
 .cmp-hero-grain{position:absolute;inset:0;z-index:-1;opacity:.16;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .cmp-hero::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%);z-index:3}
 .cmp-hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;position:relative;z-index:2}
 .cmp-hero-g{grid-template-columns:1fr;gap:3rem}
-.cmp-bc{display:flex;gap:.5em;font-size:.78rem;color:rgba(250,247,243,.65);margin-bottom:1.4rem;font-weight:500;letter-spacing:.04em}
+.cmp-bc{display:flex;gap:.5em;font-size:.78rem;color:rgba(250,246,242,.65);margin-bottom:1.4rem;font-weight:500;letter-spacing:.04em}
 .cmp-bc a{color:#F8EEA9}
 .cmp-ey{display:inline-flex;align-items:center;gap:.65em;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#F8EEA9;margin-bottom:1.5rem}
 .cmp-ey-dot{width:8px;height:8px;border-radius:50%;background:#F8EEA9;box-shadow:0 0 0 4px rgba(248,238,169,.22);animation:cmpPulse 2.4s ease-in-out infinite}
-.cmp-h1{font-family:var(--ff-d);font-size:clamp(3rem,7.5vw,6rem);font-weight:700;line-height:.96;letter-spacing:-.035em;color:var(--white);margin-bottom:.5rem}
+.cmp-h1{font-family:var(--ff-d);font-size:clamp(3rem,7.5vw,6rem);font-weight:700;line-height:.96;letter-spacing:-.035em;color:var(--cream);margin-bottom:.5rem}
 .cmp-h1 em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:#F8EEA9;font-size:1.05em;letter-spacing:-.01em;display:inline-block;transform:translateY(.03em) rotate(-2deg);padding:0 .04em}
-.cmp-smit{font-family:var(--ff-d);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:500;line-height:1.25;color:rgba(255,255,255,.92);margin:0 0 1.6rem;letter-spacing:-.015em;max-width:24ch}
-.cmp-lede{font-size:clamp(1rem,1.25vw,1.18rem);line-height:1.6;color:rgba(255,255,255,.82);max-width:54ch;margin-bottom:2rem}
-.cmp-meta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;font-size:.85rem;color:rgba(255,255,255,.78);margin-bottom:2rem}
+.cmp-smit{font-family:var(--ff-d);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:500;line-height:1.25;color:rgba(250,246,242,.92);margin:0 0 1.6rem;letter-spacing:-.015em;max-width:24ch}
+.cmp-lede{font-size:clamp(1rem,1.25vw,1.18rem);line-height:1.6;color:rgba(250,246,242,.82);max-width:54ch;margin-bottom:2rem}
+.cmp-meta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;font-size:.85rem;color:rgba(250,246,242,.78);margin-bottom:2rem}
 .cmp-meta-i{display:inline-flex;align-items:center;gap:.5em}
 .cmp-meta-i svg{width:16px;height:16px;flex:0 0 16px;color:#F8EEA9}
 .cmp-btns{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
 .cmp-btn-p{display:inline-block;background:#F8EEA9;color:var(--hovea) !important;padding:1em 1.9em;border-radius:0;font-family:var(--ff-d);font-weight:600;font-size:.95rem;transition:.25s;border:none}
 .cmp-btn-p:hover{background:var(--white);transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(0,0,0,.3);opacity:1}
-.cmp-btn-g{display:inline-flex;align-items:center;gap:.55em;color:var(--white);font-weight:600;font-size:.92rem;border-bottom:1.5px solid rgba(255,255,255,.5);padding:.4em 0;transition:.25s}
+.cmp-btn-g{display:inline-flex;align-items:center;gap:.55em;color:var(--cream);font-weight:600;font-size:.92rem;border-bottom:1.5px solid rgba(250,246,242,.5);padding:.4em 0;transition:.25s}
 .cmp-btn-g svg{width:18px;height:18px}
 .cmp-btn-g:hover{border-bottom-color:#F8EEA9;color:#F8EEA9;opacity:1}
 /* Hero image */
 .cmp-hero-im{position:relative;display:flex;justify-content:center;align-items:center}
-.cmp-hero-im-wrap{position:relative;width:100%;max-width:500px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#B58DCC;box-shadow:0 40px 100px -25px rgba(0,0,0,.5),0 0 0 10px rgba(255,255,255,.08),0 0 0 1px rgba(255,255,255,.15);transform:rotate(-2deg)}
+.cmp-hero-im-wrap{position:relative;width:100%;max-width:500px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--hovea-mid);box-shadow:0 40px 100px -25px rgba(0,0,0,.5),0 0 0 10px rgba(250,246,242,.08),0 0 0 1px rgba(250,246,242,.15);transform:rotate(-2deg)}
 .cmp-hero-im-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
 .cmp-hero-tag{position:absolute;bottom:-.5rem;right:-.5rem;background:var(--white);color:var(--hovea);font-family:var(--ff-h);font-size:1.85rem;font-weight:700;padding:.3em 1.1em .35em;border-radius:0;transform:rotate(6deg);box-shadow:0 10px 30px -10px rgba(0,0,0,.35);letter-spacing:-.01em;z-index:3}
 .cmp-hero-im-wrap{max-width:380px}
@@ -229,16 +241,16 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-why-r p:first-child{font-family:var(--ff-d);font-size:1.25rem;line-height:1.45;color:var(--euc-deep);font-weight:500;letter-spacing:-.01em;margin-bottom:1.5rem}
 .cmp-why-r p strong{color:var(--hovea);font-weight:600}
 /* Stats */
-.cmp-stats-wrap{background:var(--euc-deep);color:var(--white);padding:0;position:relative;overflow:hidden}
+.cmp-stats-wrap{background:var(--euc-deep);color:var(--cream);padding:0;position:relative;overflow:hidden}
 .cmp-stats-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 100% at 80% 50%,rgba(112,57,133,.5),transparent 70%);pointer-events:none}
 .cmp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:2}
 .cmp-stats{grid-template-columns:repeat(2,1fr)}
-.cmp-stat{padding:3rem 1.8rem;border-right:1px solid rgba(255,255,255,.12);text-align:center;position:relative}
+.cmp-stat{padding:3rem 1.8rem;border-right:1px solid rgba(250,246,242,.12);text-align:center;position:relative}
 .cmp-stat:last-child{border-right:0}
 .cmp-stat:nth-child(2){border-right:0}
-.cmp-stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+.cmp-stat:nth-child(-n+2){border-bottom:1px solid rgba(250,246,242,.12)}
 .cmp-stat-n{font-family:var(--ff-d);font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1;font-weight:700;letter-spacing:-.03em;color:#F8EEA9;margin-bottom:.6rem}
-.cmp-stat-l{font-size:.84rem;color:rgba(255,255,255,.82);line-height:1.45;letter-spacing:.02em;max-width:24ch;margin:0 auto}
+.cmp-stat-l{font-size:.84rem;color:rgba(250,246,242,.82);line-height:1.45;letter-spacing:.02em;max-width:24ch;margin:0 auto}
 /* Costa section */
 .cmp-costa{padding:clamp(4rem,7vw,7rem) 0;background:var(--paper);position:relative;overflow:hidden}
 .cmp-costa-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,var(--paper) 0,var(--paper) 50%,rgba(219,209,236,.4) 100%);pointer-events:none}
@@ -248,9 +260,9 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-costa-leaf{width:140px !important}
 .cmp-costa-g{display:grid;grid-template-columns:.85fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
 .cmp-costa-g{grid-template-columns:1fr;gap:2.5rem}
-.cmp-costa-portrait{position:relative;aspect-ratio:4/5;max-width:380px;border-radius:0;overflow:hidden;background:linear-gradient(160deg,var(--hovea-mid) 0,var(--hovea) 60%,#4a225c 100%);box-shadow:0 25px 60px -20px rgba(112,57,133,.4);justify-self:center;width:100%}
+.cmp-costa-portrait{position:relative;aspect-ratio:4/5;max-width:380px;border-radius:0;overflow:hidden;background:linear-gradient(160deg,var(--hovea-mid) 0,var(--hovea) 60%,var(--hovea-deep) 100%);box-shadow:0 25px 60px -20px rgba(112,57,133,.4);justify-self:center;width:100%}
 .cmp-costa-portrait::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3CradialGradient id='f' cx='50%25' cy='40%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='.15'/%3E%3Cstop offset='100%25' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23f)'/%3E%3Cg fill='none' stroke='%23F8EEA9' stroke-width='1.2' opacity='.45'%3E%3Cpath d='M50 380 Q80 320 120 360 Q160 400 180 340 Q200 280 240 320 Q280 360 320 300 Q350 260 380 290'/%3E%3Cpath d='M30 420 Q70 380 110 410 Q150 440 200 400 Q260 360 320 400 Q360 425 390 410'/%3E%3Cellipse cx='80' cy='100' rx='30' ry='12' transform='rotate(-25 80 100)'/%3E%3Cellipse cx='320' cy='130' rx='28' ry='10' transform='rotate(20 320 130)'/%3E%3Cellipse cx='50' cy='220' rx='25' ry='9' transform='rotate(-15 50 220)'/%3E%3Cellipse cx='350' cy='250' rx='32' ry='12' transform='rotate(35 350 250)'/%3E%3C/g%3E%3Ctext x='50%25' y='52%25' font-family='Caveat, cursive' font-size='38' fill='%23F8EEA9' text-anchor='middle' font-weight='700' opacity='.85'%3ECosta%3C/text%3E%3Ctext x='50%25' y='60%25' font-family='Sora, sans-serif' font-size='11' fill='%23F8EEA9' text-anchor='middle' letter-spacing='4' opacity='.7'%3ECAMPAIGN AMBASSADOR%3C/text%3E%3C/svg%3E")}
-.cmp-costa-portrait-cap{position:absolute;bottom:.8rem;left:.8rem;right:.8rem;font-size:.7rem;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;z-index:2;font-weight:500}
+.cmp-costa-portrait-cap{position:absolute;bottom:.8rem;left:.8rem;right:.8rem;font-size:.7rem;color:rgba(250,246,242,.55);letter-spacing:.08em;text-transform:uppercase;z-index:2;font-weight:500}
 .cmp-costa-r .ey{color:var(--hovea)}
 .cmp-quote-open{font-family:var(--ff-d);font-size:5rem;line-height:.3;color:var(--hovea-mid);display:block;margin-bottom:1rem}
 .cmp-quote{font-family:var(--ff-d);font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.3;font-weight:500;letter-spacing:-.018em;color:var(--euc-deep);margin-bottom:2rem;max-width:32ch}
@@ -271,9 +283,9 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-tile img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.8,.2,1)}
 .cmp-tile:hover img{transform:scale(1.06)}
 .cmp-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,49,50,.78) 100%);z-index:1;transition:.4s;pointer-events:none}
-.cmp-tile-info{position:absolute;left:1rem;right:1rem;bottom:.9rem;z-index:2;color:var(--white)}
+.cmp-tile-info{position:absolute;left:1rem;right:1rem;bottom:.9rem;z-index:2;color:var(--cream)}
 .cmp-tile-tag{display:inline-block;background:rgba(248,238,169,.96);color:var(--hovea);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.2em .7em;border-radius:0;margin-bottom:.4rem}
-.cmp-tile-t{font-family:var(--ff-d);font-size:.94rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--white)}
+.cmp-tile-t{font-family:var(--ff-d);font-size:.94rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--cream)}
 .cmp-tile.span-2-2{grid-column:span 2;grid-row:span 2}
 .cmp-tile.span-2{grid-column:span 2}
 .cmp-tile.span-3{grid-column:span 3}
@@ -287,7 +299,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-tile-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(248,238,169,.96);display:flex;align-items:center;justify-content:center;z-index:3;transition:.3s;box-shadow:0 8px 30px -8px rgba(0,0,0,.4)}
 .cmp-tile.video:hover .cmp-tile-play{transform:translate(-50%,-50%) scale(1.08);background:var(--white)}
 .cmp-tile-play svg{width:24px;height:24px;color:var(--hovea);margin-left:3px}
-.cmp-tile-dur{position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,.65);color:var(--white);font-size:.72rem;font-weight:600;padding:.25em .6em;border-radius:0;z-index:3;letter-spacing:.02em;font-family:var(--ff-b)}
+.cmp-tile-dur{position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,.65);color:var(--cream);font-size:.72rem;font-weight:600;padding:.25em .6em;border-radius:0;z-index:3;letter-spacing:.02em;font-family:var(--ff-b)}
 /* Get involved */
 .cmp-involved{padding:clamp(4rem,7vw,7rem) 0;background:var(--paper)}
 .cmp-involved-h{text-align:center;max-width:720px;margin:0 auto 3.5rem}
@@ -308,21 +320,21 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-card .al svg{width:16px;height:16px;transition:.3s}
 .cmp-card:hover .al svg{transform:translateX(4px)}
 /* Social sharing in get-involved card */
-.cmp-card.share{background:linear-gradient(135deg,var(--hovea) 0%,#4a225c 100%);color:var(--white);border-color:var(--hovea)}
+.cmp-card.share{background:linear-gradient(135deg,var(--hovea) 0%,var(--hovea-deep) 100%);color:var(--cream);border-color:var(--hovea)}
 .cmp-card.share::before{background:#F8EEA9}
 .cmp-card.share .ic{background:rgba(248,238,169,.22);color:#F8EEA9}
-.cmp-card.share h3{color:var(--white)}
-.cmp-card.share p{color:rgba(255,255,255,.85)}
+.cmp-card.share h3{color:var(--cream)}
+.cmp-card.share p{color:rgba(250,246,242,.85)}
 .cmp-card.share .al{color:#F8EEA9}
 .cmp-card.share:hover{box-shadow:0 20px 50px -18px rgba(112,57,133,.5)}
 .cmp-share-tag{display:inline-block;background:rgba(248,238,169,.95);color:var(--hovea);font-family:var(--ff-d);font-weight:700;padding:.25em .65em;border-radius:0;font-size:.8rem;letter-spacing:-.005em;margin-top:.3rem}
 /* Final CTA */
-.cmp-final{padding:clamp(5rem,8vw,7rem) 0;background:linear-gradient(135deg,var(--hovea) 0%,#4a225c 100%);color:var(--white);position:relative;overflow:hidden;text-align:center}
+.cmp-final{padding:clamp(5rem,8vw,7rem) 0;background:linear-gradient(135deg,var(--hovea) 0%,var(--hovea-deep) 100%);color:var(--cream);position:relative;overflow:hidden;text-align:center}
 .cmp-final::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%);z-index:3}
 .cmp-final-grain{position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E")}
-.cmp-final h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:1.2rem;color:var(--white);position:relative;z-index:2;max-width:18ch;margin-left:auto;margin-right:auto}
+.cmp-final h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:1.2rem;color:var(--cream);position:relative;z-index:2;max-width:18ch;margin-left:auto;margin-right:auto}
 .cmp-final h2 em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:#F8EEA9;font-size:1.15em;display:inline-block;transform:rotate(-2deg) translateY(.02em)}
-.cmp-final p{font-size:clamp(1.05rem,1.4vw,1.25rem);color:rgba(255,255,255,.86);max-width:50ch;margin:0 auto 2.5rem;line-height:1.55;position:relative;z-index:2}
+.cmp-final p{font-size:clamp(1.05rem,1.4vw,1.25rem);color:rgba(250,246,242,.86);max-width:50ch;margin:0 auto 2.5rem;line-height:1.55;position:relative;z-index:2}
 .cmp-final-btns{display:inline-flex;gap:1.4rem;align-items:center;flex-wrap:wrap;position:relative;z-index:2;justify-content:center}
 
 /* === v2.1 card visibility guarantee === */
@@ -338,6 +350,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-cta-line{position:relative;width:58px;height:2px;background:currentColor;transition:width .3s ease}
 .hx-cta-line::after{content:"";position:absolute;right:0;top:-4.5px;width:10px;height:10px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
 .hx-cta:hover{color:var(--euc)}
+.sec.dark .hx-cta{color:var(--wattle)}
+.sec.dark .hx-cta:hover{color:var(--wattle-mid)}
 .hx-cta:hover .hx-cta-line{width:92px}
 /* editorial index list (Get Involved pattern) */
 .hx-help-list{margin-top:2.4rem;border-top:1px solid var(--euc-deep)}
@@ -356,12 +370,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 @media(max-width:700px){.hx-row{grid-template-columns:48px 1fr auto;padding:1.4rem .4rem}.hx-row-i{font-size:1.2rem}}
 
 /* === v3.1 photographic hero upgrade === */
-.chi{position:relative;background:var(--euc-deep);color:#fff;padding:9.5rem 0 4.5rem;overflow:hidden}
+.chi{position:relative;background:var(--euc-deep);color:var(--cream);padding:9.5rem 0 4.5rem;overflow:hidden}
 .chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.5}
 .chi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,49,50,.35) 0%,rgba(15,49,50,.15) 45%,rgba(15,49,50,.82) 100%)}
 .chi .cw{position:relative;z-index:1}
-.chi h1{color:#fff}
-.chi .lede{color:rgba(255,255,255,.88)}
+.chi h1{color:var(--cream)}
+.chi .lede{color:rgba(250,246,242,.88)}
 
 /* === v4 contrast + layout fixes === */
 .pg{grid-template-columns:repeat(3,1fr)}
@@ -369,21 +383,384 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 @media(max-width:620px){.pg{grid-template-columns:1fr}}
 /* buttons keep their base even without .btn */
 .btn-p,.btn-o{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;border-radius:0;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:all .18s ease}
+.btn-o{border-color:var(--euc-deep)}
 .btn-p{border-color:var(--euc-deep)}
 /* dark sections: readable text, visible buttons */
-.sec.dark{color:#fff}
-.sec.dark h2,.sec.dark h3{color:#fff}
-.sec.dark p,.sec.dark .lede{color:rgba(255,255,255,.85)}
-.sec.dark .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--euc-deep)}
+.sec.dark{color:var(--cream)}
+.sec.dark h2,.sec.dark h3{color:var(--cream)}
+.sec.dark p,.sec.dark .lede{color:rgba(250,246,242,.85)}
+.sec.dark .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--soil)}
 .sec.dark .btn-p:hover{background:var(--wattle-soft);border-color:var(--wattle-soft);color:var(--euc-deep)}
-.sec.dark .btn-o{color:#fff;border-color:rgba(255,255,255,.65)}
-.sec.dark .btn-o:hover{background:#fff;color:var(--euc-deep);border-color:#fff}
+.sec.dark .btn-o{color:var(--cream);border-color:rgba(250,246,242,.65)}
+.sec.dark .btn-o:hover{background:#fff;color:var(--euc-deep);border-color:var(--cream)}
 /* photographic heroes: readable breadcrumbs + wattle primary buttons */
-.chi nav,.chi nav a,.nh nav,.nh nav a,.ph nav,.ph nav a{color:rgba(255,255,255,.85)!important}
-.chi .btn-p,.nh .btn-p,.ph .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--euc-deep)}
+.chi nav,.chi nav a,.nh nav,.nh nav a,.ph nav,.ph nav a{color:rgba(250,246,242,.85)!important}
+.chi .btn-p,.nh .btn-p,.ph .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--soil)}
 /* less green haze: clearer photo, scrim pushed to edges */
 .chi::before{opacity:.68}
 .chi::after{background:linear-gradient(180deg,rgba(15,49,50,.5) 0%,rgba(15,49,50,.22) 50%,rgba(15,49,50,.72) 100%)}
+
+
+/* ============================================================
+   ARTICLE CARD  ·  promoted from articles.html so the pillar
+   pages can share it. Page-level padding stays on the page.
+   ============================================================ */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.art{background:var(--white);border:1px solid var(--rule);border-radius:0;overflow:hidden;display:flex;flex-direction:column;transition:.35s;text-decoration:none;color:inherit}
+.art:hover{transform:translateY(-5px);box-shadow:0 24px 50px -22px rgba(15,49,50,.22);border-color:var(--euc);opacity:1}
+.art-im{aspect-ratio:16/10;overflow:hidden;background:var(--euc);position:relative}
+.art-im img{width:100%;height:100%;object-fit:cover;display:block;transition:1.2s}
+.art:hover .art-im img{transform:scale(1.06)}
+.art-im .cat{position:absolute;top:1rem;left:1rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;background:rgba(250,246,242,.94);padding:.4em .9em;color:var(--euc-deep);backdrop-filter:blur(8px);z-index:2}
+.art-im .cat.sp,.art-im .cat.species{color:var(--waratah-dk);background:rgba(255,173,183,.95)}
+.art-im .cat.hl,.art-im .cat.heal{color:var(--soil);background:rgba(248,238,169,.95)}
+.art-im .cat.news{color:var(--hovea);background:rgba(238,232,255,.95)}
+.art-bd{padding:1.5rem 1.5rem 1.6rem;flex:1;display:flex;flex-direction:column}
+.art-date{font-size:.78rem;color:var(--stone);margin-bottom:.5rem;letter-spacing:.04em}
+.art-bd h3{font-size:1.18rem;line-height:1.25;margin-bottom:.7rem;color:var(--euc-deep)}
+.art-bd p{font-size:.92rem;line-height:1.55;color:var(--char);flex:1;margin-bottom:1rem}
+.art-link{font-size:.84rem;font-weight:600;color:var(--euc);display:inline-flex;align-items:center;gap:.4em}
+.art-link::after{content:"\2192";transition:.25s}
+.art:hover .art-link::after{transform:translateX(4px)}
+
+/* ============================================================
+   RELATED ARTICLES  ·  pillar pages
+   Sits between "Projects under this pillar" and "The other pillars".
+   Colour block behind the heading, cards overhang onto cream.
+   ============================================================ */
+.ra{background:var(--cream);padding-bottom:5.5rem}
+.ra-block{background:var(--ra-c,var(--euc));padding:4.5rem 0 9rem}
+.ra-block h2{color:var(--cream)}
+.ra-block .ey{color:var(--cream)}
+.ra-block .ey::before{background:var(--white)}
+.ra-block .btn-g{color:var(--cream);border-color:rgba(250,246,242,.55)}
+.ra-block .btn-g:hover{color:var(--cream);opacity:.82}
+.ra-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.ra-head h2{margin:.8rem 0 0}
+.ra-head .btn-g{margin-bottom:.35rem}
+.ra-cards{margin-top:-7.5rem}
+.ra-parks{--ra-c:var(--euc)}
+.ra-species{--ra-c:var(--waratah-dk)}
+.ra-species .art-link{color:var(--waratah)}
+.ra-healing{--ra-c:var(--red-soil-dk)}
+.ra-healing .art-link{color:var(--red-soil)}
+@media(max-width:1000px){.art-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.ra-block{padding:3.5rem 0 8rem}.ra-cards{margin-top:-6.8rem}}
+@media(max-width:700px){.art-grid{grid-template-columns:1fr}.ra{padding-bottom:3.5rem}.ra-block{padding:3rem 0 7rem}.ra-cards{margin-top:-6rem}.ra-head{gap:.9rem}.ra-head .btn-g{margin-bottom:0}}
+
+
+/* ============================================================
+   PILLAR HERO TINT
+   .chi keeps its existing dark-green default, so every other
+   page is unchanged. Pillar pages add a modifier.
+   ============================================================ */
+.chi{--chi-rgb:15,49,50}
+.chi{background:rgb(var(--chi-rgb))}
+.chi::after{background:linear-gradient(180deg,rgba(var(--chi-rgb),.35) 0%,rgba(var(--chi-rgb),.15) 45%,rgba(var(--chi-rgb),.82) 100%)}
+.chi-parks{--chi-rgb:15,49,50}
+.chi-species{--chi-rgb:140,20,34}
+.chi-healing{--chi-rgb:142,56,33}
+
+/* ============================================================
+   PILLAR STATS BAND  ·  sits directly under the hero
+   ============================================================ */
+.pil-stats{background:var(--sand);padding:var(--sec-y) 0}
+.pil-stats .psg{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.pil-stats .pst{border-top:2px solid var(--ps-c,var(--euc));padding-top:1.4rem}
+.pil-stats .pst-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1;color:var(--ps-c,var(--euc));display:block;margin-bottom:.7rem}
+.pil-stats .pst-l{display:block;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.pil-stats .pst-d{font-size:.92rem;line-height:1.55;color:var(--stone)}
+.pil-stats .pst-d a{color:var(--euc-deep);font-weight:600}
+.ps-parks{--ps-c:var(--euc)}
+.ps-species{--ps-c:var(--waratah-dk)}
+.ps-healing{--ps-c:var(--red-soil-dk)}
+@media(max-width:820px){.pil-stats .psg{grid-template-columns:1fr;gap:1.8rem}.pil-stats{padding:2.5rem 0}}
+
+/* ============================================================
+   FILTER BAR  ·  promoted from projects.html so the pillar
+   pages share it. Identical rules, no visual change there.
+   ============================================================ */
+.fb{padding:2rem 0;background:rgba(250,246,242,.95);backdrop-filter:blur(10px);position:sticky;top:72px;z-index:30;border-bottom:1px solid var(--rule)}
+.fb-r{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.fps{display:flex;gap:.5rem;flex-wrap:wrap}
+.fp{font-size:.82rem;font-weight:600;padding:.5em 1em;border-radius:0;border:1.5px solid var(--rule);background:var(--white);color:var(--char);cursor:pointer;transition:.25s;font-family:var(--ff-b)}
+.fp:hover{border-color:var(--euc);color:var(--euc)}
+.fp.on{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.fb-right{display:flex;flex-direction:column;align-items:flex-end;gap:.55rem}
+.sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
+.psel{font-family:var(--ff-b);font-size:.86rem;font-weight:600;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2.2em .5em .9em;cursor:pointer;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230F3132' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8em center}
+.psel:hover,.psel:focus{border-color:var(--euc);color:var(--euc);outline:none}
+#fmeta{font-size:.85rem;color:var(--stone);font-style:italic}
+
+/* pillar-coloured active chip on the pillar pages */
+.fb-parks .fp.on{background:var(--euc);border-color:var(--euc)}
+.fb-species .fp.on{background:var(--waratah-dk);border-color:var(--waratah-dk)}
+.fb-healing .fp.on{background:var(--red-soil-dk);border-color:var(--red-soil-dk)}
+@media(max-width:700px){.fb{position:static}.fb-right{align-items:flex-start}}
+
+/* ============================================================
+   PILLAR CARD  ·  the "other pillars" section on pillar pages
+   Large image tile, rule, pillar number, name, blurb, link.
+   ============================================================ */
+.pcg{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem}
+.pcard{display:block;color:inherit;text-decoration:none}
+.pcard-im{aspect-ratio:4/3;overflow:hidden;background:var(--sand);margin-bottom:1.6rem}
+.pcard-im img{width:100%;height:100%;object-fit:cover;display:block;transition:1.2s}
+.pcard:hover{opacity:1}
+.pcard:hover .pcard-im img{transform:scale(1.04)}
+.pcard-rule{display:block;width:64px;height:4px;background:var(--pcard-c,var(--euc));margin-bottom:1.1rem}
+.pcard-ey{display:block;font-family:var(--ff-b);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:.7rem}
+.pcard h3{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1;margin-bottom:.8rem;color:var(--euc-deep)}
+.pcard p{font-size:1rem;line-height:1.6;color:var(--char);margin-bottom:1.2rem;max-width:44ch}
+.pcard-go{font-size:.95rem;font-weight:600;color:var(--pcard-c,var(--euc));display:inline-flex;align-items:center;gap:.45em}
+.pcard-go::after{content:"\2192";transition:.25s}
+.pcard:hover .pcard-go::after{transform:translateX(5px)}
+.pcard-parks{--pcard-c:var(--euc)}
+.pcard-species{--pcard-c:var(--waratah-dk)}
+.pcard-healing{--pcard-c:var(--red-soil-dk)}
+@media(max-width:820px){.pcg{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ============================================================
+   CHRISTMAS APPEAL  ·  Give a Tree (homepage)
+   Warm block, sits directly above the green campaign section
+   so the two asks read as different moments, not competitors.
+   ============================================================ */
+.hx-tree{background:var(--sand);padding:0;position:relative}
+.hx-tree-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,4.5rem);align-items:center;min-height:460px}
+.hx-tree-im{align-self:stretch;overflow:hidden;background:var(--euc-pale)}
+.hx-tree-im img{display:block;width:100%;height:100%;object-fit:cover;min-height:460px}
+.hx-tree-bd{display:flex;flex-direction:column;justify-content:center;gap:1.1rem;padding:4.5rem 0}
+.hx-tree-tag{font-family:var(--ff-d);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--wattle-dk);display:inline-flex;align-items:center;gap:.6em}
+.hx-tree-tag::before{content:"";width:24px;height:2px;background:var(--wattle-dk);display:inline-block}
+.hx-tree-bd h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.08;letter-spacing:-.02em;color:var(--euc-deep);max-width:15ch}
+.hx-tree-bd p{color:var(--char);max-width:46ch}
+.hx-tree-pts{list-style:none;display:grid;gap:.55rem;margin:.2rem 0 .4rem}
+.hx-tree-pts li{position:relative;padding-left:1.5rem;font-size:.95rem;color:var(--char)}
+.hx-tree-pts li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--euc);border-radius:50%}
+.hx-tree-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+/* the ghost button is built for the dark campaign block; restate it for this light one */
+.hx-tree .hx-btn-ghost{color:var(--euc-deep);border-color:var(--euc-deep);background:transparent}
+.hx-tree .hx-btn-ghost:hover{background:var(--euc-deep);color:var(--cream)}
+@media(max-width:860px){
+  .hx-tree-g{grid-template-columns:1fr;min-height:0}
+  .hx-tree-im img{min-height:280px;max-height:340px}
+  .hx-tree-bd{padding:2.5rem 0 3.5rem}
+}
+
+/* ---- Give a Tree amount ladder (figures from gift-a-tree.fnpw.org.au, AUD) ---- */
+.hx-tree-ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin:.4rem 0 .3rem}
+.hx-amt{display:flex;flex-direction:column;gap:.25rem;padding:1rem .9rem;background:var(--white);border:1.5px solid var(--rule);text-decoration:none;color:inherit;transition:.22s}
+.hx-amt:hover{border-color:var(--euc);transform:translateY(-2px);opacity:1}
+.hx-amt-n{font-family:var(--ff-d);font-weight:800;font-size:1.35rem;letter-spacing:-.02em;color:var(--euc-deep);line-height:1}
+.hx-amt-t{font-size:.82rem;font-weight:600;color:var(--euc)}
+.hx-amt-l{font-size:.78rem;color:var(--stone);line-height:1.35}
+@media(max-width:860px){.hx-tree-ladder{grid-template-columns:repeat(2,1fr)}}
+
+
+/* ---- leadership quote ---- */
+.hx-quote{margin:2.4rem 0 0;padding-left:1.6rem;border-left:3px solid var(--wattle)}
+.hx-quote blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.45;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 .9rem}
+.hx-quote figcaption{font-size:.85rem;color:var(--stone)}
+.hx-quote figcaption strong{color:var(--char);font-weight:600}
+.hx-q-src{display:block;margin-top:.3rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);opacity:.85}
+
+/* ---- donate: Waratah, per the brand direction (urgency = waratah) ---- */
+.btn-don{background:var(--waratah);color:var(--cream);border-color:var(--waratah)}
+.btn-don:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--cream);opacity:1}
+
+/* ============================================================
+   BRING BACK THE BUSH banner  ·  the campaign hero, at banner
+   scale. Same gradient, disc, script accent and tag.
+   ============================================================ */
+.hx-camp.hx-camp-sm{position:relative;overflow:hidden;isolation:isolate;background:none;padding:0}
+.hx-camp-sm .cmp-hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 150% at 74% 34%,var(--hovea-mid) 0,var(--hovea-mid) 26%,var(--hovea) 56%,var(--hovea-deep) 100%)}
+.hx-camp-sm-r{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding:3.4rem 0}
+.hx-camp-sm-bd .cmp-ey{margin-bottom:1rem}
+.hx-camp-h{font-family:var(--ff-d);font-weight:700;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:.98;letter-spacing:-.035em;color:var(--cream);margin:0 0 .55rem}
+.hx-camp-h em{font-family:var(--ff-h);font-style:normal;font-weight:700;color:#F8EEA9;font-size:1.05em;letter-spacing:-.01em;display:inline-block;transform:translateY(.03em) rotate(-2deg);padding:0 .04em}
+.hx-camp-sub{font-family:var(--ff-d);font-weight:600;font-size:clamp(1rem,1.5vw,1.25rem);color:var(--cream);margin-bottom:.7rem;max-width:26ch;line-height:1.25}
+.hx-camp-sm-bd p{color:rgba(250,246,242,.82);max-width:48ch;margin-bottom:1.6rem}
+.hx-camp-acts{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+.hx-camp-sm-im{display:flex;justify-content:center;align-items:flex-end;align-self:end}
+.hx-camp-sm-im img{display:block;width:100%;max-width:310px;height:auto;margin-bottom:-3.4rem}
+
+@media(max-width:820px){
+  .hx-camp-sm-r{grid-template-columns:1fr;gap:2rem;padding:2.6rem 0}
+  .hx-camp-sm-im{justify-content:flex-start}
+  .hx-camp-sm-im img{max-width:210px;margin-bottom:-2.6rem}
+  }
+.hx-btn-onpurple{background:var(--white);color:var(--hovea)}
+.hx-btn-onpurple:hover{background:var(--hovea-soft);color:var(--hovea-deep)}
+
+/* PROJECT PAGE v2 ============================================== */
+/* photographic project hero: image right, headline over the scrim */
+.pj-hero{position:relative;min-height:clamp(460px,62vh,600px);display:flex;align-items:flex-end;overflow:hidden;background:var(--euc-deep);isolation:isolate}
+.pj-hero-im{position:absolute;inset:0;z-index:-2;margin:0}
+.pj-hero-im img{width:100%;height:100%;object-fit:cover;object-position:72% 62%;display:block}
+.pj-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(97deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.86) 30%,rgba(15,49,50,.42) 58%,rgba(15,49,50,.06) 100%)}
+.pj-hero>.cw{position:relative;z-index:2;width:100%;padding-top:5.5rem;padding-bottom:3.4rem}
+.pj-hero .breadcrumb{color:rgba(250,246,242,.75);margin-bottom:1.4rem}
+.pj-hero .breadcrumb a{color:var(--euc-soft)}
+.pj-hero .ey{color:var(--wattle)}
+.pj-hero .ey::before{background:var(--wattle)}
+.pj-hero h1{color:var(--cream);font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:17ch;margin:1rem 0 .9rem}
+.pj-hero .pj-hero-meta{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.8);margin:0 0 1.1rem}
+.pj-hero .lede{color:rgba(250,246,242,.9);max-width:46ch;font-size:clamp(1rem,1.3vw,1.15rem)}
+@media(max-width:820px){.pj-hero-im img{object-position:64% 60%}.pj-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.72) 0%,rgba(15,49,50,.8) 55%,rgba(15,49,50,.95) 100%)}}
+
+/* rhythm breakers, so a long page is not six identical bands */
+.pj-wide{margin:0}
+.pj-wide img{width:100%;aspect-ratio:5/2;object-fit:cover;display:block;background:var(--sand)}
+.pj-wide figcaption{font-size:.82rem;color:var(--stone);margin-top:.7rem}
+.pj-duo{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.pj-duo figure{margin:0}
+.pj-duo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
+.pj-duo figcaption{font-size:.82rem;color:var(--stone);margin-top:.6rem;line-height:1.45}
+@media(max-width:700px){.pj-duo{grid-template-columns:1fr}}
+.pj-story{background:var(--euc-deep);color:var(--cream);padding:var(--sec-y) 0}
+.pj-story-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.pj-story-im{margin:0}
+.pj-story-im img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.pj-story-im figcaption{font-size:.8rem;color:rgba(250,246,242,.65);margin-top:.7rem}
+.pj-story .ey{color:var(--wattle)}.pj-story .ey::before{background:var(--wattle)}
+.pj-story h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--cream);letter-spacing:-.02em;line-height:1.12;margin:.8rem 0 1.1rem;max-width:20ch}
+.pj-story p{color:rgba(250,246,242,.88);margin-bottom:1rem;max-width:54ch}
+@media(max-width:820px){.pj-story-g{grid-template-columns:1fr}}
+.pj-storypair{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:820px;margin:clamp(2.6rem,4vw,3.6rem) auto 0}
+.pj-storypair figure{margin:0}
+.pj-storypair img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--euc)}
+.pj-storypair figcaption{font-size:.8rem;color:rgba(250,246,242,.65);margin-top:.7rem;line-height:1.45}
+@media(max-width:560px){.pj-storypair{grid-template-columns:1fr;max-width:420px}}
+.chi .pj-hero-meta{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(250,246,242,.82);margin:0 0 1.1rem}
+.pj-body{max-width:70ch;margin-left:auto;margin-right:auto}
+.pj-body p{margin-bottom:1.15rem}
+.pj-lead{font-size:clamp(1.08rem,1.5vw,1.24rem);line-height:1.62;color:var(--euc-deep);font-weight:500}
+.pj-body h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.15rem,1.8vw,1.4rem);color:var(--euc-deep);letter-spacing:-.01em;margin:2.6rem 0 .9rem}
+.pj-list{list-style:none;margin:1.2rem 0 1.6rem;padding:0;columns:2;column-gap:2.4rem}
+.pj-list li{font-size:.94rem;padding:.42em 0;border-bottom:1px dashed var(--rule);break-inside:avoid;color:var(--char)}
+.pj-list li em{color:var(--stone);font-style:italic}
+@media(max-width:640px){.pj-list{columns:1}}
+.pj-band{padding:var(--sec-y) 0}
+.pj-band.alt{background:var(--paper)}
+.pj-band-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.pj-band.flip .pj-band-im{order:2}
+.pj-band-im{margin:0}
+.pj-band-im img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
+.pj-band-im figcaption{font-size:.8rem;color:var(--stone);margin-top:.7rem;line-height:1.45}
+.pj-band-bd h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.35rem,2.3vw,1.85rem);color:var(--euc-deep);letter-spacing:-.015em;line-height:1.15;margin:.75rem 0 1.1rem;max-width:22ch}
+.pj-band-bd p{margin-bottom:1rem;max-width:56ch}
+.pj-band-bd p:last-child{margin-bottom:0}
+.pj-qband{padding:var(--sec-y) 0;background:var(--paper)}
+.pj-qband .pj-q{max-width:58ch;margin:0 auto;text-align:center}
+.pj-qband blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.42;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 1.1rem}
+.pj-qband figcaption{font-size:.88rem;color:var(--stone)}
+.pj-qband figcaption strong{color:var(--char);font-weight:600}
+.pj-qband .pj-q.withim{max-width:880px;display:grid;grid-template-columns:250px 1fr;gap:clamp(1.8rem,4vw,3.2rem);align-items:center;text-align:left}
+.pj-qband .pj-q.withim img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--sand)}
+.pj-qband .pj-q.withim blockquote{margin:0 0 1rem}
+@media(max-width:640px){.pj-qband .pj-q.withim{grid-template-columns:1fr;max-width:400px;text-align:center}}
+@media(max-width:880px){.pj-band-g{grid-template-columns:1fr}.pj-band.flip .pj-band-im{order:0}}
+.pj-credit{font-size:.78rem;color:var(--stone);margin-top:.8rem;letter-spacing:.02em}
+.pj-feature figcaption{font-size:.82rem;color:var(--stone);margin-top:.7rem;line-height:1.45}
+.pj-feature img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:var(--sand)}
+.pj-feature{margin:0 0 1.6rem}
+.pj-feature img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--sand)}
+.pj-gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
+.pj-gal figure{margin:0}
+.pj-gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
+.pj-gal figcaption{font-size:.82rem;color:var(--stone);margin-top:.6rem;line-height:1.45}
+.pj-fig{margin:0}
+.pj-fig img{width:100%;display:block;background:var(--sand)}
+.pj-fig figcaption{font-size:.82rem;color:var(--stone);margin-top:.65rem}
+/* image slot awaiting supplied photography */
+.pj-ph{display:flex;align-items:center;justify-content:center;background:var(--sand);border:1px dashed var(--bark);color:var(--stone);text-align:center;padding:1.2rem}
+.pj-ph span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;line-height:1.6;max-width:26ch}
+.pj-band-im .pj-ph,.pj-gal .pj-ph{aspect-ratio:4/3}
+.pj-fig .pj-ph{aspect-ratio:3/2}
+.pj-hero-ph{aspect-ratio:21/9}
+.pj-readgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1.6rem;margin-top:2.2rem}
+.pj-rcard{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--euc);padding:0;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:.28s}
+.pj-rcard-im{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--sand)}
+.pj-rcard .pj-ph{aspect-ratio:16/9}
+.pj-rcard-bd{padding:1.25rem 1.4rem 1.25rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.pj-rcard:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(15,49,50,.35)}
+.pj-rcard .pj-rd{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);font-weight:700}
+.pj-rcard h3{font-size:1.04rem;line-height:1.35;color:var(--euc-deep);margin:0;font-weight:600}
+.pj-rcard p{font-size:.88rem;line-height:1.55;color:var(--char);margin:0}
+.pj-rcard .pj-rgo{margin-top:auto;padding-top:.4rem;font-size:.82rem;font-weight:700;color:var(--euc-deep)}
+.pj-src{font-size:.82rem;color:var(--stone);margin-top:1.8rem}
+/* --- section rhythm: inner margins must not leak into section padding --- */
+.sec > .cw > :first-child,.sec .pj-body > :first-child,.pj-band-bd > :first-child,.pj-story-g > div > :first-child{margin-top:0}
+.sec > .cw > :last-child,.sec .pj-body > :last-child,.pj-band-bd > :last-child,.pj-story-g > div > :last-child{margin-bottom:0}
+.pj-body > :last-child,.pj-body p:last-child{margin-bottom:0}
+.pj-back{padding:var(--sec-y) 0;text-align:center;background:var(--cream)}
+
+/* CITY SITE CHOOSER =========================================== */
+.sb{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,4vw,3.4rem);margin-top:2.4rem;align-items:start}
+.sb-list{border-top:1px solid var(--rule)}
+.sb-item{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--rule);padding:1.15rem .8rem 1.15rem .2rem;cursor:pointer;display:grid;gap:.3rem;transition:.22s;font-family:inherit}
+.sb-item:hover{background:var(--cream);padding-left:.7rem}
+.sb-item[aria-selected="true"]{background:var(--euc-deep);padding-left:.9rem}
+.sb-item[aria-selected="true"] .sb-n,.sb-item[aria-selected="true"] .sb-l{color:var(--cream)}
+.sb-n{font-family:var(--ff-d);font-weight:600;font-size:1rem;color:var(--euc-deep);line-height:1.3}
+.sb-l{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);font-weight:700}
+.sb-panel{position:sticky;top:96px}
+.sb-im{aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
+.sb-im img,.sb-im .pj-ph{width:100%;height:100%;object-fit:cover;aspect-ratio:auto;border:0}
+.sb-bd{padding-top:1.4rem}
+.sb-bd h3{font-family:var(--ff-d);font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--euc-deep);margin:.5rem 0 .7rem;letter-spacing:-.015em}
+.sb-bd p{max-width:52ch}
+.sb-meta{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+.sb-meta div{font-size:.85rem}
+.sb-meta b{display:block;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);margin-bottom:.25rem;font-weight:700}
+@media(max-width:900px){.sb{grid-template-columns:1fr}.sb-panel{position:static}}
+/* single-site cities */
+.sb-solo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:2.4rem}
+.sb-solo-im{margin:0}
+.sb-solo-im img,.sb-solo-im .pj-ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--sand)}
+@media(max-width:880px){.sb-solo{grid-template-columns:1fr}}
+/* practical details strip, quieter than a stats band */
+.cv-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.6rem 2.4rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.8rem 0;margin-top:2.6rem}
+.cv-facts div b{display:block;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);font-weight:700;margin-bottom:.35rem}
+.cv-facts div span{font-size:.95rem;color:var(--char);line-height:1.5}
+.cv-facts a{color:var(--euc-deep);font-weight:600}
+/* short city enquiry form */
+.cv-form{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--euc);padding:clamp(1.8rem,3vw,2.4rem)}
+.cv-form h3{font-size:1.25rem;margin-bottom:1.2rem}
+.cv-form-r{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.cv-form label{display:block;font-size:.8rem;font-weight:600;color:var(--euc-deep);margin-bottom:.45rem}
+.cv-form input,.cv-form select,.cv-form textarea{width:100%;padding:.8em 1em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink)}
+.cv-form input:focus,.cv-form select:focus,.cv-form textarea:focus{outline:none;border-color:var(--euc);background:var(--white)}
+.cv-form textarea{min-height:96px;resize:vertical}
+.cv-form button{width:100%;padding:1em 1.4em;background:var(--euc-deep);color:var(--cream);border:0;border-radius:0;font-weight:700;cursor:pointer;font-family:var(--ff-b);font-size:.92rem}
+.cv-form button:hover{background:var(--euc)}
+.cv-form-note{font-size:.82rem;color:var(--stone);margin-top:.9rem}
+@media(max-width:620px){.cv-form-r{grid-template-columns:1fr}}
+
+/* --- article prose lists, inline figures and pull quotes (tools/gen_articles.py) --- */
+.pj-ul,.pj-ol{margin:0 0 1.15rem;padding-left:1.2rem}
+.pj-ul{list-style:disc}
+.pj-ol{list-style:decimal}
+.pj-ul li,.pj-ol li{margin:0 0 .5rem;padding-left:.2rem;line-height:1.6}
+.pj-ul li:last-child,.pj-ol li:last-child{margin-bottom:0}
+.pj-ul li::marker,.pj-ol li::marker{color:var(--euc)}
+.pj-band-bd .pj-ul,.pj-band-bd .pj-ol{max-width:56ch;font-size:.97rem}
+.pj-story .pj-ul li::marker,.pj-story .pj-ol li::marker{color:var(--euc-mid)}
+.pj-body figure.pj-fig{margin:1.9rem 0}
+.pj-body figure.pj-fig img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:var(--sand)}
+.pj-body figure.pj-fig figcaption{font-size:.82rem;color:var(--stone);margin-top:.65rem}
+.pj-pull{margin:1.9rem 0;padding:0 0 0 1.15rem;border-left:3px solid var(--euc-mid);font-family:var(--ff-d);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.45;color:var(--euc-deep);letter-spacing:-.012em}
+.pj-story .pj-pull{border-left-color:var(--euc-mid);color:var(--cream)}
+.pj-body > :last-child,.pj-band-bd > :last-child,.pj-story-g > div > :last-child{margin-bottom:0}
+.pj-body .ey + h3{margin-top:.75rem}
+.pj-body h4{font-family:var(--ff-d);font-weight:600;font-size:clamp(1rem,1.4vw,1.12rem);color:var(--euc-deep);letter-spacing:-.008em;margin:1.9rem 0 .65rem}
+.pj-body h3 + h4{margin-top:1.1rem}
+.pj-story .pj-body h3,.pj-story h4{color:var(--cream)}
+
+/* --- non-text contrast (WCAG 1.4.11). A hairline that only separates
+   decorative panels may stay at --rule, but anything a person has to find
+   and operate needs a 3:1 edge. Bark mid is 4.2:1 on Cream. --- */
+input,select,textarea,.psel,.btn-o,.fp{border-color:var(--bark-mid)}
 
 </style>
 
@@ -395,15 +772,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 /* Dual gradient — readable text on the left, image visible on the right */
 .proj-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,42,43,.88) 0%,rgba(10,42,43,.72) 35%,rgba(10,42,43,.4) 60%,rgba(10,42,43,.15) 85%);z-index:1}
 .proj-hero .cw{position:relative;z-index:2}
-.proj-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,247,243,.7);margin-bottom:1.5rem}
+.proj-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.7);margin-bottom:1.5rem}
 .proj-hero .breadcrumb a{color:var(--euc-soft)}
 .proj-hero .ey{color:var(--waratah-soft)}
 .proj-hero .ey::before{background:var(--waratah-soft)}
 .proj-hero h1{margin:1rem 0 1.2rem;max-width:20ch;color:var(--cream);text-shadow:0 2px 24px rgba(0,0,0,.35)}
-.proj-hero .lede{color:rgba(250,247,243,.88);text-shadow:0 1px 16px rgba(0,0,0,.35)}
+.proj-hero .lede{color:rgba(250,246,242,.88);text-shadow:0 1px 16px rgba(0,0,0,.35)}
 .proj-hero .rv{opacity:1!important;transform:none!important}
 /* Photo credit chip bottom right */
-.proj-hero-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,247,243,.7);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:3;font-family:var(--ff-b)}
+.proj-hero-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.7);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:3;font-family:var(--ff-b)}
 @media(max-width:780px){.proj-hero-cred{display:none}}
 .proj-hero .deco{width:200px}
 
@@ -422,14 +799,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .mm .mt2{font-size:.78rem;color:var(--stone)}
 
 .fb{padding:2rem 0;background:rgba(250,246,242,.95);backdrop-filter:blur(10px);position:sticky;top:72px;z-index:30;border-bottom:1px solid var(--rule)}
-.fb-r{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.fb-r{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
 .fps{display:flex;gap:.5rem;flex-wrap:wrap}
 .fp{font-size:.82rem;font-weight:600;padding:.5em 1em;border-radius:0;border:1.5px solid var(--rule);background:var(--white);color:var(--char);cursor:pointer;transition:.25s}
 .fp:hover{border-color:var(--euc);color:var(--euc)}
 .fp.on{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
 .fp.pk.on{background:var(--euc);border-color:var(--euc)}
 .fp.sp.on{background:var(--waratah);border-color:var(--waratah)}
-.fp.hl.on{background:var(--wattle-dk);border-color:var(--wattle-dk);color:var(--white)}
+.fp.hl.on{background:var(--wattle-dk);border-color:var(--wattle-dk);color:var(--cream)}
 
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3rem 0 6rem}
 @media(max-width:1100px){.pg{grid-template-columns:repeat(2,1fr)}}
@@ -440,9 +817,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pc-im img{width:100%;height:100%;object-fit:cover;transition:1.2s}
 .pc:hover .pc-im img{transform:scale(1.06)}
 .pc-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,49,50,.45))}
-.pc-pb{position:absolute;top:1rem;left:1rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:.4em .9em;border-radius:0;color:var(--euc-deep);z-index:2}
-.pc-pb.sp{color:var(--waratah-dk);background:rgba(255,236,238,.95)}.pc-pb.hl{color:var(--wattle-dk);background:rgba(255,247,217,.95)}
-.pc-lo{position:absolute;bottom:.9rem;left:1rem;font-size:.76rem;color:var(--white);z-index:2}
+.pc-pb{position:absolute;top:1rem;left:1rem;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(250,246,242,.92);backdrop-filter:blur(8px);padding:.4em .9em;border-radius:0;color:var(--euc-deep);z-index:2}
+.pc-pb.sp{color:var(--waratah-dk);background:rgba(255,173,183,.95)}.pc-pb.hl{color:var(--wattle-dk);background:rgba(248,238,169,.95)}
+.pc-lo{position:absolute;bottom:.9rem;left:1rem;font-size:.76rem;color:var(--cream);z-index:2}
 .pc-bd{padding:1.5rem;flex:1;display:flex;flex-direction:column}
 .pc-bd h3{font-size:1.15rem;line-height:1.2;margin-bottom:.5rem}
 .pc-bd p{font-size:.9rem;line-height:1.5;color:var(--char);flex:1;margin-bottom:1rem}
@@ -456,14 +833,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .po.open{display:flex}
 .pp{background:var(--cream);max-width:780px;width:100%;border-radius:0;overflow:hidden;position:relative;animation:pi .35s ease forwards;box-shadow:0 40px 100px -20px rgba(0,0,0,.6)}
 @keyframes pi{from{transform:translateY(20px) scale(.97);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
-.pp-x{position:absolute;top:1rem;right:1rem;width:40px;height:40px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--euc-deep);z-index:5;cursor:pointer;transition:.2s}
+.pp-x{position:absolute;top:1rem;right:1rem;width:40px;height:40px;background:rgba(250,246,242,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--euc-deep);z-index:5;cursor:pointer;transition:.2s}
 .pp-x:hover{transform:rotate(90deg)}
 .pp-im{aspect-ratio:16/8;background:var(--euc);overflow:hidden;position:relative}
 .pp-im img{width:100%;height:100%;object-fit:cover}
 .pp-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(15,49,50,.7))}
-.pp-ov{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;color:var(--white);z-index:2}
-.pp-ov .pt{display:inline-block;padding:.4em 1em;border-radius:0;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;border:1px solid rgba(255,255,255,.28);margin-bottom:.6rem}
-.pp-ov h2{color:var(--white);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.1}
+.pp-ov{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;color:var(--cream);z-index:2}
+.pp-ov .pt{display:inline-block;padding:.4em 1em;border-radius:0;background:rgba(250,246,242,.18);backdrop-filter:blur(6px);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;border:1px solid rgba(250,246,242,.28);margin-bottom:.6rem}
+.pp-ov h2{color:var(--cream);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.1}
 .pp-bd{padding:2rem 2.4rem 2.4rem}
 .pp-sts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1.4rem;background:var(--white);border-radius:0;border:1px solid var(--rule);margin-bottom:2rem}
 @media(max-width:560px){.pp-sts{grid-template-columns:1fr}}
@@ -473,13 +850,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .ns{padding:3.5rem 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
 .ns-g{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
 @media(max-width:780px){.ns-g{grid-template-columns:1fr;gap:2rem}}
-.ns h3{color:var(--white);font-size:clamp(1.4rem,2.2vw,1.85rem);margin-bottom:.7rem}
+.ns h3{color:var(--cream);font-size:clamp(1.4rem,2.2vw,1.85rem);margin-bottom:.7rem}
 .ns p{color:rgba(250,246,242,.85)}
 .ns-f{display:flex;gap:.5rem;flex-wrap:wrap}
-.ns-f input{flex:1;min-width:200px;padding:.8em 1.2em;border-radius:0;border:1px solid rgba(250,246,242,.3);background:rgba(255,255,255,.08);color:var(--white);font-size:.95rem}
+.ns-f input{flex:1;min-width:200px;padding:.8em 1.2em;border-radius:0;border:1px solid rgba(250,246,242,.3);background:rgba(250,246,242,.08);color:var(--cream);font-size:.95rem}
 .ns-f input::placeholder{color:rgba(250,246,242,.6)}
 .ns-f button{padding:.8em 1.4em;background:var(--wattle);color:var(--soil);border-radius:0;font-weight:700;transition:.25s}
-.ns-f button:hover{background:var(--wattle-dk);color:var(--white)}
+.ns-f button:hover{background:var(--wattle-dk);color:var(--cream)}
 </style>
 </head>
 <body>
@@ -522,7 +899,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       </div>
     </div>
     <a href="contact.html" class="">Contact</a>
-    <a href="donate.html" class="btn btn-p">Donate</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
   </nav>
 </div></div>
 </header><!-- /@header -->
@@ -531,15 +908,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   
   
   <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span style="opacity:.4">/</span>Projects</nav>
+    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem"><a href="index.html">Home</a><span style="opacity:.4">/</span>Projects</nav>
     <span class="ey">Conservation in action</span>
-    <h1 style="margin:1rem 0">Our work, place by place.</h1>
+    <h1 style="margin:1rem 0">Conservation projects across Australia.</h1>
     <p class="lede">From the Coorong to the Kimberley, here&rsquo;s where 55 years of Australian conservation is happening right now.</p>
   </div>
 </section>
 
 <section class="map-sec">
-  <div class="cw">
+  <div class="imap-band">
+    <div class="cw">
     <div class="map-head rv">
       <span class="ey">Explore the work</span>
       <h2 style="margin:1rem 0 .8rem;font-size:clamp(1.6rem,2.6vw,2.2rem)">Every pin is a project. Click to dive in.</h2>
@@ -548,93 +926,95 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <div class="imap rv d1">
   <img src="assets/img/projects-map.png" alt="Map of Australia showing FNPW landscape priorities and project locations" draggable="false">
 <!-- @map-pins -->
-<button class="im-pin pb-species" style="left:70.88%;top:22.48%" data-i="0" aria-label="Garners Beach Cassowary Rehabilitation Centre Project, QLD" title="Garners Beach Cassowary Rehabilitation Centre Project"></button>
-<button class="im-pin pb-healing" style="left:69.86%;top:20.1%" data-i="1" aria-label="Tangaroa Blue, QLD" title="Tangaroa Blue"></button>
-<button class="im-pin pb-species" style="left:84.44%;top:48.19%" data-i="2" aria-label="Genetic Code of Koalas, Australia" title="Genetic Code of Koalas"></button>
-<button class="im-pin pb-healing" style="left:75.74%;top:71.51%" data-i="3" aria-label="Bushfire Recovery Habitat Restoration, NSW" title="Bushfire Recovery Habitat Restoration"></button>
-<button class="im-pin pb-species" style="left:43.34%;top:37.59%" data-i="4" aria-label="Bilby Fire Project, Australia" title="Bilby Fire Project"></button>
-<button class="im-pin pb-species" style="left:79.79%;top:67.27%" data-i="5" aria-label="Brush Tailed Rock Wallaby School Education, NSW" title="Brush Tailed Rock Wallaby School Education"></button>
-<button class="im-pin pb-species" style="left:78.77%;top:61.44%" data-i="6" aria-label="Caught on Camera, Australia" title="Caught on Camera"></button>
-<button class="im-pin pb-species" style="left:78.17%;top:74.16%" data-i="7" aria-label="Eastern Bristlebird, NSW" title="Eastern Bristlebird"></button>
-<button class="im-pin pb-species" style="left:77.76%;top:68.86%" data-i="8" aria-label="Endangered Pomaderris Plants, NSW" title="Endangered Pomaderris Plants"></button>
-<button class="im-pin pb-species" style="left:10.34%;top:58.79%" data-i="9" aria-label="Feather Leaved Banksia of Wa, WA" title="Feather Leaved Banksia of Wa"></button>
-<button class="im-pin pb-parks" style="left:81.41%;top:64.09%" data-i="10" aria-label="Gogerlys Point Heritage Precinct, NSW" title="Gogerlys Point Heritage Precinct"></button>
-<button class="im-pin pb-species" style="left:55.69%;top:69.65%" data-i="11" aria-label="Granite Island Little Penguins, SA" title="Granite Island Little Penguins"></button>
-<button class="im-pin pb-healing" style="left:65.61%;top:77.87%" data-i="12" aria-label="Habitats for Koalas in the Otways, VIC" title="Habitats for Koalas in the Otways"></button>
-<button class="im-pin pb-healing" style="left:28.15%;top:21.69%" data-i="13" aria-label="Jungurra, WA" title="Jungurra"></button>
-<button class="im-pin pb-species" style="left:52.86%;top:70.18%" data-i="14" aria-label="Kangaroo Island's Bandicoots, SA" title="Kangaroo Island's Bandicoots"></button>
-<button class="im-pin pb-species" style="left:52.05%;top:70.71%" data-i="15" aria-label="Kangaroo Island's Enigma Moth, SA" title="Kangaroo Island's Enigma Moth"></button>
-<button class="im-pin pb-healing" style="left:85.45%;top:51.63%" data-i="16" aria-label="Koala Tree Planting, NSW" title="Koala Tree Planting"></button>
-<button class="im-pin pb-healing" style="left:74.85%;top:72.28%" data-i="17" aria-label="Kosciuszko National Park 2020 Fire Recovery, NSW" title="Kosciuszko National Park 2020 Fire Recovery"></button>
-<button class="im-pin pb-parks" style="left:80.9%;top:64.88%" data-i="18" aria-label="Kukundi Nature Playspace, NSW" title="Kukundi Nature Playspace"></button>
-<button class="im-pin pb-healing" style="left:80.62%;top:65.39%" data-i="19" aria-label="Lane Cove Bushcare Program, NSW" title="Lane Cove Bushcare Program"></button>
-<button class="im-pin pb-species" style="left:62.98%;top:61.7%" data-i="20" aria-label="Malleefowl Conservation, Australia" title="Malleefowl Conservation"></button>
-<button class="im-pin pb-species" style="left:81.42%;top:64.13%" data-i="21" aria-label="Manly Little Penguins, NSW" title="Manly Little Penguins"></button>
-<button class="im-pin pb-species" style="left:79.38%;top:69.39%" data-i="22" aria-label="Movement of Koalas back into Severely Burnt Forest, NSW" title="Movement of Koalas back into Severely Burnt Forest"></button>
-<button class="im-pin pb-parks" style="left:59.94%;top:75.75%" data-i="23" aria-label="Mt Schank Walking Trail, SA" title="Mt Schank Walking Trail"></button>
-<button class="im-pin pb-healing" style="left:76.75%;top:66.21%" data-i="24" aria-label="Petaurus Connections, NSW" title="Petaurus Connections"></button>
-<button class="im-pin pb-species" style="left:70.67%;top:28.31%" data-i="25" aria-label="Quolls, Australia" title="Quolls"></button>
-<button class="im-pin pb-species" style="left:12.97%;top:62.23%" data-i="26" aria-label="Red Tailed Phascogale, WA" title="Red Tailed Phascogale"></button>
-<button class="im-pin pb-healing" style="left:85.35%;top:48.45%" data-i="27" aria-label="Redlands Koala Planting, QLD" title="Redlands Koala Planting"></button>
-<button class="im-pin pb-parks" style="left:54.68%;top:62.23%" data-i="28" aria-label="Remarkable Southern Flinders, SA" title="Remarkable Southern Flinders"></button>
-<button class="im-pin pb-healing" style="left:77.56%;top:65.41%" data-i="29" aria-label="Restoring the Glideways of K2W, NSW" title="Restoring the Glideways of K2W"></button>
-<button class="im-pin pb-healing" style="left:54.88%;top:66.74%" data-i="30" aria-label="Seagrass Collaboration, Australia" title="Seagrass Collaboration"></button>
-<button class="im-pin pb-species" style="left:79.1%;top:67.25%" data-i="31" aria-label="Southern Highlands Koala Conservation, NSW" title="Southern Highlands Koala Conservation"></button>
-<button class="im-pin pb-species" style="left:72.71%;top:90.08%" data-i="32" aria-label="Tassie Devil Roadkill, TAS" title="Tassie Devil Roadkill"></button>
-<button class="im-pin pb-species" style="left:84.85%;top:55.61%" data-i="33" aria-label="The Great Koala Count, Australia" title="The Great Koala Count"></button>
-<button class="im-pin pb-parks" style="left:85.15%;top:50.04%" data-i="34" aria-label="Trails for Tails, QLD" title="Trails for Tails"></button>
-<button class="im-pin pb-species" style="left:9.83%;top:60.11%" data-i="35" aria-label="WA Bird Watering Stations, WA" title="WA Bird Watering Stations"></button>
-<button class="im-pin pb-healing" style="left:46.17%;top:8.7%" data-i="36" aria-label="Warddeken Mayh, NT" title="Warddeken Mayh"></button>
-<button class="im-pin pb-species" style="left:11.55%;top:65.15%" data-i="37" aria-label="WA's Woylie Survival, WA" title="WA's Woylie Survival"></button>
-<button class="im-pin pb-species" style="left:9.55%;top:60.09%" data-i="38" aria-label="Western Swamp Tortoise, WA" title="Western Swamp Tortoise"></button>
-<button class="im-pin pb-parks" style="left:73.31%;top:70.18%" data-i="39" aria-label="Woomargama National Park, NSW" title="Woomargama National Park"></button>
-<button class="im-pin pb-healing" style="left:55.79%;top:67.8%" data-i="40" aria-label="Yarning Online, On Country: Kurrupurra Pila Weaving, SA" title="Yarning Online, On Country: Kurrupurra Pila Weaving"></button>
-<button class="im-pin pb-healing" style="left:84.85%;top:56.93%" data-i="41" aria-label="Yarrahapinni Wetlands Restoration Stage 1, NSW" title="Yarrahapinni Wetlands Restoration Stage 1"></button>
-<button class="im-pin pb-species" style="left:69.05%;top:77.34%" data-i="42" aria-label="Youth Wildlife Ambassadors, VIC" title="Youth Wildlife Ambassadors"></button>
-<button class="im-pin pb-species" style="left:80.39%;top:60.11%" data-i="43" aria-label="Nectarlovers, NSW" title="Nectarlovers"></button>
-<button class="im-pin pb-parks" style="left:55.01%;top:68.04%" data-i="44" aria-label="Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island, SA" title="Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island"></button>
-<button class="im-pin pb-species" style="left:82.82%;top:52.16%" data-i="45" aria-label="FNPW Koala Projects, Australia" title="FNPW Koala Projects"></button>
-<button class="im-pin pb-parks" style="left:55.08%;top:57.46%" data-i="46" aria-label="Nilpena National Park, SA" title="Nilpena National Park"></button>
-<button class="im-pin pb-species" style="left:81.61%;top:60.11%" data-i="47" aria-label="Aussie Ark Quolls, NSW" title="Aussie Ark Quolls"></button>
-<button class="im-pin pb-species" style="left:80.93%;top:64.6%" data-i="48" aria-label="Lion Island Little Penguin, NSW" title="Lion Island Little Penguin"></button>
-<button class="im-pin pb-species" style="left:79.79%;top:68.06%" data-i="49" aria-label="Impact of Bushfires on Koalas, NSW" title="Impact of Bushfires on Koalas"></button>
-<button class="im-pin pb-species" style="left:75.59%;top:70.49%" data-i="50" aria-label="Alpine Frogs: A Calling, NSW" title="Alpine Frogs: A Calling"></button>
-<button class="im-pin pb-healing" style="left:12.16%;top:32.82%" data-i="51" aria-label="Ngurrawaana Ranger Habitat Conservation, WA" title="Ngurrawaana Ranger Habitat Conservation"></button>
-<button class="im-pin pb-parks" style="left:79.51%;top:68.84%" data-i="52" aria-label="Heritage Estates, NSW" title="Heritage Estates"></button>
-<button class="im-pin pb-species" style="left:67.64%;top:70.18%" data-i="53" aria-label="1 Million Turtles, Australia" title="1 Million Turtles"></button>
-<button class="im-pin pb-healing" style="left:67.23%;top:72.83%" data-i="54" aria-label="Native Plant Nurseries, Australia" title="Native Plant Nurseries"></button>
-<button class="im-pin pb-healing" style="left:84.17%;top:50.82%" data-i="55" aria-label="Cultivating Koala Habitat, Australia" title="Cultivating Koala Habitat"></button>
-<button class="im-pin pb-species" style="left:73.31%;top:73.1%" data-i="56" aria-label="Mountain Pygmy Possum, VIC" title="Mountain Pygmy Possum"></button>
-<button class="im-pin pb-healing" style="left:47.39%;top:42.89%" data-i="57" aria-label="Wild Heart, Australia" title="Wild Heart"></button>
-<button class="im-pin pb-healing" style="left:78.57%;top:69.92%" data-i="58" aria-label="Bushfire Recovery Program, Australia" title="Bushfire Recovery Program"></button>
-<button class="im-pin pb-healing" style="left:56.15%;top:67.84%" data-i="59" aria-label="Fire Wise, Australia" title="Fire Wise"></button>
-<button class="im-pin pb-parks" style="left:61.56%;top:53.49%" data-i="60" aria-label="Sturt National Park, NSW" title="Sturt National Park"></button>
-<button class="im-pin pb-species" style="left:77.96%;top:63.56%" data-i="61" aria-label="Wildlife Heroes, Australia" title="Wildlife Heroes"></button>
-<button class="im-pin pb-healing" style="left:9.73%;top:63.82%" data-i="62" aria-label="Black Cockatoo Corridor, WA" title="Black Cockatoo Corridor"></button>
-<button class="im-pin pb-healing" style="left:62.57%;top:65.41%" data-i="63" aria-label="Memorial Trees, Australia" title="Memorial Trees"></button>
-<button class="im-pin pb-species" style="left:68.85%;top:76.54%" data-i="64" aria-label="Bandicoot Superhighway Project, VIC" title="Bandicoot Superhighway Project"></button>
-<button class="im-pin pb-healing" style="left:66.62%;top:81.05%" data-i="65" aria-label="Students Dig in for Conservation, TAS" title="Students Dig in for Conservation"></button>
-<button class="im-pin pb-species" style="left:81.13%;top:60.36%" data-i="66" aria-label="Devil Ark, NSW" title="Devil Ark"></button>
-<button class="im-pin pb-healing" style="left:78.77%;top:65.15%" data-i="67" aria-label="Bushfire Recovery Seedbanks, Australia" title="Bushfire Recovery Seedbanks"></button>
-<button class="im-pin pb-healing" style="left:84.04%;top:45.01%" data-i="68" aria-label="Mary Valley Rail Trail Habitat Link, QLD" title="Mary Valley Rail Trail Habitat Link"></button>
-<button class="im-pin pb-species" style="left:70.86%;top:92.99%" data-i="69" aria-label="Save the Orange Bellied Parrot, TAS" title="Save the Orange Bellied Parrot"></button>
-<button class="im-pin pb-species" style="left:68.45%;top:74.95%" data-i="70" aria-label="Recovering Blue Butterflies in Victoria, VIC" title="Recovering Blue Butterflies in Victoria"></button>
-<button class="im-pin pb-healing" style="left:70.67%;top:66.21%" data-i="71" aria-label="Restoring Campbells Wetland Walkway, NSW" title="Restoring Campbells Wetland Walkway"></button>
-<button class="im-pin pb-species" style="left:68.37%;top:75.47%" data-i="72" aria-label="Nest Boxes in Plenty Gorge Park, VIC" title="Nest Boxes in Plenty Gorge Park"></button>
-<button class="im-pin pb-species" style="left:72.7%;top:58.79%" data-i="73" aria-label="Backyard Buddies, Australia" title="Backyard Buddies"></button>
-<button class="im-pin pb-species" style="left:45.36%;top:10.29%" data-i="74" aria-label="White Throated Grasswren, NT" title="White Throated Grasswren"></button>
-<button class="im-pin pb-parks" style="left:72.71%;top:91.9%" data-i="75" aria-label="Mount Field National Park, TAS" title="Mount Field National Park"></button>
-<button class="im-pin pb-healing" style="left:61.76%;top:76.81%" data-i="76" aria-label="Booningyah Junior Rangers Program, Australia" title="Booningyah Junior Rangers Program"></button>
-<button class="im-pin pb-parks" style="left:62.98%;top:72.04%" data-i="77" aria-label="Dalki Garringa Botanic Park, VIC" title="Dalki Garringa Botanic Park"></button>
-<button class="im-pin pb-healing" style="left:73.71%;top:64.09%" data-i="78" aria-label="Gift a Tree for Nature Conservation, Australia" title="Gift a Tree for Nature Conservation"></button>
-<button class="im-pin pb-species" style="left:77.15%;top:69.39%" data-i="79" aria-label="Curb Wombat Mange Program, Australia" title="Curb Wombat Mange Program"></button>
-<button class="im-pin pb-species" style="left:76.55%;top:72.3%" data-i="80" aria-label="Supporting Community Led Treatment to Protect Bare Nosed Wombats, Australia" title="Supporting Community Led Treatment to Protect Bare Nosed Wombats"></button>
+<button class="im-pin pb-parks" style="left:56.26%;top:69.47%" data-i="0" aria-label="Mundoo Island Station, SA" title="Mundoo Island Station"></button>
+<button class="im-pin pb-species" style="left:70.88%;top:22.48%" data-i="1" aria-label="Garners Beach Cassowary Rehabilitation Centre Project, QLD" title="Garners Beach Cassowary Rehabilitation Centre Project"></button>
+<button class="im-pin pb-healing" style="left:69.86%;top:20.1%" data-i="2" aria-label="Tangaroa Blue, QLD" title="Tangaroa Blue"></button>
+<button class="im-pin pb-species" style="left:84.44%;top:48.19%" data-i="3" aria-label="Genetic Code of Koalas, Australia" title="Genetic Code of Koalas"></button>
+<button class="im-pin pb-healing" style="left:75.74%;top:71.51%" data-i="4" aria-label="Bushfire Recovery Habitat Restoration, NSW" title="Bushfire Recovery Habitat Restoration"></button>
+<button class="im-pin pb-species" style="left:43.34%;top:37.59%" data-i="5" aria-label="Bilby Fire Project, Australia" title="Bilby Fire Project"></button>
+<button class="im-pin pb-species" style="left:79.79%;top:67.27%" data-i="6" aria-label="Brush Tailed Rock Wallaby School Education, NSW" title="Brush Tailed Rock Wallaby School Education"></button>
+<button class="im-pin pb-species" style="left:78.77%;top:61.44%" data-i="7" aria-label="Caught on Camera, Australia" title="Caught on Camera"></button>
+<button class="im-pin pb-species" style="left:78.17%;top:74.16%" data-i="8" aria-label="Eastern Bristlebird, NSW" title="Eastern Bristlebird"></button>
+<button class="im-pin pb-species" style="left:77.76%;top:68.86%" data-i="9" aria-label="Endangered Pomaderris Plants, NSW" title="Endangered Pomaderris Plants"></button>
+<button class="im-pin pb-species" style="left:10.34%;top:58.79%" data-i="10" aria-label="Feather Leaved Banksia of Wa, WA" title="Feather Leaved Banksia of Wa"></button>
+<button class="im-pin pb-parks" style="left:81.41%;top:64.09%" data-i="11" aria-label="Gogerlys Point Heritage Precinct, NSW" title="Gogerlys Point Heritage Precinct"></button>
+<button class="im-pin pb-species" style="left:55.21%;top:70.16%" data-i="12" aria-label="Granite Island Little Penguins, SA" title="Granite Island Little Penguins"></button>
+<button class="im-pin pb-healing" style="left:65.61%;top:77.87%" data-i="13" aria-label="Habitats for Koalas in the Otways, VIC" title="Habitats for Koalas in the Otways"></button>
+<button class="im-pin pb-healing" style="left:28.15%;top:21.69%" data-i="14" aria-label="Jungurra, WA" title="Jungurra"></button>
+<button class="im-pin pb-species" style="left:52.86%;top:70.18%" data-i="15" aria-label="Kangaroo Island's Bandicoots, SA" title="Kangaroo Island's Bandicoots"></button>
+<button class="im-pin pb-species" style="left:52.05%;top:70.71%" data-i="16" aria-label="Kangaroo Island's Enigma Moth, SA" title="Kangaroo Island's Enigma Moth"></button>
+<button class="im-pin pb-healing" style="left:85.45%;top:51.63%" data-i="17" aria-label="Koala Tree Planting, NSW" title="Koala Tree Planting"></button>
+<button class="im-pin pb-healing" style="left:74.85%;top:72.28%" data-i="18" aria-label="Kosciuszko National Park 2020 Fire Recovery, NSW" title="Kosciuszko National Park 2020 Fire Recovery"></button>
+<button class="im-pin pb-parks" style="left:80.9%;top:64.88%" data-i="19" aria-label="Kukundi Nature Playspace, NSW" title="Kukundi Nature Playspace"></button>
+<button class="im-pin pb-healing" style="left:80.62%;top:65.39%" data-i="20" aria-label="Lane Cove Bushcare Program, NSW" title="Lane Cove Bushcare Program"></button>
+<button class="im-pin pb-species" style="left:62.98%;top:61.7%" data-i="21" aria-label="Malleefowl Conservation, Australia" title="Malleefowl Conservation"></button>
+<button class="im-pin pb-species" style="left:81.42%;top:64.13%" data-i="22" aria-label="Manly Little Penguins, NSW" title="Manly Little Penguins"></button>
+<button class="im-pin pb-species" style="left:79.38%;top:69.39%" data-i="23" aria-label="Movement of Koalas back into Severely Burnt Forest, NSW" title="Movement of Koalas back into Severely Burnt Forest"></button>
+<button class="im-pin pb-parks" style="left:59.94%;top:75.75%" data-i="24" aria-label="Mt Schank Walking Trail, SA" title="Mt Schank Walking Trail"></button>
+<button class="im-pin pb-healing" style="left:76.75%;top:66.21%" data-i="25" aria-label="Petaurus Connections, NSW" title="Petaurus Connections"></button>
+<button class="im-pin pb-species" style="left:70.67%;top:28.31%" data-i="26" aria-label="Quolls, Australia" title="Quolls"></button>
+<button class="im-pin pb-species" style="left:12.97%;top:62.23%" data-i="27" aria-label="Red Tailed Phascogale, WA" title="Red Tailed Phascogale"></button>
+<button class="im-pin pb-healing" style="left:85.35%;top:48.45%" data-i="28" aria-label="Redlands Koala Planting, QLD" title="Redlands Koala Planting"></button>
+<button class="im-pin pb-parks" style="left:54.68%;top:62.23%" data-i="29" aria-label="Remarkable Southern Flinders, SA" title="Remarkable Southern Flinders"></button>
+<button class="im-pin pb-healing" style="left:77.56%;top:65.41%" data-i="30" aria-label="Restoring the Glideways of K2W, NSW" title="Restoring the Glideways of K2W"></button>
+<button class="im-pin pb-healing" style="left:54.88%;top:66.74%" data-i="31" aria-label="Seagrass Collaboration, Australia" title="Seagrass Collaboration"></button>
+<button class="im-pin pb-species" style="left:79.1%;top:67.25%" data-i="32" aria-label="Southern Highlands Koala Conservation, NSW" title="Southern Highlands Koala Conservation"></button>
+<button class="im-pin pb-species" style="left:72.71%;top:90.08%" data-i="33" aria-label="Tassie Devil Roadkill, TAS" title="Tassie Devil Roadkill"></button>
+<button class="im-pin pb-species" style="left:84.85%;top:55.61%" data-i="34" aria-label="The Great Koala Count, Australia" title="The Great Koala Count"></button>
+<button class="im-pin pb-parks" style="left:85.15%;top:50.04%" data-i="35" aria-label="Trails for Tails, QLD" title="Trails for Tails"></button>
+<button class="im-pin pb-species" style="left:9.83%;top:60.11%" data-i="36" aria-label="WA Bird Watering Stations, WA" title="WA Bird Watering Stations"></button>
+<button class="im-pin pb-healing" style="left:46.17%;top:8.7%" data-i="37" aria-label="Warddeken Mayh, NT" title="Warddeken Mayh"></button>
+<button class="im-pin pb-species" style="left:11.55%;top:65.15%" data-i="38" aria-label="WA's Woylie Survival, WA" title="WA's Woylie Survival"></button>
+<button class="im-pin pb-species" style="left:9.55%;top:60.09%" data-i="39" aria-label="Western Swamp Tortoise, WA" title="Western Swamp Tortoise"></button>
+<button class="im-pin pb-parks" style="left:73.31%;top:70.18%" data-i="40" aria-label="Woomargama National Park, NSW" title="Woomargama National Park"></button>
+<button class="im-pin pb-healing" style="left:55.79%;top:67.8%" data-i="41" aria-label="Yarning Online, On Country: Kurrupurra Pila Weaving, SA" title="Yarning Online, On Country: Kurrupurra Pila Weaving"></button>
+<button class="im-pin pb-healing" style="left:84.85%;top:56.93%" data-i="42" aria-label="Yarrahapinni Wetlands Restoration Stage 1, NSW" title="Yarrahapinni Wetlands Restoration Stage 1"></button>
+<button class="im-pin pb-species" style="left:69.05%;top:77.34%" data-i="43" aria-label="Youth Wildlife Ambassadors, VIC" title="Youth Wildlife Ambassadors"></button>
+<button class="im-pin pb-species" style="left:80.39%;top:60.11%" data-i="44" aria-label="Nectarlovers, NSW" title="Nectarlovers"></button>
+<button class="im-pin pb-parks" style="left:55.01%;top:68.04%" data-i="45" aria-label="Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island, SA" title="Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island"></button>
+<button class="im-pin pb-species" style="left:82.82%;top:52.16%" data-i="46" aria-label="FNPW Koala Projects, Australia" title="FNPW Koala Projects"></button>
+<button class="im-pin pb-parks" style="left:55.08%;top:57.46%" data-i="47" aria-label="Nilpena National Park, SA" title="Nilpena National Park"></button>
+<button class="im-pin pb-species" style="left:81.61%;top:60.11%" data-i="48" aria-label="Aussie Ark Quolls, NSW" title="Aussie Ark Quolls"></button>
+<button class="im-pin pb-species" style="left:80.93%;top:64.6%" data-i="49" aria-label="Lion Island Little Penguin, NSW" title="Lion Island Little Penguin"></button>
+<button class="im-pin pb-species" style="left:79.79%;top:68.06%" data-i="50" aria-label="Impact of Bushfires on Koalas, NSW" title="Impact of Bushfires on Koalas"></button>
+<button class="im-pin pb-species" style="left:75.59%;top:70.49%" data-i="51" aria-label="Alpine Frogs: A Calling, NSW" title="Alpine Frogs: A Calling"></button>
+<button class="im-pin pb-healing" style="left:12.16%;top:32.82%" data-i="52" aria-label="Ngurrawaana Ranger Habitat Conservation, WA" title="Ngurrawaana Ranger Habitat Conservation"></button>
+<button class="im-pin pb-parks" style="left:79.51%;top:68.84%" data-i="53" aria-label="Heritage Estates, NSW" title="Heritage Estates"></button>
+<button class="im-pin pb-species" style="left:67.64%;top:70.18%" data-i="54" aria-label="1 Million Turtles, Australia" title="1 Million Turtles"></button>
+<button class="im-pin pb-healing" style="left:67.23%;top:72.83%" data-i="55" aria-label="Native Plant Nurseries, Australia" title="Native Plant Nurseries"></button>
+<button class="im-pin pb-healing" style="left:84.17%;top:50.82%" data-i="56" aria-label="Cultivating Koala Habitat, Australia" title="Cultivating Koala Habitat"></button>
+<button class="im-pin pb-species" style="left:73.31%;top:73.1%" data-i="57" aria-label="Mountain Pygmy Possum, VIC" title="Mountain Pygmy Possum"></button>
+<button class="im-pin pb-healing" style="left:47.39%;top:42.89%" data-i="58" aria-label="Wild Heart, Australia" title="Wild Heart"></button>
+<button class="im-pin pb-healing" style="left:78.57%;top:69.92%" data-i="59" aria-label="Bushfire Recovery Program, Australia" title="Bushfire Recovery Program"></button>
+<button class="im-pin pb-healing" style="left:56.15%;top:67.84%" data-i="60" aria-label="Fire Wise, Australia" title="Fire Wise"></button>
+<button class="im-pin pb-parks" style="left:61.56%;top:53.49%" data-i="61" aria-label="Sturt National Park, NSW" title="Sturt National Park"></button>
+<button class="im-pin pb-species" style="left:77.96%;top:63.56%" data-i="62" aria-label="Wildlife Heroes, Australia" title="Wildlife Heroes"></button>
+<button class="im-pin pb-healing" style="left:9.73%;top:63.82%" data-i="63" aria-label="Black Cockatoo Corridor, WA" title="Black Cockatoo Corridor"></button>
+<button class="im-pin pb-healing" style="left:62.57%;top:65.41%" data-i="64" aria-label="Memorial Trees, Australia" title="Memorial Trees"></button>
+<button class="im-pin pb-species" style="left:68.85%;top:76.54%" data-i="65" aria-label="Bandicoot Superhighway Project, VIC" title="Bandicoot Superhighway Project"></button>
+<button class="im-pin pb-healing" style="left:66.62%;top:81.05%" data-i="66" aria-label="Students Dig in for Conservation, TAS" title="Students Dig in for Conservation"></button>
+<button class="im-pin pb-species" style="left:81.13%;top:60.36%" data-i="67" aria-label="Devil Ark, NSW" title="Devil Ark"></button>
+<button class="im-pin pb-healing" style="left:78.77%;top:65.15%" data-i="68" aria-label="Bushfire Recovery Seedbanks, Australia" title="Bushfire Recovery Seedbanks"></button>
+<button class="im-pin pb-healing" style="left:84.04%;top:45.01%" data-i="69" aria-label="Mary Valley Rail Trail Habitat Link, QLD" title="Mary Valley Rail Trail Habitat Link"></button>
+<button class="im-pin pb-species" style="left:70.86%;top:92.99%" data-i="70" aria-label="Save the Orange Bellied Parrot, TAS" title="Save the Orange Bellied Parrot"></button>
+<button class="im-pin pb-species" style="left:68.45%;top:74.95%" data-i="71" aria-label="Recovering Blue Butterflies in Victoria, VIC" title="Recovering Blue Butterflies in Victoria"></button>
+<button class="im-pin pb-healing" style="left:70.67%;top:66.21%" data-i="72" aria-label="Restoring Campbells Wetland Walkway, NSW" title="Restoring Campbells Wetland Walkway"></button>
+<button class="im-pin pb-species" style="left:68.37%;top:75.47%" data-i="73" aria-label="Nest Boxes in Plenty Gorge Park, VIC" title="Nest Boxes in Plenty Gorge Park"></button>
+<button class="im-pin pb-species" style="left:72.7%;top:58.79%" data-i="74" aria-label="Backyard Buddies, Australia" title="Backyard Buddies"></button>
+<button class="im-pin pb-species" style="left:45.36%;top:10.29%" data-i="75" aria-label="White Throated Grasswren, NT" title="White Throated Grasswren"></button>
+<button class="im-pin pb-parks" style="left:72.71%;top:91.9%" data-i="76" aria-label="Mount Field National Park, TAS" title="Mount Field National Park"></button>
+<button class="im-pin pb-healing" style="left:61.76%;top:76.81%" data-i="77" aria-label="Booningyah Junior Rangers Program, Australia" title="Booningyah Junior Rangers Program"></button>
+<button class="im-pin pb-parks" style="left:62.98%;top:72.04%" data-i="78" aria-label="Dalki Garringa Botanic Park, VIC" title="Dalki Garringa Botanic Park"></button>
+<button class="im-pin pb-healing" style="left:73.71%;top:64.09%" data-i="79" aria-label="Give a Tree for Nature Conservation, Australia" title="Give a Tree for Nature Conservation"></button>
+<button class="im-pin pb-species" style="left:77.15%;top:69.39%" data-i="80" aria-label="Curb Wombat Mange Program, Australia" title="Curb Wombat Mange Program"></button>
+<button class="im-pin pb-species" style="left:76.55%;top:72.3%" data-i="81" aria-label="Supporting Community Led Treatment to Protect Bare Nosed Wombats, Australia" title="Supporting Community Led Treatment to Protect Bare Nosed Wombats"></button>
 <!-- /@map-pins -->
   <div class="im-pop" id="imPop" hidden>
     <button class="im-x" id="imX" aria-label="Close">&#215;</button>
-    <span class="hx-chip" id="imChip"></span>
+    <span class="im-chip" id="imChip"></span>
     <h4 id="imTitle"></h4>
     <p id="imState"></p>
+    <img class="im-thumb" id="imThumb" alt="" hidden>
     <a class="btn-p" id="imGo" href="#">View project</a>
   </div>
 </div>
@@ -642,27 +1022,44 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   <span><i class="pb-parks"></i>Growing National Parks</span>
   <span><i class="pb-species"></i>Saving Species</span>
   <span><i class="pb-healing"></i>Healing the Land</span>
-  <span style="color:var(--stone)">81 projects &#183; click a pin</span>
+  <span style="color:var(--stone)">82 projects &#183; click a pin</span>
 </div>
-    
-
+    </div>
   </div>
 </section>
 
 <style>
-.map-head{margin-bottom:2rem}
+.map-head{margin-bottom:2.6rem}
 
 /* v3.1 photographic hub hero */
 .proj-hero{position:relative;isolation:isolate;overflow:hidden}
 .proj-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/bongil.jpg') center/cover}
 .proj-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.62),rgba(15,49,50,.88))}
-.pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone)}
+.pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone);flex-basis:100%}
+.fb-right{display:flex;flex-direction:column;align-items:flex-end;gap:.55rem}
+.sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
+.psearch{position:relative;display:inline-flex;align-items:center}
+.psearch input{font-family:var(--ff-b);font-size:.86rem;font-weight:500;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2em .5em 2.3em;width:15rem;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Ccircle cx='6' cy='6' r='4.4' fill='none' stroke='%236B6459' stroke-width='1.6'/%3E%3Cpath d='M9.4 9.4L13 13' stroke='%236B6459' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left .8em center}
+.psearch input::-webkit-search-cancel-button{display:none}
+.psearch input::placeholder{color:var(--stone)}
+.psearch input:hover{border-color:var(--euc)}
+.psearch input:focus{border-color:var(--euc);outline:2px solid var(--euc-soft);outline-offset:1px}
+.psearch-x{position:absolute;right:.45em;background:none;border:0;font-size:1.05rem;line-height:1;color:var(--stone);cursor:pointer;padding:.2em .3em}
+.psearch-x:hover{color:var(--euc-deep)}
+#pempty{padding:3.5rem 0 1rem;font-size:1rem;color:var(--stone)}
+#pempty .btn-g{margin-left:.4rem}
+@media(max-width:700px){.psearch input{width:100%}.psearch{width:100%}}
+.psel{font-family:var(--ff-b);font-size:.86rem;font-weight:600;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2.2em .5em .9em;cursor:pointer;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230F3132' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8em center}
+.psel:hover,.psel:focus{border-color:var(--euc);color:var(--euc);outline:none}
+#fmeta{font-size:.85rem;color:var(--stone);font-style:italic}
 .pil-deep a{color:var(--euc);font-weight:600}
 
 /* v6 interactive impact-report map */
 .imap{position:relative;max-width:1040px;margin:0 auto}
+.imap-band{background:var(--euc-soft);padding:5.5rem 0 3rem}
+@media(max-width:780px){.imap-band{padding:3.5rem 0 2.4rem}}
 .imap img{width:100%;display:block}
-.im-pin{position:absolute;width:15px;height:15px;border-radius:50%;border:2px solid #fff;padding:0;cursor:pointer;transform:translate(-50%,-50%);box-shadow:0 2px 6px rgba(15,49,50,.35);transition:transform .15s ease}
+.im-pin{position:absolute;width:15px;height:15px;border-radius:50%;border:2px solid var(--cream);padding:0;cursor:pointer;transform:translate(-50%,-50%);box-shadow:0 2px 6px rgba(15,49,50,.35);transition:transform .15s ease}
 .im-pin:hover,.im-pin.on{transform:translate(-50%,-50%) scale(1.55);z-index:4}
 .im-pin.pb-parks{background:var(--euc-deep)}
 .im-pin.pb-species{background:var(--waratah)}
@@ -670,6 +1067,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .im-pop{position:absolute;width:264px;background:#fff;border:1px solid var(--rule);box-shadow:0 24px 54px -18px rgba(15,49,50,.4);padding:1.1rem 1.1rem 1.2rem;z-index:6}
 .im-pop h4{font-family:var(--ff-d);font-size:1.02rem;font-weight:700;color:var(--euc-deep);margin:.55rem 0 .2rem;line-height:1.3}
 .im-pop p{font-size:.85rem;color:var(--stone);margin-bottom:.8rem}
+.im-chip{display:inline-block;font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1}
+.im-chip.pc-parks{color:var(--euc-deep)}
+.im-chip.pc-species{color:var(--waratah-dk)}
+.im-chip.pc-healing{color:var(--wattle-dk)}
+.im-thumb{width:100%;height:124px;object-fit:cover;display:block;margin:0 0 .9rem;background:var(--sand)}
+@media(max-width:700px){.im-pop{width:236px;padding:.9rem .9rem 1rem}.im-thumb{height:88px;margin-bottom:.7rem}}
+.im-thumb[hidden]{display:none}
 .im-pop .btn-p{font-size:.8rem;padding:.6em 1.2em}
 .im-x{position:absolute;top:.4rem;right:.55rem;background:none;border:0;font-size:1.25rem;color:var(--stone);cursor:pointer;line-height:1}
 .im-legend{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.2rem;font-size:.85rem;color:var(--char)}
@@ -678,24 +1082,38 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 /* v6.1 map image */
 .imap img{border:0 !important;box-shadow:none !important;background:transparent}
-.map-sec .ey{color:var(--euc)}
+.map-sec .ey{color:var(--euc-deep)}
 </style>
 
 <div class="fb">
   <div class="cw"><div class="fb-r">
     <div class="fps" id="fps">
-      <button class="fp on" data-f="all">All projects (83)</button>
+      <button class="fp on" data-f="all">All projects (84)</button>
       <button class="fp pk" data-f="parks">Growing Parks</button>
       <button class="fp sp" data-f="species">Saving Species</button>
       <button class="fp hl" data-f="heal">Healing Land</button>
     </div>
-    <div style="font-size:.85rem;color:var(--stone);font-style:italic" id="fmeta">Showing all 83 projects</div>
+    <div class="fb-right">
+      <div class="psearch">
+        <input type="search" id="psearch" placeholder="Search projects" aria-label="Search projects by name or place" autocomplete="off">
+        <button type="button" class="psearch-x" id="psearchx" aria-label="Clear search" hidden>&#215;</button>
+      </div>
+      <label class="sortwrap">Sort by
+        <select class="psel" id="psort">
+          <option value="recent">Most recent</option>
+          <option value="az">A to Z</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </label>
+      <div id="fmeta">Showing all 84 projects</div>
+    </div>
 <p class="pil-deep">Want the full story of each pillar? <a href="growing-national-parks.html">Growing National Parks</a> &#183; <a href="saving-species.html">Saving Species</a> &#183; <a href="healing-the-land.html">Healing the Land</a></p>
   </div></div>
 </div>
 
 <section style="background:var(--cream)">
-  <div class="cw" id="projectsGrid"><div class="pg" id="pgrid"><article class="pc" data-pil="species"><a class="pc-link" href="project-garners-beach-cassowary-rehabilitation-centre-project.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg" alt="Garners Beach Cassowary Rehabilitation Centre Project" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">QLD</span></div><div class="pc-bd"><h3>Garners Beach Cassowary Rehabilitation Centre Project</h3></div></a></article>
+  <div class="cw" id="projectsGrid"><div class="pg" id="pgrid"><article class="pc" data-pil="parks"><a class="pc-link" href="project-mundoo-island-acquisition.html"><div class="pc-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Mundoo Island Station" loading="lazy"><span class="pc-pb pb-parks">Growing Parks</span><span class="pc-lo">SA</span></div><div class="pc-bd"><h3>Mundoo Island Station</h3></div></a></article>
+<article class="pc" data-pil="species"><a class="pc-link" href="project-garners-beach-cassowary-rehabilitation-centre-project.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg" alt="Garners Beach Cassowary Rehabilitation Centre Project" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">QLD</span></div><div class="pc-bd"><h3>Garners Beach Cassowary Rehabilitation Centre Project</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-tangaroa-blue.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="Tangaroa Blue" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">QLD</span></div><div class="pc-bd"><h3>Tangaroa Blue</h3></div></a></article>
 <article class="pc" data-pil="species"><a class="pc-link" href="project-genetic-code-of-koalas.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Koala-mum-bub-scaled.jpg" alt="Genetic Code of Koalas" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Genetic Code of Koalas</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-bushfire-recovery-habitat-restoration.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2022/04/Kosciuszko-National-Park-Harrington-New-South-Wales-Australia-by-benkrut-from-Getty-Images.png" alt="Bushfire Recovery Habitat Restoration" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">NSW</span></div><div class="pc-bd"><h3>Bushfire Recovery Habitat Restoration</h3></div></a></article>
@@ -740,7 +1158,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-yarning-online-oncountry-kurrupurra-pila-weaving.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2022/03/pexels-kelly-l-3794747-scaled.jpg" alt="Yarning Online, On Country: Kurrupurra Pila Weaving" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">SA</span></div><div class="pc-bd"><h3>Yarning Online, On Country: Kurrupurra Pila Weaving</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-yarrahapinni-wetlands-restoration-stage-1.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg" alt="Yarrahapinni Wetlands Restoration Stage 1" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">NSW</span></div><div class="pc-bd"><h3>Yarrahapinni Wetlands Restoration Stage 1</h3></div></a></article>
 <article class="pc" data-pil="species"><a class="pc-link" href="project-youth-wildlife-ambassadors.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/Phillip-Island-Ambassadors.jpg" alt="Youth Wildlife Ambassadors" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">VIC</span></div><div class="pc-bd"><h3>Youth Wildlife Ambassadors</h3></div></a></article>
-<article class="pc" data-pil="species"><a class="pc-link" href="project-nectarlovers.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg" alt="Nectarlovers" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">NSW</span></div><div class="pc-bd"><h3>Nectarlovers</h3></div></a></article>
+<article class="pc" data-pil="species"><a class="pc-link" href="project-nectar-sippers.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg" alt="Nectar Sippers" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">NSW</span></div><div class="pc-bd"><h3>Nectar Sippers</h3></div></a></article>
 <article class="pc" data-pil="parks"><a class="pc-link" href="project-enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2022/02/torrens-Island-bird.jpg" alt="Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island" loading="lazy"><span class="pc-pb pb-parks">Growing Parks</span><span class="pc-lo">SA</span></div><div class="pc-bd"><h3>Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island</h3></div></a></article>
 <article class="pc" data-pil="species"><a class="pc-link" href="project-fnpw-koala-projects.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2023/08/koala-fun-facts.png" alt="FNPW Koala Projects" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>FNPW Koala Projects</h3></div></a></article>
 <article class="pc" data-pil="parks"><a class="pc-link" href="project-nilpena-nationalpark.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03.png" alt="Nilpena National Park" loading="lazy"><span class="pc-pb pb-parks">Growing Parks</span><span class="pc-lo">SA</span></div><div class="pc-bd"><h3>Nilpena National Park</h3></div></a></article>
@@ -761,7 +1179,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <article class="pc" data-pil="species"><a class="pc-link" href="project-wildlife-heroes.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/feeding.jpg" alt="Wildlife Heroes" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Wildlife Heroes</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-black-cockatoo-corridor.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Black-Cockatoo-Too_big_nestling_240420-rotated-e1746404683346.jpg" alt="Black Cockatoo Corridor" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">WA</span></div><div class="pc-bd"><h3>Black Cockatoo Corridor</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-memorial-trees.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Black-Cockatoo-Too_big_nestling_240420-rotated-e1746404683346.jpg" alt="Memorial Trees" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Memorial Trees</h3></div></a></article>
-<article class="pc" data-pil="species"><a class="pc-link" href="project-bandicoot-superhighway-project.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Southern-Brown-Bandicoot.jpg" alt="Bandicoot Superhighway Project" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">VIC</span></div><div class="pc-bd"><h3>Bandicoot Superhighway Project</h3></div></a></article>
+<article class="pc" data-pil="species"><a class="pc-link" href="project-bandicoot-superhighway-project.html"><div class="pc-im"><img src="assets/img/projects/bandicoot-hero-portrait.jpg" alt="Bandicoot Superhighway" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">SA</span></div><div class="pc-bd"><h3>Bandicoot Superhighway</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-students-dig-in-for-conservation.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/King-Island-Students-Field-Days-scaled.jpg" alt="Students Dig in for Conservation" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">TAS</span></div><div class="pc-bd"><h3>Students Dig in for Conservation</h3></div></a></article>
 <article class="pc" data-pil="species"><a class="pc-link" href="project-devil-ark.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/TasmanianDevil-MelanieWagner.jpg" alt="Devil Ark" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">NSW</span></div><div class="pc-bd"><h3>Devil Ark</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-bushfire-recovery-seedbanks.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/51965515327_82f49da53c_k.jpg" alt="Bushfire Recovery Seedbanks" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Bushfire Recovery Seedbanks</h3></div></a></article>
@@ -777,7 +1195,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <article class="pc" data-pil="parks"><a class="pc-link" href="project-dalki-garringa-botanic-park.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2022/03/Wail-Nursery.jpg" alt="Dalki Garringa Botanic Park" loading="lazy"><span class="pc-pb pb-parks">Growing Parks</span><span class="pc-lo">VIC</span></div><div class="pc-bd"><h3>Dalki Garringa Botanic Park</h3></div></a></article>
 <article class="pc" data-pil="heal"><a class="pc-link" href="project-gift-a-tree-for-nature-conservation.html"><div class="pc-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Plant-a-Tree-Australia.png" alt="Gift a Tree for Nature Conservation" loading="lazy"><span class="pc-pb pb-healing">Healing Land</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Gift a Tree for Nature Conservation</h3></div></a></article>
 <article class="pc" data-pil="species"><a class="pc-link" href="project-curb-wombat-mange-program.html"><div class="pc-im"><img src="assets/img/bongil.jpg" alt="Curb Wombat Mange Program" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Curb Wombat Mange Program</h3></div></a></article>
-<article class="pc" data-pil="species"><a class="pc-link" href="project-supporting-community-led-treatment-to-protect-bare-nosed-wombats.html"><div class="pc-im"><img src="assets/img/bongil.jpg" alt="Supporting Community Led Treatment to Protect Bare Nosed Wombats" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Supporting Community Led Treatment to Protect Bare Nosed Wombats</h3></div></a></article></div></div>
+<article class="pc" data-pil="species"><a class="pc-link" href="project-supporting-community-led-treatment-to-protect-bare-nosed-wombats.html"><div class="pc-im"><img src="assets/img/bongil.jpg" alt="Supporting Community Led Treatment to Protect Bare Nosed Wombats" loading="lazy"><span class="pc-pb pb-species">Saving Species</span><span class="pc-lo">Australia</span></div><div class="pc-bd"><h3>Supporting Community Led Treatment to Protect Bare Nosed Wombats</h3></div></a></article></div>
+    <p id="pempty" hidden>No projects match that search. <button type="button" class="btn-g" id="pclear">Clear the search</button></p>
+  </div>
 </section>
 
 <section class="ns">
@@ -791,18 +1211,56 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <div class="po" id="po"><div class="pp" id="pp">
   <button class="pp-x" id="ppx" aria-label="Close">✕</button>
   <div class="pp-im"><img id="ppi" src="" alt=""><div class="pp-ov"><span class="pt" id="ppt"></span><h2 id="pph"></h2></div></div>
-  <div class="pp-bd"><div class="pp-sts" id="pps"></div><div id="ppc"></div><a href="donate.html" class="btn btn-p" style="margin-top:1.6rem">Support this project →</a></div>
+  <div class="pp-bd"><div class="pp-sts" id="pps"></div><div id="ppc"></div><a href="https://bush.fnpw.org.au" class="btn btn-p" style="margin-top:1.6rem">Support this project →</a></div>
 </div></div>
 
 <script>
-const PD=[{"id": "mundoo", "pil": "parks", "name": "Mundoo Island", "loc": "Coorong NP, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "1,900 hectares of internationally significant Ramsar wetlands secured for Coorong National Park.", "stats": [["1,900 ha", "added"], ["65", "threatened species"], ["Ramsar", "wetland"]], "body": "<p>At the Murray Mouth, where freshwater meets the sea, the Coorong forms one of Australia&rsquo;s most ecologically significant wetland systems. Mundoo Island sits at its heart, supporting 65 nationally listed threatened species and providing critical refuge for migratory shorebirds.</p><p>The acquisition was made possible through a transformative gift from the Estate of the Late Barbara Harris. Working alongside the Australian and SA Governments, Ngarrindjeri Aboriginal Corporation and conservation partners, the entire 1,900-hectare property was transferred into Coorong National Park.</p>"}, {"id": "undilla", "pil": "parks", "name": "Undilla Station", "loc": "Boodjamulla, QLD", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "23,000 hectares adjoining Boodjamulla National Park. One of Queensland&rsquo;s most significant protected area expansion opportunities.", "stats": [["23,000 ha", "to protect"], ["5", "threatened species"], ["$4M", "valued at"]], "body": "<p>Undilla spans 23,000 hectares of intact landscape adjoining Boodjamulla National Park. Ranked &lsquo;very high&rsquo; in the department&rsquo;s Strategic Conservation Analysis, it supports habitat for at least five threatened species.</p><p>The land is subject to a non-exclusive Native Title determination in favour of the Waanyi People, whose connection to Country was recognised when 247,000 hectares of Boodjamulla was handed back in 2025.</p>"}, {"id": "balcoracana", "pil": "parks", "name": "Balcoracana Paddock", "loc": "Flinders Ranges, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "4,576 hectares secured adjoining Ikara-Flinders Ranges NP, strengthening habitat connectivity in a World Heritage nominated region.", "stats": [["4,576 ha", "secured"], ["$207K", "invested"], ["WH", "nominated"]], "body": "<p>Balcoracana Paddock represents a strategic addition to a conservation landscape FNPW has helped shape since its original establishment. The site strengthens habitat connectivity and supports the Yellow-footed Rock-wallaby and Western Quoll.</p>"}, {"id": "firewise", "pil": "heal", "name": "Fire Wise", "loc": "NSW &middot; VIC &middot; SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Brush-tailed-Rock-wallaby-school-education-KVPS-puppet-show-18-scaled.jpg", "desc": "Community-led fire resilience. 110,000+ fire-resilient native plants propagated through 14 community organisations.", "stats": [["110,000+", "plants"], ["14", "community orgs"], ["145", "living seedbanks"]], "body": "<p>Fire Wise helps communities reduce bushfire risk through fire-resistant native plants and smart landscaping. Over 110,000 fire-resilient plants have been propagated, with 145 living seedbanks established across three states.</p>"}, {"id": "hindmarsh", "pil": "heal", "name": "Hindmarsh Island", "loc": "Murray Mouth, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "Restoring a Ramsar wetland at scale on Ngarrindjeri Country, in partnership with Traditional Custodians.", "stats": [["Ramsar", "listed"], ["Multi-year", "program"], ["Ngarrindjeri", "led"]], "body": "<p>Hindmarsh Island sits within the Coorong, Lower Lakes and Murray Mouth Ramsar site. FNPW is delivering large-scale restoration, bringing back native vegetation and strengthening climate resilience.</p>"}, {"id": "nurseries", "pil": "heal", "name": "Community Nurseries", "loc": "30+ across 4 states", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "A national network propagating native species for large-scale restoration. Growing the future, one seedling at a time.", "stats": [["30+", "nurseries"], ["4", "states"], ["49", "community groups"]], "body": "<p>Only about 10% of Australia&rsquo;s native species are commercially available, making community nurseries critical infrastructure for restoration at scale. Our network of 30+ nurseries propagates locally-sourced, locally-adapted native plants.</p>"}, {"id": "queens", "pil": "heal", "name": "Queens Beach", "loc": "Coastal QLD", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "Sustained care in an urban landscape. Community-led restoration demonstrating conservation works in built-up environments.", "stats": [["Urban", "context"], ["Long-term", "commitment"], ["Volunteer", "powered"]], "body": "<p>Queens Beach demonstrates what sustained, community-led restoration looks like in an urban context. The site has been transformed from degraded coastal landscape into recovering native habitat.</p>"}, {"id": "wombat", "pil": "species", "name": "Curb Wombat Mange", "loc": "NSW &amp; ACT", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg", "desc": "18,582 mange treatments delivered across NSW, exceeding targets and expanding volunteer treatment capacity by 92%.", "stats": [["18,582", "treatments"], ["+92%", "capacity"], ["4,400+", "wombats treated"]], "body": "<p>The Curb Wombat Mange Program addresses the devastating effects of sarcoptic mange on wombat populations. In 2025, the program exceeded its targets, delivering 18,582 treatments and growing volunteer capacity by 92%.</p>"}, {"id": "frog", "pil": "species", "name": "Growling Grass Frog", "loc": "Winton Wetlands, VIC", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "Returning a lost voice to Winton Wetlands. Bringing back the endangered Growling Grass Frog to one of Victoria&rsquo;s largest wetland restorations.", "stats": [["Endangered", "status"], ["Multi-year", "program"], ["Winton", "wetlands"]], "body": "<p>The Growling Grass Frog is one of Australia&rsquo;s most endangered. Once common across south-eastern Australia, populations have declined sharply. At Winton Wetlands, FNPW is supporting the species&rsquo; reintroduction.</p>"}, {"id": "firesticks", "pil": "species", "name": "First Nations Fire Management", "loc": "Multi-state", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "Partnering with Firesticks Alliance Indigenous Corporation to revitalise cultural burning practices on Country.", "stats": [["Indigenous-led", "model"], ["Cultural fire", "practice"], ["National", "scope"]], "body": "<p>Aboriginal and Torres Strait Islander people have used fire to manage Country for tens of thousands of years. FNPW partners with Firesticks Alliance to support the revitalisation of cultural burning.</p>"}, {"id": "bongil", "pil": "species", "name": "Bongil Bongil Access", "loc": "NSW Mid North Coast", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg", "desc": "Access that protects koala habitat. New infrastructure lets visitors experience the park without disturbing wildlife corridors.", "stats": [["Koala", "habitat"], ["Boardwalks", "installed"], ["Visitor", "access"]], "body": "<p>Bongil Bongil National Park is home to one of NSW&rsquo;s healthiest koala populations. New visitor infrastructure lets people connect with Country while koalas keep their home.</p>"}, {"id": "westhead", "pil": "species", "name": "West Head Geo Trail", "loc": "Ku-ring-gai Chase, NSW", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg", "desc": "Connecting geology, culture and Country. A new trail interpreting the deep-time story of one of Sydney&rsquo;s most significant landscapes.", "stats": [["Geo", "trail"], ["Cultural", "interpretation"], ["Aboriginal sites", "respected"]], "body": "<p>The West Head Geo Trail invites visitors into a deep-time story, developed in close collaboration with Traditional Custodians, ensuring cultural sites are respected.</p>"}, {"id": "flinders-trails", "pil": "parks", "name": "Southern Flinders Ranges", "loc": "South Australia", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "The $8 million Remarkable Southern Flinders Project. Connecting 30,000 hectares of established parks and state land.", "stats": [["30,000 ha", "connected"], ["$8M", "project"], ["Multi-partner", "delivery"]], "body": "<p>A collaboration between environmental, economic and government agencies, connecting 30,000 hectares of established parks while transforming nature-based tourism in the region.</p>"}, {"id": "nilpena", "pil": "parks", "name": "Nilpena Station", "loc": "Flinders Ranges, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "60,000 hectares purchased for one of the world&rsquo;s most significant fossil sites. Now Nilpena Ediacara National Park.", "stats": [["60,000 ha", "secured"], ["Ediacara", "fossils"], ["World-class", "geology"]], "body": "<p>Nilpena holds some of the world&rsquo;s oldest known multicellular fossils, dating back 550 million years. It has since been gazetted as Nilpena Ediacara National Park, with Adnyamathanha co-management.</p>"}, {"id": "wollemi", "pil": "species", "name": "Wollemi Pine Recovery", "loc": "Wollemi NP, NSW", "img": "assets/img/bongil.jpg", "desc": "Protecting one of the world&rsquo;s rarest trees. A living fossil hidden for 200 million years until rediscovered in 1994.", "stats": [["<100", "wild trees"], ["200M years", "lineage"], ["Cryptic", "site"]], "body": "<p>The Wollemi Pine is one of the rarest plants on Earth, surviving for more than 200 million years in a single hidden gorge until its rediscovery in 1994. FNPW supports its recovery through habitat protection and biosecurity.</p>"}, {"id": "turtles", "pil": "species", "name": "1 Million Turtles", "loc": "Murray-Darling Basin", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/KNP-recovery-1-scaled.jpg", "desc": "A national citizen-science effort to recover Australia&rsquo;s freshwater turtle populations across the Murray-Darling Basin.", "stats": [["1M+", "target"], ["Schools", "engaged"], ["Citizen science", "model"]], "body": "<p>Australia&rsquo;s freshwater turtles are in steep decline. The 1 Million Turtles Project works across the Murray-Darling Basin to protect nests, manage foxes and restore wetland habitat.</p>"}];
+const PD=[{"id": "mundoo", "pil": "parks", "name": "Mundoo Island Station", "loc": "Coorong NP, SA", "img": "assets/img/projects/mundoo-hero.jpg", "desc": "1,900 hectares of internationally significant Ramsar wetlands secured for Coorong National Park.", "stats": [["1,900 ha", "added"], ["65", "threatened species"], ["Ramsar", "wetland"]], "body": "<p>At the Murray Mouth, where freshwater meets the sea, the Coorong forms one of Australia&rsquo;s most ecologically significant wetland systems. Mundoo Island sits at its heart, supporting 65 nationally listed threatened species and providing critical refuge for migratory shorebirds.</p><p>The acquisition was made possible through a transformative gift from the Estate of the Late Barbara Harris. Working alongside the Australian and SA Governments, Ngarrindjeri Aboriginal Corporation and conservation partners, the entire 1,900-hectare property was transferred into Coorong National Park.</p>"}, {"id": "undilla", "pil": "parks", "name": "Undilla Station", "loc": "Boodjamulla, QLD", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "23,000 hectares adjoining Boodjamulla National Park. One of Queensland&rsquo;s most significant protected area expansion opportunities.", "stats": [["23,000 ha", "to protect"], ["5", "threatened species"], ["$4M", "valued at"]], "body": "<p>Undilla spans 23,000 hectares of intact landscape adjoining Boodjamulla National Park. Ranked &lsquo;very high&rsquo; in the department&rsquo;s Strategic Conservation Analysis, it supports habitat for at least five threatened species.</p><p>The land is subject to a non-exclusive Native Title determination in favour of the Waanyi People, whose connection to Country was recognised when 247,000 hectares of Boodjamulla was handed back in 2025.</p>"}, {"id": "balcoracana", "pil": "parks", "name": "Balcoracana Paddock", "loc": "Flinders Ranges, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "4,576 hectares secured adjoining Ikara-Flinders Ranges NP, strengthening habitat connectivity in a World Heritage nominated region.", "stats": [["4,576 ha", "secured"], ["$207K", "invested"], ["WH", "nominated"]], "body": "<p>Balcoracana Paddock represents a strategic addition to a conservation landscape FNPW has helped shape since its original establishment. The site strengthens habitat connectivity and supports the Yellow-footed Rock-wallaby and Western Quoll.</p>"}, {"id": "firewise", "pil": "heal", "name": "Fire Wise", "loc": "NSW &middot; VIC &middot; SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Brush-tailed-Rock-wallaby-school-education-KVPS-puppet-show-18-scaled.jpg", "desc": "Community-led fire resilience. 110,000+ fire-resilient native plants propagated through 14 community organisations.", "stats": [["110,000+", "plants"], ["14", "community orgs"], ["145", "living seedbanks"]], "body": "<p>Fire Wise helps communities reduce bushfire risk through fire-resistant native plants and smart landscaping. Over 110,000 fire-resilient plants have been propagated, with 145 living seedbanks established across three states.</p>"}, {"id": "hindmarsh", "pil": "heal", "name": "Hindmarsh Island", "loc": "Murray Mouth, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "Restoring a Ramsar wetland at scale on Ngarrindjeri Country, in partnership with Traditional Custodians.", "stats": [["Ramsar", "listed"], ["Multi-year", "program"], ["Ngarrindjeri", "led"]], "body": "<p>Hindmarsh Island sits within the Coorong, Lower Lakes and Murray Mouth Ramsar site. FNPW is delivering large-scale restoration, bringing back native vegetation and strengthening climate resilience.</p>"}, {"id": "nurseries", "pil": "heal", "name": "Community Nurseries", "loc": "30+ across 4 states", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "A national network propagating native species for large-scale restoration. Growing the future, one seedling at a time.", "stats": [["30+", "nurseries"], ["4", "states"], ["49", "community groups"]], "body": "<p>Only about 10% of Australia&rsquo;s native species are commercially available, making community nurseries critical infrastructure for restoration at scale. Our network of 30+ nurseries propagates locally-sourced, locally-adapted native plants.</p>"}, {"id": "queens", "pil": "heal", "name": "Queens Beach", "loc": "Coastal QLD", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "Sustained care in an urban landscape. Community-led restoration demonstrating conservation works in built-up environments.", "stats": [["Urban", "context"], ["Long-term", "commitment"], ["Volunteer", "powered"]], "body": "<p>Queens Beach demonstrates what sustained, community-led restoration looks like in an urban context. The site has been transformed from degraded coastal landscape into recovering native habitat.</p>"}, {"id": "wombat", "pil": "species", "name": "Curb Wombat Mange", "loc": "NSW &amp; ACT", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg", "desc": "18,582 mange treatments delivered across NSW, exceeding targets and expanding volunteer treatment capacity by 92%.", "stats": [["18,582", "treatments"], ["+92%", "capacity"], ["4,400+", "wombats treated"]], "body": "<p>The Curb Wombat Mange Program addresses the devastating effects of sarcoptic mange on wombat populations. In 2025, the program exceeded its targets, delivering 18,582 treatments and growing volunteer capacity by 92%.</p>"}, {"id": "frog", "pil": "species", "name": "Growling Grass Frog", "loc": "Winton Wetlands, VIC", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "Returning a lost voice to Winton Wetlands. Bringing back the endangered Growling Grass Frog to one of Victoria&rsquo;s largest wetland restorations.", "stats": [["Endangered", "status"], ["Multi-year", "program"], ["Winton", "wetlands"]], "body": "<p>The Growling Grass Frog is one of Australia&rsquo;s most endangered. Once common across south-eastern Australia, populations have declined sharply. At Winton Wetlands, FNPW is supporting the species&rsquo; reintroduction.</p>"}, {"id": "firesticks", "pil": "species", "name": "First Nations Fire Management", "loc": "Multi-state", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg", "desc": "Partnering with Firesticks Alliance Indigenous Corporation to revitalise cultural burning practices on Country.", "stats": [["Indigenous-led", "model"], ["Cultural fire", "practice"], ["National", "scope"]], "body": "<p>Aboriginal and Torres Strait Islander people have used fire to manage Country for tens of thousands of years. FNPW partners with Firesticks Alliance to support the revitalisation of cultural burning.</p>"}, {"id": "bongil", "pil": "species", "name": "Bongil Bongil Access", "loc": "NSW Mid North Coast", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg", "desc": "Access that protects koala habitat. New infrastructure lets visitors experience the park without disturbing wildlife corridors.", "stats": [["Koala", "habitat"], ["Boardwalks", "installed"], ["Visitor", "access"]], "body": "<p>Bongil Bongil National Park is home to one of NSW&rsquo;s healthiest koala populations. New visitor infrastructure lets people connect with Country while koalas keep their home.</p>"}, {"id": "westhead", "pil": "species", "name": "West Head Geo Trail", "loc": "Ku-ring-gai Chase, NSW", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg", "desc": "Connecting geology, culture and Country. A new trail interpreting the deep-time story of one of Sydney&rsquo;s most significant landscapes.", "stats": [["Geo", "trail"], ["Cultural", "interpretation"], ["Aboriginal sites", "respected"]], "body": "<p>The West Head Geo Trail invites visitors into a deep-time story, developed in close collaboration with Traditional Custodians, ensuring cultural sites are respected.</p>"}, {"id": "flinders-trails", "pil": "parks", "name": "Southern Flinders Ranges", "loc": "South Australia", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "The $8 million Remarkable Southern Flinders Project. Connecting 30,000 hectares of established parks and state land.", "stats": [["30,000 ha", "connected"], ["$8M", "project"], ["Multi-partner", "delivery"]], "body": "<p>A collaboration between environmental, economic and government agencies, connecting 30,000 hectares of established parks while transforming nature-based tourism in the region.</p>"}, {"id": "nilpena", "pil": "parks", "name": "Nilpena Station", "loc": "Flinders Ranges, SA", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg", "desc": "60,000 hectares purchased for one of the world&rsquo;s most significant fossil sites. Now Nilpena Ediacara National Park.", "stats": [["60,000 ha", "secured"], ["Ediacara", "fossils"], ["World-class", "geology"]], "body": "<p>Nilpena holds some of the world&rsquo;s oldest known multicellular fossils, dating back 550 million years. It has since been gazetted as Nilpena Ediacara National Park, with Adnyamathanha co-management.</p>"}, {"id": "wollemi", "pil": "species", "name": "Wollemi Pine Recovery", "loc": "Wollemi NP, NSW", "img": "assets/img/bongil.jpg", "desc": "Protecting one of the world&rsquo;s rarest trees. A living fossil hidden for 200 million years until rediscovered in 1994.", "stats": [["<100", "wild trees"], ["200M years", "lineage"], ["Cryptic", "site"]], "body": "<p>The Wollemi Pine is one of the rarest plants on Earth, surviving for more than 200 million years in a single hidden gorge until its rediscovery in 1994. FNPW supports its recovery through habitat protection and biosecurity.</p>"}, {"id": "turtles", "pil": "species", "name": "1 Million Turtles", "loc": "Murray-Darling Basin", "img": "https://fnpw.org.au/wp-content/uploads/2021/02/KNP-recovery-1-scaled.jpg", "desc": "A national citizen-science effort to recover Australia&rsquo;s freshwater turtle populations across the Murray-Darling Basin.", "stats": [["1M+", "target"], ["Schools", "engaged"], ["Citizen science", "model"]], "body": "<p>Australia&rsquo;s freshwater turtles are in steep decline. The 1 Million Turtles Project works across the Murray-Darling Basin to protect nests, manage foxes and restore wetland habitat.</p>"}];
 const PN={parks:"Growing Parks",species:"Saving Species",heal:"Healing Our Land"};
+const _fmeta=document.getElementById('fmeta'),_empty=document.getElementById('pempty'),
+      _search=document.getElementById('psearch'),_searchx=document.getElementById('psearchx');
+let _pillar='all';
+function applyFilters(){
+  const q=(_search.value||'').trim().toLowerCase();
+  let c=0;
+  document.querySelectorAll('#pgrid .pc').forEach(x=>{
+    const okPillar = _pillar==='all' || x.dataset.pil===_pillar;
+    const okQuery  = !q || (x.dataset.search||'').indexOf(q)>-1;
+    const show = okPillar && okQuery;
+    x.style.display = show ? '' : 'none';
+    if(show) c++;
+  });
+  const total=document.querySelectorAll('#pgrid .pc').length;
+  _fmeta.textContent = (!q && _pillar==='all')
+    ? `Showing all ${total} projects`
+    : `Showing ${c} project${c===1?'':'s'}${q?` for \u201c${_search.value.trim()}\u201d`:''}`;
+  if(_empty) _empty.hidden = c!==0;
+  if(_searchx) _searchx.hidden = !q;
+}
 document.querySelectorAll('#fps .fp').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#fps .fp').forEach(p=>p.classList.remove('on'));b.classList.add('on');
-  const f=b.dataset.f;let c=0;
-  document.querySelectorAll('#pgrid .pc').forEach(x=>{const s=f==='all'||x.dataset.pil===f;x.style.display=s?'':'none';if(s)c++});
-  document.getElementById('fmeta').textContent=`Showing ${c} project${c===1?'':'s'}`;
+  _pillar=b.dataset.f; applyFilters();
 }));
+_search.addEventListener('input',applyFilters);
+_search.addEventListener('keydown',e=>{if(e.key==='Escape'){_search.value='';applyFilters();}});
+if(_searchx) _searchx.addEventListener('click',()=>{_search.value='';applyFilters();_search.focus();});
+const _pclear=document.getElementById('pclear');
+if(_pclear) _pclear.addEventListener('click',()=>{_search.value='';applyFilters();_search.focus();});
+const _grid=document.getElementById('pgrid');
+[..._grid.querySelectorAll('.pc')].forEach((c,i)=>{
+  c.dataset.idx=i;
+  c.dataset.title=(c.querySelector('h3').textContent||'').trim();
+  const loc=c.querySelector('.pc-lo'), pil=c.querySelector('.pc-pb');
+  c.dataset.search=[c.dataset.title, loc?loc.textContent:'', pil?pil.textContent:''].join(' ').toLowerCase();
+});
+document.getElementById('psort').addEventListener('change',e=>{
+  const mode=e.target.value;
+  [..._grid.querySelectorAll('.pc')].sort((a,b)=>{
+    if(mode==='az')return a.dataset.title.localeCompare(b.dataset.title,'en',{numeric:true,sensitivity:'base'});
+    if(mode==='oldest')return (+b.dataset.idx)-(+a.dataset.idx);
+    return (+a.dataset.idx)-(+b.dataset.idx);
+  }).forEach(c=>_grid.appendChild(c));
+});
 const po=document.getElementById('po'),ppx=document.getElementById('ppx');
 function op(id){const p=PD.find(x=>x.id===id);if(!p)return;document.getElementById('ppi').src=p.img;document.getElementById('ppi').alt=p.name;document.getElementById('pph').textContent=p.name;document.getElementById('ppt').textContent=PN[p.pil]+' · '+p.loc;document.getElementById('pps').innerHTML=p.stats.map(s=>`<div class="ps"><strong>${s[0]}</strong><span>${s[1]}</span></div>`).join('');document.getElementById('ppc').innerHTML=p.body;po.classList.add('open');document.body.style.overflow='hidden'}
 function cp(){po.classList.remove('open');document.body.style.overflow=''}
@@ -821,7 +1279,7 @@ window.addEventListener('load',()=>{if(location.hash){const id=location.hash.sli
         <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Get Involved</h4><ul><li><a href="donate.html">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
       <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 51 248 905 949</li></ul></div>
     </div>
     <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
@@ -890,29 +1348,58 @@ document.querySelectorAll('[data-count]').forEach(el=>ni.observe(el));
 
 </script>
 <!-- imap JS --><script>
-var IMAP=/*@map-data*/[{"s": "garners-beach-cassowary-rehabilitation-centre-project", "t": "Garners Beach Cassowary Rehabilitation Centre Project", "st": "QLD", "pl": "Saving Species", "pc": "pb-species", "x": 70.88, "y": 22.48}, {"s": "tangaroa-blue", "t": "Tangaroa Blue", "st": "QLD", "pl": "Healing the Land", "pc": "pb-healing", "x": 69.86, "y": 20.1}, {"s": "genetic-code-of-koalas", "t": "Genetic Code of Koalas", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 84.44, "y": 48.19}, {"s": "bushfire-recovery-habitat-restoration", "t": "Bushfire Recovery Habitat Restoration", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 75.74, "y": 71.51}, {"s": "bilby-fire-project", "t": "Bilby Fire Project", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 43.34, "y": 37.59}, {"s": "brush-tailed-rock-wallaby-school-education", "t": "Brush Tailed Rock Wallaby School Education", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.79, "y": 67.27}, {"s": "caught-on-camera", "t": "Caught on Camera", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 78.77, "y": 61.44}, {"s": "eastern-bristlebird", "t": "Eastern Bristlebird", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 78.17, "y": 74.16}, {"s": "endangered-pomaderris-plants", "t": "Endangered Pomaderris Plants", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 77.76, "y": 68.86}, {"s": "feather-leaved-banksia-of-wa", "t": "Feather Leaved Banksia of Wa", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 10.34, "y": 58.79}, {"s": "gogerlys-point-heritage-precinct", "t": "Gogerlys Point Heritage Precinct", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 81.41, "y": 64.09}, {"s": "granite-island-little-penguins", "t": "Granite Island Little Penguins", "st": "SA", "pl": "Saving Species", "pc": "pb-species", "x": 55.69, "y": 69.65}, {"s": "habitats-for-koalas-in-the-otways", "t": "Habitats for Koalas in the Otways", "st": "VIC", "pl": "Healing the Land", "pc": "pb-healing", "x": 65.61, "y": 77.87}, {"s": "jungurra", "t": "Jungurra", "st": "WA", "pl": "Healing the Land", "pc": "pb-healing", "x": 28.15, "y": 21.69}, {"s": "kangaroo-islands-bandicoots", "t": "Kangaroo Island's Bandicoots", "st": "SA", "pl": "Saving Species", "pc": "pb-species", "x": 52.86, "y": 70.18}, {"s": "kangaroo-islands-enigma-moth", "t": "Kangaroo Island's Enigma Moth", "st": "SA", "pl": "Saving Species", "pc": "pb-species", "x": 52.05, "y": 70.71}, {"s": "koala-tree-planting", "t": "Koala Tree Planting", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 85.45, "y": 51.63}, {"s": "kosciuszko-national-park-2020-fire-recovery", "t": "Kosciuszko National Park 2020 Fire Recovery", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 74.85, "y": 72.28}, {"s": "kukundi-nature-playspace", "t": "Kukundi Nature Playspace", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 80.9, "y": 64.88}, {"s": "lane-cove-bushcare-program-2018", "t": "Lane Cove Bushcare Program", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 80.62, "y": 65.39}, {"s": "malleefowl-conservation", "t": "Malleefowl Conservation", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 62.98, "y": 61.7}, {"s": "manly-little-penguins", "t": "Manly Little Penguins", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 81.42, "y": 64.13}, {"s": "movement-of-koalas-back-into-severely-burnt-forest", "t": "Movement of Koalas back into Severely Burnt Forest", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.38, "y": 69.39}, {"s": "mt-schank-walking-trail", "t": "Mt Schank Walking Trail", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 59.94, "y": 75.75}, {"s": "petaurus-connections", "t": "Petaurus Connections", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 76.75, "y": 66.21}, {"s": "quolls", "t": "Quolls", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 70.67, "y": 28.31}, {"s": "red-tailed-phascogale", "t": "Red Tailed Phascogale", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 12.97, "y": 62.23}, {"s": "redlands-koala-planting", "t": "Redlands Koala Planting", "st": "QLD", "pl": "Healing the Land", "pc": "pb-healing", "x": 85.35, "y": 48.45}, {"s": "remarkable-southern-flinders", "t": "Remarkable Southern Flinders", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 54.68, "y": 62.23}, {"s": "restoring-the-glideways-of-k2w", "t": "Restoring the Glideways of K2W", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 77.56, "y": 65.41}, {"s": "seagrass-collaboration", "t": "Seagrass Collaboration", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 54.88, "y": 66.74}, {"s": "southern-highlands-koala-conservation", "t": "Southern Highlands Koala Conservation", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.1, "y": 67.25}, {"s": "tassie-devil-roadkill", "t": "Tassie Devil Roadkill", "st": "TAS", "pl": "Saving Species", "pc": "pb-species", "x": 72.71, "y": 90.08}, {"s": "the-great-koala-count", "t": "The Great Koala Count", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 84.85, "y": 55.61}, {"s": "trails-for-tails", "t": "Trails for Tails", "st": "QLD", "pl": "Growing National Parks", "pc": "pb-parks", "x": 85.15, "y": 50.04}, {"s": "wa-bird-watering-stations", "t": "WA Bird Watering Stations", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 9.83, "y": 60.11}, {"s": "warddeken-mayh", "t": "Warddeken Mayh", "st": "NT", "pl": "Healing the Land", "pc": "pb-healing", "x": 46.17, "y": 8.7}, {"s": "was-woylie-survival", "t": "WA's Woylie Survival", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 11.55, "y": 65.15}, {"s": "western-swamp-tortoise", "t": "Western Swamp Tortoise", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 9.55, "y": 60.09}, {"s": "woomargama-national-park", "t": "Woomargama National Park", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 73.31, "y": 70.18}, {"s": "yarning-online-oncountry-kurrupurra-pila-weaving", "t": "Yarning Online, On Country: Kurrupurra Pila Weaving", "st": "SA", "pl": "Healing the Land", "pc": "pb-healing", "x": 55.79, "y": 67.8}, {"s": "yarrahapinni-wetlands-restoration-stage-1", "t": "Yarrahapinni Wetlands Restoration Stage 1", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 84.85, "y": 56.93}, {"s": "youth-wildlife-ambassadors", "t": "Youth Wildlife Ambassadors", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 69.05, "y": 77.34}, {"s": "nectarlovers", "t": "Nectarlovers", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 80.39, "y": 60.11}, {"s": "enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation", "t": "Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 55.01, "y": 68.04}, {"s": "fnpw-koala-projects", "t": "FNPW Koala Projects", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 82.82, "y": 52.16}, {"s": "nilpena-nationalpark", "t": "Nilpena National Park", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 55.08, "y": 57.46}, {"s": "aussie-ark-quolls", "t": "Aussie Ark Quolls", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 81.61, "y": 60.11}, {"s": "lion-island-little-penguin", "t": "Lion Island Little Penguin", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 80.93, "y": 64.6}, {"s": "impact-of-bushfires-on-koalas", "t": "Impact of Bushfires on Koalas", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.79, "y": 68.06}, {"s": "alpine-frogs-a-calling", "t": "Alpine Frogs: A Calling", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 75.59, "y": 70.49}, {"s": "ngurrawaana-ranger-habitat-conservation", "t": "Ngurrawaana Ranger Habitat Conservation", "st": "WA", "pl": "Healing the Land", "pc": "pb-healing", "x": 12.16, "y": 32.82}, {"s": "heritage-estates", "t": "Heritage Estates", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 79.51, "y": 68.84}, {"s": "1-million-turtles", "t": "1 Million Turtles", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 67.64, "y": 70.18}, {"s": "native-plant-nurseries", "t": "Native Plant Nurseries", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 67.23, "y": 72.83}, {"s": "cultivating-koala-habitat", "t": "Cultivating Koala Habitat", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 84.17, "y": 50.82}, {"s": "mountain-pygmy-possum", "t": "Mountain Pygmy Possum", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 73.31, "y": 73.1}, {"s": "wild-heart", "t": "Wild Heart", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 47.39, "y": 42.89}, {"s": "bushfire-recovery-program", "t": "Bushfire Recovery Program", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 78.57, "y": 69.92}, {"s": "fire-wise", "t": "Fire Wise", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 56.15, "y": 67.84}, {"s": "sturt-national-park", "t": "Sturt National Park", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 61.56, "y": 53.49}, {"s": "wildlife-heroes", "t": "Wildlife Heroes", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 77.96, "y": 63.56}, {"s": "black-cockatoo-corridor", "t": "Black Cockatoo Corridor", "st": "WA", "pl": "Healing the Land", "pc": "pb-healing", "x": 9.73, "y": 63.82}, {"s": "memorial-trees", "t": "Memorial Trees", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 62.57, "y": 65.41}, {"s": "bandicoot-superhighway-project", "t": "Bandicoot Superhighway Project", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 68.85, "y": 76.54}, {"s": "students-dig-in-for-conservation", "t": "Students Dig in for Conservation", "st": "TAS", "pl": "Healing the Land", "pc": "pb-healing", "x": 66.62, "y": 81.05}, {"s": "devil-ark", "t": "Devil Ark", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 81.13, "y": 60.36}, {"s": "bushfire-recovery-seedbanks", "t": "Bushfire Recovery Seedbanks", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 78.77, "y": 65.15}, {"s": "mary-valley-rail-trail-habitat-link", "t": "Mary Valley Rail Trail Habitat Link", "st": "QLD", "pl": "Healing the Land", "pc": "pb-healing", "x": 84.04, "y": 45.01}, {"s": "save-the-orange-bellied-parrot", "t": "Save the Orange Bellied Parrot", "st": "TAS", "pl": "Saving Species", "pc": "pb-species", "x": 70.86, "y": 92.99}, {"s": "recovering-blue-butterflies-in-victoria", "t": "Recovering Blue Butterflies in Victoria", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 68.45, "y": 74.95}, {"s": "restoring-campbells-wetland-walkway", "t": "Restoring Campbells Wetland Walkway", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 70.67, "y": 66.21}, {"s": "nest-boxes-in-plenty-gorge-park", "t": "Nest Boxes in Plenty Gorge Park", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 68.37, "y": 75.47}, {"s": "backyard-buddies", "t": "Backyard Buddies", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 72.7, "y": 58.79}, {"s": "white-throated-grasswren", "t": "White Throated Grasswren", "st": "NT", "pl": "Saving Species", "pc": "pb-species", "x": 45.36, "y": 10.29}, {"s": "mount-field-national-park", "t": "Mount Field National Park", "st": "TAS", "pl": "Growing National Parks", "pc": "pb-parks", "x": 72.71, "y": 91.9}, {"s": "booningyah-junior-rangers-program", "t": "Booningyah Junior Rangers Program", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 61.76, "y": 76.81}, {"s": "dalki-garringa-botanic-park", "t": "Dalki Garringa Botanic Park", "st": "VIC", "pl": "Growing National Parks", "pc": "pb-parks", "x": 62.98, "y": 72.04}, {"s": "gift-a-tree-for-nature-conservation", "t": "Gift a Tree for Nature Conservation", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 73.71, "y": 64.09}, {"s": "curb-wombat-mange-program", "t": "Curb Wombat Mange Program", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 77.15, "y": 69.39}, {"s": "supporting-community-led-treatment-to-protect-bare-nosed-wombats", "t": "Supporting Community Led Treatment to Protect Bare Nosed Wombats", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 76.55, "y": 72.3}]/*/@map-data*/;
+var IMAP=/*@map-data*/[{"s": "mundoo-island-acquisition", "t": "Mundoo Island Station", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 56.26, "y": 69.47}, {"s": "garners-beach-cassowary-rehabilitation-centre-project", "t": "Garners Beach Cassowary Rehabilitation Centre Project", "st": "QLD", "pl": "Saving Species", "pc": "pb-species", "x": 70.88, "y": 22.48}, {"s": "tangaroa-blue", "t": "Tangaroa Blue", "st": "QLD", "pl": "Healing the Land", "pc": "pb-healing", "x": 69.86, "y": 20.1}, {"s": "genetic-code-of-koalas", "t": "Genetic Code of Koalas", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 84.44, "y": 48.19}, {"s": "bushfire-recovery-habitat-restoration", "t": "Bushfire Recovery Habitat Restoration", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 75.74, "y": 71.51}, {"s": "bilby-fire-project", "t": "Bilby Fire Project", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 43.34, "y": 37.59}, {"s": "brush-tailed-rock-wallaby-school-education", "t": "Brush Tailed Rock Wallaby School Education", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.79, "y": 67.27}, {"s": "caught-on-camera", "t": "Caught on Camera", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 78.77, "y": 61.44}, {"s": "eastern-bristlebird", "t": "Eastern Bristlebird", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 78.17, "y": 74.16}, {"s": "endangered-pomaderris-plants", "t": "Endangered Pomaderris Plants", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 77.76, "y": 68.86}, {"s": "feather-leaved-banksia-of-wa", "t": "Feather Leaved Banksia of Wa", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 10.34, "y": 58.79}, {"s": "gogerlys-point-heritage-precinct", "t": "Gogerlys Point Heritage Precinct", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 81.41, "y": 64.09}, {"s": "granite-island-little-penguins", "t": "Granite Island Little Penguins", "st": "SA", "pl": "Saving Species", "pc": "pb-species", "x": 55.21, "y": 70.16}, {"s": "habitats-for-koalas-in-the-otways", "t": "Habitats for Koalas in the Otways", "st": "VIC", "pl": "Healing the Land", "pc": "pb-healing", "x": 65.61, "y": 77.87}, {"s": "jungurra", "t": "Jungurra", "st": "WA", "pl": "Healing the Land", "pc": "pb-healing", "x": 28.15, "y": 21.69}, {"s": "kangaroo-islands-bandicoots", "t": "Kangaroo Island's Bandicoots", "st": "SA", "pl": "Saving Species", "pc": "pb-species", "x": 52.86, "y": 70.18}, {"s": "kangaroo-islands-enigma-moth", "t": "Kangaroo Island's Enigma Moth", "st": "SA", "pl": "Saving Species", "pc": "pb-species", "x": 52.05, "y": 70.71}, {"s": "koala-tree-planting", "t": "Koala Tree Planting", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 85.45, "y": 51.63}, {"s": "kosciuszko-national-park-2020-fire-recovery", "t": "Kosciuszko National Park 2020 Fire Recovery", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 74.85, "y": 72.28}, {"s": "kukundi-nature-playspace", "t": "Kukundi Nature Playspace", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 80.9, "y": 64.88}, {"s": "lane-cove-bushcare-program-2018", "t": "Lane Cove Bushcare Program", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 80.62, "y": 65.39}, {"s": "malleefowl-conservation", "t": "Malleefowl Conservation", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 62.98, "y": 61.7}, {"s": "manly-little-penguins", "t": "Manly Little Penguins", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 81.42, "y": 64.13}, {"s": "movement-of-koalas-back-into-severely-burnt-forest", "t": "Movement of Koalas back into Severely Burnt Forest", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.38, "y": 69.39}, {"s": "mt-schank-walking-trail", "t": "Mt Schank Walking Trail", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 59.94, "y": 75.75}, {"s": "petaurus-connections", "t": "Petaurus Connections", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 76.75, "y": 66.21}, {"s": "quolls", "t": "Quolls", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 70.67, "y": 28.31}, {"s": "red-tailed-phascogale", "t": "Red Tailed Phascogale", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 12.97, "y": 62.23}, {"s": "redlands-koala-planting", "t": "Redlands Koala Planting", "st": "QLD", "pl": "Healing the Land", "pc": "pb-healing", "x": 85.35, "y": 48.45}, {"s": "remarkable-southern-flinders", "t": "Remarkable Southern Flinders", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 54.68, "y": 62.23}, {"s": "restoring-the-glideways-of-k2w", "t": "Restoring the Glideways of K2W", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 77.56, "y": 65.41}, {"s": "seagrass-collaboration", "t": "Seagrass Collaboration", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 54.88, "y": 66.74}, {"s": "southern-highlands-koala-conservation", "t": "Southern Highlands Koala Conservation", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.1, "y": 67.25}, {"s": "tassie-devil-roadkill", "t": "Tassie Devil Roadkill", "st": "TAS", "pl": "Saving Species", "pc": "pb-species", "x": 72.71, "y": 90.08}, {"s": "the-great-koala-count", "t": "The Great Koala Count", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 84.85, "y": 55.61}, {"s": "trails-for-tails", "t": "Trails for Tails", "st": "QLD", "pl": "Growing National Parks", "pc": "pb-parks", "x": 85.15, "y": 50.04}, {"s": "wa-bird-watering-stations", "t": "WA Bird Watering Stations", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 9.83, "y": 60.11}, {"s": "warddeken-mayh", "t": "Warddeken Mayh", "st": "NT", "pl": "Healing the Land", "pc": "pb-healing", "x": 46.17, "y": 8.7}, {"s": "was-woylie-survival", "t": "WA's Woylie Survival", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 11.55, "y": 65.15}, {"s": "western-swamp-tortoise", "t": "Western Swamp Tortoise", "st": "WA", "pl": "Saving Species", "pc": "pb-species", "x": 9.55, "y": 60.09}, {"s": "woomargama-national-park", "t": "Woomargama National Park", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 73.31, "y": 70.18}, {"s": "yarning-online-oncountry-kurrupurra-pila-weaving", "t": "Yarning Online, On Country: Kurrupurra Pila Weaving", "st": "SA", "pl": "Healing the Land", "pc": "pb-healing", "x": 55.79, "y": 67.8}, {"s": "yarrahapinni-wetlands-restoration-stage-1", "t": "Yarrahapinni Wetlands Restoration Stage 1", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 84.85, "y": 56.93}, {"s": "youth-wildlife-ambassadors", "t": "Youth Wildlife Ambassadors", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 69.05, "y": 77.34}, {"s": "nectarlovers", "t": "Nectarlovers", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 80.39, "y": 60.11}, {"s": "enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation", "t": "Enhancing Biodiversity &amp; Protecting Cultural Heritage at Torrens Island", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 55.01, "y": 68.04}, {"s": "fnpw-koala-projects", "t": "FNPW Koala Projects", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 82.82, "y": 52.16}, {"s": "nilpena-nationalpark", "t": "Nilpena National Park", "st": "SA", "pl": "Growing National Parks", "pc": "pb-parks", "x": 55.08, "y": 57.46}, {"s": "aussie-ark-quolls", "t": "Aussie Ark Quolls", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 81.61, "y": 60.11}, {"s": "lion-island-little-penguin", "t": "Lion Island Little Penguin", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 80.93, "y": 64.6}, {"s": "impact-of-bushfires-on-koalas", "t": "Impact of Bushfires on Koalas", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 79.79, "y": 68.06}, {"s": "alpine-frogs-a-calling", "t": "Alpine Frogs: A Calling", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 75.59, "y": 70.49}, {"s": "ngurrawaana-ranger-habitat-conservation", "t": "Ngurrawaana Ranger Habitat Conservation", "st": "WA", "pl": "Healing the Land", "pc": "pb-healing", "x": 12.16, "y": 32.82}, {"s": "heritage-estates", "t": "Heritage Estates", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 79.51, "y": 68.84}, {"s": "1-million-turtles", "t": "1 Million Turtles", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 67.64, "y": 70.18}, {"s": "native-plant-nurseries", "t": "Native Plant Nurseries", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 67.23, "y": 72.83}, {"s": "cultivating-koala-habitat", "t": "Cultivating Koala Habitat", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 84.17, "y": 50.82}, {"s": "mountain-pygmy-possum", "t": "Mountain Pygmy Possum", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 73.31, "y": 73.1}, {"s": "wild-heart", "t": "Wild Heart", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 47.39, "y": 42.89}, {"s": "bushfire-recovery-program", "t": "Bushfire Recovery Program", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 78.57, "y": 69.92}, {"s": "fire-wise", "t": "Fire Wise", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 56.15, "y": 67.84}, {"s": "sturt-national-park", "t": "Sturt National Park", "st": "NSW", "pl": "Growing National Parks", "pc": "pb-parks", "x": 61.56, "y": 53.49}, {"s": "wildlife-heroes", "t": "Wildlife Heroes", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 77.96, "y": 63.56}, {"s": "black-cockatoo-corridor", "t": "Black Cockatoo Corridor", "st": "WA", "pl": "Healing the Land", "pc": "pb-healing", "x": 9.73, "y": 63.82}, {"s": "memorial-trees", "t": "Memorial Trees", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 62.57, "y": 65.41}, {"s": "bandicoot-superhighway-project", "t": "Bandicoot Superhighway Project", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 68.85, "y": 76.54}, {"s": "students-dig-in-for-conservation", "t": "Students Dig in for Conservation", "st": "TAS", "pl": "Healing the Land", "pc": "pb-healing", "x": 66.62, "y": 81.05}, {"s": "devil-ark", "t": "Devil Ark", "st": "NSW", "pl": "Saving Species", "pc": "pb-species", "x": 81.13, "y": 60.36}, {"s": "bushfire-recovery-seedbanks", "t": "Bushfire Recovery Seedbanks", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 78.77, "y": 65.15}, {"s": "mary-valley-rail-trail-habitat-link", "t": "Mary Valley Rail Trail Habitat Link", "st": "QLD", "pl": "Healing the Land", "pc": "pb-healing", "x": 84.04, "y": 45.01}, {"s": "save-the-orange-bellied-parrot", "t": "Save the Orange Bellied Parrot", "st": "TAS", "pl": "Saving Species", "pc": "pb-species", "x": 70.86, "y": 92.99}, {"s": "recovering-blue-butterflies-in-victoria", "t": "Recovering Blue Butterflies in Victoria", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 68.45, "y": 74.95}, {"s": "restoring-campbells-wetland-walkway", "t": "Restoring Campbells Wetland Walkway", "st": "NSW", "pl": "Healing the Land", "pc": "pb-healing", "x": 70.67, "y": 66.21}, {"s": "nest-boxes-in-plenty-gorge-park", "t": "Nest Boxes in Plenty Gorge Park", "st": "VIC", "pl": "Saving Species", "pc": "pb-species", "x": 68.37, "y": 75.47}, {"s": "backyard-buddies", "t": "Backyard Buddies", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 72.7, "y": 58.79}, {"s": "white-throated-grasswren", "t": "White Throated Grasswren", "st": "NT", "pl": "Saving Species", "pc": "pb-species", "x": 45.36, "y": 10.29}, {"s": "mount-field-national-park", "t": "Mount Field National Park", "st": "TAS", "pl": "Growing National Parks", "pc": "pb-parks", "x": 72.71, "y": 91.9}, {"s": "booningyah-junior-rangers-program", "t": "Booningyah Junior Rangers Program", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 61.76, "y": 76.81}, {"s": "dalki-garringa-botanic-park", "t": "Dalki Garringa Botanic Park", "st": "VIC", "pl": "Growing National Parks", "pc": "pb-parks", "x": 62.98, "y": 72.04}, {"s": "gift-a-tree-for-nature-conservation", "t": "Give a Tree for Nature Conservation", "st": "Australia", "pl": "Healing the Land", "pc": "pb-healing", "x": 73.71, "y": 64.09}, {"s": "curb-wombat-mange-program", "t": "Curb Wombat Mange Program", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 77.15, "y": 69.39}, {"s": "supporting-community-led-treatment-to-protect-bare-nosed-wombats", "t": "Supporting Community Led Treatment to Protect Bare Nosed Wombats", "st": "Australia", "pl": "Saving Species", "pc": "pb-species", "x": 76.55, "y": 72.3}]/*/@map-data*/;
 (function(){
   var pop=document.getElementById('imPop');if(!pop)return;
   var box=pop.parentNode;
+  var current=null;
   function show(i,pin){
     var p=IMAP[i];
     document.getElementById('imChip').textContent=p.pl;
-    document.getElementById('imChip').className='hx-chip '+p.pc;
+    document.getElementById('imChip').className='im-chip '+p.pc.replace('pb-','pc-');
     document.getElementById('imTitle').textContent=p.t;
     document.getElementById('imState').textContent=p.st;
     document.getElementById('imGo').href='project-'+p.s+'.html';
-    var x=parseFloat(pin.style.left),y=parseFloat(pin.style.top);
-    pop.style.left=(x>62? x-30 : x+3)+'%';
-    pop.style.top=Math.min(Math.max(y-8,2),70)+'%';
+    var th=document.getElementById('imThumb');
+    var tile=document.querySelector('.pc-link[href="project-'+p.s+'.html"] img');
+    var src=tile?tile.getAttribute('src'):'';
+    if(src){th.src=src;th.alt=p.t;th.hidden=false;}
+    else{th.removeAttribute('src');th.alt='';th.hidden=true;}
     pop.hidden=false;
+    place(pin);
     document.querySelectorAll('.im-pin.on').forEach(function(q){q.classList.remove('on')});
     pin.classList.add('on');
+    current=pin;
+  }
+  /* keep the card inside the map: flip sides near the right edge, sit it
+     off the bottom edge rather than over the legend, and shrink the image
+     if the map is shorter than the card (small screens) */
+  function place(pin){
+    var wrap=pop.parentNode,pad=10;
+    var cw=wrap.clientWidth,ch=wrap.clientHeight;
+    var px=parseFloat(pin.style.left)/100*cw,py=parseFloat(pin.style.top)/100*ch;
+    var th=document.getElementById('imThumb');
+    th.style.height='';
+    var pw=pop.offsetWidth,phh=pop.offsetHeight;
+    if(!th.hidden&&phh>ch-pad*2){
+      th.style.height=Math.max(60,th.offsetHeight-(phh-(ch-pad*2)))+'px';
+      phh=pop.offsetHeight;
+    }
+    var left=px+16;
+    if(left+pw>cw-pad)left=px-pw-16;
+    if(left<pad)left=Math.max(pad,(cw-pw)/2);
+    var top=py-24;
+    if(top+phh>ch-pad)top=ch-phh-pad;
+    if(top<pad)top=pad;
+    pop.style.left=left+'px';
+    pop.style.top=top+'px';
   }
   document.querySelectorAll('.im-pin').forEach(function(b){
     b.addEventListener('click',function(e){e.stopPropagation();show(parseInt(b.dataset.i,10),b)});
   });
-  document.getElementById('imX').addEventListener('click',function(){pop.hidden=true});
-  document.addEventListener('click',function(e){if(!box.contains(e.target))pop.hidden=true});
+  document.getElementById('imX').addEventListener('click',function(){pop.hidden=true;current=null});
+  document.addEventListener('click',function(e){if(!box.contains(e.target)){pop.hidden=true;current=null}});
+  window.addEventListener('resize',function(){if(current&&!pop.hidden)place(current)});
 })();
 </script>
 </body>
