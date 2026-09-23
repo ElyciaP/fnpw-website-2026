@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
-<title>Bequests | Leave a Gift in Your Will | FNPW</title>
+<title>Gifts in Wills | Leave a Bequest | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="Leave a gift in your Will to protect Australia's national parks and wildlife. Types of bequest, suggested wording, our bequest brochure, stories of legacies that live on, and a confidential conversation whenever you are ready.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,7 @@
 
 <style>
 /* SHARED full-bleed image hero (used on all sub-pages) */
-.fb-hero{position:relative;min-height:clamp(420px,56vh,540px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
+.fb-hero{position:relative;min-height:clamp(440px,60vh,580px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 50%,rgba(15,49,50,.2) 100%);z-index:1}
@@ -21,70 +22,189 @@
 .fb-hero-content .breadcrumb a{color:var(--cream)}
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
-.fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:22ch;margin-top:1rem}
-.fb-hero-content h1 em{font-style:italic;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:400}
-.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
-.fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
-@media(max-width:780px){.fb-cred{display:none}}
+.fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:20ch;margin-top:1rem}
+.fb-hero-content .lede{color:rgba(250,246,242,.88);margin-top:1.4rem;max-width:56ch;font-size:clamp(1rem,1.15vw,1.1rem)}
+.fb-hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.fb-hero-cta .btn-lt{background:transparent;color:var(--cream);border-color:rgba(250,246,242,.7)}
+.fb-hero-cta .btn-lt:hover{background:var(--cream);color:var(--euc-deep);opacity:1}
+.fb-hero-cta .btn-sol{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.fb-hero-cta .btn-sol:hover{background:var(--euc-soft);border-color:var(--euc-soft);opacity:1}
 
+/* Placeholder image (swap for real photo) */
+.bq-ph{position:relative;background:repeating-linear-gradient(135deg,var(--sand) 0 14px,#E5DDD2 14px 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--bark-text);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:1rem}
+.bq-ph span{background:var(--cream);padding:.45em .8em;border:1px dashed var(--bark)}
 
-.bh .deco{position:absolute;pointer-events:none;width:170px;opacity:.14}
-.bh .deco.d1{top:14%;right:6%;color:var(--euc);transform:rotate(18deg)}
-
+/* Intro */
 .b-intro{padding:5rem 0;background:var(--cream)}
 .bi-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 @media(max-width:880px){.bi-g{grid-template-columns:1fr;gap:2.5rem}}
-.bi-im{aspect-ratio:5/4;border-radius:0;overflow:hidden;background:var(--euc);position:relative}
+.bi-im{aspect-ratio:5/4;overflow:hidden;background:var(--euc);position:relative}
 .bi-im img{width:100%;height:100%;object-fit:cover}
-.bi-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,49,50,.4))}
-.bi-im .stamp{position:absolute;bottom:1.4rem;left:1.4rem;color:var(--cream);font-family:var(--ff-b);font-size:0.94rem;line-height:1.1;font-weight:600}
-.bi-im .stamp small{font-family:var(--ff-b);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;display:block;color:var(--wattle-soft);margin-top:.4rem}
+.b-intro p{font-size:1.05rem;color:var(--char);line-height:1.72}
 
-.ways{padding:5rem 0;background:var(--paper)}
-.ways-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
-@media(max-width:880px){.ways-g{grid-template-columns:1fr}}
-.way{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2rem 1.8rem;position:relative;border-top:4px solid var(--euc)}
-.way.b2{border-top-color:var(--waratah)}.way.b3{border-top-color:var(--wattle)}
-.way h3{margin-bottom:.7rem;font-size:1.2rem}
-.way .ex{font-family:var(--ff-d);color:var(--euc);font-weight:600;font-size:.86rem;margin-bottom:.7rem;letter-spacing:.04em}
-.way.b2 .ex{color:var(--waratah)}.way.b3 .ex{color:var(--soil)}
-.way p{font-size:.94rem;color:var(--char);line-height:1.6}
+/* Pillars */
+.bq-pil{padding:5rem 0;background:var(--sand)}
+.bq-pil-hd{max-width:720px}
+.bq-pil-hd p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--char)}
+.pil-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:3rem}
+@media(max-width:880px){.pil-g{grid-template-columns:1fr}}
+.pil{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--pilc);display:flex;flex-direction:column}
+.pil .bq-ph{aspect-ratio:16/10}
+.pil-b{padding:1.8rem 1.7rem 2rem}
+.pil h3{font-size:1.2rem;margin-bottom:.6rem}
+.pil p{font-size:.95rem;line-height:1.62;color:var(--char)}
 
+/* Feature story */
 .suggest{padding:5rem 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
 .suggest::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
-.sugg-card{background:rgba(250,246,242,.06);border:1px solid rgba(250,246,242,.15);border-radius:0;padding:2.5rem 2.8rem;backdrop-filter:blur(8px)}
-.suggest h2{color:var(--cream);margin-bottom:1.2rem}
+.sugg-card{background:rgba(250,246,242,.06);border:1px solid rgba(250,246,242,.15);padding:2.5rem 2.8rem}
+@media(max-width:700px){.sugg-card{padding:1.8rem 1.4rem}}
+.suggest h2{color:var(--cream);margin-bottom:1.6rem}
 .suggest .lab{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wattle);margin-bottom:.6rem;font-weight:600}
-.wording{font-family:'Courier New',monospace;background:rgba(0,0,0,.25);padding:1.6rem 1.8rem;border-radius:0;border-left:3px solid var(--wattle);font-size:.92rem;line-height:1.7;color:rgba(250,246,242,.92);margin:1.4rem 0}
 .cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:stretch}
-.cs-img{border-radius:0;overflow:hidden;position:relative}
+.cs-img{overflow:hidden;position:relative;margin:0}
 .cs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .cs-img figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.45);color:rgba(250,246,242,.8);font-size:.78rem;padding:.5rem .8rem}
 .cs-body p{color:rgba(250,246,242,.88);font-size:1rem;line-height:1.72;margin-bottom:1.1rem}
 .cs-body p:last-child{margin-bottom:0}
-.cs-pull{font-family:var(--ff-b);font-size:1.12rem;color:var(--wattle);line-height:1.35;margin:1.4rem 0;border-left:3px solid var(--wattle);padding-left:1rem;font-weight:600}
 @media(max-width:700px){.cs-grid{grid-template-columns:1fr}.cs-img{aspect-ratio:4/3}}
 
-.faqs{padding:5rem 0;background:var(--cream)}
-.faq-list{max-width:780px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.7rem}
-.faq{background:var(--white);border:1px solid var(--rule);border-radius:0;overflow:hidden}
-.faq summary{padding:1.3rem 1.6rem;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);cursor:pointer;font-size:1.02rem;display:flex;justify-content:space-between;align-items:center}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:1.5rem;color:var(--euc);transition:.25s}
-.faq[open] summary::after{transform:rotate(45deg)}
-.faq .body{padding:0 1.6rem 1.4rem;font-size:.94rem;color:var(--char);line-height:1.6}
+/* Legacy stories: editorial list, no images */
+.bq-leg{padding:5rem 0;background:var(--cream)}
+.leg-wrap{display:grid;grid-template-columns:.85fr 1.6fr;gap:4rem;align-items:start}
+@media(max-width:900px){.leg-wrap{grid-template-columns:1fr;gap:2.4rem}}
+.bq-leg-hd{position:sticky;top:110px}
+@media(max-width:900px){.bq-leg-hd{position:static}}
+.bq-leg-hd p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--char)}
+.leg-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+.leg{display:grid;grid-template-columns:13rem 1fr;gap:2rem;padding:1.9rem 0;border-bottom:1px solid var(--rule)}
+@media(max-width:600px){.leg{grid-template-columns:1fr;gap:.6rem;padding:1.6rem 0}}
+.leg h3{font-size:1.18rem;line-height:1.25;margin-bottom:.45rem}
+.leg-pl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bark-text);display:block;line-height:1.5}
+.leg p{font-size:.98rem;line-height:1.68;color:var(--char)}
+.leg-thanks{font-family:var(--ff-d);font-weight:600;color:var(--euc)}
 
-.b-form-sec{padding:5rem 0;background:var(--paper)}
+/* Where to start */
+.bq-start{padding:5rem 0;background:var(--sand)}
+.st-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+@media(max-width:880px){.st-g{grid-template-columns:1fr;gap:2.5rem}}
+.st-g .intro p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--char)}
+.steps{list-style:none;counter-reset:n}
+.steps li{counter-increment:n;position:relative;padding:0 0 1.6rem 3.2rem;font-size:.97rem;line-height:1.62;color:var(--char)}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(n);position:absolute;left:0;top:-.1rem;width:34px;height:34px;border:1.5px solid var(--euc);color:var(--euc);font-family:var(--ff-d);font-size:.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;background:var(--cream)}
+.steps li span{display:block;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:1.02rem;margin-bottom:.2rem}
+
+/* Brochure */
+.bq-bro{padding:5rem 0;background:var(--cream)}
+.bro-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:center}
+@media(max-width:880px){.bro-g{grid-template-columns:1fr;gap:2.5rem}}
+.bro-cov{max-width:340px;margin:0 auto;box-shadow:0 30px 60px -24px rgba(15,49,50,.45);transform:rotate(-2deg)}
+.bro-cov img{width:100%;display:block}
+.bro-g p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--char)}
+.bro-act{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-top:1.8rem}
+.bro-act small{font-size:.82rem;color:var(--stone)}
+
+/* Wording + organisation details */
+.bq-word{padding:5rem 0;background:var(--euc-deep);color:var(--euc-soft)}
+.bq-word h2,.bq-word h3{color:var(--cream)}
+.bq-word .ey{color:var(--wattle)}
+.bq-word .ey::before{background:var(--wattle)}
+.wd-g{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:start;margin-top:2.4rem}
+@media(max-width:900px){.wd-g{grid-template-columns:1fr;gap:2.5rem}}
+.wd-intro{max-width:720px;margin-top:1rem;font-size:1.02rem;line-height:1.7;color:rgba(250,246,242,.85)}
+.wording{position:relative;background:rgba(0,0,0,.25);padding:1.8rem 1.9rem 1.6rem;border-left:3px solid var(--euc-mid);font-size:.98rem;line-height:1.75;color:rgba(250,246,242,.94)}
+.wording .br{color:var(--euc-soft);font-style:italic}
+.copy-btn{margin-top:1.2rem;background:var(--euc-soft);color:var(--euc-deep);border:none;padding:.6em 1.1em;font-weight:700;font-size:.82rem;cursor:pointer;font-family:var(--ff-b)}
+.copy-btn:hover{background:var(--cream)}
+.wd-note{margin-top:1.8rem}
+.wd-note h3{font-size:1.05rem;margin-bottom:.5rem}
+.wd-note p{font-size:.93rem;line-height:1.65;color:rgba(250,246,242,.8)}
+.org{border:1px solid rgba(250,246,242,.18);padding:1.9rem}
+.org h3{font-size:1.05rem;margin-bottom:1.1rem}
+.org dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.2rem;font-size:.9rem}
+.org dt{color:var(--euc-mid);font-weight:600;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding-top:.15rem}
+.org dd{color:rgba(250,246,242,.92)}
+.org .fine{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid rgba(250,246,242,.15);font-size:.82rem;line-height:1.6;color:rgba(250,246,242,.7)}
+.org .fine a{color:var(--euc-soft);text-decoration:underline}
+.bq-word .wd-note a{color:var(--euc-soft);text-decoration:underline;text-underline-offset:2px}
+
+/* Promise */
+.bq-prom{padding:5rem 0;background:var(--sand)}
+.prom-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+@media(max-width:880px){.prom-g{grid-template-columns:1fr;gap:2rem}}
+.prom-g .intro p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--char)}
+.prom{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.prom li{background:var(--cream);border-left:3px solid var(--euc);padding:1.2rem 1.4rem;font-size:.95rem;line-height:1.6;color:var(--char)}
+.prom li strong{display:block;font-family:var(--ff-d);color:var(--euc-deep);font-size:1rem;margin-bottom:.2rem}
+
+/* FAQ */
+.faqs{padding:5rem 0;background:var(--cream)}
+.faq-list{max-width:800px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.7rem}
+.faq{background:var(--white);border:1px solid var(--rule);overflow:hidden}
+.faq summary{padding:1.3rem 1.6rem;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);cursor:pointer;font-size:1.02rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;color:var(--euc);transition:.25s;flex-shrink:0}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .body{padding:0 1.6rem 1.4rem;font-size:.95rem;color:var(--char);line-height:1.65}
+
+/* Contact */
+.b-form-sec{padding:5rem 0;background:var(--sand)}
 .bfs-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
 @media(max-width:880px){.bfs-g{grid-template-columns:1fr;gap:2rem}}
-.bform{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.5rem;position:relative}
-.bform::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--wattle));border-radius:0}
-.bform h3{margin-bottom:1.4rem;font-size:1.3rem}
-.bform label{display:block;font-size:.82rem;font-weight:600;color:var(--euc-deep);margin-bottom:.5rem}
-.bform input,.bform textarea{width:100%;padding:.85em 1.1em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink);margin-bottom:1.1rem}
-.bform textarea{resize:vertical;min-height:100px}
+.bfs-g .intro p{color:var(--char);font-size:1.02rem;line-height:1.7;margin-top:1rem}
+.bq-person{background:var(--white);border:1px solid var(--rule);padding:1.8rem;margin-top:2rem;display:flex;gap:1.4rem;align-items:flex-start}
+@media(max-width:480px){.bq-person{flex-direction:column}}
+.bq-person .bq-ph{width:88px;height:88px;flex-shrink:0;font-size:.6rem;padding:.3rem}
+.bq-person .bq-ph span{padding:.3em .4em}
+.bq-person-nm{font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:1.06rem;display:block;margin-bottom:.2rem}
+.bq-person-rl{font-size:.88rem;color:var(--stone);margin-bottom:.7rem}
+.bq-person a{color:var(--euc);font-size:.92rem;display:block;font-weight:500}
+.bform{background:var(--white);border:1px solid var(--rule);padding:2.5rem;position:relative}
+@media(max-width:600px){.bform{padding:1.8rem 1.5rem}}
+.bform::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--bark),var(--wattle))}
+.bform h3{margin-bottom:.4rem;font-size:1.26rem}
+.bform .sub{font-size:.9rem;color:var(--stone);margin-bottom:1.5rem;line-height:1.55}
+.bform fieldset{border:none;margin:0 0 1.2rem;padding:0}
+.bform legend{font-size:.82rem;font-weight:600;color:var(--euc-deep);margin-bottom:.6rem}
+.bform .opt{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;margin-bottom:.45rem;color:var(--char);cursor:pointer}
+.bform .opt input{width:auto;margin:.3rem 0 0;accent-color:var(--euc)}
+.bform label.f{display:block;font-size:.82rem;font-weight:600;color:var(--euc-deep);margin-bottom:.5rem}
+.bform input[type=text],.bform input[type=email],.bform input[type=tel],.bform textarea{width:100%;padding:.85em 1.1em;border:1.5px solid var(--rule);font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink);margin-bottom:1.1rem}
+.bform textarea{resize:vertical;min-height:90px}
 .bform input:focus,.bform textarea:focus{outline:none;border-color:var(--euc);background:var(--white)}
-.bform button{width:100%;padding:1em 1.4em;background:var(--waratah);color:var(--cream);border-radius:0;font-weight:700;cursor:pointer;font-family:var(--ff-b)}
+.bform button{width:100%;padding:1em 1.4em;background:var(--euc-deep);color:var(--cream);font-weight:700;cursor:pointer;font-family:var(--ff-b)}
+.bform button:hover{background:var(--euc)}
+.bform .priv{font-size:.8rem;color:var(--stone);margin-top:1rem;line-height:1.5}
+.bform .priv a{color:var(--euc);text-decoration:underline}
+
+/* Pillar detail: where your gift can go */
+.pil-lh{font-family:var(--ff-b);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--pilc);margin:1.3rem 0 .6rem}
+.pil[style*="--bark"] .pil-lh{color:var(--bark-text)}
+.pil-l{list-style:none;padding:0;margin:0}
+.pil-l li{position:relative;padding:0 0 .45rem 1.2rem;font-size:.93rem;line-height:1.55;color:var(--char)}
+.pil-l li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;background:var(--pilc)}
+.pil-ex{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.86rem!important;color:var(--stone)!important}
+.pil-ex a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
+.pil-b{display:flex;flex-direction:column;flex:1}
+.pil-more{margin-top:auto;align-self:flex-start;font-size:.86rem;font-weight:600;padding-top:1.2rem}
+.pil-also{margin-top:2.6rem;max-width:780px}
+.pil-also p{font-size:1rem;line-height:1.7;color:var(--char)}
+.pil-also strong{color:var(--euc-deep)}
+
+/* Types of bequest */
+.bq-types{padding:5rem 0;background:var(--cream)}
+.bq-types-hd{max-width:720px}
+.bq-types-hd p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--char)}
+.ty-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+@media(max-width:1000px){.ty-g{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ty-g{grid-template-columns:1fr}}
+.ty{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:1.8rem 1.6rem 2rem}
+.ty img{width:52px;height:52px;margin-bottom:1.1rem}
+.ty h3{font-size:1.14rem;margin-bottom:.6rem}
+.ty p{font-size:.93rem;line-height:1.62;color:var(--char)}
+.ty a,.ty-note a{color:var(--euc);text-decoration:underline;text-underline-offset:2px;font-weight:500}
+.ty-note{margin-top:2.2rem;max-width:780px;font-size:.98rem;line-height:1.7;color:var(--char)}
 </style>
 </head>
 <body>
@@ -132,7 +252,7 @@
 </div></div>
 </header><!-- /@header -->
 <main>
-<!-- ============ HERO (a-feature) ============ -->
+<!-- ============ HERO ============ -->
 <section class="fb-hero">
   <div class="fb-hero-bg">
     <img src="assets/img/bequests-hero.jpg" alt="Rainforest ridges running away into hazy blue ranges, with a rainbow falling across the valley">
@@ -143,36 +263,92 @@
       <span class="ey">Leave a gift in your Will</span>
       <h1>A gift that lasts longer than a lifetime.</h1>
       <p class="lede">A bequest to our Foundation is one of the most meaningful gifts you can make. It allows you to protect the wild places you love, for the people who come after you.</p>
+      <div class="fb-hero-cta">
+        <a href="#brochure" class="btn btn-sol">Read our bequest brochure</a>
+        <a href="#talk" class="btn btn-lt">Talk to us in confidence</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ============ THANK YOU / INTRO ============ -->
 <section class="b-intro">
   <div class="cw"><div class="bi-g">
     <div class="bi-im rv">
       <img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Flinders Ranges">
-      <div class="stamp">your legacy<small>protected forever</small></div>
     </div>
     <div class="rv d1">
-      <span class="ey">Why leave a bequest</span>
-      <h2 style="margin-top:1rem">For some, the land is family.</h2>
-      <p style="font-size:1.05rem;color:var(--char);line-height:1.7;margin-bottom:1.2rem">Many of our most significant conservation outcomes, like the 1,900 hectares of Mundoo Island secured for Coorong National Park, announced in January 2026, were made possible by the generosity of Australians who included us in their Will.</p>
-      <p style="font-size:1.05rem;color:var(--char);line-height:1.7">A bequest costs nothing today. It doesn&rsquo;t affect your loved ones&rsquo; inheritance. And it gives you the satisfaction of knowing that the wild Australia you love will be protected long after your lifetime.</p>
+      <span class="ey">Thank you for considering it</span>
+      <h2 style="margin-top:1rem">No pressure, and no hurry.</h2>
+      <p style="margin-top:1.2rem">To be turning over the idea of giving something of yourself to the natural world is a quietly remarkable thing. It means that somewhere in the way you think about the years ahead, you have made room for the wild: the birdsong outside the window, the bushland on the edge of town, and the animals whose survival rests with people they will never know.</p>
+      <p>A gift in your Will is among the most personal decisions you will ever make, and it deserves time, conversation and care. This page is here to help when you are ready. Whatever you decide, we are honoured that you are thinking of nature, and of us, as part of the story you leave behind.</p>
     </div>
   </div></div>
 </section>
 
-<section class="ways">
+<!-- ============ WHAT YOUR GIFT SETS IN MOTION (pillars + where your gift can go) ============ -->
+<section class="bq-pil">
   <div class="cw">
-    <div class="rv" style="text-align:center;max-width:700px;margin:0 auto"><span class="ey">Types of bequest</span><h2 style="margin-top:1rem">Three ways to give.</h2></div>
-    <div class="ways-g">
-      <div class="way rv"><div class="ex">Example</div><h3>Residuary bequest</h3><p>Leave a percentage of the remainder of your estate after other gifts have been made. This protects against inflation and is the most common form of bequest.</p></div>
-      <div class="way b2 rv d1"><div class="ex">Example</div><h3>Pecuniary bequest</h3><p>Leave a specific sum of money. Straightforward and easy to include in your Will alongside gifts to family and friends.</p></div>
-      <div class="way b3 rv d2"><div class="ex">Example</div><h3>Specific bequest</h3><p>Leave a particular item or asset such as property, shares or artwork. We&rsquo;ll work with your executors to honour your wishes.</p></div>
+    <div class="bq-pil-hd rv">
+      <span class="ey">What your gift sets in motion</span>
+      <h2 style="margin-top:1rem">One gift, carried a long way.</h2>
+      <p>A gift in your Will rarely works alone, and that is its quiet strength. We use it to draw in government and philanthropic support and to match it to the right project at the right moment, so a single gift can become the catalyst that protects a landscape, restores a river system or brings a species back from the edge. Here is where it can go.</p>
+    </div>
+    <div class="pil-g">
+      <div class="pil rv" style="--pilc:var(--euc)">
+        <div class="bq-ph"><span>Image: Growing National Parks</span></div>
+        <div class="pil-b">
+          <h3>Growing National Parks</h3>
+          <p>National parks are the strongest protection Australian law can give a landscape. When land of high conservation value comes up, often right beside an existing park, we help buy it and hand it into the national parks estate, safe from clearing and development forever.</p>
+          <h4 class="pil-lh">Your gift can help</h4>
+          <ul class="pil-l">
+            <li>add land to Australia&rsquo;s permanently protected national parks</li>
+            <li>join existing parks into larger, connected landscapes</li>
+            <li>improve visitor facilities, so more people can enjoy the parks</li>
+          </ul>
+          <p class="pil-ex">Projects like <a href="project-mundoo-island-acquisition.html">Mundoo Island</a> and <a href="project-remarkable-southern-flinders.html">Remarkable Southern Flinders</a></p>
+          <a href="growing-national-parks.html" class="btn-g pil-more">See all Growing National Parks projects</a>
+        </div>
+      </div>
+      <div class="pil rv d1" style="--pilc:var(--waratah)">
+        <div class="bq-ph"><span>Image: Saving Species</span></div>
+        <div class="pil-b">
+          <h3>Saving Species</h3>
+          <p>Australia is home to plants and animals found nowhere else on Earth, and one of the worst extinction records anywhere. We fund recovery programs run with researchers, carers, Traditional Owners and land managers, backing flagship species and overlooked ones alike.</p>
+          <h4 class="pil-lh">Your gift can help</h4>
+          <ul class="pil-l">
+            <li>protect threatened and endangered species and their habitat</li>
+            <li>fund breeding programs, monitoring, nest boxes and disease treatment</li>
+            <li>create wildlife corridors so animals can move and recover</li>
+          </ul>
+          <p class="pil-ex">Projects like the <a href="project-warddeken-mayh.html">Warddeken Mayh Recovery Project</a>, the <a href="project-curb-wombat-mange-program.html">Curb Wombat Mange Program</a> and <a href="project-mountain-pygmy-possum.html">Mountain Pygmy Possum</a> recovery</p>
+          <a href="saving-species.html" class="btn-g pil-more">See all Saving Species projects</a>
+        </div>
+      </div>
+      <div class="pil rv d2" style="--pilc:var(--bark)">
+        <div class="bq-ph"><span>Image: Healing the Land</span></div>
+        <div class="pil-b">
+          <h3>Healing the Land</h3>
+          <p>Much of Australia is damaged rather than destroyed, and damaged land can heal. Through our Landscape Resilience Program we restore country affected by bushfire, flood and clearing, and we stay for the follow-up: watering, weeding, monitoring and replanting.</p>
+          <h4 class="pil-lh">Your gift can help</h4>
+          <ul class="pil-l">
+            <li>restore and regenerate habitat in existing parks</li>
+            <li>replant bushland and repair wetlands and waterways</li>
+            <li>support cultural fire and caring-for-Country programs led by First Nations communities</li>
+          </ul>
+          <p class="pil-ex">Projects like <a href="project-yarrahapinni-wetlands-restoration-stage-1.html">Yarrahapinni Wetlands</a> and <a href="project-fire-wise.html">Fire Wise</a></p>
+          <a href="healing-the-land.html" class="btn-g pil-more">See all Healing the Land projects</a>
+        </div>
+      </div>
+    </div>
+    <div class="pil-also rv">
+      <p><strong>Across all of our work,</strong> your gift can also help conserve and share Australia&rsquo;s cultural heritage, and educate and inspire the conservationists of today and tomorrow.</p>
+      <p>You can direct your gift to the pillar closest to your heart, or trust us to place it where the need is greatest at the time. Either way, we will honour your wishes with the same care we would want for our own family.</p>
     </div>
   </div>
 </section>
 
+<!-- ============ FEATURE LEGACY: BARBARA HARRIS ============ -->
 <section class="suggest">
   <div class="cw rv">
     <div class="sugg-card">
@@ -193,30 +369,211 @@
   </div>
 </section>
 
-<section class="faqs">
+<!-- ============ LEGACIES THAT LIVE ON (case studies from fnpw.org.au/bequest) ============ -->
+<section class="bq-leg">
+  <div class="cw"><div class="leg-wrap">
+    <div class="bq-leg-hd rv">
+      <span class="ey">Legacies that live on</span>
+      <h2 style="margin-top:1rem">Their names are written into the landscape.</h2>
+      <p>For decades, people have written the wild into their Wills. Because of them, whole corners of national parks, reserves and walking tracks exist today, and they will be there for the generations who follow.</p>
+    </div>
+    <ol class="leg-list rv d1">
+      <li class="leg">
+        <div><h3>Ivan Saleta</h3><span class="leg-pl">Lachlan Valley, NSW</span></div>
+        <p><span class="leg-thanks">Thanks to Ivan,</span> 20,000 hectares of bushland were gifted to the NSW National Parks &amp; Wildlife Service to create the Hunthawang Precinct of the Lachlan Valley State Conservation Area. It now protects habitat for the endangered Malleefowl, along with the Superb Parrot, Major Mitchell&rsquo;s Cockatoo, Brown Treecreeper and Painted Honeyeater.</p>
+      </li>
+      <li class="leg">
+        <div><h3>&lsquo;Kitty&rsquo; Catherine Clare White</h3><span class="leg-pl">Morton National Park, NSW</span></div>
+        <p><span class="leg-thanks">Thanks to Kitty,</span> 2,086 hectares of bushland were purchased for Morton National Park, for future generations to enjoy.</p>
+      </li>
+      <li class="leg">
+        <div><h3>Kenneth Hoskins</h3><span class="leg-pl">Cecil Hoskins Nature Reserve, NSW</span></div>
+        <p><span class="leg-thanks">Thanks to Kenneth,</span> the reserve has been revegetated and given upgraded tracks, new signage and a bird-viewing platform with seating and bird identification information. Kenneth was related to Sir Cecil Hoskins, who helped establish the reserve through a donation to us many years ago.</p>
+      </li>
+      <li class="leg">
+        <div><h3>Eulie Sandrey</h3><span class="leg-pl">Mother of Ducks Lagoon Nature Reserve, NSW</span></div>
+        <p><span class="leg-thanks">Thanks to Eulie,</span> important wetland preservation research was supported at a reserve that is a haven for more than 80 species of birds and two species of endangered frogs.</p>
+      </li>
+      <li class="leg">
+        <div><h3>Janet Cosh</h3><span class="leg-pl">Fitzroy Falls, NSW</span></div>
+        <p><span class="leg-thanks">Thanks to Janet,</span> the East Rim Wildflower Walk near Fitzroy Falls, a much-loved 7 km walk, was upgraded for everyone who walks it.</p>
+      </li>
+    </ol>
+  </div></div>
+</section>
+
+<!-- ============ WHERE TO START ============ -->
+<section class="bq-start">
+  <div class="cw"><div class="st-g">
+    <div class="intro rv">
+      <span class="ey">Where to start</span>
+      <h2 style="margin-top:1rem">Simpler than most people expect.</h2>
+      <p>Leaving a gift in your Will can be taken one gentle step at a time, and you are free to revisit your decision whenever your circumstances change.</p>
+    </div>
+    <ol class="steps rv d1">
+      <li><span>Talk it through with the people you love</span>A conversation with family or close friends often brings clarity and a shared sense of purpose, and it means your wishes are understood by those closest to you.</li>
+      <li><span>Speak with your solicitor or financial adviser</span>They can make sure your Will reflects exactly what you intend, and that it looks after both the people and the causes you care about.</li>
+      <li><span>Choose the gift that feels right</span>The types of bequest below explain the options, and our suggested wording will help your solicitor put your wishes into words.</li>
+      <li><span>Let us know, if you would like to</span>You are never obliged to tell us. If you are comfortable doing so, it lets us thank you properly and understand your wishes. The decision always stays yours.</li>
+    </ol>
+  </div></div>
+</section>
+
+<!-- ============ TYPES OF BEQUEST ============ -->
+<section class="bq-types" id="types">
   <div class="cw">
-    <div class="rv" style="text-align:center;max-width:700px;margin:0 auto"><span class="ey">Frequently asked</span><h2 style="margin-top:1rem">Questions about bequests.</h2></div>
-    <div class="faq-list">
-      <details class="faq rv"><summary>Do I need to let you know if I include you in my Will?</summary><div class="body">You&rsquo;re not required to, but we&rsquo;d love to know. Letting us know allows us to thank you in your lifetime, invite you to our Habitat Heroes events, and ensure your gift is used as you intended. Your decision remains confidential and you can change it at any time.</div></details>
-      <details class="faq rv"><summary>Can I direct my bequest to a specific project or species?</summary><div class="body">Yes. While most bequests are made for general purposes, which gives us the flexibility to allocate funding where it&rsquo;s most needed, but you can also direct your gift to a specific pillar (Growing Parks, Saving Species, Healing Our Land) or program. We recommend discussing this with our bequests team first.</div></details>
-      <details class="faq rv"><summary>Is my bequest tax effective?</summary><div class="body">Yes. As a Deductible Gift Recipient, gifts to our Foundation are generally exempt from capital gains tax and reduce your estate&rsquo;s taxable value. Please consult your solicitor or accountant for advice specific to your circumstances.</div></details>
-      <details class="faq rv"><summary>What if my circumstances change?</summary><div class="body">You can change your Will at any time. A bequest to our Foundation does not lock you in. It is simply an instruction that takes effect when you no longer need your assets.</div></details>
-      <details class="faq rv"><summary>How will my gift be acknowledged?</summary><div class="body">With your permission, we honour bequest givers through our Habitat Heroes recognition program, including private events, named project recognition where appropriate, and personal thank-you communications. Many of our donors prefer anonymity, which we always respect.</div></details>
+    <div class="bq-types-hd rv">
+      <span class="ey">Types of bequest</span>
+      <h2 style="margin-top:1rem">Choose the gift that suits you.</h2>
+      <p>There are a few simple ways to leave a gift in your Will, and your solicitor can help you find the one that fits your circumstances. Whichever you choose, it is received with the same gratitude, and no gift is ever too small to matter.</p>
+    </div>
+    <div class="ty-g">
+      <div class="ty rv">
+        <img src="assets/icons/fnpw-icon-circular-arrows-dark-soil-rgb.svg" alt="" width="52" height="52">
+        <h3>Residual gift</h3>
+        <p>This is what remains of your estate once you have provided for the people you love and any debts and specific gifts are settled. Because it is worked out last, it never takes from anyone else you have named, and it keeps pace as the value of your estate changes over the years.</p>
+      </div>
+      <div class="ty rv d1">
+        <img src="assets/icons/fnpw-icon-statistics-dark-soil-rgb.svg" alt="" width="52" height="52">
+        <h3>Percentage gift</h3>
+        <p>None of us can know what our estate will be worth in the end. Leaving a percentage or share, rather than a fixed amount, means your gift to nature stays in proportion with everything else you leave behind, whatever the final value.</p>
+      </div>
+      <div class="ty rv d2">
+        <img src="assets/icons/fnpw-icon-donation-dark-soil-rgb.svg" alt="" width="52" height="52">
+        <h3>Specific sum</h3>
+        <p>A set amount, large or modest, that feels right to you. It is the simplest gift to write, though it is worth reviewing every few years, because inflation and changing circumstances can alter what a fixed amount will do.</p>
+      </div>
+      <div class="ty rv d3">
+        <img src="assets/icons/fnpw-icon-landscape-dark-soil-rgb.svg" alt="" width="52" height="52">
+        <h3>Land, property or assets</h3>
+        <p>You might leave a specific asset such as property, shares or artwork. We also welcome gifts of land, and if that is what you have in mind, we would love to talk early so we understand your hopes for it. <a href="donate-land.html">Find out about donating land</a>.</p>
+      </div>
+    </div>
+    <p class="ty-note rv">You can also give through a trust, or leave a gift for a specific purpose such as buying land for a national park or protecting a particular species. If you would like to do either, please <a href="#talk">get in touch</a> first so we can make sure your wishes can be fulfilled.</p>
+  </div>
+</section>
+
+<!-- ============ SUGGESTED WORDING + ORGANISATION DETAILS ============ -->
+<section class="bq-word" id="wording">
+  <div class="cw">
+    <div class="rv">
+      <span class="ey">For you and your solicitor</span>
+      <h2 style="margin-top:1rem">Suggested wording for your Will.</h2>
+      <p class="wd-intro">If you would like to include a gift to us, your solicitor may find the following wording helpful. Please confirm the details with us or with your solicitor before finalising.</p>
+    </div>
+    <div class="wd-g">
+      <div class="rv">
+        <div class="wording" id="wording-text">I give to the Foundation for National Parks &amp; Wildlife (ABN 90 107 744 771) of <span class="br">[registered address]</span>, <span class="br">[a percentage of my estate / the residue of my estate / the sum of $______ / the following specific gift]</span> for its general purposes. I direct that the receipt of the Chief Executive Officer or authorised officer shall be a sufficient discharge to my executors.</div>
+        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('wording-text').innerText).then(()=>{this.textContent='Copied';setTimeout(()=>this.textContent='Copy wording',2000)})">Copy wording</button>
+        <div class="wd-note">
+          <h3>A note on tax</h3>
+          <p>For many people, a gift in their Will is a tax-effective way to give, and as a registered charity with Deductible Gift Recipient status we are able to receive gifts of this kind. Everyone&rsquo;s circumstances are different, so we always recommend talking it through with your solicitor or financial adviser. We are not able to offer legal or financial advice ourselves, though we are always glad to answer questions about our work and how your gift would be used.</p>
+        </div>
+        <div class="wd-note">
+          <h3>If you are an executor</h3>
+          <p>If you are managing an estate that includes a gift to us, please contact us on <a href="tel:1800898626" >1800 898 626</a> or <a href="mailto:fnpw@fnpw.org.au" >fnpw@fnpw.org.au</a> and we will help with whatever you need.</p>
+        </div>
+      </div>
+      <aside class="org rv d1">
+        <h3>Organisation details</h3>
+        <dl>
+          <dt>Legal name</dt><dd>Foundation for National Parks &amp; Wildlife</dd>
+          <dt>ABN</dt><dd>90 107 744 771</dd>
+          <dt>ACN</dt><dd>000 744 516</dd>
+          <dt>Office</dt><dd>Level 6, 10 Bridge Street, Sydney NSW 2000</dd>
+          <dt>Postal</dt><dd>GPO Box 2666, Sydney NSW 2001</dd>
+          <dt>Phone</dt><dd>1800 898 626</dd>
+          <dt>Email</dt><dd>fnpw@fnpw.org.au</dd>
+        </dl>
+        <p class="fine">Incorporated as a company limited by guarantee and regulated by ASIC. Registered with the Australian Charities and Not-for-profits Commission and endorsed as a Deductible Gift Recipient. We are not legal practitioners, so please seek legal advice when preparing your Will.</p>
+      </aside>
     </div>
   </div>
 </section>
 
-<section class="b-form-sec">
+<!-- ============ BROCHURE ============ -->
+<section class="bq-bro" id="brochure">
+  <div class="cw"><div class="bro-g">
+    <div class="bro-cov rv"><img src="assets/img/bequests-brochure-cover.jpg" alt="Cover of our bequest brochure, Leave a Legacy for the Future"></div>
+    <div class="rv d1">
+      <span class="ey">Our bequest brochure</span>
+      <h2 style="margin-top:1rem">Something to read at your own pace.</h2>
+      <p>Our brochure sets out how a gift in your Will works, the difference it makes and the options open to you. It is yours to read quietly, share with family, or take along to your solicitor.</p>
+      <div class="bro-act">
+        <a href="assets/docs/fnpw-bequest-brochure.pdf" class="btn btn-p" download>Download the brochure (PDF, 1.9 MB)</a>
+        <a href="#talk" class="btn-g">Request a printed copy</a>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============ OUR PROMISE ============ -->
+<section class="bq-prom">
+  <div class="cw"><div class="prom-g">
+    <div class="intro rv">
+      <span class="ey">Our promise to you</span>
+      <h2 style="margin-top:1rem">Trust like this deserves a plain answer.</h2>
+      <p>When you place this much trust in us, you deserve to know exactly what we will do with it. So here is our promise, plainly made.</p>
+    </div>
+    <ul class="prom rv d1">
+      <li><strong>Your gift reaches the ground</strong>The great majority of what you give funds real, on-ground conservation.</li>
+      <li><strong>We are careful stewards</strong>We direct your support to where it does the most good, and report on it openly.</li>
+      <li><strong>We show our working</strong>We share our impact through stories, photographs and measurable results you can see for yourself.</li>
+      <li><strong>We will never pressure you</strong>There are no street fundraisers and no relentless calls, just an honest relationship on your terms.</li>
+      <li><strong>We honour your wishes</strong>However you choose to give and whatever you choose to support, your intentions are treated with the utmost care.</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faqs">
+  <div class="cw">
+    <div class="rv" style="text-align:center;max-width:700px;margin:0 auto"><span class="ey">Frequently asked</span><h2 style="margin-top:1rem">Questions about gifts in Wills.</h2></div>
+    <div class="faq-list">
+      <details class="faq rv"><summary>Do I need to tell you if I leave a gift in my Will?</summary><div class="body">Not at all, you are never obliged to. If you feel comfortable letting us know, it allows us to thank you and to understand your wishes properly. Your decision stays private, and entirely yours, throughout.</div></details>
+      <details class="faq rv"><summary>Can I choose what my gift supports?</summary><div class="body">Yes. You can dedicate your gift to a cause or region that means something to you, such as protecting native species or healing a particular landscape, or you can trust us to direct it wherever the need is greatest. If you would like to direct your gift, please talk to us first so we can make sure your wishes can be fulfilled.</div></details>
+      <details class="faq rv"><summary>How will my gift be used?</summary><div class="body">Your gift supports the work at the core of what we do: restoring ecosystems, expanding protected areas, growing native trees and protecting threatened species. The majority of every gift goes directly to that work, out on the ground.</div></details>
+      <details class="faq rv"><summary>Do I need a great deal of money to leave a gift?</summary><div class="body">Not in the slightest. What matters to us has never been the size of a gift. A gift of any size makes a real and lasting difference.</div></details>
+      <details class="faq rv"><summary>Can I change my mind later?</summary><div class="body">Of course. Your Will is always yours to update as your life changes, and many people review theirs every few years. If you already have a Will, your solicitor can advise whether a codicil (a formal amendment) or a new Will is the better way to add a gift.</div></details>
+      <details class="faq rv"><summary>How do you make my gift go further?</summary><div class="body">We rarely work alone. By partnering with Traditional Custodians, governments and conservation organisations, we combine your gift with funding, knowledge and on-ground expertise from many hands, so a single gift can help unlock outcomes far larger than itself, from securing an entire island to restoring a whole wetland.</div></details>
+      <details class="faq rv"><summary>How do you work with Traditional Owners?</summary><div class="body">Respectfully, and always in partnership. We work alongside Traditional Custodians to care for Country through shared decision-making and co-design, so that cultural knowledge and leadership guide how land and species are protected.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TALK TO US / LET US KNOW ============ -->
+<section class="b-form-sec" id="talk">
   <div class="cw"><div class="bfs-g">
-    <div class="rv"><span class="ey">Bequests team</span><h2 style="margin-top:1rem">We&rsquo;d love to talk.</h2><p style="color:var(--char);font-size:1rem;line-height:1.65;margin-top:1rem">Whether you&rsquo;ve already included us in your Will, you&rsquo;re considering it, or you&rsquo;d simply like more information, our bequests team is here to help, in complete confidence.</p><div style="margin-top:2rem"><strong style="display:block;color:var(--euc-deep);font-family:var(--ff-d);margin-bottom:.3rem">Our team</strong><div style="font-size:.9rem;margin-top:.4rem"><a href="mailto:fnpw@fnpw.org.au" style="color:var(--euc)">fnpw@fnpw.org.au</a></div><div style="font-size:.9rem"><a href="tel:1800898626" style="color:var(--euc)">1800 898 626</a></div></div></div>
-    <form class="bform rv d1" onsubmit="alert('Thank you. Our bequests team will be in touch.');return false">
-      <h3>Request a bequest information pack</h3>
-      <label>Your name</label><input type="text" required>
-      <label>Email</label><input type="email" required>
-      <label>Phone (optional)</label><input type="tel">
-      <label>Postal address (for printed materials)</label><textarea></textarea>
-      <label>Notes (optional)</label><textarea placeholder="Any specific projects you&rsquo;re interested in?"></textarea>
-      <button type="submit">Request information</button>
+    <div class="intro rv">
+      <span class="ey">Talk to us</span>
+      <h2 style="margin-top:1rem">We are here whenever you are ready.</h2>
+      <p>Whether you have already included us in your Will, you are still thinking it over, or you would simply like a printed brochure, we would be glad to hear from you. Every conversation is confidential and carries no obligation.</p>
+      <div class="bq-person">
+        <div class="bq-ph"><span>Headshot</span></div>
+        <div>
+          <span class="bq-person-nm">[Name to confirm]</span>
+          <div class="bq-person-rl">[Role], Foundation for National Parks &amp; Wildlife</div>
+          <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a>
+          <a href="tel:1800898626">1800 898 626</a>
+        </div>
+      </div>
+    </div>
+    <form class="bform rv d1" onsubmit="alert('Thank you. We will be in touch soon.');return false">
+      <h3>How can we help?</h3>
+      <p class="sub">Tell us a little about what you would like, and we will come back to you personally.</p>
+      <fieldset>
+        <legend>I would like to</legend>
+        <label class="opt"><input type="checkbox" name="want" value="brochure"> Receive a printed brochure</label>
+        <label class="opt"><input type="checkbox" name="want" value="told"> Let you know I have included you in my Will</label>
+        <label class="opt"><input type="checkbox" name="want" value="talk"> Have a confidential conversation</label>
+      </fieldset>
+      <label class="f" for="bq-name">Your name</label><input id="bq-name" type="text" required>
+      <label class="f" for="bq-email">Email</label><input id="bq-email" type="email" required>
+      <label class="f" for="bq-phone">Phone (optional)</label><input id="bq-phone" type="tel">
+      <label class="f" for="bq-addr">Postal address (for a printed brochure)</label><textarea id="bq-addr"></textarea>
+      <label class="f" for="bq-msg">Anything else you would like us to know (optional)</label><textarea id="bq-msg"></textarea>
+      <button type="submit">Send</button>
+      <p class="priv">Everything you share is kept confidential and handled in line with our <a href="privacy-policy.html">privacy policy</a>.</p>
     </form>
   </div></div>
 </section>
