@@ -391,8 +391,8 @@ def main():
 
     # ---- newsletter, thanks, legal, utility ----
     add('newsletters-sign-up.html', 'Newsletter Sign-up',
-        'Get epaws, the FNPW email newsletter.',
-        hero('Stay close', 'Get epaws in your inbox.',
+        'Sign up to our email newsletter for project updates, species spotlights and ways to help.',
+        hero('Stay close', 'Get our newsletter in your inbox.',
              'Project updates, species spotlights and ways to help, straight from the bush.', 'Newsletter')
         + sec('<div class="hs-form-frame">' + port('HubSpot form embed code from the live site') + '</div>'))
 

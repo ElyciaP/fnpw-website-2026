@@ -400,7 +400,7 @@ FAQ_ITEMS = [
      'or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will take your gift over the phone.'),
     ('Is my gift tax deductible?',
      'Yes. The Foundation for National Parks &amp; Wildlife is a registered Australian charity '
-     '(ABN 51 248 905 949) with Deductible Gift Recipient status. Gifts of $2 or more are tax '
+     '(ABN 90 107 744 771) with Deductible Gift Recipient status. Gifts of $2 or more are tax '
      'deductible in Australia, and your receipt is emailed with your certificate.'),
 ]
 
