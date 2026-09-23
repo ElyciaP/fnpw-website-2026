@@ -757,5 +757,9 @@ p.gt-cert-cap{background:var(--wattle-soft)!important;color:var(--soil-deep)!imp
 .pa-btn.btn-don,.btn.btn-p.btn-don{background:var(--waratah)!important;border-color:var(--waratah)!important;color:var(--cream)!important}
 .pa-btn.btn-don:hover,.btn.btn-p.btn-don:hover{background:var(--waratah-dk)!important;border-color:var(--waratah-dk)!important}
 /* Closing call-to-action band: one step lighter than the footer (same Eucalyptus family) so the two read as separate blocks */
-main > section.sec.dark:last-child{background:var(--euc)}
-main > section.sec.dark:last-child .lede,main > section.sec.dark:last-child p{color:var(--cream)!important}
+/* Closing CTA band: warm Sand so the Waratah Donate button reads cleanly (was mid Eucalyptus, which clashed with the red) */
+main > section.sec.dark:last-child{background:var(--sand);border-top:1px solid var(--rule)}
+main > section.sec.dark:last-child h2{color:var(--euc-deep)}
+main > section.sec.dark:last-child .lede,main > section.sec.dark:last-child p{color:var(--char)!important}
+main > section.sec.dark:last-child .btn-o{color:var(--euc-deep);border-color:var(--euc-deep)}
+main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
