@@ -201,7 +201,9 @@
 .pil-ex a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
 .pil-b{display:flex;flex-direction:column;flex:1}
 .pil-more{margin-top:auto;align-self:flex-start;font-size:.86rem;font-weight:600;padding-top:1.2rem}
-.pil-also{margin-top:2.6rem;max-width:780px}
+.pil-foot{display:grid;grid-template-columns:1.5fr 1fr;gap:3.5rem;align-items:center;margin-top:2.6rem}
+@media(max-width:900px){.pil-foot{grid-template-columns:1fr;gap:2rem}}
+.pil-also{max-width:780px}
 .pil-also p{font-size:1rem;line-height:1.7;color:var(--char)}
 .pil-also strong{color:var(--euc-deep)}
 
@@ -228,6 +230,15 @@
 .hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:1rem 1.2rem;margin-top:1rem}
 .hsform-fallback a{color:var(--euc);text-decoration:underline}
 .bq-person{border-left:4px solid var(--waratah)}
+
+/* In-page CTAs to the enquiry form and brochure */
+.bq-cta{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--waratah);padding:1.8rem 1.8rem 2rem}
+.bq-cta h3{font-size:1.15rem;margin-bottom:.5rem}
+.bq-cta p{font-size:.95rem;line-height:1.6;color:var(--char)}
+.bq-cta-b{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.3rem}
+.leg-cta-l{margin-top:1.6rem!important;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:1.02rem!important}
+.faq-more{text-align:center;margin-top:2.2rem;font-size:1rem;color:var(--char)}
+.faq-more a{color:var(--euc);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -364,9 +375,19 @@
         </div>
       </div>
     </div>
+    <div class="pil-foot">
     <div class="pil-also rv">
       <p><strong>Across all of our work,</strong> your gift can also help conserve and share Australia&rsquo;s cultural heritage, and educate and inspire the conservationists of today and tomorrow.</p>
       <p>You can direct your gift to the pillar closest to your heart, or trust us to place it where the need is greatest at the time. Either way, we will honour your wishes with the same care we would want for our own family.</p>
+    </div>
+    <aside class="bq-cta rv d1">
+      <h3>Thinking about where your gift could go?</h3>
+      <p>Talk it through with us in confidence, or take our brochure away to read at your own pace.</p>
+      <div class="bq-cta-b">
+        <a href="#talk" class="btn btn-p">Talk to us</a>
+        <a href="assets/docs/fnpw-bequest-brochure.pdf" class="btn btn-o" target="_blank" rel="noopener">Download the brochure</a>
+      </div>
+    </aside>
     </div>
   </div>
 </section>
@@ -399,6 +420,11 @@
       <span class="ey">Legacies that live on</span>
       <h2 style="margin-top:1rem">Their names are written into the landscape.</h2>
       <p>For decades, people have written the wild into their Wills. Because of them, whole corners of national parks, reserves and walking tracks exist today, and they will be there for the generations who follow.</p>
+      <p class="leg-cta-l">A gift in your Will could be the next story told here.</p>
+      <div class="bq-cta-b">
+        <a href="#talk" class="btn btn-p">Start the conversation</a>
+        <a href="assets/docs/fnpw-bequest-brochure.pdf" class="btn btn-o" target="_blank" rel="noopener">Download the brochure</a>
+      </div>
     </div>
     <ol class="leg-list rv d1">
       <li class="leg">
@@ -541,8 +567,7 @@
       <h2 style="margin-top:1rem">Something to read at your own pace.</h2>
       <p>Our brochure sets out how a gift in your Will works, the difference it makes and the options open to you. It is yours to read quietly, share with family, or take along to your solicitor.</p>
       <div class="bro-act">
-        <a href="assets/docs/fnpw-bequest-brochure.pdf" class="btn btn-p" download>Download the brochure (PDF, 1.9 MB)</a>
-        <a href="#talk" class="btn-g">Request a printed copy</a>
+        <a href="assets/docs/fnpw-bequest-brochure.pdf" class="btn btn-p" target="_blank" rel="noopener">Download the brochure</a>
       </div>
     </div>
   </div></div>
@@ -561,6 +586,7 @@
       <details class="faq rv"><summary>How do you make my gift go further?</summary><div class="body">We rarely work alone. By partnering with Traditional Custodians, governments and conservation organisations, we combine your gift with funding, knowledge and on-ground expertise from many hands, so a single gift can help unlock outcomes far larger than itself, from securing an entire island to restoring a whole wetland.</div></details>
       <details class="faq rv"><summary>How do you work with Traditional Owners?</summary><div class="body">Respectfully, and always in partnership. We work alongside Traditional Custodians to care for Country through shared decision-making and co-design, so that cultural knowledge and leadership guide how land and species are protected.</div></details>
     </div>
+    <p class="faq-more rv">Still have a question? <a href="#talk">Send us a bequest enquiry</a> or call <a href="tel:1800898626">1800 898 626</a>.</p>
   </div>
 </section>
 
@@ -570,7 +596,7 @@
     <div class="intro rv">
       <span class="ey">Talk to us</span>
       <h2 style="margin-top:1rem">We are here whenever you are ready.</h2>
-      <p>Whether you have already included us in your Will, you are still thinking it over, or you would simply like a printed brochure, we would be glad to hear from you. Every conversation is confidential and carries no obligation.</p>
+      <p>Whether you have already included us in your Will, you are still thinking it over, or you simply have a question, we would be glad to hear from you. Every conversation is confidential and carries no obligation.</p>
       <div class="bq-person">
         <div class="bq-ph"><span>Headshot</span></div>
         <div>
@@ -583,7 +609,7 @@
     </div>
     <div class="bform rv d1">
       <h3>Bequest enquiry</h3>
-      <p class="sub">Ask for a printed brochure, let us know you have included us in your Will, or ask us anything. We will come back to you personally.</p>
+      <p class="sub">Let us know you have included us in your Will, or ask us anything at all. We will come back to you personally.</p>
       <div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="51106005-f5bb-4960-a900-2250a60244a0" data-portal-id="441704788"></div>
       <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
       <p class="hsform-fallback" id="hsFallback" hidden>The form is taking a while to load. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p>
