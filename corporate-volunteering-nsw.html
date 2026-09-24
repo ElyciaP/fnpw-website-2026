@@ -30,21 +30,19 @@
 .vs-mapcol{position:sticky;top:92px}
 @media(max-width:1000px){.vs-mapcol{position:static}}
 .vm{background:var(--cream);border:1px solid var(--rule);padding:.6rem}
-.vm-map{height:clamp(400px,54vh,580px);width:100%;background:var(--sand)}
-@media(max-width:1000px){.vm-map{height:380px}}
-.vm-map .leaflet-container{font-family:var(--ff-b);background:var(--sand)}
-.vm-map .leaflet-control-attribution{font-size:.62rem;background:rgba(250,246,242,.88);color:var(--stone)}
-.vm-map .leaflet-control-attribution a{color:var(--euc-deep)}
-.vm-map .leaflet-bar a{color:var(--euc-deep);border-bottom-color:var(--rule)}
-.vm-map .leaflet-bar a:hover{background:var(--sand)}
-.vm-pin{display:grid;place-items:center;width:28px;height:28px;border-radius:999px;
-  background:var(--euc-deep);color:var(--cream);font-family:var(--ff-d);font-weight:700;
-  font-size:12px;line-height:1;border:2px solid var(--cream);cursor:pointer;
-  box-shadow:0 2px 7px rgba(15,49,50,.4);transition:background .18s ease,transform .18s ease}
-.vm-pin:hover,.vm-pin:focus,.vm-pin.on{background:var(--waratah);transform:scale(1.2);outline:none}
-.vm-pin:focus{box-shadow:0 0 0 3px var(--wattle)}
-.vm-map .leaflet-popup-content{font-size:.86rem;line-height:1.45;margin:.7rem .9rem}
-.vm-map .leaflet-popup-content b{font-family:var(--ff-d);color:var(--euc-deep)}
+.vm-svg{display:block;width:100%;height:auto}
+.vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
+.vm-hit{fill:transparent}
+.vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
+.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
+  text-anchor:middle;pointer-events:none}
+.vm-pin{cursor:pointer}
+.vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
+.vm-pin:focus{outline:none}
+.vm-pin:focus .vm-dot{stroke:var(--euc-deep);stroke-width:3}
+.vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
+.vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
+.vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
 .vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
 
 .vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
@@ -235,10 +233,86 @@
     <div class="vs-split">
       <div class="vs-mapcol rv">
         <div class="vm">
-          <div class="vm-map" id="volMap" data-sites='[{"i":1,"lat":-33.01758,"lon":151.69026,"name":"Belmont Nursery","city":"Redhead","type":"Nursery"},{"i":2,"lat":-33.98902,"lon":151.23504,"name":"Congwong Beach, Kamay-Botany Bay National Park","city":"La Perouse","type":"National Park"},{"i":3,"lat":-32.95891,"lon":151.72562,"name":"Glenrock State Conservation Area","city":"Highfields","type":"Conservation Area"},{"i":4,"lat":-33.62488,"lon":150.83016,"name":"Hawkesbury Community Nursery","city":"Mulgrave","type":"Nursery"},{"i":5,"lat":-33.79259,"lon":151.15637,"name":"Lane Cove National Park","city":"Chatswood West","type":"National Park"},{"i":6,"lat":-33.79294,"lon":151.15634,"name":"Lane Cove National Park","city":"Chatswood West","type":"National Park"},{"i":7,"lat":-33.80312,"lon":151.14022,"name":"Magdala Park","city":"North Ryde","type":"Park"},{"i":8,"lat":-33.82618,"lon":151.26527,"name":"Middle Head - Gubbuh Gubbuh","city":"Mosman","type":"Reserve"},{"i":9,"lat":-33.97385,"lon":151.00894,"name":"Morgans Creek Picnic Area, Georges River NP","city":"Reversby Heights","type":"National Park"},{"i":10,"lat":-33.92718,"lon":151.15887,"name":"Tempe Wetlands","city":"Tempe","type":"Wetlands"},{"i":11,"lat":-33.35746,"lon":151.38088,"name":"Wildplant Community Nursery","city":"Ourimbah","type":"Nursery"},{"i":12,"lat":-34.23427,"lon":150.5795,"name":"Wollondilly Shire - Bargo River Reserve","city":"Tahmoor","type":"Park"},{"i":13,"lat":-34.19444,"lon":150.61209,"name":"Wollondilly Shire - Robin Davies Community Nursery","city":"Picton","type":"Nursery"},{"i":14,"lat":-34.16566,"lon":150.61239,"name":"Wollondilly Shire - Stonequarry Bush Tucker Garden","city":"Picton","type":"Park"}]'
-               role="application" aria-label="Map of corporate volunteering sites"></div>
+    <svg class="vm-svg" viewBox="0 0 760 620" role="img" aria-label="Map of the New South Wales region showing 14 corporate volunteering sites, with a locator map of New South Wales">
+      <path class="vm-land" d="M-2410.1,-1206.7L-2404.6,461.9L-2400.2,455.0L-2385.4,468.5L-2384.0,459.9L-2367.8,461.2L-2359.0,473.4L-2343.1,463.5L-2320.5,488.9L-2311.2,479.7L-2287.6,498.5L-2273.3,494.5L-2269.4,514.7L-2244.1,506.1L-2249.4,493.2L-2239.7,494.5L-2223.8,476.4L-2169.1,488.3L-2161.7,479.7L-2153.2,488.6L-2124.6,476.1L-2126.8,484.7L-2114.2,486.3L-2112.2,500.5L-2094.1,492.2L-2089.4,503.5L-2072.4,505.4L-2070.2,544.4L-2026.0,554.6L-2038.6,574.1L-2038.0,598.1L-2029.5,600.4L-2036.1,607.7L-2027.1,605.7L-2032.0,613.0L-2025.1,615.3L-2033.9,617.9L-2010.8,635.7L-2006.4,629.5L-2010.8,651.9L-2002.0,653.2L-2004.2,665.1L-1993.3,661.8L-1997.9,686.9L-1991.1,693.8L-1959.2,700.4L-1965.2,683.6L-1942.7,681.9L-1948.5,667.7L-1939.7,666.1L-1942.7,640.7L-1926.5,641.0L-1929.5,633.4L-1919.9,634.4L-1917.7,623.2L-1912.5,628.2L-1918.8,637.7L-1896.5,649.9L-1898.7,662.5L-1891.3,667.4L-1881.1,656.9L-1867.7,672.4L-1863.3,661.8L-1849.5,675.0L-1829.2,667.7L-1830.8,674.3L-1800.1,683.6L-1798.7,693.5L-1785.0,691.5L-1791.0,697.8L-1784.1,704.4L-1764.6,704.4L-1771.8,785.2L-1752.8,835.3L-1736.9,835.3L-1730.6,845.2L-1703.3,841.3L-1697.9,866.0L-1705.8,884.2L-1689.9,900.7L-1653.9,901.0L-1624.2,931.3L-1593.7,937.9L-1588.2,956.1L-1556.6,968.0L-1512.1,1021.4L-1504.1,1016.1L-1489.6,1026.0L-1480.8,1054.1L-1472.5,1056.4L-1473.3,1071.2L-1442.6,1093.0L-1443.7,1101.6L-1416.2,1113.4L-1415.6,1128.3L-1411.5,1118.7L-1405.5,1127.6L-1396.1,1123.0L-1397.5,1134.2L-1387.9,1131.3L-1385.7,1141.8L-1363.4,1143.8L-1348.3,1122.3L-1315.6,1127.0L-1331.6,1099.3L-1312.9,1054.1L-1275.5,1043.8L-1212.8,1059.0L-1163.7,1037.6L-1125.5,1078.5L-1088.1,1099.9L-1062.5,1087.4L-1048.5,1090.3L-1043.6,1108.2L-998.8,1103.9L-984.8,1116.7L-958.1,1106.5L-958.1,1116.7L-942.7,1111.5L-934.5,1119.7L-919.9,1091.7L-899.0,1099.9L-897.9,1089.0L-885.0,1100.2L-866.3,1094.3L-847.4,1116.4L-834.7,1110.8L-829.8,1123.0L-796.0,1127.3L-776.5,1141.2L-772.9,1128.6L-746.5,1138.2L-727.3,1101.2L-721.5,1115.4L-673.2,1123.0L-650.1,1084.4L-625.3,1084.4L-609.7,1104.2L-600.6,1097.6L-610.0,1091.3L-595.9,1096.0L-566.5,1079.5L-510.5,1101.2L-507.2,1117.1L-486.3,1118.1L-488.8,1143.1L-475.9,1149.4L-476.7,1205.2L-470.4,1208.5L-475.9,1231.9L-452.2,1255.6L-449.5,1289.9L-426.7,1300.2L-456.3,1367.1L-432.4,1365.5L72.4,1607.0L67.4,1555.2L94.9,1518.6L80.3,1472.0L66.9,1459.2L64.4,1376.7L98.7,1289.6L103.4,1227.3L118.8,1203.8L135.0,1202.5L143.0,1191.0L138.6,1171.5L117.1,1166.2L124.8,1070.9L142.7,1056.7L172.1,982.1L194.1,955.7L188.9,932.3L213.6,902.6L213.9,877.6L229.5,852.2L257.0,855.5L279.8,843.3L309.8,799.4L312.8,773.0L294.4,757.5L286.4,724.8L304.8,709.0L317.7,656.2L328.5,645.3L322.1,626.2L339.5,600.1L330.1,579.0L335.6,552.6L421.6,451.0L447.7,325.3L475.5,281.4L493.3,229.6L513.4,211.5L539.0,136.3L575.2,82.8L678.3,44.6L694.8,20.8L694.2,7.0L720.0,-3.3L714.5,-29.0L750.5,-48.8L770.0,-45.2L780.2,-58.7L780.8,-107.5L773.6,-121.0L786.0,-147.4L768.7,-170.9L795.6,-227.3L834.4,-259.9L833.5,-280.1L861.8,-330.2L862.7,-355.9L886.3,-385.3L881.6,-413.7L897.0,-439.4L898.7,-489.9L917.6,-514.0L921.7,-532.8L914.6,-544.6L931.9,-565.7L922.0,-596.1L904.1,-606.3L900.6,-640.3L912.4,-709.6L945.4,-765.7L944.8,-782.2L976.4,-802.6L960.2,-849.5L977.2,-864.3L975.0,-890.7L978.9,-896.6L997.9,-882.5L1011.0,-894.7L1002.2,-919.4L977.5,-919.7L1004.7,-1044.4L1006.6,-1087.3L997.3,-1103.8L1012.7,-1133.5L1030.6,-1144.1L1023.7,-1178.0L1069.6,-1251.6L1067.1,-1279.0L1078.9,-1327.2L1055.3,-1365.8L1064.4,-1451.2L1053.6,-1489.5L1034.7,-1477.6L1018.7,-1484.5L985.8,-1453.8L936.6,-1454.8L917.6,-1418.2L854.7,-1434.0L819.2,-1416.2L788.2,-1433.7L781.9,-1447.2L772.0,-1424.5L757.4,-1435.4L759.6,-1449.5L740.4,-1450.9L718.9,-1414.6L698.1,-1416.6L672.5,-1388.2L657.1,-1393.5L617.5,-1363.1L600.8,-1365.1L615.6,-1316.9L633.8,-1302.7L624.7,-1294.8L617.0,-1255.6L623.3,-1250.9L615.6,-1236.8L589.8,-1229.8L571.4,-1236.8L566.7,-1219.6L551.9,-1219.6L539.8,-1248.6L532.4,-1248.6L488.1,-1221.9L474.9,-1199.5L476.3,-1183.3L446.3,-1147.7L424.9,-1151.6L415.0,-1172.8L413.4,-1226.9L366.4,-1260.2L350.2,-1257.9L340.8,-1291.9L269.7,-1327.2L237.0,-1313.0L184.7,-1317.3L143.0,-1359.2L121.8,-1347.0L105.3,-1354.9L67.4,-1344.6L57.0,-1333.8L-13.4,-1335.4L-18.1,-1327.2L-50.2,-1347.3L-73.0,-1347.0L-87.3,-1340.0L-105.2,-1306.7L-129.9,-1302.1L-189.2,-1258.5L-202.7,-1220.6L-223.0,-1206.7L-2410.1,-1206.7Z"></path>
+      <g class="vm-inset" transform="translate(576,502)" aria-hidden="true">
+        <rect class="vm-inset-bg" x="-8" y="-8" width="184" height="118"></rect>
+        <path class="vm-inset-land" d="M13.4,15.9L13.6,62.2L13.7,62.0L14.1,62.4L14.1,62.1L14.6,62.2L14.8,62.5L15.3,62.2L15.9,62.9L16.2,62.7L16.8,63.2L17.2,63.1L17.3,63.7L18.1,63.4L17.9,63.1L18.2,63.1L18.6,62.6L20.2,62.9L20.4,62.7L20.6,62.9L21.4,62.6L21.3,62.8L21.7,62.9L21.7,63.3L22.3,63.0L22.4,63.4L22.9,63.4L22.9,64.5L24.2,64.8L23.8,65.3L23.8,66.0L24.1,66.0L23.9,66.2L24.1,66.2L24.0,66.4L24.2,66.5L23.9,66.5L24.6,67.0L24.7,66.9L24.6,67.5L24.8,67.5L24.8,67.8L25.1,67.8L25.0,68.4L25.1,68.6L26.0,68.8L25.9,68.4L26.5,68.3L26.3,67.9L26.6,67.9L26.5,67.2L27.0,67.2L26.9,67.0L27.1,67.0L27.2,66.7L27.3,66.8L27.2,67.1L27.8,67.4L27.7,67.8L27.9,67.9L28.2,67.6L28.6,68.0L28.7,67.8L29.1,68.1L29.7,67.9L29.6,68.1L30.5,68.4L30.5,68.6L30.9,68.6L30.7,68.7L30.9,68.9L31.5,68.9L31.3,71.2L31.8,72.6L32.3,72.6L32.4,72.8L33.2,72.7L33.4,73.4L33.1,73.9L33.6,74.4L34.6,74.4L35.4,75.2L36.3,75.4L36.4,75.9L37.3,76.3L38.6,77.7L38.8,77.6L39.2,77.9L39.4,78.6L39.7,78.7L39.6,79.1L40.5,79.7L40.5,80.0L41.2,80.3L41.3,80.7L41.4,80.4L41.6,80.7L41.8,80.6L41.8,80.9L42.0,80.8L42.1,81.1L42.7,81.1L43.2,80.5L44.1,80.7L43.6,79.9L44.1,78.6L45.2,78.4L46.9,78.8L48.3,78.2L49.4,79.3L50.4,79.9L51.2,79.6L51.6,79.7L51.7,80.1L52.9,80.0L53.3,80.4L54.1,80.1L54.1,80.4L54.5,80.2L54.7,80.5L55.2,79.7L55.7,79.9L55.8,79.6L56.1,79.9L56.7,79.8L57.2,80.4L57.5,80.2L57.7,80.6L58.6,80.7L59.2,81.1L59.3,80.7L60.0,81.0L60.5,80.0L60.7,80.3L62.1,80.6L62.7,79.5L63.4,79.5L63.8,80.0L64.1,79.9L63.8,79.7L64.2,79.8L65.1,79.3L66.6,80.0L66.7,80.4L67.3,80.4L67.2,81.1L67.6,81.3L67.6,82.8L67.7,82.9L67.6,83.6L68.3,84.2L68.3,85.2L69.0,85.5L68.1,87.3L68.8,87.3L83.0,94.0L82.8,92.6L83.6,91.5L83.2,90.3L82.8,89.9L82.7,87.6L83.7,85.2L83.8,83.5L84.3,82.8L84.7,82.8L84.9,82.4L84.8,81.9L84.2,81.8L84.4,79.1L84.9,78.7L85.7,76.6L86.4,75.9L86.2,75.3L86.9,74.4L86.9,73.7L87.4,73.0L88.1,73.1L88.8,72.8L89.6,71.6L89.7,70.8L89.2,70.4L88.9,69.5L89.5,69.1L89.8,67.6L90.1,67.3L89.9,66.8L90.4,66.0L90.2,65.5L90.3,64.7L92.7,61.9L93.5,58.4L94.2,57.2L94.7,55.7L95.3,55.2L96.0,53.2L97.0,51.7L99.9,50.6L100.4,49.9L100.4,49.6L101.1,49.3L100.9,48.6L102.0,48.0L102.5,48.1L102.8,47.7L102.8,46.4L102.6,46.0L102.9,45.3L102.5,44.6L103.2,43.1L104.3,42.2L104.3,41.6L105.1,40.2L105.1,39.5L105.8,38.7L105.6,37.9L106.1,37.2L106.1,35.8L106.6,35.1L106.7,34.6L106.5,34.2L107.0,33.7L106.8,32.8L106.3,32.5L106.2,31.6L106.5,29.7L107.4,28.1L107.4,27.6L108.3,27.1L107.8,25.8L108.3,25.4L108.2,24.6L108.3,24.5L108.9,24.9L109.2,24.5L109.0,23.8L108.3,23.8L109.1,20.4L109.1,19.2L108.9,18.7L109.3,17.9L109.8,17.6L109.6,16.7L110.9,14.6L110.8,13.8L111.2,12.5L110.5,11.4L110.7,9.1L110.4,8.0L109.9,8.3L109.5,8.1L108.5,9.0L107.2,9.0L106.6,10.0L104.9,9.5L103.9,10.0L103.0,9.6L102.8,9.2L102.6,9.8L102.1,9.5L102.2,9.1L101.7,9.1L101.1,10.1L100.5,10.0L99.8,10.8L99.3,10.7L98.2,11.5L97.8,11.5L98.2,12.8L98.7,13.2L98.4,13.4L98.2,14.5L98.4,14.6L98.2,15.0L97.4,15.2L96.9,15.0L96.8,15.5L96.4,15.5L96.0,14.7L95.8,14.7L94.6,15.4L94.2,16.1L94.3,16.5L93.4,17.5L92.8,17.4L92.6,16.8L92.5,15.3L91.2,14.4L90.7,14.4L90.5,13.5L88.5,12.5L87.6,12.9L86.1,12.8L84.9,11.6L84.3,12.0L83.9,11.7L82.8,12.0L82.5,12.3L80.5,12.3L80.4,12.5L79.5,12.0L78.9,12.0L78.5,12.2L78.0,13.1L77.3,13.2L75.6,14.4L75.2,15.5L74.7,15.9L13.4,15.9Z"></path>
+        <rect class="vm-inset-box" x="81.8" y="50.1" width="19.5" height="15.8"></rect>
+      </g>
+      <g class="vm-pin" data-i="1" tabindex="0" role="button" aria-label="Belmont Nursery, Redhead">
+        <circle class="vm-hit" cx="526.6" cy="121.4" r="18"></circle>
+        <circle class="vm-dot" cx="526.6" cy="121.4" r="11.5"></circle>
+        <text class="vm-num" x="526.6" y="125.2">1</text>
+      </g>
+      <g class="vm-pin" data-i="2" tabindex="0" role="button" aria-label="Congwong Beach, Kamay-Botany Bay National Park, La Perouse">
+        <circle class="vm-hit" cx="402.7" cy="439.5" r="18"></circle>
+        <circle class="vm-dot" cx="402.7" cy="439.5" r="11.5"></circle>
+        <text class="vm-num" x="402.7" y="443.3">2</text>
+      </g>
+      <g class="vm-pin" data-i="3" tabindex="0" role="button" aria-label="Glenrock State Conservation Area, Highfields">
+        <circle class="vm-hit" cx="538.7" cy="97.2" r="18"></circle>
+        <circle class="vm-dot" cx="538.7" cy="97.2" r="11.5"></circle>
+        <text class="vm-num" x="538.7" y="101.0">3</text>
+      </g>
+      <g class="vm-pin" data-i="4" tabindex="0" role="button" aria-label="Hawkesbury Community Nursery, Mulgrave">
+        <circle class="vm-hit" cx="291.4" cy="319.3" r="18"></circle>
+        <circle class="vm-dot" cx="291.4" cy="319.3" r="11.5"></circle>
+        <text class="vm-num" x="291.4" y="323.1">4</text>
+      </g>
+      <g class="vm-pin" data-i="5" tabindex="0" role="button" aria-label="Lane Cove National Park, Chatswood West">
+        <circle class="vm-hit" cx="383.2" cy="355.2" r="18"></circle>
+        <circle class="vm-dot" cx="383.2" cy="355.2" r="11.5"></circle>
+        <text class="vm-num" x="383.2" y="359.0">5</text>
+      </g>
+      <g class="vm-pin" data-i="6" tabindex="0" role="button" aria-label="Lane Cove National Park, Chatswood West">
+        <circle class="vm-hit" cx="387.3" cy="394.5" r="18"></circle>
+        <circle class="vm-dot" cx="387.3" cy="394.5" r="11.5"></circle>
+        <text class="vm-num" x="387.3" y="398.3">6</text>
+      </g>
+      <g class="vm-pin" data-i="7" tabindex="0" role="button" aria-label="Magdala Park, North Ryde">
+        <circle class="vm-hit" cx="366.9" cy="376.8" r="18"></circle>
+        <circle class="vm-dot" cx="366.9" cy="376.8" r="11.5"></circle>
+        <text class="vm-num" x="366.9" y="380.6">7</text>
+      </g>
+      <g class="vm-pin" data-i="8" tabindex="0" role="button" aria-label="Middle Head - Gubbuh Gubbuh, Mosman">
+        <circle class="vm-hit" cx="412.6" cy="385.1" r="18"></circle>
+        <circle class="vm-dot" cx="412.6" cy="385.1" r="11.5"></circle>
+        <text class="vm-num" x="412.6" y="388.90000000000003">8</text>
+      </g>
+      <g class="vm-pin" data-i="9" tabindex="0" role="button" aria-label="Morgans Creek Picnic Area, Georges River NP, Reversby Heights">
+        <circle class="vm-hit" cx="340.5" cy="434.5" r="18"></circle>
+        <circle class="vm-dot" cx="340.5" cy="434.5" r="11.5"></circle>
+        <text class="vm-num" x="340.5" y="438.3">9</text>
+      </g>
+      <g class="vm-pin" data-i="10" tabindex="0" role="button" aria-label="Tempe Wetlands, Tempe">
+        <circle class="vm-hit" cx="381.3" cy="420.8" r="18"></circle>
+        <circle class="vm-dot" cx="381.3" cy="420.8" r="11.5"></circle>
+        <text class="vm-num" x="381.3" y="424.6">10</text>
+      </g>
+      <g class="vm-pin" data-i="11" tabindex="0" role="button" aria-label="Wildplant Community Nursery, Ourimbah">
+        <circle class="vm-hit" cx="442.7" cy="231.1" r="18"></circle>
+        <circle class="vm-dot" cx="442.7" cy="231.1" r="11.5"></circle>
+        <text class="vm-num" x="442.7" y="234.9">11</text>
+      </g>
+      <g class="vm-pin" data-i="12" tabindex="0" role="button" aria-label="Wollondilly Shire - Bargo River Reserve, Tahmoor">
+        <circle class="vm-hit" cx="218.4" cy="525.6" r="18"></circle>
+        <circle class="vm-dot" cx="218.4" cy="525.6" r="11.5"></circle>
+        <text class="vm-num" x="218.4" y="529.4">12</text>
+      </g>
+      <g class="vm-pin" data-i="13" tabindex="0" role="button" aria-label="Wollondilly Shire - Robin Davies Community Nursery, Picton">
+        <circle class="vm-hit" cx="241.1" cy="511.1" r="18"></circle>
+        <circle class="vm-dot" cx="241.1" cy="511.1" r="11.5"></circle>
+        <text class="vm-num" x="241.1" y="514.9">13</text>
+      </g>
+      <g class="vm-pin" data-i="14" tabindex="0" role="button" aria-label="Wollondilly Shire - Stonequarry Bush Tucker Garden, Picton">
+        <circle class="vm-hit" cx="226.1" cy="488.6" r="18"></circle>
+        <circle class="vm-dot" cx="226.1" cy="488.6" r="11.5"></circle>
+        <text class="vm-num" x="226.1" y="492.40000000000003">14</text>
+      </g>
+    </svg>
         </div>
-        <p class="vm-cap">Scroll the list or move around the map. Hover a pin to find it in the list, or tap one to jump straight to it. Click the map once to zoom with the scroll wheel.</p>
+        <p class="vm-cap">The map is zoomed to where the sites actually are; the small inset shows that area within New South Wales. Pin positions are approximate. Hover a pin to find it in the list, or tap one to jump straight to it.</p>
       </div>
       <div class="rv d1">
         <div class="vs-filter">
@@ -514,62 +588,6 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script>
-/* The numbered pins from the list, placed on a real basemap.
-
-   Scroll-wheel zoom is off until the map is clicked, so the page still scrolls
-   normally when someone passes over it. Everything is guarded: if Leaflet or the
-   tiles do not load, the list below is still the whole story. */
-(function () {
-  var box = document.getElementById('volMap');
-  if (!box || typeof L === 'undefined') return;
-
-  var sites;
-  try { sites = JSON.parse(box.dataset.sites || '[]'); } catch (e) { return; }
-  if (!sites.length) return;
-
-  var map = L.map(box, { scrollWheelZoom: false, zoomControl: true });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' +
-                 ' contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
-
-  var byIndex = {};
-  sites.forEach(function (s) {
-    var m = L.marker([s.lat, s.lon], {
-      title: s.name,
-      alt: s.name + ', ' + s.city,
-      riseOnHover: true,
-      icon: L.divIcon({
-        className: '',
-        iconSize: [28, 28],
-        iconAnchor: [14, 14],
-        popupAnchor: [0, -16],
-        html: '<span class="vm-pin" data-i="' + s.i + '" tabindex="0" role="button" ' +
-              'aria-label="' + s.name + '">' + s.i + '</span>'
-      })
-    }).addTo(map);
-    m.bindPopup('<b>' + s.name + '</b><br>' + s.city + (s.type ? ' &middot; ' + s.type : ''));
-    byIndex[s.i] = m;
-  });
-
-  map.fitBounds(L.latLngBounds(sites.map(function (s) { return [s.lat, s.lon]; })),
-                { padding: [40, 40], maxZoom: 12 });
-
-  // sticky column and responsive breakpoints both resize the container
-  setTimeout(function () { map.invalidateSize(); }, 250);
-  window.addEventListener('resize', function () { map.invalidateSize(); });
-
-  // hand the pin elements to the hover-sync code below
-  window.FNPW_MAP = { map: map, markers: byIndex,
-                      pins: [].slice.call(box.querySelectorAll('.vm-pin')) };
-  document.dispatchEvent(new CustomEvent('fnpw:map-ready'));
-})();
-</script>
 <script src="assets/js/gallery.js"></script>
 <script>window.FNPW_VOL_STATE='NSW';window.FNPW_VOL_STATE_NAME='New South Wales';</script>
 <script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
@@ -706,10 +724,10 @@
 </script>
 <script>
 (function () {
+  var pins = [].slice.call(document.querySelectorAll('.vm-pin'));
   var list = document.querySelector('.vs-list');
   var cards = [].slice.call(document.querySelectorAll('.vs-card'));
-  if (!list) return;
-  var pins = [];
+  if (!pins.length || !list) return;
 
   function mark(i, on) {
     pins.forEach(function (p) { if (+p.dataset.i === i) p.classList.toggle('on', on); });
@@ -717,31 +735,17 @@
   }
   function wire(el) {
     var i = +el.dataset.i;
-    if (el.classList.contains('vs-card')) {
-      el.addEventListener('click', function () {
-        var M = window.FNPW_MAP;
-        if (M && M.markers[i]) { M.map.panTo(M.markers[i].getLatLng()); M.markers[i].openPopup(); }
-      });
-    }
     el.addEventListener('mouseenter', function () { mark(i, true); });
     el.addEventListener('mouseleave', function () { mark(i, false); });
     el.addEventListener('focus', function () { mark(i, true); });
     el.addEventListener('blur', function () { mark(i, false); });
   }
+  pins.forEach(wire);
   cards.forEach(wire);
-
-  // the pins only exist once the map has drawn them
-  function adoptPins() {
-    pins = (window.FNPW_MAP && window.FNPW_MAP.pins) || [];
-    pins.forEach(wire);
-    pins.forEach(pinClick);
-  }
-  if (window.FNPW_MAP) { adoptPins(); }
-  else { document.addEventListener('fnpw:map-ready', adoptPins); }
 
   // Tapping a pin brings its entry into view. That is the point of the map on a
   // phone, where the two are stacked rather than side by side.
-  function pinClick(p) {
+  pins.forEach(function (p) {
     p.addEventListener('click', function () {
       var c = cards.filter(function (x) { return x.dataset.i === p.dataset.i; })[0];
       if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.focus({ preventScroll: true }); }
@@ -749,7 +753,7 @@
     p.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
     });
-  }
+  });
 
   // On a phone the map sits above the list, and a scrolling box inside a
   // scrolling page is horrible to use, so there the list shows four and expands.

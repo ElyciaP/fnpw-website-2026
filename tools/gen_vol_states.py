@@ -108,27 +108,49 @@ def rings_path(rings, to_xy):
     return ' '.join('M' + 'L'.join('%s,%s' % to_xy(p[1], p[0]) for p in r) + 'Z' for r in rings)
 
 
-LEAFLET_CSS = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'
-LEAFLET_JS = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'
+def svg_map(code, outline, sites):
+    """Detail map framed on the sites, plus a locator inset of the whole state."""
+    frame = site_frame(sites, outline['bbox'])
+    to_xy = fit(frame, W, Hh, PAD)
+    land = rings_path(outline['rings'], to_xy)
 
+    xy = declutter([to_xy(s['lat'], s['lon']) for s in sites])
+    pins = []
+    for i, s in enumerate(sites, 1):
+        x, y = xy[i - 1]
+        pins.append(
+            '      <g class="vm-pin" data-i="%d" tabindex="0" role="button" '
+            'aria-label="%s, %s">%s'
+            '        <circle class="vm-hit" cx="%s" cy="%s" r="18"></circle>%s'
+            '        <circle class="vm-dot" cx="%s" cy="%s" r="11.5"></circle>%s'
+            '        <text class="vm-num" x="%s" y="%s">%d</text>%s'
+            '      </g>'
+            % (i, esc(s['name']), esc(s['city']), NL, x, y, NL, x, y, NL, x, y + 3.8, i, NL))
 
-def leaflet_map(code, sites):
-    """A real basemap with our numbered pins on it.
+    # locator inset: the whole state, with the detail frame drawn on it
+    ss, sn, sw, se = outline['bbox']
+    ih = int(INSET_W * ((sn - ss) / max((se - sw) * math.cos(math.radians((ss + sn) / 2)), 1e-6)))
+    ih = max(70, min(ih, 190))
+    ito = fit(outline['bbox'], INSET_W, ih, 8)
+    iland = rings_path(outline['rings'], ito)
+    fx1, fy1 = ito(frame[1], frame[2])
+    fx2, fy2 = ito(frame[0], frame[3])
+    inset = (
+        '      <g class="vm-inset" transform="translate(%d,%d)" aria-hidden="true">%s'
+        '        <rect class="vm-inset-bg" x="-8" y="-8" width="%d" height="%d"></rect>%s'
+        '        <path class="vm-inset-land" d="%s"></path>%s'
+        '        <rect class="vm-inset-box" x="%s" y="%s" width="%s" height="%s"></rect>%s'
+        '      </g>'
+        % (W - INSET_W - 16, Hh - ih - 16, NL, INSET_W + 16, ih + 16, NL, iland, NL,
+           round(fx1, 1), round(fy1, 1), round(max(fx2 - fx1, 5), 1), round(max(fy2 - fy1, 5), 1), NL))
 
-    The sites carry real coordinates, so rather than drawing a state outline and
-    guessing at positions we hand them to a map that already knows where roads,
-    water and suburbs are. Tiles are CARTO's light basemap, chosen because it is
-    desaturated enough for Eucalyptus pins to read against it.
-    """
-    pts = json.dumps(
-        [{'i': i + 1, 'lat': s['lat'], 'lon': s['lon'], 'name': s['name'],
-          'city': s.get('city', ''), 'type': s.get('type', '')}
-         for i, s in enumerate(sites)],
-        ensure_ascii=False, separators=(',', ':'))
-    return NL.join([
-        '          <div class="vm-map" id="volMap" data-sites=\'%s\'' % pts.replace("'", '&#39;'),
-        '               role="application" aria-label="Map of corporate volunteering sites"></div>',
-    ])
+    return (
+        '    <svg class="vm-svg" viewBox="0 0 %d %d" role="img" '
+        'aria-label="Map of the %s region showing %d corporate volunteering sites, '
+        'with a locator map of %s">%s'
+        '      <path class="vm-land" d="%s"></path>%s%s%s%s%s    </svg>'
+        % (W, Hh, esc(outline['name']), len(sites), esc(outline['name']), NL, land, NL,
+           inset, NL, NL.join(pins), NL))
 
 
 def card(i, s):
@@ -189,21 +211,19 @@ PAGE_CSS = '''
 .vs-mapcol{position:sticky;top:92px}
 @media(max-width:1000px){.vs-mapcol{position:static}}
 .vm{background:var(--cream);border:1px solid var(--rule);padding:.6rem}
-.vm-map{height:clamp(400px,54vh,580px);width:100%;background:var(--sand)}
-@media(max-width:1000px){.vm-map{height:380px}}
-.vm-map .leaflet-container{font-family:var(--ff-b);background:var(--sand)}
-.vm-map .leaflet-control-attribution{font-size:.62rem;background:rgba(250,246,242,.88);color:var(--stone)}
-.vm-map .leaflet-control-attribution a{color:var(--euc-deep)}
-.vm-map .leaflet-bar a{color:var(--euc-deep);border-bottom-color:var(--rule)}
-.vm-map .leaflet-bar a:hover{background:var(--sand)}
-.vm-pin{display:grid;place-items:center;width:28px;height:28px;border-radius:999px;
-  background:var(--euc-deep);color:var(--cream);font-family:var(--ff-d);font-weight:700;
-  font-size:12px;line-height:1;border:2px solid var(--cream);cursor:pointer;
-  box-shadow:0 2px 7px rgba(15,49,50,.4);transition:background .18s ease,transform .18s ease}
-.vm-pin:hover,.vm-pin:focus,.vm-pin.on{background:var(--waratah);transform:scale(1.2);outline:none}
-.vm-pin:focus{box-shadow:0 0 0 3px var(--wattle)}
-.vm-map .leaflet-popup-content{font-size:.86rem;line-height:1.45;margin:.7rem .9rem}
-.vm-map .leaflet-popup-content b{font-family:var(--ff-d);color:var(--euc-deep)}
+.vm-svg{display:block;width:100%;height:auto}
+.vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
+.vm-hit{fill:transparent}
+.vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
+.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
+  text-anchor:middle;pointer-events:none}
+.vm-pin{cursor:pointer}
+.vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
+.vm-pin:focus{outline:none}
+.vm-pin:focus .vm-dot{stroke:var(--euc-deep);stroke-width:3}
+.vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
+.vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
+.vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
 .vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
 
 .vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
@@ -283,67 +303,12 @@ PAGE_CSS = '''
 .vg-dots .vg-d[aria-current="true"]{background:var(--euc);width:28px}
 '''
 
-MAP_JS = """<script>
-/* The numbered pins from the list, placed on a real basemap.
-
-   Scroll-wheel zoom is off until the map is clicked, so the page still scrolls
-   normally when someone passes over it. Everything is guarded: if Leaflet or the
-   tiles do not load, the list below is still the whole story. */
-(function () {
-  var box = document.getElementById('volMap');
-  if (!box || typeof L === 'undefined') return;
-
-  var sites;
-  try { sites = JSON.parse(box.dataset.sites || '[]'); } catch (e) { return; }
-  if (!sites.length) return;
-
-  var map = L.map(box, { scrollWheelZoom: false, zoomControl: true });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' +
-                 ' contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
-
-  var byIndex = {};
-  sites.forEach(function (s) {
-    var m = L.marker([s.lat, s.lon], {
-      title: s.name,
-      alt: s.name + ', ' + s.city,
-      riseOnHover: true,
-      icon: L.divIcon({
-        className: '',
-        iconSize: [28, 28],
-        iconAnchor: [14, 14],
-        popupAnchor: [0, -16],
-        html: '<span class="vm-pin" data-i="' + s.i + '" tabindex="0" role="button" ' +
-              'aria-label="' + s.name + '">' + s.i + '</span>'
-      })
-    }).addTo(map);
-    m.bindPopup('<b>' + s.name + '</b><br>' + s.city + (s.type ? ' &middot; ' + s.type : ''));
-    byIndex[s.i] = m;
-  });
-
-  map.fitBounds(L.latLngBounds(sites.map(function (s) { return [s.lat, s.lon]; })),
-                { padding: [40, 40], maxZoom: 12 });
-
-  // sticky column and responsive breakpoints both resize the container
-  setTimeout(function () { map.invalidateSize(); }, 250);
-  window.addEventListener('resize', function () { map.invalidateSize(); });
-
-  // hand the pin elements to the hover-sync code below
-  window.FNPW_MAP = { map: map, markers: byIndex,
-                      pins: [].slice.call(box.querySelectorAll('.vm-pin')) };
-  document.dispatchEvent(new CustomEvent('fnpw:map-ready'));
-})();
-</script>"""
-
 PAGE_JS = '''<script>
 (function () {
+  var pins = [].slice.call(document.querySelectorAll('.vm-pin'));
   var list = document.querySelector('.vs-list');
   var cards = [].slice.call(document.querySelectorAll('.vs-card'));
-  if (!list) return;
-  var pins = [];
+  if (!pins.length || !list) return;
 
   function mark(i, on) {
     pins.forEach(function (p) { if (+p.dataset.i === i) p.classList.toggle('on', on); });
@@ -351,31 +316,17 @@ PAGE_JS = '''<script>
   }
   function wire(el) {
     var i = +el.dataset.i;
-    if (el.classList.contains('vs-card')) {
-      el.addEventListener('click', function () {
-        var M = window.FNPW_MAP;
-        if (M && M.markers[i]) { M.map.panTo(M.markers[i].getLatLng()); M.markers[i].openPopup(); }
-      });
-    }
     el.addEventListener('mouseenter', function () { mark(i, true); });
     el.addEventListener('mouseleave', function () { mark(i, false); });
     el.addEventListener('focus', function () { mark(i, true); });
     el.addEventListener('blur', function () { mark(i, false); });
   }
+  pins.forEach(wire);
   cards.forEach(wire);
-
-  // the pins only exist once the map has drawn them
-  function adoptPins() {
-    pins = (window.FNPW_MAP && window.FNPW_MAP.pins) || [];
-    pins.forEach(wire);
-    pins.forEach(pinClick);
-  }
-  if (window.FNPW_MAP) { adoptPins(); }
-  else { document.addEventListener('fnpw:map-ready', adoptPins); }
 
   // Tapping a pin brings its entry into view. That is the point of the map on a
   // phone, where the two are stacked rather than side by side.
-  function pinClick(p) {
+  pins.forEach(function (p) {
     p.addEventListener('click', function () {
       var c = cards.filter(function (x) { return x.dataset.i === p.dataset.i; })[0];
       if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.focus({ preventScroll: true }); }
@@ -383,7 +334,7 @@ PAGE_JS = '''<script>
     p.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
     });
-  }
+  });
 
   // On a phone the map sits above the list, and a scrolling box inside a
   // scrolling page is horrible to use, so there the list shows four and expands.
@@ -584,11 +535,11 @@ def state_page(code, outline, sites, idx):
         '    <div class="vs-split">',
         '      <div class="vs-mapcol rv">',
         '        <div class="vm">',
-        leaflet_map(code, sites),
+        svg_map(code, outline, sites),
         '        </div>',
-        '        <p class="vm-cap">Scroll the list or move around the map. Hover a pin to find '
-        'it in the list, or tap one to jump straight to it. Click the map once to zoom with '
-        'the scroll wheel.</p>',
+        '        <p class="vm-cap">The map is zoomed to where the sites actually are; the small '
+        'inset shows that area within %s. Pin positions are approximate. Hover a pin to find it '
+        'in the list, or tap one to jump straight to it.</p>' % esc(outline['name']),
         '      </div>',
         '      <div class="rv d1">',
         '        <div class="vs-filter">',
@@ -627,9 +578,6 @@ def state_page(code, outline, sites, idx):
     write_page(slug_state(code), '%s Volunteering Sites' % code, esc(desc), body,
                page_css=PAGE_CSS + NL + form_css,
                extra_js=NL.join([
-                   '<link rel="stylesheet" href="%s">' % LEAFLET_CSS,
-                   '<script src="%s"></script>' % LEAFLET_JS,
-                   MAP_JS,
                    '<script src="assets/js/gallery.js"></script>',
                    # tells the embed which state to preselect, before it runs
                    '<script>window.FNPW_VOL_STATE=%r;window.FNPW_VOL_STATE_NAME=%r;</script>'
@@ -771,8 +719,8 @@ def hub_section(by):
         '  <div class="cw">',
         '    <div class="v-where-h rv">',
         '      <span class="ey">Where we run</span>',
-        '      <h2>Our corporate volunteering sites across Australia.</h2>',
-        '      <p>Pick a state to see its sites, then open it to see them on a map.</p>',
+        '      <h2>Explore corporate volunteering sites across Australia.</h2>',
+        '      <p>Pick a state to see its sites, then open it to see them on a map and find the details for each one.</p>',
         '    </div>',
         '    <div class="vw-tabs" role="tablist" id="vwTabs" aria-label="Choose a state">',
         NL.join(tabs),
