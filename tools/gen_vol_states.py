@@ -608,7 +608,9 @@ def main():
         print('%s  listed on volunteer.html only, no page (%d site%s)'
               % (code, len(by[code]), '' if len(by[code]) == 1 else 's'))
     patch_hub(by)
-    print('now run: python3 tools/sync.py')
+    # fill the header/footer placeholders straight away, so a page can never ship without them
+    import subprocess
+    subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'sync.py')], check=True)
 
 
 
