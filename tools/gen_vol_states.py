@@ -475,11 +475,17 @@ def gallery(code, idx):
     off = (idx * PER_PAGE) % len(shots)
     shots = shots[off:] + shots[:off]
 
+    alts = {}
+    if os.path.exists('data/alt-text/alt-local.txt'):
+        for ln in open('data/alt-text/alt-local.txt', encoding='utf-8'):
+            if '|' in ln:
+                k, v = ln.rstrip(NL).split('|', 1)
+                alts[k] = v
     pages = []
     for n in range(0, len(shots), PER_PAGE):
         figs = NL.join(
-            '          <figure><img src="%s/%s" alt="" loading="lazy" decoding="async"></figure>'
-            % (folder, f) for f in shots[n:n + PER_PAGE])
+            '          <figure><img src="%s/%s" alt="%s" loading="lazy" decoding="async"></figure>'
+            % (folder, f, esc(alts.get('%s/%s' % (folder, f), ''))) for f in shots[n:n + PER_PAGE])
         pages.append('        <div class="vg-page">%s%s%s        </div>' % (NL, figs, NL))
 
     return NL.join([

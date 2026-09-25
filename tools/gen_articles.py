@@ -214,14 +214,14 @@ def build(a):
         cards = []
         for r in a['related']:
             cards.append('      <a class="pj-rcard" href="%s">%s'
-                         '        <img class="pj-rcard-im" src="%s" alt="" loading="lazy">%s'
+                         '        <img class="pj-rcard-im" src="%s" alt="%s" loading="lazy">%s'
                          '        <div class="pj-rcard-bd">%s'
                          '          <span class="pj-rd">%s</span>%s'
                          '          <h3>%s</h3>%s'
                          '          <p>%s</p>%s'
                          '          <span class="pj-rgo">%s &#8594;</span>%s'
                          '        </div>%s      </a>'
-                         % (r['href'], NL, r['img'], NL, NL, r['date'], NL, esc(r['title']), NL,
+                         % (r['href'], NL, r['img'], html.escape(r.get('alt', ''), quote=True), NL, NL, r['date'], NL, esc(r['title']), NL,
                             esc(r['blurb']), NL, r.get('cta', 'Read the story'), NL, NL))
         out.append('<section class="sec sand ed-more">%s  <div class="cw rv">%s'
                    '    <span class="ey">Keep reading</span>%s'

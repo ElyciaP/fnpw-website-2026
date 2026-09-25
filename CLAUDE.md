@@ -93,3 +93,11 @@ https://habitat-heroes.fnpw.org.au. Never build an on-site payment form.
 `tools/port_live.py` builds the legal pages, grants hub and grant pages, PAWS archive,
 eBook page, newsletter thank-you page, the FAQ tax group and three blog entries from the
 word-for-word harvests in `data/live-port/*.md`. Re-run it after editing a harvest file.
+
+## Alt text
+
+Alt text was written by looking at every photograph (Sep 2026) and lives in
+`data/alt-text/`. After running any page generator, run `python3 tools/apply_alt.py`
+to fill alt text on anything the generator left empty. Add new images to
+`alt-local.txt` (local files) or append to `remote-urls.json` + `alt-remote-by-index.txt`.
+Decorative icons get `alt="" aria-hidden="true"`.

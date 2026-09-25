@@ -200,6 +200,8 @@ def grant_page(slug, g):
         md = md.replace(first_img.group(0), '', 1)
     html = md_html(md, drop_h1=False)
     html = re.sub(r'<p><a href="project-%s\.html">[^<]*</a></p>\s*' % re.escape(slug), '', html)
+    # this image no longer loads on the live site; drop it and its credit line
+    html = re.sub(r'<p><img[^>]*SA-Seed-Conservation-Centre\.jpg[^>]*>\s*(<em>Photo credit: SA Seed Conservation Centre</em>)?</p>\s*', '', html)
     body = NL.join([
         photo_hero(g['pillar'], g['title'], g['lede'],
                    crumbs(('Projects', 'projects.html'), (g['title'], '')), g['img']).replace(
