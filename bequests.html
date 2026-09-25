@@ -58,11 +58,11 @@
 
 /* Feature story */
 .suggest{padding:5rem 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
-.suggest::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
+.suggest::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
 .sugg-card{background:rgba(250,246,242,.06);border:1px solid rgba(250,246,242,.15);padding:2.5rem 2.8rem}
 @media(max-width:700px){.sugg-card{padding:1.8rem 1.4rem}}
 .suggest h2{color:var(--cream);margin-bottom:1.6rem}
-.suggest .lab{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wattle);margin-bottom:.6rem;font-weight:600}
+.suggest .lab{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--euc-soft);margin-bottom:.6rem;font-weight:600}
 .cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:stretch}
 .cs-img{overflow:hidden;position:relative;margin:0}
 .cs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -118,8 +118,8 @@
 /* Wording + organisation details */
 .bq-word{padding:5rem 0;background:var(--euc-deep);color:var(--euc-soft)}
 .bq-word h2,.bq-word h3{color:var(--cream)}
-.bq-word .ey{color:var(--wattle)}
-.bq-word .ey::before{background:var(--wattle)}
+.bq-word .ey{color:var(--euc-soft)}
+.bq-word .ey::before{background:var(--euc-soft)}
 .wd-g{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:start;margin-top:2.4rem}
 @media(max-width:900px){.wd-g{grid-template-columns:1fr;gap:2.5rem}}
 .wd-intro{max-width:720px;margin-top:1rem;font-size:1.02rem;line-height:1.7;color:rgba(250,246,242,.85)}
@@ -175,7 +175,7 @@
 .bq-person a{color:var(--euc);font-size:.92rem;display:block;font-weight:500}
 .bform{background:var(--white);border:1px solid var(--rule);padding:2.5rem;position:relative}
 @media(max-width:600px){.bform{padding:1.8rem 1.5rem}}
-.bform::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--bark),var(--wattle))}
+.bform::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--waratah)}
 .bform h3{margin-bottom:.4rem;font-size:1.26rem}
 .bform .sub{font-size:.9rem;color:var(--stone);margin-bottom:1.5rem;line-height:1.55}
 .bform fieldset{border:none;margin:0 0 1.2rem;padding:0}
@@ -216,7 +216,7 @@
 @media(max-width:560px){.ty-g{grid-template-columns:1fr}}
 .ty{--tc:var(--euc);--ts:var(--euc-soft);background:var(--white);border:1px solid var(--rule);border-top:5px solid var(--tc);padding:1.8rem 1.6rem 2rem}
 .ty.t-war{--tc:var(--waratah);--ts:var(--waratah-soft)}
-.ty.t-wat{--tc:var(--wattle);--ts:var(--wattle-soft)}
+.ty.t-wat{--tc:var(--bark);--ts:var(--bark-soft)}
 .ty.t-reef{--tc:var(--reef);--ts:var(--reef-soft)}
 .ty-ic{width:64px;height:64px;border-radius:50%;background:var(--ts);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
 .ty-ic img{width:38px;height:38px}

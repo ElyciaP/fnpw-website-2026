@@ -13,7 +13,7 @@
 <style>
 /* GOVERNMENT PARTNERS */
 .gov{padding:clamp(4rem,7vw,5.5rem) 0;background:var(--euc-deep);color:var(--cream)}
-.gov .ey{color:var(--wattle)}
+.gov .ey{color:var(--euc-soft)}
 .gov h2{color:var(--cream);font-family:var(--ff-d);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;
   letter-spacing:-.022em;line-height:1.1;margin:.9rem 0 1.1rem;max-width:20ch}
 .gov-lede{color:rgba(250,246,242,.86);font-size:1.03rem;line-height:1.74;max-width:62ch;margin-top:1.1rem}
@@ -38,7 +38,7 @@
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
 .fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:22ch;margin-top:1rem}
-.fb-hero-content h1 em{font-style:italic;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:400}
+.fb-hero-content h1 em{font-style:normal;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:inherit}
 .fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
 .fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
@@ -51,9 +51,9 @@
 .why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 @media(max-width:880px){.why-g{grid-template-columns:1fr}}
 .why-c{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.2rem 1.8rem;position:relative;border-top:4px solid var(--euc)}
-.why-c.b2{border-top-color:var(--waratah)}.why-c.b3{border-top-color:var(--wattle)}
+.why-c.b2{border-top-color:var(--waratah)}.why-c.b3{border-top-color:var(--bark)}
 .why-c .num{font-family:var(--ff-d);font-size:2.4rem;font-weight:800;color:var(--euc);line-height:1;margin-bottom:.5rem;letter-spacing:-.04em}
-.why-c.b2 .num{color:var(--waratah)}.why-c.b3 .num{color:var(--wattle-dk)}
+.why-c.b2 .num{color:var(--waratah)}.why-c.b3 .num{color:var(--bark-text)}
 .why-c h3{font-size:1.2rem;margin-bottom:.6rem}
 .why-c p{font-size:.94rem;line-height:1.6;color:var(--char)}
 
@@ -87,7 +87,7 @@
 .approach-item p{font-size:.9rem;color:var(--char);line-height:1.55;margin:0}
 
 .case-strip{padding:5rem 0;background:var(--euc-deep);color:var(--cream);overflow:hidden;position:relative}
-.case-strip::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc-mid),var(--wattle),var(--waratah))}
+.case-strip::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
 .case-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 @media(max-width:880px){.case-g{grid-template-columns:1fr;gap:2rem}}
 .case-im{aspect-ratio:5/4;border-radius:0;overflow:hidden;background:var(--euc)}
@@ -95,8 +95,8 @@
 .case-cap{font-size:.82rem;color:rgba(250,246,242,.72);margin-top:.7rem;line-height:1.45}
 .case-strip h2{color:var(--cream)}
 .case-strip p{color:rgba(250,246,242,.88);font-size:1.02rem;line-height:1.65}
-.case-strip .btn-p{background:var(--wattle);border-color:var(--wattle);color:var(--euc-deep)}
-.case-strip .btn-p:hover{background:var(--bark-text);border-color:var(--bark-text);color:var(--cream)}
+.case-strip .btn-p{background:var(--waratah);border-color:var(--waratah);color:var(--cream)}
+.case-strip .btn-p:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--cream)}
 
 .partners-now{padding:4.5rem 0;background:var(--cream);text-align:center}
 .partners-now .lmq{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.6rem;
@@ -247,7 +247,7 @@
       <p class="case-cap">Planting our millionth native tree, 2025.</p>
     </div>
     <div>
-      <span class="ey" style="color:var(--wattle)">Partnership story</span>
+      <span class="ey" style="color:var(--euc-soft)">Partnership story</span>
       <h2 style="margin:1rem 0 1.2rem">Eight million more trees by 2030.</h2>
       <p>We put our millionth native tree in the ground in October 2024, and the count now stands at more than 1.2 million. Our next goal is eight million more by 2030, restoring habitat, reconnecting wildlife corridors and building landscapes that hold up under fire, flood and drought.</p>
       <p style="margin-top:1rem">Partners fund plantings at the scale that suits them, from a single site through to a multi-year program across several states. Every planting is monitored and reported, so you can see exactly what your investment put back.</p>

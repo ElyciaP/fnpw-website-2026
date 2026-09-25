@@ -118,7 +118,7 @@
 .cmp-hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(5rem,9vw,8rem) 0 clamp(4rem,7vw,6rem);color:var(--cream)}
 .cmp-hero-bg{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 100% at 75% 20%,var(--hovea) 0,var(--hovea) 60%,var(--hovea-deep) 100%)}
 .cmp-hero-grain{position:absolute;inset:0;z-index:-1;opacity:.16;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.cmp-hero::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%);z-index:3}
+.cmp-hero::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#F8EEA9;z-index:3}
 .cmp-hero-g{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;position:relative;z-index:2}
 @media(max-width:900px){.cmp-hero-g{grid-template-columns:1fr;gap:3rem}}
 .cmp-bc{display:flex;gap:.5em;font-size:.78rem;color:var(--cream);margin-bottom:1.4rem;font-weight:500;letter-spacing:.04em}
@@ -248,7 +248,7 @@
 
 /* Final CTA */
 .cmp-final{padding:clamp(5rem,8vw,7rem) 0;background:linear-gradient(135deg,var(--hovea) 0%,var(--hovea-deep) 100%);color:var(--cream);position:relative;overflow:hidden;text-align:center}
-.cmp-final::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%);z-index:3}
+.cmp-final::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#F8EEA9;z-index:3}
 .cmp-final-grain{position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E")}
 .cmp-final h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:1.2rem;color:var(--cream);position:relative;z-index:2;max-width:18ch;margin-left:auto;margin-right:auto}
 .cmp-final h2 em{font-family:var(--ff-d);font-style:normal;font-weight:700;color:#F8EEA9;display:inline-block}

@@ -22,7 +22,7 @@
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
 .fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:22ch;margin-top:1rem}
-.fb-hero-content h1 em{font-style:italic;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:400}
+.fb-hero-content h1 em{font-style:normal;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:inherit}
 .fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
 .fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
@@ -30,11 +30,11 @@
 
 .nh .deco{position:absolute;pointer-events:none;width:170px;opacity:.14}
 .nh .deco.d1{top:14%;right:6%;color:var(--euc);transform:rotate(18deg)}
-.nh .deco.d2{bottom:8%;right:18%;width:110px;color:var(--wattle);transform:rotate(-30deg);opacity:.3}
+.nh .deco.d2{bottom:8%;right:18%;width:110px;color:var(--euc-soft);transform:rotate(-30deg);opacity:.3}
 
 .feat-art{padding:3.5rem 0 4rem;background:var(--paper)}
 .feat-card{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-radius:0;overflow:hidden;background:var(--white);border:1px solid var(--rule);box-shadow:0 24px 60px -28px rgba(15,49,50,.22);position:relative}
-.feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc) 0,var(--euc) 33%,var(--waratah) 33%,var(--waratah) 66%,var(--wattle) 66%);z-index:2}
+.feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc) 0,var(--euc) 33%,var(--waratah) 33%,var(--waratah) 66%,var(--bark) 66%);z-index:2}
 @media(max-width:880px){.feat-card{grid-template-columns:1fr}}
 .feat-img{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--euc)}
 .feat-img img{width:100%;height:100%;object-fit:cover}
@@ -76,7 +76,7 @@
 .art:hover .art-link::after{transform:translateX(4px)}
 
 .nl-strip{padding:4.5rem 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
-.nl-strip::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
+.nl-strip::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
 .nl-g{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 @media(max-width:780px){.nl-g{grid-template-columns:1fr}}
 .nl-strip h3{color:var(--cream);font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:.7rem}
@@ -84,7 +84,7 @@
 .nl-f{display:flex;gap:.5rem;flex-wrap:wrap}
 .nl-f input{flex:1;min-width:200px;padding:.85em 1.2em;border-radius:0;border:1px solid rgba(250,246,242,.3);background:rgba(250,246,242,.08);color:var(--cream);font-size:.95rem;font-family:var(--ff-b)}
 .nl-f input::placeholder{color:rgba(250,246,242,.6)}
-.nl-f button{padding:.85em 1.5em;background:var(--wattle);color:var(--soil);border-radius:0;font-weight:700;transition:.25s}
+.nl-f button{padding:.85em 1.5em;background:var(--waratah);color:var(--cream);border-radius:0;font-weight:700;transition:.25s}
 .fp{font-family:var(--ff-b);font-size:.84rem;font-weight:600;padding:.5em 1.05em;border-radius:0;border:1.5px solid var(--rule);background:var(--white);color:var(--char);cursor:pointer;transition:.25s}
 .fp:hover{border-color:var(--euc);color:var(--euc)}
 .fp.on{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
@@ -1688,7 +1688,7 @@
 
 <section class="nl-strip">
   <div class="cw"><div class="nl-g rv">
-    <div><span class="ey" style="color:var(--wattle)">Stay connected</span><h3 style="margin-top:.7rem">Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
+    <div><span class="ey" style="color:var(--euc-soft)">Stay connected</span><h3 style="margin-top:.7rem">Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
     <form class="nl-f" onsubmit="alert('Thank you! In production this integrates with HubSpot.');return false">
       <input type="email" placeholder="your@email.com.au" required>
       <button type="submit">Subscribe</button>

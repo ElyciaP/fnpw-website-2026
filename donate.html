@@ -22,7 +22,7 @@
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
 .fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:22ch;margin-top:1rem}
-.fb-hero-content h1 em{font-style:italic;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:400}
+.fb-hero-content h1 em{font-style:normal;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:inherit}
 .fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
 .fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
@@ -30,7 +30,7 @@
 
 .dh .deco{position:absolute;pointer-events:none;opacity:.14}
 .dh .deco.d1{top:12%;right:5%;width:180px;color:var(--waratah);transform:rotate(15deg)}
-.dh .deco.d2{bottom:10%;right:20%;width:110px;color:var(--wattle);transform:rotate(-25deg);opacity:.3}
+.dh .deco.d2{bottom:10%;right:20%;width:110px;color:var(--euc-soft);transform:rotate(-25deg);opacity:.3}
 
 .don-main{padding:3rem 0 6rem;background:var(--paper)}
 .don-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
@@ -40,15 +40,15 @@
 .don-info p{color:var(--char);font-size:1.02rem;line-height:1.65;margin-bottom:1.2rem}
 .imp-list{margin:2rem 0;display:flex;flex-direction:column;gap:1rem}
 .imp{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 1.4rem;background:var(--white);border:1px solid var(--rule);border-radius:0;border-left:4px solid var(--euc)}
-.imp.sp{border-left-color:var(--waratah)}.imp.hl{border-left-color:var(--wattle)}
+.imp.sp{border-left-color:var(--waratah)}.imp.hl{border-left-color:var(--bark)}
 .imp .amt{font-family:var(--ff-d);font-weight:800;font-size:1.5rem;color:var(--euc);min-width:80px;letter-spacing:-.02em}
-.imp.sp .amt{color:var(--waratah)}.imp.hl .amt{color:var(--wattle-dk)}
+.imp.sp .amt{color:var(--waratah)}.imp.hl .amt{color:var(--bark-text)}
 .imp .txt{flex:1}
 .imp .txt strong{display:block;color:var(--euc-deep);font-family:var(--ff-d);font-size:1rem;margin-bottom:.2rem}
 .imp .txt span{font-size:.9rem;color:var(--stone);line-height:1.5}
 
 .tax{padding:4rem 0;background:var(--euc-deep);color:var(--cream);text-align:center;position:relative;overflow:hidden}
-.tax::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
+.tax::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
 .tax h3{color:var(--cream);margin-bottom:1rem;font-size:clamp(1.4rem,2vw,1.8rem)}
 
 
@@ -71,7 +71,7 @@
 
 /* Donation card (left column) */
 .don-card{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.6rem;box-shadow:0 24px 60px -32px rgba(15,49,50,.18);position:relative;overflow:hidden}
-.don-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--waratah),var(--wattle));border-radius:0}
+.don-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--waratah);border-radius:0}
 @media(max-width:680px){.don-card{padding:1.8rem 1.4rem}}
 
 .don-step{display:none}.don-step.on{display:block;animation:fadeUp .35s ease}
@@ -84,7 +84,7 @@
 .freq{display:flex;gap:0;margin-bottom:1.8rem;background:var(--paper);border-radius:0;padding:.3rem;border:1px solid var(--rule)}
 .freq button{flex:1;padding:.85em 1em;border-radius:0;font-size:.88rem;font-weight:600;color:var(--stone);transition:.25s;display:inline-flex;align-items:center;justify-content:center;gap:.4em}
 .freq button.on{background:var(--euc-deep);color:var(--cream);box-shadow:0 4px 14px -6px rgba(15,49,50,.4)}
-.freq button .pill{background:var(--wattle);color:var(--euc-deep);font-size:.7rem;padding:.15em .55em;border-radius:0;font-weight:700;letter-spacing:.04em}
+.freq button .pill{background:var(--bark-mid);color:var(--cream);font-size:.7rem;padding:.15em .55em;border-radius:0;font-weight:700;letter-spacing:.04em}
 
 /* Amount grid with images */
 .lbl{display:block;font-size:.78rem;font-weight:700;color:var(--euc-deep);margin-bottom:.65rem;letter-spacing:.08em;text-transform:uppercase}
@@ -151,7 +151,7 @@
 
 /* Card details */
 .card-details{padding-top:.4rem}
-.cover-fee{display:flex;align-items:flex-start;gap:.8rem;padding:1rem 1.2rem;background:var(--wattle-soft);border-radius:0;margin:1.2rem 0;cursor:pointer;border:1px solid rgba(192,160,30,.3)}
+.cover-fee{display:flex;align-items:flex-start;gap:.8rem;padding:1rem 1.2rem;background:var(--bark-soft);border-radius:0;margin:1.2rem 0;cursor:pointer;border:1px solid rgba(192,160,30,.3)}
 .cover-fee input{margin-top:.25em;accent-color:var(--euc-deep)}
 .cover-fee .cf-lab{flex:1;font-size:.88rem;line-height:1.5}
 .cover-fee .cf-lab strong{display:block;color:var(--euc-deep);font-weight:700;margin-bottom:.15em}
@@ -174,11 +174,11 @@
 
 /* Tax info bar */
 .tax-info{background:var(--euc-deep);color:var(--cream);padding:4rem 0;text-align:center;position:relative;overflow:hidden}
-.tax-info::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--wattle),var(--waratah),var(--euc-mid))}
+.tax-info::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
 .tax-info h3{color:var(--cream);margin-bottom:1rem;font-size:clamp(1.3rem,1.8vw,1.6rem)}
 .tax-info p{color:rgba(250,246,242,.85);max-width:640px;margin:0 auto 1.2rem;font-size:.98rem;line-height:1.65}
 .tax-info .other{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.6rem}
-.tax-info .other a{color:var(--wattle-soft);font-weight:600;font-size:.92rem;border-bottom:1px solid currentColor;padding-bottom:.2em}
+.tax-info .other a{color:var(--euc-soft);font-weight:600;font-size:.92rem;border-bottom:1px solid currentColor;padding-bottom:.2em}
 
 
 /* ---- Featured Appeals ---- */
