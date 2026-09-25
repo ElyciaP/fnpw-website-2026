@@ -12,23 +12,8 @@
 
 <style>
 /* Image-background hero, same compact size as the cream paper version */
-.proj-hero{position:relative;padding:5rem 0 4rem;background:var(--euc-deep);overflow:hidden;isolation:isolate}
-.proj-hero-bg{position:absolute;inset:0;z-index:-2}
-.proj-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:left 30%}
 /* Dual gradient — readable text on the left, image visible on the right */
-.proj-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,42,43,.88) 0%,rgba(10,42,43,.72) 35%,rgba(10,42,43,.4) 60%,rgba(10,42,43,.15) 85%);z-index:1}
-.proj-hero .cw{position:relative;z-index:2}
-.proj-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.7);margin-bottom:1.5rem}
-.proj-hero .breadcrumb a{color:var(--euc-soft)}
-.proj-hero .ey{color:var(--waratah-soft)}
-.proj-hero .ey::before{background:var(--waratah-soft)}
-.proj-hero h1{margin:1rem 0 1.2rem;max-width:20ch;color:var(--cream);text-shadow:0 2px 24px rgba(0,0,0,.35)}
-.proj-hero .lede{color:rgba(250,246,242,.88);text-shadow:0 1px 16px rgba(0,0,0,.35)}
-.proj-hero .rv{opacity:1!important;transform:none!important}
 /* Photo credit chip bottom right */
-.proj-hero-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.7);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:3;font-family:var(--ff-b)}
-@media(max-width:780px){.proj-hero-cred{display:none}}
-.proj-hero .deco{width:200px}
 
 .map-sec{padding:0 0 3rem;background:var(--paper)}
 .map-fr{position:relative;background:var(--euc-deep);border-radius:0;overflow:hidden;box-shadow:0 30px 80px -30px rgba(15,49,50,.4);margin-top:1.5rem}
@@ -103,6 +88,24 @@
 .ns-f input::placeholder{color:rgba(250,246,242,.6)}
 .ns-f button{padding:.8em 1.4em;background:var(--wattle);color:var(--soil);border-radius:0;font-weight:700;transition:.25s}
 .ns-f button:hover{background:var(--wattle-dk);color:var(--cream)}
+.proj-hero{position:relative;overflow:hidden;min-height:clamp(400px,50vh,520px);display:flex;align-items:center;
+  background:linear-gradient(180deg,#F6F7F3 0%,#E4EAF3 35%,#DCE5F3 60%,#F4F6F2 100%)}
+.proj-hero-img{position:absolute;top:0;right:0;width:60%;height:100%;object-fit:cover;object-position:50% 40%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
+.proj-hero .cw{position:relative;z-index:2;width:100%;padding-top:3.5rem;padding-bottom:3.5rem}
+.proj-hero-t{max-width:min(34rem,44%)}
+.proj-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:var(--euc-deep);margin-bottom:1.5rem}
+.proj-hero .breadcrumb a{color:var(--euc)}
+.proj-hero .ey{color:var(--euc)}
+.proj-hero h1{margin:1rem 0 1.2rem;color:var(--euc-deep)}
+.proj-hero .lede{color:var(--ink)}
+.proj-hero .rv{opacity:1!important;transform:none!important}
+@media(max-width:760px){
+  .proj-hero{display:block;min-height:0}
+  .proj-hero-img{position:relative;display:block;width:100%;height:300px;object-position:50% 45%;-webkit-mask-image:none;mask-image:none}
+  .proj-hero .cw{padding-top:2rem;padding-bottom:2.6rem}
+  .proj-hero-t{max-width:none}
+}
 </style>
 </head>
 <body>
@@ -151,13 +154,14 @@
 </header><!-- /@header -->
 <main>
 <section class="proj-hero">
-  
-  
+  <img class="proj-hero-img" src="assets/img/projects-hero-kookaburra.jpg" alt="A laughing kookaburra perched on a red flower spike against a pale blue sky" width="2400" height="1599">
   <div class="cw rv">
-    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem"><a href="index.html">Home</a><span>/</span>Projects</nav>
-    <span class="ey">Conservation in action</span>
-    <h1 style="margin:1rem 0">Conservation projects across Australia.</h1>
-    <p class="lede">From the Coorong to the Kimberley, here&rsquo;s where 55 years of Australian conservation is happening right now.</p>
+    <div class="proj-hero-t">
+      <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span>Projects</nav>
+      <span class="ey">Conservation in action</span>
+      <h1>Conservation projects across Australia.</h1>
+      <p class="lede">From the Coorong to the Kimberley, here&rsquo;s where 55 years of Australian conservation is happening right now.</p>
+    </div>
   </div>
 </section>
 
@@ -279,9 +283,6 @@
 .im-leg-ic{display:inline-block!important;height:22px;width:auto;vertical-align:middle;margin:0 .35rem 0 .1rem}
 
 /* v3.1 photographic hub hero */
-.proj-hero{position:relative;isolation:isolate;overflow:hidden}
-.proj-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/bongil.jpg') center/cover}
-.proj-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.62),rgba(15,49,50,.88))}
 .pil-deep{margin-top:1rem;font-size:.92rem;color:var(--stone);flex-basis:100%}
 .fb-right{display:flex;flex-direction:column;align-items:flex-end;gap:.55rem}
 .sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
