@@ -22,14 +22,16 @@
 .ab-hero .ey{color:var(--waratah-soft)}
 .ab-hero .ey::before{background:var(--waratah-soft)}
 .ab-hero h1{margin:1rem 0 1.2rem;max-width:20ch;color:var(--cream);text-shadow:0 2px 24px rgba(0,0,0,.35)}
-.ab-hero h1 em{font-style:italic;font-family:var(--ff-d);color:var(--wattle-soft);font-weight:400}
+.ab-hero h1 em{font-style:normal;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:inherit}
 .ab-hero .lede{color:rgba(250,246,242,.88);text-shadow:0 1px 16px rgba(0,0,0,.35)}
 .ab-hero .rv{opacity:1!important;transform:none!important}
 .ab-hero-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.7);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:3;font-family:var(--ff-b)}
 @media(max-width:780px){.ab-hero-cred{display:none}}
 
 .ac-sec{padding:5rem 0;background:var(--soil);color:var(--cream);position:relative;overflow:hidden}
-.ac-sec .pat{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,var(--wattle-soft) 1.5px,transparent 1.6px);background-size:24px 24px}
+.ac-sec .pat{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,#CBABAB 1.5px,transparent 1.6px);background-size:24px 24px}
+.ac-sec .ac-ey{color:#CBABAB}.ac-sec .ac-ey::before{background:#CBABAB}
+.framed.bm::before{background:var(--bark-mid)}
 .ac-sec h2{color:var(--cream);margin-bottom:1.5rem;font-size:clamp(1.8rem,3.4vw,2.6rem)}
 .ac-sec p{color:rgba(250,246,242,.92);font-size:1.05rem;line-height:1.7}
 
@@ -59,7 +61,7 @@
 .tc-ph{aspect-ratio:4/5;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--euc),var(--euc-deep));color:var(--wattle-soft);font-size:5rem}
 .tc-in{padding:1.4rem}
 .tc-n{font-family:var(--ff-d);font-weight:700;font-size:1.1rem;color:var(--euc-deep);margin-bottom:.2rem}
-.tc-r{font-size:.85rem;color:var(--bark-text)}
+.tc-r{font-size:.85rem;color:var(--euc)}
 
 .ab-cta{position:relative;padding:6rem 0;text-align:center;overflow:hidden;color:var(--char);
   background:radial-gradient(120% 90% at 50% -10%, #FAF6F2 0%, var(--cream) 42%, var(--sand) 100%);
@@ -67,7 +69,7 @@
 .ab-cta::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(60% 120% at 50% 130%, rgba(15,119,104,.10), transparent 60%)}
 .ab-cta .cw{position:relative;z-index:1}
-.ab-cta .cta-tick{width:46px;height:3px;background:var(--wattle);margin:0 auto 1.4rem;border-radius:2px}
+.ab-cta .cta-tick{width:46px;height:3px;background:var(--bark);margin:0 auto 1.4rem;border-radius:2px}
 
 /* v3.2 gallery + team photos */
 .tc-ph img{width:100%;height:100%;object-fit:cover;display:block}
@@ -90,11 +92,11 @@
 /* v4.1 stories carousel */
 .abs-rail{display:flex;gap:1.3rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
 .abs-card{flex:0 0 min(310px,80vw);scroll-snap-align:start;text-decoration:none;color:var(--cream);background:rgba(250,246,242,.05);border:1px solid rgba(250,246,242,.14);transition:border-color .25s ease,transform .2s ease}
-.abs-card:hover{border-color:var(--wattle);transform:translateY(-3px)}
+.abs-card:hover{border-color:var(--euc-soft);transform:translateY(-3px)}
 .abs-im{aspect-ratio:16/10;overflow:hidden}
 .abs-im img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .abs-card:hover .abs-im img{transform:scale(1.05)}
-.abs-cat{display:inline-block;margin:1rem 1.2rem .3rem;font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--wattle-soft)}
+.abs-cat{display:inline-block;margin:1rem 1.2rem .3rem;font-family:var(--ff-d);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--euc-soft)}
 .abs-card h3{margin:0 1.2rem .6rem;font-family:var(--ff-d);font-size:1.05rem;font-weight:700;line-height:1.3;color:var(--cream)}
 .abs-go{display:inline-block;margin:0 1.2rem 1.2rem;font-family:var(--ff-d);font-weight:600;font-size:.84rem;color:var(--euc-soft)}
 .abs-arr{width:46px;height:46px;border:1.5px solid rgba(250,246,242,.6);background:transparent;color:var(--cream);font-size:1.1rem;cursor:pointer;transition:background .2s,color .2s}
@@ -102,20 +104,20 @@
 
 /* v5.1 centre-spine draggable timeline */
 .ht{background:var(--euc-deep);color:var(--cream);padding:5.5rem 0 4rem;overflow:hidden}
-.ht-hint{font-family:var(--ff-b);font-size:0.94rem;color:var(--wattle-soft);display:inline-block;font-weight:600}
+.ht-hint{font-family:var(--ff-b);font-size:0.94rem;color:var(--cream);display:inline-block;font-weight:600}
 .ht-railwrap{margin-top:1.5rem}
 .ht-rail{display:flex;overflow-x:auto;cursor:grab;user-select:none;-webkit-user-select:none;padding:0 max(calc((100vw - 1240px)/2),24px) 1rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
 .ht-rail.drag{cursor:grabbing}
 .ht-i{flex:0 0 400px;position:relative;height:480px}
 .ht-i::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--euc-soft);opacity:.9}
-.ht-dot{position:absolute;left:0;top:50%;width:17px;height:17px;border-radius:50%;background:var(--wattle);border:3.5px solid var(--euc-deep);outline:2px solid var(--wattle);transform:translateY(-50%);z-index:1}
+.ht-dot{position:absolute;left:0;top:50%;width:17px;height:17px;border-radius:50%;background:var(--bark);border:3.5px solid var(--euc-deep);outline:2px solid var(--bark);transform:translateY(-50%);z-index:1}
 .ht-stem{position:absolute;left:7px;border-left:2px dashed rgba(250,246,242,.4);height:30px}
 .ht-i:nth-child(odd) .ht-stem{bottom:50%;margin-bottom:10px}
 .ht-i:nth-child(even) .ht-stem{top:50%;margin-top:10px}
 .ht-bd{position:absolute;left:0;width:330px}
 .ht-i:nth-child(odd) .ht-bd{bottom:calc(50% + 44px)}
 .ht-i:nth-child(even) .ht-bd{top:calc(50% + 44px)}
-.ht-yr{display:block;font-family:var(--ff-d);font-weight:800;font-size:1.8rem;letter-spacing:-.02em;color:var(--wattle);margin-bottom:.5rem;line-height:1}
+.ht-yr{display:block;font-family:var(--ff-d);font-weight:800;font-size:1.8rem;letter-spacing:-.02em;color:var(--euc-soft);margin-bottom:.5rem;line-height:1}
 .ht-bd p{font-size:.97rem;line-height:1.6;color:rgba(250,246,242,.9)}
 @media(max-width:640px){.ht-i{flex-basis:320px;height:440px}.ht-bd{width:270px}}
 /* About: story / how-we-work image splits */
@@ -136,7 +138,7 @@
 .rap-art{align-self:start}
 .two.rap-row{grid-template-columns:1.35fr 1fr;gap:3.5rem}
 @media(max-width:880px){.two.rap-row{grid-template-columns:1fr;gap:2.5rem}}
-.rap-art img{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;box-shadow:12px 12px 0 var(--bark)}
+.rap-art img{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;box-shadow:12px 12px 0 var(--bark-mid)}
 .rap-cred{font-size:.82rem;color:var(--stone);margin:1.5rem auto 0;max-width:400px}
 </style>
 </head>
@@ -226,7 +228,7 @@
           <div><strong>55</strong><span>years of doing it</span></div>
         </div>
       </div>
-      <div class="rv d2 framed wt"><img src="assets/img/about-partners-planting.jpg" alt="A group of community volunteers, rural fire service members, park rangers, council staff and partners gathered around a newly planted seedling in bushland" width="1500" height="950" loading="lazy"></div>
+      <div class="rv d2 framed bm"><img src="assets/img/about-partners-planting.jpg" alt="A group of community volunteers, rural fire service members, park rangers, council staff and partners gathered around a newly planted seedling in bushland" width="1500" height="950" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -315,7 +317,7 @@
 <section class="sec paper">
   <div class="cw">
     <div class="two" style="align-items:center">
-      <div class="rv" style="max-width:320px;justify-self:center"><img src="assets/img/tom-lewis.jpg" alt="The late Hon. Tom Lewis AO" width="384" height="480" decoding="async" style="display:block;width:100%;box-shadow:12px 12px 0 var(--wattle-soft)"></div>
+      <div class="rv" style="max-width:320px;justify-self:center"><img src="assets/img/tom-lewis.jpg" alt="The late Hon. Tom Lewis AO" width="384" height="480" decoding="async" style="display:block;width:100%;box-shadow:12px 12px 0 var(--bark-mid)"></div>
       <div class="rv d1"><span class="ey">Founder &amp; Patron</span>
       <h2 style="margin:.8rem 0 1rem">The late Hon. Tom Lewis AO</h2>
       <p>As NSW lands minister, Tom Lewis set up the National Parks and Wildlife Service in 1967, then established the Foundation for National Parks &amp; Wildlife in 1970 as its fundraising arm. Today we are an independent conservation organisation working Australia-wide.</p></div>
@@ -396,7 +398,7 @@
 <section class="ac-sec">
   <div class="pat"></div>
   <div class="cw"><div class="rv" style="max-width:920px;margin:0 auto;text-align:center">
-    <span class="ey" style="color:var(--wattle-soft)">Acknowledgement of Country</span>
+    <span class="ey ac-ey">Acknowledgement of Country</span>
     <h2 style="margin:1.2rem 0">We acknowledge the Traditional Custodians of Country throughout Australia.</h2>
     <p>We pay our respects to Elders past and present, and honour the knowledge and traditions passed down through generations. Our work is grounded in the understanding that the lands and waters we protect have been cared for by First Nations peoples for tens of thousands of years.</p>
   </div></div>

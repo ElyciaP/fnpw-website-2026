@@ -205,7 +205,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-meta-i{display:inline-flex;align-items:center;gap:.5em}
 .cmp-meta-i svg{width:16px;height:16px;flex:0 0 16px;color:#F8EEA9}
 .cmp-btns{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
-.cmp-btn-p{display:inline-block;background:#F8EEA9;color:var(--hovea) !important;padding:1em 1.9em;border-radius:0;font-family:var(--ff-d);font-weight:600;font-size:.95rem;transition:.25s;border:none}
+.cmp-btn-p{display:inline-block;background:#F8EEA9;color:var(--soil-deep) !important;padding:1em 1.9em;border-radius:0;font-family:var(--ff-d);font-weight:600;font-size:.95rem;transition:.25s;border:none}
 .cmp-btn-p:hover{background:var(--white);transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(0,0,0,.3);opacity:1}
 .cmp-btn-g{display:inline-flex;align-items:center;gap:.55em;color:var(--cream);font-weight:600;font-size:.92rem;border-bottom:1.5px solid rgba(250,246,242,.5);padding:.4em 0;transition:.25s}
 .cmp-btn-g svg{width:18px;height:18px}
