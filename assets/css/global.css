@@ -763,3 +763,10 @@ main > section.sec.dark:last-child h2{color:var(--euc-deep)}
 main > section.sec.dark:last-child .lede,main > section.sec.dark:last-child p{color:var(--char)!important}
 main > section.sec.dark:last-child .btn-o{color:var(--euc-deep);border-color:var(--euc-deep)}
 main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+
+/* Pillar tags on project tiles: solid pillar colour, cream text (matches homepage chips) */
+.pc-pb.pb-parks{background:var(--euc);color:var(--cream)}
+.pc-pb.pb-species{background:var(--waratah);color:var(--cream)}
+.pc-pb.pb-healing{background:var(--bark);color:var(--cream)}
+/* Centre button labels when a button is given a min-width */
+.btn-p,.btn-o{justify-content:center}

@@ -149,6 +149,9 @@ RAW = [
  ('growing-national-parks.html', 'box-shadow:12px 12px 0 var(--euc-pale)', 'box-shadow:12px 12px 0 var(--bark-mid)'),
  ('healing-the-land.html', 'box-shadow:12px 12px 0 var(--euc-pale)', 'box-shadow:12px 12px 0 var(--bark-mid)'),
  ('saving-species.html', 'box-shadow:12px 12px 0 var(--euc-pale)', 'box-shadow:12px 12px 0 var(--bark-mid)'),
+] + [(f, 'class="ey" style="color:var(--wattle)"', 'class="ey" style="color:var(--euc-soft)"')
+     for f in ['articles.html', 'fundraising-with-fnpw.html', 'projects.html', 'partner.html', 'reports.html']] + [
+ ('bring-back-the-bush.html', 'linear-gradient(to right,var(--wattle) 0,var(--waratah-soft) 50%,var(--reef-soft) 100%)', '#F8EEA9'),
 ]
 
 def css_regions(t, is_css):
