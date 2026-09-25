@@ -96,7 +96,7 @@ def block_html(b):
             parts += ['      <p>%s</p>' % esc(x) for x in b.get('intro', [])]
             parts.append(li_html([esc(x) for x in b['items']], b.get('ordered', False)))
             body = NL.join(parts)
-        cls = 'sec paper' if b.get('paper') else 'sec'
+        cls = 'sec sand' if b.get('paper') else 'sec'
         return ('<section class="%s">%s  <div class="cw rv">%s    <div class="pj-body">%s%s%s%s'
                 '    </div>%s  </div>%s</section>'
                 % (cls, NL, NL, NL, ey, body, NL, NL, NL))
@@ -147,7 +147,7 @@ def related_html(items):
             '        </div>%s      </a>'
             % (r['href'], NL, r['img'], NL, NL, r['date'], NL, esc(r['title']), NL,
                esc(r['blurb']), NL, r.get('cta', 'Read the story'), NL, NL))
-    return ('<section class="sec paper">%s  <div class="cw rv">%s'
+    return ('<section class="sec sand">%s  <div class="cw rv">%s'
             '    <span class="ey">Keep reading</span>%s'
             '    <h2>More from the field.</h2>%s'
             '    <div class="pj-readgrid">%s%s%s    </div>%s  </div>%s</section>'

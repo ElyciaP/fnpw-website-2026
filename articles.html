@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <title>Articles | FNPW</title>
+<meta name="description" content="Stories from the field: conservation news, species updates and restoration projects from across Australia&#x27;s national parks and wild places.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +33,7 @@
 .nh .deco.d1{top:14%;right:6%;color:var(--euc);transform:rotate(18deg)}
 .nh .deco.d2{bottom:8%;right:18%;width:110px;color:var(--euc-soft);transform:rotate(-30deg);opacity:.3}
 
-.feat-art{padding:3.5rem 0 4rem;background:var(--paper)}
+.feat-art{padding:3.5rem 0 4rem;background:var(--sand)}
 .feat-card{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-radius:0;overflow:hidden;background:var(--white);border:1px solid var(--rule);box-shadow:0 24px 60px -28px rgba(15,49,50,.22);position:relative}
 .feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc) 0,var(--euc) 33%,var(--waratah) 33%,var(--waratah) 66%,var(--bark) 66%);z-index:2}
 @media(max-width:880px){.feat-card{grid-template-columns:1fr}}
@@ -119,6 +120,11 @@
 .feat-bd{padding:1.5rem 2rem}
 .feat-bd h2{font-size:clamp(1.25rem,2.1vw,1.8rem)}
 .feat-bd p{font-size:.95rem}
+
+/* HubSpot newsletter form on the dark strip */
+.nl-hs{background:var(--cream);padding:1.2rem 1.4rem 1rem;min-width:min(100%,380px)}
+.nl-hs .hsform-fallback{font-size:.88rem;color:var(--char)}
+.nl-hs .hsform-fallback a{color:var(--euc-deep);font-weight:600}
 </style>
 </head>
 <body>
@@ -181,13 +187,13 @@
   <div class="cw">
 <!--ARTFEAT:START-->
     <div class="feat-card rv">
-      <div class="feat-img"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg" alt="What does healthy bushland actually look like?"></div>
+      <div class="feat-img"><img src="https://fnpw.org.au/wp-content/uploads/2026/09/55438801356_d02802b757_o-scaled-e1790059797143-1024x502.jpg" alt="The number almost no one publishes"></div>
       <div class="feat-bd">
-        <span class="feat-tag">Featured story &middot; August 2026</span>
-        <h2>What does healthy bushland actually look like?</h2>
-        <p>Researchers added 2,000 tonnes of dead wood to the ground at Mulligans Flat and found significantly more reptile species nine years later. Why structure, dead wood and hollows decide whether a planting ever becomes habitat.</p>
-        <div class="feat-meta"><strong>Healing Land</strong><span>&middot; 7 min read</span></div>
-        <a href="article-what-does-healthy-bushland-look-like.html" class="btn btn-p" style="align-self:flex-start;margin-top:1.4rem">Read the full story</a>
+        <span class="feat-tag">Featured story &middot; September 2026</span>
+        <h2>The number almost no one publishes</h2>
+        <p>A tree planted is not the same as a tree that lived. Why we have partnered with veritree to plant and verify 100,000 native trees across the Yarra Valley, South Gippsland and Hindmarsh Valley.</p>
+        <div class="feat-meta"><strong>Healing Land</strong><span>&middot; 4 min read</span></div>
+        <a href="article-the-number-almost-no-one-publishes.html" class="btn btn-p" style="align-self:flex-start;margin-top:1.4rem">Read the full story</a>
       </div>
     </div>
 <!--ARTFEAT:END-->
@@ -218,6 +224,15 @@
 <section>
   <div class="cw"><div class="art-grid">
 <!--ARTGRID:START-->
+    <a href="article-what-does-healthy-bushland-look-like.html" class="art rv">
+      <div class="art-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg" alt="What does healthy bushland actually look like?" loading="lazy"><span class="cat heal">Healing Land</span></div>
+      <div class="art-bd">
+        <div class="art-date">August 2026 &middot; Story</div>
+        <h3>What does healthy bushland actually look like?</h3>
+        <p>Researchers added 2,000 tonnes of dead wood to the ground at Mulligans Flat and found significantly more reptile species nine years later. Why structure, dead wood and hollows decide whether a planting ever becomes habitat.</p>
+        <span class="art-link">Read more</span>
+      </div>
+    </a>
     <a href="article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html" class="art rv">
       <div class="art-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg" alt="A wildlife corridor is only as wide as its narrowest point" loading="lazy"><span class="cat species">Saving Species</span></div>
       <div class="art-bd">
@@ -317,7 +332,7 @@
         <span class="art-link">Read more</span>
       </div>
     </a>
-    <a href="article-the-science-of-plant-selection.html" class="art rv">
+    <a href="article-why-species-matters-plant-selection.html" class="art rv">
       <div class="art-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/4-2-1024x538.jpg" alt="The science of plant selection, and why the species matters" loading="lazy"><span class="cat heal">Healing Land</span></div>
       <div class="art-bd">
         <div class="art-date">2026-08-20 &middot; Story</div>
@@ -521,6 +536,24 @@
         <div class="art-date">2024-09-06 &middot; News</div>
         <h3>Saving the Northern Quoll</h3>
         <p>The Northern Quoll is one of Australia’s most unique and fascinating animals. Known for its feisty temperament, this small carnivorous marsupial plays a vital role in maintaining the health of...</p>
+        <span class="art-link">Read more</span>
+      </div>
+    </a>
+    <a href="article-biodiversity-month.html" class="art rv">
+      <div class="art-im"><img src="https://fnpw.org.au/wp-content/uploads/2023/08/gondwana-rainforest.png" alt="Biodiversity Month: celebrating life’s rich diversity" loading="lazy"><span class="cat species">Saving Species</span></div>
+      <div class="art-bd">
+        <div class="art-date">September 2023 &middot; Story</div>
+        <h3>Biodiversity Month: celebrating life’s rich diversity</h3>
+        <p>Why biodiversity matters, Australia’s two global biodiversity hotspots, and how everyone can help protect the species that live nowhere else.</p>
+        <span class="art-link">Read more</span>
+      </div>
+    </a>
+    <a href="article-koala-facts.html" class="art rv">
+      <div class="art-im"><img src="https://fnpw.org.au/wp-content/uploads/2023/08/koala-fun-facts.png" alt="Exploring koala facts: unveiling the secrets of Australia’s iconic marsupials" loading="lazy"><span class="cat species">Saving Species</span></div>
+      <div class="art-bd">
+        <div class="art-date">August 2023 &middot; Story</div>
+        <h3>Exploring koala facts: unveiling the secrets of Australia’s iconic marsupials</h3>
+        <p>Nine koala facts, from fussy eating and hydration to breeding calls, the threats koalas face and simple ways you can help protect them.</p>
         <span class="art-link">Read more</span>
       </div>
     </a>
@@ -1042,7 +1075,7 @@
       <div class="art-bd">
         <div class="art-date">2022-01-20 &middot; News</div>
         <h3>FNPW Restoration Funding &amp;#8211; Closing Date Extended</h3>
-        <p>&nbsp;</p>
+        <p>Applications for our Bushfire Recovery Restoration Grants were extended to 14 February 2022, with answers to common questions about eligibility.</p>
         <span class="art-link">Read more</span>
       </div>
     </a>
@@ -1564,7 +1597,7 @@
       <div class="art-bd">
         <div class="art-date">2020-10-22 &middot; News</div>
         <h3>NSW’s Hawkesbury Community Nursery as one of Australia’s first Bushfire Recovery Nurseries</h3>
-        <p>&nbsp;</p>
+        <p>Hawkesbury Community Nursery in Windsor, NSW became one of Australia's first Bushfire Recovery Nurseries, growing trees to help heal fire-hit landscapes.</p>
         <span class="art-link">Read more</span>
       </div>
     </a>
@@ -1689,10 +1722,7 @@
 <section class="nl-strip">
   <div class="cw"><div class="nl-g rv">
     <div><span class="ey" style="color:var(--euc-soft)">Stay connected</span><h3 style="margin-top:.7rem">Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
-    <form class="nl-f" onsubmit="alert('Thank you! In production this integrates with HubSpot.');return false">
-      <input type="email" placeholder="your@email.com.au" required>
-      <button type="submit">Subscribe</button>
-    </form>
+    <div class="nl-hs"><div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="be19c736-6c95-4159-8245-e7b32af6dba3" data-portal-id="441704788" style="min-height:150px"></div><noscript><p class="hsform-fallback">The sign-up form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will add you to the list.</p></noscript><p class="hsform-fallback" id="hsFallback" hidden>The sign-up form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will add you to the list.</p></div>
   </div></div>
 </section>
 </main>
@@ -1707,13 +1737,15 @@
         <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="bring-back-the-bush.html">Bring Back The Bush</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner.html">Become a Partner</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="https://gift-a-tree.fnpw.org.au">Give a Tree</a></li></ul></div>
       <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 90 107 744 771</li></ul></div>
     </div>
     <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
+<script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
 <script src="assets/js/articles.js"></script>
 </body>
 </html>

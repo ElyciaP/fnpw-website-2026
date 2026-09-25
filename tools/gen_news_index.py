@@ -27,7 +27,7 @@ CSS = '''
 .nw-crumb a{color:var(--euc-soft)}
 .nw-list{border-top:1px solid var(--rule);margin-top:2rem}
 .nw-row{display:grid;grid-template-columns:9rem 1fr auto;gap:1.5rem;align-items:baseline;padding:1.35rem 0;border-bottom:1px solid var(--rule);transition:.2s}
-.nw-row:hover{background:var(--paper)}
+.nw-row:hover{background:var(--sand)}
 .nw-date{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--stone)}
 .nw-pub{font-family:var(--ff-d);font-weight:600;font-size:1.05rem;color:var(--euc-deep);margin:0 0 .3rem}
 .nw-blurb{font-size:.92rem;line-height:1.55;color:var(--char);margin:0;max-width:62ch}

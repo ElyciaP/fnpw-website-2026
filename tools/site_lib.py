@@ -155,6 +155,6 @@ EXEMPLAR_SLUGS = {'remarkable-southern-flinders',
                   'nilpena-nationalpark',
                   'tangaroa-blue'}
 
-RAISELY_DONATE = 'https://foundation-for-national-parks-and-wildlife.raiselysite.com/'
-RAISELY_HERO = 'https://habitat-heroes.raiselysite.com/'
+RAISELY_DONATE = 'https://bush.fnpw.org.au'
+RAISELY_HERO = 'https://habitat-heroes.fnpw.org.au/'
 PLACEHOLDER_IMG = 'assets/img/bongil.jpg'

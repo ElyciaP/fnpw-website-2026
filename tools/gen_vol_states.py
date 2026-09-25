@@ -22,9 +22,11 @@ NL = chr(10)
 SITES = 'data/volunteer-sites.json'
 OUTLINES = 'data/state-outlines.json'
 
-# States that get their own page. QLD has a single site, so it is listed on the
-# hub page but has nowhere further to go.
-PAGES = ['NSW', 'VIC', 'SA', 'WA']
+# States that get their own page. QLD has a single site (Daisy Hill), and its page
+# also carries the site detail ported from the live Brisbane page.
+PAGES = ['NSW', 'VIC', 'SA', 'WA', 'QLD']
+# Extra HTML inserted after the map and list, per state (from data/live-port/).
+STATE_EXTRA = {'QLD': 'data/live-port/qld-daisy-hill.html'}
 
 W, Hh, PAD = 760, 620, 26
 
@@ -204,7 +206,7 @@ PAGE_CSS = '''
 .vs-tally li{font-size:.8rem;font-weight:600;color:var(--euc-deep);background:var(--euc-soft);
   padding:.45em .85em}
 
-.vs-wrap{padding:var(--sec-y) 0;background:var(--paper)}
+.vs-wrap{padding:var(--sec-y) 0;background:var(--sand)}
 .vs-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
 @media(max-width:1000px){.vs-split{grid-template-columns:1fr;gap:2rem}}
 
@@ -245,7 +247,7 @@ PAGE_CSS = '''
   .vs-list::-webkit-scrollbar-track{background:transparent}
   .vs-listwrap::after{content:"";position:absolute;left:0;right:.7rem;bottom:0;height:64px;
     pointer-events:none;opacity:1;transition:opacity .25s ease;
-    background:linear-gradient(to bottom,rgba(244,238,230,0),var(--paper))}
+    background:linear-gradient(to bottom,rgba(244,238,230,0),var(--sand))}
   .vs-listwrap.at-end::after{opacity:0}
 }
 .vs-more{display:none;width:100%;margin-top:.9rem;padding:.85em 1.2em;background:transparent;
@@ -521,9 +523,11 @@ def state_page(code, outline, sites, idx):
         '<a href="volunteer.html">Corporate Volunteering</a><span style="opacity:.45">/</span>%s</nav>' % esc(outline['name']),
         '    <span class="ey">Corporate volunteering</span>',
         '    <h1>%s sites</h1>' % esc(outline['name']),
-        '    <p class="lede">%d sites across %s where your team can spend a day on the ground. '
-        '%s Pick one from the map or the list, then send us your dates from the form below.</p>'
-        % (len(sites), esc(outline['name']), esc(summarise(sites))),
+        ('    <p class="lede">%d sites across %s where your team can spend a day on the ground. '
+         '%s Pick one from the map or the list, then send us your dates from the form below.</p>'
+         % (len(sites), esc(outline['name']), esc(summarise(sites)))) if len(sites) > 1 else
+        ('    <p class="lede">One site in %s where your team can spend a day on the ground. '
+         'Read about it below, then send us your dates from the form.</p>' % esc(outline['name'])),
         '      <ul class="vs-tally">',
         tally.rstrip(NL),
         '      </ul>',
@@ -568,6 +572,8 @@ def state_page(code, outline, sites, idx):
         '    </div>',
         '  </div>',
         '</section>',
+        '',
+        (open(STATE_EXTRA[code], encoding='utf-8').read() if code in STATE_EXTRA else ''),
         '',
         gallery(code, idx),
         '',
@@ -696,7 +702,9 @@ def hub_section(by):
             '          <li><b>%s</b><span>%s</span> <span class="vw-ty">%s</span> '
             '<span class="vw-km">%d km</span></li>%s'
             % (esc(s['name']), esc(s['city']), esc(s['type']), s['km'], NL) for s in rows)
-        go = ('<a class="vw-go" href="%s">See all %s sites &#8594;</a>' % (slug_state(code), code)
+        go = (('<a class="vw-go" href="%s">See all %s sites &#8594;</a>' % (slug_state(code), code)
+               if len(rows) > 1 else
+               '<a class="vw-go" href="%s">See the %s site &#8594;</a>' % (slug_state(code), code))
               if code in PAGES else
               '<span class="vw-only">One site, listed here</span>')
         panels.append(NL.join([

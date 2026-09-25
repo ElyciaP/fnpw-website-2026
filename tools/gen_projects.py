@@ -525,11 +525,11 @@ def main():
 {stats_html}
 {sec(intro)}
 {featured}
-<section class="sec paper" style="padding-bottom:1.5rem">
+<section class="sec sand" style="padding-bottom:1.5rem">
   <div class="cw rv"><span class="ey">All {len(mine)} projects</span><h2 style="margin:.8rem 0 0">Projects under this pillar</h2></div>
 </section>
 {filter_bar}
-<section class="sec paper" style="padding-top:2.2rem">
+<section class="sec sand" style="padding-top:2.2rem">
   <div class="cw"><div class="pg" id="pgrid">{cards}</div></div>
 </section>
 {related_html}

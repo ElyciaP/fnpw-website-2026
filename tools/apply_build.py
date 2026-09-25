@@ -25,7 +25,7 @@ if MARK not in g:
         if r not in seen:
             seen.add(r); dedup.append(r)
     extra = '''
-.ch{padding:8.5rem 0 4rem;background:var(--paper)}
+.ch{padding:8.5rem 0 4rem;background:var(--sand)}
 .chi{position:relative;background:var(--euc-deep);color:#fff}
 .chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.28}
 .chi .cw{position:relative}
@@ -35,7 +35,7 @@ if MARK not in g:
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
 .pc-link{display:block;color:inherit;text-decoration:none;height:100%}
 .pb-parks{background:var(--euc)}.pb-species{background:var(--waratah)}.pb-healing{background:var(--bark)}
-.pmeta{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:1.4rem}
+.pmeta{background:var(--sand);border:1px solid var(--rule);border-radius:14px;padding:1.4rem}
 .pmeta-i{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
 .pmeta-i:last-child{border-bottom:0}
 .pmeta-i span{color:var(--stone);font-size:.85rem}

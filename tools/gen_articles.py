@@ -223,7 +223,7 @@ def build(a):
                          '        </div>%s      </a>'
                          % (r['href'], NL, r['img'], NL, NL, r['date'], NL, esc(r['title']), NL,
                             esc(r['blurb']), NL, r.get('cta', 'Read the story'), NL, NL))
-        out.append('<section class="sec paper ed-more">%s  <div class="cw rv">%s'
+        out.append('<section class="sec sand ed-more">%s  <div class="cw rv">%s'
                    '    <span class="ey">Keep reading</span>%s'
                    '    <h2>More from the field.</h2>%s'
                    '    <div class="pj-readgrid">%s%s%s    </div>%s  </div>%s</section>'
@@ -237,7 +237,7 @@ def build(a):
                '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is '
                'powered by donations, bequests and partnerships.</p>%s'
                '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
-               '<a class="btn-p btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>'
+               '<a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a>'
                '<a class="btn-o" href="partner.html">Become a partner</a></div>%s  </div>%s</section>'
                % (NL, NL, NL, NL, NL, NL))
 

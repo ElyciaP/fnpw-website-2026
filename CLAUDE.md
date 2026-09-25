@@ -81,14 +81,15 @@ All images are sourced from Unsplash via URL (e.g. `https://images.unsplash.com/
   corrected across every page and in `partials/footer.html`.
 - Phone: 1800 898 626. ABN: 90 107 744 771.
 
-## Give a Tree
+## Donations (Sep 2026)
 
-`gift-a-tree.html` keeps its filename but the campaign is branded **Give a Tree**
-(tagline: Bring Back the Bush). The page is built by `tools/build_gat.py`, not by hand.
+Donations stay on Raisely. Our own donate, Give a Tree and Bring Back the Bush pages were
+removed. Every Donate button goes to https://bush.fnpw.org.au, Give a Tree goes to
+https://gift-a-tree.fnpw.org.au and monthly giving (Habitat Heroes) to
+https://habitat-heroes.fnpw.org.au. Never build an on-site payment form.
 
-The donation form is an iframe pointing at `https://gift-a-tree.raiselysite.com/embed/donate`.
-That is the only embeddable endpoint: `/` and `/donate` both send `X-Frame-Options: DENY`
-and cannot be framed from our domain.
+## Pages ported from the live site
 
-The home page tier tiles link in as `gift-a-tree.html?amount=100#give`; the page forwards
-that amount to Raisely as a query parameter.
+`tools/port_live.py` builds the legal pages, grants hub and grant pages, PAWS archive,
+eBook page, newsletter thank-you page, the FAQ tax group and three blog entries from the
+word-for-word harvests in `data/live-port/*.md`. Re-run it after editing a harvest file.

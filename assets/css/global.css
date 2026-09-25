@@ -107,7 +107,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .sec.dark{background:var(--euc-deep);color:var(--euc-soft)}
 .sec.dark h1,.sec.dark h2,.sec.dark h3,.sec.dark h4{color:var(--cream)}
 .sec.dark .ey{color:var(--euc-soft)}.sec.dark .ey::before{background:var(--euc-soft)}
-.sec.paper{background:var(--paper)}
+.sec.paper{background:var(--sand)}
 .sec.sand{background:var(--sand)}
 .sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
 .deco{position:absolute;pointer-events:none;opacity:.12}
@@ -124,7 +124,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 
 /* === v2 shared components (generated) === */
 
-.ch{padding:8.5rem 0 4rem;background:var(--paper)}
+.ch{padding:8.5rem 0 4rem;background:var(--sand)}
 .chi{position:relative;background:var(--euc-deep);color:var(--cream)}
 .chi::before{content:"";position:absolute;inset:0;background:var(--chi) center/cover;opacity:.28}
 .chi .cw{position:relative}
@@ -137,7 +137,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
 .pc-link{display:block;color:inherit;text-decoration:none;height:100%}
 .pb-parks{background:var(--euc)}.pb-species{background:var(--waratah)}.pb-healing{background:var(--bark)}
-.pmeta{background:var(--paper);border:1px solid var(--rule);border-radius:0;padding:1.4rem}
+.pmeta{background:var(--sand);border:1px solid var(--rule);border-radius:0;padding:1.4rem}
 .pmeta-i{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
 .pmeta-i:last-child{border-bottom:0}
 .pmeta-i span{color:var(--stone);font-size:.85rem}
@@ -239,8 +239,8 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-stat-n{font-family:var(--ff-d);font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1;font-weight:700;letter-spacing:-.03em;color:#F8EEA9;margin-bottom:.6rem}
 .cmp-stat-l{font-size:.84rem;color:rgba(250,246,242,.82);line-height:1.45;letter-spacing:.02em;max-width:24ch;margin:0 auto}
 /* Costa section */
-.cmp-costa{padding:clamp(4rem,7vw,7rem) 0;background:var(--paper);position:relative;overflow:hidden}
-.cmp-costa-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,var(--paper) 0,var(--paper) 50%,rgba(219,209,236,.4) 100%);pointer-events:none}
+.cmp-costa{padding:clamp(4rem,7vw,7rem) 0;background:var(--sand);position:relative;overflow:hidden}
+.cmp-costa-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,var(--sand) 0,var(--sand) 50%,rgba(219,209,236,.4) 100%);pointer-events:none}
 .cmp-costa-leaf{position:absolute;color:var(--hovea-soft);opacity:.32;z-index:0;pointer-events:none}
 .cmp-costa-leaf.l1{top:-10%;left:-4%;width:240px;transform:rotate(-15deg)}
 .cmp-costa-leaf.l2{bottom:-10%;right:-2%;width:280px;transform:rotate(170deg)}
@@ -288,7 +288,7 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cmp-tile-play svg{width:24px;height:24px;color:var(--hovea);margin-left:3px}
 .cmp-tile-dur{position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,.65);color:var(--cream);font-size:.72rem;font-weight:600;padding:.25em .6em;border-radius:0;z-index:3;letter-spacing:.02em;font-family:var(--ff-b)}
 /* Get involved */
-.cmp-involved{padding:clamp(4rem,7vw,7rem) 0;background:var(--paper)}
+.cmp-involved{padding:clamp(4rem,7vw,7rem) 0;background:var(--sand)}
 .cmp-involved-h{text-align:center;max-width:720px;margin:0 auto 3.5rem}
 .cmp-involved-h h2{font-size:clamp(2rem,3.4vw,2.7rem);margin:1rem 0 1rem;line-height:1.05;letter-spacing:-.025em}
 .cmp-involved-h p{color:var(--stone);font-size:1.02rem;line-height:1.6}
@@ -628,7 +628,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-list li em{color:var(--stone);font-style:italic}
 @media(max-width:640px){.pj-list{columns:1}}
 .pj-band{padding:var(--sec-y) 0}
-.pj-band.alt{background:var(--paper)}
+.pj-band.alt{background:var(--sand)}
 .pj-band-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .pj-band.flip .pj-band-im{order:2}
 .pj-band-im{margin:0}
@@ -637,7 +637,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-band-bd h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.35rem,2.3vw,1.85rem);color:var(--euc-deep);letter-spacing:-.015em;line-height:1.15;margin:.75rem 0 1.1rem;max-width:22ch}
 .pj-band-bd p{margin-bottom:1rem;max-width:56ch}
 .pj-band-bd p:last-child{margin-bottom:0}
-.pj-qband{padding:var(--sec-y) 0;background:var(--paper)}
+.pj-qband{padding:var(--sec-y) 0;background:var(--sand)}
 .pj-qband .pj-q{max-width:58ch;margin:0 auto;text-align:center}
 .pj-qband blockquote{font-family:var(--ff-d);font-weight:500;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.42;letter-spacing:-.01em;color:var(--euc-deep);margin:0 0 1.1rem}
 .pj-qband figcaption{font-size:.88rem;color:var(--stone)}
@@ -770,3 +770,22 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 .pc-pb.pb-healing{background:var(--bark);color:var(--cream)}
 /* Centre button labels when a button is given a min-width */
 .btn-p,.btn-o{justify-content:center}
+/* HubSpot embed fallback message (shown only if the form fails to load) */
+.hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:1rem 1.2rem;margin-top:1rem}
+.hsform-fallback a{color:var(--euc-deep);font-weight:600;text-decoration:underline}
+
+/* Long-form prose (legal pages, ported pages, grant pages) */
+.prose{max-width:74ch}
+.prose h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:2.4rem 0 .9rem;color:var(--euc-deep)}
+.prose h3{font-size:1.08rem;margin:2rem 0 .7rem;color:var(--euc-deep);letter-spacing:.01em}
+.prose p,.prose li{font-size:1rem;line-height:1.75;color:var(--char)}
+.prose p{margin:0 0 1rem}
+.prose ul,.prose ol{margin:0 0 1.2rem;padding-left:1.3rem}
+.prose li{margin-bottom:.45rem}
+.prose a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
+.prose img{max-width:100%;height:auto;display:block;margin:1.6rem 0}
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:.92rem}
+.prose th,.prose td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.prose th{font-family:var(--ff-d);color:var(--euc-deep);background:var(--sand)}
+.prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
+@media(max-width:640px){.prose table{display:block;overflow-x:auto}}

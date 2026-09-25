@@ -103,7 +103,13 @@
   "state": "Christmas Island",
   "pillar_confirmed": true,
   "live_url": "https://fnpw.org.au/project/christmas-island-reptiles/",
-  "on_map": false
+  "on_map": true,
+  "lat": -10.49,
+  "lon": 105.62,
+  "pin": [
+   3.0,
+   8.0
+  ]
  },
  {
   "slug": "eastern-bristlebird",
@@ -173,7 +179,13 @@
   "state": "Norfolk Island",
   "pillar_confirmed": true,
   "live_url": "https://fnpw.org.au/project/green-parrot-breeding-project/",
-  "on_map": false
+  "on_map": true,
+  "lat": -29.04,
+  "lon": 167.95,
+  "pin": [
+   97.0,
+   52.3
+  ]
  },
  {
   "slug": "habitats-for-koalas-in-the-otways",

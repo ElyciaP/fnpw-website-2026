@@ -1,5 +1,177 @@
 [
  {
+  "slug": "the-number-almost-no-one-publishes",
+  "title": "The number almost no one publishes",
+  "eyebrow": "Story",
+  "date": "September 2026",
+  "place": "",
+  "standfirst": "Trees planted is an easy number to produce and a difficult one to stand behind.",
+  "hero": "https://fnpw.org.au/wp-content/uploads/2026/09/55438801356_d02802b757_o-scaled-e1790059797143-1024x502.jpg",
+  "hero_alt": "",
+  "description": "A tree planted is not the same as a tree that lived. Why we have partnered with veritree to plant and verify 100,000 native trees across the Yarra Valley, South Gippsland and Hindmarsh Valley.",
+  "credit": "",
+  "pillar": "heal",
+  "blocks": [
+   {
+    "type": "lead",
+    "flow": [
+     {
+      "p": "There is a statistic almost every environmental campaign reports, and almost none of them follow up on:"
+     },
+     {
+      "p": "Trees planted."
+     },
+     {
+      "p": "It is an easy number to produce and a difficult one to stand behind, because a tree planted is not the same as a tree that lived. Survival depends on species selection, on soil, on the season, on whether anyone came back to check. Across the restoration sector, the gap between the number announced and the number still standing five years later is rarely published, because it is rarely known."
+     },
+     {
+      "p": "That gap is the reason we have partnered with veritree."
+     }
+    ]
+   },
+   {
+    "type": "band",
+    "heading": "What the partnership commits to",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/09/55438929213_45f164400d_o-1024x683.jpg",
+    "alt": "",
+    "caption": "",
+    "flow": [
+     {
+      "p": "Together we are planting and verifying 100,000 native trees across Australia."
+     },
+     {
+      "p": "Thirty thousand of those will go into two Victorian restoration sites: the Yarra Valley, in partnership with Yarra Ranges Council, and South Gippsland, in partnership with the Nerrena/Tarwin Valley Landcare Group. The remaining 70,000 will restore Hindmarsh Valley in South Australia."
+     },
+     {
+      "p": "Planting has already begun. On Friday 31 July, more than 1,000 native trees went into the ground at Black Spur Creek in South Gippsland. The following day, Saturday 1 August, another 2,000 were planted at Woori Yallock in the Yarra Valley, alongside volunteers, Yarra Ranges Council staff and a visiting team from veritree."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "Why verification is the point"
+     },
+     {
+      "p": "veritree is a nature-technology platform that funds and verifies restoration. It uses field data and satellite monitoring to confirm that trees are not only planted but growing, and it has verified more than 182 million trees for over 300 organisations worldwide."
+     },
+     {
+      "p": "Every planting session under this partnership goes through veritree's three-level verification process. That changes what we are able to tell you. Instead of a single announcement number, we can report on how these sites are actually recovering, year by year."
+     },
+     {
+      "p": "It also changes the incentives on the ground. When survival is measured rather than assumed, species selection and site preparation stop being details and start being the whole job."
+     },
+     {
+      "p": "For a partner funding restoration, it is the difference between a contribution and an investment with a return you can see."
+     }
+    ]
+   },
+   {
+    "type": "band",
+    "heading": "What 92% looks like",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/09/55439202635_693082bd47_o-1024x683.jpg",
+    "alt": "",
+    "caption": "",
+    "flow": [
+     {
+      "p": "The Yarra Valley planting site is a good illustration, because the survival data already exists."
+     },
+     {
+      "p": "The Yarra Valley Biolink Project is a council-led restoration program along the Yarra Valley Trail at Woori Yallock, a council-managed wildlife corridor beside the Birrarung. Yarra Ranges Council has grown it from 9,000 plants in 2021 to around 70,000 native plants in 2025, and has achieved a 92% survival rate across that work."
+     },
+     {
+      "p": "Ninety-two per cent is an unusual number to see published. Most restoration programs cannot report it because they never measured it. Yarra Ranges Council can, and it is the single strongest reason this was a site worth backing."
+     },
+     {
+      "p": "The corridor is being revegetated to restore connectivity for native flora and fauna, with priority given to habitat that supports Koalas, Gang-gang Cockatoos, Powerful Owls and Greater Gliders. It has also become a genuine community asset, engaging 25 schools and more than 1,000 students, nine university placement students and nine environmental and community groups, with ongoing partnerships across Upper Yarra schools and Deakin University."
+     },
+     {
+      "p": "The 2,000 trees planted on 1 August form part of a 15,000-tree commitment for that site."
+     },
+     {
+      "p": "We acknowledge the Wurundjeri people, of the Woiwurrung language group of the Kulin Nation, as Traditional Owners of the Yarra Valley. Their connection to this land and to the Birrarung goes back tens of thousands of years."
+     }
+    ]
+   },
+   {
+    "type": "band",
+    "heading": "Three landscapes, three different jobs",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/09/55437839352_720338fa83_o-scaled-e1790059994224-1024x693.jpg",
+    "alt": "",
+    "caption": "",
+    "flow": [
+     {
+      "p": "<strong>The Yarra Valley</strong> is a connectivity project. The Biolink restores a continuous corridor of native vegetation along the Birrarung so that wildlife can move safely through a landscape that has been opened up. Yarra Ranges Council leads the ecological design."
+     },
+     {
+      "p": "<strong>South Gippsland</strong> focuses on wetland restoration. The Black Spur Creek Wetlands Project is restoring around 60 hectares of high-value wetland at the confluence of the Tarwin River and Black Spur Creek, in the Tarwin River Catchment. It is critical habitat for the Strzelecki Koala, the Southern Brown Bandicoot, the River Blackfish and the critically endangered Slender Tree Fern. The Nerrena/Tarwin Valley Landcare Group has established more than 45,000 native plants there since 2016, replacing invasive weeds with local species. Our partnership builds on work that was already nine years underway."
+     },
+     {
+      "p": "We acknowledge the Gunaikurnai and Bunurong peoples as Traditional Owners of South Gippsland, represented by the Gunaikurnai Land and Waters Aboriginal Corporation and the Bunurong Land Council Aboriginal Corporation."
+     },
+     {
+      "p": "<strong>Hindmarsh Valley</strong> in South Australia is the largest of the three at 70,000 trees. It sits in the Hindmarsh River catchment on the Fleurieu Peninsula, where the southern Mount Lofty Ranges fall away toward Victor Harbor. Much of the valley is farmland today, and this planting will bring native vegetation back into the catchment, creating habitat that local wildlife can return to and move through."
+     }
+    ]
+   },
+   {
+    "type": "story",
+    "flow": [
+     {
+      "h": "The part that doesn't scale"
+     },
+     {
+      "p": "Funding moves quickly. Ecological knowledge does not."
+     },
+     {
+      "p": "Every one of these sites depends on people who were already there. Council ecologists who know which species belongs on which slope. Landcare volunteers who have spent nine years building relationships with local landholders. Students who have been planting the same corridor since primary school."
+     },
+     {
+      "p": "We have spent over 55 years supporting exactly this kind of local work, and the pattern is consistent. Projects succeed where local commitment already exists. Our role is to remove the funding constraint, not to replace the expertise."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "What happens next"
+     },
+     {
+      "p": "The first 3,000 trees are in the ground, and there are many more to come across all three landscapes. We'll keep sharing what we see as these sites grow, from the Birrarung to the Fleurieu."
+     }
+    ]
+   }
+  ],
+  "related": [
+   {
+    "href": "article-what-does-healthy-bushland-look-like.html",
+    "date": "August 2026",
+    "title": "What does healthy bushland actually look like?",
+    "blurb": "Researchers added 2,000 tonnes of dead wood to the ground at Mulligans Flat and found significantly more reptile species nine years later. Why structure, dead wood and hollows decide whether a planting ever becomes habitat.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html",
+    "date": "July 2026",
+    "title": "A wildlife corridor is only as wide as its narrowest point",
+    "blurb": "Urban sprawl rarely wipes out a wildlife corridor outright, it pinches it. Four of Australia's fastest growing regions show what width, continuity and permanence actually decide, from a chlamydia free koala population in south west Sydney to an overpass in Brisbane that has worked since 2004.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-your-backyard-is-habitat-too-help-native-wildlife.html",
+    "date": "July 2026",
+    "title": "Your Backyard Is Habitat Too: Help Native Wildlife",
+    "blurb": "Most of the green on a city map is mown lawn and imported hedge, which native animals cannot use. A backyard, a courtyard or a balcony planted with local natives becomes the next safe step for bees, lizards, microbats and birds.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg",
+    "cta": "Read the story"
+   }
+  ]
+ },
+ {
   "slug": "what-does-healthy-bushland-look-like",
   "title": "What does healthy bushland actually look like?",
   "eyebrow": "Story",
@@ -176,7 +348,7 @@
     "cta": "Read the story"
    },
    {
-    "href": "article-the-science-of-plant-selection.html",
+    "href": "article-why-species-matters-plant-selection.html",
     "date": "August 2026",
     "title": "The science of plant selection, and why the species matters",
     "blurb": "Put a Glossy Black-Cockatoo in a healthy forest and it can still starve. Why the species list, the seed source and the genetic spread decide whether a planting becomes habitat.",
@@ -2507,7 +2679,7 @@
   ]
  },
  {
-  "slug": "the-science-of-plant-selection",
+  "slug": "why-species-matters-plant-selection",
   "title": "The science of plant selection, and why the species matters",
   "eyebrow": "Story",
   "date": "2026-08-20",
@@ -7212,6 +7384,372 @@
     "title": "We once killed 600,000 koalas in a year. Now they’re Australia’s ‘teddy bears’. What changed?",
     "blurb": "Ruby Ekkel, Australian National University",
     "img": "https://fnpw.org.au/wp-content/uploads/2023/12/Feature-Images-for-website.png",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-30765.html",
+    "date": "2023-02-08",
+    "title": "Mint NFTs and plant trees",
+    "blurb": "The Foundation for National Parks &amp; Wildlife (FNPW) has teamed up with renowned blockchain charity, Tokens for Humanity (TFH), to offer the Ethereum community the ability to mint non-fungible...",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/02/australia-trees-1024x768.png",
+    "cta": "Read the story"
+   }
+  ]
+ },
+ {
+  "slug": "biodiversity-month",
+  "title": "Biodiversity Month: celebrating life’s rich diversity",
+  "eyebrow": "Story",
+  "date": "September 2023",
+  "place": "",
+  "standfirst": "Every September, Biodiversity Month highlights why we must protect diverse ecosystems.",
+  "hero": "https://fnpw.org.au/wp-content/uploads/2023/08/gondwana-rainforest.png",
+  "hero_alt": "",
+  "description": "Why biodiversity matters, Australia’s two global biodiversity hotspots, and how everyone can help protect the species that live nowhere else.",
+  "credit": "",
+  "pillar": "species",
+  "blocks": [
+   {
+    "type": "lead",
+    "flow": [
+     {
+      "p": "Every September, Biodiversity Month highlights why we must protect diverse ecosystems. This is a chance to dive into the world of biodiversity, grasp its importance and learn how to protect it. In this blog, we'll explore Australia's unique biodiversity hotspots and why nature preservation is vital."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "What is biodiversity and why should we care?"
+     },
+     {
+      "p": "Biodiversity is a blend of \"biological\" (living things) and \"diversity\" (variety). It's all about the variety of life on Earth. This diversity ensures clean air, water, robust ecosystems and sustains us with food and medicine."
+     },
+     {
+      "p": "Currently, we've identified only 1.2 million of an estimated 8.7 million species on Earth. This gap reveals countless undiscovered species. Globally, there are 36 biological hotspots, two of which are in Australia: Southwest Australia and the forests of eastern Australia."
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/09/BIODIVERSITY-HOTSPOTS-MAP-AUSTRALIA.png",
+    "alt": "",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "Australia's biodiversity hotspots"
+     },
+     {
+      "p": "<strong>1. Southwest Australia (Kwongan)</strong>"
+     },
+     {
+      "p": "Southwest Australia, isolated by deserts for millions of years, birthed unique plant species found nowhere else. Sadly, only 30% of its original vegetation remains due to agriculture. Remarkable species like the Albany pitcher plant, honey possum, and numbat call this place home."
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/australian-plant.png",
+    "alt": "",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "p": "<em>Albany Pitcher</em>"
+     },
+     {
+      "p": "<strong>2. Forests of East Australia</strong>"
+     },
+     {
+      "p": "East Australia's forests host over 2,144 plant species exclusive to this region. However, 77% of their habitat is lost. Among these, you'll find rare creatures like Boyd's Forest Dragon, the Yellow-Spotted Bell Frog and the ancient Wollemi pine."
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/wollemi-pine.png",
+    "alt": "",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "p": "<em>Wollemi Pine</em>"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "How can we help biodiversity?"
+     },
+     {
+      "p": "Everyone – governments, industries, corporations, communities, and individuals – can support Australia's unique species by adopting sustainable practices. Start by learning about the species in your backyard and creating a habitat for them. For instance, websites like <strong><a href=\"https://backyardbuddies.org.au/\">Backyard Buddies</a></strong> offer valuable guidance."
+     },
+     {
+      "p": "The <a href=\"index.html\"><strong>Foundation for National Parks &amp; Wildlife</strong></a> (FNPW) plays a pivotal role in preserving Australia's natural landscapes and biodiversity. FNPW collaborates with donors, local communities, First Nations groups, government agencies, corporations, and environmental experts to prioritize three areas:"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "Growing Parks"
+     },
+     {
+      "p": "National parks are vital for diverse ecosystems. FNPW has invested over $60 million since 2000 to acquire and expand parks, aligning with the <strong><a href=\"https://www.cbd.int/gbf/\">Global Biodiversity Framework's</a></strong> goal of protecting 30% of land and marine areas by 2030."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "Saving Species"
+     },
+     {
+      "p": "Each species plays a unique role and their loss impacts ecosystems and human well-being. FNPW actively works to protect habitats and vulnerable species, addressing Australia's high mammal extinction rate."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "Restoring Habitats"
+     },
+     {
+      "p": "Bushfires and floods have ravaged Australian wildlife habitats. FNPW's goal is to plant one million trees in affected areas by 2025, creating wildlife corridors and mitigating climate change's effects."
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/gondwana-rainforest.png",
+    "alt": "",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "p": "This month reminds us of Earth's incredible diversity and the urgency of its protection. By understanding biodiversity, appreciating Australia's unique hotspots and supporting organizations like FNPW, we can ensure a sustainable future for our planet's remarkable biodiversity. Together, we make a difference, celebrating the beauty and importance of biodiversity year-round."
+     }
+    ]
+   }
+  ],
+  "related": [
+   {
+    "href": "article-koala-facts.html",
+    "date": "August 2023",
+    "title": "Exploring koala facts: unveiling the secrets of Australia’s iconic marsupials",
+    "blurb": "Nine koala facts, from fussy eating and hydration to breeding calls, the threats koalas face and simple ways you can help protect them.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/koala-fun-facts.png",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-saving-the-northern-quoll.html",
+    "date": "2024-09-06",
+    "title": "Saving the Northern Quoll",
+    "blurb": "The Northern Quoll is one of Australia’s most unique and fascinating animals. Known for its feisty temperament, this small carnivorous marsupial plays a vital role in maintaining the health of...",
+    "img": "https://fnpw.org.au/wp-content/uploads/2024/09/The-Northern-Quoll-1024x791.png",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-2022-impact-report.html",
+    "date": "2023-05-22",
+    "title": "2022 Impact Report",
+    "blurb": "DOWNLOAD THE 2022 impact report &nbsp; We are delighted to present the annual Impact Report for 2022, showcasing the remarkable achievements of the Foundation for National Parks &amp; Wildlife in...",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/05/ImpactReport_22_thumbnail_2-02-1024x683.png",
+    "cta": "Read the story"
+   }
+  ]
+ },
+ {
+  "slug": "koala-facts",
+  "title": "Exploring koala facts: unveiling the secrets of Australia’s iconic marsupials",
+  "eyebrow": "Story",
+  "date": "August 2023",
+  "place": "",
+  "standfirst": "Koalas are more than just cuddly creatures. They are fascinating and complex inhabitants of Australia’s eucalypt forests.",
+  "hero": "https://fnpw.org.au/wp-content/uploads/2023/08/koala-fun-facts.png",
+  "hero_alt": "",
+  "description": "Nine koala facts, from fussy eating and hydration to breeding calls, the threats koalas face and simple ways you can help protect them.",
+  "credit": "",
+  "pillar": "species",
+  "blocks": [
+   {
+    "type": "lead",
+    "flow": [
+     {
+      "p": "Koalas, those charming marsupials adorning countless postcards and memes, are more than just cuddly creatures – they are fascinating and complex inhabitants of Australia's eucalypt forests. Welcome to our deep dive into the world of koalas, where we uncover koala facts that will leave you enchanted and enlightened!"
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/koalas-facts.png",
+    "alt": "",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "1. Not a typical bear"
+     },
+     {
+      "p": "First things first, let's address a common misconception: koalas are not bears! They belong to the marsupial family, sharing lineage with kangaroos and wombats. Found in eucalypt forests across New South Wales, Queensland, Victoria, and South Australia, these tree-dwelling wonders have captivated the world with their unique charm."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "2. Fussy eaters"
+     },
+     {
+      "p": "Koalas may be picky eaters, but their selective palate is a matter of survival. Despite the presence of over 600 types of eucalypt trees in Australia, koalas zero in on just a few species. Their diet mainly consists of specific eucalyptus leaves that are toxic to most other animals. Surprisingly, they can munch through up to a kilogram of leaves daily, a feat fueled by their specialised digestive system."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "3. Eucalyptus leaves"
+     },
+     {
+      "p": "Ever wondered why koalas seem so dozy? The myth that eucalyptus leaves make them drunk is just that – a myth. Koala food provides minimal energy, leading them to conserve their strength by sleeping or resting during the day. This way, they can save energy for their nocturnal foraging endeavours."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "4. Koalas and hydration"
+     },
+     {
+      "p": "Koalas are the embodiment of efficiency, even when it comes to staying hydrated. Over 90% of their water intake comes from eucalyptus leaves. Drinking becomes a necessity only when leaves lack sufficient moisture, such as during droughts."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "5. Joeys and motherly communications"
+     },
+     {
+      "p": "Koalas' motherly communication is a symphony of soft clicks, gentle hums, and squeaks. When joeys emerge from their mothers' pouches, this intricate vocal interaction helps them understand their surroundings and establish a bond."
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/koala-fun-facts.png",
+    "alt": "",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "6. Territorial tree-dwellers"
+     },
+     {
+      "p": "Koalas are creatures of habit, establishing long-term communities and territories within their preferred habitats. Their attachment to specific trees is vital for survival. If relocated, koalas struggle to adapt, often leading to unfavorable outcomes. This highlights the importance of conserving their natural habitats."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "7. Breeding season and communication"
+     },
+     {
+      "p": "Koalas' breeding season, from September to March, is marked by male koalas' unique vocalizations. Loud grunts attract potential mates, while gurgling sounds warn off rivals. Additionally, males release a powerful musky odor to attract females, marking their territory as they climb trees."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "8. Threats and conservation"
+     },
+     {
+      "p": "Sadly, koalas face threats like habitat loss due to urbanization, dog attacks, and vehicle collisions. With over 80% of their habitats located on private land, individual efforts play a crucial role in their conservation. Simple actions such as keeping pets indoors at night and planting eucalyptus trees contribute to their survival."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "9. Koala-approved tips"
+     },
+     {
+      "p": "To support koala populations, consider planting native trees, creating safe travel corridors, and driving cautiously in koala habitats. By respecting their needs and habitats, you become a valuable ally in their preservation."
+     },
+     {
+      "p": "From debunking myths to discovering their peculiar habits, koalas are undoubtedly captivating creatures. As stewards of our environment, it's our duty to ensure the survival of these iconic marsupials. By embracing these koala facts and incorporating small changes into our daily lives, we can safeguard their future and keep the magic of koalas alive for generations to come."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "One Animal at a Time"
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "h": "Koalas: Taking care of an icon at risk"
+     },
+     {
+      "p": "<iframe src=\"https://omny.fm/shows/wildlife-heroes-caring-for-carers/one-animal-at-a-time-koalas-taking-care-of-an-icon/embed?style=Cover&size=Square\" title=\"Podcast: One Animal at a Time, Koalas\" loading=\"lazy\" style=\"width:100%;max-width:420px;height:420px;border:0\" allow=\"autoplay; clipboard-write\"></iframe>"
+     },
+     {
+      "p": "Amidst heartbreaking koala bushfire scenes, hope blooms in New South Wales. Despite habitat loss and disease, koala numbers are rising on Sydney's outskirts. A heartwarming collaboration on Liverpool Plains dispels myths and helps koalas thrive during extreme weather. We explore groundbreaking research amid declining koala numbers, while the NSW government's Koala Strategy aims to stabilize and boost their populations through actions like reserves, road safety, training, and funding."
+     },
+     {
+      "p": "Meet dedicated individuals like Valentina Mella, Robert Frend, and Morgan Philpott. Learn more about the <a href=\"https://wildlifeheroes.org.au/\">Wildlife Heroes</a> who care for our beloved Australian wildlife."
+     }
+    ]
+   }
+  ],
+  "related": [
+   {
+    "href": "article-2022-impact-report.html",
+    "date": "2023-05-22",
+    "title": "2022 Impact Report",
+    "blurb": "DOWNLOAD THE 2022 impact report &nbsp; We are delighted to present the annual Impact Report for 2022, showcasing the remarkable achievements of the Foundation for National Parks &amp; Wildlife in...",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/05/ImpactReport_22_thumbnail_2-02-1024x683.png",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-biodiversity-month.html",
+    "date": "September 2023",
+    "title": "Biodiversity Month: celebrating life’s rich diversity",
+    "blurb": "Why biodiversity matters, Australia’s two global biodiversity hotspots, and how everyone can help protect the species that live nowhere else.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/gondwana-rainforest.png",
     "cta": "Read the story"
    },
    {
@@ -12142,7 +12680,7 @@
   "hero_alt": "",
   "hero_w": 2250,
   "hero_h": 1500,
-  "description": "&nbsp;",
+  "description": "Applications for our Bushfire Recovery Restoration Grants were extended to 14 February 2022, with answers to common questions about eligibility.",
   "credit": "",
   "blocks": [
    {
@@ -16786,7 +17324,7 @@
    },
    {
     "type": "wide",
-    "img": "http://fnpw.local/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
+    "img": "https://fnpw.org.au/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
     "alt": "",
     "caption": "",
     "flow": [
@@ -17044,7 +17582,7 @@
    },
    {
     "type": "wide",
-    "img": "http://fnpw.local/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
+    "img": "https://fnpw.org.au/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
     "alt": "",
     "caption": "",
     "flow": [
@@ -17469,7 +18007,7 @@
    },
    {
     "type": "wide",
-    "img": "http://fnpw.local/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
+    "img": "https://fnpw.org.au/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
     "alt": "",
     "caption": "",
     "flow": [
@@ -17728,7 +18266,7 @@
   "hero_alt": "Hawkesbury bushfire recovery nursery, NSW",
   "hero_w": 2000,
   "hero_h": 1334,
-  "description": "&nbsp;",
+  "description": "Hawkesbury Community Nursery in Windsor, NSW became one of Australia's first Bushfire Recovery Nurseries, growing trees to help heal fire-hit landscapes.",
   "credit": "",
   "blocks": [
    {
@@ -18258,7 +18796,7 @@
    },
    {
     "type": "wide",
-    "img": "http://fnpw.local/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
+    "img": "https://fnpw.org.au/wp-content/uploads/2020/11/FNPW-Home-trio-pic1.jpg",
     "alt": "",
     "caption": "",
     "flow": [

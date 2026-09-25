@@ -25,6 +25,11 @@ projects = json.load(open(os.path.join(ROOT,'data/projects.json')))
 pins, cells = [], {}
 for p in projects:
     if not p.get('on_map'): continue
+    if p.get('pin'):  # offshore projects sit at the edge of the artwork, nearest their island
+        label, cls = PIL_LABEL[p['pillar']]
+        pins.append(dict(s=p['slug'], t=p['title'], st=p['state'], pl=label, pc=cls,
+                         x=p['pin'][0], y=p['pin'][1]))
+        continue
     x, y = px(p['lat'], p['lon'])
     key = (int(x//34), int(y//34))
     n = cells.get(key,0); cells[key]=n+1
@@ -46,5 +51,6 @@ t = re.sub(r'<!-- @map-pins -->.*?<!-- /@map-pins -->',
            '<!-- @map-pins -->\n'+pin_html+'\n<!-- /@map-pins -->', t, count=1, flags=re.S)
 t = re.sub(r'/\*@map-data\*/.*?/\*/@map-data\*/',
            '/*@map-data*/'+json.dumps(pins)+'/*/@map-data*/', t, count=1, flags=re.S)
+t = re.sub(r'\d+ projects &#183; click a pin', f'{len(pins)} projects &#183; click a pin', t)
 open(f,'w').write(t)
 print(f'map regenerated: {len(pins)} pins')

@@ -123,7 +123,7 @@ HEAD = '''<!DOCTYPE html>
 @media(max-width:900px){.gt-split-g{grid-template-columns:1fr;gap:2.4rem}}
 .gt-split-g.flip .gt-split-im{order:2}
 @media(max-width:900px){.gt-split-g.flip .gt-split-im{order:0}}
-.gt-split-im{aspect-ratio:4/3;overflow:hidden;background:var(--paper)}
+.gt-split-im{aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
 .gt-split-im img{width:100%;height:100%;object-fit:cover}
 .gt-split h2{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:.9rem 0 1.1rem;max-width:20ch}
 .gt-split p{font-size:1.02rem;line-height:1.68;margin:0 0 1.1rem;max-width:52ch}
@@ -201,7 +201,7 @@ HEAD = '''<!DOCTYPE html>
 .gt-contact a:hover{background:var(--euc-deep);color:var(--cream);opacity:1}
 
 /* ---- FAQ ---- */
-.gt-faq{padding:var(--sec-y) 0;background:var(--paper)}
+.gt-faq{padding:var(--sec-y) 0;background:var(--sand)}
 .gt-faq .head{text-align:center;max-width:40ch;margin:0 auto 2.4rem}
 .gt-faq h2{font-size:clamp(1.7rem,2.6vw,2.3rem);margin:.9rem 0 0}
 .gt-faq-list{max-width:52rem;margin:0 auto;display:flex;flex-direction:column;gap:.85rem}

@@ -105,7 +105,7 @@ t = new
 
 # founder feature after the exec section
 founder = f'''
-<section class="sec paper">
+<section class="sec sand">
   <div class="cw">
     <div class="two" style="align-items:center">
       <div class="rv" style="max-width:320px;justify-self:center"><img src="{U}2020/11/Founder_Positional@2x.png" alt="The late Hon. Tom Lewis AO" loading="lazy" style="display:block;width:100%;box-shadow:12px 12px 0 var(--wattle-soft)"></div>

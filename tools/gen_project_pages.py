@@ -351,7 +351,7 @@ def build(rec, meta):
     spare = gallery[gi:]
     if len(spare) >= 2:
         figs = NL.join(figure(im, '', '      ') for im in spare[:9])
-        parts.append('<section class="sec paper">%s  <div class="cw rv">%s'
+        parts.append('<section class="sec sand">%s  <div class="cw rv">%s'
                      '    <span class="ey">Project gallery</span>%s'
                      '    <div class="pj-gal" style="margin-top:1.6rem">%s%s%s    </div>%s  </div>%s</section>'
                      % (NL, NL, NL, NL, figs, NL, NL, NL))

@@ -100,6 +100,17 @@ def featured(a):
                label, read_time(a), NL, a['slug'], NL, NL))
 
 
+
+def about_card(a):
+    _, label = PILLAR.get(a.get('pillar', 'news'), PILLAR['news'])
+    return ('<a class="abs-card" href="article-%s.html">%s'
+            '      <div class="abs-im"><img src="%s" alt="%s" loading="lazy"></div>%s'
+            '      <span class="abs-cat">%s</span><h3>%s</h3>%s'
+            '      <span class="abs-go">Read the story &#8594;</span>%s'
+            '    </a>' % (a['slug'], NL, a['hero'], html.escape(a.get('hero_alt') or ''), NL,
+                          label, html.escape(a['title']), NL, NL))
+
+
 def replace(src, name, payload, where):
     start, end = '<!--%s:START-->' % name, '<!--%s:END-->' % name
     if start not in src or end not in src:
@@ -129,6 +140,13 @@ def main():
         t = replace(t, 'ARTREL', NL.join(cards), page)
         open(page, 'w', encoding='utf-8').write(t)
         print('%-30s %d related tiles' % (page, len(picks)))
+
+    # About page: the six latest stories
+    if os.path.exists('about.html'):
+        t = open('about.html', encoding='utf-8').read()
+        t = replace(t, 'ABOUTSTORIES', NL.join(about_card(a) for a in arts[:6]), 'about.html')
+        open('about.html', 'w', encoding='utf-8').write(t)
+        print('about.html                     6 latest stories')
 
     counts = {}
     for a in arts:
