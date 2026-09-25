@@ -90,15 +90,16 @@
 .ns-f button:hover{background:var(--wattle-dk);color:var(--cream)}
 .proj-hero{position:relative;overflow:hidden;min-height:clamp(400px,50vh,520px);display:flex;align-items:center;
   background:linear-gradient(180deg,#F6F7F3 0%,#E4EAF3 35%,#DCE5F3 60%,#F4F6F2 100%)}
-.proj-hero-img{position:absolute;top:0;right:0;width:60%;height:100%;object-fit:cover;object-position:50% 40%;
+.proj-hero-img{position:absolute;top:0;right:0;width:56%;height:100%;object-fit:cover;object-position:50% 40%;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
 .proj-hero .cw{position:relative;z-index:2;width:100%;padding-top:3.5rem;padding-bottom:3.5rem}
-.proj-hero-t{max-width:min(34rem,44%)}
+.proj-hero-t{max-width:min(46rem,54%)}
 .proj-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:var(--euc-deep);margin-bottom:1.5rem}
 .proj-hero .breadcrumb a{color:var(--euc)}
 .proj-hero .ey{color:var(--euc)}
-.proj-hero h1{margin:1rem 0 1.2rem;color:var(--euc-deep)}
-.proj-hero .lede{color:var(--ink)}
+.proj-hero h1{margin:1rem 0 1.2rem;color:var(--euc-deep);font-size:clamp(2rem,3.4vw,3.2rem)}
+.proj-hero h1 span{white-space:nowrap}
+.proj-hero .lede{color:var(--ink);max-width:40ch}
 .proj-hero .rv{opacity:1!important;transform:none!important}
 @media(max-width:760px){
   .proj-hero{display:block;min-height:0}
@@ -106,6 +107,16 @@
   .proj-hero .cw{padding-top:2rem;padding-bottom:2.6rem}
   .proj-hero-t{max-width:none}
 }
+
+
+.imap-grid{display:grid;grid-template-columns:minmax(250px,.78fr) 2fr;gap:3rem;align-items:center}
+.imap-grid .imap{max-width:none;margin:0}
+.map-side h2{font-size:clamp(1.5rem,2.2vw,2rem)!important}
+.map-side .im-legend{flex-direction:column;align-items:flex-start;gap:.75rem;justify-content:flex-start;margin-top:1.6rem}
+@media(max-width:900px){.imap-grid{grid-template-columns:1fr;gap:1.4rem}}
+
+.map-sec .imap-band{background:var(--sand)!important;padding:2.4rem 0 2.6rem!important}
+.map-sec{padding-top:0!important}
 </style>
 </head>
 <body>
@@ -159,7 +170,7 @@
     <div class="proj-hero-t">
       <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span>Projects</nav>
       <span class="ey">Conservation in action</span>
-      <h1>Conservation projects across Australia.</h1>
+      <h1><span>Conservation projects</span><br><span>across Australia.</span></h1>
       <p class="lede">From the Coorong to the Kimberley, here&rsquo;s where 55 years of Australian conservation is happening right now.</p>
     </div>
   </div>
@@ -168,13 +179,20 @@
 <section class="map-sec">
   <div class="imap-band">
     <div class="cw">
-    <div class="map-head rv">
+    <div class="imap-grid">
+    <div class="map-side rv">
       <span class="ey">Explore the work</span>
       <h2 style="margin:1rem 0 .8rem;font-size:clamp(1.6rem,2.6vw,2.2rem)">Every pin is a project. Click to dive in.</h2>
       <p style="color:var(--stone);max-width:60ch;font-size:.96rem">Click a pin for a quick look at the project there, then jump to its full story. Locations are approximate; the list below has every project.</p>
+      <div class="im-legend">
+  <span><i class="pb-parks"></i><img class="im-leg-ic" src="assets/icons/fnpw-icon-landscape-dark-soil-rgb.svg" alt="" aria-hidden="true">Growing National Parks</span>
+  <span><i class="pb-species"></i><img class="im-leg-ic" src="assets/icons/fnpw-icon-koala-dark-soil-rgb.svg" alt="" aria-hidden="true">Saving Species</span>
+  <span><i class="pb-healing"></i><img class="im-leg-ic" src="assets/icons/fnpw-icon-plants-sprouting-dark-soil-rgb.svg" alt="" aria-hidden="true">Healing the Land</span>
+  <span style="color:var(--stone)">82 projects &#183; click a pin</span>
+</div>
     </div>
     <div class="imap rv d1">
-  <img src="assets/img/projects-map.png" alt="Map of Australia showing FNPW landscape priorities and project locations" draggable="false">
+  <img src="assets/img/projects-map-brand.png" alt="Map of Australia showing FNPW landscape priorities and project locations" draggable="false">
 <!-- @map-pins -->
 <button class="im-pin pb-parks" style="left:56.26%;top:69.47%" data-i="0" aria-label="Mundoo Island Station, SA" title="Mundoo Island Station"></button>
 <button class="im-pin pb-species" style="left:70.88%;top:22.48%" data-i="1" aria-label="Garners Beach Cassowary Rehabilitation Centre Project, QLD" title="Garners Beach Cassowary Rehabilitation Centre Project"></button>
@@ -268,12 +286,8 @@
     <a class="btn-p" id="imGo" href="#">View project</a>
   </div>
 </div>
-<div class="im-legend rv">
-  <span><i class="pb-parks"></i><img class="im-leg-ic" src="assets/icons/fnpw-icon-landscape-dark-soil-rgb.svg" alt="" aria-hidden="true">Growing National Parks</span>
-  <span><i class="pb-species"></i><img class="im-leg-ic" src="assets/icons/fnpw-icon-koala-dark-soil-rgb.svg" alt="" aria-hidden="true">Saving Species</span>
-  <span><i class="pb-healing"></i><img class="im-leg-ic" src="assets/icons/fnpw-icon-plants-sprouting-dark-soil-rgb.svg" alt="" aria-hidden="true">Healing the Land</span>
-  <span style="color:var(--stone)">82 projects &#183; click a pin</span>
-</div>
+    </div>
+
     </div>
   </div>
 </section>
