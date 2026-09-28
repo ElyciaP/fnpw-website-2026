@@ -400,7 +400,7 @@ def main():
                   'one vast, connected park precinct for South Australia, co-managed with the Nukunu Nation.')),
         'species': dict(
             tint='species',
-            hero_img='assets/img/placeholder-species.svg',
+            hero_img='assets/img/species-rock-wallaby.jpg',
             hero_alt='Koala resting in a eucalypt',
             stat=('18,582', 'treatments', 'delivered to wombats with mange'),
             stat_label='Treatments delivered',
