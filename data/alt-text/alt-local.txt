@@ -27,3 +27,4 @@ assets/img/projects/wombat-mange-wombat-at-burrow.jpg|Wombat emerging from its b
 assets/img/projects/wombat-mange-healthy-wombat-grass.jpg|Healthy wombat on short grass
 assets/img/pillar-healing-COMP.jpg|Native seedlings in a nursery ready for planting
 assets/img/newsletter-hero-forest.jpg|Looking straight down from above into sunlit eucalypt forest and tree ferns, with a dirt track along one edge
+assets/img/about-hero-koala.jpg|A koala asleep in the fork of a smooth-barked gum tree, curled against the trunk with soft green bush behind
