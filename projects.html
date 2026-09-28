@@ -90,9 +90,9 @@
 .ns-f button{padding:.8em 1.4em;background:var(--waratah);color:var(--cream);border-radius:0;font-weight:700;transition:.25s}
 .ns-f button:hover{background:var(--waratah-dk);color:var(--cream)}
 .proj-hero{position:relative;overflow:hidden;min-height:clamp(400px,50vh,520px);display:flex;align-items:center;
-  background:linear-gradient(180deg,#ECEBE1 0%,#E6E6D8 40%,#ECE9DF 70%,#F4F1EA 100%)}
-.proj-hero-img{position:absolute;top:0;right:0;width:56%;height:100%;object-fit:cover;object-position:50% 6%;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
+  background:linear-gradient(180deg,#F3F6F4 0%,#E3ECF6 40%,#DCE7F6 70%,#EEF3F4 100%)}
+.proj-hero-img{position:absolute;top:0;right:0;width:64%;height:100%;object-fit:cover;object-position:50% 85%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}
 .proj-hero .cw{position:relative;z-index:2;width:100%;padding-top:3.5rem;padding-bottom:3.5rem}
 .proj-hero-t{max-width:min(46rem,54%)}
 .proj-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:var(--euc-deep);margin-bottom:1.5rem}
@@ -102,9 +102,10 @@
 .proj-hero h1 span{white-space:nowrap}
 .proj-hero .lede{color:var(--ink);max-width:40ch}
 .proj-hero .rv{opacity:1!important;transform:none!important}
+.proj-hero .pj-hero-cr{background:rgba(15,49,50,.6);padding:.2em .55em;text-shadow:none}
 @media(max-width:760px){
   .proj-hero{display:block;min-height:0}
-  .proj-hero-img{position:relative;display:block;width:100%;height:300px;object-position:50% 28%;-webkit-mask-image:none;mask-image:none}
+  .proj-hero-img{position:relative;display:block;width:100%;height:300px;object-position:62% 40%;-webkit-mask-image:none;mask-image:none}
   .proj-hero .cw{padding-top:2rem;padding-bottom:2.6rem}
   .proj-hero-t{max-width:none}
   .proj-hero .pj-hero-cr{top:calc(300px - 1.6rem);bottom:auto}
@@ -172,8 +173,8 @@
 </header><!-- /@header -->
 <main>
 <section class="proj-hero">
-  <img class="proj-hero-img" src="assets/img/projects-hero-koala.jpg" alt="A young koala climbing a eucalypt branch among fresh green gum leaves, looking at the camera" width="1600" height="1660">
-  <p class="pj-hero-cr">Photo: juuce</p>
+  <img class="proj-hero-img" src="assets/img/projects-hero-koala-sky.jpg" alt="A koala on a eucalypt branch looking down at the camera, gum leaves and blue sky behind" width="2000" height="1333">
+  <p class="pj-hero-cr">Photo: tracielouise</p>
   <div class="cw rv">
     <div class="proj-hero-t">
       <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span>Projects</nav>
