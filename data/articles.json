@@ -2955,10 +2955,9 @@
     "date": "Healing the Land",
     "title": "Bringing back the bush",
     "blurb": "The programme behind the nurseries, the seedbanks and the planting.",
-    "img": "assets/img/pillar-healing-nursery.jpg",
+    "img": "assets/img/pillar-healing-planting.jpg",
     "cta": "See the pillar",
-    "alt": "Trays of native seedlings growing in tubes on benches at a community nursery",
-    "credit": "&copy; Rebecca Collins"
+    "alt": "Volunteers planting native seedlings on a restoration site"
    },
    {
     "href": "article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html",
@@ -2967,7 +2966,7 @@
     "blurb": "Urban sprawl rarely wipes out a wildlife corridor outright, it pinches it. Four of Australia's fastest growing regions show what width, continuity and permanence actually decide, from a chlamydia free koala population in south west Sydney to an overpass in Brisbane that has worked since 2004.",
     "img": "https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg",
     "cta": "Read the story",
-    "alt": "Koala walking along the edge of a road"
+    "alt": "A koala crossing a road at the edge of a growing suburb"
    }
   ]
  },
@@ -3161,23 +3160,22 @@
   ],
   "related": [
    {
-    "href": "articles.html",
+    "href": "article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html",
     "date": "July 2026",
     "title": "A wildlife corridor is only as wide as its narrowest point",
     "blurb": "Urban sprawl rarely wipes out a corridor outright. It pinches them, and the tightest point decides whether it works at all.",
-    "img": "https://fnpw.org.au/wp-content/uploads/2026/06/6-1920x1080.jpg",
+    "img": "https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg",
     "cta": "Read the story",
-    "alt": "Grassy clearing surrounded by native scrub on a hillside"
+    "alt": "A koala crossing a road at the edge of a growing suburb"
    },
    {
     "href": "healing-the-land.html",
     "date": "Healing the Land",
     "title": "Bringing back the bush",
     "blurb": "The wider programme this restoration sits inside, from community nurseries to landscape-scale replanting.",
-    "img": "assets/img/pillar-healing-nursery.jpg",
+    "img": "assets/img/pillar-healing-planting.jpg",
     "cta": "See the pillar",
-    "alt": "Trays of native seedlings growing in tubes on benches at a community nursery",
-    "credit": "&copy; Rebecca Collins"
+    "alt": "Volunteers planting native seedlings on a restoration site"
    },
    {
     "href": "article-from-advocate-to-chair.html",
