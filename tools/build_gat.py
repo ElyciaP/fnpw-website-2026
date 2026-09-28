@@ -222,7 +222,7 @@ HEAD = '''<!DOCTYPE html>
 HERO = '''
 <main>
 <section class="gt-hero">
-  <div class="gt-hero-bg"><img src="assets/img/give-a-tree-koala-COMP.jpg" alt="A koala resting in the fork of a eucalypt in open forest" fetchpriority="high" decoding="async"></div>
+  <div class="gt-hero-bg"><img src="assets/img/placeholder-species.svg" alt="A koala resting in the fork of a eucalypt in open forest" fetchpriority="high" decoding="async"></div>
   <div class="cw rv">
     <div class="gt-hero-g">
       <div>

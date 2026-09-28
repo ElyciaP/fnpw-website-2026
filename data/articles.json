@@ -1982,7 +1982,7 @@
   "eyebrow": "News",
   "date": "January 2026",
   "place": "Mundoo Island, SA",
-  "standfirst": "At The Foundation for National Parks and Wildlife, we are proud to have partnered with the Australian Government and the South Australian Government to support the acquisition of Mundoo Island Station, a 1,900-hectare property at the Murray Mouth that will now be incorporated into Coorong National Park.",
+  "standfirst": "At The Foundation for National Parks & Wildlife, we are proud to have partnered with the Australian Government and the South Australian Government to support the acquisition of Mundoo Island Station, a 1,900-hectare property at the Murray Mouth that will now be incorporated into Coorong National Park.",
   "hero": "https://fnpw.org.au/wp-content/uploads/2026/01/Screenshot-2026-01-06-at-5.52.23-pm-e1767753650102-1024x363.png",
   "hero_alt": "Aerial view of Mundoo Island and the channels of the Murray Mouth.",
   "description": "The Foundation for National Parks & Wildlife has helped secure Mundoo Island Station, a 1,900-hectare property at the Murray Mouth, for addition to Coorong National Park. The acquisition brings Ewe Island, Long Island and surrounding islands into the National Park estate.",
@@ -1992,7 +1992,7 @@
     "type": "lead",
     "flow": [
      {
-      "p": "At The Foundation for National Parks and Wildlife, we are proud to have partnered with the Australian Government and the South Australian Government to support the acquisition of Mundoo Island Station, a 1,900-hectare property at the Murray Mouth that will now be incorporated into Coorong National Park."
+      "p": "At The Foundation for National Parks & Wildlife, we are proud to have partnered with the Australian Government and the South Australian Government to support the acquisition of Mundoo Island Station, a 1,900-hectare property at the Murray Mouth that will now be incorporated into Coorong National Park."
      },
      {
       "p": "This outcome significantly strengthens one of Australia’s most important wetland landscapes by bringing Mundoo Island, together with Ewe Island, Long Island and surrounding smaller islands, into the National Park estate, and incorporating Lawari Conservation Park into Coorong National Park. The acquisition enhances environmental protection across a landscape of profound ecological and cultural value."
@@ -2955,9 +2955,9 @@
     "date": "Healing the Land",
     "title": "Bringing back the bush",
     "blurb": "The programme behind the nurseries, the seedbanks and the planting.",
-    "img": "assets/img/pillar-healing-COMP.jpg",
+    "img": "assets/img/placeholder-healing.svg",
     "cta": "See the pillar",
-    "alt": "Native seedlings in a nursery ready for planting"
+    "alt": ""
    },
    {
     "href": "article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html",
@@ -3173,9 +3173,9 @@
     "date": "Healing the Land",
     "title": "Bringing back the bush",
     "blurb": "The wider programme this restoration sits inside, from community nurseries to landscape-scale replanting.",
-    "img": "assets/img/pillar-healing-COMP.jpg",
+    "img": "assets/img/placeholder-healing.svg",
     "cta": "See the pillar",
-    "alt": "Native seedlings in a nursery ready for planting"
+    "alt": ""
    },
    {
     "href": "article-from-advocate-to-chair.html",
@@ -6071,7 +6071,7 @@
       "p": "CEO of the Foundation for National Parks &amp; Wildlife, Ian Darbyshire, said “What we’re hoping is this is the first of many, many, many future releases where we create a sustainable program of protecting the turtles of the Murray-Darling Basin by getting schools to do this every year forever, so that we can protect the population of turtles.”"
      },
      {
-      "p": "He added, “The turtles were laid on the floating islands that Ricky Spencer has created in part of the sponsorship with the Foundation for National Parks and Wildlife.”"
+      "p": "He added, “The turtles were laid on the floating islands that Ricky Spencer has created in part of the sponsorship with the Foundation for National Parks & Wildlife.”"
      },
      {
       "p": "More schools are now introducing “hatchling hubs” into their classrooms, where students incubate eggs, monitor local wetlands, test water quality, and log turtle sightings through the national <a href=\"https://www.turtlesat.org.au\">TurtleSAT</a> platform."
@@ -6293,7 +6293,7 @@
       "h": "About the Guest"
      },
      {
-      "p": "David Goldman is a seasoned professional in the field of environmental conservation, and a representative of the Foundation for National Parks and Wildlife in Australia. With a dedication to the preservation of national parks and wildlife, David brings a wealth of insight into biodiversity and land management. Based in Sydney, Australia, his role involves collaborative efforts to expand the reach and protection of natural reserves across the country, aiming to save threatened species and enhance ecological resilience."
+      "p": "David Goldman is a seasoned professional in the field of environmental conservation, and a representative of the Foundation for National Parks & Wildlife in Australia. With a dedication to the preservation of national parks and wildlife, David brings a wealth of insight into biodiversity and land management. Based in Sydney, Australia, his role involves collaborative efforts to expand the reach and protection of natural reserves across the country, aiming to save threatened species and enhance ecological resilience."
      },
      {
       "p": "&nbsp;"
@@ -6310,7 +6310,7 @@
       "h": "Episode Summary"
      },
      {
-      "p": "In this engaging episode of <strong><a href=\"https://shape-the-system.simplecast.com/\">Shape the System</a></strong>, host Vincent interviews David Goldman from the Foundation for National Parks and Wildlife. Together, they delve into the pressing issues surrounding biodiversity, wildlife preservation, and ecosystem resilience in Australia. They discuss innovative ways of safeguarding natural habitats and the pivotal role of land conservation in maintaining a diverse and flourishing biosphere."
+      "p": "In this engaging episode of <strong><a href=\"https://shape-the-system.simplecast.com/\">Shape the System</a></strong>, host Vincent interviews David Goldman from the Foundation for National Parks & Wildlife. Together, they delve into the pressing issues surrounding biodiversity, wildlife preservation, and ecosystem resilience in Australia. They discuss innovative ways of safeguarding natural habitats and the pivotal role of land conservation in maintaining a diverse and flourishing biosphere."
      },
      {
       "p": "David sheds light on the foundation’s key projects, including the pursuit of enlarging national parks and establishing green corridors. He highlights the importance of eliminating invasive species to allow native flora and fauna to thrive, and the role of community participation in protecting and revitalizing the environment. With a comprehensive look at government partnerships and philanthropy, this episode is rich with insights into the tactical steps being taken to meet Australia’s 30×30 conservation commitments."
@@ -6328,7 +6328,7 @@
      },
      {
       "ul": [
-       "The Foundation for National Parks and Wildlife aims to protect 30% of Australia’s natural land by 2030 by purchasing and regenerating land adjacent to national parks.",
+       "The Foundation for National Parks & Wildlife aims to protect 30% of Australia’s natural land by 2030 by purchasing and regenerating land adjacent to national parks.",
        "Biodiversity preservation has a direct impact on ecological resilience, crucial for combating extreme weather events and climate change.",
        "Efforts include volunteering, community nurseries, and working with local governments to eliminate invasive species and promote native ecosystems.",
        "The concept of ‘Backyard Buddies’ promotes individual action, underscoring the connection between one’s backyard and larger ecological systems.",
@@ -6377,7 +6377,7 @@
       "p": "No specific resources or references were mentioned in the transcript."
      },
      {
-      "p": "Embark on a journey through the transformative efforts of the Foundation for National Parks and Wildlife by listening to the full episode. Discover the innovative strategies that are shaping the future of Australia’s natural landscapes. Stay tuned for more episodes from <strong><a href=\"https://shape-the-system.simplecast.com/\">Shape the System</a></strong> to be inspired by stories of individuals and organizations redefining how we interact with and protect our planet."
+      "p": "Embark on a journey through the transformative efforts of the Foundation for National Parks & Wildlife by listening to the full episode. Discover the innovative strategies that are shaping the future of Australia’s natural landscapes. Stay tuned for more episodes from <strong><a href=\"https://shape-the-system.simplecast.com/\">Shape the System</a></strong> to be inspired by stories of individuals and organizations redefining how we interact with and protect our planet."
      },
      {
       "p": "<strong><a href=\"https://shape-the-system.simplecast.com/\">Shape the System</a></strong> is &nbsp;an independent podcast with support from <strong><a href=\"https://www.highgrowthventures.com.au/\">KPMG High Growth Ventures</a></strong>"
@@ -8301,7 +8301,7 @@
       "p": "Volunteers have rallied to save a once thriving Banksia marginata population at Charleston Conservation Park in the Adelaide Hills. Devastated by the 2019 bushfires, this banksia population, once the second largest population in the Adelaide Hills has struggled to regenerate. Banksia are often killed by fire and regenerate from seed released from the burnt cones. The harsh conditions preceding the 2019 wildfire meant there was very little banksia seed set and the remnant is now struggling."
      },
      {
-      "p": "In an attempt to rescue the population, the Friends of Charleston have collected seed and plated over 20,000 banksias since 2019. This year the group have partnered with the passionate volunteers at the Fleurieu Coast Community Nursery to grow more than 2000 banksias to further bolster the population. This partnership is made possible through funding provided by the Foundation for National Parks and Wildlife who generously support the project."
+      "p": "In an attempt to rescue the population, the Friends of Charleston have collected seed and plated over 20,000 banksias since 2019. This year the group have partnered with the passionate volunteers at the Fleurieu Coast Community Nursery to grow more than 2000 banksias to further bolster the population. This partnership is made possible through funding provided by the Foundation for National Parks & Wildlife who generously support the project."
      },
      {
       "p": "Recently volunteers from the Friends of Charleston Conservation Park joined forces in a working bee at the Yankalilla based nursery to pot up the valuable seedlings. With a target of 1000 baby banksias for the year everyone was thrilled to double the numbers!"
@@ -8930,7 +8930,7 @@
       ]
      },
      {
-      "p": "Two of Queensland’s most popular national parks have expanded thanks to a partnership worth more than $600,000 between the Department of Environment and Science (DES) and the Foundation of National Parks and Wildlife (FNPW)."
+      "p": "Two of Queensland’s most popular national parks have expanded thanks to a partnership worth more than $600,000 between the Department of Environment and Science (DES) and the Foundation for National Parks & Wildlife (FNPW)."
      },
      {
       "p": "More than 185 hectares of undisturbed forest habitat has been added to the Gondwana Rainforests of Australia World Heritage listed Lamington and Main Range National Parks."
@@ -9279,7 +9279,7 @@
       "p": "In 2022, the federal government committed to reversing this trend, vowing it would strive to protect 30 per cent of its land and seas by 2030."
      },
      {
-      "p": "The ‘30 by 30’ target, which is shared with more than 100 countries globally, is largely being driven by Ian Darbyshire, Chief Executive of the Foundation of National Parks and Wildlife (FNPW)."
+      "p": "The ‘30 by 30’ target, which is shared with more than 100 countries globally, is largely being driven by Ian Darbyshire, Chief Executive of the Foundation for National Parks & Wildlife (FNPW)."
      },
      {
       "p": "So, what exactly is Mr Darbyshire’s strategy; and how is he overcoming the budgetary constraints of federal and state governments in this pursuit?"
@@ -9456,7 +9456,7 @@
       "p": "The workshop will likely be run in September or October 2023 so keep an eye out for further information if you are interested in participating."
      },
      {
-      "p": "In addition, the Kangaroo Island Landscape Board and Foundation for National Parks and Wildlife will be working in collaboration with other project partners covering the Kangaroo Island, Yankalilla, Onkaparinga, Mount Barker, Adelaide Hills and Alexandria LGAs to develop and update educational resources associated with native revegetation activities."
+      "p": "In addition, the Kangaroo Island Landscape Board and Foundation for National Parks & Wildlife will be working in collaboration with other project partners covering the Kangaroo Island, Yankalilla, Onkaparinga, Mount Barker, Adelaide Hills and Alexandria LGAs to develop and update educational resources associated with native revegetation activities."
      }
     ]
    },
@@ -9794,7 +9794,7 @@
     "href": "article-plantings-provide-green-corridors-for-wildlife.html",
     "date": "2023-07-13",
     "title": "PLANTINGS PROVIDE GREEN CORRIDORS FOR WILDLIFE",
-    "blurb": "Local volunteers, community groups, Council, and the Foundation for National Parks and Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
+    "blurb": "Local volunteers, community groups, Council, and the Foundation for National Parks & Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
     "img": "https://fnpw.org.au/wp-content/uploads/2023/06/16492580225621-1024x576.jpeg",
     "cta": "Read the story",
     "alt": "Large group gathered at a tree planting day in a paddock"
@@ -9852,7 +9852,7 @@
     "href": "article-plantings-provide-green-corridors-for-wildlife.html",
     "date": "2023-07-13",
     "title": "PLANTINGS PROVIDE GREEN CORRIDORS FOR WILDLIFE",
-    "blurb": "Local volunteers, community groups, Council, and the Foundation for National Parks and Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
+    "blurb": "Local volunteers, community groups, Council, and the Foundation for National Parks & Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
     "img": "https://fnpw.org.au/wp-content/uploads/2023/06/16492580225621-1024x576.jpeg",
     "cta": "Read the story",
     "alt": "Large group gathered at a tree planting day in a paddock"
@@ -9884,19 +9884,19 @@
   "date": "2023-07-13",
   "place": "",
   "pillar": "heal",
-  "standfirst": "Local volunteers, community groups, Council, and the Foundation for National Parks and Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for local fauna and create linkages between important biodiversity spots from Mount Barker Summit down to the Laratinga Wetlands.",
+  "standfirst": "Local volunteers, community groups, Council, and the Foundation for National Parks & Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for local fauna and create linkages between important biodiversity spots from Mount Barker Summit down to the Laratinga Wetlands.",
   "hero": "https://fnpw.org.au/wp-content/uploads/2023/06/16492580225621-1024x576.jpeg",
   "hero_alt": "Large group gathered at a tree planting day in a paddock",
   "hero_w": 2560,
   "hero_h": 1440,
-  "description": "Local volunteers, community groups, Council, and the Foundation for National Parks and Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
+  "description": "Local volunteers, community groups, Council, and the Foundation for National Parks & Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
   "credit": "",
   "blocks": [
    {
     "type": "lead",
     "flow": [
      {
-      "p": "Local volunteers, community groups, Council, and the Foundation for National Parks and Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for local fauna and create linkages between important biodiversity spots from Mount Barker Summit down to the Laratinga Wetlands."
+      "p": "Local volunteers, community groups, Council, and the Foundation for National Parks & Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for local fauna and create linkages between important biodiversity spots from Mount Barker Summit down to the Laratinga Wetlands."
      },
      {
       "p": "Over the last 12 months, 300 volunteers have planted and maintained 3500 native seedlings across three areas of 2 hectares each."
@@ -9990,7 +9990,7 @@
     "href": "article-plantings-provide-green-corridors-for-wildlife.html",
     "date": "2023-07-13",
     "title": "PLANTINGS PROVIDE GREEN CORRIDORS FOR WILDLIFE",
-    "blurb": "Local volunteers, community groups, Council, and the Foundation for National Parks and Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
+    "blurb": "Local volunteers, community groups, Council, and the Foundation for National Parks & Wildlife (FNPW) have come together to support a revegetation program to boost biodiversity, increase habitat for...",
     "img": "https://fnpw.org.au/wp-content/uploads/2023/06/16492580225621-1024x576.jpeg",
     "cta": "Read the story",
     "alt": "Large group gathered at a tree planting day in a paddock"
@@ -10552,7 +10552,7 @@
       "p": "While we cannot control the weather, we can help the success rate of plants by proper site preparation and follow up maintenance."
      },
      {
-      "p": "From May to July last year, and thanks to a $15,000 grant from the <strong>Foundation for National Parks and Wildlife,</strong> council staff, local volunteer and community groups have successfully planted and cared for about 3,500 native seedlings around Laratinga Wetland with a 95 percent survival rate."
+      "p": "From May to July last year, and thanks to a $15,000 grant from the <strong>Foundation for National Parks & Wildlife,</strong> council staff, local volunteer and community groups have successfully planted and cared for about 3,500 native seedlings around Laratinga Wetland with a 95 percent survival rate."
      },
      {
       "p": "The new native plants are thriving with the added love, and will enhance biodiversity, increase habitat, reduce weeds, and provide vital wildlife corridors."
@@ -12094,7 +12094,7 @@
     "type": "lead",
     "flow": [
      {
-      "p": "Preparations had been going on for weeks at Crookshanks for the continuation of the planting of a proposed seven kilometre wildlife corridor from the Murrumbidgee River in Crookshanks’ River Paddock to Crookshanks’ Peak along Dry Plains Road near Cooma. At Crookshanks, we were very grateful to have received enough funding and assistance from the Foundation for National Parks and Wildlife, from Rivers of Carbon, from Greening Australia, from Land for Wildlife, as well as from our Upper Snowy Landcare Network and its volunteers to enable this to happen. Continuing funding from the Biodiversity Conservation Trust, is contributing to the creation and maintenance of Crookshanks’ healthy native grasslands which are very much a part of the broad wildlife corridor."
+      "p": "Preparations had been going on for weeks at Crookshanks for the continuation of the planting of a proposed seven kilometre wildlife corridor from the Murrumbidgee River in Crookshanks’ River Paddock to Crookshanks’ Peak along Dry Plains Road near Cooma. At Crookshanks, we were very grateful to have received enough funding and assistance from the Foundation for National Parks & Wildlife, from Rivers of Carbon, from Greening Australia, from Land for Wildlife, as well as from our Upper Snowy Landcare Network and its volunteers to enable this to happen. Continuing funding from the Biodiversity Conservation Trust, is contributing to the creation and maintenance of Crookshanks’ healthy native grasslands which are very much a part of the broad wildlife corridor."
      },
      {
       "p": "The first tree planting day, 26 April 2022, started in an early morning of bustle and the arrival of Nicki Taws, a zoologist and botanist from Greening Australia in Canberra. At the appointed time, 7.30 am, Nicki was there with her delivery of 1,000 trees for the West Peak Creek riparian planting. These koala-attracting trees and shrubs were the third 1,000 trees having been donated by Greening Australia, Canberra to the Crookshanks’ proposed corridor over the previous three years. Nicki also delivered that morning a second 1,000 similar trees, separately funded by Rivers of Carbon for our Murrumbidgee River riparian planting."
@@ -12112,7 +12112,7 @@
       "p": "As the years progress and another 5,000 trees are planted, we are hoping that our volunteers will feel some ownership of the wildlife corridor that they have helped create. We also hope that some will be young enough to visit our wildlife corridor on a continuing basis, and in twenty years, to admire and to study the transformed environment replenished with wallabies, koalas, platypus, rikali, quolls, possums, wombats, echidnas and other native mammals, endangered birds and snakes, and Macquarie perch. As well, we are hoping there will be tall forests of healthy native trees, with a thriving understorey of shrubs, forbs and grasses to house them. Our Crookshanks’ friends will know that they have contributed to Australia’s efforts to slow global warming and climate change."
      },
      {
-      "p": "A huge thank you to all who contributed to a healthier and safer world, and in particular to the Foundation for National Parks and Wildlife, to Rivers of Carbon (Lori Gould), to Greening Australia (Nicki Taws), to Land for Wildlife, as well as to our Upper Snowy Landcare Network (Lauren Van Dyke) and its volunteers, and to the Biodiversity Conservation Trust, in supporting our wildlife conservation endeavours."
+      "p": "A huge thank you to all who contributed to a healthier and safer world, and in particular to the Foundation for National Parks & Wildlife, to Rivers of Carbon (Lori Gould), to Greening Australia (Nicki Taws), to Land for Wildlife, as well as to our Upper Snowy Landcare Network (Lauren Van Dyke) and its volunteers, and to the Biodiversity Conservation Trust, in supporting our wildlife conservation endeavours."
      },
      {
       "p": "Narelle Moody<br> Crookshanks Wildlife and Conservation Reserve<br> 1227 Dry Plains Road (PO Box 212)<br> Cooma NSW 2630<br> Australia<br> +61 2 64537209<br> www.crookshanks.com.au<br> narelle@crookshanks.com.au"
@@ -14453,7 +14453,7 @@
       "p": "&nbsp;"
      },
      {
-      "p": "Find out more about the Foundation for National Parks and Wildlife’s <strong>Plant a Tree for Me!</strong> <a href=\"https://foundation-for-national-parks-and-wildlife.raiselysite.com/\"><strong>here</strong></a>&nbsp;or call 1800 898 626."
+      "p": "Find out more about the Foundation for National Parks & Wildlife’s <strong>Plant a Tree for Me!</strong> <a href=\"https://foundation-for-national-parks-and-wildlife.raiselysite.com/\"><strong>here</strong></a>&nbsp;or call 1800 898 626."
      }
     ]
    }
@@ -14519,7 +14519,7 @@
       "p": "Ultimately, the Trees for Fire Affected Landcarers was a success, with many happy planters across the district."
      },
      {
-      "p": "The <strong>Foundation for National Parks and Wildlife</strong> supported this project with a grant for $5,000."
+      "p": "The <strong>Foundation for National Parks & Wildlife</strong> supported this project with a grant for $5,000."
      },
      {
       "p": "Organisation <!--ap-custom-label--> Upper Shoalhaven Landcare Council <!--ap-custom-value--> <!--ap-each-custom-->"
@@ -16304,7 +16304,7 @@
     "href": "article-matthew-mcconaugheys-wild-turkey-and-homecamp-pair-up-to-create-tent-and-give-a-proportion-of-proceeds-to-fnpw.html",
     "date": "2021-12-13",
     "title": "Matthew McConaughey&#8217;s Wild Turkey and Homecamp Pair Up to Create Tent and Give A Proportion of Proceeds to FNPW",
-    "blurb": "The Foundation of National Parks and Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
+    "blurb": "The Foundation for National Parks & Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
     "img": "https://fnpw.org.au/wp-content/uploads/2021/12/Matt.jpg",
     "cta": "Read the story",
     "alt": "Man relaxing in a camp chair beside a canvas tent"
@@ -16413,7 +16413,7 @@
     "href": "article-matthew-mcconaugheys-wild-turkey-and-homecamp-pair-up-to-create-tent-and-give-a-proportion-of-proceeds-to-fnpw.html",
     "date": "2021-12-13",
     "title": "Matthew McConaughey&#8217;s Wild Turkey and Homecamp Pair Up to Create Tent and Give A Proportion of Proceeds to FNPW",
-    "blurb": "The Foundation of National Parks and Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
+    "blurb": "The Foundation for National Parks & Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
     "img": "https://fnpw.org.au/wp-content/uploads/2021/12/Matt.jpg",
     "cta": "Read the story",
     "alt": "Man relaxing in a camp chair beside a canvas tent"
@@ -16445,19 +16445,19 @@
   "date": "2021-12-13",
   "place": "",
   "pillar": "parks",
-  "standfirst": "The Foundation of National Parks and Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping brand, partnering up to create a tent and donate a proportion of the proceeds to the FNPW.",
+  "standfirst": "The Foundation for National Parks & Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping brand, partnering up to create a tent and donate a proportion of the proceeds to the FNPW.",
   "hero": "https://fnpw.org.au/wp-content/uploads/2021/12/Matt.jpg",
   "hero_alt": "Man relaxing in a camp chair beside a canvas tent",
   "hero_w": 540,
   "hero_h": 360,
-  "description": "The Foundation of National Parks and Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
+  "description": "The Foundation for National Parks & Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
   "credit": "",
   "blocks": [
    {
     "type": "lead",
     "flow": [
      {
-      "p": "The Foundation of National Parks and Wildlife was recently mentioned in the <a href=\"https://www.smh.com.au/lifestyle/life-and-relationships/the-australian-trip-that-bolstered-matthew-mcconaughey-to-reject-deals-worth-millions-20211129-p59d7o.html\">Sydney Morning Herald</a> about Matthew McConaughey’s bourbon brand, <a href=\"https://www.wildturkeybourbon.com.au/\">Wild Turkey</a>, and <a href=\"https://homecamp.com.au/\">Homecamp</a>, a Melbourne outdoor and camping brand, partnering up to create a tent and donate a proportion of the proceeds to the FNPW."
+      "p": "The Foundation for National Parks & Wildlife was recently mentioned in the <a href=\"https://www.smh.com.au/lifestyle/life-and-relationships/the-australian-trip-that-bolstered-matthew-mcconaughey-to-reject-deals-worth-millions-20211129-p59d7o.html\">Sydney Morning Herald</a> about Matthew McConaughey’s bourbon brand, <a href=\"https://www.wildturkeybourbon.com.au/\">Wild Turkey</a>, and <a href=\"https://homecamp.com.au/\">Homecamp</a>, a Melbourne outdoor and camping brand, partnering up to create a tent and donate a proportion of the proceeds to the FNPW."
      },
      {
       "p": "The collaboration, meant to reconnect Aussies to the wilderness, will help us safeguard natural Australia for future generations to come. <strong>And for that, we are truly thankful.</strong>"
@@ -16529,7 +16529,7 @@
       "p": "<strong>The impact we can have now will be critical for our future.</strong>"
      },
      {
-      "p": "At the Foundation for National Parks and Wildlife, we are safeguarding natural Australia, for future generations to enjoy. We couldn’t be more proud of all we have achieved during these challenging times and could not have done it without the support of our incredible donors, partnerships, and governments. Click on the video to learn more about what impact we’ve had on Australia during the past few years."
+      "p": "At the Foundation for National Parks & Wildlife, we are safeguarding natural Australia, for future generations to enjoy. We couldn’t be more proud of all we have achieved during these challenging times and could not have done it without the support of our incredible donors, partnerships, and governments. Click on the video to learn more about what impact we’ve had on Australia during the past few years."
      },
      {
       "p": "&nbsp;"
@@ -16551,7 +16551,7 @@
     "href": "article-matthew-mcconaugheys-wild-turkey-and-homecamp-pair-up-to-create-tent-and-give-a-proportion-of-proceeds-to-fnpw.html",
     "date": "2021-12-13",
     "title": "Matthew McConaughey&#8217;s Wild Turkey and Homecamp Pair Up to Create Tent and Give A Proportion of Proceeds to FNPW",
-    "blurb": "The Foundation of National Parks and Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
+    "blurb": "The Foundation for National Parks & Wildlife was recently mentioned in the Sydney Morning Herald about Matthew McConaughey’s bourbon brand, Wild Turkey, and Homecamp, a Melbourne outdoor and camping...",
     "img": "https://fnpw.org.au/wp-content/uploads/2021/12/Matt.jpg",
     "cta": "Read the story",
     "alt": "Man relaxing in a camp chair beside a canvas tent"
@@ -16753,7 +16753,7 @@
     "href": "article-the-fnpw-expands-bushfire-recovery-project-towards-1-million-trees-goal.html",
     "date": "2021-12-14",
     "title": "The FNPW Expands Bushfire Recovery Project Towards One Million Trees Goal",
-    "blurb": "In recognition of National Tree Day 2021, the Foundation for National Parks and Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
+    "blurb": "In recognition of National Tree Day 2021, the Foundation for National Parks & Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
     "img": "https://fnpw.org.au/wp-content/uploads/2021/07/a.gregory2-1-e1627620617506.jpg",
     "cta": "Read the story",
     "alt": "Hand holding a eucalyptus seedling in a tube pot"
@@ -16803,7 +16803,7 @@
     "href": "article-the-fnpw-expands-bushfire-recovery-project-towards-1-million-trees-goal.html",
     "date": "2021-12-14",
     "title": "The FNPW Expands Bushfire Recovery Project Towards One Million Trees Goal",
-    "blurb": "In recognition of National Tree Day 2021, the Foundation for National Parks and Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
+    "blurb": "In recognition of National Tree Day 2021, the Foundation for National Parks & Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
     "img": "https://fnpw.org.au/wp-content/uploads/2021/07/a.gregory2-1-e1627620617506.jpg",
     "cta": "Read the story",
     "alt": "Hand holding a eucalyptus seedling in a tube pot"
@@ -16835,19 +16835,19 @@
   "date": "2021-12-14",
   "place": "",
   "pillar": "heal",
-  "standfirst": "In recognition of National Tree Day 2021, the Foundation for National Parks and Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected regions by 2025.",
+  "standfirst": "In recognition of National Tree Day 2021, the Foundation for National Parks & Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected regions by 2025.",
   "hero": "https://fnpw.org.au/wp-content/uploads/2021/07/a.gregory2-1-e1627620617506.jpg",
   "hero_alt": "Hand holding a eucalyptus seedling in a tube pot",
   "hero_w": 600,
   "hero_h": 294,
-  "description": "In recognition of National Tree Day 2021, the Foundation for National Parks and Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
+  "description": "In recognition of National Tree Day 2021, the Foundation for National Parks & Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
   "credit": "",
   "blocks": [
    {
     "type": "lead",
     "flow": [
      {
-      "p": "In recognition of National Tree Day 2021, the Foundation for National Parks and Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected regions by 2025."
+      "p": "In recognition of National Tree Day 2021, the Foundation for National Parks & Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected regions by 2025."
      },
      {
       "p": "In partnership with global non-profit, One Tree Planted and French beauty brand, L’OCCITANE, FNPW has provided grant funding to another two community nursery locations in Newcastle, NSW and Mt. Barker, SA to expand the capacity of the tree nurseries and propagate native plants for erosion prevention and the restoration of animal habitats. Seedlings will be established from indigenous tree species in each of the nursery locations and will be planted in national parks across Australia, as well as other public and private lands that have been affected by bushfires."
@@ -17011,7 +17011,7 @@
     "href": "article-the-fnpw-expands-bushfire-recovery-project-towards-1-million-trees-goal.html",
     "date": "2021-12-14",
     "title": "The FNPW Expands Bushfire Recovery Project Towards One Million Trees Goal",
-    "blurb": "In recognition of National Tree Day 2021, the Foundation for National Parks and Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
+    "blurb": "In recognition of National Tree Day 2021, the Foundation for National Parks & Wildlife is proud to continue expanding its Bushfire Recovery Project towards one million trees in bushfire affected...",
     "img": "https://fnpw.org.au/wp-content/uploads/2021/07/a.gregory2-1-e1627620617506.jpg",
     "cta": "Read the story",
     "alt": "Hand holding a eucalyptus seedling in a tube pot"
@@ -17294,7 +17294,7 @@
       "p": "Importantly, $150,000 of the Australian Government funding will be used for mental health services to care for our inspirational carers who have witnessed some incredible trauma through their efforts."
      },
      {
-      "p": "Chief Executive of the Foundation for National Parks and Wildlife, Ian Darbyshire said that funding will allow the organisation to support carer groups in upgrading facilities at a time of unprecedented need."
+      "p": "Chief Executive of the Foundation for National Parks & Wildlife, Ian Darbyshire said that funding will allow the organisation to support carer groups in upgrading facilities at a time of unprecedented need."
      },
      {
       "p": "“This may include holding and rehabilitation facilities as well as post release supplementary feeding programs,” he said."
@@ -17306,7 +17306,7 @@
       "p": "&nbsp;"
      },
      {
-      "p": "Volunteers involved in wildlife rescue and care can apply for grants through the Foundation for National Parks and Wildlife:&nbsp;<a href=\"project-wildlife-heroes.html\">https://www.fnpw.org.au/wildlifeheroes</a>"
+      "p": "Volunteers involved in wildlife rescue and care can apply for grants through the Foundation for National Parks & Wildlife:&nbsp;<a href=\"project-wildlife-heroes.html\">https://www.fnpw.org.au/wildlifeheroes</a>"
      },
      {
       "p": "Thank you to everyone who has helped us reach every state and territory in need:"
@@ -18043,13 +18043,13 @@
     "caption": "",
     "flow": [
      {
-      "p": "David Speirs, Minister for Environment and Water, South Australia said: “We are grateful to work with our long-term partner, the Foundation for National Parks and Wildlife on a crucial project to help rebuild what we have lost as a result of the devastating bushfires. This is an important step towards bushfire recovery and will pave the way for conservation projects in the future.”"
+      "p": "David Speirs, Minister for Environment and Water, South Australia said: “We are grateful to work with our long-term partner, the Foundation for National Parks & Wildlife on a crucial project to help rebuild what we have lost as a result of the devastating bushfires. This is an important step towards bushfire recovery and will pave the way for conservation projects in the future.”"
      },
      {
       "p": "Since 2015, FNPW has worked on its initiative “Plant a Tree For Me’ in response to the progressively degrading environment. The Foundation’s proven expertise will be an essential part in aiding the recovery project over the coming years."
      },
      {
-      "p": "“The Bushfire Recovery Nurseries are an important step towards immediate bushfire recovery. Whilst we cannot ensure tree growth in bushfire affected areas right now due to restricted access and the severity of fires, we can plan towards the future when we will be able to plant trees at scale. It’s essential for the regeneration of Australia’s future,” concluded Ian Darbyshire, Chief Executive Officer for the Foundation for National Parks and Wildlife."
+      "p": "“The Bushfire Recovery Nurseries are an important step towards immediate bushfire recovery. Whilst we cannot ensure tree growth in bushfire affected areas right now due to restricted access and the severity of fires, we can plan towards the future when we will be able to plant trees at scale. It’s essential for the regeneration of Australia’s future,” concluded Ian Darbyshire, Chief Executive Officer for the Foundation for National Parks & Wildlife."
      },
      {
       "p": "For further information and updates on FNPW’s projects, visit our <a href=\"projects.html\">projects page</a>.&nbsp;"
@@ -18949,7 +18949,7 @@
       "p": "W związku z pożarami trawiącymi Australię, Ambasada RP w Canberze i Ambasada Australii w Warszawie otrzymują z Polski oraz od Polonii w Australii wiele wyrazów solidarności oraz zgłoszeń gotowości niesienia pomocy."
      },
      {
-      "p": "Dlatego, z inspiracji obu Ambasad, Fundacja Parków Narodowych i Dzikiej Przyrody (Foundation for National Parks and Wildlife, FNPW) uruchomiła specjalną zbiórkę na rzecz odbudowy Parku Narodowego Kościuszki ze zniszczeń spowodowanych przez pożary buszu. Środki zebrane przez Polaków i Polonię australijską przyczynią się do długoterminowej rehabilitacji i zachowania Parku Narodowego Kościuszki oraz jego cennego środowiska naturalnego."
+      "p": "Dlatego, z inspiracji obu Ambasad, Fundacja Parków Narodowych i Dzikiej Przyrody (Foundation for National Parks & Wildlife, FNPW) uruchomiła specjalną zbiórkę na rzecz odbudowy Parku Narodowego Kościuszki ze zniszczeń spowodowanych przez pożary buszu. Środki zebrane przez Polaków i Polonię australijską przyczynią się do długoterminowej rehabilitacji i zachowania Parku Narodowego Kościuszki oraz jego cennego środowiska naturalnego."
      },
      {
       "p": "Jak podkreśla polska Ambasada, „Park Narodowy Kościuszki, na którego terenie położona jest Góra Kościuszki, ma szczególne znaczenie dla Polaków i Polonii w Australii oraz pełni symboliczną rolę w historii stosunków polsko-australijskich. W 2020 roku obchodzimy 180. rocznicę odkrycia i nazwania Góry Kościuszki przez Pawła Strzeleckiego.”"

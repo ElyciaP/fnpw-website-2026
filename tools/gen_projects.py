@@ -401,7 +401,7 @@ def main():
                   'one vast, connected park precinct for South Australia, co-managed with the Nukunu Nation.')),
         'species': dict(
             tint='species',
-            hero_img='assets/img/pillar-species-COMP.jpg',
+            hero_img='assets/img/placeholder-species.svg',
             hero_alt='Koala resting in a eucalypt',
             stat=('18,582', 'treatments', 'delivered to wombats with mange'),
             stat_label='Treatments delivered',
@@ -421,7 +421,7 @@ def main():
                   'right-way fire and feral animal management.')),
         'healing': dict(
             tint='healing',
-            hero_img='assets/img/pillar-healing-COMP.jpg',
+            hero_img='assets/img/placeholder-healing.svg',
             hero_alt='Newly planted native seedlings in tree guards on a restoration site',
             stat=('1.2M', 'plantings', 'trees, shrubs and seedlings in key areas'),
             stat_label='Plants in the ground',

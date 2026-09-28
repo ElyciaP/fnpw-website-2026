@@ -124,7 +124,7 @@ The following ten projects were allocated funds in the 2019 small grants round:
 
 ## Latest news on this project.
 
-The recipients of the 2019 Community Conservation Grants, awarded by the Foundation for National Parks and Wildlife, recently completed their conservation projects and submitted reports detailing their activities. From creating bee hotels to the telling of indigenous cultural stories, the recipients undertook a variety of projects across the country focused on many different aspects of conservation and education.
+The recipients of the 2019 Community Conservation Grants, awarded by the Foundation for National Parks & Wildlife, recently completed their conservation projects and submitted reports detailing their activities. From creating bee hotels to the telling of indigenous cultural stories, the recipients undertook a variety of projects across the country focused on many different aspects of conservation and education.
 
 The purpose of FNPW Community Conservation Grants is to assist in the protection of our native species, habitats, landscapes and cultural heritage. Grants are available for both field projects and education programs that have a direct outcome for nature conservation in Australia.
 
