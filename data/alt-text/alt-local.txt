@@ -35,3 +35,4 @@ assets/img/faqs-hero-flowers.jpg|Bright magenta native succulent flowers and blu
 assets/img/media-hero-regent-honeyeater.jpg|A critically endangered regent honeyeater perched in a flowering grevillea
 assets/img/search-hero-mangroves.jpg|Aerial view of a river winding through dense green mangroves and tidal flats
 assets/img/thank-you-volunteers.jpg|A group of smiling volunteers holding native seedlings outside a community nursery
+assets/img/thank-you-planting.jpg|Four volunteers kneeling among newly planted seedlings in green tree guards, with tall eucalypts behind
