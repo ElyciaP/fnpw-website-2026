@@ -420,7 +420,7 @@ def main():
                   'right-way fire and feral animal management.')),
         'healing': dict(
             tint='healing',
-            hero_img='assets/img/placeholder-healing.svg',
+            hero_img='assets/img/pillar-healing-nursery.jpg',
             hero_alt='Newly planted native seedlings in tree guards on a restoration site',
             stat=('1.2M', 'plantings', 'trees, shrubs and seedlings in key areas'),
             stat_label='Plants in the ground',

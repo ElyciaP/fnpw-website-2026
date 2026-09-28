@@ -37,3 +37,4 @@ assets/img/search-hero-mangroves.jpg|Aerial view of a river winding through dens
 assets/img/thank-you-volunteers.jpg|A group of smiling volunteers holding native seedlings outside a community nursery
 assets/img/thank-you-planting.jpg|Four volunteers kneeling among newly planted seedlings in green tree guards, with tall eucalypts behind
 assets/img/workplace-giving-volunteers.jpg|Smiling corporate volunteers pruning coastal bushland along a sandy path
+assets/img/pillar-healing-nursery.jpg|Trays of native seedlings growing in tubes on benches at a community nursery
