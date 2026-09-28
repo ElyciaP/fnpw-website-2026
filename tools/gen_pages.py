@@ -398,8 +398,7 @@ def main():
 
     add('thank-you.html', 'Thank You', 'Thank you for supporting FNPW.',
         hero('Thank you', 'You are officially one of the good ones.',
-             'Your support grows national parks, saves species and heals the land. '
-             'We will be in touch soon.', 'Thank You')
+             'Your support grows national parks, saves species and heals the land.', 'Thank You')
         + sec('<p style="text-align:center"><a class="btn-p" href="projects.html">See what you are supporting</a></p>'))
 
     add('privacy-policy.html', 'Privacy Policy', 'How FNPW collects, uses and protects personal information.',

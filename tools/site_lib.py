@@ -58,7 +58,7 @@ HERO_IMGS = {
     'FAQs': ('assets/img/faqs-hero-flowers.jpg', 'Bright magenta native succulent flowers and blue-grey leaves against a soft, blurred rocky background'),
     'Media Enquiries': ('assets/img/media-hero-regent-honeyeater.jpg', 'A critically endangered regent honeyeater perched in a flowering grevillea'),
     'Newsletter': (U_+'2021/02/WA-Bird-Watering-Stations-Jirdarup-bushland-precinct-Three-cockies.jpeg', 'Three cockatoos at a watering station'),
-    'Thank You': (U_+'2021/01/feeding.jpg', 'A wildlife carer feeding a rescued animal'),
+    'Thank You': ('assets/img/thank-you-volunteers.jpg', 'A group of smiling volunteers holding native seedlings outside a community nursery'),
     'Privacy Policy': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
     'Terms &amp; Conditions': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
     'Search': ('assets/img/search-hero-mangroves.jpg', 'Aerial view of a river winding through dense green mangroves and tidal flats'),

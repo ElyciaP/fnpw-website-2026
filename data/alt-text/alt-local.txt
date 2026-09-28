@@ -34,3 +34,4 @@ assets/img/governance-hero-gorge.jpg|Forested gorge winding through rugged, tree
 assets/img/faqs-hero-flowers.jpg|Bright magenta native succulent flowers and blue-grey leaves against a soft, blurred rocky background
 assets/img/media-hero-regent-honeyeater.jpg|A critically endangered regent honeyeater perched in a flowering grevillea
 assets/img/search-hero-mangroves.jpg|Aerial view of a river winding through dense green mangroves and tidal flats
+assets/img/thank-you-volunteers.jpg|A group of smiling volunteers holding native seedlings outside a community nursery
