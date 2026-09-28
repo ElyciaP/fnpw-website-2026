@@ -40,11 +40,11 @@
   "title": "Genetic Code of Koalas",
   "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Koala-mum-bub-scaled.jpg",
   "pillar": "species",
-  "state": "Australia",
+  "state": "NSW",
   "pillar_confirmed": false,
   "live_url": "https://fnpw.org.au/project/genetic-code-of-koalas/",
-  "lat": -27.5,
-  "lon": 152.8,
+  "lat": -31.43,
+  "lon": 152.91,
   "on_map": true
  },
  {
@@ -64,11 +64,11 @@
   "title": "Bilby Fire Project",
   "img": "https://fnpw.org.au/wp-content/uploads/2022/03/11057207814_38a4518a3f_b.jpg",
   "pillar": "species",
-  "state": "Australia",
+  "state": "WA",
   "pillar_confirmed": true,
   "live_url": "https://fnpw.org.au/project/bilby-fire-project/",
-  "lat": -23.5,
-  "lon": 132.5,
+  "lat": -18.2,
+  "lon": 125.6,
   "on_map": true
  },
  {
@@ -88,11 +88,11 @@
   "title": "Caught on Camera",
   "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Caught-on-Camera-Superb-Lyrebird.jpg",
   "pillar": "species",
-  "state": "Australia",
+  "state": "VIC",
   "pillar_confirmed": true,
   "live_url": "https://fnpw.org.au/project/caught-on-camera/",
-  "lat": -32.5,
-  "lon": 150.0,
+  "lat": -37.2,
+  "lon": 144.8,
   "on_map": true
  },
  {
@@ -348,11 +348,11 @@
   "title": "Quolls",
   "img": "https://fnpw.org.au/wp-content/uploads/2020/12/Quoll-lge.jpg",
   "pillar": "species",
-  "state": "Australia",
+  "state": "NSW",
   "pillar_confirmed": true,
   "live_url": "https://fnpw.org.au/project/quolls/",
-  "lat": -20.0,
-  "lon": 146.0,
+  "lat": -36.3,
+  "lon": 149.1,
   "on_map": true
  },
  {
@@ -708,11 +708,11 @@
   "title": "Cultivating Koala Habitat",
   "img": "https://fnpw.org.au/wp-content/uploads/2023/12/Feature-Images-for-website.png",
   "pillar": "healing",
-  "state": "Australia",
+  "state": "NSW",
   "pillar_confirmed": false,
   "live_url": "https://fnpw.org.au/project/cultivating-koala-habitat/",
-  "lat": -28.3,
-  "lon": 152.9,
+  "lat": -34.29,
+  "lon": 150.58,
   "on_map": true
  },
  {
@@ -852,11 +852,11 @@
   "title": "Bushfire Recovery Seedbanks",
   "img": "https://fnpw.org.au/wp-content/uploads/2021/01/51965515327_82f49da53c_k.jpg",
   "pillar": "healing",
-  "state": "Australia",
+  "state": "VIC",
   "pillar_confirmed": true,
   "live_url": "https://fnpw.org.au/project/bushfire-recovery-seedbanks/",
-  "lat": -33.9,
-  "lon": 150.0,
+  "lat": -37.65,
+  "lon": 148.4,
   "on_map": true
  },
  {
