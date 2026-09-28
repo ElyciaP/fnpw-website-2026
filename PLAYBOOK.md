@@ -159,14 +159,13 @@ This is the part you haven't done before. It is a mechanical translation, not a 
 - **Done when:** no yellow boxes remain on staging, forms tested, projects all tagged.
 
 ### Weeks 12-13 (wc 21 Sep - 4 Oct) - Quality
-- **Redirects** (Redirection plugin), minimum set:
-  /grants/ and /grant/wildlife-heroes-grants/ → /ways-you-can-get-involved/ (we no longer do grants);
-  /project/form-test/, /test-form/, /upload-your-blog-post/ → 410 gone or → home;
-  /project/bushfire-recovery-small-grants/, /private-land-conservation-grants/,
-  /community-conservation-grants/ → /projects/ ;
-  /paws-magazine/ → /news/ ; /tax-deductible-charity-donation/ → /donations/ ;
-  /foundation-for-national-parks-and-wildlife-newsletter/ → /newsletters-sign-up/.
-  Everything else keeps its URL by design, so no other redirects should be needed.
+- **Redirects**: the full map from the Sep 2026 audit of the live sitemaps is in
+  wp/plugins/fnpw-core/redirects.json (94 entries, applied by fnpw-core only when a URL would 404).
+  It covers renamed pages (/about-us/ → /about/, /contact-us/ → /contact/, /bequest/ → /bequests/,
+  corporate volunteering city pages), removed pages, the old /donation/ pages → Raisely,
+  retired category/tag/state/year archives, and the 15 press stubs under /news/media/ → /in-the-news/.
+  Posts and /project/<slug>/ URLs keep their live addresses. If a page keeps its old slug in WordPress,
+  its entry simply never fires.
   Verify with Yoast that titles/metas carried over on key pages.
 - **Accessibility pass:** keyboard-tab the nav, map and FAQ accordions; alt text sweep;
   contrast check anywhere wattle or light text was used. Fix og:locale to en_AU.

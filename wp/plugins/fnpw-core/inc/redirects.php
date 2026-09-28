@@ -30,7 +30,13 @@ function fnpw_apply_redirects() {
 	$path = trailingslashit( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ) );
 	$map  = fnpw_redirect_map();
 	if ( isset( $map[ $path ] ) ) {
-		wp_safe_redirect( home_url( $map[ $path ] ), 301, 'FNPW Core' );
+		$target = (string) $map[ $path ];
+		if ( preg_match( '#^https?://#i', $target ) ) {
+			// Off-site targets (the Raisely donation sites) are listed in redirects.json by us, not by visitors.
+			wp_redirect( esc_url_raw( $target ), 301, 'FNPW Core' ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
+		} else {
+			wp_safe_redirect( home_url( $target ), 301, 'FNPW Core' );
+		}
 		exit;
 	}
 }
