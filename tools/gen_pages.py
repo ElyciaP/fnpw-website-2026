@@ -381,7 +381,7 @@ def main():
 
     add('media-enquiry.html', 'Media Enquiries', 'Media contact for FNPW.',
         hero('News', 'Media enquiries.',
-             'Talking wildlife, national parks or a specific FNPW project? We can help with '
+             'Talking wildlife, national parks or one of our projects? We can help with '
              'interviews, imagery and background.', 'Media Enquiries')
         + sec(two('<h2>Get in touch</h2>'
                   '<p>Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> with '

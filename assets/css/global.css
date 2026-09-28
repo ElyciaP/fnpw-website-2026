@@ -602,6 +602,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pj-hero-soft::after{background:linear-gradient(97deg,rgba(15,49,50,.8) 0%,rgba(15,49,50,.62) 30%,rgba(15,49,50,.22) 55%,rgba(15,49,50,0) 78%)}
 .pj-hero-soft h1,.pj-hero-soft .lede{text-shadow:0 1px 14px rgba(15,49,50,.45)}
 @media(max-width:820px){.pj-hero-soft::after{background:linear-gradient(180deg,rgba(15,49,50,.45) 0%,rgba(15,49,50,.7) 55%,rgba(15,49,50,.88) 100%)}}
+.pj-hero-split .pj-hero-im{left:32%}
+.pj-hero-split::after{background:linear-gradient(90deg,#0F3132 0%,#0F3132 32%,rgba(15,49,50,.6) 40%,rgba(15,49,50,.12) 55%,rgba(15,49,50,0) 64%)}
+@media(max-width:820px){.pj-hero-split .pj-hero-im{left:0}.pj-hero-split::after{background:linear-gradient(180deg,rgba(15,49,50,.45) 0%,rgba(15,49,50,.72) 55%,rgba(15,49,50,.9) 100%)}}
 .pj-hero-cr{position:absolute;right:1rem;bottom:.75rem;z-index:3;margin:0;font-size:.7rem;letter-spacing:.03em;color:rgba(250,246,242,.85);text-shadow:0 1px 3px rgba(0,0,0,.6)}
 @media(max-width:820px){.pj-hero-im img{object-position:64% 60%}.pj-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.72) 0%,rgba(15,49,50,.8) 55%,rgba(15,49,50,.95) 100%)}}
 

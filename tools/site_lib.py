@@ -56,7 +56,7 @@ HERO_IMGS = {
     'Corporate Governance': ('assets/img/governance-hero-gorge.jpg', 'Forested gorge winding through rugged, tree-covered hills under a clear blue sky'),
     'Reconciliation Action Plan': (U_+'2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg', 'Warddeken rangers on Country, photo Donal Sullivan'),
     'FAQs': ('assets/img/faqs-hero-flowers.jpg', 'Bright magenta native succulent flowers and blue-grey leaves against a soft, blurred rocky background'),
-    'Media Enquiries': (U_+'2021/02/Caught-on-Camera-Superb-Lyrebird.jpg', 'Superb lyrebird caught on camera'),
+    'Media Enquiries': ('assets/img/media-hero-regent-honeyeater.jpg', 'A critically endangered regent honeyeater perched in a flowering grevillea'),
     'Newsletter': (U_+'2021/02/WA-Bird-Watering-Stations-Jirdarup-bushland-precinct-Three-cockies.jpeg', 'Three cockatoos at a watering station'),
     'Thank You': (U_+'2021/01/feeding.jpg', 'A wildlife carer feeding a rescued animal'),
     'Privacy Policy': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
