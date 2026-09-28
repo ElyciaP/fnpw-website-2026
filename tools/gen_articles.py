@@ -53,6 +53,10 @@ def esc(t):
 
 
 def srcset(url, kind):
+    # Disabled Sep 2026: the guessed -768x403/-1024x537/-1536x806 crops mostly do not
+    # exist on the live media library (312 of 365 returned 404), which blanked images
+    # in browsers that picked them. WordPress will build real srcsets at migration.
+    return ''
     m = re.match(r'(.*)-(\d+)x(\d+)(\.(?:jpg|jpeg|png))$', url, re.I)
     if not m:
         return ''
