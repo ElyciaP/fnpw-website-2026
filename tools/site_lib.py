@@ -61,7 +61,7 @@ HERO_IMGS = {
     'Thank You': (U_+'2021/01/feeding.jpg', 'A wildlife carer feeding a rescued animal'),
     'Privacy Policy': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
     'Terms &amp; Conditions': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
-    'Search': (U_+'2021/01/Seagrass-Small.jpg', 'Seagrass meadow'),
+    'Search': ('assets/img/search-hero-mangroves.jpg', 'Aerial view of a river winding through dense green mangroves and tidal flats'),
     'Corporate Volunteering / Sydney': (U_+'2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Bushcare volunteers'),
     'Corporate Volunteering / Melbourne': (U_+'2021/02/Koala-projects.png', 'Nest box installation'),
     'Corporate Volunteering / Brisbane': (U_+'2021/02/CurrumbinKoala-Erik-Veland.jpg', 'Koala in Queensland'),
