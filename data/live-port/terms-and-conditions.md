@@ -73,7 +73,7 @@ The Website, its Content and any information available on or through the Website
 
 You agree to indemnify and keep indemnified FNPW against any claim, demand, injury, damage, loss, expense, cost or liability (whether direct or indirect) made against or suffered by FNPW in connection with the use of this website, the breach of these Terms of Use or breach of any rights of third parties.
 
-The total liability of FNPW (if any) in connection with this Website, or with these Terms of Use or any services supplied under them, will be limited, at the discretion of FNPW, to the re-supply of the information or services supplied or offered by FNPW or payment of the cost of doing this; or, the amount paid by you (if any). This limitation does not exclude any rights, which by law may not be excluded, including but not limited to rights under the Trade Practices Act.
+The total liability of FNPW (if any) in connection with this Website, or with these Terms of Use or any services supplied under them, will be limited, at the discretion of FNPW, to the re-supply of the information or services supplied or offered by FNPW or payment of the cost of doing this; or, the amount paid by you (if any). This limitation does not exclude any rights, which by law may not be excluded, including but not limited to rights under the Australian Consumer Law, set out in Schedule 2 of the Competition and Consumer Act 2010 (Cth).
 
 FNPW reserves the right to revise the content of, amend links from or withdraw access to the Website at any time without notice and effective immediately from the revision. FNPW reserves the right to update the Terms of Use at any time.
 

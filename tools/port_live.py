@@ -113,6 +113,8 @@ PROSE_CSS = '''
 .prose th{font-family:var(--ff-d);color:var(--euc-deep);background:var(--sand)}
 .prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
 @media(max-width:640px){.prose table{display:block;overflow-x:auto}}
+.prose .btn-p{color:var(--cream);text-decoration:none}
+.gr-closed{background:var(--sand);border-left:3px solid var(--bark);padding:1rem 1.2rem;margin:0 0 1.8rem!important}
 '''
 
 
@@ -166,6 +168,10 @@ DONATE_BAND = NL.join([
 
 U = 'https://fnpw.org.au/wp-content/uploads/'
 
+# Our grant programs are not currently running (Sep 2026). Shown above the ported copy.
+CLOSED = ('<p class="gr-closed"><strong>Our grant programs are currently closed to new applications.</strong> '
+          'The information below is kept as a record of the programs and the projects they supported.</p>')
+
 
 # ---------------------------------------------------------------- grant project pages
 GRANTS = {
@@ -211,6 +217,7 @@ def grant_page(slug, g):
         '<section class="sec">',
         '  <div class="cw rv">',
         '    <div class="pj-body prose">',
+        CLOSED,
         html,
         '    </div>',
         '  </div>',
@@ -274,6 +281,7 @@ def grants_hub():
         '<section class="sec">',
         '  <div class="cw">',
         '    <div class="prose rv">',
+        CLOSED,
         intro_html,
         '    </div>',
         '    <div class="gr-g">',
@@ -337,6 +345,9 @@ def paws():
 
 
 # ---------------------------------------------------------------- eBook page
+EBOOK_PDF = U + '2023/05/Mitigating-the-effects-of-environmental-change.pdf'
+
+
 def ebook():
     md = body_md('mitigating-effects-environmental-change', cut=('\n**[FORM',))
     md = re.sub(r'^# .*\n', '', md, count=1, flags=re.M)
@@ -366,9 +377,8 @@ def ebook():
         md_html(md, drop_h1=False),
         '      <div class="eb-form" id="download">',
         '        <h3>Download the eBook</h3>',
-        '        <div class="port-note"><strong>Form still to connect:</strong> the live page uses a WordPress Formidable form '
-        '(form 17, "ebooksubmission": first name, last name, email). Add it in WordPress, or give us a HubSpot form ID for the static build.</div>',
-        '        <p>By submitting the form, you agree to receive email updates about FNPW&rsquo;s work from time to time.</p>',
+        '        <p style="margin-bottom:1.2rem">Free to read and share. PDF.</p>',
+        '        <a class="btn-p" href="%s" target="_blank" rel="noopener">Download the eBook</a>' % EBOOK_PDF,
         '      </div>',
         '    </div>',
         '    <figure class="eb-cover rv d1"><img src="%s" alt="%s" loading="lazy"></figure>' % (img, H.escape(alt)),
@@ -387,7 +397,7 @@ def newsletter_thanks():
         '  <div class="cw rv" style="max-width:720px;text-align:center">',
         '    <span class="ey" style="justify-content:center">Newsletter</span>',
         '    <h1 style="margin:1rem 0 1.2rem">Thank you for signing up.</h1>',
-        '    <p class="lede" style="margin:0 auto 2rem">Thank You For Signing Up and Supporting Australia Parks and Wildlife.</p>',
+        '    <p class="lede" style="margin:0 auto 2rem">You&rsquo;re now part of a community helping us protect and restore Australia&rsquo;s national parks and wildlife. Look out for stories from the field, project updates and new ways to get involved in your inbox.</p>',
         '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
         '<a class="btn-p" href="articles.html">Read our latest stories</a><a class="btn-o" href="projects.html">See our projects</a></div>',
         '  </div>',
@@ -395,6 +405,23 @@ def newsletter_thanks():
     write_page('newsletter-thank-you.html', 'Thank you for signing up',
                'Thank you for signing up to our newsletter.', body)
     print('%-44s built' % 'newsletter-thank-you.html')
+
+
+# ---------------------------------------------------------------- volunteer enquiry thank-you
+def volunteer_thanks():
+    body = NL.join([
+        '<section class="sec" style="padding:7rem 0 6rem;background:var(--sand)">',
+        '  <div class="cw rv" style="max-width:720px;text-align:center">',
+        '    <span class="ey" style="justify-content:center">Corporate volunteering</span>',
+        '    <h1 style="margin:1rem 0 1.2rem">Thank you for your interest in our corporate volunteering day.</h1>',
+        '    <p class="lede" style="margin:0 auto 2rem">Your request has been submitted. We&rsquo;ll be in touch shortly with more details and next steps.</p>',
+        '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
+        '<a class="btn-p" href="volunteer.html">Back to corporate volunteering</a><a class="btn-o" href="projects.html">See our projects</a></div>',
+        '  </div>',
+        '</section>'])
+    write_page('thank-you-volunteer-form.html', 'Thank you for your volunteering enquiry',
+               'Thank you for your corporate volunteering enquiry. We will be in touch shortly with more details and next steps.', body)
+    print('%-44s built' % 'thank-you-volunteer-form.html')
 
 
 # ---------------------------------------------------------------- FAQ tax group
@@ -576,6 +603,7 @@ if __name__ == '__main__':
     paws()
     ebook()
     newsletter_thanks()
+    volunteer_thanks()
     faq_tax()
     qld_fragment()
     articles()

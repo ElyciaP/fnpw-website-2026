@@ -57,7 +57,7 @@ Each species plays a unique role and their loss impacts ecosystems and human wel
 
 #### Restoring Habitats
 
-Bushfires and floods have ravaged Australian wildlife habitats. FNPW's goal is to plant one million trees in affected areas by 2025, creating wildlife corridors and mitigating climate change's effects.
+Bushfires and floods have ravaged Australian wildlife habitats. Through our Landscape Resilience program we are growing and planting 9 million trees by 2030, creating wildlife corridors and mitigating climate change's effects.
 
 ![](https://fnpw.org.au/wp-content/uploads/2023/08/gondwana-rainforest.png)
 
