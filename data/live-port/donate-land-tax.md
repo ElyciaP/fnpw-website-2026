@@ -54,9 +54,9 @@ If you want to own and control your land during your lifetime, but assure its pr
 
 [H4 tax section as above]
 
-- [Why your gift is needed](https://fnpw.org.au/why-your-support-is-needed/)
-- [How your gift will help](https://fnpw.org.au/how-your-contributions-help/)
-- [Learn about Gifts in Wills (Bequests)](https://fnpw.org.au/bequest/)
+- [Why your gift is needed](why-your-support-is-needed.html)
+- [How your gift will help](how-your-contributions-help.html)
+- [Learn about Gifts in Wills (Bequests)](bequests.html)
 
 ## For More Information Contact FNPW
 

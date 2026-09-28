@@ -72,8 +72,8 @@ Meet dedicated individuals like Valentina Mella, Robert Frend, and Morgan Philpo
 ---
 <!-- FOOTER WIDGET (site-wide, not page content), for reference only -->
 ### GET INVOLVED
-- [Fundraise](https://fnpw.org.au/fundraising-with-fnpw/)
-- [Partner](https://fnpw.org.au/corporate-partners/)
-- [Volunteer](https://fnpw.org.au/corporate-volunteering/)
-- [Apply for grants](https://fnpw.org.au/grants/)
-- [Backyard Buddies](https://fnpw.org.au/project/backyard-buddies/)
+- [Fundraise](fundraising-with-fnpw.html)
+- [Partner](partner.html)
+- [Volunteer](volunteer.html)
+- [Apply for grants](grants.html)
+- [Backyard Buddies](project-backyard-buddies.html)

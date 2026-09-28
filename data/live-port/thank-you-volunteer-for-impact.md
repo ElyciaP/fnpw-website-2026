@@ -20,9 +20,9 @@ Your dedication is making a difference in FNPW's efforts to combat these pressin
 If you want to continue protecting the environment, our journey doesn't have to end here. There are countless ways you can champion our cause:
 
 1. Become a [Habitat Hero](https://habitat-heroes.raiselysite.com/) – Join Habitat Heroes to aid long-term conservation work. Your monthly contribution ensures a steady stream of support for restoring habitats, aiding recovery from natural disasters, and securing a brighter future for Australia's unique biodiversity.
-2. Partner for [Impact](https://fnpw.org.au/corporate-partnerships/) – Have a chat with us about how we can further support your CSR and ESG ambitions.
-3. Subscribe to our [Newsletter](https://fnpw.org.au/newsletters-sign-up/) – Dive deeper into conservation with our monthly newsletters e-PAWS and Backyard Buddies B-Mail. Get the latest news, inspiring stories, and project updates delivered straight to your inbox.
-4. Enroll in [Workplace Giving](https://fnpw.org.au/workplace-giving/) – Amplify your impact by signing up for workplace giving. Connect with your **People and Culture** team to learn more about this way to support our cause.
+2. Partner for [Impact](partner.html) – Have a chat with us about how we can further support your CSR and ESG ambitions.
+3. Subscribe to our [Newsletter](newsletters-sign-up.html) – Dive deeper into conservation with our monthly newsletters e-PAWS and Backyard Buddies B-Mail. Get the latest news, inspiring stories, and project updates delivered straight to your inbox.
+4. Enroll in [Workplace Giving](workplace-giving.html) – Amplify your impact by signing up for workplace giving. Connect with your **People and Culture** team to learn more about this way to support our cause.
 5. Connect with Us – Stay updated, engaged, and share the love for nature with our online community.
    - [LinkedIn](https://www.linkedin.com/company/foundation-for-national-parks-&-wildlife/?originalSubdomain=au)
    - [Instagram](https://www.instagram.com/fnpwaustralia/)

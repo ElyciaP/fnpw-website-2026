@@ -64,4 +64,4 @@ Yes, you can donate land to a charity and claim a tax deduction, but there are s
 
 It's important to seek professional advice before making a donation, to make sure you understand the tax implications and any other legal requirements that may apply.
 
-Find out more about [donating land to FNPW](https://fnpw.org.au/donate-land/).
+Find out more about [donating land to FNPW](donate-land.html).

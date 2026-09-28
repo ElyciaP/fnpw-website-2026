@@ -11,7 +11,7 @@ If you have a project to help conserve Australia's native habitats, wildlife or 
 
 We offer Grants to conservation projects by government agencies, private landholders, community groups, and scientists.
 
-[View our projects](https://fnpw.org.au/projects/)
+[View our projects](projects.html)
 
 ---
 
@@ -22,10 +22,10 @@ We offer Grants to conservation projects by government agencies, private landhol
      https://fnpw.org.au/wp-content/uploads/2020/11/Gimesy_Douglas_Slider_home.jpg
      https://fnpw.org.au/wp-content/uploads/2022/10/website-banners.png (title "Wildlife Heroes", caption "Photo courtesy by Gimesy Douglas") -->
 
-## [Wildlife Heroes Grants](https://fnpw.org.au/grant/wildlife-heroes-grants/)
+## [Wildlife Heroes Grants](project-wildlife-heroes.html)
 
 The Wildlife Heroes project commenced in NSW through the Foundation for National Parks & Wildlife in NSW to support wildlife rescue and rehabilitation volunteers across Australia.
 
-[FIND OUT MORE](https://fnpw.org.au/grant/wildlife-heroes-grants/)
+[FIND OUT MORE](project-wildlife-heroes.html)
 
-[Wildlife Heroes](https://fnpw.org.au/project/wildlife-heroes/)
+[Wildlife Heroes](project-wildlife-heroes.html)

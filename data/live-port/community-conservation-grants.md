@@ -57,7 +57,7 @@ FNPW supports projects across Australia. In the spirit of reconciliation we *ack
 
 FNPW funds projects through Community Conservation Grants each year.
 
-[LEARN MORE](https://fnpw.org.au/grant/community-conservation-grants/)
+[LEARN MORE](project-community-conservation-grants.html)
 
 ![Deal Island Penny Tyson - Australia's National Park- FNPW](https://fnpw.org.au/wp-content/uploads/2021/02/Deal-Island-Penny-Tyson-scaled.jpg)
 <!-- URL inferred from og:image filename; alt from page -->
@@ -81,15 +81,15 @@ FNPW Community Conservation Grants are supported through the generous donations 
 
 | **Project Name** | **Organisation** | **State** |
 | --- | --- | --- |
-| [Restoring Campbell's Wetland Walkway](https://fnpw.org.au/project/restoring-campbells-wetland-walkway/) | Griffith City Council | NSW |
-| [Dalki Garringa Botanic Park](https://fnpw.org.au/project/dalki-garringa-botanic-park/) | Barenji Gadjin Land Council | VIC |
-| [Booningyah Junior Rangers Program](https://fnpw.org.au/project/booningyah-junior-rangers-program/) | Green Heroes | NSW |
-| [Bilby Fire Project](https://fnpw.org.au/project/bilby-fire-project/) | Environs Kimberley | WA |
-| [Mary Valley Rail Trail Habitat Link](https://fnpw.org.au/project/mary-valley-rail-trail-habitat-link/) | Koala Action Group Gympie | QLD |
-| [Recovering Blue Butterflies in Victoria](https://fnpw.org.au/project/recovering-blue-butterflies-in-victoria/) | Threatened Species Conservancy | VIC |
-| [Yarning Online OnCountry: KurruPurra Pila Weaving](https://fnpw.org.au/project/yarning-online-oncountry-kurrupurra-pila-weaving/) | Taragara Aboriginal Corporation | NSW |
-| [Alpine Frogs a Calling](https://fnpw.org.au/project/alpine-frogs-a-calling/) | Museums Victoria | VIC |
-| [Enhancing Biodiversity & Protecting Cultural Heritage at Torrens Island Conservation](https://fnpw.org.au/project/enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation/) | Friends of Torrens Island | SA |
+| [Restoring Campbell's Wetland Walkway](project-restoring-campbells-wetland-walkway.html) | Griffith City Council | NSW |
+| [Dalki Garringa Botanic Park](project-dalki-garringa-botanic-park.html) | Barenji Gadjin Land Council | VIC |
+| [Booningyah Junior Rangers Program](project-booningyah-junior-rangers-program.html) | Green Heroes | NSW |
+| [Bilby Fire Project](project-bilby-fire-project.html) | Environs Kimberley | WA |
+| [Mary Valley Rail Trail Habitat Link](project-mary-valley-rail-trail-habitat-link.html) | Koala Action Group Gympie | QLD |
+| [Recovering Blue Butterflies in Victoria](project-recovering-blue-butterflies-in-victoria.html) | Threatened Species Conservancy | VIC |
+| [Yarning Online OnCountry: KurruPurra Pila Weaving](project-yarning-online-oncountry-kurrupurra-pila-weaving.html) | Taragara Aboriginal Corporation | NSW |
+| [Alpine Frogs a Calling](project-alpine-frogs-a-calling.html) | Museums Victoria | VIC |
+| [Enhancing Biodiversity & Protecting Cultural Heritage at Torrens Island Conservation](project-enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation.html) | Friends of Torrens Island | SA |
 
 ## 2020 Grant Recipients
 
@@ -111,15 +111,15 @@ The following ten projects were allocated funds in the 2019 small grants round:
 
 | **Project Name** | **Conservation Focus** | **Lead Organisation** | **State** |
 | --- | --- | --- | --- |
-| [Protecting the Red-tailed Phascogale in Katanning](https://fnpw.org.au/project/red-tailed-phascogale/) | Threatened species recovery | [Katanning Landcare](https://katanninglandcare.org.au/ "Kattaning Landcare") | WA |
+| [Protecting the Red-tailed Phascogale in Katanning](project-red-tailed-phascogale.html) | Threatened species recovery | [Katanning Landcare](https://katanninglandcare.org.au/ "Kattaning Landcare") | WA |
 | Busy Bees: educating and engaging local kids in native bee protection | Environmental education | [Wagga Wagga Urban Landcare](http://wwul.org.au/ "Wagga Wagga Urban Landcare") | NSW |
 | Roydon Island African Boxthorn Control | Land and water conservation | [Friends of Bass Strait Islands](https://wildcaretas.org.au/branches/friends-of-bass-strait-islands/ "Friends of Bass Strait Islands") | TAS |
 | Upgrading the Fagus Walking Track at Mount Field | Parks for people | [Wildcare Friends of Mount Field](https://wildcaretas.org.au/branches/friends-of-mt-field/ "Wildcare Friends of Mount Field") | TAS |
 | Yesterdays stories: Heritage drive from Wollongong to Bega | Cultural heritage | Yesterday Stories | NSW |
-| [Currie Wharf Bush Restoration](https://fnpw.org.au/project/students-dig-in-for-conservation/) | Cultural heritage | [King Island NRMG](http://www.kingislandnaturalresources.org/ "King Island NRM Group") | TAS |
+| [Currie Wharf Bush Restoration](project-students-dig-in-for-conservation.html) | Cultural heritage | [King Island NRMG](http://www.kingislandnaturalresources.org/ "King Island NRM Group") | TAS |
 | Weed management and restoration of native vegetation on Deal Island | Land and water conservation | [Wildcare Friends of Deal Island](https://wildcaretas.org.au/branches/friends-of-deal-island/ "Wildcare Friends of Deal Isalnd") | TAS |
 | Eco-acoustic monitoring of Leadbeater's Possum and Powerful Owls by citizen scientists | Threatened species recovery | [Victoria National Parks Assoc.](https://vnpa.org.au/ "Victoria National Parks Association") | VIC |
-| [Youth Wildlife Ambassadors](https://fnpw.org.au/project/youth-wildlife-ambassadors/) | Parks for people | [Phillip Island Nature Parks](https://www.penguins.org.au/ "Phillip Island Nature Parks") | VIC |
+| [Youth Wildlife Ambassadors](project-youth-wildlife-ambassadors.html) | Parks for people | [Phillip Island Nature Parks](https://www.penguins.org.au/ "Phillip Island Nature Parks") | VIC |
 | North of the Tully – endangered fauna corridors | Threatened species recovery | [Brettacorp](https://www.brettacorp.org.au/ "BrettaCorp") | QLD |
 
 ## Latest news on this project.
@@ -144,41 +144,41 @@ In 2019 FNPW supported 10 projects across Australia through our Community Conser
 
 ![Red Tailed Phascogale - Australia Parks and Wildlife - FNPW](URL-UNRESOLVED)
 
-## [Red-Tailed Phascogale](https://fnpw.org.au/project/red-tailed-phascogale/)
+## [Red-Tailed Phascogale](project-red-tailed-phascogale.html)
 
 The Red-Tailed Phascogale (Phascogale calura) was once wide-spread across southern Australia, but is now limited to a 'triangle' in south-west WA. Loss of habitat (wandoo / sheoak woodland) and predation by feral and domestic cats have been catastrophic for the species. It is listed as Endangered under the EPBC Act.
 
-[Go To Red-Tailed Phascogale](https://fnpw.org.au/project/red-tailed-phascogale/)
+[Go To Red-Tailed Phascogale](project-red-tailed-phascogale.html)
 
 ![Phillip Island Ambassadors - Conservation Grants Australia - FNPW](URL-UNRESOLVED)
 *Photo courtesy of The Phillip Island Youth Wildlife Ambassador program*
 
-## [Youth Wildlife Ambassadors](https://fnpw.org.au/project/youth-wildlife-ambassadors/)
+## [Youth Wildlife Ambassadors](project-youth-wildlife-ambassadors.html)
 
 The Phillip Island Youth Wildlife Ambassador program is designed to get younger people in the local community involved in helping protect nature and wildlife on the island. Seven ambassadors were selected for this year's program, two more than originally expected. Each prospective ambassador had to apply online and answer a series of questions.
 
-[Go To Youth Wildlife Ambassadors](https://fnpw.org.au/project/youth-wildlife-ambassadors/)
+[Go To Youth Wildlife Ambassadors](project-youth-wildlife-ambassadors.html)
 
 ![King Island Students Field Days - National Parks Australia - FNPW](URL-UNRESOLVED)
 
-## [Students Dig In For Conservation](https://fnpw.org.au/project/students-dig-in-for-conservation/)
+## [Students Dig In For Conservation](project-students-dig-in-for-conservation.html)
 
 Utilising a 2019 FNPW Community Conservation Grant, KINRMG ran 6 Field Days over a two-year period, with about 15 volunteers per Field Day donating 2 hours of labour each time, to remove weeds and maintain native bushland as priority areas present themselves.
 
-[Go To Students Dig In For Conservation](https://fnpw.org.au/project/students-dig-in-for-conservation/)
+[Go To Students Dig In For Conservation](project-students-dig-in-for-conservation.html)
 
 ![](URL-UNRESOLVED)
 
-## [Gift a Tree Australia](https://fnpw.org.au/project/gift-a-tree-for-nature-conservation/)
+## [Gift a Tree Australia](project-gift-a-tree-for-nature-conservation.html)
 
 Imagine giving a gift that doesn't just bring joy for a moment but creates a lasting impact for future generations. Through the Foundation for National Parks & Wildlife (FNPW) Landscape Resilience program, you can gift a tree that helps restore Australia's natural landscapes and supports vital ecosystems.
 
-[Go To Gift a Tree Australia](https://fnpw.org.au/project/gift-a-tree-for-nature-conservation/)
+[Go To Gift a Tree Australia](project-gift-a-tree-for-nature-conservation.html)
 
 ![](URL-UNRESOLVED)
 
-## [Backyard Buddies](https://fnpw.org.au/project/backyard-buddies/)
+## [Backyard Buddies](project-backyard-buddies.html)
 
 Backyard Buddies is a free education initiative run by the Foundation for National Parks & Wildlife. It gives you simple tips to transform your backyard into a safe and inviting habitat haven. You can explore, create and help your own backyard buddies, to help them survive and to thrive into the future.
 
-[Go To Backyard Buddies](https://fnpw.org.au/project/backyard-buddies/)
+[Go To Backyard Buddies](project-backyard-buddies.html)

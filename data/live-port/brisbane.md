@@ -164,7 +164,7 @@ Volunteering with the Foundation for National Parks & Wildlife (FNPW) offers a u
 
 Let us know your preferred dates and team size. Fill in the form below to organise a corporate volunteering day in Brisbane and a member of our team will be in touch shortly. Alternatively, you can give us a call on 1800 898 626.
 
-Explore more of our **[Corporate Volunteering Program](https://fnpw.org.au/corporate-volunteering/)** and opportunities across Australia.
+Explore more of our **[Corporate Volunteering Program](volunteer.html)** and opportunities across Australia.
 
 [Enquiry form embed here: markup not visible to WebFetch, see cv-form.md]
 

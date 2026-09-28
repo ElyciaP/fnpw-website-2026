@@ -13,7 +13,7 @@ In 2020, we decided to align with our values and to be as environmentally consci
 
 We appreciate your ongoing support and hope that our e-newsletter will continue to be a valuable source of information and inspiration for you.
 
-[Please subscribe to our newsletters here](https://fnpw.org.au/newsletters-sign-up/)
+[Please subscribe to our newsletters here](newsletters-sign-up.html)
 
 ---
 

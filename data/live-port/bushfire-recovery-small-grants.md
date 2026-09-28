@@ -113,17 +113,17 @@ The bushfires were devastating and many areas were totally cleared of undergrowt
 ![KNP Recovery - Wildlife Project - FNPW](https://fnpw.org.au/wp-content/uploads/2021/02/crew-planting-Plum-Pine-KNP-recovery.jpg)
 <!-- image URL matched via media library alt text "KNP Recovery - Wildlife Project - FNPW" -->
 
-## [Kosciuszko National Park](https://fnpw.org.au/project/kosciuszko-national-park-2020-fire-recovery/)
+## [Kosciuszko National Park](project-kosciuszko-national-park-2020-fire-recovery.html)
 
 This project focuses on unburnt areas of Kosciuszko National Park after the 2019/2020 bushfires including the planting of Mountain Pygmy-Possum Habitat, installation of bat boxes, bird and bat survey, erosion control measures in vulnerable bog areas, and seed collection.
 
-[Go To Kosciuszko National Park](https://fnpw.org.au/project/kosciuszko-national-park-2020-fire-recovery/)
+[Go To Kosciuszko National Park](project-kosciuszko-national-park-2020-fire-recovery.html)
 
 ![Wildlife Heroes Project](URL-UNRESOLVED)
 *Photo courtesy of Doug Gimesy*
 
-## [Wildlife Heroes](https://fnpw.org.au/project/wildlife-heroes/)
+## [Wildlife Heroes](project-wildlife-heroes.html)
 
 Wildlife Heroes supports volunteers who rescue and rehabilitate wildlife with grants, training and resources. Join the force of kindness and become a Wildlife Hero.
 
-[Go To Wildlife Heroes](https://fnpw.org.au/project/wildlife-heroes/)
+[Go To Wildlife Heroes](project-wildlife-heroes.html)
