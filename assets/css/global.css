@@ -100,6 +100,10 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 @media(max-width:520px){.ftr-g{grid-template-columns:1fr}}
 .ftr h4{color:var(--cream);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2em;font-weight:600;font-family:var(--ff-b)}
 .ftr ul{list-style:none}.ftr li{margin-bottom:.6em}.ftr li a{color:var(--euc-soft);font-size:.94rem;opacity:.85}.ftr li a:hover{color:var(--cream);opacity:1}
+.ftr .ftr-social{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;padding:0}
+.ftr .ftr-social li{margin:0}
+.ftr .ftr-social a{display:inline-block;padding:.42em .95em;border:1px solid rgba(198,235,202,.4);border-radius:999px;font-size:.82rem;opacity:1;color:var(--euc-soft);transition:.2s}
+.ftr .ftr-social a:hover{background:var(--euc-soft);color:var(--euc-deep)}
 .ftr-b{border-top:1px solid rgba(198,235,202,.16);padding-top:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:var(--euc-mid)}
 
 /* ---- UTILITIES ---- */

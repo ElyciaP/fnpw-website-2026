@@ -69,7 +69,7 @@ def main():
         '<a href="articles.html">Articles</a><span style="opacity:.45">/</span>In the news</nav>%s'
         '    <span class="ey">Coverage</span>%s'
         '    <h1>In the news</h1>%s'
-        '    <p class="lede">Where the Foundation for National Parks &amp; Wildlife has been covered '
+        '    <p class="lede">Where we have been covered '
         'in the press, on radio and on television.</p>%s  </div>%s</header>%s%s'
         '<section class="sec">%s  <div class="cw rv">%s    <div class="nw-list">%s%s%s    </div>%s  </div>%s</section>%s%s'
         '<section class="pj-back">%s  <div class="cw rv">%s'

@@ -49,7 +49,7 @@ The [**Foundation for National Parks & Wildlife**](https://fnpw.org.au/) (FNPW) 
 
 #### Growing Parks
 
-National parks are vital for diverse ecosystems. FNPW has invested over $60 million since 2000 to acquire and expand parks, aligning with the **[Global Biodiversity Framework's](https://www.cbd.int/gbf/)** goal of protecting 30% of land and marine areas by 2030.
+National parks are vital for diverse ecosystems. We help acquire and expand national parks, in line with the **[Global Biodiversity Framework's](https://www.cbd.int/gbf/)** goal of protecting 30% of land and marine areas by 2030.
 
 #### Saving Species
 

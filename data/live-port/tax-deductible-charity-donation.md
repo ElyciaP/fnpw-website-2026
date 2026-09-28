@@ -14,7 +14,7 @@ COMPLETE: yes. The full body came back in one fetch with 10 FAQ questions, and t
 
 # FAQs about tax deductible charity donations
 
-Tax deductible charity donations are a fantastic way to give to a cause that is close to your heart. The Foundation for National Parks & Wildlife is a registered charity with the Australian Charities and Not-for-profits Commission (ACNC), which means all donations over $2 to FNPW are tax deductible in Australia.
+Tax deductible charity donations are a fantastic way to give to a cause that is close to your heart. We are a registered charity with the Australian Charities and Not-for-profits Commission (ACNC), which means all donations over $2 to FNPW are tax deductible in Australia.
 
 Below are answers to some frequently asked tax time questions.
 
