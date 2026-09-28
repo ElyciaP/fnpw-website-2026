@@ -68,7 +68,6 @@ woomargama-national-park|2021/02/Ascent-37-Woomargama-2000px-Copy.jpg|parks|NSW
 yarning-online-oncountry-kurrupurra-pila-weaving|2022/03/pexels-kelly-l-3794747-scaled.jpg|healing|SA
 yarrahapinni-wetlands-restoration-stage-1|2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg|healing|NSW
 youth-wildlife-ambassadors|2021/02/Phillip-Island-Ambassadors.jpg|species|VIC
-nectarlovers|2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg|species|NSW
 enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation|2022/02/torrens-Island-bird.jpg|parks|SA
 fnpw-koala-projects|2023/08/koala-fun-facts.png|species|Australia
 nilpena-nationalpark|2021/01/nilpena03.png|parks|SA
