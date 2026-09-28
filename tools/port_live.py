@@ -144,10 +144,10 @@ def crumbs(*items):
             + '<span>/</span>'.join(parts) + '</nav>')
 
 
-def photo_hero(ey, h1, lede, crumb_html, img, alt='', credit=''):
+def photo_hero(ey, h1, lede, crumb_html, img, alt='', credit='', cls='', fig_style=''):
     return NL.join([
-        '<section class="pj-hero">',
-        '  <figure class="pj-hero-im"><img src="%s" alt="%s" fetchpriority="high" decoding="async"></figure>' % (img, H.escape(alt)),
+        '<section class="pj-hero%s">' % ((' ' + cls) if cls else ''),
+        '  <figure class="pj-hero-im"%s><img src="%s" alt="%s" fetchpriority="high" decoding="async"></figure>' % ((' style="%s"' % fig_style) if fig_style else '', img, H.escape(alt)),
         '  <div class="cw rv">',
         '    ' + crumb_html,
         '    <span class="ey">%s</span>' % ey,
@@ -327,7 +327,8 @@ def paws():
     body = NL.join([
         photo_hero('Newsletter archive', 'PAWS Magazine.', H.escape(sub.group(1)) if sub else '',
                    crumbs(('News', 'articles.html'), ('PAWS Magazine', '')),
-                   U + '2021/01/Spring-PAWS-Magazine-2020.png'),
+                   'assets/img/contact-hero-swift-parrot.jpg', 'A critically endangered swift parrot perched on a weathered branch',
+                   cls='pj-hero-split', fig_style='left:40%'),
         '',
         '<section class="sec">',
         '  <div class="cw">',
