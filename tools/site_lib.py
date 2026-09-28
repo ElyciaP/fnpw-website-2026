@@ -53,7 +53,7 @@ HERO_IMGS = {
     'Donate Land': (U_+'2021/02/heritage-Estates-05-lg.jpg', 'Protected bushland at Heritage Estates'),
     'How Your Contributions Help': (U_+'2021/02/KNP-recovery-1-scaled.jpg', 'Bushfire recovery in Kosciuszko National Park'),
     'Why Your Support Is Needed': (U_+'2022/02/Orange-belliedParrot_DPIPWE-scaled.jpg', 'Critically endangered orange-bellied parrot'),
-    'Corporate Governance': (U_+'2021/02/Mount-Field-NP-East-Planking-PAWS.jpg', 'Boardwalk in Mount Field National Park'),
+    'Corporate Governance': ('assets/img/governance-hero-gorge.jpg', 'Forested gorge winding through rugged, tree-covered hills under a clear blue sky'),
     'Reconciliation Action Plan': (U_+'2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg', 'Warddeken rangers on Country, photo Donal Sullivan'),
     'FAQs': (U_+'2021/01/Black-chinned-honeyeater-PETER-SAWYER-CYMK.jpg', 'Black-chinned honeyeater'),
     'Media Enquiries': (U_+'2021/02/Caught-on-Camera-Superb-Lyrebird.jpg', 'Superb lyrebird caught on camera'),
