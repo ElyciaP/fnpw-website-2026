@@ -29,3 +29,4 @@ assets/img/pillar-healing-COMP.jpg|Native seedlings in a nursery ready for plant
 assets/img/newsletter-hero-forest.jpg|Looking straight down from above into sunlit eucalypt forest and tree ferns, with a dirt track along one edge
 assets/img/about-hero-koala.jpg|A koala asleep in the fork of a smooth-barked gum tree, curled against the trunk with soft green bush behind
 assets/img/species-rock-wallaby.jpg|A brush-tailed rock-wallaby on a boulder, looking straight at the camera with a grass stem in its mouth
+assets/img/give-a-tree-koala.jpg|A young koala climbing a eucalypt branch among fresh green gum leaves, looking at the camera
