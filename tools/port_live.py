@@ -144,7 +144,7 @@ def crumbs(*items):
             + '<span>/</span>'.join(parts) + '</nav>')
 
 
-def photo_hero(ey, h1, lede, crumb_html, img, alt=''):
+def photo_hero(ey, h1, lede, crumb_html, img, alt='', credit=''):
     return NL.join([
         '<section class="pj-hero">',
         '  <figure class="pj-hero-im"><img src="%s" alt="%s" fetchpriority="high" decoding="async"></figure>' % (img, H.escape(alt)),
@@ -154,6 +154,7 @@ def photo_hero(ey, h1, lede, crumb_html, img, alt=''):
         '    <h1>%s</h1>' % h1,
         ('    <p class="lede">%s</p>' % lede) if lede else '',
         '  </div>',
+        ('  <p class="pj-hero-cr">Photo: %s</p>' % credit) if credit else '',
         '</section>'])
 
 
@@ -369,7 +370,9 @@ def ebook():
         photo_hero('Free eBook', 'Mitigating the effects of environmental change on Australia&rsquo;s fragile ecosystem.',
                    H.escape(sub.group(1)) if sub else '',
                    crumbs(('News', 'articles.html'), ('eBook', '')),
-                   U + '2021/02/Alpine-Ash-forest-regrowth-KNP.jpg'),
+                   'assets/img/newsletter-hero-forest.jpg',
+                   'Looking straight down from above into sunlit eucalypt forest and tree ferns, with a dirt track along one edge',
+                   'tsvibrav'),
         '',
         '<section class="sec">',
         '  <div class="cw eb-g">',
