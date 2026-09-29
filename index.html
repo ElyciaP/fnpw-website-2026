@@ -213,6 +213,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   .hx-tick{animation:none}
   .hx-pil,.hx-pil img,.hx-pcard .im img{transition:none}
 }
+
+/* PARTNER + GET INVOLVED ========================================= */
+.gi{background:var(--sand);padding:6.5rem 0}
+.gi h2{font-family:var(--ff-d);color:var(--euc-deep);font-size:clamp(1.9rem,3.2vw,2.8rem);line-height:1.08;letter-spacing:-.02em;margin:.9rem 0 1rem}
+.gi .lede{color:var(--ink);max-width:56ch;font-size:1.05rem;line-height:1.65}
+.gi-g{display:grid;grid-template-columns:1.05fr 1fr;gap:4.5rem;align-items:center}
+.gi-im{aspect-ratio:1/1;overflow:hidden}
+.gi-im img{width:100%;height:100%;object-fit:cover;display:block}
+.gi .btn-p{margin-top:.6rem;display:inline-block;padding:1.05em 2em;font-family:var(--ff-d);font-weight:700;text-decoration:none;background:var(--euc-deep);color:var(--cream);min-width:0}
+.gi-more{margin-top:2.8rem;border-top:1px solid rgba(15,49,50,.18)}
+.gi-more h3{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bark-text);margin:1.4rem 0 .4rem;font-family:var(--ff-b)}
+.gi-row{display:grid;grid-template-columns:34px 1fr auto;gap:1rem;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(15,49,50,.12);text-decoration:none;color:inherit;transition:padding .2s}
+.gi-row:hover{padding-left:.4rem}.gi-row:hover .gi-t{color:var(--euc)}
+.gi-row img{width:30px;height:30px}
+.gi-t{font-family:var(--ff-d);font-weight:700;color:var(--euc-deep);font-size:1.02rem}
+.gi-d{display:block;font-size:.88rem;color:#5c4d45;margin-top:.15rem;font-weight:400;font-family:var(--ff-b)}
+.gi-row>span:last-child{color:var(--euc);font-size:1.2rem}
+.gi-all{display:inline-flex;gap:.6rem;align-items:center;margin-top:1.6rem;font-family:var(--ff-d);font-weight:700;color:var(--euc-deep);text-decoration:none;border-bottom:2px solid var(--euc);padding-bottom:.2rem}
+@media(max-width:900px){.gi{padding:4.5rem 0}.gi-g{grid-template-columns:1fr;gap:2.4rem}.gi-im{aspect-ratio:16/10}.gi-im img{object-position:50% 22%}}
 </style>
 </head>
 <body>
@@ -463,6 +482,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 </section>
 
 
+
+<!-- PARTNER + GET INVOLVED ========================================= -->
+<section class="gi">
+  <div class="cw">
+    <div class="gi-g">
+      <div class="gi-im rv"><img src="assets/img/home-partner-loccitane.jpg" alt="L&rsquo;Occitane team members in matching caps smiling beside trays of native seedlings in a nursery" width="1200" height="1200" loading="lazy"></div>
+      <div class="rv d1">
+        <span class="ey">Partner with us</span>
+        <h2>Invest in Australia&rsquo;s wild places with us.</h2>
+        <p class="lede">We partner with Australian businesses, foundations and philanthropic groups to deliver measurable conservation outcomes, and we design every partnership around what you want to achieve.</p>
+        <a class="btn-p" href="partner.html">Talk to us about partnering</a>
+        <div class="gi-more">
+          <h3>More ways to get involved</h3>
+          <a class="gi-row" href="volunteer.html"><img src="assets/icons/fnpw-icon-people-dark-soil-rgb.svg" alt="" aria-hidden="true"><span><span class="gi-t">Corporate volunteering</span><span class="gi-d">Bring your team out for a planting or restoration day.</span></span><span aria-hidden="true">&rarr;</span></a>
+          <a class="gi-row" href="donate-land.html"><img src="assets/icons/fnpw-icon-landscape-dark-soil-rgb.svg" alt="" aria-hidden="true"><span><span class="gi-t">Donate land</span><span class="gi-d">Land with conservation value can become part of the protected estate, safe forever.</span></span><span aria-hidden="true">&rarr;</span></a>
+          <a class="gi-row" href="bequests.html"><img src="assets/icons/fnpw-icon-hand-document-dark-soil-rgb.svg" alt="" aria-hidden="true"><span><span class="gi-t">Leave a gift in your Will</span><span class="gi-d">Protect what you love about this country beyond your lifetime.</span></span><span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <a class="gi-all" href="ways-you-can-get-involved.html">See every way to get involved <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- STORY =========================================================== -->
 <section class="hx-story">
