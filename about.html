@@ -142,11 +142,10 @@
 @media(max-width:880px){.two.rap-row{grid-template-columns:1fr;gap:2.5rem}}
 .rap-art img{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;box-shadow:12px 12px 0 var(--bark-mid)}
 .rap-cred{font-size:.82rem;color:var(--stone);margin:1.5rem auto 0;max-width:400px}
-.framed.ab-has-seal{position:relative}
-.ab-seal{position:absolute;right:-6px;top:-160px;width:150px;z-index:3;pointer-events:none}
-.framed .ab-seal img{width:100%;height:auto;border-radius:0}
-@media(max-width:900px){.ab-seal{right:4px;top:-104px;width:104px}.ab-has-seal{margin-top:104px}}
 @media(max-width:820px){.ab-split.ab-split-big{grid-template-columns:1fr;gap:2.6rem}}
+.ab-hero-seal{position:absolute;left:63%;top:24%;width:clamp(96px,9vw,138px);transform:translate(-50%,-50%);z-index:3;pointer-events:none;opacity:.95}
+.ab-hero-seal img{width:100%;height:auto;display:block}
+@media(max-width:780px){.ab-hero h1 br{display:none}.ab-hero-seal{left:auto;right:18px;top:22px;transform:none;width:84px}}
 </style>
 </head>
 <body>
@@ -195,6 +194,7 @@
 </header><!-- /@header -->
 <main>
 <section class="ab-hero">
+  <span class="ab-hero-seal"><img src="assets/img/55-badge.png" alt="55 years of conservation" width="450" height="429"></span>
   <div class="ab-hero-bg"><img src="assets/img/about-hero-koala.jpg" alt="A koala asleep in the fork of a smooth-barked gum tree, curled against the trunk with soft green bush behind" width="2560" height="1638" decoding="async"></div>
   <div class="cw rv">
     <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span>About</nav>
@@ -234,7 +234,7 @@
           <div><strong>55</strong><span>years of doing it</span></div>
         </div>
       </div>
-      <div class="rv d2 framed bm ab-has-seal"><img src="assets/img/about-partners-planting.jpg" alt="A group of community volunteers, rural fire service members, park rangers, council staff and partners gathered around a newly planted seedling in bushland" width="1500" height="950" loading="lazy"><span class="ab-seal"><img src="assets/img/55-badge-euc.png" alt="55 years of conservation" width="600" height="572" loading="lazy"></span></div>
+      <div class="rv d2 framed bm"><img src="assets/img/about-partners-planting.jpg" alt="A group of community volunteers, rural fire service members, park rangers, council staff and partners gathered around a newly planted seedling in bushland" width="1500" height="950" loading="lazy"></div>
     </div>
   </div>
 </section>
