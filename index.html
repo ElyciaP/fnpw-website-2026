@@ -247,15 +247,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .fl-go{font-size:.82rem;font-weight:600;color:var(--euc)}
 @media(prefers-reduced-motion:reduce){.fl-im img{transition:none}}
 
-/* hero: proposition first */
-.hx-kick{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-b);font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc-soft);margin-bottom:1.1rem}
-.hx-kick::before{content:"";width:24px;height:1.5px;background:currentColor}
-.hx-h1.hx-h1-what{font-size:clamp(2.2rem,4.6vw,4rem);max-width:17ch;line-height:1.05}
-.hx-hstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;max-width:700px;margin-top:3rem;padding-top:1.6rem;border-top:1px solid rgba(250,246,242,.28)}
-.hx-hs b{display:block;font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,2.8vw,2.4rem);letter-spacing:-.03em;color:var(--cream);line-height:1}
-.hx-hs-l{display:block;margin-top:.5rem;font-size:.86rem;line-height:1.45;color:rgba(250,246,242,.82);max-width:24ch}
-@media(max-width:760px){.hx-hstats{grid-template-columns:1fr;gap:1.1rem;margin-top:2.2rem}.hx-hs{display:flex;align-items:baseline;gap:.9rem}.hx-hs-l{margin-top:0}}
-/* how we work: our role */
+/* flagship slider */
+.fls-wrap{position:relative}
+.fls-track{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:.3rem .1rem 1rem;scrollbar-width:none}
+.fls-track::-webkit-scrollbar{display:none}
+.fls-track .fl-card{flex:0 0 calc((100% - 3*1.2rem)/4);scroll-snap-align:start}
+@media(max-width:1100px){.fls-track .fl-card{flex-basis:calc((100% - 2*1.2rem)/3)}}
+@media(max-width:820px){.fls-track .fl-card{flex-basis:calc((100% - 1.2rem)/2)}}
+@media(max-width:520px){.fls-track .fl-card{flex-basis:82%}}
+.fls-bar{display:flex;align-items:center;gap:1.2rem;margin-top:1rem}
+.fls-prog{flex:1;height:3px;background:var(--rule);position:relative;overflow:hidden}
+.fls-prog i{position:absolute;left:0;top:0;bottom:0;background:var(--euc-deep);width:33%;transition:left .3s ease,width .3s ease}
+.fls-count{font-family:var(--ff-d);font-size:.86rem;font-weight:600;color:var(--euc-deep);min-width:5.5ch;text-align:right}
+.fls-btn{width:48px;height:48px;border:1.5px solid var(--euc-deep);background:transparent;color:var(--euc-deep);font-size:1.15rem;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.fls-btn:hover{background:var(--euc-deep);color:var(--cream)}
+.fls-btn[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--euc-deep)}
+
 .hx-pils-head .hx-h2{max-width:22ch}
 .hx-role-lede{font-size:1.05rem;line-height:1.7;color:var(--char);max-width:62ch;margin-top:1rem}
 .hx-role{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:0 0 3.4rem}
@@ -267,15 +274,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .hx-role-sub{display:inline-flex;align-items:center;gap:.6em;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc);margin-bottom:1.4rem}
 .hx-role-sub::before{content:"";width:24px;height:1.5px;background:currentColor}
 @media(max-width:820px){.hx-role{grid-template-columns:1fr;gap:1.4rem}}
-/* give a tree: where your tree goes */
-.hx-tree-path{list-style:none;padding:0;margin:1.3rem 0 1.4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;counter-reset:tp}
-.hx-tree-path li{position:relative;background:var(--white);padding:.8rem .8rem .85rem;font-size:.8rem;line-height:1.35;color:var(--char)}
-.hx-tree-path li b{display:block;font-family:var(--ff-d);font-size:.9rem;color:var(--euc-deep);margin-bottom:.2rem}
-.hx-tree-path li:not(:last-child)::after{content:"";position:absolute;right:-.42rem;top:50%;width:.6rem;height:.6rem;background:var(--white);transform:translateY(-50%) rotate(45deg);z-index:1}
-@media(max-width:560px){.hx-tree-path{grid-template-columns:1fr 1fr}.hx-tree-path li::after{display:none}}
-/* flagship rail */
 .hx-rail-lede{font-size:1rem;line-height:1.6;color:var(--char);max-width:52ch;margin-top:.8rem}
-.hx-pcard.fl-card{flex:0 0 min(290px,78vw)}
 </style>
 </head>
 <body>
@@ -330,17 +329,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <img src="assets/img/hero-beeeaters.jpg" alt="Two rainbow bee-eaters on a branch">
   </div>
   <div class="cw rv">
-    <span class="hx-kick">Keeping Australia wild since 1970</span>
-    <h1 class="hx-h1 hx-h1-what">We grow national parks, save threatened species and heal <span class="wild">damaged Country</span>.</h1>
-    <p class="hx-lede">Across Australia, we find and fund the conservation work that matters most, with the rangers, scientists, Traditional Custodians and communities who carry it out.</p>
+    <h1 class="hx-h1">Keeping Australia <span class="wild">wild</span> since 1970</h1>
+    <p class="hx-lede">With over 55 years of experience, we work to protect endangered species, restore vital ecosystems, and ensure the long-term health of Country.</p>
     <div class="hx-hero-cta">
       <a class="hx-btn hx-btn-don" href="https://bush.fnpw.org.au">Donate</a>
       <a class="hx-btn hx-btn-ghost" href="projects.html">Explore our projects</a>
-    </div>
-    <div class="hx-hstats">
-      <div class="hx-hs"><b><span data-count="600000" data-suf="+">0</span></b><span class="hx-hs-l">hectares protected for national parks and reserves</span></div>
-      <div class="hx-hs"><b><span data-count="50">0</span></b><span class="hx-hs-l">national parks and reserves created or expanded</span></div>
-      <div class="hx-hs"><b><span data-count="1.2" data-dec="1" data-suf="M">0</span></b><span class="hx-hs-l">trees, shrubs and seedlings planted in priority landscapes</span></div>
     </div>
   </div>
   <div class="hx-hero-curve" aria-hidden="true">
@@ -378,12 +371,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       <div class="hx-tree-bd">
         <h2>Give a Tree this Christmas.</h2>
         <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
-        <ol class="hx-tree-path" aria-label="Where your tree goes">
-          <li><b>Seed</b>collected from local plants</li>
-          <li><b>Nursery</b>grown by a community nursery</li>
-          <li><b>Planting</b>back into degraded land</li>
-          <li><b>Care</b>watered, weeded and monitored</li>
-        </ol>
         <ul class="hx-tree-pts">
           <li>Comes with a personalised digital certificate, in Thank You, In Honour Of or In Memory Of</li>
           <li>Add your own dedication for a friend, a loved one, a colleague or someone you have lost</li>
@@ -447,9 +434,27 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 <section class="hx-impact">
   <div class="cw">
     <span class="ey rv">The Impact</span>
-    <h2 class="hx-imp-h rv">What your support did this year.</h2>
+    <h2 class="hx-imp-h rv">What your support looks like on the ground.</h2>
+    <div class="hx-imp-lead rv">
+      <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-terrain-light-soil-rgb.svg" alt="" aria-hidden="true"></span>
+        <div class="hx-imp-ln"><span data-count="600000" data-suf="+">0</span><span class="hx-imp-u">hectares</span></div>
+        <p>protected for national parks and reserves</p>
+      </div>
+      <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-landscape-light-bark-rgb.svg" alt="" aria-hidden="true"></span>
+        <div class="hx-imp-ln"><span data-count="50">0</span></div>
+        <p>national parks and reserves created or expanded</p>
+      </div>
+      <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-plants-growing-light-soil-rgb.svg" alt="" aria-hidden="true"></span>
+        <div class="hx-imp-ln"><span data-count="1.2" data-dec="1" data-suf="M">0</span></div>
+        <p>trees, shrubs and seedlings planted in key priority landscapes</p>
+      </div>
+    </div>
     <div class="hx-imp-year rv">
-            <div class="hx-imp-g">
+      <span class="hx-imp-year-l">This year</span>
+      <div class="hx-imp-g">
         <div class="hx-imp-i"><span class="hx-chip pb-parks">Growing National Parks</span>
           <div class="hx-imp-n"><span data-count="29479">0</span><span class="hx-imp-u">ha</span></div>
           <p>added to National Park status</p></div>
@@ -477,21 +482,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
         <h2 class="hx-h2">Twelve projects that show what we do.</h2>
         <p class="hx-rail-lede">From new national parks to threatened species recovery and community-grown habitat, across every pillar of our work.</p>
       </div>
-      <div class="hx-rail-nav"><a class="btn-o" href="projects.html">All 84 projects</a><button class="hx-rarr" data-dir="-1" aria-label="Scroll projects back">&#8592;</button><button class="hx-rarr" data-dir="1" aria-label="Scroll projects forward">&#8594;</button></div>
+      <div class="hx-rail-nav"><a class="btn-o" href="projects.html">All 84 projects</a></div>
     </div>
-    <div class="hx-rail rv d1" tabindex="0" aria-label="Flagship projects, scroll horizontally">
-      <a class="hx-pcard fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Murray Mouth, SA</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>1,900 hectares bought and added to Coorong National Park in 2026.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>500 volunteers trained and equipped to treat wombats for mange.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">NSW, VIC, QLD, SA, ACT</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>One million trees grown and planted through 30+ community nurseries.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-nilpena-nationalpark.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03-1024x1024.png" alt="The Ediacaran fossil beds at Nilpena, Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Flinders Ranges, SA</span></div><div class="fl-bd"><h3>Nilpena National Park</h3><p>60,000 hectares proclaimed national park, home to the richest record of early complex life on Earth.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-1-million-turtles.html"><div class="fl-im"><img src="assets/img/projects/turtles-hero-hatchling.jpg" alt="A hatchling eastern long-necked turtle cradled in a pair of hands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Murray-Darling Basin</span></div><div class="fl-bd"><h3>1 Million Turtles</h3><p>Citizen science for freshwater turtles, awarded the 2023 Eureka Prize.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-fire-wise.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/07/54120522443_dfa0581f77_o-scaled.jpg" alt="Bushland in the Fire Wise project area" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">VIC, SA, NSW</span></div><div class="fl-bd"><h3>Fire Wise</h3><p>12 community nurseries growing native plants that help landscapes withstand fire.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-remarkable-southern-flinders.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="The Southern Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Southern Flinders, SA</span></div><div class="fl-bd"><h3>Remarkable Southern Flinders</h3><p>Connecting 30,000 hectares of reserves into one park, on Nukunu Country.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-warddeken-mayh.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers in sandstone shrublands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Arnhem Land, NT</span></div><div class="fl-bd"><h3>Warddeken Mayh Recovery</h3><p>Indigenous-led recovery of threatened mammals across 1.4 million hectares.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-cultivating-koala-habitat.html"><div class="fl-im"><img src="assets/img/projects/koala-wollondilly-hero.jpg" alt="Two koalas resting against a fire-blackened trunk surrounded by green regrowth" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Wollondilly, NSW</span></div><div class="fl-bd"><h3>Cultivating Koala Habitat</h3><p>2,000 local plants in the ground, with 95 per cent still alive.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-heritage-estates.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="Tall eucalypts in open forest at Heritage Estates" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Jervis Bay, NSW</span></div><div class="fl-bd"><h3>Heritage Estates</h3><p>More than 530 properties acquired to grow Jervis Bay National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-nectar-sippers.html"><div class="fl-im"><img src="assets/img/projects/nectar-hero-paddock-tree.jpg" alt="An old paddock tree inside new stock-proof fencing, with young plantings in tree guards" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Southern inland NSW</span></div><div class="fl-bd"><h3>Nectar Sippers</h3><p>130 hectares of woodland protected for nectar-feeding birds.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="hx-pcard fl-card" href="project-tangaroa-blue.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="A dugong swimming over seagrass" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Australia-wide</span></div><div class="fl-bd"><h3>Tangaroa Blue</h3><p>Eleven million beach clean-up records, turned into plans that stop rubbish at the source.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+    <div class="rv d1">
+    <div class="fls-wrap" data-fls>
+      <div class="fls-track" tabindex="0" aria-label="Flagship projects">
+        <a class="fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Murray Mouth, SA</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>1,900 hectares bought and added to Coorong National Park in 2026.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>500 volunteers trained and equipped to treat wombats for mange.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">NSW, VIC, QLD, SA, ACT</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>One million trees grown and planted through 30+ community nurseries.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-nilpena-nationalpark.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03-1024x1024.png" alt="The Ediacaran fossil beds at Nilpena, Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Flinders Ranges, SA</span></div><div class="fl-bd"><h3>Nilpena National Park</h3><p>60,000 hectares proclaimed national park, home to the richest record of early complex life on Earth.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-1-million-turtles.html"><div class="fl-im"><img src="assets/img/projects/turtles-hero-hatchling.jpg" alt="A hatchling eastern long-necked turtle cradled in a pair of hands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Murray-Darling Basin</span></div><div class="fl-bd"><h3>1 Million Turtles</h3><p>Citizen science for freshwater turtles, awarded the 2023 Eureka Prize.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-fire-wise.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/07/54120522443_dfa0581f77_o-scaled.jpg" alt="Bushland in the Fire Wise project area" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">VIC, SA, NSW</span></div><div class="fl-bd"><h3>Fire Wise</h3><p>12 community nurseries growing native plants that help landscapes withstand fire.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-remarkable-southern-flinders.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="The Southern Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Southern Flinders, SA</span></div><div class="fl-bd"><h3>Remarkable Southern Flinders</h3><p>Connecting 30,000 hectares of reserves into one park, on Nukunu Country.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-warddeken-mayh.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers in sandstone shrublands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Arnhem Land, NT</span></div><div class="fl-bd"><h3>Warddeken Mayh Recovery</h3><p>Indigenous-led recovery of threatened mammals across 1.4 million hectares.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-cultivating-koala-habitat.html"><div class="fl-im"><img src="assets/img/projects/koala-wollondilly-hero.jpg" alt="Two koalas resting against a fire-blackened trunk surrounded by green regrowth" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Wollondilly, NSW</span></div><div class="fl-bd"><h3>Cultivating Koala Habitat</h3><p>2,000 local plants in the ground, with 95 per cent still alive.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-heritage-estates.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="Tall eucalypts in open forest at Heritage Estates" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Jervis Bay, NSW</span></div><div class="fl-bd"><h3>Heritage Estates</h3><p>More than 530 properties acquired to grow Jervis Bay National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-nectar-sippers.html"><div class="fl-im"><img src="assets/img/projects/nectar-hero-paddock-tree.jpg" alt="An old paddock tree inside new stock-proof fencing, with young plantings in tree guards" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Southern inland NSW</span></div><div class="fl-bd"><h3>Nectar Sippers</h3><p>130 hectares of woodland protected for nectar-feeding birds.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-tangaroa-blue.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="A dugong swimming over seagrass" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Australia-wide</span></div><div class="fl-bd"><h3>Tangaroa Blue</h3><p>Eleven million beach clean-up records, turned into plans that stop rubbish at the source.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+      </div>
+      <div class="fls-bar"><button class="fls-btn" data-fls-dir="-1" aria-label="Previous projects">&#8592;</button><button class="fls-btn" data-fls-dir="1" aria-label="Next projects">&#8594;</button><div class="fls-prog"><i></i></div><span class="fls-count">1&ndash;4 of 12</span></div>
+    </div>
     </div>
   </div>
 </section>
@@ -624,10 +634,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 <script>
-document.querySelectorAll('.hx-rarr').forEach(function(b){b.addEventListener('click',function(){
-  var r=document.querySelector('.hx-rail');var c=r.querySelector('.hx-pcard');
-  r.scrollBy({left:parseInt(b.dataset.dir,10)*(c.offsetWidth+22),behavior:'smooth'});
-});});
+document.querySelectorAll('[data-fls]').forEach(function(w){
+  var t=w.querySelector('.fls-track'),cards=t.querySelectorAll('.fl-card'),pv=w.querySelector('[data-fls-dir="-1"]'),nx=w.querySelector('[data-fls-dir="1"]'),bar=w.querySelector('.fls-prog i'),ct=w.querySelector('.fls-count');
+  function step(){var c=cards[0];return c.offsetWidth+parseFloat(getComputedStyle(t).columnGap||20);}
+  function upd(){var max=t.scrollWidth-t.clientWidth,vis=Math.max(1,Math.round(t.clientWidth/step())),first=Math.round(t.scrollLeft/step())+1,last=Math.min(cards.length,first+vis-1);
+    if(ct)ct.textContent=(first===last?first:first+'\u2013'+last)+' of '+cards.length;
+    if(bar){bar.style.width=(vis/cards.length*100)+'%';bar.style.left=(max>0?(t.scrollLeft/max)*(100-vis/cards.length*100):0)+'%';}
+    if(pv)pv.disabled=t.scrollLeft<=2; if(nx)nx.disabled=t.scrollLeft>=max-2;}
+  w.querySelectorAll('[data-fls-dir]').forEach(function(b){b.addEventListener('click',function(){var vis=Math.max(1,Math.round(t.clientWidth/step()));t.scrollBy({left:parseInt(b.dataset.flsDir,10)*step()*vis,behavior:'smooth'});});});
+  t.addEventListener('scroll',function(){window.requestAnimationFrame(upd);});window.addEventListener('resize',upd);upd();
+});
 </script>
 </body>
 </html>

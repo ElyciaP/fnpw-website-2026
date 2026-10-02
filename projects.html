@@ -140,15 +140,27 @@
 .fl-go{font-size:.82rem;font-weight:600;color:var(--euc)}
 @media(prefers-reduced-motion:reduce){.fl-im img{transition:none}}
 
-.fl-sec{background:var(--cream);padding:clamp(3.5rem,6vw,5rem) 0 clamp(3rem,5vw,4rem)}
-.fl-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:2.2rem}
+/* flagship slider */
+.fls-wrap{position:relative}
+.fls-track{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:.3rem .1rem 1rem;scrollbar-width:none}
+.fls-track::-webkit-scrollbar{display:none}
+.fls-track .fl-card{flex:0 0 calc((100% - 3*1.2rem)/4);scroll-snap-align:start}
+@media(max-width:1100px){.fls-track .fl-card{flex-basis:calc((100% - 2*1.2rem)/3)}}
+@media(max-width:820px){.fls-track .fl-card{flex-basis:calc((100% - 1.2rem)/2)}}
+@media(max-width:520px){.fls-track .fl-card{flex-basis:82%}}
+.fls-bar{display:flex;align-items:center;gap:1.2rem;margin-top:1rem}
+.fls-prog{flex:1;height:3px;background:var(--rule);position:relative;overflow:hidden}
+.fls-prog i{position:absolute;left:0;top:0;bottom:0;background:var(--euc-deep);width:33%;transition:left .3s ease,width .3s ease}
+.fls-count{font-family:var(--ff-d);font-size:.86rem;font-weight:600;color:var(--euc-deep);min-width:5.5ch;text-align:right}
+.fls-btn{width:48px;height:48px;border:1.5px solid var(--euc-deep);background:transparent;color:var(--euc-deep);font-size:1.15rem;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.fls-btn:hover{background:var(--euc-deep);color:var(--cream)}
+.fls-btn[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--euc-deep)}
+
+.fl-sec{background:var(--cream);padding:clamp(3.5rem,6vw,5rem) 0 clamp(2.5rem,4vw,3.5rem)}
+.fl-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:2rem}
 .fl-head h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.025em;color:var(--euc-deep);margin-top:.9rem}
 .fl-head p{font-size:1.02rem;line-height:1.7;color:var(--char);max-width:52ch}
-.fl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.fl-more{margin-top:2rem}
-@media(max-width:1100px){.fl-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:820px){.fl-head{grid-template-columns:1fr;gap:1rem}.fl-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.fl-grid{grid-template-columns:1fr}}
+@media(max-width:820px){.fl-head{grid-template-columns:1fr;gap:1rem}}
 </style>
 </head>
 <body>
@@ -215,21 +227,25 @@
       <div><span class="ey">Start here</span><h2>Flagship projects.</h2></div>
       <p>Twelve projects that show the scale and range of our work across all three pillars. Every project we support is in the full list and on the map below.</p>
     </div>
-    <div class="fl-grid rv">
-      <a class="fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Murray Mouth, SA</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>1,900 hectares bought and added to Coorong National Park in 2026.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>500 volunteers trained and equipped to treat wombats for mange.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">NSW, VIC, QLD, SA, ACT</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>One million trees grown and planted through 30+ community nurseries.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-nilpena-nationalpark.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03-1024x1024.png" alt="The Ediacaran fossil beds at Nilpena, Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Flinders Ranges, SA</span></div><div class="fl-bd"><h3>Nilpena National Park</h3><p>60,000 hectares proclaimed national park, home to the richest record of early complex life on Earth.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-1-million-turtles.html"><div class="fl-im"><img src="assets/img/projects/turtles-hero-hatchling.jpg" alt="A hatchling eastern long-necked turtle cradled in a pair of hands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Murray-Darling Basin</span></div><div class="fl-bd"><h3>1 Million Turtles</h3><p>Citizen science for freshwater turtles, awarded the 2023 Eureka Prize.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-fire-wise.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/07/54120522443_dfa0581f77_o-scaled.jpg" alt="Bushland in the Fire Wise project area" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">VIC, SA, NSW</span></div><div class="fl-bd"><h3>Fire Wise</h3><p>12 community nurseries growing native plants that help landscapes withstand fire.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-remarkable-southern-flinders.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="The Southern Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Southern Flinders, SA</span></div><div class="fl-bd"><h3>Remarkable Southern Flinders</h3><p>Connecting 30,000 hectares of reserves into one park, on Nukunu Country.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-warddeken-mayh.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers in sandstone shrublands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Arnhem Land, NT</span></div><div class="fl-bd"><h3>Warddeken Mayh Recovery</h3><p>Indigenous-led recovery of threatened mammals across 1.4 million hectares.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-cultivating-koala-habitat.html"><div class="fl-im"><img src="assets/img/projects/koala-wollondilly-hero.jpg" alt="Two koalas resting against a fire-blackened trunk surrounded by green regrowth" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Wollondilly, NSW</span></div><div class="fl-bd"><h3>Cultivating Koala Habitat</h3><p>2,000 local plants in the ground, with 95 per cent still alive.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-heritage-estates.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="Tall eucalypts in open forest at Heritage Estates" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Jervis Bay, NSW</span></div><div class="fl-bd"><h3>Heritage Estates</h3><p>More than 530 properties acquired to grow Jervis Bay National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-nectar-sippers.html"><div class="fl-im"><img src="assets/img/projects/nectar-hero-paddock-tree.jpg" alt="An old paddock tree inside new stock-proof fencing, with young plantings in tree guards" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Southern inland NSW</span></div><div class="fl-bd"><h3>Nectar Sippers</h3><p>130 hectares of woodland protected for nectar-feeding birds.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-      <a class="fl-card" href="project-tangaroa-blue.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="A dugong swimming over seagrass" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Australia-wide</span></div><div class="fl-bd"><h3>Tangaroa Blue</h3><p>Eleven million beach clean-up records, turned into plans that stop rubbish at the source.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+    <div class="rv">
+    <div class="fls-wrap" data-fls>
+      <div class="fls-track" tabindex="0" aria-label="Flagship projects">
+        <a class="fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Murray Mouth, SA</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>1,900 hectares bought and added to Coorong National Park in 2026.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>500 volunteers trained and equipped to treat wombats for mange.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">NSW, VIC, QLD, SA, ACT</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>One million trees grown and planted through 30+ community nurseries.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-nilpena-nationalpark.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03-1024x1024.png" alt="The Ediacaran fossil beds at Nilpena, Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Flinders Ranges, SA</span></div><div class="fl-bd"><h3>Nilpena National Park</h3><p>60,000 hectares proclaimed national park, home to the richest record of early complex life on Earth.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-1-million-turtles.html"><div class="fl-im"><img src="assets/img/projects/turtles-hero-hatchling.jpg" alt="A hatchling eastern long-necked turtle cradled in a pair of hands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Murray-Darling Basin</span></div><div class="fl-bd"><h3>1 Million Turtles</h3><p>Citizen science for freshwater turtles, awarded the 2023 Eureka Prize.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-fire-wise.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/07/54120522443_dfa0581f77_o-scaled.jpg" alt="Bushland in the Fire Wise project area" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">VIC, SA, NSW</span></div><div class="fl-bd"><h3>Fire Wise</h3><p>12 community nurseries growing native plants that help landscapes withstand fire.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-remarkable-southern-flinders.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="The Southern Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Southern Flinders, SA</span></div><div class="fl-bd"><h3>Remarkable Southern Flinders</h3><p>Connecting 30,000 hectares of reserves into one park, on Nukunu Country.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-warddeken-mayh.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers in sandstone shrublands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Arnhem Land, NT</span></div><div class="fl-bd"><h3>Warddeken Mayh Recovery</h3><p>Indigenous-led recovery of threatened mammals across 1.4 million hectares.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-cultivating-koala-habitat.html"><div class="fl-im"><img src="assets/img/projects/koala-wollondilly-hero.jpg" alt="Two koalas resting against a fire-blackened trunk surrounded by green regrowth" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Wollondilly, NSW</span></div><div class="fl-bd"><h3>Cultivating Koala Habitat</h3><p>2,000 local plants in the ground, with 95 per cent still alive.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-heritage-estates.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="Tall eucalypts in open forest at Heritage Estates" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Jervis Bay, NSW</span></div><div class="fl-bd"><h3>Heritage Estates</h3><p>More than 530 properties acquired to grow Jervis Bay National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-nectar-sippers.html"><div class="fl-im"><img src="assets/img/projects/nectar-hero-paddock-tree.jpg" alt="An old paddock tree inside new stock-proof fencing, with young plantings in tree guards" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Southern inland NSW</span></div><div class="fl-bd"><h3>Nectar Sippers</h3><p>130 hectares of woodland protected for nectar-feeding birds.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-tangaroa-blue.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="A dugong swimming over seagrass" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Australia-wide</span></div><div class="fl-bd"><h3>Tangaroa Blue</h3><p>Eleven million beach clean-up records, turned into plans that stop rubbish at the source.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+      </div>
+      <div class="fls-bar"><button class="fls-btn" data-fls-dir="-1" aria-label="Previous projects">&#8592;</button><button class="fls-btn" data-fls-dir="1" aria-label="Next projects">&#8594;</button><div class="fls-prog"><i></i></div><span class="fls-count">1&ndash;4 of 12</span></div>
     </div>
-    <div class="fl-more"><a href="#map" class="btn-g">Browse all 84 projects</a></div>
+    </div>
   </div>
 </section>
 
@@ -664,6 +680,18 @@ var IMAP=/*@map-data*/[{"s": "mundoo-island-acquisition", "t": "Mundoo Island St
   document.addEventListener('click',function(e){if(!box.contains(e.target)){pop.hidden=true;current=null}});
   window.addEventListener('resize',function(){if(current&&!pop.hidden)place(current)});
 })();
+</script>
+<script>
+document.querySelectorAll('[data-fls]').forEach(function(w){
+  var t=w.querySelector('.fls-track'),cards=t.querySelectorAll('.fl-card'),pv=w.querySelector('[data-fls-dir="-1"]'),nx=w.querySelector('[data-fls-dir="1"]'),bar=w.querySelector('.fls-prog i'),ct=w.querySelector('.fls-count');
+  function step(){var c=cards[0];return c.offsetWidth+parseFloat(getComputedStyle(t).columnGap||20);}
+  function upd(){var max=t.scrollWidth-t.clientWidth,vis=Math.max(1,Math.round(t.clientWidth/step())),first=Math.round(t.scrollLeft/step())+1,last=Math.min(cards.length,first+vis-1);
+    if(ct)ct.textContent=(first===last?first:first+'\u2013'+last)+' of '+cards.length;
+    if(bar){bar.style.width=(vis/cards.length*100)+'%';bar.style.left=(max>0?(t.scrollLeft/max)*(100-vis/cards.length*100):0)+'%';}
+    if(pv)pv.disabled=t.scrollLeft<=2; if(nx)nx.disabled=t.scrollLeft>=max-2;}
+  w.querySelectorAll('[data-fls-dir]').forEach(function(b){b.addEventListener('click',function(){var vis=Math.max(1,Math.round(t.clientWidth/step()));t.scrollBy({left:parseInt(b.dataset.flsDir,10)*step()*vis,behavior:'smooth'});});});
+  t.addEventListener('scroll',function(){window.requestAnimationFrame(upd);});window.addEventListener('resize',upd);upd();
+});
 </script>
 </body>
 </html>
