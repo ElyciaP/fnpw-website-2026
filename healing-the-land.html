@@ -29,6 +29,21 @@
 .pil-hero{padding:10rem 0 5rem}
 .fb.fb-paper{background:rgba(244,238,230,.95)}
 
+
+.sts{background:var(--cream);padding:clamp(4rem,7vw,5.5rem) 0;border-top:1px solid var(--rule)}
+.sts-head{max-width:760px;margin-bottom:2.6rem}
+.sts-head h2{margin:.8rem 0 1rem}
+.sts-head p{font-size:1.04rem;line-height:1.7;color:var(--char)}
+.sts-g{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;counter-reset:s}
+.sts-g li{position:relative;background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--bark);padding:1.5rem 1.4rem 1.6rem}
+.sts-g li:not(:last-child)::after{content:"";position:absolute;right:-1.05rem;top:2.6rem;width:.7rem;height:.7rem;border-top:2px solid var(--bark);border-right:2px solid var(--bark);transform:rotate(45deg);z-index:2}
+.sts-g img{height:46px;width:auto;display:block;margin-bottom:1rem}
+.sts-n{font-family:var(--ff-d);font-weight:800;font-size:.85rem;color:var(--bark-text);letter-spacing:.06em}
+.sts-g h3{font-family:var(--ff-d);font-size:1.12rem;color:var(--euc-deep);margin:.35rem 0 .5rem}
+.sts-g p{font-size:.92rem;line-height:1.6;color:var(--char)}
+.sts-foot{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;margin-top:2.2rem}
+@media(max-width:980px){.sts-g{grid-template-columns:1fr 1fr}.sts-g li::after{display:none}}
+@media(max-width:560px){.sts-g{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -99,6 +114,22 @@
 <div><span class="ey">Why it matters</span><h2 style="margin:.8rem 0 1.2rem">What this work does</h2><p>Much of Australia is damaged rather than destroyed, and damaged land can heal. These projects replant habitat, restore wetlands and waterways, recover country after bushfire and support First Nations cultural land management.</p><p>Healing the land is slow, patient work measured in seasons and seedlings. It is also the work that turns a map of loss back into habitat.</p></div>
 <div><div class="pmeta"><h3 style="margin-bottom:.8rem">How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We fund revegetation, restoration and bushfire recovery at scale</li><li>We support cultural fire and caring-for-Country programs led by First Nations communities</li><li>We stay for the follow-up: watering, weeding, monitoring, replanting</li></ul></div></div>
 </div>
+  </div>
+</section>
+<section class="sts" id="seed-to-habitat">
+  <div class="cw">
+    <div class="sts-head rv">
+      <span class="ey">From seed to habitat</span>
+      <h2>Where your support goes.</h2>
+      <p>Healing the land takes more than putting a tree in the ground. Only about a tenth of Australia&rsquo;s native plants are available as seed, so we built a network to grow the rest, and your support carries each plant through every stage.</p>
+    </div>
+    <ol class="sts-g rv">
+      <li><img src="assets/icons/fnpw-icon-sprigs-dark-soil-rgb.svg" alt="" aria-hidden="true"><span class="sts-n">01</span><h3>Collecting seed</h3><p>Volunteers collect seed from local ecosystems, so what goes back into the ground belongs there.</p></li>
+      <li><img src="assets/icons/fnpw-icon-nursery-dark-soil-rgb.svg" alt="" aria-hidden="true"><span class="sts-n">02</span><h3>Growing it on</h3><p>More than thirty community-led nurseries grow the seed into locally adapted plants and bank what is rare or threatened. Some species take one to two years to be ready.</p></li>
+      <li><img src="assets/icons/fnpw-icon-seedlings-dark-soil-rgb.svg" alt="" aria-hidden="true"><span class="sts-n">03</span><h3>Planting</h3><p>The plants go back into degraded land in national parks and on public and private land, with Landcare groups, First Nations partners and landholders.</p></li>
+      <li><img src="assets/icons/fnpw-icon-statistics-dark-soil-rgb.svg" alt="" aria-hidden="true"><span class="sts-n">04</span><h3>Caring and measuring</h3><p>We stay for the follow-up of watering, weeding, monitoring and replanting, and report what survives and grows.</p></li>
+    </ol>
+    <div class="sts-foot rv"><a class="btn btn-p btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a><a class="btn-g" href="project-native-plant-nurseries.html">How the nursery network works</a></div>
   </div>
 </section>
 <section class="sec dark">
