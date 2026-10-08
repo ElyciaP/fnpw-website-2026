@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Partner &amp; Invest | FNPW</title>
+<meta name="description" content="Partner with us to protect Australia&#x27;s most important landscapes and wildlife. See how we work with First Nations organisations, government, foundations, businesses, major donors and international funders.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+
+<style>
+/* GOVERNMENT PARTNERS */
+.gov{padding:clamp(4rem,7vw,5.5rem) 0;background:var(--euc-deep);color:var(--cream)}
+.gov .ey{color:var(--euc-soft)}
+.gov h2{color:var(--cream);font-family:var(--ff-d);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;
+  letter-spacing:-.022em;line-height:1.1;margin:.9rem 0 1.1rem;max-width:20ch}
+.gov-lede{color:rgba(250,246,242,.86);font-size:1.03rem;line-height:1.74;max-width:62ch;margin-top:1.1rem}
+.gov-g{display:grid;gap:0;margin-top:2.8rem;border-top:1px solid rgba(250,246,242,.18)}
+.gov-row{display:grid;grid-template-columns:150px 1fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start;
+  padding:1.9rem 0;border-bottom:1px solid rgba(250,246,242,.18)}
+@media(max-width:760px){.gov-row{grid-template-columns:76px 1fr;gap:1.2rem;padding:1.5rem 0}}
+.gov-lo{width:100%;max-width:130px;height:auto;display:block;opacity:.95}
+@media(max-width:760px){.gov-lo{max-width:76px}}
+.gov-row h3{font-family:var(--ff-d);font-size:1.08rem;font-weight:600;color:var(--cream);
+  margin:0 0 .6rem;line-height:1.35;letter-spacing:-.01em}
+.gov-row p{color:rgba(250,246,242,.82);font-size:.97rem;line-height:1.7;margin:0;max-width:72ch}
+
+
+
+
+
+
+
+
+.partners-now{padding:4.5rem 0;background:var(--cream);text-align:center}
+.partners-now .lmq{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.6rem;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.lmq-row{overflow:hidden}
+.lmq-track{display:flex;align-items:center;width:max-content;animation:lmq-scroll var(--dur,72s) linear infinite}
+.lmq-track.lmq-rev{animation-direction:reverse}
+.lmq:hover .lmq-track,.lmq:focus-within .lmq-track{animation-play-state:paused}
+.lmq-i{width:158px;height:58px;flex-shrink:0;margin-right:3.6rem;display:flex;align-items:center;justify-content:center}
+.lmq-i img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;opacity:.92;transition:opacity .25s}
+.lmq-i img:hover{opacity:1}
+@keyframes lmq-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(max-width:700px){.lmq-i{width:112px;height:44px;margin-right:2.2rem}.partners-now .lmq{gap:1.2rem}}
+@media(prefers-reduced-motion:reduce){.lmq-track{animation:none}.lmq-row{overflow-x:auto}}
+
+.cta-form{padding:5rem 0;background:var(--sand)}
+.cf-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+@media(max-width:880px){.cf-g{grid-template-columns:1fr;gap:2rem}}
+.cf-form{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.5rem;position:relative}
+.cf-form::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--euc),var(--waratah));border-radius:0}
+.cf-form h3{margin-bottom:1.4rem;font-size:1.3rem}
+.cf-person{display:flex;align-items:center;gap:1.1rem;margin-top:2rem}
+.cf-person img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--sand)}
+.cf-form .ff{margin-bottom:1.2rem}
+.cf-form label{display:block;font-size:.82rem;font-weight:600;color:var(--euc-deep);margin-bottom:.5rem}
+.cf-form input,.cf-form textarea,.cf-form select{width:100%;padding:.85em 1.1em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink)}
+.cf-form textarea{resize:vertical;min-height:120px}
+.cf-form input:focus,.cf-form textarea:focus,.cf-form select:focus{outline:none;border-color:var(--euc);background:var(--white)}
+.cf-form button{width:100%;padding:1em 1.4em;background:var(--waratah);color:var(--cream);border-radius:0;font-weight:700;cursor:pointer;font-family:var(--ff-b)}
+.cf-form button:hover{background:var(--waratah-dk)}
+
+
+/* ===== PARTNER v2 ===== */
+.p2-btns{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap;margin-top:2rem}
+
+/* proof strip */
+.p2-proof{background:var(--euc-deep);color:var(--cream);padding:2.6rem 0}
+.p2-proof-g{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.p2-proof-i{border-left:2px solid var(--euc-mid);padding-left:1.1rem}
+.p2-proof-n{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.9rem,3vw,2.5rem);letter-spacing:-.035em;line-height:1;color:var(--cream)}
+.p2-proof-l{font-size:.9rem;line-height:1.45;color:rgba(250,246,242,.82);margin-top:.5rem;max-width:22ch}
+@media(max-width:860px){.p2-proof-g{grid-template-columns:1fr 1fr;gap:1.6rem 1.2rem}}
+
+/* section heads */
+.p2-sec{padding:clamp(4.5rem,8vw,6.5rem) 0}
+.p2-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.2rem}
+.p2-head h2{font-size:clamp(1.9rem,3.3vw,2.7rem);line-height:1.08;letter-spacing:-.025em;color:var(--euc-deep);margin-top:1rem;max-width:18ch}
+.p2-head p{font-size:1.04rem;line-height:1.7;color:var(--char);max-width:52ch}
+@media(max-width:860px){.p2-head{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2.4rem}}
+
+/* ways to partner */
+.p2-ways{background:var(--white)}
+.p2-ways-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+@media(max-width:980px){.p2-ways-g{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.p2-ways-g{grid-template-columns:1fr}}
+.p2-way{position:relative;background:var(--cream);border:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden}
+.p2-way-im{aspect-ratio:2.4/1;overflow:hidden;background:var(--sand)}
+.p2-way-im img{width:100%;height:100%;object-fit:cover;display:block}
+.p2-way-bd{padding:1.15rem 1.3rem 1.25rem;display:flex;flex-direction:column;flex:1;border-top:3px solid var(--euc)}
+.p2-way:nth-child(2) .p2-way-bd{border-top-color:var(--wattle)}.p2-way:nth-child(3) .p2-way-bd{border-top-color:var(--reef)}.p2-way:nth-child(4) .p2-way-bd{border-top-color:var(--waratah)}.p2-way:nth-child(5) .p2-way-bd{border-top-color:var(--hovea)}.p2-way:nth-child(6) .p2-way-bd{border-top-color:var(--red-soil)}
+.p2-way:nth-child(2) .p2-way-ic{background:var(--wattle-soft);color:var(--wattle-dk)}
+.p2-way:nth-child(3) .p2-way-ic{background:var(--reef-soft);color:var(--reef-deep)}
+.p2-way:nth-child(4) .p2-way-ic{background:var(--waratah-soft);color:var(--waratah-dk)}
+.p2-way:nth-child(5) .p2-way-ic{background:var(--hovea-soft);color:var(--hovea)}
+.p2-way:nth-child(6) .p2-way-ic{background:var(--red-soil-soft);color:var(--red-soil-dk)}
+.p2-way h3{font-size:1.04rem;color:var(--euc-deep);margin-bottom:.4rem;letter-spacing:-.01em}
+.p2-way p{font-size:.88rem;line-height:1.55;color:var(--char);flex:1}
+.p2-way-best{font-size:.76rem;color:var(--stone);margin-top:.8rem;padding-top:.7rem;border-top:1px dashed var(--rule);line-height:1.5}
+.p2-way-best b{color:var(--euc-deep);font-weight:600}
+.p2-way .btn-g{margin-top:1rem;align-self:flex-start;font-size:.86rem}
+
+.p2-way-more{margin-top:.7rem;font-size:.84rem;font-weight:600;color:var(--euc);align-self:flex-start}
+.p2-way-more:hover{color:var(--euc-deep)}
+.p2-ways-cta{display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-top:2.6rem;padding:1.8rem 2rem;background:var(--euc-soft)}
+.p2-ways-cta p{font-family:var(--ff-d);font-size:1.12rem;line-height:1.45;color:var(--euc-deep);max-width:48ch;margin:0}
+@media(max-width:700px){.p2-ways-cta{flex-direction:column;align-items:flex-start}}
+
+
+
+/* what partners receive */
+.p2-get{background:var(--cream)}
+.p2-get-g{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+@media(max-width:860px){.p2-get-g{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.p2-get-g{grid-template-columns:1fr}}
+.p2-get-i{padding:1.9rem 1.7rem;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--white)}
+.p2-get-i h3{font-size:1.02rem;color:var(--euc-deep);margin-bottom:.45rem;display:flex;gap:.6rem;align-items:baseline}
+.p2-get-i h3 i{font-style:normal;font-family:var(--ff-d);font-size:.78rem;color:var(--euc);font-weight:700;letter-spacing:.06em}
+.p2-get-i p{font-size:.92rem;line-height:1.6;color:var(--char)}
+
+.p2-get-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,4vw,3.5rem);align-items:stretch}
+.p2-get-ph{position:relative;min-height:420px}
+.p2-get-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.p2-get-split .p2-get-g{grid-template-columns:1fr 1fr;border:0;gap:0}
+.p2-get-split .p2-get-i{background:transparent;border:0;border-top:1px solid var(--rule);padding:1.5rem 1.4rem 1.5rem 0}
+@media(max-width:900px){.p2-get-split{grid-template-columns:1fr}.p2-get-ph{min-height:0;aspect-ratio:4/3}}
+@media(max-width:560px){.p2-get-split .p2-get-g{grid-template-columns:1fr}}
+
+
+/* how it works */
+.p2-how{background:var(--white)}
+.p2-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;counter-reset:st}
+@media(max-width:900px){.p2-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.p2-steps{grid-template-columns:1fr}}
+.p2-step{padding:1.6rem 0 0;border-top:4px solid var(--euc);background:transparent}
+.p2-step:nth-child(2){border-top-color:var(--wattle)}.p2-step:nth-child(3){border-top-color:var(--reef)}.p2-step:nth-child(4){border-top-color:var(--waratah)}
+.p2-step-n{font-family:var(--ff-d);font-weight:800;font-size:2.2rem;color:var(--euc-deep);letter-spacing:-.04em;line-height:1;opacity:.9}
+.p2-step h3{font-size:1.1rem;color:var(--euc-deep);margin:.9rem 0 .5rem}
+.p2-step p{font-size:.92rem;line-height:1.6;color:var(--char)}
+
+/* government (collapsed) */
+.gov-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end}
+.gov-head h2{margin-top:1rem}
+.gov-head .gov-lede{margin-top:0}
+.gov-lede a{color:var(--euc-soft);font-weight:600;border-bottom:1px solid currentColor}
+@media(max-width:860px){.gov-head{grid-template-columns:1fr;gap:1rem}}
+.gov-more{margin-top:2.4rem;border-top:1px solid rgba(250,246,242,.18)}
+.gov-more summary{list-style:none;cursor:pointer;padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--cream);font-size:.98rem}
+.gov-more summary::-webkit-details-marker{display:none}
+.gov-more summary::after{content:"+";font-family:var(--ff-d);font-size:1.6rem;font-weight:300;color:var(--euc-soft);transition:transform .25s}
+.gov-more[open] summary::after{transform:rotate(45deg)}
+.gov-more .gov-g{margin-top:0}
+
+/* FAQs */
+.p2-faq{background:var(--sand)}
+.p2-faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+@media(max-width:860px){.p2-faq-g{grid-template-columns:1fr}}
+.p2-faq h2{font-size:clamp(1.9rem,3.3vw,2.6rem);line-height:1.08;letter-spacing:-.025em;color:var(--euc-deep);margin:1rem 0 1rem}
+.p2-faq-l details{border-bottom:1px solid rgba(15,49,50,.18)}
+.p2-faq-l details:first-child{border-top:1px solid rgba(15,49,50,.18)}
+.p2-faq-l summary{list-style:none;cursor:pointer;padding:1.25rem 2.4rem 1.25rem 0;font-family:var(--ff-d);font-weight:600;font-size:1.04rem;color:var(--euc-deep);position:relative;line-height:1.4}
+.p2-faq-l summary::-webkit-details-marker{display:none}
+.p2-faq-l summary::after{content:"+";position:absolute;right:.2rem;top:50%;transform:translateY(-50%);font-size:1.5rem;font-weight:300;color:var(--euc);transition:transform .25s}
+.p2-faq-l details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.p2-faq-l details p{padding:0 2.4rem 1.4rem 0;font-size:.96rem;line-height:1.7;color:var(--char)}
+.p2-faq-l details p a{color:var(--euc);font-weight:600;border-bottom:1px solid currentColor}
+
+.cta-form{padding-top:3rem}
+
+.p2-hero2 .lede{max-width:40ch}
+.p2-hero2.pj-hero-split .pj-hero-im{left:38%}
+@media(max-width:820px){.p2-hero2{flex-direction:column;align-items:stretch;min-height:0}.p2-hero2 .pj-hero-im{position:relative;inset:auto;left:0!important;height:250px;z-index:0}.p2-hero2 .pj-hero-im img{object-position:60% 62%}.p2-hero2.pj-hero-split .pj-hero-im::after,.p2-hero2.pj-hero::after{background:none}.p2-hero2>.cw{padding-top:2rem}}
+.p2-hero2 h1{max-width:14ch}
+.p2-hero2 .btn-p{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.p2-hero2 .btn-g{color:var(--cream)}
+.p2-proof-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:700px){.p2-proof-3{grid-template-columns:1fr;gap:1.2rem}}
+.meter{position:relative;height:14px;border-radius:99px;background:rgba(250,246,242,.14)}
+.meter i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--euc-mid),var(--wattle-mid))}
+.meter-lb{display:flex;justify-content:space-between;margin-top:.8rem;font-size:.84rem;color:var(--cream)}
+.meter-lb b{font-family:var(--ff-d)}
+/* million: B's big number + D's split */
+.x-mil{background:var(--euc-deep);color:var(--cream);padding:clamp(4.5rem,8vw,6.5rem) 0 0}
+.x-mil-top{display:grid;grid-template-columns:1.25fr 1fr;gap:4rem;align-items:end}
+.x-num{font-family:var(--ff-d);font-weight:800;font-size:clamp(4rem,9.6vw,9.4rem);letter-spacing:-.06em;line-height:.85}
+.x-num small{display:block;font-size:1.02rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--euc-mid);margin-top:1.4rem}
+.x-mil .ey{color:var(--euc-soft)}
+.x-mil h2{font-size:clamp(1.8rem,2.6vw,2.2rem);letter-spacing:-.025em;line-height:1.1;color:var(--cream);margin:1rem 0 1.1rem}
+.x-mil p{color:rgba(250,246,242,.86);font-size:1rem;line-height:1.72}
+.x-meter{margin:3.4rem 0 4rem}
+.x-split{display:grid;grid-template-columns:1.1fr 1fr;min-height:620px}
+.x-im{position:relative;overflow:hidden}
+.x-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.x-cap{position:absolute;left:1.4rem;bottom:1.2rem;background:rgba(15,49,50,.8);color:var(--cream);font-size:.76rem;padding:.5rem .8rem;line-height:1.4}
+.x-tx{background:#0B2627;padding:4rem clamp(2rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}
+.x-lead{font-size:1.06rem!important}
+.x-grid{display:grid;grid-template-columns:repeat(3,1fr);margin:2rem 0 2.2rem;border-top:1px solid rgba(250,246,242,.2)}
+.x-grid div{padding:1.3rem 1rem 0 0}
+.x-grid b{display:block;font-family:var(--ff-d);font-size:2.2rem;letter-spacing:-.04em;line-height:1}
+.x-grid span{display:block;font-size:.82rem;color:rgba(250,246,242,.75);margin-top:.45rem;line-height:1.4}
+.x-tx blockquote{margin:0;font-family:var(--ff-d);font-size:1.12rem;line-height:1.55;color:var(--cream);border-left:3px solid var(--euc-mid);padding-left:1.2rem}
+.x-tx cite{display:block;font-style:normal;margin:.8rem 0 0 1.5rem;font-size:.84rem;color:rgba(250,246,242,.75)}
+.x-tx cite b{color:var(--cream)}
+.x-btns{display:flex;gap:1.6rem;align-items:center;margin-top:2.2rem;flex-wrap:wrap}
+.x-btns .btn-p{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.x-btns .btn-g{color:var(--cream)}
+@media(max-width:900px){.x-mil-top{grid-template-columns:1fr;gap:2rem}.x-split{grid-template-columns:1fr}.x-im{aspect-ratio:4/3}.x-tx{padding:2.6rem clamp(1.25rem,4vw,2.5rem) 3rem}}
+@media(max-width:560px){.x-num small{font-size:.78rem;line-height:1.5;letter-spacing:.18em}.x-grid{grid-template-columns:1fr 1fr 1fr}.x-grid b{font-size:1.6rem}}
+/* L'Occitane: B's full-width photo + card, D's quote and timeline */
+.x-loc{background:var(--cream);padding:0 0 clamp(4.5rem,8vw,6.5rem)}
+.x-loc-hero{height:clamp(320px,44vw,600px);overflow:hidden}
+.x-loc-hero img{width:100%;height:100%;object-fit:cover;object-position:40% 12%;display:block}
+.x-card{background:var(--white);margin-top:-8rem;position:relative;z-index:3;padding:clamp(2rem,4vw,3.4rem);border-top:4px solid var(--euc)}
+.x-card-top{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.x-card-top img{height:48px}
+.x-card-top span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--bark-text)}
+.x-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,4vw,3.5rem)}
+.x-loc h2{font-size:clamp(1.9rem,3vw,2.5rem);letter-spacing:-.025em;line-height:1.08;color:var(--euc-deep);margin-bottom:1.2rem;max-width:16ch}
+.x-loc p{font-size:1rem;line-height:1.72;color:var(--char)}
+.x-loc p+p{margin-top:.9rem}
+.x-side{display:flex;flex-direction:column;gap:1.4rem}
+.x-side img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 30%}
+.x-lq{background:var(--sand);padding:1.6rem 1.8rem}
+.x-lq blockquote{margin:0;font-family:var(--ff-d);font-size:1.06rem;line-height:1.55;color:var(--euc-deep)}
+.x-lq cite{display:block;font-style:normal;margin-top:.9rem;font-size:.84rem;color:var(--stone)}
+.x-lcta{margin-top:2rem}
+@media(max-width:900px){.x-cols{grid-template-columns:1fr}.x-tl{grid-template-columns:1fr 1fr}.x-card{margin-top:-4rem}}
+
+.pi-hero{position:relative;min-height:clamp(520px,70vh,640px);display:flex;align-items:flex-end;background:var(--euc-deep);color:var(--cream);overflow:hidden;isolation:isolate}
+.pi-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.pi-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.75) 38%,rgba(15,49,50,.15) 70%,rgba(15,49,50,0) 100%)}
+.pi-hero .cw{padding:5rem clamp(1.25rem,4vw,2.5rem) 4rem;width:100%}
+.pi-hero .ey{color:var(--euc-soft)}
+.pi-hero h1{font-family:var(--ff-d);font-size:clamp(2.3rem,4.6vw,3.8rem);line-height:1.04;letter-spacing:-.03em;color:var(--cream);max-width:16ch;margin:1rem 0 1.2rem}
+.pi-hero p{font-size:clamp(1.02rem,1.25vw,1.15rem);line-height:1.7;color:rgba(250,246,242,.9);max-width:56ch}
+.pi-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.pi-btns .btn-p{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.pi-btns .btn-o{color:var(--cream);border-color:rgba(250,246,242,.6)}
+.pi-cr{position:absolute;right:1rem;bottom:.8rem;font-size:.7rem;color:rgba(250,246,242,.8)}
+.pi-proof{background:#0B2627;color:var(--cream);padding:2.2rem 0}
+.pi-proof-g{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.pi-proof b{display:block;font-family:var(--ff-d);font-size:clamp(1.8rem,2.8vw,2.4rem);letter-spacing:-.035em;line-height:1}
+.pi-proof span{display:block;font-size:.86rem;line-height:1.45;color:rgba(250,246,242,.8);margin-top:.5rem;max-width:26ch}
+.pi-jump{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--rule)}
+.pi-jump-in{display:flex;gap:1.6rem;align-items:center;overflow-x:auto;padding:.9rem 0;white-space:nowrap;scrollbar-width:none}
+.pi-jump-in span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--stone)}
+.pi-jump-in a{font-size:.9rem;font-weight:600;color:var(--euc-deep)}
+.pi-jump-in a:first-of-type{color:var(--euc);border-bottom:2px solid var(--euc)}
+.pi-jump-cta{margin-left:auto;background:var(--euc-deep);color:var(--cream)!important;padding:.45rem .9rem}
+.pi-sec{padding:clamp(4.5rem,8vw,6rem) 0}
+.pi-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:2.8rem}
+.pi-head h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.025em;line-height:1.08;color:var(--euc-deep);margin-top:.9rem;max-width:20ch}
+.pi-head p{font-size:1.04rem;line-height:1.7;color:var(--char);max-width:54ch}
+.pi-model{background:var(--cream)}
+.pi-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.pi-steps::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:linear-gradient(90deg,var(--euc),var(--wattle),var(--waratah))}
+.pi-step{position:relative;padding:3.4rem 1.4rem 0 0}
+.pi-step i{position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--euc-deep);color:var(--cream);font:800 .95rem/46px var(--ff-d);text-align:center;font-style:normal}
+.pi-step h3{font-family:var(--ff-d);font-size:1.12rem;color:var(--euc-deep);margin:0 0 .5rem}
+.pi-step p{font-size:.92rem;line-height:1.6;color:var(--char)}
+.pi-aud{background:var(--sand)}
+.pi-aud-intro{font-size:1rem;line-height:1.7;color:var(--char);max-width:70ch;margin:-1.2rem 0 2rem;padding-left:1rem;border-left:3px solid var(--euc)}
+.pi-aud-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.pi-a{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:1.6rem 1.4rem;display:flex;flex-direction:column}
+.pi-a:nth-child(2){border-top-color:var(--wattle)}.pi-a:nth-child(3){border-top-color:var(--reef)}.pi-a:nth-child(4){border-top-color:var(--hovea)}
+.pi-a h3{font-family:var(--ff-d);font-size:1.15rem;color:var(--euc-deep);margin:0 0 .6rem}
+.pi-a p{font-size:.92rem;line-height:1.6;color:var(--char);margin:0 0 1rem}
+.pi-a ul{list-style:none;padding:0;margin:0 0 1.2rem;flex:1}
+.pi-a li{font-size:.86rem;line-height:1.5;color:var(--char);padding:.4rem 0 .4rem 1.1rem;position:relative;border-top:1px dashed var(--rule)}
+.pi-a li::before{content:"";position:absolute;left:0;top:.85rem;width:6px;height:6px;background:var(--euc-mid)}
+.pi-a .tag{align-self:flex-start;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;background:var(--hovea-soft);color:var(--hovea);padding:.3rem .6rem;margin-bottom:.8rem}
+.pi-a a{font-weight:700;font-size:.88rem;color:var(--euc)}
+.pi-gov{background:var(--euc-deep);color:var(--cream)}
+.pi-gov .pi-head h2{color:var(--cream)}.pi-gov .pi-head p{color:rgba(250,246,242,.85)}.pi-gov .ey{color:var(--euc-soft)}
+.pi-gov-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.pi-g{border-top:3px solid var(--euc-mid);padding-top:1.2rem}
+.pi-g b{display:block;font-family:var(--ff-d);font-size:2.1rem;letter-spacing:-.035em;line-height:1;color:var(--cream)}
+.pi-g .u{font-size:.8rem;color:var(--euc-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:700;display:block;margin:.4rem 0 .8rem}
+.pi-g h3{font-family:var(--ff-d);font-size:1.05rem;color:var(--cream);margin:0 0 .4rem}
+.pi-g p{font-size:.88rem;line-height:1.6;color:rgba(250,246,242,.82)}
+.pi-g a{color:var(--euc-soft);font-weight:600;font-size:.86rem}
+.pi-port{background:var(--cream)}
+.pi-port-g{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.pi-port-im{position:relative;aspect-ratio:4/3;overflow:hidden}
+.pi-port-im img{width:100%;height:100%;object-fit:cover}
+.pi-port h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.025em;color:var(--euc-deep);margin:.9rem 0 1rem}
+.pi-port p{font-size:1.02rem;line-height:1.7;color:var(--char)}
+.pi-port .pi-btns .btn-p{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.pi-port .pi-btns .btn-o{color:var(--euc-deep);border-color:var(--euc-deep)}
+.pi-ev{background:var(--white)}
+.pi-ev-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.pi-e{border:1px solid var(--rule);padding:1.5rem 1.4rem;background:var(--cream)}
+.pi-e .k{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--euc)}
+.pi-e h3{font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .5rem}
+.pi-e p{font-size:.9rem;line-height:1.6;color:var(--char);margin:0 0 .8rem}
+.pi-e a{font-weight:700;font-size:.86rem;color:var(--euc)}
+.pi-e.gap{background:repeating-linear-gradient(135deg,#FFF8E1 0 12px,#FFF3CC 12px 24px);border:2px dashed var(--wattle-dk)}
+.pi-e.gap .k{color:var(--wattle-dk)}
+@media(max-width:600px){.pi-steps,.pi-aud-g,.pi-gov-g,.pi-ev-g{grid-template-columns:1fr!important}.pi-step{padding:0 0 1.4rem 3.6rem!important;min-height:46px}.pi-jump-cta{display:none}}
+@media(max-width:1000px){.pi-steps,.pi-aud-g,.pi-gov-g,.pi-ev-g,.pi-proof-g{grid-template-columns:1fr 1fr}.pi-steps::before{display:none}.pi-head,.pi-port-g{grid-template-columns:1fr}}
+
+.pi-jump{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--rule)}
+.pi-jump-in{display:flex;gap:1.5rem;align-items:center;overflow-x:auto;padding:.9rem 0;white-space:nowrap;scrollbar-width:none}
+.pi-jump-in span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--stone)}
+.pi-jump-in a{font-size:.9rem;font-weight:600;color:var(--euc-deep)}
+.pi-jump-cta{margin-left:auto;background:var(--euc-deep);color:var(--cream)!important;padding:.45rem .9rem}
+.ws{background:var(--cream);padding:clamp(3.5rem,6vw,4.5rem) 0}
+.ws-head h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.02em;color:var(--euc-deep);margin:.8rem 0 2rem;max-width:30ch;line-height:1.15}
+.ws-g{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.ws-t{position:relative;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);border-top:5px solid var(--ac);padding:1.3rem 1.2rem 2.6rem;text-decoration:none;color:inherit;transition:border-color .2s}
+.ws-t:hover{border-color:var(--ac)}
+.ws-k{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--stone)}
+.ws-t h3{font-family:var(--ff-d);font-size:1.15rem;color:var(--euc-deep);margin:.4rem 0 .4rem;line-height:1.2}
+.ws-t p{font-size:.86rem;line-height:1.5;color:var(--char)}
+.ws-go{position:absolute;left:1.2rem;bottom:.9rem;font-size:1.1rem;color:var(--ac);font-weight:700}
+.why2{background:var(--white)}
+.why2-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+.why2-g span{font-family:var(--ff-d);font-weight:800;font-size:2.4rem;color:var(--euc-soft);line-height:1;letter-spacing:-.04em}
+.why2-g h3{font-family:var(--ff-d);font-size:1.15rem;color:var(--euc-deep);margin:.6rem 0 .5rem}
+.why2-g p{font-size:.94rem;line-height:1.62;color:var(--char)}
+.au{padding:clamp(4.5rem,8vw,6rem) 0;border-top:6px solid var(--ac)}
+.au-cream{background:var(--cream)}.au-sand{background:var(--sand)}
+.au-dark{background:var(--euc-deep);color:var(--cream)}
+.au-ey{display:inline-flex;align-items:center;gap:.6em;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ac)}
+.au-ey::before{content:"";width:24px;height:1.5px;background:currentColor}
+.au-dark .au-ey{color:var(--hovea-mid)}
+.au-top{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:end;margin-bottom:2.6rem}
+.au h2{font-family:var(--ff-d);font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.025em;line-height:1.1;color:var(--euc-deep);margin-top:.9rem;max-width:22ch}
+.au-dark h2{color:var(--cream)}
+.au-intro{font-size:1.04rem;line-height:1.72;color:var(--char);max-width:54ch}
+.au-dark .au-intro{color:rgba(250,246,242,.86)}
+.au-g{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:1.6rem;align-items:start}
+.au-col h3{font-family:var(--ff-d);font-size:.95rem;color:var(--euc-deep);margin:0 0 .8rem;letter-spacing:.01em}
+.au-col ul{list-style:none;padding:0;margin:0}
+.au-col li{font-size:.94rem;line-height:1.55;color:var(--char);padding:.65rem 0 .65rem 1.4rem;border-top:1px solid var(--rule);position:relative}
+.au-need li::before{content:"";position:absolute;left:0;top:1rem;width:9px;height:9px;border:1.5px solid var(--stone);border-radius:50%}
+.au-offer li::before{content:"";position:absolute;left:0;top:1.05rem;width:8px;height:8px;background:var(--ac)}
+.au-proof{background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--ac);padding:1.3rem 1.4rem;display:grid;gap:1.1rem}
+.au-sand .au-proof{background:var(--cream)}
+.pf b{display:block;font-family:var(--ff-d);font-size:1.7rem;letter-spacing:-.03em;color:var(--euc-deep);line-height:1}
+.pf span{display:block;font-size:.86rem;line-height:1.5;color:var(--char);margin-top:.35rem}
+.au-cta{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;margin-top:2.2rem}
+.au-dark .btn-p{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.inv-g{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:start}
+.prove{background:var(--euc-deep);color:var(--cream)}
+.prove .ey{color:var(--euc-soft)}.prove .pi-head h2{color:var(--cream)}.prove .pi-head p{color:rgba(250,246,242,.85)}
+.prove-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.prove-g div{border-top:3px solid var(--euc-mid);padding-top:1.1rem}
+.prove-g b{display:block;font-family:var(--ff-d);font-size:2rem;letter-spacing:-.035em;line-height:1}
+.prove-g h3{font-family:var(--ff-d);font-size:1rem;color:var(--cream);margin:.6rem 0 .35rem}
+.prove-g p{font-size:.88rem;line-height:1.55;color:rgba(250,246,242,.82)}
+@media(max-width:1100px){.ws-g{grid-template-columns:repeat(3,1fr)}.au-g{grid-template-columns:1fr 1fr}.au-proof{grid-column:1/-1}}
+@media(max-width:860px){.au-top,.inv-g{grid-template-columns:1fr;gap:1rem}.why2-g,.prove-g{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ws-g,.au-g,.why2-g,.prove-g,.pi-steps,.pi-ev-g{grid-template-columns:1fr!important}.ws-t{padding-bottom:1.3rem}.ws-go{display:none}.pi-step{padding:0 0 1.4rem 3.6rem!important;min-height:46px}.pi-jump-cta{display:none}}
+
+
+.ws-g6{grid-template-columns:repeat(3,1fr)!important}
+.ws-t{padding-bottom:1.3rem!important}
+.ws-t:hover{border-color:var(--rule)!important;border-top-color:var(--ac)!important}
+.ws-more{margin-top:1.4rem;font-size:.95rem;color:var(--char)}
+.ws-more a{color:var(--euc);font-weight:700}
+.md{background:var(--white)}
+.md-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;position:relative}
+.md-g::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:var(--euc-soft)}
+.md-s{position:relative;padding-top:3.6rem;display:flex;flex-direction:column}
+.md-s i{position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--euc-deep);color:var(--cream);font:800 .95rem/46px var(--ff-d);text-align:center;font-style:normal}
+.md-s h3{font-family:var(--ff-d);font-size:1.2rem;color:var(--euc-deep);margin:0 0 .5rem}
+.md-s>p{font-size:.94rem;line-height:1.6;color:var(--char);margin:0 0 1rem}
+.md-eg{margin-top:auto;background:var(--cream);border-left:3px solid var(--euc);padding:.9rem 1rem;font-size:.88rem;line-height:1.55;color:var(--euc-deep)}
+.md-eg b{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--euc);margin-bottom:.3rem}
+.md-link{display:inline-block;margin-top:2rem}
+.au{border-top:5px solid var(--ac)}
+.au-ey{color:var(--ac)}
+.au-offer li::before{background:var(--euc)!important}
+.au-proof{display:block!important}
+.pf-k{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--stone)}
+.au-proof p{font-family:var(--ff-d);font-size:1.12rem;line-height:1.4;color:var(--euc-deep);margin:.5rem 0 .8rem}
+.au-proof a{font-size:.85rem;font-weight:700;color:var(--euc)}
+.au-btn{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
+.au-inv{background:var(--white)}.au-inv .btn-p{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
+.prove-5{grid-template-columns:repeat(5,1fr)!important}
+.prove-g b{color:var(--cream)}
+@media(max-width:1000px){.md-g{grid-template-columns:1fr 1fr}.md-g::before{display:none}.au-inv{background:var(--white)}.au-inv .btn-p{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
+.prove-5{grid-template-columns:1fr 1fr!important}}
+@media(max-width:600px){.md-g,.ws-g6{grid-template-columns:1fr!important}}
+
+.ax-intro{background:var(--cream);padding:clamp(4rem,7vw,5rem) 0 .5rem}
+.ax-intro .pi-head{margin-bottom:1.5rem}
+.ax{padding:2.8rem 0;border-top:5px solid var(--ac);scroll-margin-top:70px}
+.ax-cream{background:var(--cream)}.ax-sand{background:var(--sand)}
+.ax-g{display:grid;grid-template-columns:.95fr 1.25fr 1.1fr;gap:clamp(1.5rem,3vw,2.6rem);align-items:start}
+.ax-k{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ac)}
+.ax-a h2{font-family:var(--ff-d);font-size:clamp(1.9rem,2.9vw,2.5rem);letter-spacing:-.03em;line-height:1.05;color:var(--euc-deep);margin:.4rem 0 .8rem}
+.ax-sub{font-family:var(--ff-d);font-size:1.08rem;line-height:1.4;color:var(--char);font-weight:500;margin:0 0 1.4rem}
+.au-inv .ax-sub{font-size:1.2rem}
+.ax-btn{display:inline-block;font-weight:700;font-size:.9rem;color:var(--cream);background:var(--euc-deep);padding:.7rem 1.1rem;text-decoration:none}
+.ax-b p{font-size:.95rem;line-height:1.68;color:var(--char);margin:0 0 1.1rem}
+.ax-pf{background:var(--white);border-left:3px solid var(--ac);padding:.85rem 1rem;font-size:.9rem;line-height:1.5;color:var(--euc-deep);font-weight:600}
+.ax-sand .ax-pf{background:var(--cream)}
+.ax-pf span{display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:.25rem}
+.ax-pf a{font-weight:700;color:var(--euc);white-space:nowrap}
+.ax-c h3{font-family:var(--ff-d);font-size:.86rem;color:var(--euc-deep);margin:0 0 .45rem}
+.ax-c ul{list-style:none;padding:0;margin:0 0 1.1rem}
+.ax-c ul:last-child{margin-bottom:0}
+.ax-c li{position:relative;font-size:.86rem;line-height:1.45;color:var(--char);padding:.32rem 0 .32rem 1.2rem}
+.ax-need li::before{content:"";position:absolute;left:0;top:.72rem;width:8px;height:8px;border:1.5px solid var(--stone);border-radius:50%}
+.ax-offer li::before{content:"";position:absolute;left:0;top:.75rem;width:7px;height:7px;background:var(--euc)}
+@media(max-width:1000px){.ax-g{grid-template-columns:1fr 1fr}.ax-a{grid-column:1/-1}}
+@media(max-width:640px){.ax-g{grid-template-columns:1fr}}
+
+:root{--e1:#0F7768;--e2:#0F3132;--e3:#51B593;--e4:#C6EBCA;--b1:#371F1D;--b4:#CBABAB}
+.ey{color:var(--e1)}
+.ws8{background:var(--white)!important}
+.ws8 .ws-t{border:1px solid var(--e4)!important;border-top:4px solid var(--e1)!important;background:var(--white)}
+.ws8 .ws-k{color:var(--e1)}.ws8 .ws-t h3{color:var(--e2)}
+.md8{background:var(--e4)}
+.md8 .ey{color:var(--e2)}.md8 .pi-head h2,.md8 .pi-head p{color:var(--e2)}
+.md8-g{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.md8-g li{background:var(--white);padding:1.6rem 1.5rem 1.7rem;border-top:4px solid var(--e1)}
+.md8-g i{display:block;font:800 .8rem/1 var(--ff-d);letter-spacing:.14em;color:var(--e1);font-style:normal;margin-bottom:1rem}
+.md8-g h3{font-family:var(--ff-d);font-size:1.25rem;color:var(--e2);margin:0 0 .55rem}
+.md8-g p{font-size:.93rem;line-height:1.6;color:var(--e2);margin:0}
+.ms8{background:var(--e2)}
+.ms8 .prove-g{grid-template-columns:repeat(4,1fr)!important}
+.ms8 .prove-g div{border-top-color:var(--e3)}
+.ms8 .prove-g b{color:var(--e4)}
+.a8s{background:var(--white)}
+.a8{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(2rem,4vw,3.5rem);padding:2.4rem 0;border-top:1px solid var(--e4);scroll-margin-top:80px}
+.a8:last-child{border-bottom:1px solid var(--e4)}
+.a8 h2{font-family:var(--ff-d);font-size:clamp(1.8rem,2.7vw,2.3rem);letter-spacing:-.03em;line-height:1.05;color:var(--e2);margin:0 0 .5rem}
+.a8-sub{font-family:var(--ff-d);font-size:1.1rem;line-height:1.4;color:var(--e1);font-weight:600;margin:0 0 .9rem}
+.a8-lead{font-size:.96rem;line-height:1.68;color:var(--e2);margin:0}
+.a8-r h3{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--e1);margin:.3rem 0 .6rem}
+.a8-r ul{list-style:none;padding:0;margin:0 0 1rem}
+.a8-r li{position:relative;padding:.38rem 0 .38rem 1.25rem;font-size:.92rem;line-height:1.45;color:var(--e2)}
+.a8-r li::before{content:"";position:absolute;left:0;top:.82rem;width:7px;height:7px;background:var(--e1)}
+.a8-pf{background:var(--e4);padding:.85rem 1rem;font-size:.9rem;line-height:1.5;color:var(--e2);font-weight:600;margin:0 0 1.1rem}
+.a8-pf span{display:block;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.2rem}
+.a8-pf a{color:var(--e2);text-decoration:underline;white-space:nowrap}
+.a8-btn{display:inline-block;font-weight:700;font-size:.92rem;color:var(--white);background:var(--e1);padding:.75rem 1.15rem;text-decoration:none}
+.inv8{background:var(--e4);padding:clamp(3.5rem,6vw,4.5rem) 0}
+.inv8-g{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:start}
+.inv8 .ey{color:var(--e2)}
+.inv8 h2{font-family:var(--ff-d);font-size:clamp(1.8rem,2.7vw,2.3rem);letter-spacing:-.03em;color:var(--e2);margin:.6rem 0 .5rem}
+.inv8 .a8-sub{color:var(--e2)}
+.inv8 p{font-size:1rem;line-height:1.7;color:var(--e2);margin:0 0 1.3rem}
+.partners-now{background:var(--white)!important}
+.cs8{background:var(--b1);color:var(--white)}
+.cs8-g{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.cs8-im{position:relative;overflow:hidden}
+.cs8-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cs8-tx{padding:clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,5rem);max-width:680px}
+.cs8-ey{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--b4)}
+.cs8 h2{font-family:var(--ff-d);font-size:clamp(1.8rem,2.8vw,2.4rem);letter-spacing:-.03em;line-height:1.08;color:var(--white);margin:.9rem 0 .9rem}
+.cs8-tx>p{font-size:1rem;line-height:1.7;color:#EEE8E1;margin:0 0 1.6rem}
+.cs8-steps{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.6rem;margin:0 0 1.8rem}
+.cs8-steps div{border-top:2px solid var(--b4);padding-top:.7rem}
+.cs8-steps dt{font-family:var(--ff-d);font-weight:700;font-size:1rem;color:var(--white);margin-bottom:.3rem}
+.cs8-steps dd{margin:0;font-size:.88rem;line-height:1.55;color:#EEE8E1}
+.cs8-btn{display:inline-block;font-weight:700;font-size:.92rem;color:var(--b1);background:var(--b4);padding:.75rem 1.15rem;text-decoration:none}
+.pi-ev{background:var(--white)!important}
+.pi-e{background:var(--white)!important;border:1px solid var(--e4)!important;border-top:4px solid var(--e1)!important}
+.pi-e h3{color:var(--e2)}
+.cta-form{background:var(--e4)!important}
+@media(max-width:1000px){.md8-g,.ms8 .prove-g{grid-template-columns:1fr 1fr!important}.a8,.inv8-g,.cs8-g{grid-template-columns:1fr}.cs8-im{aspect-ratio:16/9}}
+@media(max-width:600px){.md8-g,.ms8 .prove-g,.cs8-steps{grid-template-columns:1fr!important}}
+
+:root{--e1:#0F7768;--e2:#0F3132;--e3:#51B593;--e4:#C6EBCA;--k1:#85735E;--k3:#EEE8E1;--k4:#FAF6F2}
+.ey{color:var(--e1)}
+.ey::before{background:currentColor}
+/* index */
+.ix{background:var(--white);padding:clamp(3.5rem,6vw,4.5rem) 0 clamp(3rem,5vw,4rem)}
+.ix-head h2{font-family:var(--ff-d);font-size:clamp(1.5rem,2.3vw,1.9rem);letter-spacing:-.02em;line-height:1.2;color:var(--e2);margin:0 0 1.8rem;max-width:32ch}
+.ix-g{display:grid;grid-template-columns:repeat(3,1fr);column-gap:2.4rem;border-top:2px solid var(--e2)}
+.ix-r{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.15rem 0 1.25rem;border-bottom:1px solid #DCE6E2;text-decoration:none}
+.ix-r b{display:block;font-family:var(--ff-d);font-size:1.12rem;color:var(--e2);margin-bottom:.25rem}
+.ix-r em{display:block;font-style:normal;font-size:.86rem;line-height:1.45;color:#4A5A58}
+.ix-r i{font-style:normal;color:var(--e1);font-weight:700;padding-top:.15rem}
+.ix-more{margin-top:1.3rem;font-size:.94rem;color:#4A5A58}
+.ix-more a{color:var(--e1);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* how we work */
+.hw{background:var(--e2);color:var(--white);padding:clamp(4.5rem,8vw,6rem) 0}
+.hw .ey{color:var(--e4)}
+.hw-head h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.025em;line-height:1.1;color:var(--white);margin:.9rem 0 3rem;max-width:24ch}
+.hw-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.hw-steps li{border-top:1px solid rgba(198,235,202,.35);padding-top:1.2rem}
+.hw-steps i{display:block;font:700 .78rem/1 var(--ff-d);letter-spacing:.14em;color:var(--e4);font-style:normal;margin-bottom:.9rem}
+.hw-steps h3{font-family:var(--ff-d);font-size:1.3rem;color:var(--white);margin:0 0 .55rem}
+.hw-steps p{font-size:.94rem;line-height:1.62;color:rgba(255,255,255,.82);margin:0}
+.hw-m{margin-top:3.6rem;padding-top:2.2rem;border-top:1px solid rgba(198,235,202,.35)}
+.hw-ml{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--e4);margin:0 0 1.4rem}
+.hw-mg{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.hw-mg b{display:block;font-family:var(--ff-d);font-size:clamp(2.4rem,4vw,3.4rem);letter-spacing:-.04em;line-height:1;color:var(--e4)}
+.hw-mg span{display:block;font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.82);margin-top:.6rem;max-width:24ch}
+/* audiences */
+.a9s{background:var(--white);padding:clamp(4.5rem,8vw,6rem) 0 clamp(3rem,5vw,4rem)}
+.a9s-head h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.025em;line-height:1.1;color:var(--e2);margin:.9rem 0 2.4rem}
+.a9{display:grid;grid-template-columns:.85fr 1.25fr 1fr;gap:clamp(1.6rem,3vw,2.8rem);padding:2.3rem 0;border-top:1px solid #DCE6E2;scroll-margin-top:80px}
+.a9:first-of-type{border-top:2px solid var(--e2)}
+.a9 h2{font-family:var(--ff-d);font-size:clamp(1.55rem,2.2vw,1.95rem);letter-spacing:-.025em;line-height:1.08;color:var(--e2);margin:0 0 .6rem}
+.a9-sub{font-family:var(--ff-d);font-size:1.02rem;line-height:1.4;color:#3E5654;font-weight:500;margin:0}
+.a9-m p{font-size:.95rem;line-height:1.68;color:var(--e2);margin:0 0 .9rem}
+.a9-pf{padding-left:.9rem;border-left:3px solid var(--e1);font-size:.9rem!important;line-height:1.5!important;margin:0!important}
+.a9-pf span{font-weight:700}
+.a9-pf a{color:var(--e1);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.a9-r h3{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--e1);margin:.2rem 0 .5rem}
+.a9-r ul{list-style:none;padding:0;margin:0 0 1.2rem}
+.a9-r li{position:relative;padding:.3rem 0 .3rem 1.1rem;font-size:.88rem;line-height:1.45;color:var(--e2)}
+.a9-r li::before{content:"";position:absolute;left:0;top:.78rem;width:6px;height:6px;border-radius:50%;background:var(--e1)}
+.a9-btn{display:inline-block;font-weight:700;font-size:.88rem;color:var(--e1);border:1.5px solid var(--e1);padding:.6rem 1rem;text-decoration:none}
+.a9-inv{border-bottom:1px solid #DCE6E2}
+.a9-tag{display:inline-block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--e2);background:var(--e4);padding:.3rem .55rem;margin-bottom:.7rem}
+.a9-inv .a9-r{align-self:center}
+/* logos */
+.partners-now{background:var(--white)!important;border-top:0}
+/* case study: Bark family */
+.cs9{background:var(--k1)!important}
+.cs9 .cs8-ey{color:var(--white)}
+.cs9 .cs8-tx>p,.cs9 .cs8-steps dd{color:var(--white)}
+.cs9 .cs8-steps div{border-top-color:rgba(255,255,255,.5)}
+.cs9 .cs8-btn{background:transparent;color:var(--white);border:1.5px solid var(--white)}
+/* due diligence */
+.dg{background:var(--white);padding:clamp(4rem,7vw,5rem) 0}
+.dg-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+.dg h2{font-family:var(--ff-d);font-size:clamp(1.8rem,2.8vw,2.3rem);letter-spacing:-.025em;color:var(--e2);margin:.9rem 0 .7rem}
+.dg-g>div>p{font-size:1rem;line-height:1.65;color:var(--e2);max-width:40ch}
+.dg-l{list-style:none;margin:0;padding:0;border-top:2px solid var(--e2)}
+.dg-l a{display:grid;grid-template-columns:7.5rem 1fr auto;align-items:center;gap:1rem;padding:1.05rem 0;border-bottom:1px solid #DCE6E2;text-decoration:none}
+.dg-l span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--e1)}
+.dg-l b{font-family:var(--ff-d);font-size:1.05rem;color:var(--e2)}
+.dg-l i{font-style:normal;color:var(--e1);font-weight:700}
+/* form */
+.cta-form{background:var(--white)!important;border-top:1px solid #DCE6E2}
+.cta-form .ey{color:var(--e1)}
+.cta-form h2{color:var(--e2)!important}
+.cf-form{border:1px solid #DCE6E2}
+@media(max-width:1000px){.ix-g{grid-template-columns:1fr 1fr}.hw-steps,.hw-mg{grid-template-columns:1fr 1fr}.a9{grid-template-columns:1fr 1fr}.a9-l{grid-column:1/-1}.dg-g{grid-template-columns:1fr}}
+@media(max-width:640px){.ix-g,.hw-steps,.hw-mg,.a9{grid-template-columns:1fr}}
+
+.ix{background:var(--cream)!important}
+.ix-g{border-top:0!important;row-gap:1rem}
+.ix-r{background:var(--white);border:1px solid var(--rule)!important;border-top:3px solid var(--ac)!important;padding:1.05rem 1.2rem 1.15rem!important}
+.ix-r i{color:var(--euc-deep)!important}
+.a9s{background:var(--white)!important}
+.a9-l h2::before{content:"";display:block;width:44px;height:3px;background:var(--ac);margin-bottom:.9rem}
+.a9-inv .a9-l h2::before{display:none}
+.partners-now{background:var(--cream)!important}
+.dg{background:var(--cream)!important}
+.dg-l a{border-bottom-color:var(--rule)!important}
+.cta-form{background:var(--white)!important}
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="index.html" class="">Home</a>
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="reports.html" class="">Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <a href="partner-invest.html" class=" on">Partner &amp; Invest</a>
+    <a href="contact.html" class="">Contact</a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+
+<section class="pi-hero">
+  <img src="assets/img/partner-invest-hero-planting.jpg" alt="Aerial view of volunteers planting native seedlings in tree guards along a fenced creek line">
+  <div class="cw">
+    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:var(--cream)"><a href="index.html" style="color:var(--euc-soft)">Home</a><span>/</span>Partner &amp; Invest</nav>
+    <span class="ey">Partner &amp; invest</span>
+    <h1>Turn your conservation goals into protected landscapes.</h1>
+    <p>We bring First Nations organisations, government, communities, conservation experts and private funding together to protect Australia&rsquo;s most important landscapes and wildlife. We identify the opportunities, build the partnerships and funding around them, and support delivery through to measurable impact.</p>
+    <div class="pi-btns"><a href="#start" class="btn btn-p">Find your way in</a><a href="#talk" class="btn btn-o">Talk to our partnerships team</a></div>
+  </div>
+</section>
+<section class="ix" id="start">
+  <div class="cw">
+    <div class="ix-head"><h2>Tell us who you are and we&rsquo;ll show you where to start.</h2></div>
+    <div class="ix-g"><a class="ix-r" href="#for-fn" style="--ac:var(--euc)"><span><b>First Nations organisations</b><em>Traditional Owners, Indigenous-led conservation groups and First Nations leaders</em></span><i>&#8595;</i></a><a class="ix-r" href="#for-gov" style="--ac:var(--wattle)"><span><b>Government</b><em>Policymakers, environment agencies and elected officials</em></span><i>&#8595;</i></a><a class="ix-r" href="#for-fdn" style="--ac:var(--reef)"><span><b>Foundations, PAFs &amp; trusts</b><em>Philanthropic trusts, private ancillary funds and family foundations</em></span><i>&#8595;</i></a><a class="ix-r" href="#for-biz" style="--ac:var(--waratah)"><span><b>Corporate partners</b><em>ESG, sustainability and CSR teams, and large corporates</em></span><i>&#8595;</i></a><a class="ix-r" href="#for-donor" style="--ac:var(--hovea)"><span><b>Major donors &amp; philanthropists</b><em>Individuals and families giving at scale, now or through a gift in their Will</em></span><i>&#8595;</i></a><a class="ix-r" href="#for-intl" style="--ac:var(--red-soil)"><span><b>International funders</b><em>Global philanthropic foundations and development agencies</em></span><i>&#8595;</i></a></div>
+    <p class="ix-more">Exploring conservation investment? <a href="#for-inv">See where we are heading</a></p>
+  </div>
+</section><section class="hw" id="model">
+  <div class="cw">
+    <div class="hw-head"><span class="ey">How we work</span><h2>We find the opportunity, build the partnership and see it through to measurable impact.</h2></div>
+    <ol class="hw-steps"><li><i>01</i><h3>Identify</h3><p>We work with First Nations groups, scientists and local stakeholders to identify high-value ecosystems and the species that depend on them.</p></li><li><i>02</i><h3>Structure</h3><p>We build the partnership and the funding around each opportunity, bringing government, philanthropy and business together.</p></li><li><i>03</i><h3>Deliver</h3><p>We support delivery on the ground, with First Nations knowledge and modern science working side by side.</p></li><li><i>04</i><h3>Demonstrate</h3><p>We measure the outcomes and report them every year in our Impact Report.</p></li></ol>
+    <div class="hw-m">
+      <p class="hw-ml">What we report every year in our Impact Report</p>
+      <div class="hw-mg"><div><b>55+</b><span>Years of conservation experience across Australia.</span></div><div><b>30</b><span>Community nurseries across four states, growing native plants for restoration.</span></div><div><b>9 million</b><span>Trees our goal by 2030 through the Landscape Resilience Program.</span></div><div><b>167</b><span>Native species supported through our initiatives.</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="a9s" id="paths">
+  <div class="cw">
+    <div class="a9s-head"><span class="ey">Your part in the next one</span><h2>Find the partnership that fits who you are.</h2></div>
+    
+  <article class="a9" id="for-fn" style="--ac:var(--euc)">
+    <div class="a9-l"><h2>First Nations organisations</h2><p class="a9-sub">Lead the work on Country, with us walking alongside you.</p></div>
+    <div class="a9-m"><p>We recognise and honour First Nations peoples as the original and ongoing custodians of Country. We co-design projects that protect ecosystems and respect cultural heritage, from co-managed parks to traditional land care practices, and we commit to long-term, respectful collaboration rather than one-off projects.</p><p class="a9-pf"><span>Our commitment.</span> Our Reconciliation Action Plan sets out how we work with First Nations peoples and communities. <a href="reconciliation-action-plan.html">Find out more</a></p></div>
+    <div class="a9-r"><h3>What we bring</h3><ul><li>Respectful co-management of parklands and protected areas</li><li>Projects that bring traditional knowledge and scientific expertise together</li><li>Community-based nurseries, fire-smart planting and ecological restoration</li></ul><a class="a9-btn" href="?enquiry=first-nations#talk">Co-lead a project with us &#8594;</a></div>
+  </article>
+  <article class="a9" id="for-gov" style="--ac:var(--wattle)">
+    <div class="a9-l"><h2>Government</h2><p class="a9-sub">Deliver your biodiversity commitments with a partner that measures results.</p></div>
+    <div class="a9-m"><p>We have partnered with governments for more than five decades to deliver on-ground, measurable conservation outcomes. Our science-led programs protect threatened species, grow national parks and restore climate-resilient landscapes, and they align directly with national frameworks including 30 by 30.</p><p class="a9-pf"><span>Track record.</span> Proven delivery through projects like Nilpena Ediacara National Park and Fire Wise. <a href="projects.html">Find out more</a></p></div>
+    <div class="a9-r"><h3>What we bring</h3><ul><li>Projects aligned with 30 by 30 and with national and state biodiversity strategies</li><li>First Nations knowledge built in, delivering ecological, social and economic co-benefits</li><li>Transparent reporting that shows what each project achieved</li></ul><a class="a9-btn" href="?enquiry=government#talk">Partner on a state or national strategy &#8594;</a></div>
+  </article>
+  <article class="a9" id="for-fdn" style="--ac:var(--reef)">
+    <div class="a9-l"><h2>Foundations, PAFs &amp; trusts</h2><p class="a9-sub">Fund strategic conservation that fits your mission and proves its results.</p></div>
+    <div class="a9-m"><p>We partner with foundations to co-design and deliver high-impact conservation across biodiversity, climate resilience and community wellbeing. Our approach blends modern science with traditional knowledge, backed by strong governance and transparent reporting on both environmental and social outcomes.</p><p class="a9-pf"><span>Due diligence.</span> Our strategy, audited financial statements and impact reports are published for you to review. <a href="#evidence">Find out more</a></p></div>
+    <div class="a9-r"><h3>What we bring</h3><ul><li>Projects matched to your foundation&rsquo;s priorities</li><li>Multi-year programs you can co-design with us</li><li>Case studies and before-and-after evidence of impact</li></ul><a class="a9-btn" href="?enquiry=foundation#talk">Co-design a multi-year program &#8594;</a></div>
+  </article>
+  <article class="a9" id="for-biz" style="--ac:var(--waratah)">
+    <div class="a9-l"><h2>Corporate partners</h2><p class="a9-sub">Make nature a strategic part of your purpose.</p></div>
+    <div class="a9-m"><p>We partner with forward-thinking businesses to deliver tangible environmental outcomes that support their ESG goals. From restoring habitat to protecting species and expanding protected areas, our programs connect your brand with lasting environmental leadership and give your people a real way to take part.</p><p class="a9-pf"><span>In partnership.</span> L&rsquo;OCCITANE Australia has partnered with us since 2020. <a href="partner.html">Find out more</a></p></div>
+    <div class="a9-r"><h3>What we bring</h3><ul><li>Long-term partnerships aligned with your ESG and CSR priorities</li><li>Co-branded campaigns and employee volunteering</li><li>Transparent reporting that builds credibility and trust</li></ul><a class="a9-btn" href="?enquiry=corporate#talk">Explore a corporate partnership &#8594;</a></div>
+  </article>
+  <article class="a9" id="for-donor" style="--ac:var(--hovea)">
+    <div class="a9-l"><h2>Major donors &amp; philanthropists</h2><p class="a9-sub">Build a conservation legacy you can see.</p></div>
+    <div class="a9-m"><p>We work closely with major donors to bring their conservation values to life. Each gift is matched with strategic initiatives that reflect your passions and priorities, from tree planting and species recovery to national park expansion, and we keep you close to the results with personalised updates and tailored reporting.</p><p class="a9-pf"><span>See it in action.</span> A gift in a Will helped us secure Mundoo Island Station for Coorong National Park. <a href="#story">Find out more</a></p></div>
+    <div class="a9-r"><h3>What we bring</h3><ul><li>Giving matched to the places and species you care about</li><li>Tailored reporting, including case studies and before-and-after results</li><li>Gifts in Wills that can fund land acquisition, species recovery or nursery programs</li></ul><a class="a9-btn" href="?enquiry=major-donor#talk">Talk with us about your giving &#8594;</a></div>
+  </article>
+  <article class="a9" id="for-intl" style="--ac:var(--red-soil)">
+    <div class="a9-l"><h2>International funders</h2><p class="a9-sub">Back globally significant biodiversity, delivered on the ground in Australia.</p></div>
+    <div class="a9-m"><p>Our continent is home to some of the world&rsquo;s most unique and threatened species. We offer international funders a clear pathway to contribute to global biodiversity and climate goals through trusted, on-ground work that restores landscapes, supports threatened species, expands protected areas and empowers Indigenous-led conservation.</p><p class="a9-pf"><span>Shared goal.</span> We are committed to helping protect 30% of Australia&rsquo;s land and sea by 2030. <a href="about.html">Find out more</a></p></div>
+    <div class="a9-r"><h3>What we bring</h3><ul><li>Projects aligned with the UN SDGs and the Global Biodiversity Framework</li><li>Transparent, data-driven reporting on ecological and community impact</li><li>More than 55 years of conservation experience in Australia</li></ul><a class="a9-btn" href="?enquiry=international#talk">Discuss a large-scale initiative &#8594;</a></div>
+  </article>
+  <article class="a9 a9-inv" id="for-inv">
+    <div class="a9-l"><span class="a9-tag">Emerging</span><h2>Conservation investment</h2><p class="a9-sub">Exploring how private capital can work for nature.</p></div>
+    <div class="a9-m"><p>We are beginning to explore how private capital could sit alongside government and philanthropic funding for conservation. If that is a conversation you are having too, we would welcome hearing from you early.</p></div>
+    <div class="a9-r"><a class="a9-btn" href="?enquiry=investment#talk">Register your interest &#8594;</a></div>
+  </article>
+  </div>
+</section><section class="partners-now">
+  <div class="cw">
+    <h4 style="color:var(--stone);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600">In good company</h4>
+  <div class="lmq" aria-label="Our partners and supporters">
+    <div class="lmq-row">
+      <div class="lmq-track" style="--dur:72s">
+        <div class="lmq-i"><img src="assets/img/partners/partner-01.png" alt="AnchorMark" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-03.png" alt="GlobalGiving" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-05.png" alt="NAB Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-07.png" alt="Microequities Asset Management" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-09.png" alt="Docusign" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-11.png" alt="Virtuoso" loading="lazy"></div>
+        
+        <div class="lmq-i"><img src="assets/img/partners/partner-15.png" alt="Aon" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-17.png" alt="Firesticks" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-19.png" alt="AGA Aktionsgemeinschaft Artenschutz" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-22.png" alt="Queensland Government, Department of the Environment, Tourism, Science and Innovation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-24.png" alt="NSW Biodiversity Conservation Trust" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-26.png" alt="Australian Government, Department of Climate Change, Energy, the Environment and Water" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-28.png" alt="National Parks and Wildlife Service South Australia" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-30.png" alt="Australian Philanthropic Services" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-32.png" alt="Bartier Perry Lawyers" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-34.png" alt="Coombes Property Group" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-36.png" alt="Chrysanthemum Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-39.png" alt="&Eacute;toile" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-41.png" alt="Dicker Data" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-43.png" alt="FactSet" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-45.png" alt="Hilton" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-47.png" alt="LGT Crestone" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-49.png" alt="Little Feet Early Learning and Childcare" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-51.png" alt="Mulberry Lane Vet Hospital" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-54.png" alt="Skipper Jacobs Charitable Trust" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-56.png" alt="V2" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-58.png" alt="VMware" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-01.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-03.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-05.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-07.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-09.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-11.png" alt="" aria-hidden="true" loading="lazy"></div>
+        
+        <div class="lmq-i"><img src="assets/img/partners/partner-15.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-17.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-19.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-22.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-24.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-26.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-28.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-30.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-32.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-34.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-36.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-39.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-41.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-43.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-45.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-47.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-49.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-51.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-54.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-56.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-58.png" alt="" aria-hidden="true" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="lmq-row">
+      <div class="lmq-track lmq-rev" style="--dur:86s">
+        <div class="lmq-i"><img src="assets/img/partners/partner-02.png" alt="Zorali" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-04.png" alt="Dell Technologies" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-06.png" alt="AirTrunk" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-08.png" alt="Maple Brown Family Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-10.png" alt="Re:wild" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-12.png" alt="EthicalJobs" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-14.png" alt="One Tree Planted" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-16.png" alt="L&rsquo;Occitane en Provence" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-18.png" alt="Gowing Bros" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-20.png" alt="Quercus &amp; Co." loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-23.png" alt="NSW National Parks and Wildlife Service" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-25.png" alt="Victoria State Government, Energy, Environment and Climate Action" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-27.png" alt="Government of South Australia, South Australian Fire and Emergency Services Commission" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-29.png" alt="Government of South Australia, Department for Environment and Water" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-31.png" alt="Catalina Consultants" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-33.png" alt="Beswick Family Fund" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-35.png" alt="Consult Australia" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-38.png" alt="Deloitte" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-40.png" alt="Dick and Pip Smith Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-42.png" alt="Equity Trustees" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-44.png" alt="Flavourtech" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-46.png" alt="IMC" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-48.png" alt="Lifework Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-50.png" alt="Michael Page International" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-52.png" alt="Outdoors NSW &amp; ACT" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-55.png" alt="The Broinowski Foundation" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-57.png" alt="Xero" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-59.png" alt="Spark Renewables" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-02.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-04.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-06.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-08.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-10.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-12.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-14.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-16.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-18.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-20.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-23.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-25.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-27.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-29.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-31.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-33.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-35.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-38.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-40.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-42.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-44.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-46.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-48.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-50.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-52.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-55.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-57.png" alt="" aria-hidden="true" loading="lazy"></div>
+        <div class="lmq-i"><img src="assets/img/partners/partner-59.png" alt="" aria-hidden="true" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="cs8 cs9" id="case">
+  <div class="cs8-g">
+    <div class="cs8-im"><img src="assets/img/projects/mundoo-sunset.jpg" alt="Sunset over the wetlands of Mundoo Island, Coorong" loading="lazy"></div>
+    <div class="cs8-tx">
+      <span class="cs8-ey">Case study &middot; Our model in action</span>
+      <h2>Mundoo Island Station: from farmland to national park.</h2>
+      <p>In 2026, 1,900 hectares at the Murray Mouth became part of Coorong National Park. Here is how our model worked in one place.</p>
+      <dl class="cs8-steps">
+        <div><dt>Identify</dt><dd>Land at the Murray Mouth does not come up for sale. When Mundoo Island Station did, the window to secure it was narrow.</dd></div>
+        <div><dt>Structure</dt><dd>We joined the Australian and South Australian Governments as an acquisition partner, with a substantial part of our contribution coming from a gift in a Will.</dd></div>
+        <div><dt>Deliver</dt><dd>The management plan is being developed with the Ngarrindjeri Aboriginal Corporation and the South Australian Government.</dd></div>
+        <div><dt>Demonstrate</dt><dd>Up to 65 nationally listed threatened species protected, counting toward 30 by 30.</dd></div>
+      </dl>
+      <a class="cs8-btn" href="project-mundoo-island-acquisition.html">Read the full Mundoo story &#8594;</a>
+    </div>
+  </div>
+</section><section class="dg" id="evidence"><div class="cw"><div class="dg-g">
+  <div><span class="ey">Due diligence</span><h2>Test us on the evidence.</h2><p>We publish our strategy, audited financial statements, results and governance.</p></div>
+  <ul class="dg-l"><li><a href="reports.html"><span>Strategy</span><b>Partnering for Impact 2025&ndash;28</b><i>&#8594;</i></a></li><li><a href="reports.html"><span>Financials</span><b>Audited financial statements</b><i>&#8594;</i></a></li><li><a href="reports.html"><span>Results</span><b>Annual impact reports</b><i>&#8594;</i></a></li><li><a href="corporate-governance.html"><span>Governance</span><b>How we are governed</b><i>&#8594;</i></a></li></ul>
+</div></div></section><section class="cta-form" id="talk">
+  <div class="cw"><div class="cf-g">
+    <div class="rv"><span class="ey">Start the conversation</span><h2 style="margin-top:1rem">Let&rsquo;s talk about partnership.</h2><p style="color:var(--char);font-size:1.02rem;line-height:1.65;margin-top:1rem">Whether you represent a First Nations organisation, a government agency, a foundation or a business, our partnerships team would like to talk through what we could achieve together.</p><div class="cf-person"><img src="https://fnpw.org.au/wp-content/uploads/2025/06/Ian-Laing.png" alt="Ian Laing, Chief Commercial Officer" loading="lazy"><div><strong style="display:block;color:var(--euc-deep);font-family:var(--ff-d);margin-bottom:.3rem">Ian Laing</strong><div style="font-size:.9rem;color:var(--stone)">Chief Commercial Officer</div><div style="font-size:.9rem;margin-top:.4rem"><a href="mailto:ilaing@fnpw.org.au" style="color:var(--euc)">ilaing@fnpw.org.au</a></div></div></div></div>
+    <div class="cf-form rv d1">
+      <h3>Partnership enquiry</h3>
+      <div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="368738b1-f478-4c8b-93ac-484ef27a6540" data-portal-id="441704788" style="min-height:460px"></div>
+      <noscript><p class="hsform-fallback">Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> and we will help directly.</p></noscript><p class="hsform-fallback" id="hsFallback" hidden>Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> and we will help directly.</p>
+    </div>
+  </div></div>
+</section>
+</main>
+
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+        <ul class="ftr-social" aria-label="Follow us"><li><a href="https://www.facebook.com/fnpwaustralia/" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/fnpwaustralia/" rel="noopener">Instagram</a></li><li><a href="https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="media-enquiry.html">Media Enquiries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner-invest.html">Partner &amp; Invest</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="https://gift-a-tree.fnpw.org.au">Give a Tree</a></li><li><a href="newsletters-sign-up.html">Newsletter Sign-up</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 90 107 744 771</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
+<script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
+</body>
+</html>

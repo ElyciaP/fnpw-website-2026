@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ACTIVE = {
     'index.html': 'index.html', 'about.html': 'about.html',
     'projects.html': 'projects.html', 'contact.html': 'contact.html',
-    'partner.html': 'partner.html', 'volunteer.html': 'volunteer.html',
+    'partner.html': 'partner-invest.html', 'partner-invest.html': 'partner-invest.html', 'volunteer.html': 'volunteer.html',
     'bequests.html': 'bequests.html',
     'donate-land.html': 'donate-land.html',
     # no active nav item: articles, news, reports, donate, gift-a-tree, bring-back-the-bush
