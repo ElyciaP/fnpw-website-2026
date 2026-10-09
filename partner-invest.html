@@ -554,6 +554,39 @@
 .dg{background:var(--cream)!important}
 .dg-l a{border-bottom-color:var(--rule)!important}
 .cta-form{background:var(--white)!important}
+
+.dl{background:var(--cream);padding:clamp(4.5rem,8vw,6rem) 0}
+.dl-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:2.4rem}
+.dl-head h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3vw,2.5rem);letter-spacing:-.025em;color:var(--euc-deep);margin:.9rem 0 0}
+.dl-head p{font-size:1.02rem;line-height:1.65;color:var(--char);margin:0;max-width:46ch}
+.dl-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.dl-c{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
+.dl-cv{display:flex;align-items:center;justify-content:center;background:var(--sand);height:280px;padding:1.6rem}
+.dl-cv img{height:100%;width:auto;display:block;box-shadow:0 18px 36px -16px rgba(36,25,20,.5)}
+.dl-doc{position:relative;height:100%;aspect-ratio:210/297;display:flex;flex-direction:column;padding:1.1rem 1rem;box-sizing:border-box;box-shadow:0 18px 36px -16px rgba(36,25,20,.5);color:var(--white)}
+.dl-doc small{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.85}
+.dl-doc b{font-family:var(--ff-d);font-size:1.15rem;line-height:1.1;letter-spacing:-.02em;margin-top:.7rem}
+.dl-doc em{font-style:normal;font-family:var(--ff-d);font-size:.95rem;margin-top:.35rem}
+.dl-doc img{position:absolute;left:1rem;bottom:1rem;height:22px;width:auto;box-shadow:none}
+.dl-doc::before{content:"";position:absolute;left:1rem;right:1rem;top:auto;bottom:3rem;height:3px}
+.dl-doc-s{background:#0F3132}.dl-doc-s::before{background:#51B593}.dl-doc-s small{color:#C6EBCA}
+.dl-doc-f{background:#371F1D}.dl-doc-f::before{background:#CBABAB}.dl-doc-f small{color:#CBABAB}
+.dl-bd{padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.dl-k{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--euc)}
+.dl-bd h3{font-family:var(--ff-d);font-size:1.15rem;line-height:1.25;color:var(--euc-deep);margin:.45rem 0 .5rem}
+.dl-bd p{font-size:.92rem;line-height:1.6;color:var(--char);margin:0 0 1.1rem;flex:1}
+.dl-lk{font-weight:700;font-size:.88rem;color:var(--euc)}
+.dl-all{margin:1.2rem 0 0;font-size:.92rem}.dl-all a{color:var(--euc);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.gvn{display:grid;grid-template-columns:.9fr 1.3fr;gap:clamp(2rem,4vw,3.5rem);background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:2rem clamp(1.5rem,3vw,2.4rem);margin-top:2.2rem}
+.gvn h3{font-family:var(--ff-d);font-size:1.5rem;letter-spacing:-.02em;color:var(--euc-deep);margin:.45rem 0 .5rem}
+.gvn-l p{font-size:.96rem;line-height:1.6;color:var(--char);margin:0 0 1.3rem}
+.gvn-btns{display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}
+.gvn-b{display:inline-block;font-weight:700;font-size:.9rem;color:var(--white);background:var(--euc);padding:.7rem 1.1rem;text-decoration:none}
+.gvn-r{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.8rem}
+.gvn-r li{border-top:1px solid var(--rule);padding-top:.8rem;font-size:.9rem;line-height:1.55;color:var(--char)}
+.gvn-r b{display:block;font-family:var(--ff-d);font-size:1rem;color:var(--euc-deep);margin-bottom:.25rem}
+@media(max-width:900px){.dl-head,.gvn{grid-template-columns:1fr}.dl-g{grid-template-columns:1fr}.dl-cv{height:240px}}
+@media(max-width:600px){.gvn-r{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -811,10 +844,35 @@
       <a class="cs8-btn" href="project-mundoo-island-acquisition.html">Read the full Mundoo story &#8594;</a>
     </div>
   </div>
-</section><section class="dg" id="evidence"><div class="cw"><div class="dg-g">
-  <div><span class="ey">Due diligence</span><h2>Test us on the evidence.</h2><p>We publish our strategy, audited financial statements, results and governance.</p></div>
-  <ul class="dg-l"><li><a href="reports.html"><span>Strategy</span><b>Partnering for Impact 2025&ndash;28</b><i>&#8594;</i></a></li><li><a href="reports.html"><span>Financials</span><b>Audited financial statements</b><i>&#8594;</i></a></li><li><a href="reports.html"><span>Results</span><b>Annual impact reports</b><i>&#8594;</i></a></li><li><a href="corporate-governance.html"><span>Governance</span><b>How we are governed</b><i>&#8594;</i></a></li></ul>
-</div></div></section><section class="cta-form" id="talk">
+</section><section class="dl" id="evidence">
+  <div class="cw">
+    <div class="dl-head"><div><span class="ey">Due diligence</span><h2>Test us on the evidence.</h2></div><p>Our results, our strategy and our audited accounts are published in full, along with how we are governed.</p></div>
+    <div class="dl-g">
+      <article class="dl-c">
+        <a class="dl-cv" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf"><img src="assets/img/impact-report-cover.jpg" alt="Cover of the Impact Report 2025" loading="lazy"></a>
+        <div class="dl-bd"><span class="dl-k">Results</span><h3>Impact Report 2025</h3><p>What our work achieved this year across growing national parks, saving species and healing the land.</p><a class="dl-lk" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Download the report (PDF) &#8594;</a></div>
+      </article>
+      <article class="dl-c">
+        <a class="dl-cv" href="https://fnpw.org.au/wp-content/uploads/2025/01/Partnering-For-Impact-FNPW-Strategic-Plan-2025-2028.pdf"><span class="dl-doc dl-doc-s"><small>Strategic Plan</small><b>Partnering for Impact</b><em>2025&ndash;2028</em><img src="assets/img/fnpw-logo-footer.png" alt=""></span></a>
+        <div class="dl-bd"><span class="dl-k">Strategy</span><h3>Partnering for Impact 2025&ndash;2028</h3><p>Our strategic plan and the priorities that guide where we invest.</p><a class="dl-lk" href="https://fnpw.org.au/wp-content/uploads/2025/01/Partnering-For-Impact-FNPW-Strategic-Plan-2025-2028.pdf">Download the plan (PDF) &#8594;</a></div>
+      </article>
+      <article class="dl-c">
+        <a class="dl-cv" href="https://fnpw.org.au/wp-content/uploads/2025/04/Foundation-for-National-Parks-and-Wildlife-FY24-Financial-statements.pdf"><span class="dl-doc dl-doc-f"><small>Financial Statements</small><b>Audited accounts</b><em>FY2024</em><img src="assets/img/fnpw-logo-footer.png" alt=""></span></a>
+        <div class="dl-bd"><span class="dl-k">Financials</span><h3>Financial statements FY2024</h3><p>Our latest externally audited accounts, published every year.</p><a class="dl-lk" href="https://fnpw.org.au/wp-content/uploads/2025/04/Foundation-for-National-Parks-and-Wildlife-FY24-Financial-statements.pdf">Download the statements (PDF) &#8594;</a></div>
+      </article>
+    </div>
+    <p class="dl-all"><a href="reports.html">See all reports and past financial statements</a></p>
+    <div class="gvn">
+      <div class="gvn-l"><span class="dl-k">Governance</span><h3>How we are governed</h3><p>We are accountable to our supporters, our partners and the ACNC.</p><div class="gvn-btns"><a class="gvn-b" href="corporate-governance.html">Read about our governance &#8594;</a><a class="dl-lk" href="about.html">Meet our board</a></div></div>
+      <ul class="gvn-r">
+        <li><b>Since 1970</b>Incorporated on 29 June 1970 as a company limited by guarantee.</li>
+        <li><b>Volunteer board</b>An unremunerated board, elected annually, that meets six times a year.</li>
+        <li><b>Four committees</b>Finance &amp; Risk, Fundraising &amp; Marketing, Projects, and Nominations.</li>
+        <li><b>Registered charity</b>Registered with the ACNC and endorsed as a Deductible Gift Recipient.</li>
+      </ul>
+    </div>
+  </div>
+</section><section class="cta-form" id="talk">
   <div class="cw"><div class="cf-g">
     <div class="rv"><span class="ey">Start the conversation</span><h2 style="margin-top:1rem">Let&rsquo;s talk about partnership.</h2><p style="color:var(--char);font-size:1.02rem;line-height:1.65;margin-top:1rem">Whether you represent a First Nations organisation, a government agency, a foundation or a business, our partnerships team would like to talk through what we could achieve together.</p><div class="cf-person"><img src="https://fnpw.org.au/wp-content/uploads/2025/06/Ian-Laing.png" alt="Ian Laing, Chief Commercial Officer" loading="lazy"><div><strong style="display:block;color:var(--euc-deep);font-family:var(--ff-d);margin-bottom:.3rem">Ian Laing</strong><div style="font-size:.9rem;color:var(--stone)">Chief Commercial Officer</div><div style="font-size:.9rem;margin-top:.4rem"><a href="mailto:ilaing@fnpw.org.au" style="color:var(--euc)">ilaing@fnpw.org.au</a></div></div></div></div>
     <div class="cf-form rv d1">
