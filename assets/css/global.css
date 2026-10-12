@@ -816,3 +816,10 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 .prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
 @media(max-width:640px){.prose table{display:block;overflow-x:auto}}
 .prose .btn-p{color:var(--cream);text-decoration:none}
+
+/* header search */
+.nav>a.nav-srch{gap:.5rem;color:var(--euc-deep)}
+.nav>a.nav-srch::after{display:none}
+.nav>a.nav-srch:hover{color:var(--euc)}
+.nav>a.nav-srch span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:980px){.nav>a.nav-srch span{position:static;width:auto;height:auto;clip:auto}}
