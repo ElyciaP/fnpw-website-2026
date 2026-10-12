@@ -823,3 +823,11 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 .nav>a.nav-srch:hover{color:var(--euc)}
 .nav>a.nav-srch span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media(max-width:980px){.nav>a.nav-srch span{position:static;width:auto;height:auto;clip:auto}}
+
+/* mobile header search */
+.m-srch{display:none}
+@media(max-width:980px){
+  .m-srch{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-left:auto;margin-right:-1.2rem;color:var(--euc-deep);z-index:50;position:relative}
+  .m-srch + .mt{margin-left:0}
+  .nav>a.nav-srch{display:none}
+}
