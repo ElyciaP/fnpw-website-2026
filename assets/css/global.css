@@ -1,4 +1,11 @@
-:root{--sec-y:clamp(2.5rem,4vw,3.5rem)}
+:root{
+  /* Spacing tokens (Oct 2026). One section rhythm sitewide, fluid from mobile to desktop. */
+  --sp-1:8px;--sp-2:16px;--sp-3:24px;--sp-4:32px;--sp-5:48px;--sp-6:64px;
+  --sec-sm:clamp(2rem,3vw,2.5rem);   /* strips: newsletter band, proof bars */
+  --sec-md:clamp(3rem,5vw,4.5rem);   /* every standard section, whatever its background */
+  --hero-top:clamp(4.5rem,8vw,7rem);--hero-bot:clamp(3rem,6vw,6rem);
+  --sec-y:var(--sec-md);             /* legacy alias: existing .sec, .pj-* and .pil-stats rules pick up the new rhythm */
+}
 :root{
   /* Eucalyptus family (primary) */
   --euc:#0F7768;--euc-deep:#0F3132;--euc-mid:#51B593;--euc-soft:#C6EBCA;--euc-pale:#C6EBCA;
@@ -34,7 +41,9 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;letter-spacing:-.02em}
 h3{font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:600}
 h4{font-size:clamp(1rem,1.3vw,1.15rem);font-weight:600}
 p{margin-bottom:1em}p:last-child{margin-bottom:0}
-.ey{font-family:var(--ff-b);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc);display:inline-flex;align-items:center;gap:.6em}
+.ey{font-family:var(--ff-b);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc);display:inline-flex;align-items:center;gap:.6em;vertical-align:top}
+/* eyebrow sits on the top edge of its line, so the gap to the heading below is exact */
+.ey + h2{margin-top:var(--sp-1)}
 .ey::before{content:"";width:24px;height:1.5px;background:currentColor;display:inline-block}
 .lede{font-size:clamp(1.08rem,1.4vw,1.3rem);line-height:1.55;color:var(--char);max-width:62ch}
 .hand{font-family:var(--ff-b);font-weight:600;color:var(--euc)}
