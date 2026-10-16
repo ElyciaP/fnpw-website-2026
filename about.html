@@ -13,7 +13,7 @@
 
 <style>
 /* About hero — matches Projects hero pattern: image bg, compact size, overlay text */
-.ab-hero{position:relative;padding:7rem 0 6rem;background:var(--euc-deep);overflow:hidden;isolation:isolate}
+.ab-hero{position:relative;padding:var(--hero-top) 0 var(--hero-bot);background:var(--euc-deep);overflow:hidden;isolation:isolate}
 .ab-hero-bg{position:absolute;top:0;bottom:0;right:0;left:34%;z-index:-2}
 .ab-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
 .ab-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0F3132 0%,rgba(15,49,50,.72) 22%,rgba(15,49,50,.2) 48%,rgba(15,49,50,0) 70%),linear-gradient(180deg,rgba(15,49,50,.25) 0%,transparent 28%,transparent 75%,rgba(15,49,50,.35) 100%);z-index:1}
@@ -30,7 +30,7 @@
 .ab-hero-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.7);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:3;font-family:var(--ff-b)}
 @media(max-width:780px){.ab-hero-cred{display:none}}
 
-.ac-sec{padding:5rem 0;background:var(--soil);color:var(--cream);position:relative;overflow:hidden}
+.ac-sec{padding:var(--sec-md) 0;background:var(--soil);color:var(--cream);position:relative;overflow:hidden}
 .ac-sec .pat{display:none}
 .ac-sec .ac-ey{color:#CBABAB}.ac-sec .ac-ey::before{background:#CBABAB}
 .framed.bm::before{background:var(--bark-mid)}
@@ -65,7 +65,7 @@
 .tc-n{font-family:var(--ff-d);font-weight:700;font-size:1.1rem;color:var(--euc-deep);margin-bottom:.2rem}
 .tc-r{font-size:.85rem;color:var(--euc)}
 
-.ab-cta{position:relative;padding:6rem 0;text-align:center;overflow:hidden;color:var(--char);
+.ab-cta{position:relative;padding:var(--sec-md) 0;text-align:center;overflow:hidden;color:var(--char);
   background:radial-gradient(120% 90% at 50% -10%, #FAF6F2 0%, var(--cream) 42%, var(--sand) 100%);
   border-top:1px solid var(--rule)}
 .ab-cta::before{content:"";position:absolute;inset:0;pointer-events:none;
@@ -75,7 +75,7 @@
 
 /* v3.2 gallery + team photos */
 .tc-ph img{width:100%;height:100%;object-fit:cover;display:block}
-.abg{background:var(--euc-deep);padding:5.5rem 0;overflow:hidden}
+.abg{background:var(--euc-deep);padding:var(--sec-md) 0;overflow:hidden}
 .abg .ey{color:var(--euc-soft)}
 .abg h2{color:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:clamp(1.6rem,2.8vw,2.3rem);letter-spacing:-.02em;margin:.8rem 0 2rem}
 .abg-rail{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
@@ -85,7 +85,7 @@
 @media(max-width:700px){.abg-i img{height:230px}}
 
 /* v4 team sizing */
-.tm-g{grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:1.2rem}
+.tm-g{grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:var(--sp-3)}
 .tc-ph{aspect-ratio:1/1;height:auto;overflow:hidden}
 .tc-in{padding:.9rem 1rem}
 .tc-n{font-size:.98rem}
@@ -105,10 +105,10 @@
 .abs-arr:hover{background:#fff;color:var(--euc-deep)}
 
 /* v5.1 centre-spine draggable timeline */
-.ht{background:var(--euc-deep);color:var(--cream);padding:5.5rem 0 4rem;overflow:hidden}
+.ht{background:var(--euc-deep);color:var(--cream);padding:var(--sp-5) 0 calc(var(--sec-md) - 26px);overflow:hidden}
 .ht-hint{font-family:var(--ff-b);font-size:0.94rem;color:var(--cream);display:inline-block;font-weight:600}
-.ht-railwrap{margin-top:1.5rem}
-.ht-rail{display:flex;overflow-x:auto;cursor:grab;user-select:none;-webkit-user-select:none;padding:0 max(calc((100vw - 1240px)/2),24px) 1rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
+.ht-railwrap{margin-top:0}
+.ht-rail{display:flex;overflow-x:auto;cursor:grab;user-select:none;-webkit-user-select:none;padding:var(--sp-5) max(calc((100vw - 1240px)/2),24px) 1rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
 .ht-rail.drag{cursor:grabbing}
 .ht-i{flex:0 0 400px;position:relative;height:480px}
 .ht-i::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--euc-soft);opacity:.9}
@@ -133,12 +133,12 @@
 .ab-proof div{display:flex;flex-direction:column}
 .ab-proof strong{font-family:var(--ff-d);font-weight:800;font-size:1.9rem;letter-spacing:-.03em;color:var(--euc);line-height:1}
 .ab-proof span{font-size:.86rem;color:var(--stone);margin-top:.3rem;max-width:14ch}
-.ab-film{background:var(--euc-deep);padding:5rem 0 0}
+.ab-film{background:var(--euc-deep);padding:var(--sec-md) 0 0}
 .vid{position:relative;aspect-ratio:16/9;max-width:940px;margin:0 auto;background:#000;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
-.ht{padding-top:3.5rem}
+
 .rap-art{align-self:start}
-.two.rap-row{grid-template-columns:1.35fr 1fr;gap:3.5rem}
+.two.rap-row{grid-template-columns:1.35fr 1fr;gap:var(--sp-6)}
 @media(max-width:880px){.two.rap-row{grid-template-columns:1fr;gap:2.5rem}}
 .rap-art img{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;box-shadow:12px 12px 0 var(--bark-mid)}
 .rap-cred{font-size:.82rem;color:var(--stone);margin:1.5rem auto 0;max-width:400px}
@@ -146,6 +146,11 @@
 .ab-hero-seal{position:absolute;left:63%;top:24%;width:clamp(96px,9vw,138px);transform:translate(-50%,-50%);z-index:3;pointer-events:none;opacity:.95}
 .ab-hero-seal img{width:100%;height:auto;display:block}
 @media(max-width:780px){.ab-hero h1 br{display:none}.ab-hero-seal{left:auto;right:18px;top:22px;transform:none;width:84px}}
+
+/* Heading stack (spacing tokens, Oct 2026): eyebrow, 8px + line, heading, 24px, intro */
+main section h2{margin-bottom:0}
+main section h2 + p,main section h2 + .lede{margin-top:var(--sp-3)}
+main section .ey + h2{margin-top:var(--sp-1)}
 </style>
 </head>
 <body>
@@ -212,11 +217,11 @@
   </div>
 </section>
 
-<section class="sec" style="background:var(--cream);padding:6rem 0">
+<section class="sec" style="background:var(--cream)">
   <div class="cw">
     <div class="rv" style="text-align:center;max-width:800px;margin:0 auto">
       <span class="ey">How we work</span>
-      <h2 style="margin:1rem 0 1.4rem">Three ways we work.</h2>
+      <h2 style="margin-bottom:1.4rem">Three ways we work.</h2>
       <p class="ab-p">More than 2,000 native species are now at risk of extinction. We focus where the need is greatest, across three connected areas of work, all of it aligned with Australia&rsquo;s commitment to protect 30% of its land and sea by 2030.</p>
     </div>
     <div class="ap-g">
@@ -227,12 +232,12 @@
   </div>
 </section>
 
-<section class="sec" style="background:var(--sand);padding:6rem 0">
+<section class="sec" style="background:var(--sand)">
   <div class="cw">
     <div class="ab-split ab-split-big">
       <div class="rv">
         <span class="ey">How we make it happen</span>
-        <h2 style="margin:1rem 0 1.4rem">Organising the work, and seeing it through.</h2>
+        <h2 style="margin-bottom:1.4rem">Organising the work, and seeing it through.</h2>
         <p class="ab-p">Protecting a landscape almost never comes down to one organisation. It takes the community group who knows the ground, the scientists who can measure what is changing, the landholders and agencies who manage access, and the people willing to pay for the work. Rarely does any one of them hold all the pieces.</p>
         <p class="ab-p" style="margin-top:1.1rem">That is the work we do. We find the places and species that need help most, bring the right people around them, and organise the project so it can actually be delivered. We help fund it, and we report on what changed.</p>
         <p class="ab-p" style="margin-top:1.1rem">It is why a community nursery, a state government and a corporate partner can end up working on the same patch of country, each doing the part only they can do. Our job is to make that possible, and to stay with it long after the first season.</p>
@@ -263,7 +268,7 @@
   <div class="cw">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
       <div class="rv"><span class="ey" style="color:var(--euc-soft)">Since 1970</span>
-      <h2 style="color:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;margin:.8rem 0 .5rem">55 years of impact.</h2>
+      <h2 style="color:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;margin-bottom:.5rem">55 years of impact.</h2>
       <span class="ht-hint">drag back through the decades &#8594;</span></div>
       <div style="display:flex;gap:.6rem">
         <button class="abs-arr ht-arr" data-dir="-1" aria-label="Later milestones">&#8592;</button>
@@ -301,12 +306,12 @@
   </div>
 </section>
 
-<section class="sec sand" style="padding:6rem 0">
+<section class="sec sand">
   <div class="cw">
     <div class="two rap-row">
       <div class="rv">
         <span class="ey">Reconciliation Action Plan</span>
-        <h2 style="margin:1rem 0 1.4rem">Our commitment to reconciliation.</h2>
+        <h2 style="margin-bottom:1.4rem">Our commitment to reconciliation.</h2>
         <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.4rem">We acknowledge that Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of lands, seas, waters, flora and fauna, possessing crucial knowledge that supports our shared efforts to achieve a sustainable and healthy country. Our vision is to create such country, led and driven by First Nations peoples, through fostering deep engagement with one of the oldest living cultures on earth; a culture that remains a shining example of community and environmental sustainability.</p>
         <p style="font-size:1.05rem;line-height:1.7;margin-bottom:2rem">Our Innovate RAP mirrors our ongoing commitment to strengthen relationships between Aboriginal and Torres Strait Islander peoples and non-Indigenous Australians, and to ensure our policies, processes and programs are culturally appropriate and accountable. We are determined to advance reconciliation through meaningful partnerships and continual learning, building a unified Australia where First Peoples&rsquo; histories, cultures and expertise are celebrated to drive self-determination and a sustainable future for all.</p>
         <a href="https://fnpw.org.au/wp-content/uploads/2025/04/FNWP-Reconciliation-Action-Plan-February-25-February-27.pdf" class="btn btn-p" target="_blank" rel="noopener">Download our RAP</a>
@@ -319,9 +324,9 @@
   </div>
 </section>
 
-<section class="sec sand" style="padding:6rem 0">
+<section class="sec sand">
   <div class="cw">
-    <div class="rv" style="text-align:center;max-width:680px;margin:0 auto"><span class="ey">Our team</span><h2 style="margin-top:1rem">The people leading the work.</h2></div>
+    <div class="rv" style="text-align:center;max-width:680px;margin:0 auto"><span class="ey">Our team</span><h2>The people leading the work.</h2></div>
     <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy"></div><div class="tc-in"><div class="tc-n">Ian Darbyshire</div><div class="tc-r">Chief Executive Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2022/04/suzana-01.jpg" alt="Suzana Majstorovic" loading="lazy"></div><div class="tc-in"><div class="tc-n">Suzana Majstorovic</div><div class="tc-r">Chief Operations Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/Gavin-Le-Roux.png" alt="Gavin Le Roux" loading="lazy"></div><div class="tc-in"><div class="tc-n">Gavin Le Roux</div><div class="tc-r">Chief Financial Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Mark-Cairns.png" alt="Mark Cairns" loading="lazy"></div><div class="tc-in"><div class="tc-n">Mark Cairns</div><div class="tc-r">Chief Biodiversity Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/06/Ian-Laing.png" alt="Ian Laing" loading="lazy"></div><div class="tc-in"><div class="tc-n">Ian Laing</div><div class="tc-r">Chief Commercial Officer</div></div></div>
 </div>
 </div>
@@ -333,17 +338,17 @@
     <div class="two" style="align-items:center">
       <div class="rv" style="max-width:320px;justify-self:center"><img src="assets/img/tom-lewis.jpg" alt="The late Hon. Tom Lewis AO" width="384" height="480" decoding="async" style="display:block;width:100%;box-shadow:12px 12px 0 var(--bark-mid)"></div>
       <div class="rv d1"><span class="ey">Founder &amp; Patron</span>
-      <h2 style="margin:.8rem 0 1rem">The late Hon. Tom Lewis AO</h2>
+      <h2 style="margin-bottom:1rem">The late Hon. Tom Lewis AO</h2>
       <p>As NSW lands minister, Tom Lewis set up the National Parks and Wildlife Service in 1967, then established the Foundation for National Parks &amp; Wildlife in 1970 as its fundraising arm. Today we are an independent conservation organisation working Australia-wide.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec sand" style="padding:6rem 0">
+<section class="sec sand">
   <div class="cw">
     <div class="rv" style="text-align:center;max-width:680px;margin:0 auto">
       <span class="ey">Governance</span>
-      <h2 style="margin-top:1rem">Our Board of Directors.</h2>
+      <h2>Our Board of Directors.</h2>
       <p class="lede" style="margin-top:1.2rem;margin-left:auto;margin-right:auto">Our board brings together expertise across conservation science, law, finance and community leadership to guide our long-term mission.</p>
     </div>
     <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kelly-OShanassy.png" alt="Kelly O&rsquo;Shanassy" loading="lazy"></div><div class="tc-in"><div class="tc-n">Kelly O&rsquo;Shanassy</div><div class="tc-r">Chair</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Elected Chair 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Mark-Arnold.png" alt="Mark Arnold" loading="lazy"></div><div class="tc-in"><div class="tc-n">Mark Arnold</div><div class="tc-r">Treasurer &amp; Deputy Chair</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2020/11/Jane-Daziger_POS@2x.png" alt="Jane Danziger" loading="lazy"></div><div class="tc-in"><div class="tc-n">Jane Danziger</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2020</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Tim-Jarvis-FNPW-director-1024x814.jpg" alt="Tim Jarvis AM" loading="lazy"></div><div class="tc-in"><div class="tc-n">Tim Jarvis AM</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2023</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Natalie-Kyrogiou-FNPW-Director.jpg" alt="Natalie Kyriacou OAM" loading="lazy"></div><div class="tc-in"><div class="tc-n">Natalie Kyriacou OAM</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2024</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/leisa-bacon-1024x1024.jpg" alt="Leisa Bacon" loading="lazy"></div><div class="tc-in"><div class="tc-n">Leisa Bacon</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Staff-Profiles.png" alt="Dr Lucas Carmody" loading="lazy"></div><div class="tc-in"><div class="tc-n">Dr Lucas Carmody</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kinjia.png" alt="Kinjia Munkara-Murray" loading="lazy"></div><div class="tc-in"><div class="tc-n">Kinjia Munkara-Murray</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Nick-Tubb.png" alt="Nick Tubb" loading="lazy"></div><div class="tc-in"><div class="tc-n">Nick Tubb</div><div class="tc-r">Director</div><div class="tc-r" style="font-size:.78rem;opacity:.75">Appointed 2026</div></div></div>
@@ -405,7 +410,7 @@
   <div class="cw rv">
     <div class="cta-tick"></div>
     <span class="ey" style="color:var(--bark-text)">Be part of what comes next</span>
-    <h2 style="color:var(--euc-deep);max-width:700px;margin:1rem auto 1.5rem">Help us protect what matters most.</h2>
+    <h2 style="color:var(--euc-deep);max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:1.5rem">Help us protect what matters most.</h2>
     <p style="color:var(--stone);max-width:600px;margin:0 auto 2rem;font-size:1.1rem">Every donation, partnership and volunteer hour adds up to landscapes restored and species saved.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a href="https://bush.fnpw.org.au" class="btn btn-p btn-don">Donate now</a><a href="partner.html" class="btn btn-o" style="color:var(--euc-deep);border-color:var(--euc-deep)">Partner with us</a></div>
   </div>
@@ -415,7 +420,7 @@
   <div class="pat"></div>
   <div class="cw"><div class="rv" style="max-width:920px;margin:0 auto;text-align:center">
     <span class="ey ac-ey">Acknowledgement of Country</span>
-    <h2 style="margin:1.2rem 0">We acknowledge the Traditional Custodians of Country throughout Australia.</h2>
+    <h2 style="margin-bottom:1.2rem">We acknowledge the Traditional Custodians of Country throughout Australia.</h2>
     <p>We pay our respects to Elders past and present, and honour the knowledge and traditions passed down through generations. Our work is grounded in the understanding that the lands and waters we protect have been cared for by First Nations peoples for tens of thousands of years.</p>
   </div></div>
 </section></main>
@@ -438,6 +443,7 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/snap.js" defer></script>
 <!-- abs-arr JS --><script>
 document.querySelectorAll('.abs-arr').forEach(function(b){b.addEventListener('click',function(){
   var r=document.querySelector('.abs-rail');var c=r.querySelector('.abs-card');

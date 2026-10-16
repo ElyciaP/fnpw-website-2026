@@ -41,6 +41,14 @@ All design tokens live in the `:root` block at the top of each file's first `<st
 - `--ff-b`: `Figtree` — body text
 - `--ff-h`: `Caveat` — handwritten accent
 
+**Spacing tokens (Oct 2026):** one section rhythm sitewide, in the first `:root` of `global.css`.
+- `--sec-md` is the padding for every standard section, top and bottom, whatever its background. `--sec-y` is an alias for it. `--sec-sm` is for thin strips only (newsletter band, proof bars). Heroes use `--hero-top` / `--hero-bot`.
+- Gap scale: `--sp-1` 8, `--sp-2` 16, `--sp-3` 24, `--sp-4` 32, `--sp-5` 48, `--sp-6` 64 (px). Use these for grid gaps and stack spacing, not hard-coded values.
+- Heading stack: eyebrow, then h2 8px below (`.ey + h2`), then intro 24px below. `.ey` is `vertical-align:top` so the gap is exact.
+- Never put padding or margin in a section or heading `style=""` attribute. Inline spacing overrides the tokens; it was stripped from about.html.
+
+**Section snap:** `assets/js/snap.js` gives a gentle one-direction settle onto `main > section` edges after scrolling stops (desktop, no reduced motion). Opt a page in by loading the script after main.js. Currently on: about.html.
+
 **Key utility classes:**
 - `.cw` — content wrapper (max-width 1240px, fluid horizontal padding)
 - `.sec` — section padding; `.sec.dark`, `.sec.paper`, `.sec.sand` for background variants
