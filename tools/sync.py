@@ -12,6 +12,8 @@ ACTIVE = {
     'partner.html': 'partner.html', 'partner-invest.html': 'partner-invest.html', 'government-partnerships.html': 'government-partnerships.html', 'volunteer.html': 'volunteer.html',
     'bequests.html': 'bequests.html',
     'donate-land.html': 'donate-land.html',
+    'our-impact.html': 'our-impact.html', 'reports.html': 'reports.html',
+    'articles.html': 'articles.html', 'in-the-news.html': 'in-the-news.html',
     # no active nav item: articles, news, reports, donate, gift-a-tree, bring-back-the-bush
 }
 PILLARS = ('growing-national-parks.html', 'saving-species.html', 'healing-the-land.html')

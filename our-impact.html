@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Our Impact | Foundation for National Parks &amp; Wildlife</title>
+<meta name="description" content="Land added to national parks, habitat restored and species given a better chance. See what your support changed in 2025, from our Impact Report.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+/* hero (same pattern as reports.html) */
+.nh{position:relative;isolation:isolate;overflow:hidden;color:var(--cream);background:var(--euc-deep);padding:9.5rem 0 4.5rem}
+.nh::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/projects/mundoo-hero.jpg') 60% 50%/cover}
+.nh::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,rgba(15,49,50,.86) 0%,rgba(15,49,50,.6) 50%,rgba(15,49,50,.25) 100%)}
+.nh h1{color:var(--cream);max-width:16ch;margin:1rem 0 1.2rem}
+.nh .lede{color:rgba(250,246,242,.88);max-width:52ch}
+.nh .ey{color:var(--euc-soft)}
+.nh nav,.nh nav a{color:rgba(250,246,242,.75)!important}
+.nh-acts{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-4)}
+
+/* jump bar */
+.im-jump{background:var(--cream);border-bottom:1px solid var(--rule)}
+.im-jump .cw{display:flex;gap:var(--sp-4);overflow-x:auto;white-space:nowrap}
+.im-jump a{font-family:var(--ff-d);font-size:.84rem;font-weight:600;color:var(--euc-deep);padding:1rem 0;border-bottom:2px solid transparent}
+.im-jump a:hover{border-color:var(--euc);opacity:1}
+
+/* year in numbers */
+.im-head{max-width:62ch;margin-bottom:var(--sp-5)}
+.im-head .lede{margin-top:var(--sp-3)}
+.im-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media(max-width:860px){.im-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.im-stats{grid-template-columns:1fr}}
+.im-stat{background:var(--white);padding:var(--sp-4) var(--sp-4) var(--sp-4);position:relative}
+.im-stat::before{content:"";position:absolute;top:0;left:0;width:48px;height:3px;background:var(--euc)}
+.im-stat.sp::before{background:var(--waratah)}
+.im-stat.hl::before{background:var(--bark)}
+.im-n{font-family:var(--ff-d);font-weight:700;font-size:clamp(2rem,3.6vw,2.9rem);letter-spacing:-.03em;line-height:1;color:var(--euc-deep);display:block}
+.im-n small{font-size:.45em;font-weight:600;letter-spacing:0;margin-left:.2em}
+.im-l{display:block;margin-top:var(--sp-2);font-size:.98rem;line-height:1.45;color:var(--char);max-width:28ch}
+.im-src{margin-top:var(--sp-3);font-size:.86rem;color:var(--stone)}
+.im-src a{color:var(--euc);font-weight:600}
+
+/* since 1970 band */
+.im-long{background:var(--euc-deep);color:var(--cream)}
+.im-long-g{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--sp-6);align-items:center}
+@media(max-width:860px){.im-long-g{grid-template-columns:1fr;gap:var(--sp-5)}}
+.im-long h2{color:var(--cream)}
+.im-long .ey{color:var(--euc-soft)}
+.im-long p{color:rgba(250,246,242,.85);margin-top:var(--sp-3);max-width:52ch}
+.im-long-n{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
+@media(max-width:520px){.im-long-n{grid-template-columns:1fr}}
+.im-long-n div{border-top:1px solid rgba(250,246,242,.25);padding-top:var(--sp-2)}
+.im-long-n .im-n{color:var(--cream)}
+.im-long-n .im-l{color:rgba(250,246,242,.8);font-size:.92rem}
+
+/* pillar stories */
+.im-pil{display:grid;grid-template-columns:5fr 7fr;gap:var(--sp-6);align-items:start;padding:var(--sp-6) 0;border-top:1px solid var(--rule)}
+.im-pil:first-of-type{border-top:0;padding-top:0}
+@media(max-width:900px){.im-pil{grid-template-columns:1fr;gap:var(--sp-4)}}
+.im-pil-im{aspect-ratio:4/3;overflow:hidden;background:var(--euc)}
+.im-pil-im img{width:100%;height:100%;object-fit:cover;display:block}
+.im-tag{font-family:var(--ff-b);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--euc)}
+.im-pil.sp .im-tag{color:var(--waratah)}
+.im-pil.hl .im-tag{color:var(--bark-text)}
+.im-pil h3{font-size:clamp(1.5rem,2.4vw,2rem);margin-top:var(--sp-1)}
+.im-pil > div > p{margin-top:var(--sp-2);max-width:60ch}
+.im-cases{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);margin-top:var(--sp-4)}
+@media(max-width:600px){.im-cases{grid-template-columns:1fr}}
+.im-case{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--euc);padding:var(--sp-3);display:flex;flex-direction:column}
+.im-pil.sp .im-case{border-top-color:var(--waratah)}
+.im-pil.hl .im-case{border-top-color:var(--bark)}
+.im-case h4{font-size:1.05rem;color:var(--euc-deep)}
+.im-case .where{font-size:.8rem;color:var(--stone);margin-top:2px}
+.im-case p{font-size:.94rem;line-height:1.55;margin-top:var(--sp-2);flex:1}
+.im-case a{margin-top:var(--sp-2);font-family:var(--ff-d);font-size:.84rem;font-weight:600;color:var(--euc-deep)}
+.im-case a::after{content:" →"}
+
+/* people */
+.im-ppl{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);align-items:center}
+@media(max-width:860px){.im-ppl{grid-template-columns:1fr;gap:var(--sp-4)}}
+.im-ppl-im{aspect-ratio:3/2;overflow:hidden}
+.im-ppl-im img{width:100%;height:100%;object-fit:cover;display:block}
+.im-ppl p{margin-top:var(--sp-3);max-width:56ch}
+.im-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);margin-top:var(--sp-4)}
+.im-mini .im-n{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.im-mini .im-l{font-size:.9rem;margin-top:var(--sp-1)}
+
+/* next */
+.im-next-g{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+@media(max-width:900px){.im-next-g{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.im-next-g{grid-template-columns:1fr}}
+.im-next-g div{background:var(--white);border:1px solid var(--rule);padding:var(--sp-3)}
+.im-next-g .im-n{font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--waratah-dk)}
+.im-next-g .im-l{font-size:.92rem}
+.im-acts{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-5)}
+
+/* report feature */
+.im-rpt{display:grid;grid-template-columns:auto 1fr;gap:var(--sp-5);align-items:center}
+@media(max-width:700px){.im-rpt{grid-template-columns:1fr}}
+.im-rpt img{width:min(240px,60vw);box-shadow:0 24px 50px -24px rgba(15,49,50,.4);display:block}
+.im-rpt p{margin-top:var(--sp-2);max-width:56ch}
+.im-rpt .im-acts{margin-top:var(--sp-4)}
+</style>
+</head>
+<body>
+<!-- @header -->
+
+<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <a href="search.html" class="m-srch" aria-label="Search the site"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg></a>
+  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn">
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button>Projects <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Partner With Us <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="partner-invest.html" class="">Ways to Partner</a>
+        <a href="government-partnerships.html" class="">Government Partnerships</a>
+        <a href="partner.html" class="">Corporate Partnerships</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Impact <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="our-impact.html" class=" on">Our Impact</a>
+        <a href="reports.html" class="">Impact Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Get Involved <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Bequests</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button>Stories <span class="ar">▾</span></button>
+      <div class="dd">
+        <a href="articles.html" class="">Articles</a>
+        <a href="in-the-news.html" class="">In the News</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact Us</a>
+    <a href="search.html" class="nav-srch" aria-label="Search the site"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg><span>Search</span></a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+</div></div>
+</header><!-- /@header -->
+<main>
+<section class="nh">
+  <div class="cw rv">
+    <nav style="display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem"><a href="index.html">Home</a><span>/</span>Our Impact</nav>
+    <span class="ey">Our impact</span>
+    <h1>What your support changed on the ground.</h1>
+    <p class="lede">Each year we report on what actually changed: the land added to national parks, the habitat brought back and the species given a better chance. These are the results from our Impact Report 2025, and the projects behind them.</p>
+    <div class="nh-acts">
+      <a class="btn btn-p" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Read the Impact Report 2025</a>
+    </div>
+  </div>
+</section>
+
+<div class="im-jump" aria-label="On this page"><div class="cw">
+  <a href="#year">2025 in numbers</a><a href="#parks">Growing National Parks</a><a href="#land">Healing the Land</a><a href="#species">Saving Species</a><a href="#people">People</a><a href="#next">What comes next</a>
+</div></div>
+
+<section class="sec" id="year">
+  <div class="cw">
+    <div class="im-head rv">
+      <span class="ey">2025 in numbers</span>
+      <h2>A year of results you can count.</h2>
+      <p class="lede">None of this happens alone. Traditional Custodians, rangers, scientists, Landcare groups, community nurseries, volunteers and supporters do the work, and we bring the funding and the partners together so it can be delivered.</p>
+    </div>
+    <div class="im-stats rv d1">
+      <div class="im-stat"><span class="im-n"><span data-count="29479">29,479</span><small>ha</small></span><span class="im-l">of land added to National Park status</span></div>
+      <div class="im-stat hl"><span class="im-n"><span data-count="1215443">1,215,443</span></span><span class="im-l">trees, shrubs and seedlings planted in key priority landscapes, up to 2025</span></div>
+      <div class="im-stat hl"><span class="im-n"><span data-count="647">647</span><small>ha</small></span><span class="im-l">under active restoration in 2025</span></div>
+      <div class="im-stat sp"><span class="im-n"><span data-count="18582">18,582</span></span><span class="im-l">wombat mange treatments delivered, against a target of 10,000</span></div>
+      <div class="im-stat"><span class="im-n"><span data-count="3.8" data-dec="1" data-pre="$" data-suf="M">$3.8M</span></span><span class="im-l">invested in our core purpose</span></div>
+      <div class="im-stat"><span class="im-n"><span data-count="4460">4,460</span></span><span class="im-l">hours given by corporate volunteers</span></div>
+    </div>
+    <p class="im-src rv">Figures from the <a href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">FNPW Impact Report 2025</a>.</p>
+  </div>
+</section>
+
+<section class="sec im-long">
+  <div class="cw"><div class="im-long-g">
+    <div class="rv">
+      <span class="ey">Since 1970</span>
+      <h2>Fifty-five years of keeping Australia wild.</h2>
+      <p>Our first acquisition was Mount King Station in north-west NSW, announced a month after our Foundation was established in 1970. Since then the work has grown from single land purchases into partnerships that protect and restore whole landscapes, and the land we have helped secure will stay protected for good.</p>
+    </div>
+    <div class="im-long-n rv d1">
+      <div><span class="im-n">600,000+</span><span class="im-l">hectares protected for national parks and reserves</span></div>
+      <div><span class="im-n">50</span><span class="im-l">national parks and reserves created or expanded</span></div>
+      <div><span class="im-n">55</span><span class="im-l">years of conservation across Australia</span></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec">
+  <div class="cw">
+    <div class="im-head rv">
+      <span class="ey">Across our three pillars</span>
+      <h2>Where the results came from.</h2>
+    </div>
+
+    <article class="im-pil rv" id="parks">
+      <div class="im-pil-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" loading="lazy"></div>
+      <div>
+        <span class="im-tag">Growing National Parks</span>
+        <h3>Land secured for good.</h3>
+        <p>We work with First Nations groups, governments and local partners to identify high-value land and bring it into the protected estate, where it stays safe for the long term.</p>
+        <div class="im-cases">
+          <div class="im-case"><h4>Mundoo Island Station</h4><span class="where">Murray Mouth, SA</span><p>1,900 hectares added to Coorong National Park, home to 65 nationally listed threatened species.</p><a href="project-mundoo-island-acquisition.html">Read the story</a></div>
+          <div class="im-case"><h4>Undilla Station</h4><span class="where">Queensland</span><p>23,000 hectares secured, providing habitat for at least five threatened species.</p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="im-pil hl rv" id="land">
+      <div class="im-pil-im"><img src="assets/img/pillar-healing-nursery.jpg" alt="Trays of native seedlings growing in tubes on benches at a community nursery" loading="lazy"></div>
+      <div>
+        <span class="im-tag">Healing the Land</span>
+        <h3>Habitat grown from the ground up.</h3>
+        <p>Through our Landscape Resilience Program, community nurseries grow local native plants and community groups put them back into fire, flood and clearing-affected country.</p>
+        <div class="im-cases">
+          <div class="im-case"><h4>Native Plant Nurseries</h4><span class="where">Four states</span><p>More than 30 community nurseries and 49 community groups have grown and planted 1,215,443 trees, shrubs and seedlings.</p><a href="project-native-plant-nurseries.html">Read the story</a></div>
+          <div class="im-case"><h4>Fire Wise</h4><span class="where">VIC, SA, NSW</span><p>14 community nurseries supported, more than 110,000 native plants grown, 145 living seedbanks and over 4,900 people trained.</p><a href="project-fire-wise.html">Read the story</a></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="im-pil sp rv" id="species">
+      <div class="im-pil-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" loading="lazy"></div>
+      <div>
+        <span class="im-tag">Saving Species</span>
+        <h3>Recovery you can measure.</h3>
+        <p>We back targeted recovery programs for the species that need it most, and we fund the volunteers and local groups who carry that work out in the field.</p>
+        <div class="im-cases">
+          <div class="im-case"><h4>Curb Wombat Mange Program</h4><span class="where">New South Wales</span><p>18,582 treatments delivered, almost double the 10,000 target, reaching an estimated 1,498 wombats.</p><a href="project-curb-wombat-mange-program.html">Read the story</a></div>
+          <div class="im-case"><h4>Growling Grass Frog</h4><span class="where">Victoria</span><p>Between 35 and 40 frogs translocated to build a founding population of 60 to 65.</p><a href="article-bringing-back-the-growling-grass-frog.html">Read the story</a></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec sand" id="people">
+  <div class="cw"><div class="im-ppl">
+    <div class="im-ppl-im rv"><img src="assets/img/volunteer-hero-planting.jpg" alt="Volunteers spread across a hillside of newly planted seedlings in tree guards, two of them working together in the foreground" loading="lazy"></div>
+    <div class="rv d1">
+      <span class="ey">Connecting people and place</span>
+      <h2>Teams who came out and planted.</h2>
+      <p>Corporate volunteering puts staff teams on the ground alongside local groups, and the hours they give go straight into restoration sites that need hands.</p>
+      <div class="im-mini">
+        <div><span class="im-n">31</span><span class="im-l">corporate organisations</span></div>
+        <div><span class="im-n">811</span><span class="im-l">volunteers</span></div>
+        <div><span class="im-n">4,460</span><span class="im-l">volunteer hours</span></div>
+        <div><span class="im-n">5,090</span><span class="im-l">trees, shrubs and seedlings planted</span></div>
+      </div>
+      <div class="im-acts"><a class="btn btn-o" href="volunteer.html">Volunteer with your team</a></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" id="next">
+  <div class="cw">
+    <div class="im-head rv">
+      <span class="ey">What comes next</span>
+      <h2>Our goals to 2028.</h2>
+      <p class="lede">Our strategy, Partnering for Impact, sets out how we will scale this work with government, foundations, businesses and philanthropists over the next three years.</p>
+    </div>
+    <div class="im-next-g rv d1">
+      <div><span class="im-n">50,000 ha</span><span class="im-l">protected and restored, our new hectare goal</span></div>
+      <div><span class="im-n">$50M</span><span class="im-l">in targeted funding from corporate, government and philanthropic partners</span></div>
+      <div><span class="im-n">20+</span><span class="im-l">high-impact partnerships</span></div>
+      <div><span class="im-n">10+</span><span class="im-l">flagship projects, each valued at more than $1 million</span></div>
+    </div>
+    <div class="im-acts rv">
+      <a class="btn btn-p" href="partner-invest.html">Partner with us</a>
+      <a class="btn btn-o" href="https://fnpw.org.au/wp-content/uploads/2025/01/Partnering-For-Impact-FNPW-Strategic-Plan-2025-2028.pdf">Read our strategy</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="cw"><div class="im-rpt rv">
+    <img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025">
+    <div>
+      <span class="ey">The full picture</span>
+      <h2>Read the Impact Report 2025.</h2>
+      <p>The full report covers every project, partner and result from the year. You can also find our past impact reports and financial statements in one place.</p>
+      <div class="im-acts">
+        <a class="btn btn-p" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Download the report</a>
+        <a class="btn btn-o" href="reports.html">All reports</a>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec dark">
+  <div class="cw rv" style="text-align:center">
+    <h2>Help us grow the next set of numbers.</h2>
+    <p class="lede" style="margin:var(--sp-3) auto 0">Every project on this page was made possible by donations, bequests and partnerships.</p>
+    <div class="im-acts" style="justify-content:center">
+      <a class="btn btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a>
+      <a class="btn btn-o" href="partner-invest.html">Partner with us</a>
+    </div>
+  </div>
+</section>
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+        <ul class="ftr-social" aria-label="Follow us"><li><a href="https://www.facebook.com/fnpwaustralia/" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/fnpwaustralia/" rel="noopener">Instagram</a></li><li><a href="https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="media-enquiry.html">Media Enquiries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner-invest.html">Partner &amp; Invest</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Leave a Gift in Will</a></li><li><a href="https://gift-a-tree.fnpw.org.au">Give a Tree</a></li><li><a href="newsletters-sign-up.html">Newsletter Sign-up</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 90 107 744 771</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

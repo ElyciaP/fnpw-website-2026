@@ -840,3 +840,6 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
   .m-srch + .mt{margin-left:0}
   .nav>a.nav-srch{display:none}
 }
+
+/* Oct 2026: seven-item nav (About to Contact Us) wraps between 981 and 1100px; tighten the gaps there */
+@media(min-width:981px) and (max-width:1100px){.nav{gap:1.05rem}.nav>a.btn{padding:.62em .95em}}
