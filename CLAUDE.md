@@ -46,6 +46,7 @@ All design tokens live in the `:root` block at the top of each file's first `<st
 - Gap scale: `--sp-1` 8, `--sp-2` 16, `--sp-3` 24, `--sp-4` 32, `--sp-5` 48, `--sp-6` 64 (px). Use these for grid gaps and stack spacing, not hard-coded values.
 - Heading stack: eyebrow, then h2 8px below (`.ey + h2`), then intro 24px below. `.ey` is `vertical-align:top` so the gap is exact.
 - Never put padding or margin in a section or heading `style=""` attribute. Inline spacing overrides the tokens; it was stripped from about.html.
+- Helpers in `global.css` (spacing pass, Oct 2026): `.sec.strip` for thin bands (logo bars, evidence strips); `.sec-head` / `.sec-cont` for a list section split around a sticky filter bar (pillar pages); `.sec.pj-credit` for the funder credit line on project pages. Project pages have `<main class="pj-main">`, which collapses the top padding where two cream (or two sand) sections meet, so the gap is one `--sec-md`, not two.
 
 **Section snap:** `assets/js/snap.js` gives a gentle one-direction settle onto `main > section` edges after scrolling stops (desktop, no reduced motion). Opt a page in by loading the script after main.js. Currently on: about.html.
 

@@ -16,7 +16,7 @@
 /* Dual gradient — readable text on the left, image visible on the right */
 /* Photo credit chip bottom right */
 
-.map-sec{padding:0 0 3rem;background:var(--sand)}
+.map-sec{padding:0;background:var(--sand)}
 .map-fr{position:relative;background:var(--euc-deep);border-radius:0;overflow:hidden;box-shadow:0 30px 80px -30px rgba(15,49,50,.4);margin-top:1.5rem}
 .map-if{position:relative;height:560px;width:100%}
 @media(max-width:780px){.map-if{height:420px}}
@@ -40,7 +40,7 @@
 .fp.sp.on{background:var(--waratah);border-color:var(--waratah)}
 .fp.hl.on{background:var(--soil);border-color:var(--soil);color:var(--cream)}
 
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3rem 0 6rem}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:var(--sp-5) 0 var(--sec-md)}
 @media(max-width:1100px){.pg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.pg{grid-template-columns:1fr}}
 .pc{position:relative;background:var(--white);border:1px solid var(--rule);border-radius:0;overflow:hidden;cursor:pointer;transition:.35s;display:flex;flex-direction:column}
@@ -79,7 +79,7 @@
 .pp-sts .ps{text-align:center}.pp-sts strong{display:block;font-family:var(--ff-d);font-weight:800;font-size:1.5rem;color:var(--euc);margin-bottom:.2em}.pp-sts span{font-size:.78rem;color:var(--stone)}
 .pp-bd p{font-size:.96rem;line-height:1.65;color:var(--char)}
 
-.ns{padding:3.5rem 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
+.ns{padding:var(--sec-md) 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
 .ns-g{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
 @media(max-width:780px){.ns-g{grid-template-columns:1fr;gap:2rem}}
 .ns h3{color:var(--cream);font-size:clamp(1.4rem,2.2vw,1.85rem);margin-bottom:.7rem}
@@ -118,7 +118,7 @@
 .map-side .im-legend{flex-direction:column;align-items:flex-start;gap:.75rem;justify-content:flex-start;margin-top:1.6rem}
 @media(max-width:900px){.imap-grid{grid-template-columns:1fr;gap:1.4rem}}
 
-.map-sec .imap-band{background:var(--sand)!important;padding:2.4rem 0 2.6rem!important}
+.map-sec .imap-band{background:var(--sand)!important;padding:var(--sec-md) 0!important}
 .map-sec{padding-top:0!important}
 
 /* HubSpot newsletter form on the dark strip */
@@ -156,7 +156,7 @@
 .fls-btn:hover{background:var(--euc-deep);color:var(--cream)}
 .fls-btn[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--euc-deep)}
 
-.fl-sec{background:var(--cream);padding:clamp(3.5rem,6vw,5rem) 0 clamp(2.5rem,4vw,3.5rem)}
+.fl-sec{background:var(--cream);padding:var(--sec-md) 0}
 .fl-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:2rem}
 .fl-head h2{font-family:var(--ff-d);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:-.025em;color:var(--euc-deep);margin-top:.9rem}
 .fl-head p{font-size:1.02rem;line-height:1.7;color:var(--char);max-width:52ch}
