@@ -31,12 +31,11 @@ main section[id]{scroll-margin-top:140px}
 .ip-crumb{display:flex;gap:.5em;font-size:.82rem;margin-bottom:var(--sp-4);color:rgba(250,246,242,.75)}
 .ip-crumb a{color:rgba(250,246,242,.75)}
 .ip-hero-in{max-width:720px;display:flex;flex-direction:column;gap:var(--sp-3)}
-.ip-yrow{display:flex;align-items:center;gap:clamp(16px,2.6vw,40px)}
-.ip-badge{width:clamp(56px,8vw,124px);height:auto;display:block;flex-shrink:0}
+.ip-badge{position:absolute;top:0;right:clamp(1.25rem,4vw,2.5rem);width:clamp(64px,9vw,132px);height:auto;display:block}
 .ip-hero .ey{color:var(--euc-mid)}
 .ip-year{font-family:var(--ff-d);font-weight:800;font-size:clamp(4rem,10vw,9.4rem);line-height:.9;letter-spacing:-.04em;color:var(--euc-mid);white-space:nowrap}
 .ip-year span{color:var(--euc-soft)}
-@media(max-width:600px){.ip-year{font-size:clamp(2rem,12vw,4rem)}.ip-yrow{gap:12px}.ip-badge{width:52px}}
+
 .ip-hero h1{color:var(--cream);font-size:clamp(1.8rem,3.2vw,2.7rem);line-height:1.12;max-width:24ch}
 .ip-hero .lede{color:rgba(250,246,242,.9);max-width:52ch}
 @media(max-width:860px){.ip-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.72) 0%,rgba(15,49,50,.92) 100%)}}
@@ -239,12 +238,10 @@ main section[id]{scroll-margin-top:140px}
 <section class="ip-hero">
   <div class="cw">
     <nav class="ip-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>Our Impact</nav>
+    <img class="ip-badge" src="assets/img/55-badge.png" alt="55 years of conservation">
     <div class="ip-hero-in rv">
       <span class="ey">Our impact</span>
-      <div class="ip-yrow">
-        <div class="ip-year" aria-hidden="true">1970 <span>→</span> 2025</div>
-        <img class="ip-badge" src="assets/img/55-badge.png" alt="55 years of conservation">
-      </div>
+      <div class="ip-year" aria-hidden="true">1970 <span>→</span> 2025</div>
       <h1>We've helped protect more than 600,000 hectares and recover more than 32 threatened species.</h1>
       <p class="lede">We're the bridge that brings First Nations organisations, governments, philanthropists and businesses together for Australia's land and wildlife.</p>
       <div class="ip-acts">
