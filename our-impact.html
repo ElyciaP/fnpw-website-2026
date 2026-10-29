@@ -71,54 +71,62 @@ main section[id]{scroll-margin-top:140px}
 /* case studies */
 .ip-cs{background:var(--bg);color:var(--fg)}
 .ip-cs + .ip-cs{margin-top:var(--sp-4)}
-.ip-cs-main{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.ip-cs-main{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.ip-cs-rev .ip-cs-main{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
 .ip-cs-rev .ip-cs-img{order:2}
-.ip-cs-img{position:relative;min-height:500px;overflow:hidden}
+.ip-cs-img{position:relative;min-height:340px;overflow:hidden}
 .ip-cs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .ip-cs-tag{position:absolute;left:0;top:var(--sp-4);background:var(--bg);color:var(--fg);font-family:var(--ff-d);font-weight:700;font-size:.92rem;padding:.6rem 1.1rem .6rem 1.5rem}
 .ip-cs-rev .ip-cs-tag{left:auto;right:0;padding:.6rem 1.5rem .6rem 1.1rem}
-.ip-cs-body{padding:clamp(1.75rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center}
+.ip-cs-body{padding:clamp(1.75rem,3vw,2.25rem) clamp(1.75rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center}
 .ip-cs-k{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
-.ip-cs-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(3.6rem,6.4vw,6rem);line-height:.95;letter-spacing:-.045em;color:var(--ac);margin-top:var(--sp-2)}
+.ip-cs-n{font-family:var(--ff-d);font-weight:800;font-size:clamp(3.25rem,5vw,4.5rem);line-height:.95;letter-spacing:-.045em;color:var(--ac);margin-top:var(--sp-2)}
 .ip-cs-n small{font-family:var(--ff-b);font-size:1.3rem;font-weight:700;letter-spacing:0;margin-left:.3em}
 .ip-cs-nl{font-weight:600;color:var(--fg);margin-top:var(--sp-1)}
-.ip-cs h3{color:var(--fg);margin-top:var(--sp-3);font-size:clamp(1.35rem,2.1vw,1.85rem)}
-.ip-cs-body p{color:var(--sub);margin-top:var(--sp-2)}
+.ip-cs h3{color:var(--fg);margin-top:var(--sp-2);font-size:clamp(1.35rem,2.1vw,1.85rem)}
+.ip-cs-body p{color:var(--sub);margin-top:var(--sp-2);max-width:62ch}
 .ip-cs-body p.ip-cs-with{font-size:.88rem;border-top:1px solid var(--line);padding-top:var(--sp-2);margin-top:var(--sp-3)}
 .ip-cs-with strong{color:var(--fg)}
 .ip-cs-link{align-self:flex-start;margin-top:var(--sp-3);color:var(--fg);font-weight:700;border-bottom:2px solid var(--ac);padding-bottom:3px}
 .ip-cs-link:hover{color:var(--fg);opacity:1;border-bottom-width:4px}
 .ip-cs-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--line)}
-.ip-cs-mini{padding:var(--sp-3) clamp(1.75rem,4vw,3.5rem);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:.35rem}
+.ip-cs-mini{padding:var(--sp-2) clamp(1.75rem,4vw,3.5rem);border-right:1px solid var(--line);display:grid;grid-template-columns:8.5rem minmax(0,1fr);column-gap:var(--sp-3);row-gap:.2rem;align-items:start;align-content:start}
+.ip-cs-mini .ip-cs-mn{grid-row:1/3}
 .ip-cs-mini:last-child{border-right:0}
-.ip-cs-mini .ip-cs-mn{font-family:var(--ff-d);font-weight:800;font-size:1.85rem;letter-spacing:-.03em;line-height:1;color:var(--ac)}
+.ip-cs-mini .ip-cs-mn{font-family:var(--ff-d);font-weight:800;font-size:1.4rem;letter-spacing:-.03em;line-height:1.2;color:var(--ac)}
 .ip-cs-mini strong{font-family:var(--ff-d);color:var(--fg)}
-.ip-cs-mini span:not(.ip-cs-mn){font-size:.94rem;line-height:1.45;color:var(--sub)}
-@media(max-width:900px){.ip-cs-main{grid-template-columns:1fr}.ip-cs-rev .ip-cs-img{order:0}.ip-cs-img{min-height:300px}.ip-cs-mini{border-right:0;border-bottom:1px solid var(--line)}.ip-cs-mini:last-child{border-bottom:0}}
+.ip-cs-mini span:not(.ip-cs-mn){font-size:.88rem;line-height:1.45;color:var(--sub)}
+@media(max-width:900px){.ip-cs-main,.ip-cs-rev .ip-cs-main{grid-template-columns:1fr}.ip-cs-rev .ip-cs-img{order:0}.ip-cs-img{min-height:300px}.ip-cs-mini{border-right:0;border-bottom:1px solid var(--line)}.ip-cs-mini:last-child{border-bottom:0}}
+@media(max-width:600px){.ip-cs-mini{display:flex;flex-direction:column;gap:.35rem}}
 
 /* Healing Our Land trees */
-.ip-trees{background:var(--euc-deep);color:var(--euc-soft);overflow:hidden}
-.ip-trees h2{color:var(--cream)}
-.ip-trees .ey{color:var(--euc-mid)}
-.ip-trees .lede{color:rgba(250,246,242,.86)}
+.ip-trees{background:var(--white)}
+.ip-trees .ip-big{color:var(--euc)}
+.ip-trees .ip-big-l{color:var(--euc-deep)}
+.ip-trees-num{text-align:right}
+.ip-bush-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ip-bush{min-width:720px}
+.ip-bush-art{position:relative}
+.ip-bush-art img{display:block;width:100%;height:auto}
+.ip-btag{position:absolute;font-size:.78rem;font-weight:700;line-height:1.2;padding:5px 10px;white-space:nowrap}
+.ip-btag-d{background:var(--euc-deep);color:var(--cream)}
+.ip-btag-now{background:var(--euc-soft);color:var(--euc-deep);transform:translateX(-50%)}
+.ip-btag-o{background:var(--white);color:var(--euc-deep);border:1.5px solid var(--euc-deep)}
+.ip-baxis{position:relative;height:28px;margin-top:var(--sp-1)}
+.ip-baxis span{position:absolute;transform:translateX(-50%);font-family:var(--ff-d);font-weight:700;font-size:.94rem;color:#7F9A74}
+.ip-baxis span.on{color:var(--euc-deep)}
+.ip-baxis span.now{color:var(--euc)}
+.ip-btn-d{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.ip-btn-d:hover{background:var(--euc);border-color:var(--euc);color:var(--cream);opacity:1}
+.ip-btn-od{background:transparent;color:var(--euc-deep);border-color:var(--euc-deep)}
+.ip-btn-od:hover{background:var(--euc-deep);color:var(--cream);opacity:1}
+@media(max-width:700px){.ip-trees-num{text-align:left}}
 .ip-trees-top{display:flex;flex-wrap:wrap;gap:var(--sp-5);justify-content:space-between;align-items:flex-end;margin-bottom:var(--sp-5)}
 .ip-trees-top .ip-head{max-width:600px}
 .ip-big{font-family:var(--ff-d);font-weight:800;font-size:clamp(4rem,8vw,7rem);line-height:1;letter-spacing:-.04em;color:var(--euc-soft)}
 .ip-big-l{font-weight:600;color:var(--cream);margin-top:var(--sp-1)}
-.ip-grove{display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(2px,.6vw,8px);border-bottom:3px solid var(--euc-mid);padding-top:36px}
-.ip-gt{flex:1 1 0;min-width:0;max-width:150px;display:flex;flex-direction:column;align-items:center;position:relative}
-.ip-gtree{position:relative;width:100%;aspect-ratio:320/380}
-.ip-gimg{position:absolute;left:0;bottom:0;width:100%;height:auto;aspect-ratio:320/380;display:block;max-width:none}
-.ip-gfill{position:absolute;left:0;right:0;bottom:0;overflow:hidden}
-.ip-glab{position:absolute;bottom:-34px;font-family:var(--ff-d);font-weight:700;font-size:.94rem;color:rgba(198,235,202,.6)}
-.ip-glab.on{color:var(--cream)}
-.ip-gnote{position:absolute;top:-30px;white-space:nowrap;font-size:.8rem;font-weight:700;color:var(--euc-soft)}
-.ip-gnote.now{background:var(--euc-mid);color:var(--euc-deep);padding:3px 10px}
-.ip-legend{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-4);align-items:center;font-size:.88rem;margin-top:var(--sp-6)}
-.ip-legend span{display:inline-flex;align-items:center;gap:10px}
-.ip-legend i{width:14px;height:14px;display:inline-block}
 .ip-trees .ip-acts{margin-top:var(--sp-5)}
-@media(max-width:600px){.ip-gnote{display:none}.ip-grove{padding-top:12px}.ip-glab{font-size:.78rem}.ip-lt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-4)}.ip-lt>*:last-child{grid-column:1/-1}}
+@media(max-width:600px){.ip-lt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-4)}.ip-lt>*:last-child{grid-column:1/-1}}
 
 /* 55 years */
 .ip-years-top{display:flex;flex-wrap:wrap;gap:var(--sp-4) var(--sp-6);align-items:flex-end;justify-content:space-between;margin-bottom:var(--sp-5)}
@@ -370,32 +378,30 @@ main section[id]{scroll-margin-top:140px}
     <div class="ip-trees-top rv">
       <div class="ip-head">
         <span class="ey">Healing Our Land</span>
-        <h2>A promise of one million trees, and we kept planting</h2>
-        <p class="lede">After the Black Summer fires we set out to plant a million trees in five years. We passed it in 2024 with 30 community nurseries.</p>
+        <h2>9 million trees for our Landscape Resilience Program</h2>
+        <p class="lede">After the Black Summer fires we promised a million trees in five years. We passed it in 2024 with 30 community nurseries. Now we're going further, with 9 million trees in the ground by 2030 to restore habitat and make our landscapes more resilient.</p>
       </div>
-      <div>
+      <div class="ip-trees-num">
         <div class="ip-big" data-count="1215443">1,215,443</div>
-        <div class="ip-big-l">trees, shrubs and seedlings planted, up to 2025</div>
+        <div class="ip-big-l">trees, shrubs and seedlings planted so far</div>
       </div>
     </div>
-    <div class="ip-grove" role="img" aria-label="A line of nine trees, one for each million plants in our 9 million goal for 2030. The first tree is completely filled, the second is filled about a fifth of the way, and the other seven are still empty.">
-      <div class="ip-gt"><span class="ip-gnote">Millionth tree, 2024</span><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-1-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:100%"><img class="ip-gimg" src="assets/img/impact-tree-1-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab on">1M</span></div>
-      <div class="ip-gt"><span class="ip-gnote now">We're here</span><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-2-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:21.5%"><img class="ip-gimg" src="assets/img/impact-tree-2-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab on">2M</span></div>
-      <div class="ip-gt"><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-3-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-3-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">3M</span></div>
-      <div class="ip-gt"><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-1-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-1-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">4M</span></div>
-      <div class="ip-gt"><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-2-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-2-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">5M</span></div>
-      <div class="ip-gt"><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-3-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-3-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">6M</span></div>
-      <div class="ip-gt"><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-1-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-1-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">7M</span></div>
-      <div class="ip-gt"><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-2-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-2-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">8M</span></div>
-      <div class="ip-gt"><span class="ip-gnote">2030 goal</span><div class="ip-gtree"><img class="ip-gimg" src="assets/img/impact-tree-3-empty.png" alt="" aria-hidden="true"><div class="ip-gfill" style="height:0%"><img class="ip-gimg" src="assets/img/impact-tree-3-full.png" alt="" aria-hidden="true"></div></div><span class="ip-glab">9M</span></div>
-    </div>
-    <div class="ip-legend">
-      <span><i style="background:var(--euc-mid)"></i>Each tree is one million plants in the ground</span>
-      <span><i style="background:rgba(198,235,202,.2)"></i>Still to grow on the way to 9 million by 2030</span>
+    <div class="ip-bush-wrap rv">
+      <div class="ip-bush">
+        <div class="ip-bush-art">
+          <img src="assets/img/impact-bushland-9m.jpg" width="2320" height="560" loading="lazy" alt="A layered bushland of nine tall gums, one for each million plants in our 9 million goal for 2030. The first gum is dark green and fully grown, a young gum is growing in front of the second, and the other seven are pale, still to plant.">
+          <span class="ip-btag ip-btag-d" style="left:0;top:2%">Millionth tree, 2024</span>
+          <span class="ip-btag ip-btag-now" style="left:16.67%;top:52%">We're here: 1.2M</span>
+          <span class="ip-btag ip-btag-o" style="right:0;top:2%">2030 goal: 9 million</span>
+        </div>
+        <div class="ip-baxis" aria-hidden="true">
+          <span class="on" style="left:5.56%">1M</span><span class="now" style="left:16.67%">2M</span><span style="left:27.78%">3M</span><span style="left:38.89%">4M</span><span style="left:50%">5M</span><span style="left:61.11%">6M</span><span style="left:72.22%">7M</span><span style="left:83.33%">8M</span><span style="left:94.44%">9M</span>
+        </div>
+      </div>
     </div>
     <div class="ip-acts">
-      <a class="btn ip-btn-c ip-arrow" href="https://gift-a-tree.fnpw.org.au">Give a tree</a>
-      <a class="btn ip-btn-oc" href="partner-invest.html">Partner with us</a>
+      <a class="btn ip-btn-d ip-arrow" href="https://gift-a-tree.fnpw.org.au">Give a tree</a>
+      <a class="btn ip-btn-od" href="partner-invest.html">Partner with us</a>
     </div>
   </div>
 </section>
