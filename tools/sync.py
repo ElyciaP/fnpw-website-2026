@@ -10,7 +10,7 @@ ACTIVE = {
     'index.html': 'index.html', 'about.html': 'about.html',
     'projects.html': 'projects.html', 'contact.html': 'contact.html',
     'partner.html': 'partner.html', 'partner-invest.html': 'partner-invest.html', 'government-partnerships.html': 'government-partnerships.html', 'volunteer.html': 'volunteer.html',
-    'bequests.html': 'bequests.html',
+    'bequests.html': 'bequests.html', 'bequests-professional-advisers.html': 'bequests.html',
     'donate-land.html': 'donate-land.html',
     'our-impact.html': 'our-impact.html', 'reports.html': 'reports.html',
     'articles.html': 'articles.html', 'in-the-news.html': 'in-the-news.html',
