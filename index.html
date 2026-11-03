@@ -275,15 +275,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 .hx-rail-lede{font-size:1rem;line-height:1.6;color:var(--char);max-width:52ch;margin-top:.8rem}
 
-.vc-band{background:var(--euc-deep);color:var(--cream);padding:var(--sec-md) 0}
-.vc-band .ey{color:var(--euc-soft)}
-.vc-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
-.vc-band h2{font-family:var(--ff-d);font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.03em;color:var(--cream);margin-top:.9rem;line-height:1.05}
-.vc-lead{font-family:var(--ff-d);font-size:clamp(1.25rem,1.9vw,1.55rem);line-height:1.4;color:var(--cream);margin:0 0 1.1rem}
-.vc-band p{font-size:1.02rem;line-height:1.72;color:rgba(250,246,242,.86)}
-.vc-band a{color:var(--euc-soft);font-weight:600;border-bottom:1px solid currentColor}
 .vc-pils{padding-top:var(--sec-md)}
-@media(max-width:860px){.vc-g{grid-template-columns:1fr;gap:1rem}}
 
 .door{background:var(--cream);padding:0 0 var(--sec-md)}
 .door-g{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
@@ -299,6 +291,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .door-c2 .door-go{color:var(--euc-soft)}
 @media(max-width:760px){.door-g{grid-template-columns:1fr}}
 .hx-lede-w{max-width:52ch!important}
+/* --- Give a Tree photo band (Christmas appeal, Nov 2026) --- */
+.hx-gat{position:relative;background:var(--soil-deep);color:var(--cream);overflow:hidden}
+.hx-gat-im{position:absolute;top:0;right:0;bottom:0;width:50%;background:var(--soil)}
+.hx-gat-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.hx-gat-im::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,25,20,1) 0%,rgba(36,25,20,.7) 9%,rgba(36,25,20,0) 24%)}
+.hx-gat .cw{min-height:400px;display:flex;align-items:center;padding-top:var(--sec-md);padding-bottom:var(--sec-md)}
+.hx-gat-bd{max-width:min(540px,calc(50vw - 4.5rem));display:flex;flex-direction:column;gap:1.1rem}
+.hx-gat h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.08;letter-spacing:-.02em;color:var(--cream);max-width:14ch}
+.hx-gat p{margin:0;max-width:46ch;color:rgba(250,246,242,.88)}
+.hx-gat-cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:.5rem}
+.hx-gat-note{font-size:.88rem;color:rgba(250,246,242,.78)}
+@media(max-width:760px){
+  .hx-gat-im{position:relative;width:100%;height:260px}
+  .hx-gat-im::after{background:linear-gradient(0deg,rgba(36,25,20,1) 0%,rgba(36,25,20,0) 40%)}
+  .hx-gat .cw{min-height:0;padding-top:var(--sp-3);padding-bottom:var(--sec-md)}
+  .hx-gat-bd{max-width:none}
+}
 </style>
 </head>
 <body>
@@ -400,55 +409,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
 </section>
 
-<!-- CHRISTMAS APPEAL: GIVE A TREE ==================================== -->
+<!-- DOORWAYS: SUPPORTERS AND PARTNERS ============================= -->
 <section class="door">
   <div class="cw"><div class="door-g">
     <a class="door-c" href="ways-you-can-get-involved.html"><span class="door-k">For supporters</span><h3>Give, volunteer or leave a gift</h3><p>Donate, Give a Tree, volunteer with your team or leave a gift in your will.</p><span class="door-go">Ways to get involved &#8594;</span></a>
     <a class="door-c door-c2" href="partner-invest.html"><span class="door-k">For government, foundations &amp; partners</span><h3>Partner with us at landscape scale</h3><p>How we work with government, foundations, businesses and major donors, and the results we report.</p><span class="door-go">Partner with us &#8594;</span></a>
   </div></div>
 </section>
-<section class="hx-tree">
+<!-- CHRISTMAS APPEAL: GIVE A TREE ==================================== -->
+<section class="hx-gat">
+  <div class="hx-gat-im">
+    <img src="assets/img/give-a-tree-koala-tree.jpg" alt="A koala climbing between the forked trunks of a eucalypt, looking at the camera" width="1200" height="1600" loading="lazy" decoding="async">
+  </div>
   <div class="cw">
-    <div class="hx-tree-g rv">
-      <div class="hx-tree-im">
-        <img src="assets/img/give-a-tree-koala-tree.jpg" alt="A koala climbing between the forked trunks of a eucalypt, looking at the camera" width="1200" height="1600" style="object-position:50% 35%" decoding="async">
-      </div>
-      <div class="hx-tree-bd">
-        <h2>Give a Tree this Christmas.</h2>
-        <p>A gift that is still growing long after the day itself. Every tree goes into habitat restoration where it is needed most, from fire-damaged bushland to the wildlife corridors that connect it back together.</p>
-        <ul class="hx-tree-pts">
-          <li>Comes with a personalised digital certificate, in Thank You, In Honour Of or In Memory Of</li>
-          <li>Add your own dedication for a friend, a loved one, a colleague or someone you have lost</li>
-          <li>Custom certificates for corporate teams and clients, with your company logo</li>
-        </ul>
-        <div class="hx-tree-ladder">
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au/?amount=10"><span class="hx-amt-n">$10</span><span class="hx-amt-t">1 native tree</span><span class="hx-amt-l">a seed of hope</span></a>
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au/?amount=100"><span class="hx-amt-n">$100</span><span class="hx-amt-t">10 native trees</span><span class="hx-amt-l">builds a haven</span></a>
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au/?amount=500"><span class="hx-amt-n">$500</span><span class="hx-amt-t">50 native trees</span><span class="hx-amt-l">a wildlife wonder</span></a>
-          <a class="hx-amt" href="https://gift-a-tree.fnpw.org.au/?amount=1000"><span class="hx-amt-n">$1,000</span><span class="hx-amt-t">100 native trees</span><span class="hx-amt-l">a legacy canopy</span></a>
-        </div>
-        <p style="font-size:.86rem;color:var(--stone);margin-top:-.2rem">One native tree planted for every $10 donated. Tax deductible from $2. Gifting for a team or need more than one certificate? Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call 1800 898 626.</p>
-        <div class="hx-tree-btns">
-          <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
-        </div>
+    <div class="hx-gat-bd rv">
+      <h2>Give a Tree this Christmas.</h2>
+      <p>A gift that is still growing long after the day itself. $10 plants a native tree where habitat needs it most, and every gift comes with a personalised certificate.</p>
+      <div class="hx-gat-cta">
+        <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
+        <span class="hx-gat-note">Tax deductible from $2</span>
       </div>
     </div>
   </div>
 </section>
 <!-- PILLARS ========================================================= -->
-<section class="vc-band">
-  <div class="cw"><div class="vc-g">
-    <div class="rv"><span class="ey">How we work</span><h2>We don&rsquo;t do this alone.</h2></div>
-    <div class="rv d1">
-      <p class="vc-lead">Our job is to bring the right funding and the right people to the places that need it most.</p>
-      <p>Traditional Custodians, rangers, scientists, Landcare groups and community nurseries carry out the work on the ground. We find the projects, back them, and stay with each one until we can show what changed in our annual <a href="reports.html">Impact Report</a>.</p>
-    </div>
-  </div></div>
-</section>
 <section class="hx-pils vc-pils">
   <div class="cw">
     <div class="hx-pils-head rv">
-      <span class="ey">Our work</span>
+      <span class="ey">Project areas</span>
       <h2 class="hx-h2">Where we focus.</h2>
     </div>
     <div class="hx-pilrow rv d1">
@@ -526,8 +514,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <div class="hx-rail-head rv">
       <div>
         <span class="ey">Flagship projects</span>
-        <h2 class="hx-h2">Twelve projects that show what we do.</h2>
-        <p class="hx-rail-lede">From new national parks to threatened species recovery and community-grown habitat, across every area of our work.</p>
+        <h2 class="hx-h2">Our work.</h2>
+        <p class="hx-rail-lede">We bring the right funding and the right people to the places and species that need it most.</p>
       </div>
       <div class="hx-rail-nav"><a class="btn-o" href="projects.html">All 84 projects</a></div>
     </div>
