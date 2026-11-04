@@ -37,6 +37,13 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
 </html>'''
     with open(os.path.join(ROOT, fname), 'w') as f:
         f.write(html)
+    # WP7: complete the head (title rules, description overrides, canonical,
+    # social tags, icons and JSON-LD) from data/meta.json and the page itself.
+    try:
+        import meta
+        meta.apply(fname)
+    except Exception as e:   # a generator must still write its page
+        print('meta.apply skipped for %s: %s' % (fname, e))
 
 def crumb(label):
     return ('<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>'

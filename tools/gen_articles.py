@@ -245,14 +245,9 @@ def build(a):
                '<a class="btn-o" href="partner.html">Become a partner</a></div>%s  </div>%s</section>'
                % (NL, NL, NL, NL, NL, NL))
 
-    ld = {"@context": "https://schema.org", "@type": "Article",
-          "headline": a['title'], "description": a.get('description', ''),
-          "image": [a['hero']], "datePublished": iso_date(a.get('date', '')),
-          "publisher": {"@type": "Organization",
-                        "name": "Foundation for National Parks & Wildlife"},
-          "mainEntityOfPage": {"@type": "WebPage",
-                               "@id": "https://fnpw.org.au/article-%s.html" % a['slug']}}
-    js = JS + NL + '<script type="application/ld+json">%s</script>' % json.dumps(ld, ensure_ascii=False)
+    # WP7: the NewsArticle JSON-LD now lives in the <head>, written by
+    # tools/meta.py (called from write_page), so nothing is appended here.
+    js = JS
 
     name = 'article-%s.html' % a['slug']
     write_page(name, esc(a['title']), esc(a['description']),
