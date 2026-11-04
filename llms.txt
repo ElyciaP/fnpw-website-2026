@@ -1,0 +1,47 @@
+# Foundation for National Parks & Wildlife (FNPW)
+
+> We are an independent Australian conservation charity, founded in 1970, that grows national parks, saves threatened species and heals damaged country. We bring Traditional Custodians, governments, scientists, communities and funders together to protect Australia's most important landscapes and wildlife.
+
+- Legal name: Foundation for National Parks & Wildlife. ABN 90 107 744 771. Registered charity and Deductible Gift Recipient.
+- Contact: fnpw@fnpw.org.au, 1800 898 626. Head office in Sydney, NSW, Australia.
+- Three pillars: Growing National Parks, Saving Species, Healing the Land.
+- Tree goal: 9 million trees by 2030, grown through a network of more than 30 community nurseries.
+
+## Key pages
+
+- [About FNPW: 55 years of Australian conservation](https://elyciap.github.io/fnpw-website-2026/about.html): Who we are, our 55-year story, the executive team and the Board.
+- [Projects](https://elyciap.github.io/fnpw-website-2026/projects.html): Every conservation project we fund, filterable by pillar and state.
+- [Growing National Parks](https://elyciap.github.io/fnpw-website-2026/growing-national-parks.html): Land acquisitions and park expansions.
+- [Saving Species](https://elyciap.github.io/fnpw-website-2026/saving-species.html): Threatened species recovery programs.
+- [Healing the Land](https://elyciap.github.io/fnpw-website-2026/healing-the-land.html): Landscape restoration, nurseries, seedbanks and cultural fire.
+- [Articles](https://elyciap.github.io/fnpw-website-2026/articles.html): News and stories from the field.
+- [Our Impact](https://elyciap.github.io/fnpw-website-2026/our-impact.html): What your support changed, from our latest Impact Report.
+- [Reports & Publications](https://elyciap.github.io/fnpw-website-2026/reports.html): Impact Reports, Year in Review, financial statements and strategy as PDFs.
+- [Partner With Us](https://elyciap.github.io/fnpw-website-2026/partner-invest.html): How businesses, foundations and major donors partner with us.
+- [Government Partnerships](https://elyciap.github.io/fnpw-website-2026/government-partnerships.html): How we work with Australian, state and territory governments.
+- [Gifts in Wills: Leave a Legacy for Nature](https://elyciap.github.io/fnpw-website-2026/bequests.html): Gifts in wills, with suggested wording.
+- [Donate Land](https://elyciap.github.io/fnpw-website-2026/donate-land.html): How to give land to become national park.
+- [Corporate Volunteering](https://elyciap.github.io/fnpw-website-2026/volunteer.html): Corporate volunteering days across five states.
+- [Workplace Giving](https://elyciap.github.io/fnpw-website-2026/workplace-giving.html): Regular giving from pre-tax pay.
+- [FAQs](https://elyciap.github.io/fnpw-website-2026/faqs.html): Answers on who we are, giving, receipts and getting involved.
+- [Contact](https://elyciap.github.io/fnpw-website-2026/contact.html): How to reach us.
+
+## Donations (all giving is handled on Raisely, not on this site)
+
+- Donate: https://bush.fnpw.org.au
+- Give a Tree: https://gift-a-tree.fnpw.org.au
+- Habitat Heroes (monthly giving): https://habitat-heroes.fnpw.org.au
+
+## Data endpoints
+
+- Sitemap: https://elyciap.github.io/fnpw-website-2026/sitemap.xml
+- RSS (latest 20 stories): https://elyciap.github.io/fnpw-website-2026/feed.xml
+- Full text summary of every page: https://elyciap.github.io/fnpw-website-2026/llms-full.txt
+- Structured data: JSON-LD (Organization, WebSite, BreadcrumbList, NewsArticle, Project) in every page head.
+
+## Policies
+
+- Privacy policy: https://elyciap.github.io/fnpw-website-2026/privacy-policy.html
+- Terms and conditions: https://elyciap.github.io/fnpw-website-2026/terms-and-conditions.html
+- Reconciliation Action Plan: https://elyciap.github.io/fnpw-website-2026/reconciliation-action-plan.html
+- Please quote statistics only from our published Impact Reports and link back to the source page.

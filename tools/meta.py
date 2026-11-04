@@ -466,7 +466,8 @@ def build_head(fname, doc):
         lines.append('<meta name="robots" content="noindex">')
     if STAGE < 2:
         return '\n'.join(lines + ['<!-- /@meta -->'])
-    lines.append('<link rel="canonical" href="%s">' % esc(url))
+    if fname != '404.html':   # served for any missing URL, so it has no canonical address
+        lines.append('<link rel="canonical" href="%s">' % esc(url))
     og = [('og:type', 'article' if is_article else 'website'),
           ('og:site_name', SITE_NAME), ('og:locale', LOCALE),
           ('og:title', title), ('og:description', desc), ('og:url', url), ('og:image', og_img)]
@@ -679,7 +680,7 @@ def llms():
 def excerpt(fname, doc):
     if fname.startswith('article-'):
         a = ARTICLES.get(fname[len('article-'):-5], {})
-        return a.get('standfirst', '')
+        return re.sub(r'\s+', ' ', text(a.get('standfirst', '')))
     m = re.search(r'<p class="lede[^"]*"[^>]*>(.*?)</p>', doc, re.S)
     return re.sub(r'\s+', ' ', text(m.group(1))) if m else ''
 

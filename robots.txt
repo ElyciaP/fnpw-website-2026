@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /wp/
+Disallow: /design/
+Disallow: /data/
+Disallow: /partials/
+Disallow: /brand-source/
+Disallow: /Claude%20outputs/
+Disallow: /.claude/
+Disallow: /*.md$
+Disallow: /*.docx$
+Disallow: /*.ai$
+
+Sitemap: https://elyciap.github.io/fnpw-website-2026/sitemap.xml

@@ -75,6 +75,8 @@ def main():
                            ('twitter:card', r'name="twitter:card"'), ('icon svg', r'rel="icon" href="favicon.svg"'),
                            ('rss', r'type="application/rss\+xml"'), ('manifest', r'rel="manifest"')):
             c = count(pat)
+            if f == '404.html' and label == 'canonical':
+                continue
             if c != 1:
                 fails.append('%s: %d x %s' % (f, c, label))
         if f == 'search.html' and 'noindex' not in head:
