@@ -38,7 +38,7 @@ This project was funded through generous donations from FNPW supporters across A
 
 ## Project overview
 
-**Since the inception of PLCG, the FNPW has raised, managed and allocated over $2 million to Australian land owners.**
+**Since the inception of PLCG, we have raised, managed and allocated over $2 million to Australian land owners.**
 
 FNPW's Private Land Conservation Grants program has been offering grants to owners of properties protected under conservation agreements since 2008. To date, the program has provided 437 grants totalling more than $2.3 million to support private landholders undertaking conservation works on their own properties. With 80% of rainforests gone and the remainder fast disappearing, along with many threatened native wildlife, it is more important than ever to make a change.
 
@@ -48,7 +48,7 @@ It is recognised that Australia's biodiversity cannot be conserved purely throug
 
 In 2012, the Foundation was awarded $2 million in funding spread over six years to 2017. This funding came through the NSW Environmental Trust on behalf of the NSW State Government. The aim of the extra funding is to expand the Private Land Grants Program to include different types of conservation agreements and some practical community education programs.
 
-The FNPW has been running the PLCG program since 2008, with the valuable support of their project partners. Through the PLCG Program, FNPW have been providing small grants to support NSW landowners who have a conservation protection mechanism on their land and for education and training in conservation. FNPW created the PLCG program to increase the amount of high value conservation areas on private land and to educate and encourage community members to actively participate in bush regeneration.
+We have been running the PLCG program since 2008, with the valuable support of our project partners. Through the PLCG Program, FNPW have been providing small grants to support NSW landowners who have a conservation protection mechanism on their land and for education and training in conservation. FNPW created the PLCG program to increase the amount of high value conservation areas on private land and to educate and encourage community members to actively participate in bush regeneration.
 
 #### What are Private Land Conservation Grants?
 
@@ -66,7 +66,7 @@ The PLCG program supports landholders to conduct activities which enhance the bi
 
 ### ACKNOWLEDGEMENT OF COUNTRY
 
-FNPW supports projects across Australia. In the spirit of reconciliation the we *acknowledge* the *Traditional Owners* of Country and recognise their continuing connection to *land*, waters and culture.
+We support projects across Australia. In the spirit of reconciliation we *acknowledge* the *Traditional Owners* of Country and recognise their continuing connection to *land*, waters and culture.
 
 ![](URL-UNRESOLVED)
 

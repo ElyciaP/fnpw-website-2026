@@ -21,7 +21,7 @@ METADATA
 
 ![Bark Scorch - Grants for Nature Conservation - FNPW](URL-UNRESOLVED)
 
-We have all seen the devastation created by Australia's bushfires. Now it's time to ease the distress of the animals and start the replenishment of our parks. [FNPW](https://fnpw.org.au/) has launched a worldwide appeal **Healing our land** to help repair the damage inflicted during Australia's horror bushfire season. With the support of many individuals, local and global communities and corporate partners, FNPW has been able to respond to the immediate emergency by distributing funds to wildlife rehabilitation groups across the country. **Healing our land** will be the next step in the bushfire recovery process.
+We have all seen the devastation created by Australia's bushfires. Now it's time to ease the distress of the animals and start the replenishment of our parks. [FNPW](https://fnpw.org.au/) has launched a worldwide appeal **Healing our land** to help repair the damage inflicted during Australia's horror bushfire season. With the support of many individuals, local and global communities and corporate partners, we have been able to respond to the immediate emergency by distributing funds to wildlife rehabilitation groups across the country. **Healing our land** will be the next step in the bushfire recovery process.
 
 #### FNPW support
 
@@ -47,7 +47,7 @@ As an urgent next step following the horrific bushfire season, we have awarded t
 
 ### ACKNOWLEDGEMENT OF COUNTRY
 
-FNPW supports projects across Australia. In the spirit of reconciliation the we *acknowledge* the *Traditional Owners* of Country and recognise their continuing connection to *land*, waters and culture.
+We support projects across Australia. In the spirit of reconciliation we *acknowledge* the *Traditional Owners* of Country and recognise their continuing connection to *land*, waters and culture.
 
 ![](https://fnpw.org.au/wp-content/uploads/2021/02/SA-Seed-Conservation-Centre.jpg)
 *Photo credit: SA Seed Conservation Centre*
@@ -63,7 +63,7 @@ This project was funded by FNPW in 2020.
 
 ### PROJECT PARTNERS
 
-FNPW is the lead organisation for this project.
+We are the lead organisation for this project.
 
 ## 2020 NSW Grantees
 
