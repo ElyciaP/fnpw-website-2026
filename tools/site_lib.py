@@ -8,9 +8,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">'''
+FONTS = ''  # fonts are self-hosted: @font-face in global.css, preload links after it
 
 def write_page(fname, title, desc, body, page_css='', extra_js=''):
     html = f'''<!DOCTYPE html>
@@ -19,8 +17,9 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">\n<meta name="referrer" content="no-referrer">
 <title>{title} | Foundation for National Parks &amp; Wildlife</title>
 <meta name="description" content="{desc}">
-{FONTS}
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 {page_css}
 </style>

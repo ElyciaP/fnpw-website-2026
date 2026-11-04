@@ -1,3 +1,7 @@
+/* Self-hosted variable fonts (WP6, Nov 2026). Sora is the display face, Figtree the body face;
+   both files live in assets/fonts and are preloaded from every page head. */
+@font-face{font-family:'Sora';src:url(../fonts/sora-variable.woff2) format('woff2');font-weight:100 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Figtree';src:url(../fonts/figtree-variable.woff2) format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
 :root{
   /* Spacing tokens (Oct 2026). One section rhythm sitewide, fluid from mobile to desktop. */
   --sp-1:8px;--sp-2:16px;--sp-3:24px;--sp-4:32px;--sp-5:48px;--sp-6:64px;
