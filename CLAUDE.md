@@ -112,3 +112,14 @@ Alt text was written by looking at every photograph (Sep 2026) and lives in
 to fill alt text on anything the generator left empty. Add new images to
 `alt-local.txt` (local files) or append to `remote-urls.json` + `alt-remote-by-index.txt`.
 Decorative icons get `alt="" aria-hidden="true"`.
+
+## Head metadata (WP7, Nov 2026)
+
+Every page's `<title>`, meta description, canonical, Open Graph and Twitter tags, icon and RSS
+links and JSON-LD sit between `<!-- @meta -->` and `<!-- /@meta -->` in the head and are written
+by `python3 tools/meta.py` (all pages, or one filename). Hand-written titles and descriptions live
+in `data/meta.json`; everything else is read from the page and from `data/articles.json` and
+`data/projects.json`. `site_lib.write_page` calls `meta.apply`, so generated pages come out
+complete. `SITE_URL` and `WP_PATHS` at the top of `tools/meta.py` switch the canonical host and
+path style at launch; run `python3 tools/meta.py --site` afterwards to regenerate robots.txt,
+sitemap.xml, feed.xml, llms.txt and llms-full.txt. `python3 tools/verify_meta.py` checks every head.
