@@ -162,7 +162,7 @@ DONATE_BAND = NL.join([
     '<section class="sec dark">',
     '  <div class="cw rv" style="text-align:center">',
     '    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>',
-    '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered by donations, bequests and partnerships.</p>',
+    '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered by donations, gifts in wills and partnerships.</p>',
     '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="bequests.html">Leave a gift in your Will</a></div>',
     '  </div>',
     '</section>'])

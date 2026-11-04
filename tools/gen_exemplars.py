@@ -37,7 +37,7 @@ def related(slug, pillar, label, cls):
                f'<div class="pg">{cards}</div>', 'paper')
 
 CTA = cta_band('Help fund work like this.',
-               'Every FNPW project is powered by donations, bequests and partnerships.',
+               'Every FNPW project is powered by donations, gifts in wills and partnerships.',
                [('Donate', RAISELY_DONATE, 'btn-p btn-don'), ('Become a partner', 'partner.html', 'btn-o')])
 
 def main():
