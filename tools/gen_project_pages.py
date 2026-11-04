@@ -319,7 +319,7 @@ def build(rec, meta):
         if s['ey']:
             head += '      <span class="ey">%s</span>%s' % (esc(s['ey']), NL)
         if s['h']:
-            head += '      <h3>%s</h3>%s' % (esc(s['h']), NL)
+            head += '      <h2>%s</h2>%s' % (esc(s['h']), NL)
         words = wordcount(s['body'])
         img = gallery[gi] if gi < len(gallery) else None
 

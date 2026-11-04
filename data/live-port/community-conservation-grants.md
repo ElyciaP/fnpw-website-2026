@@ -28,7 +28,7 @@ METADATA
 
 Grants are available for both field projects and education programs that have a direct outcome for nature conservation in Australia. All proposals are evaluated by FNPW's Projects Committee based on funding priorities, funds available and quality and quantity of projects submitted.
 
-#### FNPW support
+## FNPW support
 
 This project was funded through generous donations from FNPW supporters across Australia and beyond.
 

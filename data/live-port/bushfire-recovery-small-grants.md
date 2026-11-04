@@ -23,7 +23,7 @@ METADATA
 
 We have all seen the devastation created by Australia's bushfires. Now it's time to ease the distress of the animals and start the replenishment of our parks. [FNPW](https://fnpw.org.au/) has launched a worldwide appeal **Healing our land** to help repair the damage inflicted during Australia's horror bushfire season. With the support of many individuals, local and global communities and corporate partners, we have been able to respond to the immediate emergency by distributing funds to wildlife rehabilitation groups across the country. **Healing our land** will be the next step in the bushfire recovery process.
 
-#### FNPW support
+## FNPW support
 
 This project was funded through generous donations from FNPW supporters across Australia and beyond.
 

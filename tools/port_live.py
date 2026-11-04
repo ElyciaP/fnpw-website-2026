@@ -260,7 +260,7 @@ def grants_hub():
     card_html = NL.join(
         ('      <a class="gr-card rv%s" href="%s">%s'
          '        <div class="gr-im"><img src="%s" alt="" loading="lazy"></div>%s'
-         '        <div class="gr-bd"><h3>%s</h3><p>%s</p><span class="art-link">Find out more</span></div>%s'
+         '        <div class="gr-bd"><h2>%s</h2><p>%s</p><span class="art-link">Find out more</span></div>%s'
          '      </a>') % ('' if i == 0 else ' d%d' % min(i, 3), href, NL, img, NL, t, H.escape(p[:220].rsplit(' ', 1)[0] + ('…' if len(p) > 220 else '')), NL)
         for i, (href, t, p, img) in enumerate(cards))
     css = PROSE_CSS + '''
@@ -271,7 +271,7 @@ def grants_hub():
 .gr-im{aspect-ratio:16/9;overflow:hidden;background:var(--sand)}
 .gr-im img{width:100%;height:100%;object-fit:cover}
 .gr-bd{padding:var(--sp-3) var(--sp-3) var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-1);flex:1}
-.gr-bd h3{color:var(--euc-deep);margin-top:0;margin-bottom:0}
+.gr-bd h2{color:var(--euc-deep);margin-top:0;margin-bottom:0}
 .gr-bd p{font-size:.93rem;line-height:1.6;color:var(--char);margin:0;flex:1}
 '''
     body = NL.join([

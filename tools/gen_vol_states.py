@@ -540,7 +540,7 @@ def state_page(code, outline, sites, idx):
         filters.rstrip(NL),
         '        </div>',
         '        <div class="vs-tools">',
-        '          <p class="vs-count" id="vsCount">%d sites</p>' % len(sites),
+        '          <h2 class="vs-count" id="vsCount">%d sites</h2>' % len(sites),
         '          <label class="vs-sort" for="vsSort">Sort by',
         '            <select id="vsSort">',
         '              <option value="distance">Distance from %s</option>' % esc(sites[0]['cbd']),
