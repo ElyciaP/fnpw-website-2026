@@ -135,10 +135,11 @@ main section[id]{scroll-margin-top:140px}
 .ip-lt .ip-n{font-size:clamp(3rem,5vw,4.25rem)}
 .ip-lt .ip-l{font-size:.94rem;color:var(--stone);max-width:18ch;margin-top:var(--sp-1)}
 .ip-rail-wrap{overflow-x:auto;padding:8px 0 4px}
-.ip-rail{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(10,minmax(112px,1fr));min-width:1120px;position:relative}
+/* one row whatever the number of years: add a year and the columns share the width */
+.ip-rail{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);min-width:1144px;position:relative}
 .ip-rail::before{content:"";position:absolute;left:0;right:0;top:54px;height:3px;background:var(--euc)}
 .ip-rail li{display:flex;flex-direction:column;padding-right:14px;position:relative}
-.ip-rail b{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:var(--euc-deep);line-height:1;height:36px;display:flex;align-items:flex-end}
+.ip-rail b{font-family:var(--ff-d);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:800;letter-spacing:-.03em;color:var(--euc-deep);line-height:1;height:36px;display:flex;align-items:flex-end}
 .ip-rail li::after{content:"";position:absolute;left:0;top:47px;width:17px;height:17px;border-radius:50%;background:var(--sand);border:3px solid var(--euc);box-sizing:border-box}
 .ip-rail span{margin-top:38px;font-size:.94rem;line-height:1.4;color:var(--char)}
 .ip-rail em{display:block;font-style:normal;font-family:var(--ff-d);font-weight:700;color:var(--euc);margin-top:4px}
@@ -166,7 +167,9 @@ main section[id]{scroll-margin-top:140px}
 .ip-close h2{color:var(--cream)}
 .ip-close .ey{color:var(--euc-mid)}
 .ip-close .lede{color:rgba(250,246,242,.9)}
-.ip-close-top{display:flex;flex-wrap:wrap;gap:var(--sp-5);align-items:center;margin-bottom:var(--sp-5)}
+.ip-close-top{display:flex;flex-wrap:wrap;gap:var(--sp-5);align-items:center}
+.ip-close-ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:var(--sp-4)}
+.ip-close-ctas .btn{font-weight:600}
 .ip-close-top .ip-head{flex:1 1 360px;max-width:460px}
 .ip-goals{flex:1 1 480px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
 .ip-goal{background:rgba(15,49,50,.62);border:1px solid rgba(198,235,202,.3);padding:var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-1)}
@@ -175,11 +178,6 @@ main section[id]{scroll-margin-top:140px}
 .ip-goal.big b{font-size:clamp(3.5rem,6vw,5.25rem)}
 .ip-goal b small{font-family:var(--ff-b);font-size:1.25rem;font-weight:700;letter-spacing:0;color:var(--euc-soft);margin-left:.3em}
 .ip-goal span{font-size:.94rem;line-height:1.45;color:var(--euc-soft)}
-.ip-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-3)}
-.ip-card{background:var(--cream);color:var(--char);padding:var(--sp-4);display:flex;flex-direction:column;gap:var(--sp-2)}
-.ip-card h3{font-size:1.35rem}
-.ip-card p{color:var(--stone)}
-.ip-card .btn{align-self:flex-start;margin-top:auto}
 @media(max-width:600px){.ip-goals{grid-template-columns:1fr}}
 </style>
 </head>
@@ -459,23 +457,15 @@ main section[id]{scroll-margin-top:140px}
         <span class="ey">Partnering for Impact, 2025–2028</span>
         <h2>What we can build together next</h2>
         <p class="lede">We set out to add 10,000 hectares to protected areas and have now protected and restored nearly 30,000. Our next goals are about the funding and partnerships to go further.</p>
+        <div class="ip-close-ctas">
+          <a class="btn ip-btn-c ip-arrow" href="partner-invest.html#opportunities">Partner with us</a>
+          <a class="btn btn-don" href="https://bush.fnpw.org.au">Donate</a>
+        </div>
       </div>
       <div class="ip-goals rv">
         <div class="ip-goal big"><b>~30,000<small>ha</small></b><span>protected and restored, nearly three times our original 10,000 ha goal</span></div>
         <div class="ip-goal"><b>$50M</b><span>from corporates, government and philanthropy</span></div>
         <div class="ip-goal"><b>20+</b><span>high-impact partnerships</span></div>
-      </div>
-    </div>
-    <div class="ip-cards">
-      <div class="ip-card rv">
-        <h3>Partner with us</h3>
-        <p>We bring government, foundations and businesses together on conservation at landscape scale, from protecting new land to restoring whole regions.</p>
-        <a class="btn btn-p ip-arrow" href="partner-invest.html#opportunities">Explore Opportunities</a>
-      </div>
-      <div class="ip-card rv">
-        <h3>Help us bring back the bush</h3>
-        <p>Every gift goes into work like the case studies on this page.</p>
-        <a class="btn btn-don" href="https://bush.fnpw.org.au">Donate</a>
       </div>
     </div>
   </div>
