@@ -180,7 +180,7 @@ def build(a):
             '      <span class="ed-kicker ed-kicker-top">%s</span>%s'
             '      <h1>%s</h1>%s'
             '      <p class="ed-meta">%s</p>%s    </div>%s  </header>'
-            % (' ed-hero-flat' if small else '', NL, fig, NL, NL,
+            % (' flat' if small else '', ' ed-hero-flat' if small else '', NL, fig, NL, NL,
                esc(a.get('eyebrow', 'Story')), NL, esc(a['title']), NL,
                meta, NL, NL))
 

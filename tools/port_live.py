@@ -140,7 +140,7 @@ def crumbs(*items):
     for label, href in items[:-1]:
         parts.append('<a href="%s">%s</a>' % (href, label))
     parts.append(items[-1][0])
-    return ('<nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap">'
+    return ('<nav class="breadcrumb" aria-label="Breadcrumb">'
             + '<span>/</span>'.join(parts) + '</nav>')
 
 
@@ -258,7 +258,7 @@ def grants_hub():
     for slug, g in GRANTS.items():
         cards.append(('project-%s.html' % slug, g['title'], first_para(slug), g['img']))
     card_html = NL.join(
-        ('      <a class="gr-card rv%s" href="%s">%s'
+        ('      <a class="card gr-card rv%s" href="%s">%s'
          '        <div class="gr-im"><img src="%s" alt="" loading="lazy"></div>%s'
          '        <div class="gr-bd"><h2>%s</h2><p>%s</p><span class="art-link">Find out more</span></div>%s'
          '      </a>') % ('' if i == 0 else ' d%d' % min(i, 3), href, NL, img, NL, t, H.escape(p[:220].rsplit(' ', 1)[0] + ('…' if len(p) > 220 else '')), NL)
@@ -266,7 +266,7 @@ def grants_hub():
     css = PROSE_CSS + '''
 .gr-g{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);margin-top:var(--sp-4)}
 @media(max-width:760px){.gr-g{grid-template-columns:1fr}}
-.gr-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
+.gr-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
 .gr-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px -18px rgba(15,49,50,.25);opacity:1}
 .gr-im{aspect-ratio:16/9;overflow:hidden;background:var(--sand)}
 .gr-im img{width:100%;height:100%;object-fit:cover}
@@ -307,7 +307,7 @@ def paws():
     head = re.sub(r'^## .*\n', '', head, count=1, flags=re.M)
     items = re.findall(r'### (.+?)\n!\[([^\]]*)\]\(([^)]+)\)\n\[Download PDF\]\(([^)]+)\)', issues)
     cards = NL.join(
-        ('      <a class="pw-card rv" href="%s" target="_blank" rel="noopener">%s'
+        ('      <a class="card pw-card rv" href="%s" target="_blank" rel="noopener">%s'
          '        <div class="pw-im"><img src="%s" alt="Cover of PAWS Magazine, %s" loading="lazy"></div>%s'
          '        <div class="pw-bd"><h3>%s</h3><span class="art-link">Download PDF</span></div>%s'
          '      </a>') % (pdf, NL, img, H.escape(t.title().replace(' Issue', ' issue')), NL,
@@ -317,7 +317,7 @@ def paws():
 .pw-g{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
 @media(max-width:980px){.pw-g{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.pw-g{grid-template-columns:repeat(2,1fr);gap:var(--sp-2)}}
-.pw-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--rule);transition:transform .2s ease,box-shadow .2s ease}
+.pw-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
 .pw-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px -18px rgba(15,49,50,.25);opacity:1}
 .pw-im{aspect-ratio:3/4;overflow:hidden;background:var(--sand)}
 .pw-im img{width:100%;height:100%;object-fit:cover;display:block}

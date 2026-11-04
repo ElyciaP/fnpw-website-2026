@@ -194,7 +194,6 @@ def summarise(rows):
 
 
 PAGE_CSS = '''
-.vs-hero .ey{color:var(--euc-soft)}.vs-hero .ey::before{background:var(--euc-soft)}
 .vs-hero h1{max-width:18ch}
 .vs-hero .lede{max-width:56ch}
 .vs-crumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.72);margin-bottom:var(--sp-3);flex-wrap:wrap}
