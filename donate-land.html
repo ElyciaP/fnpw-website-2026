@@ -27,7 +27,7 @@
 .dl-how-in{margin-top:var(--sp-2);font-size:1.04rem;line-height:1.72;color:var(--char);max-width:60ch}
 .dl-how-g{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-5);counter-reset:r}
 @media(max-width:920px){.dl-how-g{grid-template-columns:1fr}}
-.dl-role{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:var(--sp-4) var(--sp-4);position:relative}
+.dl-role{position:relative}
 .dl-role.r2{border-top-color:var(--euc-deep)}
 .dl-role.r3{border-top-color:var(--bark)}
 .dl-role-k{display:inline-block;font-size:.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--euc);margin-bottom:var(--sp-1)}
@@ -100,7 +100,7 @@
 .dl-contact{padding:var(--sec-md) 0;background:var(--sand)}
 .dl-contact-g{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--sp-6);align-items:start}
 @media(max-width:900px){.dl-contact-g{grid-template-columns:1fr;gap:var(--sp-4)}}
-.dl-person{background:var(--white);border:1px solid var(--rule);padding:var(--sp-4);margin-top:var(--sp-4);display:flex;gap:var(--sp-3);align-items:flex-start}
+.dl-person{margin-top:var(--sp-4);display:flex;gap:var(--sp-3);align-items:flex-start}
 @media(max-width:480px){.dl-person{flex-direction:column}}
 .dl-person-ph{width:88px;height:88px;flex-shrink:0;background:var(--euc-pale);border:1px solid var(--rule);overflow:hidden}
 .dl-person-ph img{width:100%;height:100%;object-fit:cover}
@@ -114,7 +114,7 @@
 .dl-next li:last-child{padding-bottom:0}
 .dl-next li::before{content:counter(n);position:absolute;left:0;top:-.1rem;width:26px;height:26px;border:1.5px solid var(--euc);color:var(--euc);font-family:var(--ff-d);font-size:.8125rem;font-weight:700;display:flex;align-items:center;justify-content:center}
 .dl-next li span{display:block;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:.95rem;margin-bottom:.15rem}
-.dl-form{background:var(--white);border:1px solid var(--rule);padding:var(--sp-4);position:relative}
+.dl-form{position:relative}
 @media(max-width:600px){.dl-form{padding:var(--sp-4) var(--sp-3)}}
 .dl-form::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--waratah)}
 .dl-form .sub{font-size:.9rem;color:var(--stone);margin-bottom:var(--sp-3);line-height:1.55}
@@ -126,7 +126,7 @@
 .dl-form button:hover{background:var(--euc)}
 .dl-form .priv{font-size:.82rem;color:var(--stone);margin-top:var(--sp-2);line-height:1.55}
 
-.dl-tax{margin-top:var(--sp-4);background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--bark);padding:var(--sp-4) var(--sp-4);max-width:860px}
+.dl-tax{margin-top:var(--sp-4);max-width:860px}
 .dl-tax h3{margin-top:0;color:var(--euc-deep)}
 .dl-tax p,.dl-tax li{font-size:.97rem;line-height:1.7;color:var(--char)}
 .dl-tax ul{margin:var(--sp-1) 0 var(--sp-2);padding-left:var(--sp-2)}.dl-tax li{margin-bottom:var(--sp-1)}
@@ -217,17 +217,17 @@
       <p class="dl-how-in">A gift of land is a gift to the nation. We work alongside Traditional Owners, landholders and government to see it through, and we don’t keep the land: the government adds it to the national park estate so it is protected for good.</p>
     </div>
     <div class="dl-how-g">
-      <div class="dl-role rv">
+      <div class="card dl-role rv">
         <span class="dl-role-k">You</span>
         <h3>Offer the land</h3>
         <p>You tell us about land you would like to protect, and you decide with your own advisers whether to go ahead. Nothing commits you until the documents are signed.</p>
       </div>
-      <div class="dl-role r2 rv d1">
+      <div class="card dl-role r2 rv d1">
         <span class="dl-role-k">Us</span>
         <h3>Make it happen</h3>
         <p>We assess the land, secure the government’s agreement to take it, and coordinate the valuation, legal work and transfer. Where it’s needed, the land passes through our Gift Fund Trust for the moment of transfer, but we never hold it long term.</p>
       </div>
-      <div class="dl-role r3 rv d2">
+      <div class="card dl-role r3 rv d2">
         <span class="dl-role-k">Government</span>
         <h3>Protect it by law</h3>
         <p>The national parks agency in your state receives the land and formally gazettes it as part of the national park estate. From then on it is protected by law and can’t be sold.</p>
@@ -302,7 +302,7 @@
       <h2>A gift that can carry a tax benefit.</h2>
       <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">Our Gift Fund Trust is a Deductible Gift Recipient on the Register of Environmental Organisations, so a gift of land may be tax deductible. An independent valuation is required for tax purposes, and we coordinate it as part of the process. We will also talk you through the costs involved, including valuation and legal fees, before you commit to anything.</p>
     </div>
-    <div class="dl-tax rv">
+    <div class="card dl-tax rv">
       <h3>Tax benefits for property donations</h3>
       <p>Since changes in 1999, the Income Tax Assessment Act:</p>
       <ul>
@@ -349,7 +349,7 @@
       <h2>Start with a conversation with us.</h2>
       <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">A gift of land is too significant to begin with a form and an automated reply, so it does not. Enquiries about land come to our Chief Executive, and the first conversation will be with someone able to give you a straight answer.</p>
 
-      <div class="dl-person">
+      <div class="card dl-person">
         <div class="dl-person-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy"></div>
         <div>
           <span class="dl-person-nm">Ian Darbyshire</span>
@@ -369,7 +369,7 @@
       </div>
     </div>
 
-    <div class="dl-form rv d1">
+    <div class="card dl-form rv d1">
       <h3>Tell us about the land</h3>
       <p class="sub">A few lines is plenty to start with. There is nothing you need to have decided, and nothing here commits you to anything.</p>
       <div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="e33c8c8b-1d45-4477-be3e-8e5ca7b3e82b" data-portal-id="441704788" style="min-height:460px"></div>

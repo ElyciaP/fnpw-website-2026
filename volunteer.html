@@ -212,7 +212,7 @@
 .v-ben-h p{color:var(--stone);font-size:1rem;line-height:1.6}
 .v-ben-g{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
 @media(max-width:880px){.v-ben-g{grid-template-columns:1fr;gap:var(--sp-2)}}
-.v-ben-card{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:var(--sp-4) var(--sp-3);position:relative;overflow:hidden;transition:.3s;border-top:3px solid var(--euc)}
+.v-ben-card{position:relative;overflow:hidden;transition:.3s}
 .v-ben-card.c2{border-top-color:var(--waratah)}
 .v-ben-card.c3{border-top-color:var(--bark)}
 .v-ben-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px -18px rgba(15,49,50,.22)}
@@ -230,7 +230,7 @@
 
 /* CTA / Enquiry */
 .v-cta{padding:var(--sec-md) 0;background:var(--cream);position:relative}
-.v-cta-card{background:var(--white);border-radius:0;border:1px solid var(--rule);padding:var(--sp-5) var(--sp-4);position:relative;overflow:hidden;box-shadow:0 28px 60px -30px rgba(15,49,50,.22)}
+.v-cta-card{position:relative;overflow:hidden;box-shadow:0 28px 60px -30px rgba(15,49,50,.22)}
 .v-cta-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
 .v-cta-head{max-width:62ch;margin-bottom:var(--sp-5)}
 .v-cta-g{display:grid;grid-template-columns:.72fr 1.28fr;gap:var(--sp-5);align-items:start}
@@ -264,8 +264,6 @@
 .vw-tabs button span{font-size:.8125rem;font-weight:700;background:var(--euc-soft);color:var(--euc-deep);padding:.2em .5em;transition:.2s}
 .vw-tabs button[aria-selected="true"]{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
 .vw-tabs button[aria-selected="true"] span{background:rgba(250,246,242,.22);color:var(--cream)}
-
-.vw-panel{background:var(--white);border:1px solid var(--rule);padding:var(--sp-4)}
 @media(max-width:600px){.vw-panel{padding:var(--sp-3) var(--sp-2)}}
 .vw-p[hidden]{display:none}
 .vw-p-head{display:flex;align-items:flex-start;gap:var(--sp-3);flex-wrap:wrap;padding-bottom:var(--sp-2);margin-bottom:var(--sp-3);border-bottom:1px solid var(--rule)}
@@ -336,7 +334,6 @@
 .v-inc li:first-child{border-top:0;padding-top:0}
 .v-inc li svg{width:20px;height:20px;color:var(--euc);margin-top:.1rem}
 .v-inc li strong{color:var(--euc-deep)}
-.v-plans{background:var(--euc-deep);color:var(--cream);padding:var(--sp-4)}
 .v-plans h3{color:var(--cream)}
 .v-plans p{font-size:.9rem;line-height:1.6;color:rgba(250,246,242,.84);margin:0 0 var(--sp-2)}
 .v-plans-l{list-style:none;padding:0;margin:0 0 var(--sp-2);display:flex;flex-direction:column;gap:var(--sp-1)}
@@ -546,7 +543,7 @@
       <button type="button" role="tab" data-s="WA" aria-selected="false" aria-controls="vwp-wa">Western Australia <span>3</span></button>
       <button type="button" role="tab" data-s="QLD" aria-selected="false" aria-controls="vwp-qld">Queensland <span>1</span></button>
     </div>
-    <div class="vw-panel rv">
+    <div class="card vw-panel rv">
       <div class="vw-p" id="vwp-nsw" data-s="NSW" role="tabpanel">
         <div class="vw-p-head">
           <div>
@@ -694,7 +691,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v7a3 3 0 0 0 6 0V2"/><path d="M7 9v13"/><path d="M18 2c-2 1-3 4-3 7h3v13"/></svg><span><strong>Catering</strong> included (+$200 + GST at NSW National Parks sites)</span></li>
         </ul>
       </div>
-      <div class="v-plans">
+      <div class="panel dark v-plans">
         <h3>If plans change</h3>
         <p>If extreme weather or another occurrence makes the day unsafe to run, we and the rangers will let you know as soon as possible and reschedule your day for another date. If your organisation no longer wants to reschedule, a $500 administration fee applies.</p>
         <p>If you cancel or postpone for any other reason, a share of the $3,500 + GST day rate is retained to cover plants, permits and staff already committed:</p>
@@ -719,7 +716,7 @@
       <p>Get your team outdoors, working together and making a difference. Practical action in nature can strengthen teams, support communities and help nature thrive.</p>
     </div>
     <div class="v-ben-g">
-      <div class="v-ben-card rv">
+      <div class="card v-ben-card rv">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <h3>For your employees</h3>
         <ul>
@@ -729,7 +726,7 @@
           <li><strong>Learn &amp; grow</strong>, gaining insights into local ecosystems, native plants and wildlife</li>
         </ul>
       </div>
-      <div class="v-ben-card c2 rv d1">
+      <div class="card v-ben-card c2 rv d1">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
         <h3>For your business</h3>
         <ul>
@@ -739,7 +736,7 @@
           <li><strong>Offer a unique experience</strong> where employees step away from screens to make a tangible difference</li>
         </ul>
       </div>
-      <div class="v-ben-card c3 rv d2">
+      <div class="card v-ben-card c3 rv d2">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h3>For communities</h3>
         <ul>
@@ -771,7 +768,7 @@
 <!-- ─── Enquiry CTA ──────────────────────────────────────────────── -->
 <section class="v-cta" id="enquire">
   <div class="cw">
-    <div class="v-cta-card rv">
+    <div class="card v-cta-card rv">
       <div class="v-cta-head">
         <span class="ey">Get involved</span>
         <h2>Ready to <em>get into the field?</em></h2>

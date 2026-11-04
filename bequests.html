@@ -62,7 +62,6 @@
 .gw-why{padding:var(--sec-md) 0;background:var(--cream)}
 .gw-why-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3)}
 @media(max-width:900px){.gw-why-g{grid-template-columns:1fr}}
-.gw-w{padding:var(--sp-4) var(--sp-3);background:#fff;border:1px solid var(--rule)}
 .gw-w .n{font-family:var(--ff-d);font-weight:800;font-size:.9rem;color:var(--wattle-dk);letter-spacing:.04em}
 .gw-w h3{margin-top:var(--sp-1);color:var(--euc-deep)}
 .gw-w p{font-size:.96rem;line-height:1.65;color:var(--char);margin:0}
@@ -102,7 +101,7 @@
 .gw-steps p{font-size:.92rem;line-height:1.6;color:rgba(250,246,242,.86);margin:0}
 .gw-types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-2)}
 @media(max-width:1000px){.gw-types{grid-template-columns:1fr 1fr}}@media(max-width:560px){.gw-types{grid-template-columns:1fr}}
-.gw-t{background:var(--cream);color:var(--char);padding:var(--sp-3) var(--sp-3) var(--sp-3)}
+.gw-t{background:var(--cream);color:var(--char)}
 .gw-t h3{color:var(--euc-deep)}
 .gw-t p{font-size:.9rem;line-height:1.6;margin:0}
 .gw-t a{color:var(--euc);font-weight:600}
@@ -119,7 +118,6 @@
 .gw-note h3{color:var(--euc-deep)}
 .gw-note p{font-size:.94rem;line-height:1.65;color:var(--char);margin:0}
 .gw-note a{color:var(--euc);font-weight:600}
-.gw-org{background:var(--euc-deep);color:var(--cream);padding:var(--sp-3) var(--sp-3) var(--sp-3)}
 .gw-org h3{color:var(--cream)}
 .gw-org dl{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:var(--sp-1) var(--sp-2);margin:0;font-size:.9rem}
 .gw-org dt{font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--euc-mid);padding-top:.15em}
@@ -393,9 +391,9 @@
     <p class="gw-tl-end rv">In recent years alone, we have protected and restored almost 30,000 hectares of habitat, far beyond the goal we set ourselves. A gift in your will carries that work forward, into a future none of us will see but all of us are shaping.</p>
     <h3 class="gw-prom-h rv">Our promise to you</h3>
     <div class="gw-why-g">
-      <div class="gw-w rv"><span class="n">01</span><h3>Your gift goes further</h3><p>A gift in your will rarely works alone. We combine it with government and philanthropic support, so one gift can unlock an outcome far larger than itself, as Barbara’s did at Mundoo Island.</p></div>
-      <div class="gw-w rv d1"><span class="n">02</span><h3>Careful with your trust</h3><p>We direct every gift to where it can do the most good and report openly on what it achieves. In 2025, 80% of our funds were invested in our core purpose.</p></div>
-      <div class="gw-w rv d2"><span class="n">03</span><h3>Your wishes, honoured</h3><p>Whatever you choose to support, we treat your intentions with the same care and integrity we would want for our own family.</p></div>
+      <div class="card gw-w rv"><span class="n">01</span><h3>Your gift goes further</h3><p>A gift in your will rarely works alone. We combine it with government and philanthropic support, so one gift can unlock an outcome far larger than itself, as Barbara’s did at Mundoo Island.</p></div>
+      <div class="card gw-w rv d1"><span class="n">02</span><h3>Careful with your trust</h3><p>We direct every gift to where it can do the most good and report openly on what it achieves. In 2025, 80% of our funds were invested in our core purpose.</p></div>
+      <div class="card gw-w rv d2"><span class="n">03</span><h3>Your wishes, honoured</h3><p>Whatever you choose to support, we treat your intentions with the same care and integrity we would want for our own family.</p></div>
     </div>
   </div>
 </section>
@@ -426,10 +424,10 @@
       <li><h3>Let us know, if you would like to</h3><p>You are never obliged to tell us, but it lets us thank you and understand your wishes.</p></li>
     </ol>
     <div class="gw-types rv">
-      <div class="gw-t"><h3>Residual gift</h3><p>What remains of your estate once loved ones, debts and specific gifts are settled. It never takes from anyone else you have named.</p></div>
-      <div class="gw-t"><h3>Percentage gift</h3><p>A share of your estate, so your gift stays in proportion with everything else you leave, whatever the final value.</p></div>
-      <div class="gw-t"><h3>Specific sum</h3><p>A set amount that feels right to you. It is worth reviewing every few years, as inflation changes what it can do.</p></div>
-      <div class="gw-t"><h3>Shares or other assets</h3><p>A specific asset such as shares or artwork. Land can’t be left in a will, but you can <a href="donate-land.html">give land in your lifetime</a>.</p></div>
+      <div class="card gw-t"><h3>Residual gift</h3><p>What remains of your estate once loved ones, debts and specific gifts are settled. It never takes from anyone else you have named.</p></div>
+      <div class="card gw-t"><h3>Percentage gift</h3><p>A share of your estate, so your gift stays in proportion with everything else you leave, whatever the final value.</p></div>
+      <div class="card gw-t"><h3>Specific sum</h3><p>A set amount that feels right to you. It is worth reviewing every few years, as inflation changes what it can do.</p></div>
+      <div class="card gw-t"><h3>Shares or other assets</h3><p>A specific asset such as shares or artwork. Land can’t be left in a will, but you can <a href="donate-land.html">give land in your lifetime</a>.</p></div>
     </div>
     <p class="fine rv">You can also give through a trust, which your adviser can help you arrange, or leave a gift for a specific purpose, such as acquiring land for a national park or protecting a particular species. Please <a href="#talk">talk to us first</a> so we can make sure your wishes can be fulfilled.</p>
   </div>
@@ -450,7 +448,7 @@
         <div class="gw-note"><h3>If you are an executor</h3><p>If you are managing an estate that includes a gift to us, please call <a href="tel:1800898626">1800 898 626</a> or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will help with whatever you need. There is more for executors and advisers on our <a href="bequests-professional-advisers.html">page for professionals</a>.</p></div>
       </div>
       <div class="rv d1">
-      <aside class="gw-org">
+      <aside class="panel dark gw-org">
         <h3>Organisation details</h3>
         <dl>
           <dt>Legal name</dt><dd>Foundation for National Parks &amp; Wildlife</dd>
@@ -484,9 +482,9 @@
       </div>
     </div>
     <div class="gw-why-g gw-pro-cards">
-      <div class="gw-w rv"><span class="n">01</span><h3>Everything your clients need</h3><p>Suggested wording, our legal details and the different ways to give are all in one place, ready to share with the people you advise.</p></div>
-      <div class="gw-w rv d1"><span class="n">02</span><h3>One person to call</h3><p>Helen looks after gifts in wills personally. She can confirm wording, talk through gifts for a specific purpose and support executors when the time comes.</p></div>
-      <div class="gw-w rv d2"><span class="n">03</span><h3>Part of your network</h3><p>We would welcome the chance to speak with your team, members or clients, and to explore how our networks can support each other.</p></div>
+      <div class="card gw-w rv"><span class="n">01</span><h3>Everything your clients need</h3><p>Suggested wording, our legal details and the different ways to give are all in one place, ready to share with the people you advise.</p></div>
+      <div class="card gw-w rv d1"><span class="n">02</span><h3>One person to call</h3><p>Helen looks after gifts in wills personally. She can confirm wording, talk through gifts for a specific purpose and support executors when the time comes.</p></div>
+      <div class="card gw-w rv d2"><span class="n">03</span><h3>Part of your network</h3><p>We would welcome the chance to speak with your team, members or clients, and to explore how our networks can support each other.</p></div>
     </div>
     <div class="gw-acts rv"><a class="btn btn-p" href="bequests-professional-advisers.html">Information for professionals</a><a class="btn btn-o" href="mailto:fnpw@fnpw.org.au?subject=Working%20together%20on%20gifts%20in%20wills">Talk to us about working together</a></div>
   </div>
