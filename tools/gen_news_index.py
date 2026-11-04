@@ -65,7 +65,7 @@ def main():
 
     body = (
         '<header class="nw-hero">%s  <div class="cw rv">%s'
-        '    <nav class="nw-crumb"><a href="index.html">Home</a><span style="opacity:.45">/</span>'
+        '    <nav class="nw-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span style="opacity:.45">/</span>'
         '<a href="articles.html">Articles</a><span style="opacity:.45">/</span>In the news</nav>%s'
         '    <span class="ey">Coverage</span>%s'
         '    <h1>In the news</h1>%s'

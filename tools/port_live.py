@@ -140,7 +140,7 @@ def crumbs(*items):
     for label, href in items[:-1]:
         parts.append('<a href="%s">%s</a>' % (href, label))
     parts.append(items[-1][0])
-    return ('<nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap">'
+    return ('<nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap">'
             + '<span>/</span>'.join(parts) + '</nav>')
 
 

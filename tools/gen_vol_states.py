@@ -525,7 +525,7 @@ def state_page(code, outline, sites, idx):
     body = NL.join([
         '<section class="vs-hero">',
         '  <div class="cw rv">',
-        '    <nav class="vs-crumb"><a href="index.html">Home</a><span style="opacity:.45">/</span>'
+        '    <nav class="vs-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span style="opacity:.45">/</span>'
         '<a href="volunteer.html">Corporate Volunteering</a><span style="opacity:.45">/</span>%s</nav>' % esc(outline['name']),
         '    <span class="ey">Corporate volunteering</span>',
         '    <h1>%s sites</h1>' % esc(outline['name']),

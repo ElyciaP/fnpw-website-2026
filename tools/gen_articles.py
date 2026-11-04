@@ -175,7 +175,7 @@ def build(a):
     hero = ('  <header class="ed-hero%s">%s'
             '%s'
             '    <div class="cw">%s'
-            '      <nav class="ed-crumb"><a href="index.html">Home</a><span>/</span>'
+            '      <nav class="ed-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>'
             '<a href="articles.html">Articles</a></nav>%s'
             '      <span class="ed-kicker ed-kicker-top">%s</span>%s'
             '      <h1>%s</h1>%s'

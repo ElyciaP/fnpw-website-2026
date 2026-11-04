@@ -159,7 +159,7 @@ def build(a):
     body = ['<section class="pj-hero">%s'
             '  <figure class="pj-hero-im"><img src="%s" alt="%s"></figure>%s'
             '  <div class="cw rv">%s'
-            '    <nav class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem">'
+            '    <nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem">'
             '<a href="index.html">Home</a><span style="opacity:.4">/</span>'
             '<a href="articles.html">Articles</a><span style="opacity:.4">/</span>%s</nav>%s'
             '    <span class="ey">%s</span>%s'

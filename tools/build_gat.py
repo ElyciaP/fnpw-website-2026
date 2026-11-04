@@ -220,13 +220,13 @@ HEAD = '''<!DOCTYPE html>
 '''
 
 HERO = '''
-<main>
+<main id="main">
 <section class="gt-hero">
   <div class="gt-hero-bg"><img src="assets/img/give-a-tree-koala-tree.jpg" alt="A koala climbing between the forked trunks of a eucalypt, looking at the camera" fetchpriority="high" decoding="async"></div>
   <div class="cw rv">
     <div class="gt-hero-g">
       <div>
-        <nav class="gt-crumb"><a href="index.html">Home</a><span style="opacity:.45">/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span style="opacity:.45">/</span>Give a Tree</nav>
+        <nav class="gt-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span style="opacity:.45">/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span style="opacity:.45">/</span>Give a Tree</nav>
         <span class="ey">Give a Tree. Bring Back the Bush.</span>
         <h1>The best gifts don&rsquo;t sit under a tree. They <em>grow into one.</em></h1>
         <p class="lede">Give a tree and help bring back native bushland across Australia. Your gift supports on-ground restoration, creating habitat for wildlife and helping our landscapes become healthier and more resilient.</p>

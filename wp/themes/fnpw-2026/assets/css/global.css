@@ -21,8 +21,9 @@
   --mw:1240px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff-b);font-size:17px;line-height:1.65;color:var(--char);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--ff-b);font-size:17px;line-height:1.65;color:var(--char);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body.nav-lock{overflow:hidden}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .18 0 0 0 0 .16 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:multiply}
 img{max-width:100%;display:block;height:auto}
 a{color:inherit;text-decoration:none;transition:.25s}
@@ -41,15 +42,23 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .cw{max-width:var(--mw);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);position:relative;z-index:2}
 
 /* ---- ACKNOWLEDGE BAR ---- */
-.ack{background:var(--soil);color:var(--cream);font-size:.78rem;letter-spacing:.04em;padding:.55em 0;text-align:center;position:relative;z-index:50}
+.ack{background:var(--soil);color:var(--cream);font-size:.78rem;letter-spacing:.04em;padding:.55em 1rem;text-align:center;position:relative;z-index:30}
+@media(max-width:600px){.ack{font-size:.7rem;letter-spacing:0;line-height:1.25;padding:.35em 1rem}.ack .ack-more{display:none}}
+
+/* ---- SKIP LINK (first element in <body>, visible only on focus) ---- */
+.skip{position:absolute;left:0;top:0;z-index:100;background:var(--euc-deep);color:var(--cream);font-family:var(--ff-d);font-size:.9rem;font-weight:600;padding:.8em 1.2em;transform:translateY(-130%);transition:transform .15s}
+.skip:focus,.skip:focus-visible{transform:none;opacity:1;outline:2px solid var(--cream);outline-offset:-4px}
 
 /* ---- HEADER ---- */
-.hdr{position:sticky;top:0;z-index:40;background:rgba(250,246,242,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.hdr{position:sticky;top:0;z-index:40;background:rgba(250,246,242,.92);border-bottom:1px solid var(--rule)}
+.hdr::before{content:"";position:absolute;inset:0;z-index:-1;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .hdr.scrolled{box-shadow:0 8px 28px -12px rgba(15,49,50,.18)}
 .hdr-in{display:flex;align-items:center;gap:2rem;height:72px}
 .logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0}
 .logo img{display:block;max-height:42px;width:auto}
 .nav{display:flex;align-items:center;gap:1.7rem;margin-left:auto}
+/* links inherit visibility from .nav/.dd; keep it out of their transition so they are focusable the moment a panel opens */
+.nav a,.nav button{transition-property:color,background-color,border-color,opacity,transform}
 .nav>a,.nav .ng>button{font-size:.9rem;font-weight:500;color:var(--char);position:relative;padding:.4em 0;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;text-decoration:none}
 .nav>a::after,.nav .ng>button::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--euc);transform:scaleX(0);transform-origin:left;transition:.3s}
 .nav>a:hover::after,.nav>a.on::after,.nav .ng:hover>button::after,.nav .ng.on>button::after{transform:scaleX(1)}
@@ -57,38 +66,55 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .ng{position:relative}
 .ng .ar{font-size:.7em;transition:.25s;display:inline-block}
 .ng:hover .ar{transform:rotate(180deg)}
-.dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:var(--white);border:1px solid var(--rule);border-radius:6px;box-shadow:0 14px 40px -10px rgba(15,49,50,.18);padding:.6rem;min-width:240px;opacity:0;pointer-events:none;transition:.22s ease;z-index:10}.ng>button{padding:.4em .25em}.ng.open .ar{transform:rotate(180deg)}
-.ng:hover .dd,.ng:focus-within .dd,.ng.open .dd{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:var(--white);border:1px solid var(--rule);border-radius:6px;box-shadow:0 14px 40px -10px rgba(15,49,50,.18);padding:.6rem;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s;z-index:10}.ng>button{padding:.4em .25em}.ng.open .ar{transform:rotate(180deg)}
+.ng:hover .dd,.ng:not(.esc):focus-within .dd,.ng.open .dd{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);transition-delay:0s}
 .dd::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--white);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 .dd a{display:block;padding:.65rem .85rem;border-radius:4px;font-size:.9rem;color:var(--char)}
 .dd a:hover{background:var(--euc-pale);color:var(--euc-deep);opacity:1}
 .dd a.on{background:var(--euc-pale);color:var(--euc-deep);font-weight:600}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;border-radius:0;border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;letter-spacing:.01em;white-space:nowrap;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;min-height:48px;border-radius:0;border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;letter-spacing:.01em;white-space:nowrap;text-decoration:none}
 .btn-p{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
 .btn-p:hover{background:var(--euc);border-color:var(--euc);opacity:1;transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(10,42,43,.4)}
 .btn-o{background:transparent;color:var(--euc-deep);border-color:var(--euc-deep)}
 .btn-o:hover{background:var(--euc-deep);color:var(--cream);opacity:1}
 .btn-s{background:var(--euc-deep);color:var(--cream)}
 .btn-s:hover{background:var(--euc);opacity:1}
-.btn-g{padding:.5em 0;border-bottom:1.5px solid currentColor;border-radius:0;color:var(--euc-deep)}
+.btn-g{padding:.5em 0;min-height:0;border-bottom:1.5px solid currentColor;border-radius:0;color:var(--euc-deep)}
 .btn-g::after{content:"→";display:inline-block;transition:.25s}
 .btn-g:hover{opacity:1;color:var(--euc)}.btn-g:hover::after{transform:translateX(4px)}
 
 /* Header nav buttons: .nav>a (0,1,1) out-specifies .btn (0,1,0), so restate at 0,2,1 */
-.nav>a.btn{padding:.62em 1.15em;border:1.5px solid transparent;border-radius:0;font-size:.84rem;font-weight:600;letter-spacing:.01em;line-height:1.2}
+.nav>a.btn{padding:.62em 1.15em;min-height:44px;border:1.5px solid transparent;border-radius:0;font-size:.84rem;font-weight:600;letter-spacing:.01em;line-height:1.2}
 .nav>a.btn::after{display:none}
 .nav>a.btn-don{background:var(--waratah);border-color:var(--waratah);color:var(--cream)}
 .nav>a.btn-don:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--cream);opacity:1}
 @media(max-width:980px){.nav>a.btn{width:100%;justify-content:center;margin-top:.2rem}}
 
-.mt{display:none;flex-direction:column;gap:5px;padding:8px}
-.mt span{width:22px;height:2px;background:var(--char);transition:.25s}
+.mt{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:44px;min-height:44px;padding:8px}
+.mt span{width:22px;height:2px;background:var(--char);transition:transform .25s,opacity .25s}
+.mt.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mt.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.mt.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-bd{display:none}
 @media(max-width:980px){
-  .nav{position:fixed;top:0;right:-100%;width:80%;max-width:340px;height:100vh;background:var(--cream);flex-direction:column;align-items:flex-start;padding:5rem 2rem 2rem;gap:1.5rem;box-shadow:-10px 0 40px rgba(0,0,0,.12);transition:.35s}
-  .nav.open{right:0}
-  .dd{position:static;transform:none;opacity:1;pointer-events:auto;background:0;border:0;box-shadow:none;padding:.5rem 0 0 1rem;min-width:0}.dd::before{display:none}
+  /* Off-canvas drawer: moved with transform (not right:-100%) so it never widens the document; visibility:hidden keeps its links out of the tab order while closed. */
+  .nav{position:fixed;top:0;right:0;bottom:0;width:80%;max-width:340px;height:100vh;height:100dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:var(--cream);flex-direction:column;align-items:flex-start;padding:5rem 2rem 2rem;gap:1.1rem;box-shadow:-10px 0 40px rgba(0,0,0,.12);transform:translateX(100%);visibility:hidden;transition:transform .35s,visibility 0s linear .35s;z-index:48}
+  .nav.open{transform:none;visibility:visible;transition:transform .35s,visibility 0s}
+  .nav-bd{display:block;position:fixed;inset:0;z-index:47;background:rgba(15,49,50,.45)}
+  .nav-bd[hidden]{display:none}
+  .nav .ng{width:100%}
+  .nav .ng>button{width:100%;justify-content:space-between;padding:.4em 0;min-height:44px}
+  .nav .ng .ar{transition:transform .25s}
+  .nav .ng:hover .ar{transform:none}
+  .nav .ng.open .ar{transform:rotate(180deg)}
+  /* Sub-menus are accordions in the drawer: collapsed by default, opened by their button. */
+  .nav .dd,.nav .ng:hover .dd,.nav .ng:focus-within .dd{display:none;position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;background:0;border:0;box-shadow:none;padding:.25rem 0 .25rem 1rem;min-width:0;transition:none}
+  .nav .ng.open .dd{display:block}
+  .dd::before{display:none}
+  .dd a{padding:.55rem .85rem;min-height:44px;display:flex;align-items:center}
+  .nav>a{min-height:44px}
   .mt{display:flex;margin-left:auto;z-index:50;position:relative}
 }
 
@@ -98,13 +124,17 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 @media(max-width:880px){.ftr-g{grid-template-columns:1fr 1fr;gap:2.4rem}}
 @media(max-width:520px){.ftr-g{grid-template-columns:1fr}}
-.ftr h4{color:var(--cream);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2em;font-weight:600;font-family:var(--ff-b)}
+.ftr h4,.ftr .ftr-h{color:var(--cream);font-size:.85rem;line-height:1.08;letter-spacing:.18em;text-transform:uppercase;margin:0 0 1.2em;font-weight:600;font-family:var(--ff-b)}
 .ftr ul{list-style:none}.ftr li{margin-bottom:.6em}.ftr li a{color:var(--euc-soft);font-size:.94rem;opacity:.85}.ftr li a:hover{color:var(--cream);opacity:1}
+/* 44px tap rows in the link columns (padding, not larger text); social chips keep their own size */
+.ftr-g ul:not(.ftr-social) li{margin:0;min-height:44px;display:flex;align-items:center}
+.ftr-g ul:not(.ftr-social) li a{display:inline-flex;align-items:center;min-height:44px;padding:.3em 0}
+.ftr-b a{display:inline-flex;align-items:center;min-height:44px}
 .ftr .ftr-social{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;padding:0}
 .ftr .ftr-social li{margin:0}
 .ftr .ftr-social a{display:inline-block;padding:.42em .95em;border:1px solid rgba(198,235,202,.4);border-radius:999px;font-size:.82rem;opacity:1;color:var(--euc-soft);transition:.2s}
 .ftr .ftr-social a:hover{background:var(--euc-soft);color:var(--euc-deep)}
-.ftr-b{border-top:1px solid rgba(198,235,202,.16);padding-top:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:var(--euc-mid)}
+.ftr-b{border-top:1px solid rgba(198,235,202,.16);padding-top:1.6rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;font-size:.82rem;color:var(--euc-mid)}
 
 /* ---- UTILITIES ---- */
 .sec{padding:var(--sec-y) 0;position:relative}
@@ -115,8 +145,8 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .sec.sand{background:var(--sand)}
 .sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
 .deco{position:absolute;pointer-events:none;opacity:.12}
-.rv{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}
-.rv.in{opacity:1;transform:translateY(0)}
+html.js .rv{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}
+html.js .rv.in{opacity:1;transform:translateY(0)}
 .rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}.rv.d4{transition-delay:.48s}
 .framed{position:relative}.framed::before{content:"";position:absolute;top:16px;left:-16px;width:100%;height:100%;background:var(--bark-mid);z-index:0;border-radius:6px}
 .framed.wt::before{background:var(--bark-mid)}.framed.bk::before{background:var(--bark)}
@@ -373,7 +403,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 @media(max-width:980px){.pg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.pg{grid-template-columns:1fr}}
 /* buttons keep their base even without .btn */
-.btn-p,.btn-o{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;border-radius:0;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:all .18s ease}
+.btn-p,.btn-o{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;min-height:48px;border-radius:0;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:all .18s ease}
 .btn-o{border-color:var(--euc-deep)}
 .btn-p{border-color:var(--euc-deep)}
 /* dark sections: readable text, visible buttons */
@@ -816,3 +846,13 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 .prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
 @media(max-width:640px){.prose table{display:block;overflow-x:auto}}
 .prose .btn-p{color:var(--cream);text-decoration:none}
+
+/* ---- Breadcrumbs: 44px tap targets without changing the layout (padding offset by a matching negative margin) ---- */
+nav[aria-label="Breadcrumb"] a{display:inline-block;padding:.9em 0;margin:-.9em 0}
+
+/* ---- Reduced motion (Nov 2026) ---- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rv,html.js .rv{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}

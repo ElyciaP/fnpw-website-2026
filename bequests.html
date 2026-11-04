@@ -251,19 +251,18 @@
 </style>
 </head>
 <body>
-<!-- @header -->
-
-<div class="ack">We acknowledge the Traditional Custodians of Country throughout Australia. We pay our respects to Elders past and present.</div>
+<!-- @header --><a class="skip" href="#main">Skip to content</a>
+<div class="ack" role="region" aria-label="Acknowledgement of Country">We acknowledge the Traditional Custodians of Country throughout Australia. <span class="ack-more">We pay our respects to Elders past and present.</span></div>
 <header class="hdr" id="hdr">
 <div class="cw"><div class="hdr-in">
   <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
   <a href="search.html" class="m-srch" aria-label="Search the site"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg></a>
-  <button class="mt" id="mt" aria-label="Menu"><span></span><span></span><span></span></button>
-  <nav class="nav" id="mn">
+  <button class="mt" id="mt" aria-label="Menu" aria-controls="mn" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn" aria-label="Main">
     <a href="about.html" class="">About</a>
     <div class="ng">
-      <button>Projects <span class="ar">▾</span></button>
-      <div class="dd">
+      <button aria-expanded="false" aria-controls="dd-projects">Projects <span class="ar">▾</span></button>
+      <div class="dd" id="dd-projects">
         <a href="projects.html" class="">All Projects</a>
         <a href="growing-national-parks.html" class="">Growing National Parks</a>
         <a href="saving-species.html" class="">Saving Species</a>
@@ -271,23 +270,23 @@
       </div>
     </div>
     <div class="ng">
-      <button>Partner With Us <span class="ar">▾</span></button>
-      <div class="dd">
+      <button aria-expanded="false" aria-controls="dd-partner">Partner With Us <span class="ar">▾</span></button>
+      <div class="dd" id="dd-partner">
         <a href="partner-invest.html" class="">Ways to Partner</a>
         <a href="government-partnerships.html" class="">Government Partnerships</a>
         <a href="partner.html" class="">Corporate Partnerships</a>
       </div>
     </div>
     <div class="ng">
-      <button>Impact <span class="ar">▾</span></button>
-      <div class="dd">
+      <button aria-expanded="false" aria-controls="dd-impact">Impact <span class="ar">▾</span></button>
+      <div class="dd" id="dd-impact">
         <a href="our-impact.html" class="">Our Impact</a>
         <a href="reports.html" class="">Impact Reports</a>
       </div>
     </div>
     <div class="ng">
-      <button>Get Involved <span class="ar">▾</span></button>
-      <div class="dd">
+      <button aria-expanded="false" aria-controls="dd-involved">Get Involved <span class="ar">▾</span></button>
+      <div class="dd" id="dd-involved">
         <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
         <a href="volunteer.html" class="">Corporate Volunteering</a>
         <a href="workplace-giving.html" class="">Workplace Giving</a>
@@ -297,8 +296,8 @@
       </div>
     </div>
     <div class="ng">
-      <button>Stories <span class="ar">▾</span></button>
-      <div class="dd">
+      <button aria-expanded="false" aria-controls="dd-stories">Stories <span class="ar">▾</span></button>
+      <div class="dd" id="dd-stories">
         <a href="articles.html" class="">Articles</a>
         <a href="in-the-news.html" class="">In the News</a>
       </div>
@@ -307,9 +306,10 @@
     <a href="search.html" class="nav-srch" aria-label="Search the site"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg><span>Search</span></a>
     <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
   </nav>
+  <div class="nav-bd" id="nav-bd" hidden></div>
 </div></div>
 </header><!-- /@header -->
-<main>
+<main id="main">
 
 <!-- ============ HERO ============ -->
 <section class="gw-hero sky">
@@ -561,9 +561,9 @@
         <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
         <ul class="ftr-social" aria-label="Follow us"><li><a href="https://www.facebook.com/fnpwaustralia/" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/fnpwaustralia/" rel="noopener">Instagram</a></li><li><a href="https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife" rel="noopener">LinkedIn</a></li></ul>
       </div>
-      <div><h4>Explore</h4><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="media-enquiry.html">Media Enquiries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Get Involved</h4><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner-invest.html">Partner With Us</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Gifts in wills</a></li><li><a href="https://gift-a-tree.fnpw.org.au">Give a Tree</a></li><li><a href="newsletters-sign-up.html">Newsletter Sign-up</a></li></ul></div>
-      <div><h4>Visit Us</h4><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 90 107 744 771</li></ul></div>
+      <div><h2 class="ftr-h">Explore</h2><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="media-enquiry.html">Media Enquiries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2 class="ftr-h">Get Involved</h2><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner-invest.html">Partner With Us</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Gifts in wills</a></li><li><a href="https://gift-a-tree.fnpw.org.au">Give a Tree</a></li><li><a href="newsletters-sign-up.html">Newsletter Sign-up</a></li></ul></div>
+      <div><h2 class="ftr-h">Visit Us</h2><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 90 107 744 771</li></ul></div>
     </div>
     <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
   </div>

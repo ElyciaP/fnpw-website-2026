@@ -27,7 +27,7 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
 </head>
 <body>
 <!-- @header --><!-- /@header -->
-<main>
+<main id="main">
 {body}
 </main>
 <!-- @footer --><!-- /@footer -->
