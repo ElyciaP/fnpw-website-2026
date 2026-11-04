@@ -51,7 +51,7 @@ The Projects Committee would like to thank all those who put together applicatio
 
 ### ACKNOWLEDGEMENT OF COUNTRY
 
-FNPW supports projects across Australia. In the spirit of reconciliation we *acknowledge* the *Traditional Owners* of Country and recognise their continuing connection to *land*, waters and culture.
+We support projects across Australia. In the spirit of reconciliation we *acknowledge* the *Traditional Owners* of Country and recognise their continuing connection to *land*, waters and culture.
 
 ### PROGRESS OF THIS PROJECT
 
