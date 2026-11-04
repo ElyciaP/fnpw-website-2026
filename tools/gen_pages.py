@@ -63,7 +63,7 @@ def feature(img, alt, title, paras, points, cta_label, cta_href, flip=False):
           f'style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;'
           f'box-shadow:12px 12px 0 var(--euc-pale)"></div>')
     pts = ''.join(f'<li>{p}</li>' for p in points)
-    txt = (f'<div class="rv d1"><h3 style="font-family:var(--ff-d);font-size:1.55rem;'
+    txt = (f'<div class="rv d1"><h3 style="'
            f'color:var(--euc-deep);margin-bottom:.9rem">{title}</h3>'
            + ''.join(f'<p style="margin-bottom:.8rem">{p}</p>' for p in paras)
            + f'<ul style="padding-left:1.2rem;display:grid;gap:.45rem;margin:.8rem 0 1.3rem">{pts}</ul>'
@@ -82,7 +82,7 @@ WY_CSS = '''
 .wy-bd{position:relative;color:#fff;padding:2.4rem 2.2rem}
 .wy-i{font-family:var(--ff-d);font-weight:800;font-size:2rem;color:transparent;-webkit-text-stroke:1.4px var(--wattle)}
 .wy-tag{font-family:var(--ff-h);font-size:1.35rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block;margin-left:.7rem}
-.wy-bd h3{font-family:var(--ff-d);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;letter-spacing:-.02em;margin:.5rem 0 .9rem;color:#fff}
+.wy-bd h3{margin:.5rem 0 .9rem;color:#fff}
 .wy-bd p{color:rgba(255,255,255,.92);margin-bottom:.7rem;font-size:.97rem}
 .wy-bd ul{padding-left:1.2rem;display:grid;gap:.4rem;margin:.8rem 0 1.4rem;color:rgba(255,255,255,.88);font-size:.92rem}
 .wy-btn{display:inline-block;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:600;padding:.9rem 1.9rem;text-decoration:none;transition:transform .18s ease}
@@ -148,7 +148,7 @@ def numbered_steps(steps):
     cells = ''.join(
         f'<div class="rv"><span style="font-family:var(--ff-d);font-weight:800;font-size:2.6rem;'
         f'color:transparent;-webkit-text-stroke:1.3px var(--euc)">{i+1:02d}</span>'
-        f'<h3 style="font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .4rem">{t}</h3>'
+        f'<h3 style="color:var(--euc-deep);margin:.5rem 0 .4rem">{t}</h3>'
         f'<p style="font-size:.94rem">{d}</p></div>'
         for i, (t, d) in enumerate(steps))
     return (f'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));'
@@ -211,7 +211,7 @@ def main():
               'alt="Bushcare volunteers restoring habitat" loading="lazy" style="display:block;width:100%;'
               'aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--wattle-soft)"></div>',
               '<div class="rv d1"><span class="ey">For payroll</span>'
-              '<h3 style="font-family:var(--ff-d);font-size:1.4rem;color:var(--euc-deep);margin:.6rem 0 .9rem">Details your payroll team will need</h3>'
+              '<h3 style="color:var(--euc-deep);margin:.6rem 0 .9rem">Details your payroll team will need</h3>'
               '<div class="pmeta">'
               '<div class="pmeta-i"><span>Organisation</span><strong>Foundation for National Parks &amp; Wildlife</strong></div>'
               '<div class="pmeta-i"><span>ABN</span><strong>90 107 744 771</strong></div>'
@@ -265,7 +265,7 @@ def main():
               'alt="Bushland protected at Heritage Estates" loading="lazy" style="display:block;width:100%;'
               'aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--euc-pale)"></div>',
               '<div class="rv d1"><span class="ey">Why it matters</span>'
-              '<h3 style="font-family:var(--ff-d);font-size:1.4rem;color:var(--euc-deep);margin:.6rem 0 .9rem">Land is the gift that cannot be undone.</h3>'
+              '<h3 style="color:var(--euc-deep);margin:.6rem 0 .9rem">Land is the gift that cannot be undone.</h3>'
               '<p style="margin-bottom:.8rem">Some of the most significant additions to the protected '
               'estate in our 55 years began as private land and a generous decision. Once protected, '
               'it stays protected: for the species on it now and everything that returns.</p>'

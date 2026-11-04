@@ -100,8 +100,8 @@ def md_html(t, drop_h1=True, shift=0):
 
 PROSE_CSS = '''
 .prose{max-width:74ch}
-.prose h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:2.4rem 0 .9rem;color:var(--euc-deep)}
-.prose h3{font-size:1.08rem;margin:2rem 0 .7rem;color:var(--euc-deep);letter-spacing:.01em}
+.prose h2{margin:2.4rem 0 .9rem;color:var(--euc-deep)}
+.prose h3{margin:2rem 0 .7rem;color:var(--euc-deep)}
 .prose p,.prose li{font-size:1rem;line-height:1.75;color:var(--char)}
 .prose p{margin:0 0 1rem}
 .prose ul,.prose ol{margin:0 0 1.2rem;padding-left:1.3rem}
@@ -271,7 +271,7 @@ def grants_hub():
 .gr-im{aspect-ratio:16/9;overflow:hidden;background:var(--sand)}
 .gr-im img{width:100%;height:100%;object-fit:cover}
 .gr-bd{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.gr-bd h3{font-size:1.15rem;color:var(--euc-deep);margin:0}
+.gr-bd h3{color:var(--euc-deep);margin:0}
 .gr-bd p{font-size:.93rem;line-height:1.6;color:var(--char);margin:0;flex:1}
 '''
     body = NL.join([
@@ -322,7 +322,7 @@ def paws():
 .pw-im{aspect-ratio:3/4;overflow:hidden;background:var(--sand)}
 .pw-im img{width:100%;height:100%;object-fit:cover;display:block}
 .pw-bd{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem}
-.pw-bd h3{font-size:1rem;margin:0;color:var(--euc-deep)}
+.pw-bd h3{margin:0;color:var(--euc-deep)}
 '''
     body = NL.join([
         photo_hero('Newsletter archive', 'PAWS Magazine.', H.escape(sub.group(1)) if sub else '',

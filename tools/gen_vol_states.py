@@ -196,15 +196,13 @@ def summarise(rows):
 PAGE_CSS = '''
 .vs-hero{background:var(--euc-deep);color:var(--cream);padding:var(--sec-y) 0}
 .vs-hero .ey{color:var(--euc-soft)}.vs-hero .ey::before{background:var(--euc-soft)}
-.vs-hero h1{color:var(--cream);font-size:clamp(2rem,4.2vw,3.1rem);font-weight:600;
-  letter-spacing:-.028em;line-height:1.05;margin:1rem 0 0;max-width:18ch}
+.vs-hero h1{color:var(--cream);margin:1rem 0 0;max-width:18ch}
 .vs-hero .lede{color:rgba(250,246,242,.88);margin-top:1.1rem;max-width:56ch}
 .vs-crumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.72);
   margin-bottom:1.3rem;flex-wrap:wrap}
 .vs-crumb a{color:var(--euc-soft)}
 .vs-tally{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;padding:0;list-style:none}
-.vs-tally li{font-size:.8rem;font-weight:600;color:var(--euc-deep);background:var(--euc-soft);
-  padding:.45em .85em}
+.vs-tally li{font-size:.8125rem;font-weight:600;color:var(--euc-deep);background:var(--euc-soft);padding:.45em .85em}
 
 .vs-wrap{padding:var(--sec-y) 0;background:var(--sand)}
 .vs-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
@@ -217,8 +215,7 @@ PAGE_CSS = '''
 .vm-land{fill:var(--euc-soft);stroke:var(--euc);stroke-width:1.5;stroke-linejoin:round}
 .vm-hit{fill:transparent}
 .vm-dot{fill:var(--euc-deep);stroke:var(--cream);stroke-width:2;transition:fill .18s ease,r .18s ease}
-.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:11px;
-  text-anchor:middle;pointer-events:none}
+.vm-num{fill:var(--cream);font-family:var(--ff-d);font-weight:700;font-size:.8125rem;text-anchor:middle;pointer-events:none}
 .vm-pin{cursor:pointer}
 .vm-pin:hover .vm-dot,.vm-pin:focus .vm-dot,.vm-pin.on .vm-dot{fill:var(--waratah);r:14}
 .vm-pin:focus{outline:none}
@@ -226,11 +223,10 @@ PAGE_CSS = '''
 .vm-inset-bg{fill:var(--cream);stroke:var(--rule);stroke-width:1}
 .vm-inset-land{fill:none;stroke:var(--euc);stroke-width:1.2;stroke-linejoin:round}
 .vm-inset-box{fill:rgba(194,55,71,.16);stroke:var(--waratah);stroke-width:1.4}
-.vm-cap{margin:.7rem .2rem 0;font-size:.78rem;color:var(--stone);line-height:1.5}
+.vm-cap{margin:.7rem .2rem 0;font-size:.8125rem;color:var(--stone);line-height:1.5}
 
 .vs-filter{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
-.vs-filter button{font-size:.78rem;font-weight:600;padding:.5em .9em;border:1.5px solid var(--bark-mid);
-  background:transparent;color:var(--euc-deep);cursor:pointer;transition:.2s}
+.vs-filter button{font-size:.8125rem;font-weight:600;padding:.5em .9em;border:1.5px solid var(--bark-mid);background:transparent;color:var(--euc-deep);cursor:pointer;transition:.2s}
 .vs-filter button:hover{border-color:var(--euc-deep)}
 .vs-filter button.on{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
 
@@ -259,17 +255,15 @@ PAGE_CSS = '''
   border-left:3px solid var(--euc-soft);padding:1.1rem 1.2rem;transition:.2s;cursor:default}
 .vs-card:hover,.vs-card:focus,.vs-card.on{border-left-color:var(--waratah);
   box-shadow:0 10px 26px -18px rgba(15,49,50,.4);outline:none}
-.vs-num{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--euc-deep);
-  color:var(--cream);display:flex;align-items:center;justify-content:center;
-  font-family:var(--ff-d);font-weight:700;font-size:.8rem;margin-top:.15rem;transition:.2s}
+.vs-num{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--euc-deep);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-weight:700;font-size:.8125rem;margin-top:.15rem;transition:.2s}
 .vs-card:hover .vs-num,.vs-card:focus .vs-num,.vs-card.on .vs-num{background:var(--waratah)}
 .vs-bd{min-width:0}
-.vs-bd h3{font-size:1.02rem;margin:0 0 .35rem;color:var(--euc-deep);line-height:1.25}
+.vs-bd h3{margin:0 0 .35rem;color:var(--euc-deep)}
 .vs-meta{margin:0 0 .35rem;font-size:.82rem;color:var(--euc);font-weight:600;
   display:flex;align-items:center;gap:.5em;flex-wrap:wrap}
 .vs-dot{width:3px;height:3px;border-radius:50%;background:var(--bark-mid);display:inline-block}
 .vs-addr{margin:0 0 .35rem;font-size:.86rem;color:var(--char);line-height:1.5}
-.vs-mgr{margin:0;font-size:.8rem;color:var(--stone);line-height:1.5}
+.vs-mgr{margin:0;font-size:.8125rem;color:var(--stone);line-height:1.5}
 .vs-mgr span{font-weight:700;color:var(--euc-deep)}
 .vs-dist{margin:0 0 .35rem;font-size:.82rem;color:var(--char)}
 .vs-count{font-size:.82rem;color:var(--stone);margin:0}
@@ -298,7 +292,7 @@ PAGE_CSS = '''
 .vg-b{width:40px;height:40px;flex:0 0 auto;border:1.5px solid var(--bark-mid);background:transparent;
   color:var(--euc-deep);font-size:1rem;cursor:pointer;transition:.2s}
 .vg-b:hover{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
-.vg-count{font-size:.8rem;color:var(--stone);min-width:3.2em}
+.vg-count{font-size:.8125rem;color:var(--stone);min-width:3.2em}
 .vg-dots{display:flex;gap:.45rem;margin-left:auto}
 .vg-d{flex:0 0 auto;width:9px;height:9px;border-radius:999px;border:none;padding:0;
   background:var(--bark-mid);cursor:pointer;transition:width .3s ease,background .3s ease}
@@ -638,8 +632,7 @@ HUB_CSS = '''
   padding:.7em 1.1em;border:1.5px solid var(--bark-mid);background:transparent;color:var(--euc-deep);
   cursor:pointer;transition:.2s}
 .vw-tabs button:hover{border-color:var(--euc-deep)}
-.vw-tabs button span{font-size:.72rem;font-weight:700;background:var(--euc-soft);color:var(--euc-deep);
-  padding:.2em .5em;transition:.2s}
+.vw-tabs button span{font-size:.8125rem;font-weight:700;background:var(--euc-soft);color:var(--euc-deep);padding:.2em .5em;transition:.2s}
 .vw-tabs button[aria-selected="true"]{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
 .vw-tabs button[aria-selected="true"] span{background:rgba(250,246,242,.22);color:var(--cream)}
 
@@ -648,13 +641,11 @@ HUB_CSS = '''
 .vw-p[hidden]{display:none}
 .vw-p-head{display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;
   padding-bottom:1.2rem;margin-bottom:1.3rem;border-bottom:1px solid var(--rule)}
-.vw-p-head h3{font-size:1.3rem;margin:0 0 .4rem;color:var(--euc-deep)}
+.vw-p-head h3{margin:0 0 .4rem;color:var(--euc-deep)}
 .vw-p-head p{margin:0;font-size:.92rem;color:var(--stone);line-height:1.55;max-width:62ch}
-.vw-go{margin-left:auto;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--euc-deep);border:1.5px solid var(--euc-deep);padding:.7em 1.15em;transition:.2s;
-  white-space:nowrap}
+.vw-go{margin-left:auto;font-size:.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--euc-deep);border:1.5px solid var(--euc-deep);padding:.7em 1.15em;transition:.2s;white-space:nowrap}
 .vw-go:hover{background:var(--euc-deep);color:var(--cream);opacity:1}
-.vw-only{margin-left:auto;font-size:.8rem;color:var(--stone);white-space:nowrap}
+.vw-only{margin-left:auto;font-size:.8125rem;color:var(--stone);white-space:nowrap}
 .vw-sites{list-style:none;margin:0;padding:0;columns:3;column-gap:2rem}
 @media(max-width:1000px){.vw-sites{columns:2}}
 @media(max-width:620px){.vw-sites{columns:1}}
