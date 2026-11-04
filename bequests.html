@@ -268,6 +268,17 @@
 @media(max-width:600px){.gw-ac{grid-template-columns:1fr}.gw-ac .gw-btn{grid-column:1;grid-row:auto;margin-top:.7rem;justify-self:start}}
 .gw-faq{background:var(--sand)}
 .gw-steps p a{color:var(--wattle-soft);font-weight:600}
+/* professionals signpost band */
+.gw-pro-cta{padding:clamp(3rem,6vw,4.5rem) 0;background:var(--euc-deep);color:var(--cream)}
+.gw-pro-cta-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+@media(max-width:900px){.gw-pro-cta-g{grid-template-columns:1fr}}
+.gw-pro-cta .ey{color:var(--euc-mid)}
+.gw-pro-cta h2{color:var(--cream);font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.12;letter-spacing:-.02em;margin:.9rem 0 1rem;max-width:22ch}
+.gw-pro-cta p{color:rgba(250,246,242,.9);font-size:1.02rem;line-height:1.7;margin:0;max-width:60ch}
+.gw-pro-cta-tags{list-style:none;margin:1.3rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.gw-pro-cta-tags li{font-size:.82rem;font-weight:600;color:var(--cream);border:1px solid rgba(250,246,242,.35);padding:.35em .75em}
+.gw-pro-cta-acts{display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+.gw-pro-cta-call{color:var(--cream);font-weight:600;font-size:.95rem;text-underline-offset:3px}
 .gw-talk-lead{font-family:var(--ff-d);font-weight:500;font-size:1.12rem!important;line-height:1.55!important;color:var(--cream)!important}
 </style>
 </head>
@@ -341,7 +352,6 @@
     <h1>Leave a legacy.</h1>
     <p class="lede">A gift in your will keeps the nature you love living on for the generations who come after you. Whenever you are ready, we would love to talk with you about it.</p>
     <div class="gw-acts"><a class="gw-btn d" href="#connect">Talk to us in confidence</a><a class="gw-btn od" href="#how">How to leave a gift</a></div>
-    <p class="gw-hero-call">Or call Helen, who looks after Gifts in Wills, on <a href="tel:1800898626">1800 898 626</a>.</p>
   </div>
 </section>
 
@@ -423,7 +433,7 @@
         <div class="gw-wording" id="wording-text">I give to the Foundation for National Parks &amp; Wildlife (ABN 90 107 744 771) of <span class="br">[registered address]</span>, <span class="br">[a percentage of my estate / the residue of my estate / the sum of $______ / the following specific gift]</span> for its general purposes. I direct that the receipt of the Chief Executive Officer or authorised officer shall be a sufficient discharge to my executors.</div>
         <button type="button" class="gw-copy" onclick="var r=document.createRange();r.selectNodeContents(document.getElementById('wording-text'));var s=window.getSelection();s.removeAllRanges();s.addRange(r);this.textContent='Wording selected. Press Ctrl+C or ⌘C to copy'">Select wording</button>
         <div class="gw-note"><h3>A note on tax</h3><p>For many people, a gift in their will is a tax-effective way to give, and as a registered charity with Deductible Gift Recipient status we are able to receive gifts of this kind. Everyone’s circumstances are different, so we always recommend talking it through with your solicitor or financial adviser.</p></div>
-        <div class="gw-note"><h3>If you are an executor</h3><p>If you are managing an estate that includes a gift to us, please call <a href="tel:1800898626">1800 898 626</a> or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will help with whatever you need. Solicitors, advisers and executors can find more on our <a href="bequests-professional-advisers.html">page for professionals</a>.</p></div>
+        <div class="gw-note"><h3>If you are an executor</h3><p>If you are managing an estate that includes a gift to us, please call <a href="tel:1800898626">1800 898 626</a> or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will help with whatever you need. There is more for executors in <a href="#professionals">the section below</a>.</p></div>
       </div>
       <div class="rv d1">
       <aside class="gw-org">
@@ -440,6 +450,22 @@
         <p class="fine">Incorporated as a company limited by guarantee and regulated by ASIC. Registered with the Australian Charities and Not-for-profits Commission and endorsed as a Deductible Gift Recipient. We are not legal practitioners, so please seek legal advice when preparing your will.</p>
       </aside>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR PROFESSIONALS (signpost to the advisers page) ============ -->
+<section class="gw-pro-cta" id="professionals">
+  <div class="cw gw-pro-cta-g rv">
+    <div>
+      <span class="ey">For professionals</span>
+      <h2>Advising a client or managing an estate?</h2>
+      <p>Our page for professionals brings everything together in one place: our legal details and suggested wording, how we handle gifts for a specific purpose, support for executors, and one direct contact for you and your clients.</p>
+      <ul class="gw-pro-cta-tags" aria-label="Who the page is for"><li>Estate lawyers and will writers</li><li>Financial and estate planners</li><li>Trustee companies</li><li>Executors</li><li>Funeral directors</li><li>Insurers</li></ul>
+    </div>
+    <div class="gw-pro-cta-acts">
+      <a class="gw-btn y" href="bequests-professional-advisers.html">Information for professionals &#8594;</a>
+      <a class="gw-pro-cta-call" href="tel:1800898626">Or call us on 1800 898 626</a>
     </div>
   </div>
 </section>
