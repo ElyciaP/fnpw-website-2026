@@ -23,7 +23,7 @@
 .sand{background:#EEE8E1}
 .dark{background:#0F3132;color:#C6EBCA}
 .dark h1,.dark h2,.dark h3{color:#FAF6F2}
-.ey{text-transform:uppercase;color:#0F7768;display:inline-flex;align-items:center;gap:.6em;margin-bottom:var(--sp-2)}
+.ey{text-transform:uppercase;color:var(--euc-deep);display:inline-flex;align-items:center;gap:.6em;margin-bottom:var(--sp-2)}
 .ey::before{content:"";width:24px;height:1.5px;background:currentColor;display:inline-block}
 .dark .ey{color:#C6EBCA}
 .lede{font-size:clamp(1.05rem,1.4vw,1.22rem);line-height:1.6;max-width:60ch}
@@ -182,7 +182,7 @@
 .lo-more{grid-template-columns:9rem minmax(0,1fr)}
 @media (max-width:900px){.acc-g,.lo-more{grid-template-columns:1fr !important}.lo-st{grid-template-columns:1fr !important}.lo-st>div{border-left:0 !important}}
 /* Review pass (3 Nov 2026) */
-#logos .ey{color:#0F7768;margin-bottom:var(--sp-3)}
+#logos .ey{color:var(--euc-deep);margin-bottom:var(--sp-3)}
 #logos .lmq-head{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-3)}
 #logos .lmq-head .ey{margin-bottom:0}
 .lmq-pause{display:inline-flex;align-items:center;gap:var(--sp-1);font:inherit;font-size:.8125rem;font-weight:600;color:#0F3132;background:none;border:0;padding:var(--sp-1) .2rem;min-height:32px;cursor:pointer}
@@ -199,11 +199,11 @@
 #also .also-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-5);align-items:center}
 #also figure{margin:0;position:relative;aspect-ratio:4/3;min-height:240px}
 #also figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-#also .ey{color:#0F7768}
+#also .ey{color:var(--euc-deep)}
 #also h2{color:#0F3132;max-width:22ch}
-#also .also-who{font-size:.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#85735E;margin:var(--sp-2) 0 var(--sp-2)}
+#also .also-who{font-size:.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--bark-text);margin:var(--sp-2) 0 var(--sp-2)}
 #also p{max-width:60ch;color:rgba(36,25,20,.86)}
-#also p.also-who{max-width:none;color:#85735E}
+#also p.also-who{max-width:none}
 @media (max-width:900px){#also .also-g{grid-template-columns:1fr}}
 </style>
 </head>
@@ -284,8 +284,8 @@
 </section>
 <section class="sec" id="ways">
 <div class="cw">
-<div class="h2row" style="display: grid; gap: 2rem; align-items: end; margin-bottom: 2rem"><div><span class="ey" style="color: #0F7768">Ways to partner</span><h2 style="color: #0F3132; max-width: 30ch">Choose how your business wants to make an impact.</h2></div><p style="margin: 0; max-width: 54ch; color: rgba(36,25,20,.84)">Every partnership is shaped around what your business wants to achieve. Pick one to see what it involves and the kind of work partners back.</p></div>
-<div role="tablist" aria-label="Ways to partner" class="g3" style="display: grid; gap: .5rem; margin-bottom: 1rem"><button type="button" class="wt" role="tab" id="wt-0" data-i="0" aria-controls="wp-0" aria-selected="true" tabindex="0" style="--c:#0F7768"><span style="font-size: .72rem; font-weight: 700; letter-spacing: .12em; opacity: .8">01</span><span style="font-family: Sora, sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2">Fund Conservation at Scale</span></button><button type="button" class="wt" role="tab" id="wt-1" data-i="1" aria-controls="wp-1" aria-selected="false" tabindex="-1" style="--c:#2C4B89"><span style="font-size: .72rem; font-weight: 700; letter-spacing: .12em; opacity: .8">02</span><span style="font-family: Sora, sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2">Build Conservation Partnerships</span></button><button type="button" class="wt" role="tab" id="wt-2" data-i="2" aria-controls="wp-2" aria-selected="false" tabindex="-1" style="--c:#703985"><span style="font-size: .72rem; font-weight: 700; letter-spacing: .12em; opacity: .8">03</span><span style="font-family: Sora, sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2">Invest in Nature’s Future</span></button></div><div class="wp-stack"><div class="wpn" id="wp-0" role="tabpanel" aria-labelledby="wt-0" tabindex="0"><div class="story wp" style="display: grid; gap: 0; background: #fff; border: 1px solid #E5DFD3">
+<div class="h2row" style="display: grid; gap: 2rem; align-items: end; margin-bottom: 2rem"><div><span class="ey">Ways to partner</span><h2 style="color: #0F3132; max-width: 30ch">Choose how your business wants to make an impact.</h2></div><p style="margin: 0; max-width: 54ch; color: rgba(36,25,20,.84)">Every partnership is shaped around what your business wants to achieve. Pick one to see what it involves and the kind of work partners back.</p></div>
+<div role="tablist" aria-label="Ways to partner" class="g3" style="display: grid; gap: .5rem; margin-bottom: 1rem"><button type="button" class="wt" role="tab" id="wt-0" data-i="0" aria-controls="wp-0" aria-selected="true" tabindex="0" style="--c:#0F7768"><span style="font-size: .72rem; font-weight: 700; letter-spacing: .12em">01</span><span style="font-family: Sora, sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2">Fund Conservation at Scale</span></button><button type="button" class="wt" role="tab" id="wt-1" data-i="1" aria-controls="wp-1" aria-selected="false" tabindex="-1" style="--c:#2C4B89"><span style="font-size: .72rem; font-weight: 700; letter-spacing: .12em">02</span><span style="font-family: Sora, sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2">Build Conservation Partnerships</span></button><button type="button" class="wt" role="tab" id="wt-2" data-i="2" aria-controls="wp-2" aria-selected="false" tabindex="-1" style="--c:#703985"><span style="font-size: .72rem; font-weight: 700; letter-spacing: .12em">03</span><span style="font-family: Sora, sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2">Invest in Nature’s Future</span></button></div><div class="wp-stack"><div class="wpn" id="wp-0" role="tabpanel" aria-labelledby="wt-0" tabindex="0"><div class="story wp" style="display: grid; gap: 0; background: #fff; border: 1px solid #E5DFD3">
 <figure style="margin: 0; position: relative; min-height: 340px"><img loading="lazy" src="assets/img/pillar-species-koala.jpg" alt="Koala resting in the fork of a eucalypt" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"><div style="position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: #0F7768"></div></figure>
 <div class="wp-txt" style="padding: clamp(1.6rem,3vw,2.3rem)"><h3 style="color: #0F3132">Fund Conservation at Scale</h3><p style="margin: 0 0 .8rem">Fund land for national parks, the restoration of native habitat or recovery work for a threatened species, with the scope and the outcomes your funding will deliver agreed from the start.</p><p style="margin: 0 0 1.1rem; font-size: .88rem; padding: .7rem .9rem; background: #EEF8EF; border-left: 3px solid #0F7768"><strong style="color: #0F3132">Good fit for:</strong> Businesses with a regional footprint, or a species or place that means something to your brand.</p>
 
@@ -320,7 +320,7 @@
 </section>
 <section id="flagship" class="fbx" style="position: relative; display: grid; background: #FAF6F2; color: #241914">
 <div style="padding: var(--sec-md) clamp(1.5rem,4vw,3.5rem) var(--sec-md) max(1.25rem, calc((100vw - 1240px)/2 + 2.5rem))">
-<span class="ey" style="color: #0F7768">Flagship program</span><h2 style="color: #0F3132; max-width: 17ch">Landscape Resilience: on the way to nine million trees.</h2>
+<span class="ey">Flagship program</span><h2 style="color: #0F3132; max-width: 17ch">Landscape Resilience: on the way to nine million trees.</h2>
 <p style="color: rgba(36,25,20,.86); margin: 0 0 1.6rem; max-width: 56ch">What began after the 2019–20 bushfires as a promise to plant one million trees is now one of Australia’s largest community-led nursery restoration programs. We reached the millionth tree in 2024 and have set our sights on nine million by 2030. Partners fund the seed collection, nurseries and planting that restore habitat at the scale of whole regions.</p>
 <div class="g3" style="display: grid; gap: 1rem 0; margin: 0 -1.2rem 1.4rem"><div style="padding: 0 1.2rem; min-width: 0"><div style="font-family: Sora, sans-serif; font-weight: 800; font-size: clamp(1.6rem,2.3vw,2.1rem); line-height: 1; letter-spacing: -.04em; color: #0F7768; white-space: nowrap; display: flex; align-items: baseline; gap: .3rem">1.2M</div><div style="font-size: .8rem; line-height: 1.4; margin-top: .45rem; color: rgba(36,25,20,.8)">trees, shrubs and seedlings planted up to 2025 </div></div><div style="padding: 0 1.2rem; border-left: 1px solid #D9D1C4; min-width: 0"><div style="font-family: Sora, sans-serif; font-weight: 800; font-size: clamp(1.6rem,2.3vw,2.1rem); line-height: 1; letter-spacing: -.04em; color: #0F7768; white-space: nowrap; display: flex; align-items: baseline; gap: .3rem">9M</div><div style="font-size: .8rem; line-height: 1.4; margin-top: .45rem; color: rgba(36,25,20,.8)">trees in total, the goal for 2030 </div></div><div style="padding: 0 1.2rem; border-left: 1px solid #D9D1C4; min-width: 0"><div style="font-family: Sora, sans-serif; font-weight: 800; font-size: clamp(1.6rem,2.3vw,2.1rem); line-height: 1; letter-spacing: -.04em; color: #0F7768; white-space: nowrap; display: flex; align-items: baseline; gap: .3rem">30+</div><div style="font-size: .8rem; line-height: 1.4; margin-top: .45rem; color: rgba(36,25,20,.8)">community nurseries from around Australia </div></div></div>
 <div style="height: 12px; background: #E5DFD3"><div style="width: 13.5%; height: 100%; background: #0F7768"></div></div><div style="display: flex; justify-content: space-between; font-size: .78rem; margin-top: .45rem; color: rgba(36,25,20,.8)"><span>1.2 million planted</span><span>9 million by 2030</span></div>

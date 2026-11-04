@@ -47,7 +47,7 @@ h5{font-size:1rem;line-height:1.4}
 p{margin-bottom:1em}p:last-child{margin-bottom:0}
 /* 13px is the floor for readable text: captions, credits, chips and card meta use .small or .8125rem, never less. */
 .small,small{font-size:.8125rem;line-height:1.5}
-.ey{font-family:var(--ff-d);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--euc);display:inline-flex;align-items:center;gap:.6em;vertical-align:top}
+.ey{font-family:var(--ff-d);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--euc-deep);display:inline-flex;align-items:center;gap:.6em;vertical-align:top}
 /* ---- Heading stack (WP4): eyebrow, 8px, heading, 24px, intro. h3/h4 keep a 16px stack (card internals).
    Low specificity on purpose: any page rule with a class wins. ---- */
 .ey + h1,.ey + h2,.ey + h3,.ey + h4{margin-top:var(--sp-1)}
@@ -172,7 +172,7 @@ h3,h4{margin-bottom:var(--sp-2)}
 .sec.dark .ey{color:var(--euc-soft)}.sec.dark .ey::before{background:var(--euc-soft)}
 .sec.paper{background:var(--sand)}
 .sec.sand{background:var(--sand)}
-.sec.sand .ey,.pil-stats .ey{color:var(--euc-deep)}
+.sec.sand .ey,.pil-stats .ey,.ackb .ey{color:var(--euc-deep)}
 
 /* ---- CARDS (WP4): three treatments. .card is white with a hairline rule, 24px padding and a 16px stack;
    .card.img puts a photograph on top (aspect-ratio box, chip); .panel.dark is deep eucalyptus. Sharp corners.
