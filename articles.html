@@ -17,14 +17,14 @@
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 50%,rgba(15,49,50,.2) 100%);z-index:1}
-.fb-hero-content{position:relative;z-index:3;padding:4.5rem 0;width:100%}
+.fb-hero-content{position:relative;z-index:3;padding:var(--sp-6) 0;width:100%}
 .fb-hero-content .breadcrumb{color:var(--cream)}
 .fb-hero-content .breadcrumb a{color:var(--euc-soft)}
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
-.fb-hero-content h1{color:var(--cream);max-width:22ch;margin-top:1rem}
+.fb-hero-content h1{color:var(--cream);max-width:22ch;margin-top:var(--sp-1)}
 .fb-hero-content h1 em{font-style:normal;font-family:var(--ff-d);color:var(--waratah-soft);font-weight:inherit}
-.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
+.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:var(--sp-3);max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
 .fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
 
@@ -39,24 +39,23 @@
 @media(max-width:880px){.feat-card{grid-template-columns:1fr}}
 .feat-img{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--euc)}
 .feat-img img{width:100%;height:100%;object-fit:cover}
-.feat-bd{padding:2.8rem 3rem;display:flex;flex-direction:column;justify-content:center}
-@media(max-width:880px){.feat-bd{padding:2rem 1.6rem}}
-.feat-tag{display:inline-flex;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--waratah);margin-bottom:1rem}
-.feat-bd h2{margin-bottom:1rem}
-.feat-bd p{font-size:1.05rem;color:var(--char);line-height:1.6;margin-bottom:1.5rem}
-.feat-meta{display:flex;gap:1.2rem;margin-top:.5rem;font-size:.82rem;color:var(--stone);align-items:center}
+.feat-bd{padding:var(--sp-5) var(--sp-5);display:flex;flex-direction:column;justify-content:center}
+@media(max-width:880px){.feat-bd{padding:var(--sp-4) var(--sp-3)}}
+.feat-tag{display:inline-flex;font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--waratah);margin-bottom:var(--sp-2)}
+.feat-bd p{font-size:1.05rem;color:var(--char);line-height:1.6;margin-bottom:var(--sp-3)}
+.feat-meta{display:flex;gap:var(--sp-2);margin-top:var(--sp-1);font-size:.82rem;color:var(--stone);align-items:center}
 .feat-meta strong{color:var(--euc-deep);font-weight:600}
 
-.filters-news{padding:2.5rem 0 1.5rem;background:var(--cream);border-bottom:1px solid var(--rule)}
-.fn-r{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
-.fn-r .lb{font-size:.8125rem;color:var(--stone);letter-spacing:.1em;text-transform:uppercase;margin-right:.5rem}
+.filters-news{padding:var(--sec-sm) 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.fn-r{display:flex;flex-wrap:wrap;gap:var(--sp-1);align-items:center}
+.fn-r .lb{font-size:.8125rem;color:var(--stone);letter-spacing:.1em;text-transform:uppercase;margin-right:var(--sp-1)}
 .fn-r .sortwrap{margin-left:0}
-.sortwrap{display:inline-flex;align-items:center;gap:.55rem;font-size:.8125rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
+.sortwrap{display:inline-flex;align-items:center;gap:var(--sp-1);font-size:.8125rem;font-weight:600;letter-spacing:.02em;color:var(--stone);text-transform:uppercase;font-family:var(--ff-d)}
 .psel{font-family:var(--ff-b);font-size:.86rem;font-weight:600;color:var(--euc-deep);background:var(--white);border:1.5px solid var(--rule);border-radius:0;padding:.5em 2.2em .5em .9em;cursor:pointer;transition:.25s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230F3132' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8em center}
 .psel:hover,.psel:focus{border-color:var(--euc);color:var(--euc);outline:none}
 @media(max-width:600px){.fn-r .sortwrap{margin-left:0;width:100%;justify-content:space-between}}
 
-.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3.5rem 0 5rem;background:var(--cream)}
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4);padding:var(--sp-5) 0 var(--sp-6);background:var(--cream)}
 @media(max-width:1000px){.art-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.art-grid{grid-template-columns:1fr}}
 .art{background:var(--white);border:1px solid var(--rule);border-radius:0;overflow:hidden;display:flex;flex-direction:column;transition:.35s;cursor:pointer;text-decoration:none;color:inherit}
@@ -68,21 +67,21 @@
 .art-im .cat.sp{color:var(--waratah-dk);background:rgba(255,173,183,.95)}
 .art-im .cat.hl{color:var(--soil);background:rgba(238,232,225,.95)}
 .art-im .cat.news{color:var(--hovea);background:rgba(238,232,255,.95)}
-.art-bd{padding:1.5rem 1.5rem 1.6rem;flex:1;display:flex;flex-direction:column}
-.art-date{font-size:.8125rem;color:var(--stone);margin-bottom:.5rem;letter-spacing:.04em}
-.art-bd h3{margin-bottom:.7rem;color:var(--euc-deep)}
-.art-bd p{font-size:.92rem;line-height:1.55;color:var(--char);flex:1;margin-bottom:1rem}
+.art-bd{padding:var(--sp-3) var(--sp-3) var(--sp-3);flex:1;display:flex;flex-direction:column}
+.art-date{font-size:.8125rem;color:var(--stone);margin-bottom:var(--sp-1);letter-spacing:.04em}
+.art-bd h3{color:var(--euc-deep)}
+.art-bd p{font-size:.92rem;line-height:1.55;color:var(--char);flex:1;margin-bottom:var(--sp-2)}
 .art-link{font-size:.84rem;font-weight:600;color:var(--euc-deep);display:inline-flex;align-items:center;gap:.4em}
 .art-link::after{content:"→";transition:.25s}
 .art:hover .art-link::after{transform:translateX(4px)}
 
 .nl-strip{padding:var(--sec-md) 0;background:var(--euc-deep);color:var(--cream);position:relative;overflow:hidden}
 .nl-strip::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--bark)}
-.nl-g{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.nl-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);align-items:center}
 @media(max-width:780px){.nl-g{grid-template-columns:1fr}}
-.nl-strip h3{color:var(--cream);margin-bottom:.7rem}
+.nl-strip h3{color:var(--cream)}
 .nl-strip p{color:rgba(250,246,242,.85);font-size:1rem}
-.nl-f{display:flex;gap:.5rem;flex-wrap:wrap}
+.nl-f{display:flex;gap:var(--sp-1);flex-wrap:wrap}
 .nl-f input{flex:1;min-width:200px;padding:.85em 1.2em;border-radius:0;border:1px solid rgba(250,246,242,.3);background:rgba(250,246,242,.08);color:var(--cream);font-size:.95rem;font-family:var(--ff-b)}
 .nl-f input::placeholder{color:rgba(250,246,242,.6)}
 .nl-f button{padding:.8em 1.5em;background:var(--waratah);color:var(--cream);border-radius:0;font-weight:600;transition:.25s;font-family:var(--ff-d);font-size:.9rem;min-height:48px;letter-spacing:.01em}
@@ -104,12 +103,12 @@
 /* v4 feature slim */
 .feat-card{grid-template-columns:1.35fr 1fr}
 .feat-img{aspect-ratio:16/10}
-.feat-bd{padding:2rem 2.4rem;justify-content:center}
+.feat-bd{padding:var(--sp-4) var(--sp-4);justify-content:center}
 .art-im{aspect-ratio:16/10;overflow:hidden}
 .art-im img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* v4.1 hero-height */
-.nh{padding:9.5rem 0 4.5rem;min-height:0}
+.nh{padding:var(--hero-top) 0 var(--hero-bot);min-height:0}
 
 /* v4.1 feat-crop: image statically fills its column, no white gap */
 .feat-card{align-items:stretch}
@@ -119,11 +118,11 @@
 
 /* v4.2 featured slimmer */
 .feat-img{min-height:250px}
-.feat-bd{padding:1.5rem 2rem}
+.feat-bd{padding:var(--sp-3) var(--sp-4)}
 .feat-bd p{font-size:.95rem}
 
 /* HubSpot newsletter form on the dark strip */
-.nl-hs{background:var(--cream);padding:1.2rem 1.4rem 1rem;min-width:min(100%,380px)}
+.nl-hs{background:var(--cream);padding:var(--sp-2) var(--sp-3) var(--sp-2);min-width:min(100%,380px)}
 .nl-hs .hsform-fallback{font-size:.88rem;color:var(--char)}
 .nl-hs .hsform-fallback a{color:var(--euc-deep);font-weight:600}
 </style>
@@ -193,7 +192,7 @@
   <div class="cw rv">
     <nav aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span>/</span>Articles</nav>
     <span class="ey">Field updates &amp; stories</span>
-    <h1 style="margin:1rem 0 1.2rem">Stories from the field.</h1>
+    <h1>Stories from the field.</h1>
     <p class="lede">Narratives, field updates and reflections from our team and partners working across Australia&rsquo;s wild places.</p>
   </div>
 </section>
@@ -1727,7 +1726,7 @@
 <!--ARTGRID:END-->
   </div></div>
 </section>
-<section class="sec" style="padding-top:0">
+<section class="sec">
   <div class="cw" style="text-align:center">
     <p id="artcount" style="font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--stone);margin-bottom:1.2rem"></p>
     <button id="moreart" class="btn-o" type="button">Load more stories</button>
@@ -1736,7 +1735,7 @@
 
 <section class="nl-strip">
   <div class="cw"><div class="nl-g rv">
-    <div><span class="ey" style="color:var(--euc-soft)">Stay connected</span><h3 style="margin-top:.7rem">Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
+    <div><span class="ey" style="color:var(--euc-soft)">Stay connected</span><h3>Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
     <div class="nl-hs"><div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="be19c736-6c95-4159-8245-e7b32af6dba3" data-portal-id="441704788" style="min-height:150px"></div><noscript><p class="hsform-fallback">The sign-up form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will add you to the list.</p></noscript><p class="hsform-fallback" id="hsFallback" hidden>The sign-up form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will add you to the list.</p></div>
   </div></div>
 </section>

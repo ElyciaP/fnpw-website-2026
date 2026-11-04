@@ -25,22 +25,22 @@
 @media(max-width:780px){.pil-cred{display:none}}
 
 
-.pil-hero{padding:10rem 0 5rem}
+.pil-hero{padding:var(--hero-top) 0 var(--hero-bot)}
 .fb.fb-paper{background:rgba(244,238,230,.95)}
 
 
 .sts{background:var(--cream);padding:var(--sec-md) 0;border-top:1px solid var(--rule)}
-.sts-head{max-width:760px;margin-bottom:2.6rem}
-.sts-head h2{margin:.8rem 0 1rem}
+.sts-head{max-width:760px;margin-bottom:var(--sp-5)}
+.sts-head h2{margin-top:var(--sp-1)}
 .sts-head p{font-size:1.04rem;line-height:1.7;color:var(--char)}
-.sts-g{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;counter-reset:s}
-.sts-g li{position:relative;background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--bark);padding:1.5rem 1.4rem 1.6rem}
+.sts-g{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);counter-reset:s}
+.sts-g li{position:relative;background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--bark);padding:var(--sp-3) var(--sp-3) var(--sp-3)}
 .sts-g li:not(:last-child)::after{content:"";position:absolute;right:-1.05rem;top:2.6rem;width:.7rem;height:.7rem;border-top:2px solid var(--bark);border-right:2px solid var(--bark);transform:rotate(45deg);z-index:2}
-.sts-g img{height:46px;width:auto;display:block;margin-bottom:1rem}
+.sts-g img{height:46px;width:auto;display:block;margin-bottom:var(--sp-2)}
 .sts-n{font-family:var(--ff-d);font-weight:800;font-size:.85rem;color:var(--bark-text);letter-spacing:.06em}
-.sts-g h3{color:var(--euc-deep);margin:.35rem 0 .5rem}
+.sts-g h3{color:var(--euc-deep);margin-top:var(--sp-1)}
 .sts-g p{font-size:.92rem;line-height:1.6;color:var(--char)}
-.sts-foot{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;margin-top:2.2rem}
+.sts-foot{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;margin-top:var(--sp-4)}
 @media(max-width:980px){.sts-g{grid-template-columns:1fr 1fr}.sts-g li::after{display:none}}
 @media(max-width:560px){.sts-g{grid-template-columns:1fr}}
 </style>
@@ -108,7 +108,7 @@
   <div class="cw rv">
     <nav aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span>/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span>/</span>Healing the Land</nav>
     <span class="ey" style="color:var(--euc-soft)">28 projects across Australia</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:16ch;color:#fff">Healing the Land</h1>
+    <h1 style="max-width:16ch; color:#fff">Healing the Land</h1>
     <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">We restore and rehabilitate landscapes affected by bushfires, floods, and human activities like unsustainable land clearing, through our Landscape Resilience Program.</p>
   </div>
 </section>
@@ -124,8 +124,8 @@
 <section class="sec ">
   <div class="cw rv">
 <div class="two">
-<div><span class="ey">Why it matters</span><h2 style="margin:.8rem 0 1.2rem">What this work does</h2><p>Much of Australia is damaged rather than destroyed, and damaged land can heal. These projects replant habitat, restore wetlands and waterways, recover country after bushfire and support First Nations cultural land management.</p><p>Healing the land is slow, patient work measured in seasons and seedlings. It is also the work that turns a map of loss back into habitat.</p></div>
-<div><div class="pmeta"><h3 style="margin-bottom:.8rem">How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We fund revegetation, restoration and bushfire recovery at scale</li><li>We support cultural fire and caring-for-Country programs led by First Nations communities</li><li>We stay for the follow-up: watering, weeding, monitoring, replanting</li></ul></div></div>
+<div><span class="ey">Why it matters</span><h2>What this work does</h2><p>Much of Australia is damaged rather than destroyed, and damaged land can heal. These projects replant habitat, restore wetlands and waterways, recover country after bushfire and support First Nations cultural land management.</p><p>Healing the land is slow, patient work measured in seasons and seedlings. It is also the work that turns a map of loss back into habitat.</p></div>
+<div><div class="pmeta"><h3>How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We fund revegetation, restoration and bushfire recovery at scale</li><li>We support cultural fire and caring-for-Country programs led by First Nations communities</li><li>We stay for the follow-up: watering, weeding, monitoring, replanting</li></ul></div></div>
 </div>
   </div>
 </section>
@@ -149,7 +149,7 @@
   <div class="cw rv">
 <div class="two" style="align-items:center">
 <div class="rv"><a href="project-yarrahapinni-wetlands-restoration-stage-1.html"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg" alt="Yarrahapinni Wetlands" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--bark-mid)"></a></div>
-<div class="rv d1"><span class="ey">Featured project</span><h2 style="margin:.8rem 0 1rem">Yarrahapinni Wetlands</h2>
+<div class="rv d1"><span class="ey">Featured project</span><h2>Yarrahapinni Wetlands</h2>
 <p>Floodgates and levee walls removed, tidal flows returned: a wetland on the Macleay coming back to life after decades of damage.</p>
 <p>It shows what healing at scale looks like when you undo the original damage rather than work around it, and then stay long enough to watch the system come back on its own terms.</p>
 <a class="hx-cta" href="project-yarrahapinni-wetlands-restoration-stage-1.html">Read the full story<span class="hx-cta-line" aria-hidden="true"></span></a></div>
@@ -157,7 +157,7 @@
   </div>
 </section>
 <section class="sec sand sec-head">
-  <div class="cw rv"><span class="ey">All 28 projects</span><h2 style="margin:.8rem 0 0">Projects in this area</h2></div>
+  <div class="cw rv"><span class="ey">All 28 projects</span><h2>Projects in this area</h2></div>
 </section>
 <div class="fb fb-paper fb-healing">
   <div class="cw"><div class="fb-r">
@@ -494,9 +494,9 @@
 </section>
 <section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 style="max-width:24ch;margin:0 auto 1rem">Support Healing the Land.</h2>
-    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Donate to this work directly, or partner with us to fund it at scale.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="partner-invest.html">Partner with us</a></div>
+    <h2 class="hc">Support Healing the Land.</h2>
+    <p class="lede hc">Donate to this work directly, or partner with us to fund it at scale.</p>
+    <div class="cta-btns"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="partner-invest.html">Partner with us</a></div>
   </div>
 </section>
 </main>

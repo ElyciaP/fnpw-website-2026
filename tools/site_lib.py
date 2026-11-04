@@ -77,7 +77,7 @@ def hero(ey, h1, lede, crumb_label):
   <div class="cw rv">
     {crumb(crumb_label)}
     <span class="ey">{ey}</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">{h1}</h1>
+    <h1>{h1}</h1>
     <p class="lede">{lede}</p>
   </div>
 </section>'''
@@ -87,7 +87,7 @@ def hero_img(ey, h1, lede, crumb_label, img, alt):
   <div class="cw rv">
     {crumb(crumb_label)}
     <span class="ey">{ey}</span>
-    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">{h1}</h1>
+    <h1>{h1}</h1>
     <p class="lede">{lede}</p>
   </div>
 </section>'''
@@ -106,9 +106,9 @@ def cta_band(h, p, buttons):
     btns = ''.join(f'<a class="{cls}" href="{href}">{label}</a>' for label, href, cls in buttons)
     return f'''<section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 style="max-width:24ch;margin:0 auto 1rem">{h}</h2>
-    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">{p}</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">{btns}</div>
+    <h2 class="hc">{h}</h2>
+    <p class="lede hc">{p}</p>
+    <div class="cta-btns">{btns}</div>
   </div>
 </section>'''
 

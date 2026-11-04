@@ -13,18 +13,18 @@
 .pa-intro{padding:var(--sec-md) 0 0;background:var(--cream)}
 .pa-band{background:var(--cream);padding:var(--sec-md) 0}
 .pa-band.alt{background:var(--sand)}
-.pa-g{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.pa-g{display:grid;grid-template-columns:1.05fr 1fr;gap:var(--sp-6);align-items:center}
 .pa-band.flip .pa-g{direction:rtl}
 .pa-band.flip .pa-g>*{direction:ltr}
-@media(max-width:900px){.pa-g,.pa-band.flip .pa-g{grid-template-columns:1fr;direction:ltr;gap:1.8rem}}
+@media(max-width:900px){.pa-g,.pa-band.flip .pa-g{grid-template-columns:1fr;direction:ltr;gap:var(--sp-4)}}
 .pa-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
 .pa-im img{width:100%;height:100%;object-fit:cover;display:block}
-.pa-n{position:absolute;top:0;left:0;background:var(--euc-deep);color:var(--euc-soft);font-family:var(--ff-d);font-weight:800;font-size:1.05rem;padding:.55rem 1rem;letter-spacing:.02em}
+.pa-n{position:absolute;top:0;left:0;background:var(--euc-deep);color:var(--euc-soft);font-family:var(--ff-d);font-weight:800;font-size:1.05rem;padding:var(--sp-1) var(--sp-2);letter-spacing:.02em}
 .pa-tag{font-family:var(--ff-b);font-size:0.94rem;color:var(--euc);display:inline-block;font-weight:600}
-.pa-bd h3{color:var(--euc-deep);margin:.35rem 0 1rem}
-.pa-bd p{color:var(--char);font-size:1.01rem;line-height:1.7;margin-bottom:.9rem;max-width:54ch}
-.pa-bd ul{list-style:none;padding:0;margin:1.2rem 0 1.6rem;display:grid;gap:.5rem}
-.pa-bd li{position:relative;padding-left:1.6rem;font-size:.94rem;color:var(--char);line-height:1.5}
+.pa-bd h3{color:var(--euc-deep);margin-top:var(--sp-1)}
+.pa-bd p{color:var(--char);font-size:1.01rem;line-height:1.7;margin-bottom:var(--sp-2);max-width:54ch}
+.pa-bd ul{list-style:none;padding:0;margin:var(--sp-2) 0 var(--sp-3);display:grid;gap:var(--sp-1)}
+.pa-bd li{position:relative;padding-left:var(--sp-3);font-size:.94rem;color:var(--char);line-height:1.5}
 .pa-bd li::before{content:"";position:absolute;left:0;top:.45em;width:9px;height:9px;background:var(--euc-mid)}
 .pa-rest{padding:var(--sec-md) 0;background:var(--cream);border-top:1px solid var(--rule)}
 
@@ -32,7 +32,7 @@
 .pj-hero.gi-hero::after{background:linear-gradient(97deg,rgba(15,49,50,.72) 0%,rgba(15,49,50,.5) 28%,rgba(15,49,50,.12) 48%,rgba(15,49,50,0) 62%)}
 .gi-hero h1{max-width:none}
 @media(max-width:780px){.gi-br{display:none}}
-@media(max-width:820px){.gi-hero{flex-direction:column;align-items:stretch;min-height:0}.gi-hero .pj-hero-im{position:relative;inset:auto;height:240px;z-index:0}.gi-hero .pj-hero-im img{object-position:62% 55%}.pj-hero.gi-hero::after{display:none}.gi-hero>.cw{padding-top:2rem}.gi-hero .lede{text-shadow:none}.gi-hero h1{text-shadow:none}}
+@media(max-width:820px){.gi-hero{flex-direction:column;align-items:stretch;min-height:0}.gi-hero .pj-hero-im{position:relative;inset:auto;height:240px;z-index:0}.gi-hero .pj-hero-im img{object-position:62% 55%}.pj-hero.gi-hero::after{display:none}.gi-hero>.cw{padding-top:var(--sp-4)}.gi-hero .lede{text-shadow:none}.gi-hero h1{text-shadow:none}}
 .pa-sign{margin-top:var(--sp-5);padding-top:var(--sp-3);border-top:1px solid var(--rule);max-width:none;font-size:1rem}
 .pa-sign a{font-family:var(--ff-d);font-weight:700;color:var(--euc-deep);text-decoration:none;border-bottom:2px solid var(--euc);padding-bottom:.1rem;white-space:nowrap}
 </style>
@@ -109,7 +109,7 @@
 <section class="pa-intro">
   <div class="cw rv">
     <span class="ey">Ways to give</span>
-    <h2 style="margin:.8rem 0 .6rem;max-width:26ch">Your giving, put where it works hardest.</h2>
+    <h2 style="max-width:26ch">Your giving, put where it works hardest.</h2>
     <p style="max-width:56ch">Whichever of the four you choose, your gift turns into something specific: land bought outright, seedlings coming on in a nursery, a species handed a little more time.</p>
   </div>
 </section>
@@ -203,7 +203,7 @@
 <section class="pa-rest">
   <div class="cw rv">
     <span class="ey">Time and influence</span>
-    <h2 style="margin:.8rem 0 1rem;max-width:26ch">Your time, worth every bit as much.</h2>
+    <h2 style="max-width:26ch">Your time, worth every bit as much.</h2>
     <p style="max-width:56ch">You can spend a weekend with your hands in the dirt, bring your business in behind the mission, or get your whole workplace giving together. There are four ways in, and we lean on all of them.</p>
     <div class="hx-help-list"><a class="hx-row rv" href="volunteer.html" style="--rowc:var(--bark-soft)"><span class="hx-row-i">01</span><span><h3>Corporate volunteering</h3><p>Bring your team out for a planting or restoration day with our project partners. Tools, guidance and safety covered; most teams call it the best team day they have done.</p></span><span class="hx-row-a">&#8594;</span></a><a class="hx-row rv" href="workplace-giving.html" style="--rowc:var(--waratah-pale)"><span class="hx-row-i">02</span><span><h3>Workplace giving</h3><p>Small regular gifts from pre-tax pay, often matched dollar for dollar by employers. Five minutes with payroll, habitat every payday.</p></span><span class="hx-row-a">&#8594;</span></a><a class="hx-row rv" href="fundraising-with-fnpw.html" style="--rowc:var(--reef-pale)"><span class="hx-row-i">03</span><span><h3>Fundraise for us</h3><p>Run, bake, climb or host in support of FNPW. We supply logos, photos, impact stats and encouragement.</p></span><span class="hx-row-a">&#8594;</span></a><a class="hx-row rv" href="donate-land.html" style="--rowc:var(--bark-soft)"><span class="hx-row-i">04</span><span><h3>Donate land</h3><p>Land with conservation value can become part of the protected estate, safe forever. Every conversation is confidential.</p></span><span class="hx-row-a">&#8594;</span></a></div>
     <p class="pa-sign">Funding conservation at scale for a government agency, foundation or business? <a href="partner-invest.html">Partner with us <span aria-hidden="true">&rarr;</span></a></p>
@@ -212,9 +212,9 @@
 
 <section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 style="max-width:24ch;margin:0 auto 1rem">Ready to make a difference?</h2>
-    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Your donation grows national parks, saves species and heals the land. Read more about <a href="why-your-support-is-needed.html">why your support is needed</a>.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate now</a><a class="btn-o" href="https://habitat-heroes.fnpw.org.au/">Become a Habitat Hero</a></div>
+    <h2 class="hc">Ready to make a difference?</h2>
+    <p class="lede hc">Your donation grows national parks, saves species and heals the land. Read more about <a href="why-your-support-is-needed.html">why your support is needed</a>.</p>
+    <div class="cta-btns"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate now</a><a class="btn-o" href="https://habitat-heroes.fnpw.org.au/">Become a Habitat Hero</a></div>
   </div>
 </section>
 </main>

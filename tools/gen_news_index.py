@@ -19,22 +19,22 @@ from site_lib import write_page
 NL = chr(10)
 
 CSS = '''
-.nw-hero{background:var(--euc-deep);padding:clamp(3rem,6vw,4.6rem) 0 clamp(2.4rem,4vw,3.2rem)}
+.nw-hero{background:var(--euc-deep);padding:var(--hero-top) 0 var(--hero-bot)}
 .nw-hero .ey{color:var(--euc-soft)}
-.nw-hero h1{color:var(--cream);margin:1rem 0 1.1rem;max-width:20ch}
+.nw-hero h1{color:var(--cream);margin-top:var(--sp-1);max-width:20ch}
 .nw-hero .lede{color:rgba(250,246,242,.88);max-width:56ch}
-.nw-crumb{display:flex;gap:.5em;font-size:.8125rem;color:rgba(250,246,242,.72);margin-bottom:1.4rem}
+.nw-crumb{display:flex;gap:.5em;font-size:.8125rem;color:rgba(250,246,242,.72);margin-bottom:var(--sp-3)}
 .nw-crumb a{color:var(--euc-soft)}
-.nw-list{border-top:1px solid var(--rule);margin-top:2rem}
-.nw-row{display:grid;grid-template-columns:9rem 1fr auto;gap:1.5rem;align-items:baseline;padding:1.35rem 0;border-bottom:1px solid var(--rule);transition:.2s}
+.nw-list{border-top:1px solid var(--rule);margin-top:var(--sp-4)}
+.nw-row{display:grid;grid-template-columns:9rem 1fr auto;gap:var(--sp-3);align-items:baseline;padding:var(--sp-3) 0;border-bottom:1px solid var(--rule);transition:.2s}
 .nw-row:hover{background:var(--sand)}
 .nw-date{font-size:.8125rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--stone)}
-.nw-pub{font-family:var(--ff-d);font-weight:600;font-size:1.05rem;color:var(--euc-deep);margin:0 0 .3rem}
+.nw-pub{font-family:var(--ff-d);font-weight:600;font-size:1.05rem;color:var(--euc-deep);margin:0 0 var(--sp-1)}
 .nw-blurb{font-size:.92rem;line-height:1.55;color:var(--char);margin:0;max-width:62ch}
 .nw-go{font-size:.8125rem;font-weight:700;color:var(--euc);white-space:nowrap}
 @media(max-width:720px){
-  .nw-row{grid-template-columns:1fr;gap:.4rem}
-  .nw-go{margin-top:.3rem}
+  .nw-row{grid-template-columns:1fr;gap:var(--sp-1)}
+  .nw-go{margin-top:var(--sp-1)}
 }
 '''
 

@@ -180,10 +180,10 @@ def build(a):
                 '    <a class="btn-o" href="articles.html">&#8592; All articles</a>%s'
                 '  </div>%s</section>' % (NL, NL, NL, NL))
     body.append('<section class="sec dark">%s  <div class="cw rv" style="text-align:center">%s'
-                '    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>%s'
-                '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is '
+                '    <h2 class="hc">Help fund work like this.</h2>%s'
+                '    <p class="lede hc">Every FNPW project is '
                 'powered by donations, bequests and partnerships.</p>%s'
-                '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
+                '    <div class="cta-btns">'
                 '<a class="btn-p btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>'
                 '<a class="btn-o" href="partner.html">Become a partner</a></div>%s  </div>%s</section>'
                 % (NL, NL, NL, NL, NL, NL))

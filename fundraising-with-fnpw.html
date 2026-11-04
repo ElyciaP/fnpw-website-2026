@@ -11,67 +11,67 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 /* ===== A-FEATURE HERO ===== */
-.fb-hero{position:relative;min-height:clamp(420px,56vh,540px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
+.fb-hero{position:relative;min-height:clamp(420px,56vh,540px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:var(--hero-top) 0 var(--hero-bot)}
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 50%,rgba(15,49,50,.2) 100%);z-index:1}
-.fb-hero-content{position:relative;z-index:3;padding:4.5rem 0;width:100%}
-.fb-hero-content .breadcrumb{color:var(--cream);display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.fb-hero-content{position:relative;z-index:3;padding:var(--sp-6) 0;width:100%}
+.fb-hero-content .breadcrumb{color:var(--cream);display:flex;gap:.5em;font-size:.82rem;margin-bottom:var(--sp-3);flex-wrap:wrap}
 .fb-hero-content .breadcrumb a{color:var(--euc-soft)}
 .fb-hero-content .ey{color:var(--waratah-soft)}
 .fb-hero-content .ey::before{background:var(--waratah-soft)}
-.fb-hero-content h1{color:var(--cream);max-width:22ch;margin-top:1rem}
-.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:1.4rem;max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
+.fb-hero-content h1{color:var(--cream);max-width:22ch;margin-top:var(--sp-1)}
+.fb-hero-content .lede{color:rgba(250,246,242,.85);margin-top:var(--sp-3);max-width:60ch;font-size:clamp(1rem,1.15vw,1.1rem)}
 .fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.6);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
 
 /* ===== FUNDRAISING ===== */
 .fw-intro{padding:var(--sec-md) 0;background:var(--cream)}
-.fw-g{display:grid;grid-template-columns:1.15fr .85fr;gap:3.4rem;align-items:start}
-@media(max-width:900px){.fw-g{grid-template-columns:1fr;gap:2.4rem}}
-.fw-g p{font-size:1.02rem;line-height:1.76;color:var(--char);margin-bottom:1.1rem}
+.fw-g{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-5);align-items:start}
+@media(max-width:900px){.fw-g{grid-template-columns:1fr;gap:var(--sp-4)}}
+.fw-g p{font-size:1.02rem;line-height:1.76;color:var(--char);margin-bottom:var(--sp-2)}
 .fw-g p:last-child{margin-bottom:0}
-.fw-dl{background:var(--sand);padding:1.7rem 1.6rem}
-.fw-dl h3{color:var(--euc-deep);margin:0 0 .3rem}
-.fw-dl a{display:flex;align-items:flex-start;gap:.75rem;padding:.95rem 0;border-bottom:1px solid rgba(36,25,20,.12);color:var(--euc-deep);font-size:.95rem;font-weight:600;text-decoration:none;line-height:1.35}
+.fw-dl{background:var(--sand);padding:var(--sp-3) var(--sp-3)}
+.fw-dl h3{color:var(--euc-deep);margin-top:0}
+.fw-dl a{display:flex;align-items:flex-start;gap:var(--sp-1);padding:var(--sp-2) 0;border-bottom:1px solid rgba(36,25,20,.12);color:var(--euc-deep);font-size:.95rem;font-weight:600;text-decoration:none;line-height:1.35}
 .fw-dl a:last-of-type{border-bottom:0;padding-bottom:0}
 .fw-dl a:hover{color:var(--euc)}
 .fw-dl a svg{width:18px;height:18px;flex:0 0 18px;margin-top:.1rem;stroke:var(--euc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .fw-dl a small{display:block;font-weight:400;color:var(--stone);font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem}
 
 .fw-ways{padding:var(--sec-md) 0;background:var(--sand)}
-.fw-wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1.5rem;margin-top:2.3rem}
-.fw-w{background:var(--white);border:1px solid var(--rule);padding:1.7rem 1.6rem}
-.fw-w h3{color:var(--euc-deep);margin:0 0 .5rem}
+.fw-wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--sp-3);margin-top:var(--sp-4)}
+.fw-w{background:var(--white);border:1px solid var(--rule);padding:var(--sp-3) var(--sp-3)}
+.fw-w h3{color:var(--euc-deep);margin-top:0}
 .fw-w p{font-size:.94rem;line-height:1.62;color:var(--char);margin:0}
-.fw-note{margin-top:2.1rem;font-size:.97rem;line-height:1.7;color:var(--char)}
+.fw-note{margin-top:var(--sp-4);font-size:.97rem;line-height:1.7;color:var(--char)}
 .fw-note a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
 
 .fw-paths{padding:var(--sec-md) 0;background:var(--cream)}
-.fw-pg{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.3rem}
-@media(max-width:900px){.fw-pg{grid-template-columns:1fr;gap:2.4rem}}
-.fw-p{border-top:4px solid var(--euc);padding-top:1.4rem}
+.fw-pg{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);margin-top:var(--sp-4)}
+@media(max-width:900px){.fw-pg{grid-template-columns:1fr;gap:var(--sp-4)}}
+.fw-p{border-top:4px solid var(--euc);padding-top:var(--sp-3)}
 .fw-p.b{border-top-color:var(--bark)}
-.fw-p h3{color:var(--euc-deep);margin:0 0 .9rem}
-.fw-p p{font-size:.98rem;line-height:1.74;color:var(--char);margin-bottom:.9rem}
+.fw-p h3{color:var(--euc-deep);margin-top:0}
+.fw-p p{font-size:.98rem;line-height:1.74;color:var(--char);margin-bottom:var(--sp-2)}
 .fw-p p:last-child{margin-bottom:0}
 .fw-p a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
 
 .fw-thanks{padding:var(--sec-md) 0;background:var(--euc-deep);color:var(--cream)}
-.fw-thanks h2{color:var(--cream);margin:.8rem 0 0}
-.fw-thanks p{color:rgba(250,246,242,.88);font-size:1.05rem;line-height:1.76;margin-top:1.3rem;max-width:64ch}
+.fw-thanks h2{color:var(--cream);margin-top:var(--sp-1);margin-bottom:0}
+.fw-thanks p{color:rgba(250,246,242,.88);font-size:1.05rem;line-height:1.76;margin-top:var(--sp-3);max-width:64ch}
 
 .fw-form{padding:var(--sec-md) 0;background:var(--sand)}
-.fw-fg{display:grid;grid-template-columns:.85fr 1.15fr;gap:3rem;align-items:start}
-@media(max-width:900px){.fw-fg{grid-template-columns:1fr;gap:2.2rem}}
-.fw-fg p{font-size:1rem;line-height:1.72;color:var(--char);margin-top:1.1rem}
-.hsform{background:var(--white);border:1px solid var(--rule);padding:1.8rem}
-@media(max-width:600px){.hsform{padding:1.3rem 1.1rem}}
+.fw-fg{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--sp-5);align-items:start}
+@media(max-width:900px){.fw-fg{grid-template-columns:1fr;gap:var(--sp-4)}}
+.fw-fg p{font-size:1rem;line-height:1.72;color:var(--char);margin-top:var(--sp-2)}
+.hsform{background:var(--white);border:1px solid var(--rule);padding:var(--sp-4)}
+@media(max-width:600px){.hsform{padding:var(--sp-3) var(--sp-2)}}
 .hsform-slot{min-height:220px}
 .hsform-slot iframe{width:100%!important;border:0;display:block}
-.hsform-fallback{margin:1rem 0 0;font-size:.88rem;line-height:1.6;color:var(--char)}
+.hsform-fallback{margin:var(--sp-2) 0 0;font-size:.88rem;line-height:1.6;color:var(--char)}
 .hsform-fallback a{color:var(--euc-deep);font-weight:700;border-bottom:1px solid currentColor}
-.hsform .fw-small{margin:1rem 0 0;font-size:.8125rem;color:var(--stone);line-height:1.5}
+.hsform .fw-small{margin:var(--sp-2) 0 0;font-size:.8125rem;color:var(--stone);line-height:1.5}
 </style>
 </head>
 <body>
@@ -152,7 +152,7 @@
   <div class="cw"><div class="fw-g">
     <div class="rv">
       <span class="ey">Interested in fundraising?</span>
-      <h2 style="margin:.8rem 0 1.4rem">Thank you.</h2>
+      <h2>Thank you.</h2>
       <p>There are many ways you can choose to fundraise on our behalf in your community or in your workplace. We have set out some examples below, but the sky is the limit and we would love you to tell us your own fundraiser ideas.</p>
       <p>Please download and fill out our Proposal to Fundraise document and let us know what you would like to do. Need some ideas first? Keep reading below, or download our Community Fundraising Kit, which has plenty of tips to get you started.</p>
     </div>
@@ -168,7 +168,7 @@
 <section class="fw-ways">
   <div class="cw rv">
     <span class="ey">There are many ways</span>
-    <h2 style="margin:.8rem 0 1.1rem">You can fundraise for us.</h2>
+    <h2>You can fundraise for us.</h2>
     <p style="font-size:1.02rem;line-height:1.76;color:var(--char);max-width:64ch">There are many varied opportunities for people to fundraise for us, personally, creatively, and some with a challenge.</p>
     <div class="fw-wg">
         <div class="fw-w rv"><h3>Community event</h3><p>A garage or bake sale, a sausage sizzle.</p></div>
@@ -185,7 +185,7 @@
 <section class="fw-paths">
   <div class="cw rv">
     <span class="ey">Two ways in</span>
-    <h2 style="margin:.8rem 0 0">Start your own, or join one that exists.</h2>
+    <h2>Start your own, or join one that exists.</h2>
     <div class="fw-pg">
       <div class="fw-p rv">
         <h3>Create your own event</h3>
@@ -214,7 +214,7 @@
   <div class="cw"><div class="fw-fg">
     <div class="rv">
       <span class="ey">Let&rsquo;s go</span>
-      <h2 style="margin:.8rem 0 0">Fundraising enquiries and proposals.</h2>
+      <h2>Fundraising enquiries and proposals.</h2>
       <p>For all fundraising enquiries, or to submit your Proposal to Fundraise, fill out the form and our fundraising team will be with you shortly.</p>
       <p style="font-size:.94rem">You can also email <a href="mailto:fnpw@fnpw.org.au" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">1800 898 626</a>.</p>
     </div>
@@ -234,9 +234,9 @@
 
 <section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 style="max-width:24ch;margin:0 auto 1rem">Ready to make a difference?</h2>
-    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Your donation grows national parks, saves species and heals the land.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate now</a><a class="btn-o" href="https://habitat-heroes.fnpw.org.au/">Become a Habitat Hero</a></div>
+    <h2 class="hc">Ready to make a difference?</h2>
+    <p class="lede hc">Your donation grows national parks, saves species and heals the land.</p>
+    <div class="cta-btns"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate now</a><a class="btn-o" href="https://habitat-heroes.fnpw.org.au/">Become a Habitat Hero</a></div>
   </div>
 </section>
 </main>

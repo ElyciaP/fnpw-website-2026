@@ -12,26 +12,26 @@
 <style>
 .wg-sec{padding:var(--sec-md) 0;background:var(--cream)}
 .wg-sec.alt{background:var(--sand)}
-.wg-g{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(2rem,5vw,4rem);align-items:start}
-@media(max-width:900px){.wg-g{grid-template-columns:1fr;gap:1.3rem}}
-.wg-g h2{color:var(--euc-deep);margin:.4rem 0 0}
-.wg-bd p{font-size:1.02rem;line-height:1.74;color:var(--char);margin-bottom:1rem;max-width:60ch}
+.wg-g{display:grid;grid-template-columns:.75fr 1.25fr;gap:var(--sp-6);align-items:start}
+@media(max-width:900px){.wg-g{grid-template-columns:1fr;gap:var(--sp-3)}}
+.wg-g h2{color:var(--euc-deep);margin-top:var(--sp-1);margin-bottom:0}
+.wg-bd p{font-size:1.02rem;line-height:1.74;color:var(--char);margin-bottom:var(--sp-2);max-width:60ch}
 .wg-bd p:last-child{margin-bottom:0}
 .wg-bd a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
-.wg-ben{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
-.wg-ben li{position:relative;padding-left:1.7rem;font-size:1rem;line-height:1.68;color:var(--char)}
+.wg-ben{list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-2)}
+.wg-ben li{position:relative;padding-left:var(--sp-3);font-size:1rem;line-height:1.68;color:var(--char)}
 .wg-ben li::before{content:"";position:absolute;left:0;top:.58em;width:9px;height:9px;background:var(--euc-mid)}
-.wg-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem}
+.wg-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-4)}
 @media(max-width:820px){.wg-steps{grid-template-columns:1fr}}
-.wg-step{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:1.6rem 1.5rem}
-.wg-step b{display:block;font-family:var(--ff-d);font-weight:700;font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:var(--euc);margin-bottom:.6rem}
-.wg-ic{display:block;margin-bottom:1rem}.wg-ic img{height:56px;width:auto;display:block}.wg-step h3{color:var(--euc-deep);margin:0 0 .5rem}
+.wg-step{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:var(--sp-3) var(--sp-3)}
+.wg-step b{display:block;font-family:var(--ff-d);font-weight:700;font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:var(--euc);margin-bottom:var(--sp-1)}
+.wg-ic{display:block;margin-bottom:var(--sp-2)}.wg-ic img{height:56px;width:auto;display:block}.wg-step h3{color:var(--euc-deep);margin-top:0}
 .wg-step p{font-size:.94rem;line-height:1.6;color:var(--char);margin:0}
 .wg-cta{padding:var(--sec-md) 0;background:var(--euc-deep);color:var(--cream);text-align:center}
-.wg-cta h2{color:var(--cream);margin:.8rem 0 1rem;max-width:22ch;margin-left:auto;margin-right:auto}
-.wg-cta p{color:rgba(250,246,242,.88);max-width:56ch;margin:0 auto 2rem;line-height:1.7}
+.wg-cta h2{color:var(--cream);margin-top:var(--sp-1);max-width:22ch;margin-left:auto;margin-right:auto}
+.wg-cta p{color:rgba(250,246,242,.88);max-width:56ch;margin:0 auto var(--sp-4);line-height:1.7}
 .wg-cta .ey{color:var(--euc-soft)}
-.wg-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.wg-btns{display:flex;gap:var(--sp-2);justify-content:center;flex-wrap:wrap}
 /* the section sits on --euc-deep, which is also .btn-p's background and
    .btn-o's text colour, so both buttons vanish without these overrides. */
 .wg-cta .btn-p{background:var(--waratah);border-color:var(--waratah);color:var(--cream)}
@@ -133,7 +133,7 @@
 <section class="wg-sec alt">
   <div class="cw rv">
     <span class="ey">How it works</span>
-    <h2 style="color:var(--euc-deep);margin:.8rem 0 0">Three steps, then it runs itself.</h2>
+    <h2 style="color:var(--euc-deep)">Three steps, then it runs itself.</h2>
     <div class="wg-steps">
       <div class="wg-step rv"><span class="wg-ic"><img src="assets/icons/fnpw-icon-hand-document-dark-soil-rgb.svg" alt="" aria-hidden="true"></span><b>01</b><h3>Ask payroll</h3><p>Ask your payroll or people team to add us as a workplace giving recipient.</p></div>
       <div class="wg-step rv d1"><span class="wg-ic"><img src="assets/icons/fnpw-icon-donate-dark-soil-rgb.svg" alt="" aria-hidden="true"></span><b>02</b><h3>Pick an amount</h3><p>It comes out of your pre-tax pay each period, so you get the tax benefit straight away.</p></div>
