@@ -212,7 +212,7 @@
       <p style="font-size:.94rem">You can also email <a href="mailto:fnpw@fnpw.org.au" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">1800 898 626</a>.</p>
     </div>
     <div class="card hsform rv d1">
-      <div id="hsform" class="hsform-slot">
+      <div id="hsform" class="hsform-slot hs-form-frame" data-region="ap1" data-form-id="eca5e898-c9f5-429d-aa0f-1f4986c079c1" data-portal-id="441704788">
         <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email
           <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
           <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
@@ -252,28 +252,7 @@
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 
-<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
-<script>
-/* Fundraising enquiry / Proposal to Fundraise, HubSpot portal 441704788,
-   region ap1, form eca5e898-c9f5-429d-aa0f-1f4986c079c1. Same form the live
-   site uses. Falls back to email and phone if the embed is blocked. */
-(function () {
-  var slot = document.getElementById('hsform');
-  function showFallback() {
-    var f = document.getElementById('hsFallback');
-    if (f) f.hidden = false;
-  }
-  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
-  hbspt.forms.create({
-    region: 'ap1',
-    portalId: '441704788',
-    formId: 'eca5e898-c9f5-429d-aa0f-1f4986c079c1',
-    target: '#hsform'
-  });
-  setTimeout(function () {
-    if (!slot.querySelector('iframe, form')) showFallback();
-  }, 8000);
-})();
-</script>
+<script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
+<script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
 </body>
 </html>

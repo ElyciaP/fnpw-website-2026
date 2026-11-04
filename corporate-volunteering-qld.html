@@ -440,14 +440,17 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/gallery.js"></script>
 <script>window.FNPW_VOL_STATE='QLD';window.FNPW_VOL_STATE_NAME='Queensland';</script>
-<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
+<script src="https://js-ap1.hsforms.net/forms/embed/v2.js" defer></script>
 <script>
 /* Corporate Volunteering enquiry form, HubSpot portal 441704788, region ap1.
    The state pages set window.FNPW_VOL_STATE before this runs, so the person
-   arrives with their state already chosen. HubSpot renders into a same-origin
-   iframe, so the callback can reach the field; everything here is guarded in
-   case the field is renamed or the script is blocked. */
-(function () {
+   arrives with their state already chosen. This form stays on the legacy v2
+   embed because it renders the fields in this document, which is what lets the
+   callback below pre-select the state and pair the fields up; the v3 embed
+   renders in a cross-origin iframe and cannot. v2.js is deferred, so the set-up
+   waits for DOMContentLoaded, when deferred scripts have run. Everything here is
+   guarded in case the field is renamed or the script is blocked. */
+document.addEventListener('DOMContentLoaded', function () {
   var slot = document.getElementById('hsform');
   if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
   var liveForm = null;
@@ -574,7 +577,7 @@
   setTimeout(function () {
     if (!slot.querySelector('iframe, form')) showFallback();
   }, 8000);
-})();
+});
 </script>
 <script>
 (function () {

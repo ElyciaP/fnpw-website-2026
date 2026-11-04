@@ -433,7 +433,7 @@ def extract_form(state_name=None):
     css = NL.join(rules)
 
     # the embed script lives at the foot of volunteer.html; the state pages need it too
-    ea = v.index('<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net')
+    ea = v.index('<script src="https://js-ap1.hsforms.net/forms/embed/v2.js" defer>')
     eb = v.index('</script>', v.index('hbspt.forms.create', ea)) + len('</script>')
     embed = v[ea:eb]
 

@@ -111,7 +111,7 @@
     </div>
     <div class="hsform rv d1">
       <h3>Media enquiry</h3>
-      <div id="hsform" class="hsform-slot">
+      <div id="hsform" class="hsform-slot hs-form-frame" data-region="ap1" data-form-id="e9e550ed-025f-474c-b214-a5cb3c0511eb" data-portal-id="441704788">
         <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email
           <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
           <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
@@ -143,27 +143,7 @@
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 
-<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
-<script>
-/* The media enquiry form already live on fnpw.org.au, same portal as the other
-   embeds on this site. Falls back to email and phone if it cannot load. */
-(function () {
-  var slot = document.getElementById('hsform');
-  function showFallback() {
-    var f = document.getElementById('hsFallback');
-    if (f) f.hidden = false;
-  }
-  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
-  hbspt.forms.create({
-    region: 'ap1',
-    portalId: '441704788',
-    formId: 'e9e550ed-025f-474c-b214-a5cb3c0511eb',
-    target: '#hsform'
-  });
-  setTimeout(function () {
-    if (!slot.querySelector('iframe, form')) showFallback();
-  }, 8000);
-})();
-</script>
+<script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
+<script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
 </body>
 </html>
