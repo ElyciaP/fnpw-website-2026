@@ -283,9 +283,9 @@ PAGE_CSS = '''
 .vg-b:hover{background:var(--euc-deep);border-color:var(--euc-deep);color:var(--cream)}
 .vg-count{font-size:.8125rem;color:var(--stone);min-width:3.2em}
 .vg-dots{display:flex;gap:var(--sp-1);margin-left:auto}
-.vg-d{flex:0 0 auto;width:9px;height:9px;border-radius:999px;border:none;padding:0;
-  background:var(--bark-mid);cursor:pointer;transition:width .3s ease,background .3s ease}
-.vg-dots .vg-d[aria-current="true"]{background:var(--euc);width:28px}
+.vg-d{flex:0 0 auto;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border:none;padding:0;background:none;cursor:pointer}
+.vg-d::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--bark-mid);transition:width .3s ease,background .3s ease}
+.vg-dots .vg-d[aria-current="true"]::before{background:var(--euc-deep);width:20px}
 '''
 
 PAGE_JS = '''<script>
