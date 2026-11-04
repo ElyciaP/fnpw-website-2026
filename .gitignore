@@ -3,3 +3,8 @@
 
 # Screenshots delivered by Claude, not part of the site
 Claude outputs/
+
+# Local Claude Code settings and Python bytecode
+.claude/settings.local.json
+__pycache__/
+*.pyc
