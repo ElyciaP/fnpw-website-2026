@@ -12,6 +12,18 @@
   "on_map": true
  },
  {
+  "slug": "kaurna-cultural-fire-field-river",
+  "title": "Kaurna Cultural Fire at Kauwi-marnirla",
+  "img": "assets/img/projects/kaurna-fire-hero.jpg",
+  "pillar": "healing",
+  "state": "SA",
+  "pillar_confirmed": true,
+  "live_url": "",
+  "lat": -35.07,
+  "lon": 138.51,
+  "on_map": true
+ },
+ {
   "slug": "garners-beach-cassowary-rehabilitation-centre-project",
   "title": "Garners Beach Cassowary Rehabilitation Centre Project",
   "img": "https://fnpw.org.au/wp-content/uploads/2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg",
