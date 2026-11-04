@@ -1,0 +1,2538 @@
+{
+ "assets/img/about-hero-flinders-COMP.jpg": {
+  "h": 625,
+  "size": 120248,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/about-hero-flinders-COMP-480.webp",
+   "assets/img/r/about-hero-flinders-COMP-800.webp",
+   "assets/img/r/about-hero-flinders-COMP-1200.webp",
+   "assets/img/r/about-hero-flinders-COMP-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/about-hero-koala.jpg": {
+  "h": 1024,
+  "size": 125279,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/about-hero-koala-480.webp",
+   "assets/img/r/about-hero-koala-800.webp",
+   "assets/img/r/about-hero-koala-1200.webp",
+   "assets/img/r/about-hero-koala-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/about-partners-planting.jpg": {
+  "h": 950,
+  "size": 531788,
+  "w": 1500,
+  "webp": [
+   "assets/img/r/about-partners-planting-480.webp",
+   "assets/img/r/about-partners-planting-800.webp",
+   "assets/img/r/about-partners-planting-1200.webp",
+   "assets/img/r/about-partners-planting-1500.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1500
+  ]
+ },
+ "assets/img/articles-hero-kookaburra.jpg": {
+  "h": 533,
+  "size": 46457,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/articles-hero-kookaburra-480.webp",
+   "assets/img/r/articles-hero-kookaburra-800.webp",
+   "assets/img/r/articles-hero-kookaburra-1200.webp",
+   "assets/img/r/articles-hero-kookaburra-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/bequests-beach-grandfather-2156176791-COMP.jpg": {
+  "h": 683,
+  "size": 80682,
+  "w": 1024,
+  "webp": [
+   "assets/img/r/bequests-beach-grandfather-2156176791-COMP-480.webp",
+   "assets/img/r/bequests-beach-grandfather-2156176791-COMP-800.webp",
+   "assets/img/r/bequests-beach-grandfather-2156176791-COMP-1024.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "assets/img/bequests-coast-friends-2150324577-COMP.jpg": {
+  "h": 683,
+  "size": 115377,
+  "w": 1024,
+  "webp": [
+   "assets/img/r/bequests-coast-friends-2150324577-COMP-480.webp",
+   "assets/img/r/bequests-coast-friends-2150324577-COMP-800.webp",
+   "assets/img/r/bequests-coast-friends-2150324577-COMP-1024.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "assets/img/bequests-family-garden-184316094-COMP.jpg": {
+  "h": 682,
+  "size": 148222,
+  "w": 1024,
+  "webp": [
+   "assets/img/r/bequests-family-garden-184316094-COMP-480.webp",
+   "assets/img/r/bequests-family-garden-184316094-COMP-800.webp",
+   "assets/img/r/bequests-family-garden-184316094-COMP-1024.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "assets/img/bequests-hero-legacy.jpg": {
+  "h": 1067,
+  "size": 172830,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/bequests-hero-legacy-480.webp",
+   "assets/img/r/bequests-hero-legacy-800.webp",
+   "assets/img/r/bequests-hero-legacy-1200.webp",
+   "assets/img/r/bequests-hero-legacy-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/bequests-imagine-forest-1407133324-COMP.jpg": {
+  "h": 341,
+  "size": 95890,
+  "w": 1024,
+  "webp": [
+   "assets/img/r/bequests-imagine-forest-1407133324-COMP-480.webp",
+   "assets/img/r/bequests-imagine-forest-1407133324-COMP-800.webp",
+   "assets/img/r/bequests-imagine-forest-1407133324-COMP-1024.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "assets/img/bequests-mundoo.jpg": {
+  "h": 1500,
+  "size": 314891,
+  "w": 1200,
+  "webp": [
+   "assets/img/r/bequests-mundoo-480.webp",
+   "assets/img/r/bequests-mundoo-800.webp",
+   "assets/img/r/bequests-mundoo-1200.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "assets/img/bequests-sunrise-paddock-2233157036-COMP.jpg": {
+  "h": 682,
+  "size": 96738,
+  "w": 1024,
+  "webp": [
+   "assets/img/r/bequests-sunrise-paddock-2233157036-COMP-480.webp",
+   "assets/img/r/bequests-sunrise-paddock-2233157036-COMP-800.webp",
+   "assets/img/r/bequests-sunrise-paddock-2233157036-COMP-1024.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "assets/img/bequests-writing-will-2177739520-COMP.jpg": {
+  "h": 540,
+  "size": 42995,
+  "w": 1024,
+  "webp": [
+   "assets/img/r/bequests-writing-will-2177739520-COMP-480.webp",
+   "assets/img/r/bequests-writing-will-2177739520-COMP-800.webp",
+   "assets/img/r/bequests-writing-will-2177739520-COMP-1024.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "assets/img/bongil.jpg": {
+  "h": 1199,
+  "size": 472578,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/bongil-480.webp",
+   "assets/img/r/bongil-800.webp",
+   "assets/img/r/bongil-1200.webp",
+   "assets/img/r/bongil-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/contact-hero-swift-parrot.jpg": {
+  "h": 1067,
+  "size": 155118,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/contact-hero-swift-parrot-480.webp",
+   "assets/img/r/contact-hero-swift-parrot-800.webp",
+   "assets/img/r/contact-hero-swift-parrot-1200.webp",
+   "assets/img/r/contact-hero-swift-parrot-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/donate-land-hero.jpg": {
+  "h": 573,
+  "size": 156102,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/donate-land-hero-480.webp",
+   "assets/img/r/donate-land-hero-800.webp",
+   "assets/img/r/donate-land-hero-1200.webp",
+   "assets/img/r/donate-land-hero-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/donate-land-mundoo.jpg": {
+  "h": 1049,
+  "size": 313389,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/donate-land-mundoo-480.webp",
+   "assets/img/r/donate-land-mundoo-800.webp",
+   "assets/img/r/donate-land-mundoo-1200.webp",
+   "assets/img/r/donate-land-mundoo-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/donate-land-quiet-places.jpg": {
+  "h": 1600,
+  "size": 318157,
+  "w": 1067,
+  "webp": [
+   "assets/img/r/donate-land-quiet-places-480.webp",
+   "assets/img/r/donate-land-quiet-places-800.webp",
+   "assets/img/r/donate-land-quiet-places-1067.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1067
+  ]
+ },
+ "assets/img/faqs-hero-flowers.jpg": {
+  "h": 1066,
+  "size": 217796,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/faqs-hero-flowers-480.webp",
+   "assets/img/r/faqs-hero-flowers-800.webp",
+   "assets/img/r/faqs-hero-flowers-1200.webp",
+   "assets/img/r/faqs-hero-flowers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/fundraising-hero.jpg": {
+  "h": 471,
+  "size": 64332,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/fundraising-hero-480.webp",
+   "assets/img/r/fundraising-hero-800.webp",
+   "assets/img/r/fundraising-hero-1200.webp",
+   "assets/img/r/fundraising-hero-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/get-involved-hero-wildflower.jpg": {
+  "h": 1301,
+  "size": 267556,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/get-involved-hero-wildflower-480.webp",
+   "assets/img/r/get-involved-hero-wildflower-800.webp",
+   "assets/img/r/get-involved-hero-wildflower-1200.webp",
+   "assets/img/r/get-involved-hero-wildflower-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/get-involved-planting-day.jpg": {
+  "h": 667,
+  "size": 214965,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/get-involved-planting-day-480.webp",
+   "assets/img/r/get-involved-planting-day-800.webp",
+   "assets/img/r/get-involved-planting-day-1200.webp",
+   "assets/img/r/get-involved-planting-day-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/give-a-tree-koala-COMP.jpg": {
+  "h": 1363,
+  "size": 206417,
+  "w": 1022,
+  "webp": [
+   "assets/img/r/give-a-tree-koala-COMP-480.webp",
+   "assets/img/r/give-a-tree-koala-COMP-800.webp",
+   "assets/img/r/give-a-tree-koala-COMP-1022.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1022
+  ]
+ },
+ "assets/img/give-a-tree-koala-tree.jpg": {
+  "h": 1600,
+  "size": 353747,
+  "w": 1200,
+  "webp": [
+   "assets/img/r/give-a-tree-koala-tree-480.webp",
+   "assets/img/r/give-a-tree-koala-tree-800.webp",
+   "assets/img/r/give-a-tree-koala-tree-1200.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "assets/img/give-a-tree-volunteers.jpg": {
+  "h": 1050,
+  "size": 335199,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/give-a-tree-volunteers-480.webp",
+   "assets/img/r/give-a-tree-volunteers-800.webp",
+   "assets/img/r/give-a-tree-volunteers-1200.webp",
+   "assets/img/r/give-a-tree-volunteers-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/give-bequest-canopy.jpg": {
+  "h": 1050,
+  "size": 458765,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/give-bequest-canopy-480.webp",
+   "assets/img/r/give-bequest-canopy-800.webp",
+   "assets/img/r/give-bequest-canopy-1200.webp",
+   "assets/img/r/give-bequest-canopy-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/give-donate-waratah.jpg": {
+  "h": 1050,
+  "size": 112624,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/give-donate-waratah-480.webp",
+   "assets/img/r/give-donate-waratah-800.webp",
+   "assets/img/r/give-donate-waratah-1200.webp",
+   "assets/img/r/give-donate-waratah-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/give-habitat-hero-wallaby.jpg": {
+  "h": 1050,
+  "size": 230877,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/give-habitat-hero-wallaby-480.webp",
+   "assets/img/r/give-habitat-hero-wallaby-800.webp",
+   "assets/img/r/give-habitat-hero-wallaby-1200.webp",
+   "assets/img/r/give-habitat-hero-wallaby-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/governance-hero-gorge.jpg": {
+  "h": 900,
+  "size": 250107,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/governance-hero-gorge-480.webp",
+   "assets/img/r/governance-hero-gorge-800.webp",
+   "assets/img/r/governance-hero-gorge-1200.webp",
+   "assets/img/r/governance-hero-gorge-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/government-hero-ranges.jpg": {
+  "h": 1062,
+  "size": 363804,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/government-hero-ranges-480.webp",
+   "assets/img/r/government-hero-ranges-800.webp",
+   "assets/img/r/government-hero-ranges-1200.webp",
+   "assets/img/r/government-hero-ranges-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/hero-beeeaters.jpg": {
+  "h": 1022,
+  "size": 102243,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/hero-beeeaters-480.webp",
+   "assets/img/r/hero-beeeaters-800.webp",
+   "assets/img/r/hero-beeeaters-1200.webp",
+   "assets/img/r/hero-beeeaters-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/hero-golden.jpg": {
+  "h": 450,
+  "size": 89360,
+  "w": 900,
+  "webp": [
+   "assets/img/r/hero-golden-480.webp",
+   "assets/img/r/hero-golden-800.webp",
+   "assets/img/r/hero-golden-900.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   900
+  ]
+ },
+ "assets/img/home-partner-loccitane.jpg": {
+  "h": 1200,
+  "size": 256742,
+  "w": 1200,
+  "webp": [
+   "assets/img/r/home-partner-loccitane-480.webp",
+   "assets/img/r/home-partner-loccitane-800.webp",
+   "assets/img/r/home-partner-loccitane-1200.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "assets/img/home-story-nursery.jpg": {
+  "h": 792,
+  "size": 226190,
+  "w": 1200,
+  "webp": [
+   "assets/img/r/home-story-nursery-480.webp",
+   "assets/img/r/home-story-nursery-800.webp",
+   "assets/img/r/home-story-nursery-1200.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "assets/img/home-story-planting.jpg": {
+  "h": 1200,
+  "size": 297530,
+  "w": 1000,
+  "webp": [
+   "assets/img/r/home-story-planting-480.webp",
+   "assets/img/r/home-story-planting-800.webp",
+   "assets/img/r/home-story-planting-1000.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1000
+  ]
+ },
+ "assets/img/impact-bushland-9m.jpg": {
+  "h": 386,
+  "size": 73339,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/impact-bushland-9m-480.webp",
+   "assets/img/r/impact-bushland-9m-800.webp",
+   "assets/img/r/impact-bushland-9m-1200.webp",
+   "assets/img/r/impact-bushland-9m-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/impact-hero-coast.jpg": {
+  "h": 900,
+  "size": 263335,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/impact-hero-coast-480.webp",
+   "assets/img/r/impact-hero-coast-800.webp",
+   "assets/img/r/impact-hero-coast-1200.webp",
+   "assets/img/r/impact-hero-coast-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/impact-report-2026.jpg": {
+  "h": 471,
+  "size": 37348,
+  "w": 900,
+  "webp": [
+   "assets/img/r/impact-report-2026-480.webp",
+   "assets/img/r/impact-report-2026-800.webp",
+   "assets/img/r/impact-report-2026-900.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   900
+  ]
+ },
+ "assets/img/impact-report-cover.jpg": {
+  "h": 1131,
+  "size": 85767,
+  "w": 800,
+  "webp": [
+   "assets/img/r/impact-report-cover-480.webp",
+   "assets/img/r/impact-report-cover-800.webp"
+  ],
+  "widths": [
+   480,
+   800
+  ]
+ },
+ "assets/img/media-hero-regent-honeyeater.jpg": {
+  "h": 1067,
+  "size": 267187,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/media-hero-regent-honeyeater-480.webp",
+   "assets/img/r/media-hero-regent-honeyeater-800.webp",
+   "assets/img/r/media-hero-regent-honeyeater-1200.webp",
+   "assets/img/r/media-hero-regent-honeyeater-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/newsletter-hero-forest.jpg": {
+  "h": 1066,
+  "size": 695857,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/newsletter-hero-forest-480.webp",
+   "assets/img/r/newsletter-hero-forest-800.webp",
+   "assets/img/r/newsletter-hero-forest-1200.webp",
+   "assets/img/r/newsletter-hero-forest-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/nursery-volunteers.jpg": {
+  "h": 1066,
+  "size": 300347,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/nursery-volunteers-480.webp",
+   "assets/img/r/nursery-volunteers-800.webp",
+   "assets/img/r/nursery-volunteers-1200.webp",
+   "assets/img/r/nursery-volunteers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-hero-site-visit.jpg": {
+  "h": 1066,
+  "size": 454674,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-hero-site-visit-480.webp",
+   "assets/img/r/partner-hero-site-visit-800.webp",
+   "assets/img/r/partner-hero-site-visit-1200.webp",
+   "assets/img/r/partner-hero-site-visit-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-invest-hero-planting.jpg": {
+  "h": 1200,
+  "size": 621526,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-invest-hero-planting-480.webp",
+   "assets/img/r/partner-invest-hero-planting-800.webp",
+   "assets/img/r/partner-invest-hero-planting-1200.webp",
+   "assets/img/r/partner-invest-hero-planting-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-loccitane-nursery.jpg": {
+  "h": 1067,
+  "size": 233639,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-loccitane-nursery-480.webp",
+   "assets/img/r/partner-loccitane-nursery-800.webp",
+   "assets/img/r/partner-loccitane-nursery-1200.webp",
+   "assets/img/r/partner-loccitane-nursery-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-millionth-tree.jpg": {
+  "h": 1200,
+  "size": 472662,
+  "w": 1500,
+  "webp": [
+   "assets/img/r/partner-millionth-tree-480.webp",
+   "assets/img/r/partner-millionth-tree-800.webp",
+   "assets/img/r/partner-millionth-tree-1200.webp",
+   "assets/img/r/partner-millionth-tree-1500.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1500
+  ]
+ },
+ "assets/img/partner-ways-build.jpg": {
+  "h": 1050,
+  "size": 391878,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/partner-ways-build-480.webp",
+   "assets/img/r/partner-ways-build-800.webp",
+   "assets/img/r/partner-ways-build-1200.webp",
+   "assets/img/r/partner-ways-build-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/partner-ways-invest.jpg": {
+  "h": 1050,
+  "size": 274905,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/partner-ways-invest-480.webp",
+   "assets/img/r/partner-ways-invest-800.webp",
+   "assets/img/r/partner-ways-invest-1200.webp",
+   "assets/img/r/partner-ways-invest-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/pillar-healing-COMP.jpg": {
+  "h": 1200,
+  "size": 281874,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/pillar-healing-COMP-480.webp",
+   "assets/img/r/pillar-healing-COMP-800.webp",
+   "assets/img/r/pillar-healing-COMP-1200.webp",
+   "assets/img/r/pillar-healing-COMP-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/pillar-healing-nursery.jpg": {
+  "h": 1050,
+  "size": 200930,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/pillar-healing-nursery-480.webp",
+   "assets/img/r/pillar-healing-nursery-800.webp",
+   "assets/img/r/pillar-healing-nursery-1200.webp",
+   "assets/img/r/pillar-healing-nursery-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/pillar-healing-planting.jpg": {
+  "h": 900,
+  "size": 292685,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/pillar-healing-planting-480.webp",
+   "assets/img/r/pillar-healing-planting-800.webp",
+   "assets/img/r/pillar-healing-planting-1200.webp",
+   "assets/img/r/pillar-healing-planting-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/pillar-parks-forest.jpg": {
+  "h": 900,
+  "size": 502157,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/pillar-parks-forest-480.webp",
+   "assets/img/r/pillar-parks-forest-800.webp",
+   "assets/img/r/pillar-parks-forest-1200.webp",
+   "assets/img/r/pillar-parks-forest-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/pillar-parks.jpg": {
+  "h": 900,
+  "size": 394596,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/pillar-parks-480.webp",
+   "assets/img/r/pillar-parks-800.webp",
+   "assets/img/r/pillar-parks-1200.webp",
+   "assets/img/r/pillar-parks-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/pillar-species-koala.jpg": {
+  "h": 900,
+  "size": 129258,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/pillar-species-koala-480.webp",
+   "assets/img/r/pillar-species-koala-800.webp",
+   "assets/img/r/pillar-species-koala-1200.webp",
+   "assets/img/r/pillar-species-koala-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/planting-day.jpg": {
+  "h": 1125,
+  "size": 522776,
+  "w": 1500,
+  "webp": [
+   "assets/img/r/planting-day-480.webp",
+   "assets/img/r/planting-day-800.webp",
+   "assets/img/r/planting-day-1200.webp",
+   "assets/img/r/planting-day-1500.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1500
+  ]
+ },
+ "assets/img/projects-hero-koala-sky.jpg": {
+  "h": 1066,
+  "size": 310596,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-hero-koala-sky-480.webp",
+   "assets/img/r/projects-hero-koala-sky-800.webp",
+   "assets/img/r/projects-hero-koala-sky-1200.webp",
+   "assets/img/r/projects-hero-koala-sky-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/bandicoot-camera-workshop.jpg": {
+  "h": 1050,
+  "size": 369329,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-bandicoot-camera-workshop-480.webp",
+   "assets/img/r/projects-bandicoot-camera-workshop-800.webp",
+   "assets/img/r/projects-bandicoot-camera-workshop-1200.webp",
+   "assets/img/r/projects-bandicoot-camera-workshop-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/bandicoot-corporate-planting.jpg": {
+  "h": 1050,
+  "size": 433340,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-bandicoot-corporate-planting-480.webp",
+   "assets/img/r/projects-bandicoot-corporate-planting-800.webp",
+   "assets/img/r/projects-bandicoot-corporate-planting-1200.webp",
+   "assets/img/r/projects-bandicoot-corporate-planting-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/bandicoot-facing-camera.jpg": {
+  "h": 1200,
+  "size": 315731,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-bandicoot-facing-camera-480.webp",
+   "assets/img/r/projects-bandicoot-facing-camera-800.webp",
+   "assets/img/r/projects-bandicoot-facing-camera-1200.webp",
+   "assets/img/r/projects-bandicoot-facing-camera-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/bandicoot-habitat-ferns.jpg": {
+  "h": 604,
+  "size": 201780,
+  "w": 806,
+  "webp": [
+   "assets/img/r/projects-bandicoot-habitat-ferns-480.webp",
+   "assets/img/r/projects-bandicoot-habitat-ferns-800.webp",
+   "assets/img/r/projects-bandicoot-habitat-ferns-806.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   806
+  ]
+ },
+ "assets/img/projects/bandicoot-hero-portrait.jpg": {
+  "h": 899,
+  "size": 207389,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-bandicoot-hero-portrait-480.webp",
+   "assets/img/r/projects-bandicoot-hero-portrait-800.webp",
+   "assets/img/r/projects-bandicoot-hero-portrait-1200.webp",
+   "assets/img/r/projects-bandicoot-hero-portrait-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/bandicoot-installing-camera.jpg": {
+  "h": 975,
+  "size": 525405,
+  "w": 1300,
+  "webp": [
+   "assets/img/r/projects-bandicoot-installing-camera-480.webp",
+   "assets/img/r/projects-bandicoot-installing-camera-800.webp",
+   "assets/img/r/projects-bandicoot-installing-camera-1200.webp",
+   "assets/img/r/projects-bandicoot-installing-camera-1300.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1300
+  ]
+ },
+ "assets/img/projects/bandicoot-launch-group.jpg": {
+  "h": 666,
+  "size": 316277,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-bandicoot-launch-group-480.webp",
+   "assets/img/r/projects-bandicoot-launch-group-800.webp",
+   "assets/img/r/projects-bandicoot-launch-group-1200.webp",
+   "assets/img/r/projects-bandicoot-launch-group-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/bandicoot-planting-crew.jpg": {
+  "h": 1100,
+  "size": 414113,
+  "w": 1100,
+  "webp": [
+   "assets/img/r/projects-bandicoot-planting-crew-480.webp",
+   "assets/img/r/projects-bandicoot-planting-crew-800.webp",
+   "assets/img/r/projects-bandicoot-planting-crew-1100.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1100
+  ]
+ },
+ "assets/img/projects/bandicoot-site-demo.jpg": {
+  "h": 1050,
+  "size": 486830,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-bandicoot-site-demo-480.webp",
+   "assets/img/r/projects-bandicoot-site-demo-800.webp",
+   "assets/img/r/projects-bandicoot-site-demo-1200.webp",
+   "assets/img/r/projects-bandicoot-site-demo-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/bandicoot-survey-close.jpg": {
+  "h": 450,
+  "size": 108608,
+  "w": 600,
+  "webp": [
+   "assets/img/r/projects-bandicoot-survey-close-480.webp",
+   "assets/img/r/projects-bandicoot-survey-close-600.webp"
+  ],
+  "widths": [
+   480,
+   600
+  ]
+ },
+ "assets/img/projects/bandicoot-survey-team.jpg": {
+  "h": 1050,
+  "size": 517198,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-bandicoot-survey-team-480.webp",
+   "assets/img/r/projects-bandicoot-survey-team-800.webp",
+   "assets/img/r/projects-bandicoot-survey-team-1200.webp",
+   "assets/img/r/projects-bandicoot-survey-team-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/bandicoot-trailcam-blackberry.jpg": {
+  "h": 1050,
+  "size": 486604,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-bandicoot-trailcam-blackberry-480.webp",
+   "assets/img/r/projects-bandicoot-trailcam-blackberry-800.webp",
+   "assets/img/r/projects-bandicoot-trailcam-blackberry-1200.webp",
+   "assets/img/r/projects-bandicoot-trailcam-blackberry-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/bandicoot-trailcam-clover.jpg": {
+  "h": 1050,
+  "size": 395874,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-bandicoot-trailcam-clover-480.webp",
+   "assets/img/r/projects-bandicoot-trailcam-clover-800.webp",
+   "assets/img/r/projects-bandicoot-trailcam-clover-1200.webp",
+   "assets/img/r/projects-bandicoot-trailcam-clover-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/bandicoot-volunteers-planting.jpg": {
+  "h": 975,
+  "size": 412541,
+  "w": 1300,
+  "webp": [
+   "assets/img/r/projects-bandicoot-volunteers-planting-480.webp",
+   "assets/img/r/projects-bandicoot-volunteers-planting-800.webp",
+   "assets/img/r/projects-bandicoot-volunteers-planting-1200.webp",
+   "assets/img/r/projects-bandicoot-volunteers-planting-1300.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1300
+  ]
+ },
+ "assets/img/projects/kaurna-fire-before-after.jpg": {
+  "h": 284,
+  "size": 28527,
+  "w": 466,
+  "webp": [
+   "assets/img/r/projects-kaurna-fire-before-after-466.webp"
+  ],
+  "widths": [
+   466
+  ]
+ },
+ "assets/img/projects/kaurna-fire-hero.jpg": {
+  "h": 929,
+  "size": 340750,
+  "w": 1195,
+  "webp": [
+   "assets/img/r/projects-kaurna-fire-hero-480.webp",
+   "assets/img/r/projects-kaurna-fire-hero-800.webp",
+   "assets/img/r/projects-kaurna-fire-hero-1195.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1195
+  ]
+ },
+ "assets/img/projects/kaurna-fire-team.jpg": {
+  "h": 274,
+  "size": 50024,
+  "w": 434,
+  "webp": [
+   "assets/img/r/projects-kaurna-fire-team-434.webp"
+  ],
+  "widths": [
+   434
+  ]
+ },
+ "assets/img/projects/koala-genome-canopy.jpg": {
+  "h": 1200,
+  "size": 488623,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-genome-canopy-480.webp",
+   "assets/img/r/projects-koala-genome-canopy-800.webp",
+   "assets/img/r/projects-koala-genome-canopy-1200.webp",
+   "assets/img/r/projects-koala-genome-canopy-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-genome-feeding.jpg": {
+  "h": 1200,
+  "size": 252817,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-genome-feeding-480.webp",
+   "assets/img/r/projects-koala-genome-feeding-800.webp",
+   "assets/img/r/projects-koala-genome-feeding-1200.webp",
+   "assets/img/r/projects-koala-genome-feeding-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-genome-hero.jpg": {
+  "h": 686,
+  "size": 177095,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-genome-hero-480.webp",
+   "assets/img/r/projects-koala-genome-hero-800.webp",
+   "assets/img/r/projects-koala-genome-hero-1200.webp",
+   "assets/img/r/projects-koala-genome-hero-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-genome-joey.jpg": {
+  "h": 1400,
+  "size": 257516,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-koala-genome-joey-480.webp",
+   "assets/img/r/projects-koala-genome-joey-800.webp",
+   "assets/img/r/projects-koala-genome-joey-1200.webp",
+   "assets/img/r/projects-koala-genome-joey-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/koala-genome-trunk.jpg": {
+  "h": 1200,
+  "size": 266919,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-genome-trunk-480.webp",
+   "assets/img/r/projects-koala-genome-trunk-800.webp",
+   "assets/img/r/projects-koala-genome-trunk-1200.webp",
+   "assets/img/r/projects-koala-genome-trunk-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-feeding.jpg": {
+  "h": 1200,
+  "size": 289285,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-feeding-480.webp",
+   "assets/img/r/projects-koala-wollondilly-feeding-800.webp",
+   "assets/img/r/projects-koala-wollondilly-feeding-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-feeding-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-forest.jpg": {
+  "h": 1200,
+  "size": 659956,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-forest-480.webp",
+   "assets/img/r/projects-koala-wollondilly-forest-800.webp",
+   "assets/img/r/projects-koala-wollondilly-forest-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-forest-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-hero.jpg": {
+  "h": 686,
+  "size": 375270,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-hero-480.webp",
+   "assets/img/r/projects-koala-wollondilly-hero-800.webp",
+   "assets/img/r/projects-koala-wollondilly-hero-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-hero-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-joey.jpg": {
+  "h": 1200,
+  "size": 476425,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-joey-480.webp",
+   "assets/img/r/projects-koala-wollondilly-joey-800.webp",
+   "assets/img/r/projects-koala-wollondilly-joey-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-joey-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-nursery-wide.jpg": {
+  "h": 1200,
+  "size": 489772,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-nursery-wide-480.webp",
+   "assets/img/r/projects-koala-wollondilly-nursery-wide-800.webp",
+   "assets/img/r/projects-koala-wollondilly-nursery-wide-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-nursery-wide-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-nursery.jpg": {
+  "h": 1400,
+  "size": 474939,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-nursery-480.webp",
+   "assets/img/r/projects-koala-wollondilly-nursery-800.webp",
+   "assets/img/r/projects-koala-wollondilly-nursery-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-nursery-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-pair.jpg": {
+  "h": 1200,
+  "size": 697318,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-pair-480.webp",
+   "assets/img/r/projects-koala-wollondilly-pair-800.webp",
+   "assets/img/r/projects-koala-wollondilly-pair-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-pair-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-seedlings.jpg": {
+  "h": 1200,
+  "size": 603805,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-seedlings-480.webp",
+   "assets/img/r/projects-koala-wollondilly-seedlings-800.webp",
+   "assets/img/r/projects-koala-wollondilly-seedlings-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-seedlings-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/koala-wollondilly-tubestock.jpg": {
+  "h": 1200,
+  "size": 566990,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-koala-wollondilly-tubestock-480.webp",
+   "assets/img/r/projects-koala-wollondilly-tubestock-800.webp",
+   "assets/img/r/projects-koala-wollondilly-tubestock-1200.webp",
+   "assets/img/r/projects-koala-wollondilly-tubestock-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-cormorants.jpg": {
+  "h": 1200,
+  "size": 362424,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-cormorants-480.webp",
+   "assets/img/r/projects-mundoo-cormorants-800.webp",
+   "assets/img/r/projects-mundoo-cormorants-1200.webp",
+   "assets/img/r/projects-mundoo-cormorants-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-creek.jpg": {
+  "h": 1200,
+  "size": 606000,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-creek-480.webp",
+   "assets/img/r/projects-mundoo-creek-800.webp",
+   "assets/img/r/projects-mundoo-creek-1200.webp",
+   "assets/img/r/projects-mundoo-creek-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-darter.jpg": {
+  "h": 1200,
+  "size": 194104,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-darter-480.webp",
+   "assets/img/r/projects-mundoo-darter-800.webp",
+   "assets/img/r/projects-mundoo-darter-1200.webp",
+   "assets/img/r/projects-mundoo-darter-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-flooded.jpg": {
+  "h": 1200,
+  "size": 526855,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-flooded-480.webp",
+   "assets/img/r/projects-mundoo-flooded-800.webp",
+   "assets/img/r/projects-mundoo-flooded-1200.webp",
+   "assets/img/r/projects-mundoo-flooded-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-hero.jpg": {
+  "h": 686,
+  "size": 282435,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-hero-480.webp",
+   "assets/img/r/projects-mundoo-hero-800.webp",
+   "assets/img/r/projects-mundoo-hero-1200.webp",
+   "assets/img/r/projects-mundoo-hero-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-lagoon.jpg": {
+  "h": 1200,
+  "size": 259086,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-lagoon-480.webp",
+   "assets/img/r/projects-mundoo-lagoon-800.webp",
+   "assets/img/r/projects-mundoo-lagoon-1200.webp",
+   "assets/img/r/projects-mundoo-lagoon-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-paperbark.jpg": {
+  "h": 1200,
+  "size": 419189,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-paperbark-480.webp",
+   "assets/img/r/projects-mundoo-paperbark-800.webp",
+   "assets/img/r/projects-mundoo-paperbark-1200.webp",
+   "assets/img/r/projects-mundoo-paperbark-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-samphire.jpg": {
+  "h": 1200,
+  "size": 421626,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-samphire-480.webp",
+   "assets/img/r/projects-mundoo-samphire-800.webp",
+   "assets/img/r/projects-mundoo-samphire-1200.webp",
+   "assets/img/r/projects-mundoo-samphire-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-station.jpg": {
+  "h": 1200,
+  "size": 547391,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-station-480.webp",
+   "assets/img/r/projects-mundoo-station-800.webp",
+   "assets/img/r/projects-mundoo-station-1200.webp",
+   "assets/img/r/projects-mundoo-station-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/mundoo-sunset.jpg": {
+  "h": 1400,
+  "size": 367343,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/projects-mundoo-sunset-480.webp",
+   "assets/img/r/projects-mundoo-sunset-800.webp",
+   "assets/img/r/projects-mundoo-sunset-1200.webp",
+   "assets/img/r/projects-mundoo-sunset-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/projects/nectar-corridor-planting.jpg": {
+  "h": 939,
+  "size": 463911,
+  "w": 1253,
+  "webp": [
+   "assets/img/r/projects-nectar-corridor-planting-480.webp",
+   "assets/img/r/projects-nectar-corridor-planting-800.webp",
+   "assets/img/r/projects-nectar-corridor-planting-1200.webp",
+   "assets/img/r/projects-nectar-corridor-planting-1253.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1253
+  ]
+ },
+ "assets/img/projects/nectar-hero-paddock-tree.jpg": {
+  "h": 704,
+  "size": 257868,
+  "w": 1253,
+  "webp": [
+   "assets/img/r/projects-nectar-hero-paddock-tree-480.webp",
+   "assets/img/r/projects-nectar-hero-paddock-tree-800.webp",
+   "assets/img/r/projects-nectar-hero-paddock-tree-1200.webp",
+   "assets/img/r/projects-nectar-hero-paddock-tree-1253.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1253
+  ]
+ },
+ "assets/img/projects/nectar-old-tree.jpg": {
+  "h": 939,
+  "size": 364160,
+  "w": 1253,
+  "webp": [
+   "assets/img/r/projects-nectar-old-tree-480.webp",
+   "assets/img/r/projects-nectar-old-tree-800.webp",
+   "assets/img/r/projects-nectar-old-tree-1200.webp",
+   "assets/img/r/projects-nectar-old-tree-1253.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1253
+  ]
+ },
+ "assets/img/projects/nectar-planting-day.jpg": {
+  "h": 939,
+  "size": 314796,
+  "w": 1253,
+  "webp": [
+   "assets/img/r/projects-nectar-planting-day-480.webp",
+   "assets/img/r/projects-nectar-planting-day-800.webp",
+   "assets/img/r/projects-nectar-planting-day-1200.webp",
+   "assets/img/r/projects-nectar-planting-day-1253.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1253
+  ]
+ },
+ "assets/img/projects/nectar-remnant-fenced.jpg": {
+  "h": 939,
+  "size": 329380,
+  "w": 1253,
+  "webp": [
+   "assets/img/r/projects-nectar-remnant-fenced-480.webp",
+   "assets/img/r/projects-nectar-remnant-fenced-800.webp",
+   "assets/img/r/projects-nectar-remnant-fenced-1200.webp",
+   "assets/img/r/projects-nectar-remnant-fenced-1253.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1253
+  ]
+ },
+ "assets/img/projects/nectar-revegetation-rows.jpg": {
+  "h": 1035,
+  "size": 553941,
+  "w": 1380,
+  "webp": [
+   "assets/img/r/projects-nectar-revegetation-rows-480.webp",
+   "assets/img/r/projects-nectar-revegetation-rows-800.webp",
+   "assets/img/r/projects-nectar-revegetation-rows-1200.webp",
+   "assets/img/r/projects-nectar-revegetation-rows-1380.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1380
+  ]
+ },
+ "assets/img/projects/nectar-service-award.jpg": {
+  "h": 1034,
+  "size": 135931,
+  "w": 1379,
+  "webp": [
+   "assets/img/r/projects-nectar-service-award-480.webp",
+   "assets/img/r/projects-nectar-service-award-800.webp",
+   "assets/img/r/projects-nectar-service-award-1200.webp",
+   "assets/img/r/projects-nectar-service-award-1379.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1379
+  ]
+ },
+ "assets/img/projects/nectar-woodland-wide.jpg": {
+  "h": 522,
+  "size": 217457,
+  "w": 1253,
+  "webp": [
+   "assets/img/r/projects-nectar-woodland-wide-480.webp",
+   "assets/img/r/projects-nectar-woodland-wide-800.webp",
+   "assets/img/r/projects-nectar-woodland-wide-1200.webp",
+   "assets/img/r/projects-nectar-woodland-wide-1253.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1253
+  ]
+ },
+ "assets/img/projects/turtles-eggs-at-plc.jpg": {
+  "h": 1200,
+  "size": 324297,
+  "w": 1200,
+  "webp": [
+   "assets/img/r/projects-turtles-eggs-at-plc-480.webp",
+   "assets/img/r/projects-turtles-eggs-at-plc-800.webp",
+   "assets/img/r/projects-turtles-eggs-at-plc-1200.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "assets/img/projects/turtles-hatchling-cupped-hands.jpg": {
+  "h": 1066,
+  "size": 162174,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-hatchling-cupped-hands-480.webp",
+   "assets/img/r/projects-turtles-hatchling-cupped-hands-800.webp",
+   "assets/img/r/projects-turtles-hatchling-cupped-hands-1200.webp",
+   "assets/img/r/projects-turtles-hatchling-cupped-hands-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-hatchling-emerging.jpg": {
+  "h": 1347,
+  "size": 134125,
+  "w": 1078,
+  "webp": [
+   "assets/img/r/projects-turtles-hatchling-emerging-480.webp",
+   "assets/img/r/projects-turtles-hatchling-emerging-800.webp",
+   "assets/img/r/projects-turtles-hatchling-emerging-1078.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1078
+  ]
+ },
+ "assets/img/projects/turtles-hatchling-face.jpg": {
+  "h": 1350,
+  "size": 142276,
+  "w": 1080,
+  "webp": [
+   "assets/img/r/projects-turtles-hatchling-face-480.webp",
+   "assets/img/r/projects-turtles-hatchling-face-800.webp",
+   "assets/img/r/projects-turtles-hatchling-face-1080.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1080
+  ]
+ },
+ "assets/img/projects/turtles-hatchling-in-hands.jpg": {
+  "h": 1066,
+  "size": 125947,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-hatchling-in-hands-480.webp",
+   "assets/img/r/projects-turtles-hatchling-in-hands-800.webp",
+   "assets/img/r/projects-turtles-hatchling-in-hands-1200.webp",
+   "assets/img/r/projects-turtles-hatchling-in-hands-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-hero-hatchling.jpg": {
+  "h": 1067,
+  "size": 198358,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-hero-hatchling-480.webp",
+   "assets/img/r/projects-turtles-hero-hatchling-800.webp",
+   "assets/img/r/projects-turtles-hero-hatchling-1200.webp",
+   "assets/img/r/projects-turtles-hero-hatchling-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-passing-the-hatchling.jpg": {
+  "h": 1066,
+  "size": 183508,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-passing-the-hatchling-480.webp",
+   "assets/img/r/projects-turtles-passing-the-hatchling-800.webp",
+   "assets/img/r/projects-turtles-passing-the-hatchling-1200.webp",
+   "assets/img/r/projects-turtles-passing-the-hatchling-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-plc-group-turtlesat.jpg": {
+  "h": 1066,
+  "size": 422376,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-plc-group-turtlesat-480.webp",
+   "assets/img/r/projects-turtles-plc-group-turtlesat-800.webp",
+   "assets/img/r/projects-turtles-plc-group-turtlesat-1200.webp",
+   "assets/img/r/projects-turtles-plc-group-turtlesat-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-release-into-water.jpg": {
+  "h": 1066,
+  "size": 277713,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-release-into-water-480.webp",
+   "assets/img/r/projects-turtles-release-into-water-800.webp",
+   "assets/img/r/projects-turtles-release-into-water-1200.webp",
+   "assets/img/r/projects-turtles-release-into-water-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-ricky-spencer.jpg": {
+  "h": 760,
+  "size": 66134,
+  "w": 760,
+  "webp": [
+   "assets/img/r/projects-turtles-ricky-spencer-480.webp",
+   "assets/img/r/projects-turtles-ricky-spencer-760.webp"
+  ],
+  "widths": [
+   480,
+   760
+  ]
+ },
+ "assets/img/projects/turtles-students-by-the-water.jpg": {
+  "h": 1066,
+  "size": 390472,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-students-by-the-water-480.webp",
+   "assets/img/r/projects-turtles-students-by-the-water-800.webp",
+   "assets/img/r/projects-turtles-students-by-the-water-1200.webp",
+   "assets/img/r/projects-turtles-students-by-the-water-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/turtles-turtle-on-land.jpg": {
+  "h": 727,
+  "size": 149440,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-turtles-turtle-on-land-480.webp",
+   "assets/img/r/projects-turtles-turtle-on-land-800.webp",
+   "assets/img/r/projects-turtles-turtle-on-land-1200.webp",
+   "assets/img/r/projects-turtles-turtle-on-land-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-burrow-flap-capertee.jpg": {
+  "h": 960,
+  "size": 404094,
+  "w": 1280,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-burrow-flap-capertee-480.webp",
+   "assets/img/r/projects-wombat-mange-burrow-flap-capertee-800.webp",
+   "assets/img/r/projects-wombat-mange-burrow-flap-capertee-1200.webp",
+   "assets/img/r/projects-wombat-mange-burrow-flap-capertee-1280.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1280
+  ]
+ },
+ "assets/img/projects/wombat-mange-burrow-flap-training.jpg": {
+  "h": 1365,
+  "size": 346225,
+  "w": 1365,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-burrow-flap-training-480.webp",
+   "assets/img/r/projects-wombat-mange-burrow-flap-training-800.webp",
+   "assets/img/r/projects-wombat-mange-burrow-flap-training-1200.webp",
+   "assets/img/r/projects-wombat-mange-burrow-flap-training-1365.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1365
+  ]
+ },
+ "assets/img/projects/wombat-mange-camera-trap-check.jpg": {
+  "h": 1046,
+  "size": 264604,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-camera-trap-check-480.webp",
+   "assets/img/r/projects-wombat-mange-camera-trap-check-800.webp",
+   "assets/img/r/projects-wombat-mange-camera-trap-check-1200.webp",
+   "assets/img/r/projects-wombat-mange-camera-trap-check-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-camera-trap-night.jpg": {
+  "h": 720,
+  "size": 222727,
+  "w": 1280,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-camera-trap-night-480.webp",
+   "assets/img/r/projects-wombat-mange-camera-trap-night-800.webp",
+   "assets/img/r/projects-wombat-mange-camera-trap-night-1200.webp",
+   "assets/img/r/projects-wombat-mange-camera-trap-night-1280.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1280
+  ]
+ },
+ "assets/img/projects/wombat-mange-harry.jpg": {
+  "h": 1080,
+  "size": 382523,
+  "w": 1080,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-harry-480.webp",
+   "assets/img/r/projects-wombat-mange-harry-800.webp",
+   "assets/img/r/projects-wombat-mange-harry-1080.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1080
+  ]
+ },
+ "assets/img/projects/wombat-mange-healthy-wombat-grass.jpg": {
+  "h": 1064,
+  "size": 203342,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-healthy-wombat-grass-480.webp",
+   "assets/img/r/projects-wombat-mange-healthy-wombat-grass-800.webp",
+   "assets/img/r/projects-wombat-mange-healthy-wombat-grass-1200.webp",
+   "assets/img/r/projects-wombat-mange-healthy-wombat-grass-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-installing-burrow-flap.jpg": {
+  "h": 1354,
+  "size": 635285,
+  "w": 1354,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-installing-burrow-flap-480.webp",
+   "assets/img/r/projects-wombat-mange-installing-burrow-flap-800.webp",
+   "assets/img/r/projects-wombat-mange-installing-burrow-flap-1200.webp",
+   "assets/img/r/projects-wombat-mange-installing-burrow-flap-1354.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1354
+  ]
+ },
+ "assets/img/projects/wombat-mange-treating-in-the-field.jpg": {
+  "h": 1200,
+  "size": 562473,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-treating-in-the-field-480.webp",
+   "assets/img/r/projects-wombat-mange-treating-in-the-field-800.webp",
+   "assets/img/r/projects-wombat-mange-treating-in-the-field-1200.webp",
+   "assets/img/r/projects-wombat-mange-treating-in-the-field-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-wildcare-volunteers.jpg": {
+  "h": 998,
+  "size": 348623,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-wildcare-volunteers-480.webp",
+   "assets/img/r/projects-wombat-mange-wildcare-volunteers-800.webp",
+   "assets/img/r/projects-wombat-mange-wildcare-volunteers-1200.webp",
+   "assets/img/r/projects-wombat-mange-wildcare-volunteers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-wombat-at-burrow.jpg": {
+  "h": 1200,
+  "size": 523767,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-wombat-at-burrow-480.webp",
+   "assets/img/r/projects-wombat-mange-wombat-at-burrow-800.webp",
+   "assets/img/r/projects-wombat-mange-wombat-at-burrow-1200.webp",
+   "assets/img/r/projects-wombat-mange-wombat-at-burrow-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-wombat-in-hollow-log.jpg": {
+  "h": 1066,
+  "size": 249340,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-wombat-in-hollow-log-480.webp",
+   "assets/img/r/projects-wombat-mange-wombat-in-hollow-log-800.webp",
+   "assets/img/r/projects-wombat-mange-wombat-in-hollow-log-1200.webp",
+   "assets/img/r/projects-wombat-mange-wombat-in-hollow-log-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/wombat-mange-wombat-with-mange.jpg": {
+  "h": 1069,
+  "size": 429587,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-wombat-with-mange-480.webp",
+   "assets/img/r/projects-wombat-mange-wombat-with-mange-800.webp",
+   "assets/img/r/projects-wombat-mange-wombat-with-mange-1200.webp",
+   "assets/img/r/projects-wombat-mange-wombat-with-mange-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/rap-artwork.jpg": {
+  "h": 1600,
+  "size": 525363,
+  "w": 1131,
+  "webp": [
+   "assets/img/r/rap-artwork-480.webp",
+   "assets/img/r/rap-artwork-800.webp",
+   "assets/img/r/rap-artwork-1131.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1131
+  ]
+ },
+ "assets/img/reports-hero-grevillea.jpg": {
+  "h": 1066,
+  "size": 189866,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/reports-hero-grevillea-480.webp",
+   "assets/img/r/reports-hero-grevillea-800.webp",
+   "assets/img/r/reports-hero-grevillea-1200.webp",
+   "assets/img/r/reports-hero-grevillea-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/reports/ir2024.jpg": {
+  "h": 735,
+  "size": 83705,
+  "w": 520,
+  "webp": [
+   "assets/img/r/reports-ir2024-480.webp",
+   "assets/img/r/reports-ir2024-520.webp"
+  ],
+  "widths": [
+   480,
+   520
+  ]
+ },
+ "assets/img/search-hero-koala.jpg": {
+  "h": 1066,
+  "size": 381980,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/search-hero-koala-480.webp",
+   "assets/img/r/search-hero-koala-800.webp",
+   "assets/img/r/search-hero-koala-1200.webp",
+   "assets/img/r/search-hero-koala-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/search-hero-mangroves.jpg": {
+  "h": 1050,
+  "size": 476129,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/search-hero-mangroves-480.webp",
+   "assets/img/r/search-hero-mangroves-800.webp",
+   "assets/img/r/search-hero-mangroves-1200.webp",
+   "assets/img/r/search-hero-mangroves-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/species-rock-wallaby.jpg": {
+  "h": 1050,
+  "size": 244458,
+  "w": 1400,
+  "webp": [
+   "assets/img/r/species-rock-wallaby-480.webp",
+   "assets/img/r/species-rock-wallaby-800.webp",
+   "assets/img/r/species-rock-wallaby-1200.webp",
+   "assets/img/r/species-rock-wallaby-1400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1400
+  ]
+ },
+ "assets/img/thank-you-planting.jpg": {
+  "h": 770,
+  "size": 403997,
+  "w": 1440,
+  "webp": [
+   "assets/img/r/thank-you-planting-480.webp",
+   "assets/img/r/thank-you-planting-800.webp",
+   "assets/img/r/thank-you-planting-1200.webp",
+   "assets/img/r/thank-you-planting-1440.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1440
+  ]
+ },
+ "assets/img/tom-lewis.jpg": {
+  "h": 480,
+  "size": 33175,
+  "w": 384,
+  "webp": [
+   "assets/img/r/tom-lewis-384.webp"
+  ],
+  "widths": [
+   384
+  ]
+ },
+ "assets/img/volunteer-hero-planting.jpg": {
+  "h": 480,
+  "size": 222195,
+  "w": 1280,
+  "webp": [
+   "assets/img/r/volunteer-hero-planting-480.webp",
+   "assets/img/r/volunteer-hero-planting-800.webp",
+   "assets/img/r/volunteer-hero-planting-1200.webp",
+   "assets/img/r/volunteer-hero-planting-1280.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1280
+  ]
+ },
+ "assets/img/volunteering/vol-01.jpg": {
+  "h": 1067,
+  "size": 264925,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-01-480.webp",
+   "assets/img/r/volunteering-vol-01-800.webp",
+   "assets/img/r/volunteering-vol-01-1200.webp",
+   "assets/img/r/volunteering-vol-01-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-02.jpg": {
+  "h": 1067,
+  "size": 219842,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-02-480.webp",
+   "assets/img/r/volunteering-vol-02-800.webp",
+   "assets/img/r/volunteering-vol-02-1200.webp",
+   "assets/img/r/volunteering-vol-02-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-03.jpg": {
+  "h": 1067,
+  "size": 151704,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-03-480.webp",
+   "assets/img/r/volunteering-vol-03-800.webp",
+   "assets/img/r/volunteering-vol-03-1200.webp",
+   "assets/img/r/volunteering-vol-03-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-04.jpg": {
+  "h": 1200,
+  "size": 573693,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-04-480.webp",
+   "assets/img/r/volunteering-vol-04-800.webp",
+   "assets/img/r/volunteering-vol-04-1200.webp",
+   "assets/img/r/volunteering-vol-04-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-05.jpg": {
+  "h": 854,
+  "size": 302183,
+  "w": 1280,
+  "webp": [
+   "assets/img/r/volunteering-vol-05-480.webp",
+   "assets/img/r/volunteering-vol-05-800.webp",
+   "assets/img/r/volunteering-vol-05-1200.webp",
+   "assets/img/r/volunteering-vol-05-1280.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1280
+  ]
+ },
+ "assets/img/volunteering/vol-06.jpg": {
+  "h": 1067,
+  "size": 286104,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-06-480.webp",
+   "assets/img/r/volunteering-vol-06-800.webp",
+   "assets/img/r/volunteering-vol-06-1200.webp",
+   "assets/img/r/volunteering-vol-06-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-07.jpg": {
+  "h": 1200,
+  "size": 378395,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-07-480.webp",
+   "assets/img/r/volunteering-vol-07-800.webp",
+   "assets/img/r/volunteering-vol-07-1200.webp",
+   "assets/img/r/volunteering-vol-07-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-08.jpg": {
+  "h": 1067,
+  "size": 185255,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-08-480.webp",
+   "assets/img/r/volunteering-vol-08-800.webp",
+   "assets/img/r/volunteering-vol-08-1200.webp",
+   "assets/img/r/volunteering-vol-08-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-09.jpg": {
+  "h": 1080,
+  "size": 367060,
+  "w": 1440,
+  "webp": [
+   "assets/img/r/volunteering-vol-09-480.webp",
+   "assets/img/r/volunteering-vol-09-800.webp",
+   "assets/img/r/volunteering-vol-09-1200.webp",
+   "assets/img/r/volunteering-vol-09-1440.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1440
+  ]
+ },
+ "assets/img/volunteering/vol-10.jpg": {
+  "h": 1142,
+  "size": 403901,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-10-480.webp",
+   "assets/img/r/volunteering-vol-10-800.webp",
+   "assets/img/r/volunteering-vol-10-1200.webp",
+   "assets/img/r/volunteering-vol-10-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-11.jpg": {
+  "h": 1143,
+  "size": 458807,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-11-480.webp",
+   "assets/img/r/volunteering-vol-11-800.webp",
+   "assets/img/r/volunteering-vol-11-1200.webp",
+   "assets/img/r/volunteering-vol-11-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-12.jpg": {
+  "h": 1200,
+  "size": 534613,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-12-480.webp",
+   "assets/img/r/volunteering-vol-12-800.webp",
+   "assets/img/r/volunteering-vol-12-1200.webp",
+   "assets/img/r/volunteering-vol-12-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-13.jpg": {
+  "h": 1067,
+  "size": 285503,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-13-480.webp",
+   "assets/img/r/volunteering-vol-13-800.webp",
+   "assets/img/r/volunteering-vol-13-1200.webp",
+   "assets/img/r/volunteering-vol-13-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-14.jpg": {
+  "h": 1125,
+  "size": 440504,
+  "w": 1500,
+  "webp": [
+   "assets/img/r/volunteering-vol-14-480.webp",
+   "assets/img/r/volunteering-vol-14-800.webp",
+   "assets/img/r/volunteering-vol-14-1200.webp",
+   "assets/img/r/volunteering-vol-14-1500.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1500
+  ]
+ },
+ "assets/img/volunteering/vol-15.jpg": {
+  "h": 1200,
+  "size": 657004,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/volunteering-vol-15-480.webp",
+   "assets/img/r/volunteering-vol-15-800.webp",
+   "assets/img/r/volunteering-vol-15-1200.webp",
+   "assets/img/r/volunteering-vol-15-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/volunteering/vol-16.jpg": {
+  "h": 1600,
+  "size": 428222,
+  "w": 1200,
+  "webp": [
+   "assets/img/r/volunteering-vol-16-480.webp",
+   "assets/img/r/volunteering-vol-16-800.webp",
+   "assets/img/r/volunteering-vol-16-1200.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "assets/img/workplace-giving-volunteers.jpg": {
+  "h": 1067,
+  "size": 370413,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/workplace-giving-volunteers-480.webp",
+   "assets/img/r/workplace-giving-volunteers-800.webp",
+   "assets/img/r/workplace-giving-volunteers-1200.webp",
+   "assets/img/r/workplace-giving-volunteers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ }
+}
