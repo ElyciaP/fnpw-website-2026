@@ -544,7 +544,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
    FILTER BAR  ·  promoted from projects.html so the pillar
    pages share it. Identical rules, no visual change there.
    ============================================================ */
-.fb{padding:2rem 0;background:rgba(250,246,242,.95);backdrop-filter:blur(10px);position:sticky;top:72px;z-index:30;border-bottom:1px solid var(--rule)}
+.fb{padding:var(--sp-4) 0;background:var(--cream);position:sticky;top:72px;z-index:30;border-bottom:1px solid var(--rule)}
 .fb-r{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
 .fps{display:flex;gap:.5rem;flex-wrap:wrap}
 .fp{font-size:.82rem;font-weight:600;padding:.5em 1em;border-radius:0;border:1.5px solid var(--rule);background:var(--white);color:var(--char);cursor:pointer;transition:.25s;font-family:var(--ff-b)}

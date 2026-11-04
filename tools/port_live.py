@@ -397,7 +397,7 @@ def ebook():
 # ---------------------------------------------------------------- newsletter thank-you
 def newsletter_thanks():
     body = NL.join([
-        '<section class="sec" style="background:var(--sand)">',
+        '<section class="sec sand">',
         '  <div class="cw rv" style="max-width:720px;text-align:center">',
         '    <span class="ey" style="justify-content:center">Newsletter</span>',
         '    <h1>Thank you for signing up.</h1>',
@@ -414,7 +414,7 @@ def newsletter_thanks():
 # ---------------------------------------------------------------- volunteer enquiry thank-you
 def volunteer_thanks():
     body = NL.join([
-        '<section class="sec" style="background:var(--sand)">',
+        '<section class="sec sand">',
         '  <div class="cw rv" style="max-width:720px;text-align:center">',
         '    <span class="ey" style="justify-content:center">Corporate volunteering</span>',
         '    <h1>Thank you for your interest in our corporate volunteering day.</h1>',

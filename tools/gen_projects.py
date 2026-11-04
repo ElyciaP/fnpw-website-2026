@@ -539,7 +539,7 @@ def main():
         write_page(pil['page'], pil['label'], pil['desc'], body,
                    page_css='''
 .pil-hero{padding:10rem 0 5rem}
-.fb.fb-paper{background:rgba(244,238,230,.95)}
+.fb.fb-paper{background:var(--sand)}
 ''',
                    extra_js=FILTER_JS)
 
