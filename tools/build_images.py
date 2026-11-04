@@ -24,8 +24,8 @@ What it does, idempotently:
    attribute chosen from the image's role (hero 100vw, card thirds, two-column halves,
    wide content) and the JPEG fallback <img>, keeping alt, class, style, loading and the
    other attributes. Heroes get fetchpriority="high" and no lazy attribute; every other
-   image keeps the loading="lazy" the pages already carry. All get decoding="async" and
-   width/height from the shrunk file.
+   photograph gets loading="lazy". All get decoding="async" and width/height from the
+   shrunk file.
 
 Generators (gen_*.py, port_live.py, build_gat.py) still emit plain <img> tags. Run
 `python3 tools/build_images.py --html` after any of them, the same way apply_alt.py is run.
@@ -56,9 +56,9 @@ NOT_PHOTO = re.compile(r'(fnpw-logo|/partners/|55-badge|projects-map|impact-tree
 # sizes by role. Ancestor class names decide the role; the first match wins.
 SIZES = {
     'hero': '100vw',
-    'card': '(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw',
-    'two': '(max-width:880px) 100vw, 50vw',
-    'wide': '(max-width:1280px) 100vw, 1240px',
+    'card': '(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw',
+    'two': '(min-width: 880px) 50vw, 100vw',
+    'wide': '(min-width: 1280px) 1240px, 100vw',
 }
 HERO_CLASSES = re.compile(r'(^|\s)(hero|hx-hero|hx-hero-bg|fb-hero-bg|ab-hero-bg|pj-hero-im|gw-hero|ct-hero|proj-hero)(\s|$)')
 WIDE_CLASSES = re.compile(r'(^|\s)(pj-wide|gw-im-pano|ip-bush-art|pj-q|imap|ed-bleed|ed-wide)(\s|$)')
@@ -297,9 +297,9 @@ def rewrite_html(path, manifest, renames, stats):
         out.append(('height', str(rec['h'])))
         if hero:
             out.append(('fetchpriority', 'high'))
-        elif d.get('loading') == 'lazy':
-            # the pages already mark everything below the fold lazy; the handful of images
-            # the authors left eager (first-section photos, a shrink-to-fit portrait) stay eager
+        else:
+            # every photograph that is not a hero is lazy (WP6 brief); heroes are the only
+            # images that must be in the first request wave
             out.append(('loading', 'lazy'))
         out.append(('decoding', 'async'))
         if plain:

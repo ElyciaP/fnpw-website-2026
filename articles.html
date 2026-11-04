@@ -91,7 +91,7 @@
 
 /* v3.2 hero-normalize */
 .nh{--hero-scrim:none}
-.nh::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/articles-hero-kookaburra.jpg') center/cover}
+.nh::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/articles-hero-kookaburra.jpg') center/cover;background-image:image-set(url('assets/img/r/articles-hero-kookaburra-1600.webp') type('image/webp'),url('assets/img/articles-hero-kookaburra.jpg') type('image/jpeg'))}
 
 .nh .lede,.nh .ey,.nh nav{text-shadow:0 1px 14px rgba(0,0,0,.45)}
 @media(max-width:780px){.nh::before{background-position:82% 40%}}
