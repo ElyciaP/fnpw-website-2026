@@ -88,7 +88,7 @@ sturt-national-park|2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg|parks
 wildlife-heroes|2021/01/feeding.jpg|species|Australia
 black-cockatoo-corridor|2021/01/Black-Cockatoo-Too_big_nestling_240420-rotated-e1746404683346.jpg|healing|WA
 memorial-trees||healing|Australia
-bandicoot-superhighway-project|2021/01/Southern-Brown-Bandicoot.jpg|species|VIC
+bandicoot-superhighway-project|2021/01/Southern-Brown-Bandicoot.jpg|species|SA
 students-dig-in-for-conservation|2021/02/King-Island-Students-Field-Days-scaled.jpg|healing|TAS
 devil-ark|2021/02/TasmanianDevil-MelanieWagner.jpg|species|NSW
 bushfire-recovery-seedbanks|2021/01/51965515327_82f49da53c_k.jpg|healing|Australia

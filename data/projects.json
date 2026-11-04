@@ -828,11 +828,11 @@
   "title": "Bandicoot Superhighway Project",
   "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Southern-Brown-Bandicoot.jpg",
   "pillar": "species",
-  "state": "VIC",
+  "state": "SA",
   "pillar_confirmed": false,
   "live_url": "https://fnpw.org.au/project/bandicoot-superhighway-project/",
-  "lat": -38.2,
-  "lon": 145.1,
+  "lat": -34.98,
+  "lon": 138.72,
   "on_map": true
  },
  {
