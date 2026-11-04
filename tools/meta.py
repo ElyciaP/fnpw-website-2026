@@ -159,8 +159,18 @@ def existing_noindex(doc):
     return bool(re.search(r'<meta name="robots" content="[^"]*noindex', doc))
 
 
-def hero_image(doc):
-    """First real photograph inside the page's hero, else ''."""
+def hero_image(doc, fname=''):
+    """First real photograph inside the page's hero; for an article with the flat
+    header, its feature image from data/articles.json when the body shows it; else ''."""
+    img = _hero_image(doc)
+    if not img and fname.startswith('article-'):
+        a = ARTICLES.get(fname[len('article-'):-5], {})
+        if a.get('hero') and a['hero'] in doc:
+            img = a['hero']
+    return img
+
+
+def _hero_image(doc):
     i = re.search(r'class="[^"]*\bhero\b[^"]*"|class="[^"]*-hero\b[^"]*"', doc)
     if not i:
         return ''
@@ -172,6 +182,10 @@ def hero_image(doc):
         if not src or re.search(r'logo|badge|icon|\.svg$', src, re.I):
             continue
         return src
+    # heroes that carry their photograph as an inline background-image
+    m = re.search(r'''url\(\s*['"]?([^'")]+)['"]?\s*\)''', seg)
+    if m and not re.search(r'logo|badge|icon|\.svg$', m.group(1), re.I):
+        return m.group(1)
     return ''
 
 
@@ -439,7 +453,7 @@ def build_head(fname, doc):
     title = title_for(fname, doc)
     desc = description_for(fname, doc)
     noindex = existing_noindex(doc) or fname in NOINDEX_ALWAYS
-    img = hero_image(doc)
+    img = hero_image(doc, fname)
     og_img = abs_url(img) if img else abs_url(OG_DEFAULT)
     is_article = fname.startswith('article-')
     url = page_url(fname)
