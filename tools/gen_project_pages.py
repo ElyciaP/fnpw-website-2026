@@ -251,7 +251,7 @@ def build(rec, meta):
     meta_bits = ' &nbsp;&nbsp;&middot;&nbsp;&nbsp; '.join(
         x for x in (state, ('Since %s' % year) if year else '') if x)
     parts.append(
-        '<section class="pj-hero">%s'
+        '<section class="hero pj-hero">%s'
         '  <figure class="pj-hero-im"><img src="%s" alt="" fetchpriority="high" decoding="async"></figure>%s'
         '  <div class="cw rv">%s'
         '    <nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem">'

@@ -146,7 +146,7 @@ def crumbs(*items):
 
 def photo_hero(ey, h1, lede, crumb_html, img, alt='', credit='', cls='', fig_style=''):
     return NL.join([
-        '<section class="pj-hero%s">' % ((' ' + cls) if cls else ''),
+        '<section class="hero pj-hero%s">' % ((' ' + cls) if cls else ''),
         '  <figure class="pj-hero-im"%s><img src="%s" alt="%s" fetchpriority="high" decoding="async"></figure>' % ((' style="%s"' % fig_style) if fig_style else '', img, H.escape(alt)),
         '  <div class="cw rv">',
         '    ' + crumb_html,

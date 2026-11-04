@@ -15,7 +15,7 @@
 
 .piw{font-family:'Figtree',sans-serif;font-size:17px;line-height:1.65;color:#241914;background:#FAF6F2;-webkit-font-smoothing:antialiased}
 .piw *{box-sizing:border-box}
-.piw h1,.piw h2,.piw h3,.piw h4{color:#0F3132;margin-top:0;margin-bottom:0}
+.piw h2,.piw h3,.piw h4{color:var(--euc-deep)}
 .piw p{margin:0 0 1em}.piw p:last-child{margin-bottom:0}
 .piw ul{margin:0;padding:0;list-style:none}
 .cw{max-width:1240px;margin:0 auto;padding:0 var(--sp-4);position:relative}
@@ -223,17 +223,16 @@
 <main id="main">
 <div class="piw">
 
-<section id="top" style="position: relative; min-height: 560px; display: flex; align-items: flex-end; background: #0F3132; overflow: hidden">
-<img src="assets/img/government-hero-ranges.jpg" alt="Aerial view of a river winding through red, rugged ranges" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% 62%">
-<div style="position: absolute; inset: 0; background: linear-gradient(97deg, rgba(15,49,50,.94) 0%, rgba(15,49,50,.86) 30%, rgba(15,49,50,.42) 58%, rgba(15,49,50,.06) 100%)"></div>
-<div class="cw" style="position: relative; width: 100%; padding-top: 5.5rem; padding-bottom: 3.4rem">
-<nav class="breadcrumb" aria-label="Breadcrumb" style="display: flex; gap: .5em; flex-wrap: wrap; font-size: .82rem; color: #FAF6F2; margin-bottom: 1.4rem"><a href="index.html" style="color: #C6EBCA">Home</a><span>/</span>Partner With Us</nav>
-<span class="ey" style="color: #C6EBCA">Partner with us</span>
-<h1 style="color: #FAF6F2; max-width: 17ch">Partner with us to deliver conservation at scale.</h1>
-<p class="lede" style="color: rgba(250,246,242,.9); max-width: 46ch; font-size: clamp(1rem,1.3vw,1.15rem); margin: 0 0 1.8rem">We find the conservation priorities that matter most, bring the right partners and funding to the table, and stay with the work until we can show what it achieved.</p>
-<div style="display: flex; gap: 1rem; flex-wrap: wrap"><a class="btn" href="#opportunities" style="background: #F8EEA9; color: #0F3132">Explore Opportunities</a><a class="btn btn-ol" href="#talk">Enquire About a Partnership</a></div>
+<section id="top" class="hero" style="--hero-pos:72% 62%; --hero-scrim:linear-gradient(97deg, rgba(15,49,50,.94) 0%, rgba(15,49,50,.86) 30%, rgba(15,49,50,.42) 58%, rgba(15,49,50,.06) 100%)">
+<img src="assets/img/government-hero-ranges.jpg" alt="Aerial view of a river winding through red, rugged ranges">
+<div class="cw">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>Partner With Us</nav>
+<span class="ey">Partner with us</span>
+<h1 style="max-width: 17ch">Partner with us to deliver conservation at scale.</h1>
+<p class="lede" style="max-width: 46ch">We find the conservation priorities that matter most, bring the right partners and funding to the table, and stay with the work until we can show what it achieved.</p>
+<div class="hero-btns"><a class="btn btn-l" href="#opportunities">Explore Opportunities</a><a class="btn btn-ol" href="#talk">Enquire About a Partnership</a></div>
 </div>
-<span style="position: absolute; right: .55rem; bottom: .45rem; font-size: .64rem; letter-spacing: .02em; color: rgba(250,246,242,.92); text-shadow: 0 1px 3px rgba(0,0,0,.65)">Photo: Australian Air Holidays</span>
+<span class="img-cr">Photo: Australian Air Holidays</span>
 </section>
 <div style="background: #0F3132; padding: 1.9rem 0 1.2rem; border-top: 1px solid rgba(198,235,202,.18)">
 <div class="cw"><div class="statband" style="display: grid; gap: 1.6rem 0; margin: 0 -1.1rem">

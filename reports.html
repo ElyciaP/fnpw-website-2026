@@ -113,20 +113,13 @@
 .rpt-dl:hover{opacity:.75}
 
 /* v3.2 hero-normalize */
-.nh{position:relative;isolation:isolate;overflow:hidden;color:var(--cream);background:var(--euc-deep)}
+.nh{--hero-scrim:none}
 .nh::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/img/reports-hero-grevillea.jpg') 70% 45%/cover}
-.nh::after{content:none}
-.nh h1{max-width:13ch}
-@media(max-width:780px){.nh::before{background-position:62% 30%}.nh::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,.55) 45%,rgba(15,49,50,.8) 100%)}}
-.nh .lede{text-shadow:0 1px 12px rgba(10,30,30,.35)}.nh h1{text-shadow:0 1px 12px rgba(10,30,30,.35)}
-.nh .lede{max-width:44ch}
-.nh h1{color:var(--cream)}
-.nh .lede{color:rgba(250,246,242,.87)}
-.nh .ey{color:var(--euc-soft)}
-.nh nav,.nh nav a{color:rgba(250,246,242,.75)!important}
+
+@media(max-width:780px){.nh::before{background-position:62% 30%}}
 
 /* v4.1 hero-height */
-.nh{padding:var(--hero-top) 0 var(--hero-bot);min-height:0}
+
 
 /* v4.2 reports library */
 .rp-filters{display:flex;gap:var(--sp-1);flex-wrap:wrap;margin-bottom:var(--sp-4)}
@@ -210,9 +203,9 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="nh">
+<section class="hero nh">
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a><span>/</span>Reports</nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>Reports</nav>
     <span class="ey">Research &amp; accountability</span>
     <h1>Our reports &amp; publications.</h1>
     <p class="lede">Annual impact reports, program evaluations and conservation research.</p>
@@ -247,7 +240,7 @@
 </section>
 <section class="nl-strip">
   <div class="cw"><div class="nl-g rv">
-    <div><span class="ey" style="color:var(--euc-soft)">Stay connected</span><h3>Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
+    <div><span class="ey">Stay connected</span><h3>Monthly stories with real impact</h3><p>The latest from across Australia&rsquo;s wild places: project updates, species wins and ways to get involved.</p></div>
     <div class="nl-hs"><div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="be19c736-6c95-4159-8245-e7b32af6dba3" data-portal-id="441704788" style="min-height:150px"></div><noscript><p class="hsform-fallback">The sign-up form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will add you to the list.</p></noscript><p class="hsform-fallback" id="hsFallback" hidden>The sign-up form needs JavaScript. Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will add you to the list.</p></div>
   </div></div>
 </section>

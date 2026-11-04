@@ -13,20 +13,14 @@
 
 <style>
 /* About hero — matches Projects hero pattern: image bg, compact size, overlay text */
-.ab-hero{position:relative;padding:var(--hero-top) 0 var(--hero-bot);background:var(--euc-deep);overflow:hidden;isolation:isolate}
+.ab-hero{--hero-scrim:none}
 .ab-hero-bg{position:absolute;top:0;bottom:0;right:0;left:34%;z-index:-2}
 .ab-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
 .ab-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0F3132 0%,rgba(15,49,50,.72) 22%,rgba(15,49,50,.2) 48%,rgba(15,49,50,0) 70%),linear-gradient(180deg,rgba(15,49,50,.25) 0%,transparent 28%,transparent 75%,rgba(15,49,50,.35) 100%);z-index:1}
 @media(max-width:780px){.ab-hero-bg{left:0}.ab-hero-bg img{object-position:72% 30%}.ab-hero-bg::after{background:linear-gradient(180deg,rgba(15,49,50,.55) 0%,rgba(15,49,50,.8) 50%,rgba(15,49,50,.94) 100%)}}
-.ab-hero .cw{position:relative;z-index:2}
-.ab-hero .breadcrumb{display:flex;gap:.5em;font-size:.82rem;color:var(--cream);margin-bottom:var(--sp-3)}
-.ab-hero .breadcrumb a{color:var(--euc-soft)}
-.ab-hero .ey{color:var(--reef-soft)}
-.ab-hero .ey::before{background:var(--reef-soft)}
-.ab-hero h1{margin-top:var(--sp-1);max-width:20ch;color:var(--cream);text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.ab-hero h1{max-width:20ch;text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .ab-hero h1 em{font-style:normal;font-family:var(--ff-d);color:var(--reef-soft);font-weight:inherit}
-.ab-hero .lede{color:rgba(250,246,242,.88);text-shadow:0 1px 16px rgba(0,0,0,.35)}
-.ab-hero .rv{opacity:1!important;transform:none!important}
+.ab-hero .lede{text-shadow:0 1px 16px rgba(0,0,0,.35)}
 .ab-hero-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.7);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:3;font-family:var(--ff-b)}
 @media(max-width:780px){.ab-hero-cred{display:none}}
 
@@ -212,7 +206,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="ab-hero">
+<section class="hero ab-hero">
   <span class="ab-hero-seal"><img src="assets/img/55-badge.png" alt="55 years of conservation" width="450" height="429"></span>
   <div class="ab-hero-bg"><img src="assets/img/about-hero-koala.jpg" alt="A koala asleep in the fork of a smooth-barked gum tree, curled against the trunk with soft green bush behind" width="2560" height="1638" decoding="async"></div>
   <div class="cw rv">
@@ -273,7 +267,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
 <section class="ht">
   <div class="cw">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
-      <div class="rv"><span class="ey" style="color:var(--euc-soft)">Since 1970</span>
+      <div class="rv"><span class="ey">Since 1970</span>
       <h2 style="color:var(--cream)">55 years of impact.</h2>
       <span class="ht-hint">drag back through the decades &#8594;</span></div>
       <div style="display:flex;gap:.6rem">

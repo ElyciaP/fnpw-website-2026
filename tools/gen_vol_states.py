@@ -194,10 +194,9 @@ def summarise(rows):
 
 
 PAGE_CSS = '''
-.vs-hero{background:var(--euc-deep);color:var(--cream);padding:var(--hero-top) 0 var(--hero-bot)}
 .vs-hero .ey{color:var(--euc-soft)}.vs-hero .ey::before{background:var(--euc-soft)}
-.vs-hero h1{color:var(--cream);margin-top:var(--sp-1);margin-bottom:0;max-width:18ch}
-.vs-hero .lede{color:rgba(250,246,242,.88);margin-top:var(--sp-2);max-width:56ch}
+.vs-hero h1{max-width:18ch}
+.vs-hero .lede{max-width:56ch}
 .vs-crumb{display:flex;gap:.5em;font-size:.82rem;color:rgba(250,246,242,.72);margin-bottom:var(--sp-3);flex-wrap:wrap}
 .vs-crumb a{color:var(--euc-soft)}
 .vs-tally{display:flex;flex-wrap:wrap;gap:var(--sp-1);margin-top:var(--sp-3);padding:0;list-style:none}
@@ -507,7 +506,7 @@ def state_page(code, outline, sites, idx):
     form_css, form_html, form_embed = extract_form(outline['name'])
 
     body = NL.join([
-        '<section class="vs-hero">',
+        '<section class="hero flat vs-hero">',
         '  <div class="cw rv">',
         '    <nav class="vs-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span style="opacity:.45">/</span>'
         '<a href="volunteer.html">Corporate Volunteering</a><span style="opacity:.45">/</span>%s</nav>' % esc(outline['name']),

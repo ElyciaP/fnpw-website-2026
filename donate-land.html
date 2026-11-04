@@ -12,17 +12,13 @@
 
 <style>
 /* SHARED full-bleed image hero (used on all sub-pages) */
-.fb-hero{position:relative;min-height:clamp(360px,46vh,470px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:var(--hero-top) 0 var(--hero-bot)}
+.fb-hero{--hero-scrim:none}
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.86) 0%,rgba(15,49,50,.58) 52%,rgba(15,49,50,.18) 100%);z-index:1}
-.fb-hero-content{position:relative;z-index:3;padding:var(--sp-6) 0;width:100%}
-.fb-hero-content .breadcrumb{color:var(--cream);display:flex;gap:.5em;font-size:.82rem;margin-bottom:var(--sp-3);flex-wrap:wrap}
-.fb-hero-content .breadcrumb a{color:var(--euc-soft)}
-.fb-hero-content .ey{color:var(--euc-soft)}
-.fb-hero-content .ey::before{background:var(--euc-soft)}
-.fb-hero-content h1{color:var(--cream);max-width:20ch;margin-top:var(--sp-1)}
-.fb-hero-content .lede{color:rgba(250,246,242,.86);margin-top:var(--sp-3);max-width:56ch;font-size:clamp(1rem,1.15vw,1.12rem)}
+.fb-hero-content{position:relative;z-index:3;width:100%}
+.fb-hero-content h1{max-width:20ch}
+.fb-hero-content .lede{max-width:56ch}
 .fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.55);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
 
@@ -198,7 +194,7 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="fb-hero">
+<section class="hero fb-hero">
   <div class="fb-hero-bg">
     <img src="assets/img/donate-land-hero.jpg?v=2" alt="A lone eucalypt standing on an eroded red bank, with green hills rolling away behind it">
   </div>

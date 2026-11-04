@@ -471,12 +471,12 @@ def main():
         para, hows = NARRATIVE[key]
         how_list = ''.join(f'<li>{h}</li>' for h in hows)
 
-        hero_html = f'''<section class="ch chi pil-hero chi-{x['tint']}" style="--chi:url('{x['hero_img']}')">
+        hero_html = f'''<section class="hero ch chi pil-hero chi-{x['tint']}" style="--chi:url('{x['hero_img']}')">
   <div class="cw rv">
     <nav style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span style="opacity:.4">/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span style="opacity:.4">/</span>{pil['label']}</nav>
-    <span class="ey" style="color:var(--euc-soft)">{pil['ey']} &#183; {len(mine)} projects</span>
-    <h1 style="max-width:16ch;color:#fff">{pil['label']}</h1>
-    <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">{pil['lede']}</p>
+    <span class="ey">{pil['ey']} &#183; {len(mine)} projects</span>
+    <h1 style="max-width:16ch">{pil['label']}</h1>
+    <p class="lede">{pil['lede']}</p>
   </div>
 </section>'''
 

@@ -19,10 +19,8 @@ from site_lib import write_page
 NL = chr(10)
 
 CSS = '''
-.nw-hero{background:var(--euc-deep);padding:var(--hero-top) 0 var(--hero-bot)}
-.nw-hero .ey{color:var(--euc-soft)}
-.nw-hero h1{color:var(--cream);margin-top:var(--sp-1);max-width:20ch}
-.nw-hero .lede{color:rgba(250,246,242,.88);max-width:56ch}
+.nw-hero h1{max-width:20ch}
+.nw-hero .lede{max-width:56ch}
 .nw-crumb{display:flex;gap:.5em;font-size:.8125rem;color:rgba(250,246,242,.72);margin-bottom:var(--sp-3)}
 .nw-crumb a{color:var(--euc-soft)}
 .nw-list{border-top:1px solid var(--rule);margin-top:var(--sp-4)}
@@ -64,7 +62,7 @@ def main():
                html.escape(c['title']), html.escape(c.get('blurb', '')), NL, NL))
 
     body = (
-        '<header class="nw-hero">%s  <div class="cw rv">%s'
+        '<header class="hero flat nw-hero">%s  <div class="cw rv">%s'
         '    <nav class="nw-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span style="opacity:.45">/</span>'
         '<a href="articles.html">Articles</a><span style="opacity:.45">/</span>In the news</nav>%s'
         '    <span class="ey">Coverage</span>%s'

@@ -13,15 +13,10 @@
 
 <style>
 /* GIFTS IN WILLS (rebuilt Nov 2026) */
-.gw-hero{position:relative;min-height:clamp(520px,72vh,680px);display:flex;align-items:flex-end;background:var(--euc-deep);overflow:hidden;isolation:isolate}
-.gw-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:-2}
-.gw-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(98deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.82) 34%,rgba(15,49,50,.3) 66%,rgba(15,49,50,.06) 100%)}
-.gw-hero .cw{width:100%;padding-top:var(--hero-top);padding-bottom:var(--hero-bot)}
-.gw-hero .breadcrumb{display:flex;gap:.5em;flex-wrap:wrap;font-size:.82rem;color:var(--cream);margin-bottom:var(--sp-3)}
-.gw-hero .breadcrumb a{color:var(--euc-soft)}
-.gw-hero .ey{color:var(--euc-soft)}
-.gw-hero h1{color:var(--cream);max-width:15ch;margin-top:var(--sp-1)}
-.gw-hero .lede{color:rgba(250,246,242,.92);max-width:50ch}
+.gw-hero{--hero-pos:50% 55%}
+.gw-hero{--hero-scrim:linear-gradient(98deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.82) 34%,rgba(15,49,50,.3) 66%,rgba(15,49,50,.06) 100%)}
+.gw-hero h1{max-width:15ch}
+.gw-hero .lede{max-width:50ch}
 .gw-acts{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-4)}
 .gw-cap{position:absolute;right:.7rem;bottom:.55rem;font-size:.8125rem;color:rgba(250,246,242,.92);text-shadow:0 1px 3px rgba(0,0,0,.6)}
 /* proof band */
@@ -168,16 +163,11 @@
 .gw-faq .body a{color:var(--euc);font-weight:600}
 .hs-form-frame{min-height:420px}.hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:var(--sp-2) var(--sp-2);margin-top:var(--sp-2)}.hsform-fallback a{color:var(--euc);text-decoration:underline}
 /* hero: headline in the sky, top left */
-.gw-hero.sky{min-height:clamp(480px,40vw,560px);align-items:flex-start;background:#d9edf7}
-.gw-hero.sky>img{object-position:70% 44%}
-.gw-hero.sky::after{background:linear-gradient(100deg,rgba(250,246,242,.5) 0%,rgba(250,246,242,.22) 38%,rgba(250,246,242,0) 62%)}
-.gw-hero.sky .cw{padding-top:var(--hero-top);padding-bottom:var(--hero-bot)}
-.gw-hero.sky .breadcrumb{color:var(--euc-deep)}
-.gw-hero.sky .breadcrumb a{color:var(--euc)}
-.gw-hero.sky .ey{color:var(--euc)}
-.gw-hero.sky h1{color:var(--euc-deep);max-width:20ch;margin-top:var(--sp-1)}
-.gw-hero.sky .lede{color:var(--euc-deep);max-width:46ch;font-size:clamp(1rem,1.3vw,1.15rem)}
-@media(max-width:700px){.gw-hero.sky{min-height:0;flex-direction:column-reverse;align-items:stretch;background:linear-gradient(180deg,#cfe7f5 0%,#e4f2f9 100%)}.gw-hero.sky>img{position:static;z-index:0;height:auto;aspect-ratio:1/1;object-position:86% 92%}.gw-hero.sky::after{display:none}.gw-hero.sky .cw{padding-top:var(--sp-4);padding-bottom:var(--sp-4)}}
+.gw-hero.sky{align-items:flex-start;background:#d9edf7;--hero-pos:70% 44%}
+
+.gw-hero.sky{--hero-scrim:linear-gradient(100deg,rgba(250,246,242,.5) 0%,rgba(250,246,242,.22) 38%,rgba(250,246,242,0) 62%)}
+.gw-hero.sky h1{max-width:20ch}
+.gw-hero.sky .lede{max-width:46ch}
 /* timeline */
 .gw-tl{padding:var(--sec-md) 0;background:var(--cream)}
 .gw-tl-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--sp-2);position:relative}
@@ -302,7 +292,7 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="gw-hero sky">
+<section class="hero light gw-hero sky">
   <img src="assets/img/bequests-hero-legacy.jpg" alt="Two older bushwalkers with backpacks sit on a sandstone ledge at sunrise, looking out over a forested valley and sandstone cliffs" fetchpriority="high">
   <div class="cw rv">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span>/</span>Gifts in wills</nav>

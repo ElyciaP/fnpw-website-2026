@@ -156,7 +156,7 @@ def related_html(items):
 
 def build(a):
     place = ' &nbsp;&nbsp;&middot;&nbsp;&nbsp; ' + a['place'] if a.get('place') else ''
-    body = ['<section class="pj-hero">%s'
+    body = ['<section class="hero pj-hero">%s'
             '  <figure class="pj-hero-im"><img src="%s" alt="%s"></figure>%s'
             '  <div class="cw rv">%s'
             '    <nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem">'

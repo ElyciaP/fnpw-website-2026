@@ -18,14 +18,14 @@
 .pil-hero::before{background-image:url('assets/img/pillar-parks-forest.jpg');opacity:1}
 /* neutral scrim instead of the green gradient, only as dark as the
    headline and lede need to stay legible. */
-.pil-hero::after{background:
+.pil-hero{--hero-scrim:
   linear-gradient(100deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.38) 32%,rgba(0,0,0,.10) 60%,rgba(0,0,0,0) 78%),
   linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.30) 100%)}
 .pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 @media(max-width:780px){.pil-cred{display:none}}
 
 
-.pil-hero{padding:var(--hero-top) 0 var(--hero-bot)}
+
 .fb.fb-paper{background:rgba(244,238,230,.95)}
 
 </style>
@@ -89,12 +89,12 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="ch chi pil-hero chi-parks" style="--chi:url('assets/img/pillar-parks-forest.jpg')">
+<section class="hero ch chi pil-hero chi-parks" style="--chi:url('assets/img/pillar-parks-forest.jpg')">
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span>/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span>/</span>Growing National Parks</nav>
-    <span class="ey" style="color:var(--euc-soft)">13 projects across Australia</span>
-    <h1 style="max-width:16ch; color:#fff">Growing National Parks</h1>
-    <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">We expand and protect conservation spaces to safeguard critical habitats and support resilient ecosystems.</p>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="projects.html">Projects</a><span>/</span>Growing National Parks</nav>
+    <span class="ey">13 projects across Australia</span>
+    <h1 style="max-width:16ch">Growing National Parks</h1>
+    <p class="lede">We expand and protect conservation spaces to safeguard critical habitats and support resilient ecosystems.</p>
   </div>
   <span class="pil-cred">Credit: tsvibrav</span>
 </section>

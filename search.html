@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 .srch-hero h1{max-width:10ch}
-.srch-hero::after{background:linear-gradient(97deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 26%,rgba(15,49,50,.22) 44%,rgba(15,49,50,0) 60%)}
-@media(max-width:760px){.srch-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.9) 100%)}}
+.srch-hero{--hero-scrim:linear-gradient(97deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 26%,rgba(15,49,50,.22) 44%,rgba(15,49,50,0) 60%)}
+@media(max-width:760px){.srch-hero{--hero-scrim-m:linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.9) 100%)}}
 .srch-f{max-width:720px}
 .srch-l{display:block;font-family:var(--ff-d);font-size:1.25rem;font-weight:600;color:var(--euc-deep);margin-bottom:var(--sp-2)}
 .srch-row{display:flex;gap:var(--sp-1)}
@@ -86,10 +86,10 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="pj-hero srch-hero">
+<section class="hero pj-hero srch-hero">
   <figure class="pj-hero-im"><img src="assets/img/search-hero-koala.jpg" alt="A koala climbing along a branch through eucalypt woodland" style="object-position:62% 40%" fetchpriority="high" decoding="async"></figure>
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap"><a href="index.html">Home</a><span>/</span>Search</nav>
+    <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Search</nav>
     <span class="ey">Search</span>
     <h1>Branch out and explore.</h1>
     <p class="lede">Search our projects, stories, reports and ways to get involved.</p>

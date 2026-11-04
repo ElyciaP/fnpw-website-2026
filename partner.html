@@ -15,7 +15,7 @@
 
 .piw{font-family:'Figtree',sans-serif;font-size:17px;line-height:1.65;color:#241914;background:#FAF6F2;-webkit-font-smoothing:antialiased}
 .piw *{box-sizing:border-box}
-.piw h1,.piw h2,.piw h3,.piw h4{color:#0F3132;margin-top:0;margin-bottom:0}
+.piw h2,.piw h3,.piw h4{color:var(--euc-deep)}
 .piw p{margin:0 0 1em}.piw p:last-child{margin-bottom:0}
 .piw ul{margin:0;padding:0;list-style:none}
 .cw{max-width:1240px;margin:0 auto;padding:0 var(--sp-4);position:relative}
@@ -268,17 +268,15 @@
 <main id="main">
 <div class="piw">
 
-<section id="top" style="position: relative; min-height: 500px; display: flex; align-items: flex-end; background: #0F3132; overflow: hidden">
-<img fetchpriority="high" src="assets/img/partner-hero-site-visit.jpg" alt="Partners and our team on a site visit, looking out over rows of newly planted tree guards on a restoration site" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%">
-<div style="position: absolute; inset: 0; background: linear-gradient(97deg, rgba(15,49,50,.95) 0%, rgba(15,49,50,.88) 32%, rgba(15,49,50,.45) 60%, rgba(15,49,50,.08) 100%)"></div>
-<div class="cw" style="position: relative; width: 100%; padding-top: 3.8rem; padding-bottom: 3rem">
-<nav class="breadcrumb" aria-label="Breadcrumb" style="display: flex; gap: .5em; flex-wrap: wrap; font-size: .82rem; color: #FAF6F2; margin-bottom: 1.4rem"><a href="index.html" style="color: #C6EBCA">Home</a><span>/</span><a href="partner-invest.html" style="color: #C6EBCA">Partner With Us</a><span>/</span>Corporate partnerships</nav>
-<span class="ey" style="color: #C6EBCA">Corporate partnerships</span>
-<h1 style="color: #FAF6F2; max-width: 19ch">Big conservation commitments need a partner who can deliver them.</h1>
-<p class="lede" style="color: rgba(250,246,242,.9); max-width: 60ch; font-size: clamp(1rem,1.3vw,1.15rem); margin: 0 0 1.8rem">We work with businesses ready to commit serious capital to conservation of national significance, from securing land for new national parks to restoring habitat across whole regions.</p>
-<div style="display: flex; gap: 1rem; flex-wrap: wrap"><a class="btn" href="partner-invest.html#opportunities" style="background: #F8EEA9; color: #0F3132">Explore Opportunities</a><a class="btn btn-ol" href="#talk" style="border-color: rgba(250,246,242,.75); color: #FAF6F2">Enquire About a Partnership</a></div>
+<section id="top" class="hero" style="--hero-pos:60% 50%; --hero-scrim:linear-gradient(97deg, rgba(15,49,50,.95) 0%, rgba(15,49,50,.88) 32%, rgba(15,49,50,.45) 60%, rgba(15,49,50,.08) 100%)">
+<img fetchpriority="high" src="assets/img/partner-hero-site-visit.jpg" alt="Partners and our team on a site visit, looking out over rows of newly planted tree guards on a restoration site">
+<div class="cw">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="partner-invest.html">Partner With Us</a><span>/</span>Corporate partnerships</nav>
+<span class="ey">Corporate partnerships</span>
+<h1 style="max-width: 19ch">Big conservation commitments need a partner who can deliver them.</h1>
+<p class="lede" style="max-width: 60ch">We work with businesses ready to commit serious capital to conservation of national significance, from securing land for new national parks to restoring habitat across whole regions.</p>
+<div class="hero-btns"><a class="btn btn-l" href="partner-invest.html#opportunities">Explore Opportunities</a><a class="btn btn-ol" href="#talk">Enquire About a Partnership</a></div>
 </div>
-<span style="position: absolute; right: .55rem; bottom: .45rem; font-size: .64rem; color: rgba(250,246,242,.92); text-shadow: 0 1px 3px rgba(0,0,0,.65)"></span>
 </section>
 <section class="sec strip" id="logos" style="background: #fff">
 <div class="cw"><div class="lmq-head"><span class="ey">Our partners</span><button type="button" class="lmq-pause" id="lmqBtn" aria-controls="lmq" aria-label="Pause partner logos"><span class="lmq-ic" aria-hidden="true"></span><span class="lmq-tx">Pause</span></button></div></div>

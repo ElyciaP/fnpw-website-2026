@@ -39,9 +39,8 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
         f.write(html)
 
 def crumb(label):
-    return ('<nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);'
-            'margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a>'
-            f'<span style="opacity:.4">/</span>{label}</nav>')
+    return ('<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>'
+            f'<span>/</span>{label}</nav>')
 
 U_ = 'https://fnpw.org.au/wp-content/uploads/'
 # crumb label -> photographic hero (image, alt). Pages not listed fall back to flat.
@@ -73,7 +72,7 @@ def hero(ey, h1, lede, crumb_label):
     if crumb_label in HERO_IMGS:
         img, alt = HERO_IMGS[crumb_label]
         return hero_img(ey, h1, lede, crumb_label, img, alt)
-    return f'''<section class="ch">
+    return f'''<section class="hero flat light ch">
   <div class="cw rv">
     {crumb(crumb_label)}
     <span class="ey">{ey}</span>
@@ -83,7 +82,7 @@ def hero(ey, h1, lede, crumb_label):
 </section>'''
 
 def hero_img(ey, h1, lede, crumb_label, img, alt):
-    return f'''<section class="ch chi" style="--chi:url('{img}')">
+    return f'''<section class="hero ch chi" style="--chi:url('{img}')">
   <div class="cw rv">
     {crumb(crumb_label)}
     <span class="ey">{ey}</span>
