@@ -87,15 +87,22 @@ p{margin-bottom:1em}p:last-child{margin-bottom:0}
 .dd a:hover{background:var(--euc-pale);color:var(--euc-deep);opacity:1}
 .dd a.on{background:var(--euc-pale);color:var(--euc-deep);font-weight:600}
 
-/* Buttons */
-.btn{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;min-height:48px;border-radius:0;border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;letter-spacing:.01em;white-space:nowrap;text-decoration:none}
+/* ---- Buttons (WP4): one spec. Sora 600, .9rem, 48px minimum, sharp. Sentence case is a deliberate
+   web exception to the guideline's uppercase buttons (recorded in NOTES-wp4.md). The nav button is 44px (WP1). ---- */
+.btn,.btn-p,.btn-o,.btn-s,.btn-g,.btn-l,.btn-ol{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--ff-d);font-size:.9rem;font-weight:600;line-height:1.2;padding:.8em 1.5em;min-height:48px;border-radius:0;border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;letter-spacing:.01em;white-space:nowrap;text-decoration:none}
 .btn-p{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
 .btn-p:hover{background:var(--euc);border-color:var(--euc);opacity:1;transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(10,42,43,.4)}
 .btn-o{background:transparent;color:var(--euc-deep);border-color:var(--euc-deep)}
 .btn-o:hover{background:var(--euc-deep);color:var(--cream);opacity:1}
 .btn-s{background:var(--euc-deep);color:var(--cream)}
 .btn-s:hover{background:var(--euc);opacity:1}
-.btn-g{padding:.5em 0;min-height:0;border-bottom:1.5px solid currentColor;border-radius:0;color:var(--euc-deep)}
+/* light pair for dark panels and photographic heroes */
+.btn-l{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.btn-l:hover{background:var(--euc-soft);border-color:var(--euc-soft);color:var(--euc-deep);opacity:1}
+.btn-ol{background:transparent;color:var(--cream);border-color:rgba(250,246,242,.75)}
+.btn-ol:hover{background:var(--cream);color:var(--euc-deep);border-color:var(--cream);opacity:1}
+/* ghost: text with a rule under it, same type as the other buttons */
+.btn-g{padding:.5em 0;min-height:0;border:0;border-bottom:1.5px solid currentColor;color:var(--euc-deep);white-space:normal}
 .btn-g::after{content:"→";display:inline-block;transition:.25s}
 .btn-g:hover{opacity:1;color:var(--euc)}.btn-g:hover::after{transform:translateX(4px)}
 
@@ -415,10 +422,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .pg{grid-template-columns:repeat(3,1fr)}
 @media(max-width:980px){.pg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.pg{grid-template-columns:1fr}}
-/* buttons keep their base even without .btn */
-.btn-p,.btn-o{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;font-weight:500;padding:.85em 1.6em;min-height:48px;border-radius:0;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:all .18s ease}
-.btn-o{border-color:var(--euc-deep)}
-.btn-p{border-color:var(--euc-deep)}
 /* dark sections: readable text, visible buttons */
 .sec.dark{color:var(--cream)}
 .sec.dark h2,.sec.dark h3{color:var(--cream)}
@@ -788,7 +791,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .cv-form input,.cv-form select,.cv-form textarea{width:100%;padding:.8em 1em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink)}
 .cv-form input:focus,.cv-form select:focus,.cv-form textarea:focus{outline:none;border-color:var(--euc);background:var(--white)}
 .cv-form textarea{min-height:96px;resize:vertical}
-.cv-form button{width:100%;padding:1em 1.4em;background:var(--euc-deep);color:var(--cream);border:0;border-radius:0;font-weight:700;cursor:pointer;font-family:var(--ff-b);font-size:.92rem}
+.cv-form button{width:100%;padding:.8em 1.5em;min-height:48px;background:var(--euc-deep);color:var(--cream);border:0;border-radius:0;font-weight:600;cursor:pointer;font-family:var(--ff-d);font-size:.9rem;letter-spacing:.01em}
 .cv-form button:hover{background:var(--euc)}
 .cv-form-note{font-size:.82rem;color:var(--stone);margin-top:.9rem}
 @media(max-width:620px){.cv-form-r{grid-template-columns:1fr}}
@@ -823,8 +826,8 @@ input,select,textarea,.psel,.btn-o,.fp{border-color:var(--bark-mid)}
 .btn-p.btn-don:hover,.sec.dark .btn-p.btn-don:hover,.chi .btn-p.btn-don:hover,.nh .btn-p.btn-don:hover,.ph .btn-p.btn-don:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--cream)}
 /* Placeholder captions */
 p.gt-cert-cap{background:var(--wattle-soft)!important;color:var(--soil-deep)!important;padding:.5em .8em;display:inline-block}
-.pa-btn.btn-don,.btn.btn-p.btn-don{background:var(--waratah)!important;border-color:var(--waratah)!important;color:var(--cream)!important}
-.pa-btn.btn-don:hover,.btn.btn-p.btn-don:hover{background:var(--waratah-dk)!important;border-color:var(--waratah-dk)!important}
+.btn.btn-p.btn-don{background:var(--waratah)!important;border-color:var(--waratah)!important;color:var(--cream)!important}
+.btn.btn-p.btn-don:hover{background:var(--waratah-dk)!important;border-color:var(--waratah-dk)!important}
 /* Closing call-to-action band: one step lighter than the footer (same Eucalyptus family) so the two read as separate blocks */
 /* Closing CTA band: warm Sand so the Waratah Donate button reads cleanly (was mid Eucalyptus, which clashed with the red) */
 main > section.sec.dark:last-child{background:var(--sand);border-top:1px solid var(--rule)}
@@ -837,8 +840,6 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 .pc-pb.pb-parks{background:var(--euc);color:var(--cream)}
 .pc-pb.pb-species{background:var(--waratah);color:var(--cream)}
 .pc-pb.pb-healing{background:var(--bark);color:var(--cream)}
-/* Centre button labels when a button is given a min-width */
-.btn-p,.btn-o{justify-content:center}
 /* HubSpot embed fallback message (shown only if the form fails to load) */
 .hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:1rem 1.2rem;margin-top:1rem}
 .hsform-fallback a{color:var(--euc-deep);font-weight:600;text-decoration:underline}
