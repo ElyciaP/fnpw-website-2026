@@ -11,261 +11,122 @@
 <link rel="stylesheet" href="assets/css/global.css">
 <style>
 /* ============ homepage 2026 (hx-), page-scoped, becomes front-page.php ============ */
+/* Spacing uses the global tokens only (--sec-md, --sec-sm, --sp-1..6). The hero h1 is the one display size on this page. */
+
+/* The sitewide fixed noise overlay (body::before in global.css) sat over the hero image and, with the old marquee,
+   stopped Chromium from reporting an LCP candidate on this page. It is switched off on the homepage only. */
+body::before{display:none}
 
 /* --- hero --- */
-.hx-hero{position:relative;min-height:92vh;display:flex;align-items:flex-start;background:var(--euc-deep);overflow:hidden}
-.hx-hero-bg{position:absolute;inset:0;background:#EBF7F7}
-.hx-hero-bg img{position:absolute;left:0;top:6%;width:100%;height:100%;object-fit:cover;object-position:15% 44%;opacity:1}
-.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,0.95) 0%,rgba(15,49,50,0.94) 12%,rgba(15,49,50,0.91) 20%,rgba(15,49,50,0.85) 27%,rgba(15,49,50,0.77) 33%,rgba(15,49,50,0.66) 39%,rgba(15,49,50,0.53) 44%,rgba(15,49,50,0.39) 49%,rgba(15,49,50,0.26) 53%,rgba(15,49,50,0.15) 57%,rgba(15,49,50,0.07) 61%,rgba(15,49,50,0.02) 65%,rgba(15,49,50,0) 68%),linear-gradient(180deg,rgba(15,49,50,.18) 0%,rgba(15,49,50,.1) 10%,rgba(15,49,50,.03) 20%,rgba(15,49,50,0) 28%,rgba(15,49,50,0) 66%,rgba(15,49,50,.08) 76%,rgba(15,49,50,.22) 86%,rgba(15,49,50,.38) 94%,rgba(15,49,50,.45) 100%)}
-.hx-hero .cw{position:relative;padding-bottom:7rem;padding-top:clamp(6rem,20vh,11rem);width:100%}
-/* Phones keep the original bottom-aligned layout and heavier scrim so the text stays legible over the bright sky */
-@media(max-width:760px){.hx-hero{align-items:flex-end}.hx-hero-bg img{object-position:50% 44%;top:0}.hx-hero-bg::after{background:linear-gradient(90deg,rgba(15,49,50,.96) 0%,rgba(15,49,50,.9) 28%,rgba(15,49,50,.52) 46%,rgba(15,49,50,0) 66%),linear-gradient(180deg,rgba(15,49,50,.4) 0%,rgba(15,49,50,.15) 38%,rgba(15,49,50,.85) 100%)}.hx-hero .cw{padding-top:9rem;padding-bottom:5.5rem}}
-.hx-kicker{display:inline-flex;align-items:center;gap:.6rem;color:var(--euc-soft);font-family:var(--ff-d);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem}
-.hx-kicker::before{content:"";width:2.2rem;height:2px;background:var(--euc-soft)}
-.hx-h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.6rem,6.5vw,5.4rem);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:13ch;margin:0 0 1.4rem}
+.hx-hero{position:relative;min-height:min(70vh,760px);display:flex;align-items:center;background:var(--euc-deep);overflow:hidden}
+.hx-hero-bg{position:absolute;inset:0;background:var(--euc-pale)}
+.hx-hero-bg img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:15% 44%}
+.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.92) 16%,rgba(15,49,50,.8) 30%,rgba(15,49,50,.55) 44%,rgba(15,49,50,.25) 55%,rgba(15,49,50,.05) 64%,rgba(15,49,50,0) 70%),linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,0) 30%,rgba(15,49,50,0) 70%,rgba(15,49,50,.35) 100%)}
+.hx-hero .cw{padding-top:var(--hero-top);padding-bottom:var(--hero-bot);width:100%}
+.hx-h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:13ch;margin:0 0 var(--sp-3);text-shadow:0 2px 26px rgba(15,49,50,.4)}
 .hx-h1 .wild{color:var(--euc-soft)}
-.hx-lede{color:rgba(250,246,242,.88);font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:40ch;line-height:1.6;margin-bottom:2.2rem}
-.hx-hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-.hx-btn{font-family:var(--ff-d);font-weight:600;font-size:1rem;padding:1rem 2rem;border-radius:0;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;display:inline-block}
-.hx-btn:hover{transform:translateY(-2px)}
-.hx-btn-don{background:var(--waratah);color:var(--cream);box-shadow:0 10px 30px -10px rgba(194,55,71,.5)}
-.hx-btn-ghost{border:1.5px solid rgba(250,246,242,.55);color:var(--cream)}
-.hx-btn-ghost:hover{border-color:var(--cream);background:rgba(250,246,242,.08)}
-/* organic bottom edge */
-.hx-hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:70px}
+.hx-lede{color:rgba(250,246,242,.88);max-width:52ch;margin:0 0 var(--sp-4)}
+.hx-hero-cta{display:flex;gap:var(--sp-2);flex-wrap:wrap;align-items:center}
+.hx-hero .btn-p,.hx-hero .btn-o{font-size:.95rem}
+.hx-hero .btn-o{color:var(--cream);border-color:rgba(250,246,242,.65)}
+.hx-hero .btn-o:hover{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
+.hx-hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:56px;z-index:1}
 .hx-hero-curve svg{display:block;width:100%;height:100%}
+@media(max-width:760px){
+  .hx-hero{min-height:520px;align-items:flex-end}
+  .hx-hero-bg img{object-position:50% 40%}
+  .hx-hero-bg::after{background:linear-gradient(90deg,rgba(15,49,50,.9) 0%,rgba(15,49,50,.6) 40%,rgba(15,49,50,0) 70%),linear-gradient(180deg,rgba(15,49,50,.35) 0%,rgba(15,49,50,.1) 35%,rgba(15,49,50,.88) 100%)}
+  .hx-hero .cw{padding-top:var(--sec-md);padding-bottom:calc(var(--hero-bot) + var(--sp-3))}
+}
 
-/* --- species ticker --- */
-.hx-tickwrap{background:var(--cream);border-bottom:1px solid var(--rule);overflow:hidden;padding:1.05rem 0}
-.hx-tick{display:flex;gap:3.2rem;width:max-content;animation:hxtick 46s linear infinite;font-family:var(--ff-d);font-weight:600;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;color:var(--euc)}
-.hx-tick span{display:flex;align-items:center;gap:3.2rem;white-space:nowrap}
-.hx-tick i{font-style:normal;font-size:0;line-height:0;display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--waratah);flex:0 0 7px}
-@keyframes hxtick{to{transform:translateX(-50%)}}
+/* --- species row: static on desktop, hidden on phones (the old 46s marquee is gone) --- */
+.hx-tickwrap{display:none;background:var(--cream);border-bottom:1px solid var(--rule);padding:var(--sp-2) 0}
+.hx-tick{display:flex;flex-wrap:wrap;justify-content:center;column-gap:var(--sp-4);row-gap:var(--sp-1);font-family:var(--ff-d);font-weight:600;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--euc)}
+.hx-tick li{display:flex;align-items:center;gap:var(--sp-2);white-space:nowrap}
+.hx-tick li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--waratah)}
+.hx-tick li:first-child::before{display:none}
+@media(min-width:980px){.hx-tickwrap{display:block}}
 
-/* --- editorial statement --- */
-.hx-state{padding:var(--sec-md) 0 var(--sp-5);background:var(--cream);position:relative}
-.hx-state-g{display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-.hx-state-g.hx-state-solo{grid-template-columns:1fr;max-width:980px;margin:0 auto;text-align:center}
-.hx-state-solo h2{max-width:26ch;margin:1.1rem auto 0}
-.hx-state-solo .ey{justify-content:center}
-.hx-state h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.22;letter-spacing:-.02em;color:var(--euc-deep);max-width:24ch}
-.hx-state h2 em{font-style:normal;color:var(--euc)}
-.hx-note{font-family:var(--ff-b);font-size:1.17rem;color:var(--bark);display:inline-block;margin-top:1.6rem;font-weight:700}
+/* --- doorways: why we exist, supporters and partners, Give a Tree strip --- */
+.door-head{text-align:center;max-width:980px;margin:0 auto var(--sp-5)}
+.door-head h2{max-width:26ch;margin-left:auto;margin-right:auto}
+.door-head h2 em{font-style:normal;color:var(--euc)}
+.door-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3)}
+.door-c{display:block;padding:var(--sp-4);border:1px solid var(--rule);background:var(--white);text-decoration:none;color:inherit;border-top:4px solid var(--waratah)}
+.door-c2{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep);border-top-color:var(--euc-mid)}
+.door-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--euc)}
+.door-c2 .door-k{color:var(--euc-soft)}
+.door-c h3{margin:var(--sp-1) 0;color:var(--euc-deep)}
+.door-c2 h3{color:var(--cream)}
+.door-c p{font-size:.94rem;line-height:1.55;color:var(--char);margin:0 0 var(--sp-2)}
+.door-c2 p{color:rgba(250,246,242,.85)}
+.door-go{font-weight:700;font-size:.9rem;color:var(--euc)}
+.door-c2 .door-go{color:var(--euc-soft)}
+/* seasonal strip: thin band, sand background, same rhythm as .sec.strip */
+.gat-strip{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-3);padding:var(--sec-sm) var(--sp-4);background:var(--sand);border-left:4px solid var(--bark)}
+.gat-strip p{margin:0;max-width:60ch;color:var(--char)}
+.gat-strip strong{font-family:var(--ff-d);font-weight:700;color:var(--euc-deep)}
+.gat-strip-act{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap}
+.gat-note{font-size:.85rem;color:var(--stone);white-space:nowrap}
+@media(max-width:760px){.door-head{margin-bottom:var(--sp-4)}.door-g{grid-template-columns:1fr;gap:var(--sp-2)}.door-c{padding:var(--sp-3)}.gat-strip{padding:var(--sp-3)}}
 
-/* --- pillars: expanding panels --- */
-.hx-pils{padding:var(--sec-md) 0;background:var(--cream)}
-.hx-pils-head{margin-bottom:2.4rem}
-.hx-pilrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+/* --- pillars --- */
+.hx-pils-head{margin-bottom:var(--sp-5)}
+.hx-pilrow{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4)}
 .hx-pil{display:block;text-decoration:none;color:inherit}
-.hx-pil-im{aspect-ratio:4/3;overflow:hidden;background:var(--euc-pale)}
+.hx-pil-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--euc-pale)}
 .hx-pil-im img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .hx-pil:hover .hx-pil-im img{transform:scale(1.04)}
-.hx-pil-bar{display:block;width:46px;height:4px;margin:1.3rem 0 .8rem;background:var(--pilc,var(--euc))}
-.hx-pil h3{font-family:var(--ff-d);font-size:1.3rem;font-weight:700;color:var(--euc-deep);margin:0 0 .5rem}
-.hx-pil p{font-size:.95rem;color:var(--char);max-width:38ch;margin-bottom:.8rem}
+.hx-pil-bar{display:block;width:46px;height:4px;margin:var(--sp-3) 0 var(--sp-2);background:var(--pilc,var(--euc))}
+.hx-pil h3{color:var(--euc-deep);margin:0 0 var(--sp-1)}
+.hx-pil p{font-size:.95rem;color:var(--char);max-width:38ch;margin:0 0 var(--sp-2)}
 .hx-pil-go{display:inline-block;font-family:var(--ff-d);font-weight:600;font-size:.88rem;color:var(--euc);transition:transform .2s ease}
 .hx-pil:hover .hx-pil-go{transform:translateX(4px)}
-@media(max-width:920px){.hx-pilrow{grid-template-columns:1fr}.hx-pil-im{aspect-ratio:16/9}}
+@media(max-width:920px){.hx-pilrow{grid-template-columns:1fr;gap:var(--sp-4)}.hx-pil{display:grid;grid-template-columns:104px 1fr;column-gap:var(--sp-3);row-gap:0;align-items:start}.hx-pil-im{aspect-ratio:1/1;grid-row:1/5}.hx-pil-bar{margin:0 0 var(--sp-1)}.hx-pil p{font-size:.9rem;margin-bottom:var(--sp-1)}}
 
 /* --- impact band --- */
-.hx-impact{position:relative;background:var(--euc-deep);color:var(--cream);padding:var(--sec-md) 0;overflow:hidden}
-.hx-impact .topo{position:absolute;inset:0;opacity:.13;pointer-events:none}
-.hx-imp-h{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--cream);max-width:24ch;margin-top:.8rem}
-.hx-imp-lead{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;align-items:start;padding:1.9rem 0 2rem;border-bottom:1px solid rgba(250,246,242,.18);margin-top:1.6rem}
+.hx-impact{overflow:hidden;padding-bottom:calc(var(--sec-md) + var(--sp-4))}
+.hx-impact h2{max-width:24ch}
+.hx-imp-lead{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-5);align-items:start;padding:var(--sp-4) 0;border-bottom:1px solid rgba(250,246,242,.18);margin-top:var(--sp-4)}
 .hx-imp-ln{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,4.6vw,3.9rem);letter-spacing:-.04em;line-height:.95;color:var(--euc-soft);white-space:nowrap}
-.hx-imp-l p{font-size:1rem;color:rgba(250,246,242,.9);max-width:24ch;line-height:1.45;margin-top:.6rem}
-.hx-imp-u{font-family:var(--ff-b);font-weight:600;font-size:0.27em;color:var(--cream);margin-left:.18em;letter-spacing:0}
-.hx-chip{display:inline-block;font-family:var(--ff-d);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);padding:.32rem .78rem;border-radius:0}
+.hx-imp-l p{font-size:1rem;color:rgba(250,246,242,.9);max-width:24ch;line-height:1.45;margin:var(--sp-1) 0 0}
+.hx-imp-u{font-family:var(--ff-b);font-weight:600;font-size:.27em;color:var(--cream);margin-left:.18em;letter-spacing:0}
+.hx-imp-ic{display:block;margin-bottom:var(--sp-2)}.hx-imp-ic img{height:52px;width:auto;display:block}
+.hx-chip{display:inline-block;font-family:var(--ff-d);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);padding:.5em 1.2em;border-radius:0}
 .hx-chip.pb-healing{background:var(--bark);color:var(--cream)}
-.hx-imp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:2rem;padding-top:1.2rem}
-  .hx-imp-year{margin-top:.6rem}.hx-imp-ic{display:block;margin-bottom:1rem}.hx-imp-ic img{height:52px;width:auto;display:block}
-  .hx-imp-year-l{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-b);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);margin-top:1.7rem}
-  .hx-imp-year-l::before{content:"";width:22px;height:1.5px;background:var(--cream);display:inline-block}
-  .hx-imp-year .hx-imp-g{padding-top:1.4rem}
-.hx-imp-n{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.3rem);letter-spacing:-.03em;color:var(--euc-soft);line-height:1;margin:.6rem 0 .35rem}
-.hx-imp-i p{font-size:.95rem;color:rgba(250,246,242,.85);max-width:26ch;line-height:1.45}
-.hx-imp-src{margin-top:1.9rem;font-size:.85rem;color:rgba(250,246,242,.65)}
+.hx-imp-year-l{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-b);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);margin-top:var(--sp-4)}
+.hx-imp-year-l::before{content:"";width:22px;height:1.5px;background:var(--cream);display:inline-block}
+.hx-imp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:var(--sp-4);padding-top:var(--sp-3)}
+.hx-imp-n{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.3rem);letter-spacing:-.03em;color:var(--euc-soft);line-height:1;margin:var(--sp-2) 0 var(--sp-1)}
+.hx-imp-i p{font-size:.95rem;color:rgba(250,246,242,.85);max-width:26ch;line-height:1.45;margin:0}
+.hx-imp-src{margin-top:var(--sp-4);font-size:.85rem;color:rgba(250,246,242,.65)}
 .hx-imp-src a{color:var(--euc-soft)}
-@media(max-width:820px){.hx-imp-lead{grid-template-columns:1fr;gap:1.6rem}}
-.hx-impact .ey{color:var(--cream)}
-.hx-impact .ey::before{background:var(--cream)}
-
-/* --- projects rail --- */
-.hx-rail-sec{background:var(--sand);padding:var(--sec-md) 0}
-.hx-rail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2rem}
-.hx-rail{display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem .2rem 1.4rem;scrollbar-width:thin;scrollbar-color:var(--euc) transparent}
-.hx-pcard{scroll-snap-align:start;flex:0 0 min(295px,78vw);text-decoration:none;color:inherit}
-.hx-pcard .im{border-radius:0;overflow:hidden;aspect-ratio:3/3.4;position:relative;background:var(--euc-pale)}
-.hx-pcard .im img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
-.hx-pcard:hover .im img{transform:scale(1.06)}
-.hx-pcard .loc{position:absolute;bottom:.9rem;left:.9rem;background:rgba(250,246,242,.92);color:var(--euc-deep);font-family:var(--ff-d);font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.35rem .8rem;border-radius:0}
-.hx-pcard h3{font-family:var(--ff-d);font-size:1.06rem;font-weight:700;color:var(--euc-deep);margin:.9rem .2rem .15rem;line-height:1.25}
-.hx-pcard .pl{font-size:.8rem;color:var(--stone);margin:0 .2rem}
-
-/* --- campaign block --- */
-.hx-camp{background:var(--euc);color:var(--cream);padding:0}
-.cmp-btn-p{display:inline-block;background:var(--wattle-soft);color:var(--soil-deep) !important;padding:1em 1.9em;font-family:var(--ff-d);font-weight:600;font-size:.95rem;transition:.25s;border:none}
-.cmp-btn-p:hover{background:var(--cream);opacity:1}
-.hx-camp-g{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,4rem);align-items:end;min-height:480px}
-.hx-camp-bd{display:flex;flex-direction:column;justify-content:center;gap:1.2rem;padding:5.5rem 0}
-.hx-camp-tag{font-family:var(--ff-d);font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--wattle-soft)}
-.hx-camp-bd h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.08;letter-spacing:-.02em;max-width:16ch}
-.hx-camp-bd p{color:rgba(250,246,242,.88);max-width:44ch}
-.hx-camp-im{align-self:end}
-.hx-camp-im img{display:block;width:100%;max-width:440px;margin:0 auto}
-.hx-camp .prog{background:rgba(250,246,242,.22);max-width:380px;border-radius:999px}
-.hx-camp .prog i{border-radius:999px}
-
-/* --- ways to help pebbles --- */
-.hx-help{padding:6rem 0;background:var(--sand)}
-.hx-help-list{margin-top:2.6rem;border-top:1px solid var(--euc-deep)}
-.hx-row{display:grid;grid-template-columns:90px 1fr auto;gap:clamp(1.2rem,3vw,3rem);align-items:center;padding:1.9rem .8rem;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;position:relative;overflow:hidden}
-.hx-row::before{content:"";position:absolute;inset:0;background:var(--rowc,var(--euc-pale));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,.8,.24,1);z-index:0}
-.hx-row:hover::before,.hx-row:focus-visible::before{transform:scaleX(1)}
-.hx-row>*{position:relative;z-index:1}
-.hx-row-i{font-family:var(--ff-d);font-weight:800;font-size:1.6rem;color:transparent;-webkit-text-stroke:1.3px var(--stone);transition:-webkit-text-stroke-color .3s ease}
-.hx-row:hover .hx-row-i{-webkit-text-stroke-color:var(--euc-deep)}
-.hx-row h3{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.15rem,2vw,1.5rem);color:var(--euc-deep);letter-spacing:-.01em}
-.hx-row p{font-size:.95rem;color:var(--stone);margin-top:.25rem;transition:color .3s ease}
-.hx-row:hover p{color:var(--char)}
-.hx-row-a{font-size:1.5rem;color:var(--euc-deep);transition:transform .3s ease}
-.hx-row:hover .hx-row-a{transform:translateX(8px)}
-.hx-row h3{transition:transform .3s ease}
-.hx-row:hover h3{transform:translateX(6px)}
-.hx-row:hover .hx-row-i{color:var(--euc-deep);-webkit-text-stroke-color:var(--euc-deep)}
-.hx-row-tag{font-family:var(--ff-b);font-style:normal;font-weight:700;font-size:1.17rem;color:var(--bark);margin-left:.65rem;display:inline-block;opacity:0;transition:opacity .3s ease .08s}
-.hx-row:hover .hx-row-tag{opacity:1}
-.hx-row-im{position:absolute;right:120px;top:50%;width:158px;aspect-ratio:4/3;object-fit:cover;border:5px solid var(--cream);box-shadow:0 20px 44px -18px rgba(15,49,50,.5);transform:translateY(-46%) rotate(-8deg) scale(.65);opacity:0;transition:transform .38s cubic-bezier(.22,.8,.24,1),opacity .28s ease;z-index:1;pointer-events:none}
-.hx-row:hover .hx-row-im{opacity:1;transform:translateY(-52%) rotate(-4deg) scale(1)}
-@media(hover:none){
-  /* these two are revealed on hover only, so they never appear on touch */
-  .hx-row-tag{opacity:1}
-  .hx-row-im{opacity:1;transform:translateY(-52%) rotate(-4deg) scale(1)}
-}
-@media(max-width:900px){.hx-row-im{display:none}}
-@media(max-width:700px){.hx-row{grid-template-columns:52px 1fr auto;padding:1.4rem .4rem}.hx-row-i{font-size:1.2rem}}
-
-/* --- story band --- */
-.hx-story{background:var(--cream);padding:var(--sec-md) 0;position:relative;overflow:hidden}
-.hx-ghost{position:absolute;left:-1.5rem;top:1rem;font-family:var(--ff-d);font-weight:800;font-size:clamp(9rem,21vw,18rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--rule);letter-spacing:-.04em;user-select:none;pointer-events:none}
-.hx-story-g{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;position:relative}
-.hx-story-media{position:relative;padding:0 clamp(2rem,4vw,3.4rem) clamp(2rem,4vw,3.4rem) 0}
-.hx-story-media .m1{display:block;width:100%;aspect-ratio:5/6;object-fit:cover}
-.hx-story-media .m2{position:absolute;right:0;bottom:0;width:58%;aspect-ratio:4/3;object-fit:cover;border:8px solid var(--cream);box-shadow:0 26px 60px -26px rgba(15,49,50,.4)}
-.hx-cta{display:inline-flex;align-items:center;gap:1rem;margin-top:1.3rem;font-family:var(--ff-d);font-weight:700;font-size:1.02rem;color:var(--euc-deep);text-decoration:none;transition:color .25s ease}
-.hx-cta-line{position:relative;width:58px;height:2px;background:currentColor;transition:width .3s ease}
-.hx-cta-line::after{content:"";position:absolute;right:0;top:-4.5px;width:10px;height:10px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
-.hx-cta:hover{color:var(--euc)}
-.hx-cta:hover .hx-cta-line{width:92px}
-.hx-story h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--euc-deep);line-height:1.18;margin:.8rem 0 1.2rem}
-.hx-story p{margin-bottom:1rem;max-width:52ch}
-
-/* --- impact report showcase --- */
-.hx-ir{background:var(--reef-soft);padding:var(--sec-md) 0;position:relative;overflow:hidden}
-.hx-ir-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
-.hx-ir-cov{position:relative;justify-self:center;width:min(330px,84%)}
-.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;box-shadow:12px 12px 0 var(--reef-deep);transition:transform .3s ease,box-shadow .3s ease}
-.hx-ir-cov:hover img{transform:translate(-4px,-4px);box-shadow:18px 18px 0 var(--reef-deep)}
-.hx-ir h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--reef-deep);line-height:1.15;margin:.8rem 0 1.2rem;max-width:20ch}
-.hx-ir p{max-width:52ch;margin-bottom:1rem}
-.hx-ir-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid rgba(32,47,84,.28);font-size:.92rem;font-weight:500;color:var(--char)}
-.hx-ir-trust span{display:inline-flex;align-items:center;gap:.45rem}
-.hx-ir-trust i{font-style:normal;color:var(--reef-deep);font-weight:700}
-.hx-ir .ey{color:var(--reef-deep)}
-.hx-ir .ey::before{background:var(--reef-deep)}
-.hx-ir p{color:var(--char)}
-.hx-ir .btn-p{background:var(--reef-deep);color:var(--cream);border-color:var(--reef-deep)}
-.hx-ir .btn-p:hover{background:var(--reef);border-color:var(--reef);color:var(--cream);opacity:1}
-.hx-ir .hx-cta{color:var(--reef-deep)}
-
-/* --- newsletter --- */
-.hx-news{position:relative;overflow:hidden;padding:var(--sec-md) 0;
-  background:radial-gradient(120% 90% at 50% -10%, #FAF6F2 0%, var(--cream) 42%, var(--sand) 100%);
-  border-top:1px solid var(--rule)}
-.hx-news .topo2{position:absolute;right:-50px;top:-20px;width:460px;opacity:.35;pointer-events:none}
-.hx-news-g{position:relative;display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,4vw,3.5rem);align-items:center}
-  .hx-news-g p{max-width:68ch}
-  .hx-news-g .btn-p{padding:1.2em 2.4em;font-size:1.02rem;min-width:250px;text-align:center;white-space:nowrap}
-  @media(max-width:820px){.hx-news-g{grid-template-columns:1fr;gap:1.8rem}}
-.hx-news h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--euc-deep);letter-spacing:-.02em;margin:1rem 0 0}
-main:has(.hx-news)+.ftr{margin-top:0}
-
-/* --- refinements --- */
-.hx-h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em;color:var(--euc-deep)}
-.hx-h1{text-shadow:0 2px 26px rgba(15,49,50,.4)}
-.hx-tickwrap:hover .hx-tick{animation-play-state:paused}
-.hx-rail-nav{display:flex;gap:.6rem;align-items:center}
-.hx-rarr{width:48px;height:48px;border:1.5px solid var(--euc-deep);background:transparent;color:var(--euc-deep);font-size:1.15rem;cursor:pointer;transition:background .2s ease,color .2s ease}
-.hx-rarr:hover{background:var(--euc-deep);color:var(--cream)}
-.hx-impact{padding-bottom:calc(var(--sec-md) + 2rem)}
 .hx-impact-curve{position:absolute;left:0;right:0;bottom:-1px;height:56px}
 .hx-impact-curve svg{display:block;width:100%;height:100%}
-.hx-cap{font-family:var(--ff-b);font-size:1.17rem;color:var(--bark);display:inline-block;margin-top:1rem;font-weight:700}
+@media(max-width:820px){.hx-imp-lead{grid-template-columns:1fr;gap:var(--sp-3)}.hx-imp-l{display:grid;grid-template-columns:52px 1fr;column-gap:var(--sp-2);align-items:center}.hx-imp-ic{grid-row:1/3;margin:0}.hx-imp-ic img{height:44px}.hx-imp-l p{margin-top:0}.hx-imp-g{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--sp-3)}.hx-chip{font-size:.6rem}}
 
-/* --- responsive --- */
-@media(max-width:920px){
-  .hx-state-g,.hx-story-g,.hx-news-g,.hx-ir-g{grid-template-columns:1fr}
-  .hx-camp-g{grid-template-columns:1fr}
-  .hx-camp-im{min-height:230px}
-}
-a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){
-  .hx-tick{animation:none}
-  .hx-pil,.hx-pil img,.hx-pcard .im img{transition:none}
-}
-
-/* PARTNER & INVEST (landscape panorama) ============================ */
-.hx-pt{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:680px;padding-top:var(--sec-md);overflow:hidden;color:var(--cream)}
-.hx-pt-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block}
-.hx-pt::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.72) 42%,rgba(15,49,50,.1) 80%),linear-gradient(0deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,0) 45%)}
-.hx-pt .cw{position:relative;z-index:2;width:100%}
-.hx-pt-cap{position:absolute;right:1.2rem;top:1rem;z-index:2;font-size:.72rem;opacity:.75}
-.hx-pt .ey{color:var(--euc-pale)}.hx-pt .ey::before{background:var(--euc-pale)}
-.hx-pt h2{font-family:var(--ff-d);color:var(--cream);font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;max-width:15ch}
-.hx-pt .lede{color:rgba(250,246,242,.9);max-width:54ch;margin-top:var(--sp-3)}
-.hx-pt-acts{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;margin-top:var(--sp-4)}
-.hx-pt-btn{display:inline-flex;align-items:center;padding:1.05em 2em;font-family:var(--ff-d);font-weight:700;font-size:.9rem;text-decoration:none;background:var(--cream);color:var(--euc-deep);border:1.5px solid var(--cream);transition:background .18s}
-.hx-pt-btn:hover{background:var(--euc-pale);border-color:var(--euc-pale)}
-.hx-pt-talk{font-family:var(--ff-d);font-weight:700;color:var(--cream);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:.15rem}
-.hx-pt-talk:hover{color:var(--euc-pale)}
-.hx-pt-routes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--sp-6);border-top:1px solid rgba(250,246,242,.3)}
-.hx-pt-routes a{display:flex;justify-content:space-between;gap:var(--sp-2);padding:var(--sp-3) var(--sp-3) var(--sp-5) 0;color:var(--cream);text-decoration:none;border-right:1px solid rgba(250,246,242,.18);transition:background .2s}
-.hx-pt-routes a+a{padding-left:var(--sp-3)}.hx-pt-routes a:last-child{border-right:0}
-.hx-pt-routes a:hover b{color:var(--euc-pale)}
-.hx-pt-routes b{font-family:var(--ff-d);font-size:1.12rem;display:block;margin-bottom:.35rem}
-.hx-pt-routes span{font-size:.9rem;opacity:.85;line-height:1.5}
-@media(max-width:900px){
-  .hx-pt{min-height:0}
-  .hx-pt::before{background:linear-gradient(0deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.84) 60%,rgba(15,49,50,.6) 100%)}
-  .hx-pt-cap{left:var(--sp-2);right:auto;top:auto;bottom:.6rem}
-  .hx-pt-routes{grid-template-columns:1fr;margin-top:var(--sp-5)}
-  .hx-pt-routes a,.hx-pt-routes a+a{border-right:0;border-bottom:1px solid rgba(250,246,242,.18);padding:var(--sp-3) 0}
-  .hx-pt-routes a:last-child{margin-bottom:var(--sp-5)}
-}
-
-/* flagship projects */
+/* --- flagship projects --- */
+.hx-rail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-4);flex-wrap:wrap;margin-bottom:var(--sp-4)}
+.hx-rail-lede{font-size:1rem;line-height:1.6;color:var(--char);max-width:52ch;margin:var(--sp-2) 0 0}
 .fl-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--euc-pale)}
 .fl-im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
 .fl-card:hover .fl-im img{transform:scale(1.05)}
-.fl-chip{position:absolute;top:.8rem;left:.8rem;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.4em .8em;color:var(--cream)}
+.fl-chip{position:absolute;top:var(--sp-1);left:var(--sp-1);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.4em .8em;color:var(--cream)}
 .fl-parks{background:var(--euc)}.fl-species{background:var(--waratah)}.fl-healing{background:var(--soil)}
-.fl-loc{position:absolute;bottom:.8rem;left:.8rem;background:rgba(250,246,242,.92);color:var(--euc-deep);font-family:var(--ff-d);font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.3rem .7rem}
+.fl-loc{position:absolute;bottom:var(--sp-1);left:var(--sp-1);background:rgba(250,246,242,.92);color:var(--euc-deep);font-family:var(--ff-d);font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.4em 1em}
 .fl-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--rule)}
-.fl-bd{padding:1.1rem 1.15rem 1.2rem;display:flex;flex-direction:column;flex:1}
-.fl-bd h3{font-family:var(--ff-d);font-size:1.04rem;font-weight:700;color:var(--euc-deep);line-height:1.25;margin:0 0 .45rem}
-.fl-bd p{font-size:.88rem;line-height:1.5;color:var(--char);margin:0 0 .9rem;flex:1}
+.fl-bd{padding:var(--sp-3);display:flex;flex-direction:column;flex:1}
+.fl-bd h3{color:var(--euc-deep);line-height:1.2;margin:0 0 var(--sp-1)}
+.fl-bd p{font-size:.88rem;line-height:1.5;color:var(--char);margin:0 0 var(--sp-2);flex:1}
 .fl-go{font-size:.82rem;font-weight:600;color:var(--euc)}
-@media(prefers-reduced-motion:reduce){.fl-im img{transition:none}}
-
-/* flagship slider */
 .fls-wrap{position:relative}
-.fls-track{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:.3rem .1rem 1rem;scrollbar-width:none}
+.fls-track{display:flex;gap:var(--sp-3);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:var(--sp-1) 0 var(--sp-2);scrollbar-width:none}
 .fls-track::-webkit-scrollbar{display:none}
-.fls-track .fl-card{flex:0 0 calc((100% - 3*1.2rem)/4);scroll-snap-align:start}
-@media(max-width:1100px){.fls-track .fl-card{flex-basis:calc((100% - 2*1.2rem)/3)}}
-@media(max-width:820px){.fls-track .fl-card{flex-basis:calc((100% - 1.2rem)/2)}}
+.fls-track .fl-card{flex:0 0 calc((100% - 3*var(--sp-3))/4);scroll-snap-align:start}
+@media(max-width:1100px){.fls-track .fl-card{flex-basis:calc((100% - 2*var(--sp-3))/3)}}
+@media(max-width:820px){.fls-track .fl-card{flex-basis:calc((100% - var(--sp-3))/2)}}
 @media(max-width:520px){.fls-track .fl-card{flex-basis:82%}}
-.fls-bar{display:flex;align-items:center;gap:1.2rem;margin-top:1rem}
+.fls-bar{display:flex;align-items:center;gap:var(--sp-3);margin-top:var(--sp-2)}
 .fls-prog{flex:1;height:3px;background:var(--rule);position:relative;overflow:hidden}
 .fls-prog i{position:absolute;left:0;top:0;bottom:0;background:var(--euc-deep);width:33%;transition:left .3s ease,width .3s ease}
 .fls-count{font-family:var(--ff-d);font-size:.86rem;font-weight:600;color:var(--euc-deep);min-width:5.5ch;text-align:right}
@@ -273,40 +134,61 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 .fls-btn:hover{background:var(--euc-deep);color:var(--cream)}
 .fls-btn[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--euc-deep)}
 
-.hx-rail-lede{font-size:1rem;line-height:1.6;color:var(--char);max-width:52ch;margin-top:.8rem}
+/* --- partner & invest (landscape band, photo with deep scrim) --- */
+.hx-pt{position:relative;overflow:hidden;color:var(--cream);padding:var(--sec-md) 0}
+.hx-pt-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block}
+.hx-pt::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.72) 42%,rgba(15,49,50,.1) 80%),linear-gradient(0deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,0) 45%)}
+.hx-pt .cw{position:relative;z-index:2;width:100%}
+.hx-pt-cap{position:absolute;right:var(--sp-2);top:var(--sp-2);z-index:2;font-size:.72rem;opacity:.75}
+.hx-pt .ey{color:var(--euc-pale)}.hx-pt .ey::before{background:var(--euc-pale)}
+.hx-pt h2{color:var(--cream);max-width:15ch}
+.hx-pt .lede{color:rgba(250,246,242,.9);max-width:54ch;margin-top:var(--sp-3)}
+.hx-pt-acts{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;margin-top:var(--sp-4)}
+.hx-pt-btn{display:inline-flex;align-items:center;padding:1.05em 2em;font-family:var(--ff-d);font-weight:700;font-size:.9rem;text-decoration:none;background:var(--cream);color:var(--euc-deep);border:1.5px solid var(--cream);transition:background .18s}
+.hx-pt-btn:hover{background:var(--euc-pale);border-color:var(--euc-pale)}
+.hx-pt-talk{font-family:var(--ff-d);font-weight:700;color:var(--cream);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:.15em}
+.hx-pt-talk:hover{color:var(--euc-pale)}
+.hx-pt-routes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--sp-6);border-top:1px solid rgba(250,246,242,.3)}
+.hx-pt-routes a{display:flex;justify-content:space-between;gap:var(--sp-2);padding:var(--sp-3) var(--sp-3) 0 0;color:var(--cream);text-decoration:none;border-right:1px solid rgba(250,246,242,.18)}
+.hx-pt-routes a+a{padding-left:var(--sp-3)}.hx-pt-routes a:last-child{border-right:0}
+.hx-pt-routes a:hover b{color:var(--euc-pale)}
+.hx-pt-routes b{font-family:var(--ff-d);font-size:1.12rem;display:block;margin-bottom:var(--sp-1)}
+.hx-pt-routes span{font-size:.9rem;opacity:.85;line-height:1.5}
+@media(max-width:900px){
+  .hx-pt::before{background:linear-gradient(0deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.84) 60%,rgba(15,49,50,.6) 100%)}
+  .hx-pt-cap{left:var(--sp-2);right:auto;top:auto;bottom:var(--sp-1)}
+  .hx-pt-routes{grid-template-columns:1fr;margin-top:var(--sp-5)}
+  .hx-pt-routes a,.hx-pt-routes a+a{border-right:0;border-bottom:1px solid rgba(250,246,242,.18);padding:var(--sp-3) 0}
+  .hx-pt-routes a:last-child{border-bottom:0;padding-bottom:0}
+}
 
-.vc-pils{padding-top:var(--sec-md)}
+/* --- since 1970: story and Impact Report, one section --- */
+.hx-story .two{grid-template-columns:.8fr 1.2fr;gap:clamp(var(--sp-5),6vw,var(--sp-6))}
+.hx-ir-cov{position:relative;justify-self:center;width:min(330px,84%)}
+.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;height:auto;box-shadow:12px 12px 0 var(--euc-deep);transition:transform .3s ease,box-shadow .3s ease}
+.hx-ir-cov:hover img{transform:translate(-4px,-4px);box-shadow:18px 18px 0 var(--euc-deep)}
+.hx-story p{max-width:52ch;margin:0 0 var(--sp-2)}
+.hx-story .ey + h2{margin-bottom:var(--sp-3)}
+.hx-story .hx-quote{margin-top:var(--sp-4)}
+.hx-story-acts{display:flex;gap:var(--sp-2);flex-wrap:wrap;align-items:center;margin-top:var(--sp-4)}
+.hx-story-more{margin-top:var(--sp-3)}
+.hx-ir-trust{display:flex;gap:var(--sp-4);flex-wrap:wrap;margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid var(--rule);font-size:.92rem;font-weight:500;color:var(--char)}
+.hx-ir-trust span{display:inline-flex;align-items:center;gap:.45em}
+.hx-ir-trust i{font-style:normal;color:var(--euc-deep);font-weight:700}
+@media(max-width:880px){.hx-story .two{grid-template-columns:1fr;gap:var(--sp-4)}.hx-ir-cov{width:min(170px,50%);justify-self:start}.hx-story .hx-quote{margin-top:var(--sp-3)}}
 
-.door{background:var(--cream);padding:0 0 var(--sec-md)}
-.door-g{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.door-c{display:block;padding:1.6rem 1.8rem;border:1px solid var(--rule);background:var(--white);text-decoration:none;color:inherit;border-top:4px solid var(--waratah)}
-.door-c2{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep);border-top-color:var(--euc-mid)}
-.door-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--euc)}
-.door-c2 .door-k{color:var(--euc-soft)}
-.door-c h3{font-family:var(--ff-d);font-size:1.35rem;margin:.5rem 0 .4rem;color:var(--euc-deep)}
-.door-c2 h3{color:var(--cream)}
-.door-c p{font-size:.94rem;line-height:1.55;color:var(--char);margin:0 0 .8rem}
-.door-c2 p{color:rgba(250,246,242,.85)}
-.door-go{font-weight:700;font-size:.9rem;color:var(--euc)}
-.door-c2 .door-go{color:var(--euc-soft)}
-@media(max-width:760px){.door-g{grid-template-columns:1fr}}
-.hx-lede-w{max-width:52ch!important}
-/* --- Give a Tree photo band (Christmas appeal, Nov 2026) --- */
-.hx-gat{position:relative;background:var(--soil-deep);color:var(--cream);overflow:hidden}
-.hx-gat-im{position:absolute;top:0;right:0;bottom:0;width:50%;background:var(--soil)}
-.hx-gat-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
-.hx-gat-im::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,25,20,1) 0%,rgba(36,25,20,.7) 9%,rgba(36,25,20,0) 24%)}
-.hx-gat .cw{min-height:400px;display:flex;align-items:center;padding-top:var(--sec-md);padding-bottom:var(--sec-md)}
-.hx-gat-bd{max-width:min(540px,calc(50vw - 4.5rem));display:flex;flex-direction:column;gap:1.1rem}
-.hx-gat h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.08;letter-spacing:-.02em;color:var(--cream);max-width:14ch}
-.hx-gat p{margin:0;max-width:46ch;color:rgba(250,246,242,.88)}
-.hx-gat-cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:.5rem}
-.hx-gat-note{font-size:.88rem;color:rgba(250,246,242,.78)}
-@media(max-width:760px){
-  .hx-gat-im{position:relative;width:100%;height:260px}
-  .hx-gat-im::after{background:linear-gradient(0deg,rgba(36,25,20,1) 0%,rgba(36,25,20,0) 40%)}
-  .hx-gat .cw{min-height:0;padding-top:var(--sp-3);padding-bottom:var(--sec-md)}
-  .hx-gat-bd{max-width:none}
+/* --- newsletter strip --- */
+.hx-news{border-top:1px solid var(--rule)}
+.hx-news-g{display:grid;grid-template-columns:1fr auto;gap:clamp(var(--sp-4),4vw,var(--sp-6));align-items:center}
+.hx-news-g p{max-width:68ch;margin:var(--sp-3) 0 0}
+.hx-news-g .btn-p{min-width:250px;white-space:nowrap}
+@media(max-width:820px){.hx-news-g{grid-template-columns:1fr;gap:var(--sp-4)}}
+main:has(.hx-news)+.ftr{margin-top:0}
+
+/* --- shared --- */
+a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  .hx-pil-im img,.fl-im img,.hx-ir-cov img,.hx-pil-go{transition:none}
 }
 </style>
 </head>
@@ -370,91 +252,73 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 </header><!-- /@header -->
 <main id="main">
 
-<!-- HERO ============================================================ -->
+<!-- 1. HERO ========================================================== -->
 <section class="hx-hero">
   <div class="hx-hero-bg">
-    <img src="assets/img/hero-beeeaters.jpg" alt="Two rainbow bee-eaters on a branch">
+    <img src="assets/img/hero-beeeaters.jpg" alt="Two rainbow bee-eaters on a branch" width="2200" height="1405" fetchpriority="high" decoding="async">
   </div>
   <div class="cw rv">
     <h1 class="hx-h1">Keeping Australia <span class="wild">wild</span> since 1970</h1>
-    <p class="hx-lede hx-lede-w">We bring First Nations organisations, government, communities and funders together to protect Australia&rsquo;s most important landscapes and wildlife, from first opportunity to measurable impact.</p>
+    <p class="lede hx-lede">We bring First Nations organisations, government, communities and funders together to protect Australia&rsquo;s most important landscapes and wildlife, from first opportunity to measurable impact.</p>
     <div class="hx-hero-cta">
-      <a class="hx-btn hx-btn-don" href="https://bush.fnpw.org.au">Donate</a>
-      <a class="hx-btn hx-btn-ghost" href="partner-invest.html">Partner with us</a>
+      <a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a>
+      <a class="btn-o" href="partner-invest.html">Partner with us</a>
     </div>
   </div>
   <div class="hx-hero-curve" aria-hidden="true">
-    <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,70 L0,40 C240,0 480,55 720,38 C960,20 1200,52 1440,22 L1440,70 Z" fill="var(--cream)"/></svg>
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,32 C240,0 480,44 720,30 C960,16 1200,42 1440,18 L1440,56 Z" fill="var(--cream)"/></svg>
   </div>
 </section>
 
-<!-- SPECIES TICKER ================================================== -->
+<!-- species row (desktop only, static) -->
 <div class="hx-tickwrap" aria-hidden="true">
-  <div class="hx-tick">
-    <span>Koalas <i>&#10047;</i> Little Penguins <i>&#10047;</i> Woylies <i>&#10047;</i> Enigma Moths <i>&#10047;</i> Bilbies <i>&#10047;</i> Northern Quolls <i>&#10047;</i> Malleefowl <i>&#10047;</i> Orange-bellied Parrots <i>&#10047;</i> Mountain Pygmy-possums <i>&#10047;</i> Eastern Bristlebirds <i>&#10047;</i> Western Swamp Tortoises <i>&#10047;</i></span>
-    <span>Koalas <i>&#10047;</i> Little Penguins <i>&#10047;</i> Woylies <i>&#10047;</i> Enigma Moths <i>&#10047;</i> Bilbies <i>&#10047;</i> Northern Quolls <i>&#10047;</i> Malleefowl <i>&#10047;</i> Orange-bellied Parrots <i>&#10047;</i> Mountain Pygmy-possums <i>&#10047;</i> Eastern Bristlebirds <i>&#10047;</i> Western Swamp Tortoises <i>&#10047;</i></span>
-  </div>
+  <ul class="hx-tick">
+    <li>Koalas</li><li>Little Penguins</li><li>Woylies</li><li>Enigma Moths</li><li>Bilbies</li><li>Northern Quolls</li><li>Malleefowl</li><li>Orange-bellied Parrots</li><li>Mountain Pygmy-possums</li><li>Eastern Bristlebirds</li><li>Western Swamp Tortoises</li>
+  </ul>
 </div>
 
-<!-- STATEMENT ======================================================= -->
-<section class="hx-state">
+<!-- 2. DOORWAYS: SUPPORTERS AND PARTNERS ============================== -->
+<section class="sec door">
   <div class="cw">
-    <div class="hx-state-g hx-state-solo">
-      <div class="rv">
-        <span class="ey">Why we exist</span>
-        <h2>Australia is home to life that exists <em>nowhere else on Earth</em>. Together, we can keep it that way.</h2>
-      </div>
+    <div class="door-head rv">
+      <span class="ey">Why we exist</span>
+      <h2>Australia is home to life that exists <em>nowhere else on Earth</em>. Together, we can keep it that way.</h2>
+    </div>
+    <div class="door-g rv d1">
+      <a class="door-c" href="ways-you-can-get-involved.html"><span class="door-k">For supporters</span><h3>Give, volunteer or leave a gift</h3><p>Donate, Give a Tree, volunteer with your team or leave a gift in your will.</p><span class="door-go">Ways to get involved &#8594;</span></a>
+      <a class="door-c door-c2" href="partner-invest.html"><span class="door-k">For government, foundations &amp; partners</span><h3>Partner with us at landscape scale</h3><p>How we work with government, foundations, businesses and major donors, and the results we report.</p><span class="door-go">Partner with us &#8594;</span></a>
+    </div>
+    <div class="gat-strip rv d2">
+      <p><strong>Give a Tree this Christmas:</strong> $10 plants a native tree where habitat needs it most, with a personalised certificate.</p>
+      <div class="gat-strip-act"><a class="btn-p btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a><span class="gat-note">Tax deductible from $2</span></div>
     </div>
   </div>
 </section>
 
-<!-- DOORWAYS: SUPPORTERS AND PARTNERS ============================= -->
-<section class="door">
-  <div class="cw"><div class="door-g">
-    <a class="door-c" href="ways-you-can-get-involved.html"><span class="door-k">For supporters</span><h3>Give, volunteer or leave a gift</h3><p>Donate, Give a Tree, volunteer with your team or leave a gift in your will.</p><span class="door-go">Ways to get involved &#8594;</span></a>
-    <a class="door-c door-c2" href="partner-invest.html"><span class="door-k">For government, foundations &amp; partners</span><h3>Partner with us at landscape scale</h3><p>How we work with government, foundations, businesses and major donors, and the results we report.</p><span class="door-go">Partner with us &#8594;</span></a>
-  </div></div>
-</section>
-<!-- CHRISTMAS APPEAL: GIVE A TREE ==================================== -->
-<section class="hx-gat">
-  <div class="hx-gat-im">
-    <img src="assets/img/give-a-tree-koala-tree.jpg" alt="A koala climbing between the forked trunks of a eucalypt, looking at the camera" width="1200" height="1600" loading="lazy" decoding="async">
-  </div>
-  <div class="cw">
-    <div class="hx-gat-bd rv">
-      <h2>Give a Tree this Christmas.</h2>
-      <p>A gift that is still growing long after the day itself. $10 plants a native tree where habitat needs it most, and every gift comes with a personalised certificate.</p>
-      <div class="hx-gat-cta">
-        <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
-        <span class="hx-gat-note">Tax deductible from $2</span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- PILLARS ========================================================= -->
-<section class="hx-pils vc-pils">
+<!-- 3. PILLARS ======================================================= -->
+<section class="sec sand hx-pils">
   <div class="cw">
     <div class="hx-pils-head rv">
       <span class="ey">Project areas</span>
-      <h2 class="hx-h2">Where we focus.</h2>
+      <h2>Where we focus.</h2>
     </div>
     <div class="hx-pilrow rv d1">
       <a class="hx-pil" href="growing-national-parks.html" style="--pilc:var(--euc)">
-        <div class="hx-pil-im"><img src="assets/img/pillar-parks.jpg" alt="River gorge country at sunrise, Western Australia" loading="lazy"></div>
+        <div class="hx-pil-im"><img src="assets/img/pillar-parks.jpg" alt="River gorge country at sunrise, Western Australia" width="2000" height="1125" loading="lazy" decoding="async"></div>
         <span class="hx-pil-bar"></span>
         <h3>Growing National Parks</h3>
         <p>We expand and protect conservation spaces to safeguard critical habitats and support resilient ecosystems.</p>
         <span class="hx-pil-go">See the projects &#8594;</span>
       </a>
       <a class="hx-pil" href="saving-species.html" style="--pilc:var(--waratah)">
-        <div class="hx-pil-im"><img src="assets/img/species-rock-wallaby.jpg" alt="A brush-tailed rock-wallaby on a boulder, looking straight at the camera with a grass stem in its mouth" loading="lazy"><span class="img-cr">Photo: Jenolan Caves/DCCEEW</span></div>
+        <div class="hx-pil-im"><img src="assets/img/species-rock-wallaby.jpg" alt="A brush-tailed rock-wallaby on a boulder, looking straight at the camera with a grass stem in its mouth" width="1400" height="1050" loading="lazy" decoding="async"><span class="img-cr">Photo: Jenolan Caves/DCCEEW</span></div>
         <span class="hx-pil-bar"></span>
         <h3>Saving Species</h3>
         <p>We protect Australia's most vulnerable species by restoring habitats, creating wildlife corridors, and supporting targeted conservation programs.</p>
         <span class="hx-pil-go">See the projects &#8594;</span>
       </a>
       <a class="hx-pil" href="healing-the-land.html" style="--pilc:var(--bark)">
-        <div class="hx-pil-im"><img src="assets/img/pillar-healing-nursery.jpg" alt="Trays of native seedlings growing in tubes on benches at a community nursery" style="object-position:62% 50%" loading="lazy"><span class="img-cr">Photo: &copy; Rebecca Collins</span></div>
+        <div class="hx-pil-im"><img src="assets/img/pillar-healing-nursery.jpg" alt="Trays of native seedlings growing in tubes on benches at a community nursery" width="1400" height="1050" style="object-position:62% 50%" loading="lazy" decoding="async"><span class="img-cr">Photo: &copy; Rebecca Collins</span></div>
         <span class="hx-pil-bar"></span>
         <h3>Healing the Land</h3>
         <p>We restore landscapes affected by bushfires, floods and unsustainable activities through our Landscape Resilience Program.</p>
@@ -464,24 +328,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
 </section>
 
-<!-- IMPACT ========================================================== -->
-<section class="hx-impact">
+<!-- 4. IMPACT ======================================================== -->
+<section class="sec dark hx-impact">
   <div class="cw">
-    <span class="ey rv">The Impact</span>
-    <h2 class="hx-imp-h rv">What your support looks like on the ground.</h2>
+    <div class="rv">
+      <span class="ey">The Impact</span>
+      <h2>What your support looks like on the ground.</h2>
+    </div>
     <div class="hx-imp-lead rv">
       <div class="hx-imp-l">
-        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-terrain-light-soil-rgb.svg" alt="" aria-hidden="true"></span>
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-terrain-light-soil-rgb.svg" alt="" aria-hidden="true" width="68" height="64" loading="lazy"></span>
         <div class="hx-imp-ln"><span data-count="600000" data-suf="+">600,000+</span><span class="hx-imp-u">hectares</span></div>
         <p>protected for national parks and reserves</p>
       </div>
       <div class="hx-imp-l">
-        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-landscape-light-bark-rgb.svg" alt="" aria-hidden="true"></span>
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-landscape-light-bark-rgb.svg" alt="" aria-hidden="true" width="65" height="64" loading="lazy"></span>
         <div class="hx-imp-ln"><span data-count="50">50</span></div>
         <p>national parks and reserves created or expanded</p>
       </div>
       <div class="hx-imp-l">
-        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-plants-growing-light-soil-rgb.svg" alt="" aria-hidden="true"></span>
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-plants-growing-light-soil-rgb.svg" alt="" aria-hidden="true" width="63" height="64" loading="lazy"></span>
         <div class="hx-imp-ln"><span data-count="1.2" data-dec="1" data-suf="M">1.2M</span></div>
         <p>trees, shrubs and seedlings planted in key priority landscapes</p>
       </div>
@@ -503,17 +369,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <p class="hx-imp-src rv">Figures from the <a href="reports.html">FNPW Impact Report</a>.</p>
   </div>
   <div class="hx-impact-curve" aria-hidden="true">
-    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,30 C260,0 520,48 760,30 C1000,12 1240,44 1440,18 L1440,56 Z" fill="var(--sand)"/></svg>
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,30 C260,0 520,48 760,30 C1000,12 1240,44 1440,18 L1440,56 Z" fill="var(--cream)"/></svg>
   </div>
 </section>
 
-<!-- PROJECT RAIL ==================================================== -->
-<section class="hx-rail-sec">
+<!-- 5. FLAGSHIP PROJECTS ============================================= -->
+<section class="sec hx-rail-sec">
   <div class="cw">
     <div class="hx-rail-head rv">
       <div>
         <span class="ey">Flagship projects</span>
-        <h2 class="hx-h2">Our work.</h2>
+        <h2>Our work.</h2>
         <p class="hx-rail-lede">We bring the right funding and the right people to the places and species that need it most.</p>
       </div>
       <div class="hx-rail-nav"><a class="btn-o" href="projects.html">All 84 projects</a></div>
@@ -521,50 +387,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
     <div class="rv d1">
     <div class="fls-wrap" data-fls>
       <div class="fls-track" tabindex="0" aria-label="Flagship projects">
-        <a class="fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Murray Mouth, SA</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>1,900 hectares secured in 2025, now being added to Coorong National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>500 volunteers trained and equipped to treat wombats for mange.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">NSW, VIC, SA, ACT</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>One million trees grown and planted through 30+ community nurseries.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-nilpena-nationalpark.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03-1024x1024.png" alt="The Ediacaran fossil beds at Nilpena, Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Flinders Ranges, SA</span></div><div class="fl-bd"><h3>Nilpena National Park</h3><p>60,000 hectares proclaimed national park, home to the richest record of early complex life on Earth.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-1-million-turtles.html"><div class="fl-im"><img src="assets/img/projects/turtles-hero-hatchling.jpg" alt="A hatchling eastern long-necked turtle cradled in a pair of hands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Murray-Darling Basin</span></div><div class="fl-bd"><h3>1 Million Turtles</h3><p>Citizen science for freshwater turtles, awarded the 2023 Eureka Prize.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-fire-wise.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/07/54120522443_dfa0581f77_o-scaled.jpg" alt="Bushland in the Fire Wise project area" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">VIC, SA, NSW</span></div><div class="fl-bd"><h3>Fire Wise</h3><p>14 community nurseries growing native plants that help landscapes withstand fire.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-remarkable-southern-flinders.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="The Southern Flinders Ranges" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Southern Flinders, SA</span></div><div class="fl-bd"><h3>Remarkable Southern Flinders</h3><p>Connecting 30,000 hectares of reserves into one park, on Nukunu Country.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-warddeken-mayh.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers in sandstone shrublands" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Arnhem Land, NT</span></div><div class="fl-bd"><h3>Warddeken Mayh Recovery</h3><p>Indigenous-led recovery of threatened mammals across 1.4 million hectares.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-cultivating-koala-habitat.html"><div class="fl-im"><img src="assets/img/projects/koala-wollondilly-hero.jpg" alt="Two koalas resting against a fire-blackened trunk surrounded by green regrowth" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Wollondilly, NSW</span></div><div class="fl-bd"><h3>Cultivating Koala Habitat</h3><p>2,000 local plants in the ground, with 95 per cent still alive.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-heritage-estates.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="Tall eucalypts in open forest at Heritage Estates" loading="lazy"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Jervis Bay, NSW</span></div><div class="fl-bd"><h3>Heritage Estates</h3><p>More than 530 properties acquired to grow Jervis Bay National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-nectar-sippers.html"><div class="fl-im"><img src="assets/img/projects/nectar-hero-paddock-tree.jpg" alt="An old paddock tree inside new stock-proof fencing, with young plantings in tree guards" loading="lazy"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Southern inland NSW</span></div><div class="fl-bd"><h3>Nectar Sippers</h3><p>130 hectares of woodland protected for nectar-feeding birds.</p><span class="fl-go">Read the story &#8594;</span></div></a>
-        <a class="fl-card" href="project-tangaroa-blue.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="A dugong swimming over seagrass" loading="lazy"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Australia-wide</span></div><div class="fl-bd"><h3>Tangaroa Blue</h3><p>Eleven million beach clean-up records, turned into plans that stop rubbish at the source.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" width="2400" height="1029" loading="lazy" decoding="async"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Murray Mouth, SA</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>1,900 hectares secured in 2025, now being added to Coorong National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" width="1600" height="1064" loading="lazy" decoding="async"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>500 volunteers trained and equipped to treat wombats for mange.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" width="1024" height="791" loading="lazy" decoding="async"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">NSW, VIC, SA, ACT</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>One million trees grown and planted through 30+ community nurseries.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-nilpena-nationalpark.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03-1024x1024.png" alt="The Ediacaran fossil beds at Nilpena, Flinders Ranges" width="1024" height="1024" loading="lazy" decoding="async"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Flinders Ranges, SA</span></div><div class="fl-bd"><h3>Nilpena National Park</h3><p>60,000 hectares proclaimed national park, home to the richest record of early complex life on Earth.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-1-million-turtles.html"><div class="fl-im"><img src="assets/img/projects/turtles-hero-hatchling.jpg" alt="A hatchling eastern long-necked turtle cradled in a pair of hands" width="1800" height="1200" loading="lazy" decoding="async"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Murray-Darling Basin</span></div><div class="fl-bd"><h3>1 Million Turtles</h3><p>Citizen science for freshwater turtles, awarded the 2023 Eureka Prize.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-fire-wise.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2025/07/54120522443_dfa0581f77_o-scaled.jpg" alt="Bushland in the Fire Wise project area" loading="lazy" decoding="async"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">VIC, SA, NSW</span></div><div class="fl-bd"><h3>Fire Wise</h3><p>14 community nurseries growing native plants that help landscapes withstand fire.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-remarkable-southern-flinders.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="The Southern Flinders Ranges" loading="lazy" decoding="async"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Southern Flinders, SA</span></div><div class="fl-bd"><h3>Remarkable Southern Flinders</h3><p>Connecting 30,000 hectares of reserves into one park, on Nukunu Country.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-warddeken-mayh.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken rangers in sandstone shrublands" loading="lazy" decoding="async"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Arnhem Land, NT</span></div><div class="fl-bd"><h3>Warddeken Mayh Recovery</h3><p>Indigenous-led recovery of threatened mammals across 1.4 million hectares.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-cultivating-koala-habitat.html"><div class="fl-im"><img src="assets/img/projects/koala-wollondilly-hero.jpg" alt="Two koalas resting against a fire-blackened trunk surrounded by green regrowth" width="2000" height="858" loading="lazy" decoding="async"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Wollondilly, NSW</span></div><div class="fl-bd"><h3>Cultivating Koala Habitat</h3><p>2,000 local plants in the ground, with 95 per cent still alive.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-heritage-estates.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg" alt="Tall eucalypts in open forest at Heritage Estates" loading="lazy" decoding="async"><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">Jervis Bay, NSW</span></div><div class="fl-bd"><h3>Heritage Estates</h3><p>More than 530 properties acquired to grow Jervis Bay National Park.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-nectar-sippers.html"><div class="fl-im"><img src="assets/img/projects/nectar-hero-paddock-tree.jpg" alt="An old paddock tree inside new stock-proof fencing, with young plantings in tree guards" width="1253" height="704" loading="lazy" decoding="async"><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">Southern inland NSW</span></div><div class="fl-bd"><h3>Nectar Sippers</h3><p>130 hectares of woodland protected for nectar-feeding birds.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        <a class="fl-card" href="project-tangaroa-blue.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg" alt="A dugong swimming over seagrass" loading="lazy" decoding="async"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">Australia-wide</span></div><div class="fl-bd"><h3>Tangaroa Blue</h3><p>Eleven million beach clean-up records, turned into plans that stop rubbish at the source.</p><span class="fl-go">Read the story &#8594;</span></div></a>
       </div>
       <div class="fls-bar"><button class="fls-btn" data-fls-dir="-1" aria-label="Previous projects">&#8592;</button><button class="fls-btn" data-fls-dir="1" aria-label="Next projects">&#8594;</button><div class="fls-prog"><i></i></div><span class="fls-count">1&ndash;4 of 12</span></div>
     </div>
     </div>
   </div>
 </section>
-<!-- BRING BACK THE BUSH ============================================= -->
-<section class="hx-camp hx-camp-sm">
-  <div class="cmp-hero-bg"></div>
-  <div class="cmp-hero-grain"></div>
-  <div class="cw">
-    <div class="hx-camp-sm-r rv">
-      <div class="hx-camp-sm-bd">
-        <h3 class="hx-camp-h">Australia looks better with a full bush.</h3>
-        <p>Let&rsquo;s not beat around the bush any longer. Australia&rsquo;s wilderness and wildlife need our help.</p>
-        <div class="hx-camp-acts">
-          <a class="cmp-btn-p" href="https://bush.fnpw.org.au">Bring back the bush</a>
-        </div>
-      </div>
-      <div class="hx-camp-sm-im">
-        <img src="assets/img/emu-banner.png" alt="Emu with a full crest of feathers" width="560" height="760" decoding="async">
-      </div>
-    </div>
-  </div>
-</section>
 
-
-
-<!-- PARTNER & INVEST ================================================ -->
+<!-- 6. PARTNER & INVEST ============================================== -->
 <section class="hx-pt">
   <!-- Placeholder image: swap the photo, alt text and caption together -->
-  <img class="hx-pt-bg" src="assets/img/donate-land-mundoo.jpg" alt="Aerial view of wetlands and channels at Mundoo Island, near the Murray Mouth in South Australia" width="1400" height="1049" loading="lazy">
+  <img class="hx-pt-bg" src="assets/img/donate-land-mundoo.jpg" alt="Aerial view of wetlands and channels at Mundoo Island, near the Murray Mouth in South Australia" width="1400" height="1049" loading="lazy" decoding="async">
   <span class="hx-pt-cap">Mundoo Island, Murray Mouth, SA</span>
   <div class="cw rv">
     <span class="ey">Partner with us</span>
@@ -579,45 +424,27 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
 </section>
 
-<!-- STORY =========================================================== -->
-<section class="hx-story">
+<!-- 7. SINCE 1970: STORY AND IMPACT REPORT =========================== -->
+<section class="sec sand hx-story">
   <div class="cw">
-    <div class="hx-story-g">
-      <div class="hx-story-media rv">
-        <img class="m1" src="assets/img/home-story-planting.jpg" alt="Two volunteers planting seedlings on a hillside, rows of green tree guards running away behind them" width="1000" height="1200" loading="lazy">
-        <img class="m2" src="assets/img/home-story-nursery.jpg?v=2" alt="Three people talking under shadecloth in a community nursery, one holding a potted seedling" width="1200" height="792" loading="lazy">
+    <div class="two">
+      <div class="hx-ir-cov rv">
+        <a href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf"><img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025" width="800" height="1131" loading="lazy" decoding="async"></a>
       </div>
       <div class="rv d1">
         <span class="ey">Since 1970</span>
         <h2>Fifty-five years of looking after the wild.</h2>
-        <p>It started in 1970 with a single gift and a simple belief: that Australia&rsquo;s wild places, and the creatures found nowhere else, are worth standing up for. In the decades since, that belief has grown into real, lasting change, from securing land that will stay protected forever, to bringing threatened species back from the edge, to restoring landscapes wounded by fire and flood.</p>
-        <p>We&rsquo;ve never done it alone. Every hectare protected and every species recovered has been the work of First Nations peoples, scientists, supporters and local communities, caring for Country side by side.</p>
+        <p>It started in 1970 with a single gift and a simple belief: that Australia&rsquo;s wild places, and the creatures found nowhere else, are worth standing up for. That belief has grown into lasting change: land protected forever, species brought back from the edge, and landscapes restored after fire and flood.</p>
+        <p>We have never done it alone. Every hectare protected and every species recovered has been the work of First Nations peoples, scientists, supporters and local communities, caring for Country side by side. Our latest Impact Report shows where that support goes and what it achieves.</p>
         <figure class="hx-quote">
           <blockquote>Planting our millionth tree was more than a milestone, it was a catalyst for change in our community. We witnessed firsthand how reforesting our land can renew both nature and community spirit.</blockquote>
           <figcaption><strong>Ian Darbyshire</strong>, Chief Executive Officer<span class="hx-q-src">Impact Report 2024</span></figcaption>
         </figure>
-        <a class="hx-cta" href="about.html">Read our story<span class="hx-cta-line" aria-hidden="true"></span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT REPORT SHOWCASE ========================================== -->
-<section class="hx-ir">
-  <div class="cw">
-    <div class="hx-ir-g">
-      <div class="hx-ir-cov rv">
-        <img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025">
-      </div>
-      <div class="rv d1">
-        <span class="ey">The stories</span>
-        <h2>The full year, in one place.</h2>
-        <p>Our latest Impact Report is the easiest way to meet us properly: the places being protected, the species recovering, the seedlings going in, and the communities making it happen right across the country.</p>
-        <p>Spend ten minutes with it and you will see exactly where your support goes and the difference it makes.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem">
+        <div class="hx-story-acts">
           <a class="btn-p" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Read the Impact Report</a>
-          <a class="hx-cta" href="reports.html" style="margin-top:0">All reports &amp; financials<span class="hx-cta-line" aria-hidden="true"></span></a>
+          <a class="btn-o" href="reports.html">All reports &amp; financials</a>
         </div>
+        <div class="hx-story-more"><a class="btn-g" href="about.html">Read our story </a></div>
         <div class="hx-ir-trust">
           <span><i>&#10003;</i> ACNC registered charity</span>
           <span><i>&#10003;</i> DGR endorsed</span>
@@ -628,14 +455,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
 </section>
 
-<!-- NEWSLETTER ====================================================== -->
-<section class="hx-news">
+<!-- 8. NEWSLETTER ==================================================== -->
+<section class="sec strip hx-news">
   <div class="cw">
     <div class="hx-news-g">
       <div class="rv">
         <span class="ey">Newsletter</span>
         <h2>Stories from the bush, straight to your inbox.</h2>
-        <p style="margin-top:1.1rem">Once a month we send project updates, species spotlights and the small wins that rarely make the news, written by the people doing the work on the ground.</p>
+        <p>Once a month we send project updates, species spotlights and the small wins that rarely make the news, written by the people doing the work on the ground.</p>
       </div>
       <div class="rv d1">
         <a class="btn-p" href="newsletters-sign-up.html">Get our newsletter</a>
