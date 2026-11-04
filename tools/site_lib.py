@@ -60,7 +60,7 @@ HERO_IMGS = {
     'Thank You': ('assets/img/thank-you-planting.jpg', 'Four volunteers kneeling among newly planted seedlings in green tree guards, with tall eucalypts behind'),
     'Privacy Policy': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
     'Terms &amp; Conditions': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
-    'Search': ('assets/img/search-hero-mangroves.jpg', 'Aerial view of a river winding through dense green mangroves and tidal flats'),
+    'Search': ('assets/img/search-hero-koala.jpg', 'A koala climbing along a branch through eucalypt woodland'),
     'Corporate Volunteering / Sydney': (U_+'2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Bushcare volunteers'),
     'Corporate Volunteering / Melbourne': (U_+'2021/02/Koala-projects.png', 'Nest box installation'),
     'Corporate Volunteering / Brisbane': (U_+'2021/02/CurrumbinKoala-Erik-Veland.jpg', 'Koala in Queensland'),

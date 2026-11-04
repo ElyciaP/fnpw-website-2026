@@ -323,38 +323,6 @@
    1600
   ]
  },
- "assets/img/get-involved-planting-day.jpg": {
-  "h": 667,
-  "size": 214965,
-  "w": 1600,
-  "webp": [
-   "assets/img/r/get-involved-planting-day-480.webp",
-   "assets/img/r/get-involved-planting-day-800.webp",
-   "assets/img/r/get-involved-planting-day-1200.webp",
-   "assets/img/r/get-involved-planting-day-1600.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   1200,
-   1600
-  ]
- },
- "assets/img/give-a-tree-koala-COMP.jpg": {
-  "h": 1363,
-  "size": 206417,
-  "w": 1022,
-  "webp": [
-   "assets/img/r/give-a-tree-koala-COMP-480.webp",
-   "assets/img/r/give-a-tree-koala-COMP-800.webp",
-   "assets/img/r/give-a-tree-koala-COMP-1022.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   1022
-  ]
- },
  "assets/img/give-a-tree-koala-tree.jpg": {
   "h": 1600,
   "size": 353747,
@@ -489,21 +457,6 @@
    1600
   ]
  },
- "assets/img/hero-golden.jpg": {
-  "h": 450,
-  "size": 89360,
-  "w": 900,
-  "webp": [
-   "assets/img/r/hero-golden-480.webp",
-   "assets/img/r/hero-golden-800.webp",
-   "assets/img/r/hero-golden-900.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   900
-  ]
- },
  "assets/img/home-partner-loccitane.jpg": {
   "h": 1200,
   "size": 256742,
@@ -581,21 +534,6 @@
    800,
    1200,
    1600
-  ]
- },
- "assets/img/impact-report-2026.jpg": {
-  "h": 471,
-  "size": 37348,
-  "w": 900,
-  "webp": [
-   "assets/img/r/impact-report-2026-480.webp",
-   "assets/img/r/impact-report-2026-800.webp",
-   "assets/img/r/impact-report-2026-900.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   900
   ]
  },
  "assets/img/impact-report-cover.jpg": {
@@ -762,23 +700,6 @@
    800,
    1200,
    1400
-  ]
- },
- "assets/img/pillar-healing-COMP.jpg": {
-  "h": 1200,
-  "size": 281874,
-  "w": 1600,
-  "webp": [
-   "assets/img/r/pillar-healing-COMP-480.webp",
-   "assets/img/r/pillar-healing-COMP-800.webp",
-   "assets/img/r/pillar-healing-COMP-1200.webp",
-   "assets/img/r/pillar-healing-COMP-1600.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   1200,
-   1600
   ]
  },
  "assets/img/pillar-healing-nursery.jpg": {
@@ -2161,23 +2082,6 @@
    "assets/img/r/search-hero-koala-800.webp",
    "assets/img/r/search-hero-koala-1200.webp",
    "assets/img/r/search-hero-koala-1600.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   1200,
-   1600
-  ]
- },
- "assets/img/search-hero-mangroves.jpg": {
-  "h": 1050,
-  "size": 476129,
-  "w": 1600,
-  "webp": [
-   "assets/img/r/search-hero-mangroves-480.webp",
-   "assets/img/r/search-hero-mangroves-800.webp",
-   "assets/img/r/search-hero-mangroves-1200.webp",
-   "assets/img/r/search-hero-mangroves-1600.webp"
   ],
   "widths": [
    480,
