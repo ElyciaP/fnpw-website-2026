@@ -398,7 +398,7 @@ def about_ld(fname, doc, desc):
     people = []
     for gi, g in enumerate(groups[:2]):
         rel = 'worksFor' if gi == 0 else 'memberOf'
-        for card in re.findall(r'<div class="tc rv">(.*?)</div></div></div>', g, re.S):
+        for card in re.split(r'<div class="tc rv">', g)[1:]:
             name = re.search(r'<div class="tc-n">(.*?)</div>', card)
             role = re.search(r'<div class="tc-r">(.*?)</div>', card)
             if not name:
@@ -517,7 +517,7 @@ def strip_old(doc):
     doc = re.sub(r'<meta name="robots" content="[^"]*">\n?', '', doc, count=1)
     # Article JSON-LD emitted by the old generator at the end of the body
     if STAGE >= 3:
-        doc = re.sub(r'\n?<script type="application/ld+json">\{"@context": "https://schema.org", "@type": "Article".*?</script>', '', doc, count=1, flags=re.S)
+        doc = re.sub(r'\n?<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "Article".*?</script>', '', doc, count=1, flags=re.S)
     return doc
 
 
