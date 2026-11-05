@@ -122,12 +122,12 @@ def svg_map(code, outline, sites):
         x, y = xy[i - 1]
         pins.append(
             '      <g class="vm-pin" data-i="%d" tabindex="0" role="button" '
-            'aria-label="%s, %s">%s'
+            'aria-label="%d. %s, %s">%s'
             '        <circle class="vm-hit" cx="%s" cy="%s" r="18"></circle>%s'
             '        <circle class="vm-dot" cx="%s" cy="%s" r="11.5"></circle>%s'
             '        <text class="vm-num" x="%s" y="%s">%d</text>%s'
             '      </g>'
-            % (i, esc(s['name']), esc(s['city']), NL, x, y, NL, x, y, NL, x, y + 3.8, i, NL))
+            % (i, i, esc(s['name']), esc(s['city']), NL, x, y, NL, x, y, NL, x, y + 3.8, i, NL))
 
     # locator inset: the whole state, with the detail frame drawn on it
     ss, sn, sw, se = outline['bbox']
@@ -147,7 +147,7 @@ def svg_map(code, outline, sites):
            round(fx1, 1), round(fy1, 1), round(max(fx2 - fx1, 5), 1), round(max(fy2 - fy1, 5), 1), NL))
 
     return (
-        '    <svg class="vm-svg" viewBox="0 0 %d %d" role="img" '
+        '    <svg class="vm-svg" viewBox="0 0 %d %d" role="group" '
         'aria-label="Map of the %s region showing %d corporate volunteering sites, '
         'with a locator map of %s">%s'
         '      <path class="vm-land" d="%s"></path>%s%s%s%s%s    </svg>'
