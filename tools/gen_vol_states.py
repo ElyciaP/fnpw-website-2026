@@ -179,7 +179,10 @@ def summarise(rows):
     from collections import Counter
     c = Counter(r['type'] for r in rows)
     def plural(t, n):
-        return t.lower() + ('' if t.lower().endswith('s') or n == 1 else 's')
+        t = t.lower()
+        if t.endswith('s') or n == 1:
+            return t
+        return t[:-1] + 'ies' if t.endswith('y') else t + 's'
     parts = ['%d %s' % (n, plural(t, n)) for t, n in c.most_common()]
     if len(parts) > 1:
         types = ', '.join(parts[:-1]) + ' and ' + parts[-1]
@@ -497,7 +500,7 @@ def state_page(code, outline, sites, idx):
     counts = Counter(s['type'] for s in sites)
     types = sorted(counts)
     tally = ''.join('        <li>%d %s</li>%s'
-                    % (counts[t], esc(t + ('' if t.endswith('s') or counts[t] == 1 else 's')), NL)
+                    % (counts[t], esc(t if t.endswith('s') or counts[t] == 1 else (t[:-1] + 'ies' if t.endswith('y') else t + 's')), NL)
                     for t in types)
     filters = ''.join(
         '        <button type="button" data-f="%s">%s <span>%d</span></button>%s'
