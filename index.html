@@ -37,35 +37,49 @@
    stopped Chromium from reporting an LCP candidate on this page. It is switched off on the homepage only. */
 body::before{display:none}
 
-/* --- hero --- */
-.hx-hero{position:relative;min-height:min(70vh,760px);display:flex;align-items:center;background:var(--euc-deep);overflow:hidden}
-.hx-hero-bg{position:absolute;inset:0;background:var(--euc-pale)}
-.hx-hero-bg img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:15% 44%}
-.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,.95) 0%,rgba(15,49,50,.92) 16%,rgba(15,49,50,.8) 30%,rgba(15,49,50,.55) 44%,rgba(15,49,50,.25) 55%,rgba(15,49,50,.05) 64%,rgba(15,49,50,0) 70%),linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,0) 30%,rgba(15,49,50,0) 70%,rgba(15,49,50,.35) 100%)}
-.hx-hero .cw{padding-top:var(--hero-top);padding-bottom:var(--hero-bot);width:100%}
-.hx-h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:13ch;margin:0 0 var(--sp-3);text-shadow:0 2px 26px rgba(15,49,50,.4)}
+/* --- hero (restored to the 4 Nov design) --- */
+.hx-hero{position:relative;min-height:92vh;display:flex;align-items:flex-start;background:var(--euc-deep);overflow:hidden}
+.hx-hero-bg{position:absolute;inset:0;background:#EBF7F7}
+.hx-hero-bg img{position:absolute;left:0;top:6%;width:100%;height:100%;object-fit:cover;object-position:15% 44%;opacity:1}
+.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,0.95) 0%,rgba(15,49,50,0.94) 12%,rgba(15,49,50,0.91) 20%,rgba(15,49,50,0.85) 27%,rgba(15,49,50,0.77) 33%,rgba(15,49,50,0.66) 39%,rgba(15,49,50,0.53) 44%,rgba(15,49,50,0.39) 49%,rgba(15,49,50,0.26) 53%,rgba(15,49,50,0.15) 57%,rgba(15,49,50,0.07) 61%,rgba(15,49,50,0.02) 65%,rgba(15,49,50,0) 68%),linear-gradient(180deg,rgba(15,49,50,.18) 0%,rgba(15,49,50,.1) 10%,rgba(15,49,50,.03) 20%,rgba(15,49,50,0) 28%,rgba(15,49,50,0) 66%,rgba(15,49,50,.08) 76%,rgba(15,49,50,.22) 86%,rgba(15,49,50,.38) 94%,rgba(15,49,50,.45) 100%)}
+.hx-hero .cw{position:relative;padding-bottom:7rem;padding-top:clamp(6rem,20vh,11rem);width:100%}
+/* Phones keep the original bottom-aligned layout and heavier scrim so the text stays legible over the bright sky */
+@media(max-width:760px){.hx-hero{align-items:flex-end}.hx-hero-bg img{object-position:50% 44%;top:0}.hx-hero-bg::after{background:linear-gradient(90deg,rgba(15,49,50,.96) 0%,rgba(15,49,50,.9) 28%,rgba(15,49,50,.52) 46%,rgba(15,49,50,0) 66%),linear-gradient(180deg,rgba(15,49,50,.4) 0%,rgba(15,49,50,.15) 38%,rgba(15,49,50,.85) 100%)}.hx-hero .cw{padding-top:9rem;padding-bottom:5.5rem}}
+.hx-kicker{display:inline-flex;align-items:center;gap:.6rem;color:var(--euc-soft);font-family:var(--ff-d);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem}
+.hx-kicker::before{content:"";width:2.2rem;height:2px;background:var(--euc-soft)}
+.hx-h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.6rem,6.5vw,5.4rem);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:13ch;margin:0 0 1.4rem}
 .hx-h1 .wild{color:var(--euc-soft)}
-.hx-lede{color:rgba(250,246,242,.88);max-width:52ch;margin:0 0 var(--sp-4)}
-.hx-hero-cta{display:flex;gap:var(--sp-2);flex-wrap:wrap;align-items:center}
-.hx-hero .btn-p,.hx-hero .btn-o{font-size:.95rem}
-.hx-hero .btn-o{color:var(--cream);border-color:rgba(250,246,242,.65)}
-.hx-hero .btn-o:hover{background:var(--cream);color:var(--euc-deep);border-color:var(--cream)}
-.hx-hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:56px;z-index:1}
+.hx-lede{color:rgba(250,246,242,.88);font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:40ch;line-height:1.6;margin-bottom:2.2rem}
+.hx-hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.hx-btn{font-family:var(--ff-d);font-weight:600;font-size:1rem;padding:1rem 2rem;border-radius:0;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;display:inline-block}
+.hx-btn:hover{transform:translateY(-2px)}
+.hx-btn-don{background:var(--waratah);color:var(--cream);box-shadow:0 10px 30px -10px rgba(194,55,71,.5)}
+.hx-btn-ghost{border:1.5px solid rgba(250,246,242,.55);color:var(--cream)}
+.hx-btn-ghost:hover{border-color:var(--cream);background:rgba(250,246,242,.08)}
+/* organic bottom edge */
+.hx-hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:70px}
 .hx-hero-curve svg{display:block;width:100%;height:100%}
-@media(max-width:760px){
-  .hx-hero{min-height:520px;align-items:flex-end}
-  .hx-hero-bg img{object-position:50% 40%}
-  .hx-hero-bg::after{background:linear-gradient(90deg,rgba(15,49,50,.9) 0%,rgba(15,49,50,.6) 40%,rgba(15,49,50,0) 70%),linear-gradient(180deg,rgba(15,49,50,.35) 0%,rgba(15,49,50,.1) 35%,rgba(15,49,50,.88) 100%)}
-  .hx-hero .cw{padding-top:var(--sec-md);padding-bottom:calc(var(--hero-bot) + var(--sp-3))}
-}
 
-/* --- species row: static on desktop, hidden on phones (the old 46s marquee is gone) --- */
-.hx-tickwrap{display:none;background:var(--cream);border-bottom:1px solid var(--rule);padding:var(--sp-2) 0}
-.hx-tick{display:flex;flex-wrap:wrap;justify-content:center;column-gap:var(--sp-4);row-gap:var(--sp-1);font-family:var(--ff-d);font-weight:600;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--euc)}
-.hx-tick li{display:flex;align-items:center;gap:var(--sp-2);white-space:nowrap}
-.hx-tick li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--waratah)}
-.hx-tick li:first-child::before{display:none}
-@media(min-width:980px){.hx-tickwrap{display:block}}
+.hx-h1{text-shadow:0 2px 26px rgba(15,49,50,.4)}
+.hx-lede-w{max-width:52ch!important}
+
+/* --- Give a Tree photo band (Christmas appeal, Nov 2026) --- */
+.hx-gat{position:relative;background:var(--soil-deep);color:var(--cream);overflow:hidden}
+.hx-gat-im{position:absolute;top:0;right:0;bottom:0;width:50%;background:var(--soil)}
+.hx-gat-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.hx-gat-im::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,25,20,1) 0%,rgba(36,25,20,.7) 9%,rgba(36,25,20,0) 24%)}
+.hx-gat .cw{min-height:400px;display:flex;align-items:center;padding-top:var(--sec-md);padding-bottom:var(--sec-md)}
+.hx-gat-bd{max-width:min(540px,calc(50vw - 4.5rem));display:flex;flex-direction:column;gap:1.1rem}
+.hx-gat h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.08;letter-spacing:-.02em;color:var(--cream);max-width:14ch}
+.hx-gat p{margin:0;max-width:46ch;color:rgba(250,246,242,.88)}
+.hx-gat-cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:.5rem}
+.hx-gat-note{font-size:.88rem;color:rgba(250,246,242,.78)}
+@media(max-width:760px){
+  .hx-gat-im{position:relative;width:100%;height:260px}
+  .hx-gat-im::after{background:linear-gradient(0deg,rgba(36,25,20,1) 0%,rgba(36,25,20,0) 40%)}
+  .hx-gat .cw{min-height:0;padding-top:var(--sp-3);padding-bottom:var(--sec-md)}
+  .hx-gat-bd{max-width:none}
+}
 
 /* --- doorways: why we exist, supporters and partners, Give a Tree strip --- */
 .door-head{text-align:center;max-width:980px;margin:0 auto var(--sp-5)}
@@ -155,14 +169,14 @@ body::before{display:none}
 .fls-btn[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--euc-deep)}
 
 /* --- partner & invest (landscape band, photo with deep scrim) --- */
-.hx-pt{position:relative;overflow:hidden;color:var(--cream);padding:var(--sec-md) 0}
-.hx-pt-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block}
-.hx-pt::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.72) 42%,rgba(15,49,50,.1) 80%),linear-gradient(0deg,rgba(15,49,50,.85) 0%,rgba(15,49,50,0) 45%)}
+.hx-pt{position:relative;overflow:hidden;color:var(--cream);padding:var(--sec-md) 0;min-height:max(760px,52vw);display:flex;align-items:flex-end}
+.hx-pt-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.hx-pt::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.8) 30%,rgba(15,49,50,.35) 46%,rgba(15,49,50,0) 58%),linear-gradient(0deg,rgba(15,49,50,.9) 0%,rgba(15,49,50,.6) 14%,rgba(15,49,50,0) 32%)}
 .hx-pt .cw{position:relative;z-index:2;width:100%}
 .hx-pt-cap{position:absolute;right:var(--sp-2);top:var(--sp-2);z-index:2;font-size:.72rem;opacity:.75}
 .hx-pt .ey{color:var(--euc-pale)}.hx-pt .ey::before{background:var(--euc-pale)}
 .hx-pt h2{color:var(--cream);max-width:15ch}
-.hx-pt .lede{color:rgba(250,246,242,.9);max-width:54ch;margin-top:var(--sp-3)}
+.hx-pt .lede{color:rgba(250,246,242,.9);max-width:46ch;margin-top:var(--sp-3)}
 .hx-pt-acts{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;margin-top:var(--sp-4)}
 .hx-pt-btn{display:inline-flex;align-items:center;padding:1.05em 2em;font-family:var(--ff-d);font-weight:700;font-size:.9rem;text-decoration:none;background:var(--cream);color:var(--euc-deep);border:1.5px solid var(--cream);transition:background .18s}
 .hx-pt-btn:hover{background:var(--euc-pale);border-color:var(--euc-pale)}
@@ -175,6 +189,7 @@ body::before{display:none}
 .hx-pt-routes b{font-family:var(--ff-d);font-size:1.12rem;display:block;margin-bottom:var(--sp-1)}
 .hx-pt-routes span{font-size:.9rem;opacity:.85;line-height:1.5}
 @media(max-width:900px){
+  .hx-pt{min-height:0;display:block}.hx-pt-bg{object-position:72% 30%}
   .hx-pt::before{background:linear-gradient(0deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.84) 60%,rgba(15,49,50,.6) 100%)}
   .hx-pt-cap{left:var(--sp-2);right:auto;top:auto;bottom:var(--sp-1)}
   .hx-pt-routes{grid-template-columns:1fr;margin-top:var(--sp-5)}
@@ -279,23 +294,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
   </div>
   <div class="cw rv">
     <h1 class="hx-h1">Keeping Australia <span class="wild">wild</span> since 1970</h1>
-    <p class="lede hx-lede">We bring First Nations organisations, government, communities and funders together to protect Australia&rsquo;s most important landscapes and wildlife, from first opportunity to measurable impact.</p>
+    <p class="hx-lede hx-lede-w">We bring First Nations organisations, government, communities and funders together to protect Australia&rsquo;s most important landscapes and wildlife, from first opportunity to measurable impact.</p>
     <div class="hx-hero-cta">
-      <a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a>
-      <a class="btn-o" href="partner-invest.html">Partner with us</a>
+      <a class="hx-btn hx-btn-don" href="https://bush.fnpw.org.au">Donate</a>
+      <a class="hx-btn hx-btn-ghost" href="partner-invest.html">Partner with us</a>
     </div>
   </div>
   <div class="hx-hero-curve" aria-hidden="true">
-    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,32 C240,0 480,44 720,30 C960,16 1200,42 1440,18 L1440,56 Z" fill="var(--cream)"/></svg>
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,70 L0,40 C240,0 480,55 720,38 C960,20 1200,52 1440,22 L1440,70 Z" fill="var(--cream)"/></svg>
   </div>
 </section>
-
-<!-- species row (desktop only, static) -->
-<div class="hx-tickwrap" aria-hidden="true">
-  <ul class="hx-tick">
-    <li>Koalas</li><li>Little Penguins</li><li>Woylies</li><li>Enigma Moths</li><li>Bilbies</li><li>Northern Quolls</li><li>Malleefowl</li><li>Orange-bellied Parrots</li><li>Mountain Pygmy-possums</li><li>Eastern Bristlebirds</li><li>Western Swamp Tortoises</li>
-  </ul>
-</div>
 
 <!-- 2. DOORWAYS: SUPPORTERS AND PARTNERS ============================== -->
 <section class="sec door">
@@ -308,9 +316,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
       <a class="door-c" href="ways-you-can-get-involved.html"><span class="door-k">For supporters</span><h3>Give, volunteer or leave a gift</h3><p>Donate, Give a Tree, volunteer with your team or leave a gift in your will.</p><span class="door-go">Ways to get involved &#8594;</span></a>
       <a class="door-c door-c2" href="partner-invest.html"><span class="door-k">For government, foundations &amp; partners</span><h3>Partner with us at landscape scale</h3><p>How we work with government, foundations, businesses and major donors, and the results we report.</p><span class="door-go">Partner with us &#8594;</span></a>
     </div>
-    <div class="gat-strip rv d2">
-      <p><strong>Give a Tree this Christmas:</strong> $10 plants a native tree where habitat needs it most, with a personalised certificate.</p>
-      <div class="gat-strip-act"><a class="btn-p btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a><span class="gat-note">Tax deductible from $2</span></div>
+  </div>
+</section>
+
+<!-- GIVE A TREE (Christmas appeal), restored from the 4 Nov design -->
+<section class="hx-gat">
+  <div class="hx-gat-im">
+    <picture><source type="image/webp" srcset="assets/img/r/give-a-tree-koala-tree-480.webp 480w, assets/img/r/give-a-tree-koala-tree-800.webp 800w, assets/img/r/give-a-tree-koala-tree-1200.webp 1200w" sizes="(min-width: 761px) 50vw, 100vw"><img src="assets/img/give-a-tree-koala-tree.jpg" alt="A koala climbing between the forked trunks of a eucalypt, looking at the camera" width="1200" height="1600" loading="lazy" decoding="async"></picture>
+  </div>
+  <div class="cw">
+    <div class="hx-gat-bd rv">
+      <h2>Give a Tree this Christmas.</h2>
+      <p>A gift that is still growing long after the day itself. $10 plants a native tree where habitat needs it most, and every gift comes with a personalised certificate.</p>
+      <div class="hx-gat-cta">
+        <a class="hx-btn hx-btn-don" href="https://gift-a-tree.fnpw.org.au">Give a Tree</a>
+        <span class="hx-gat-note">Tax deductible from $2</span>
+      </div>
     </div>
   </div>
 </section>
@@ -428,8 +449,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset
 
 <!-- 6. PARTNER & INVEST ============================================== -->
 <section class="hx-pt">
-  <!-- Photo supplied Nov 2026, flipped horizontally. Location and photographer credit to confirm, then add a .hx-pt-cap caption -->
-  <picture><source type="image/webp" srcset="assets/img/r/home-partner-kangaroo-coast-480.webp 480w, assets/img/r/home-partner-kangaroo-coast-800.webp 800w, assets/img/r/home-partner-kangaroo-coast-1200.webp 1200w, assets/img/r/home-partner-kangaroo-coast-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img class="hx-pt-bg" src="assets/img/home-partner-kangaroo-coast.jpg" alt="A kangaroo bounding through coastal heath on a headland above a long sandy beach, with forested hills behind" style="object-position:50% 100%" width="1600" height="1143" loading="lazy" decoding="async"></picture>
+  <!-- Photo supplied Nov 2026 (gang-gang cockatoos), flipped horizontally and cropped. Location and photographer credit to confirm, then add a .hx-pt-cap caption -->
+  <picture><source type="image/webp" srcset="assets/img/r/home-partner-gang-gangs-480.webp 480w, assets/img/r/home-partner-gang-gangs-800.webp 800w, assets/img/r/home-partner-gang-gangs-1200.webp 1200w, assets/img/r/home-partner-gang-gangs-1600.webp 1600w" sizes="100vw"><img class="hx-pt-bg" src="assets/img/home-partner-gang-gangs.jpg" alt="A pair of gang-gang cockatoos on a eucalypt branch, the red-headed male leaning in to the grey female" width="1600" height="978" loading="lazy" decoding="async"></picture>
   <div class="cw rv">
     <span class="ey">Partner with us</span>
     <h2>Partnerships that change whole landscapes.</h2>

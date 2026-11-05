@@ -457,6 +457,23 @@
    1600
   ]
  },
+ "assets/img/home-partner-gang-gangs.jpg": {
+  "h": 978,
+  "size": 275613,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/home-partner-gang-gangs-480.webp",
+   "assets/img/r/home-partner-gang-gangs-800.webp",
+   "assets/img/r/home-partner-gang-gangs-1200.webp",
+   "assets/img/r/home-partner-gang-gangs-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/home-partner-kangaroo-coast.jpg": {
   "h": 1143,
   "size": 380659,
