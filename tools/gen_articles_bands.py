@@ -182,7 +182,7 @@ def build(a):
     body.append('<section class="sec dark">%s  <div class="cw rv" style="text-align:center">%s'
                 '    <h2 class="hc">Help fund work like this.</h2>%s'
                 '    <p class="lede hc">Every FNPW project is '
-                'powered by donations, bequests and partnerships.</p>%s'
+                'powered by donations, gifts in wills and partnerships.</p>%s'
                 '    <div class="cta-btns">'
                 '<a class="btn-p btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>'
                 '<a class="btn-o" href="partner.html">Become a partner</a></div>%s  </div>%s</section>'

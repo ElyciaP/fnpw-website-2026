@@ -338,7 +338,7 @@ def main():
   </div>"""))}
 {sec(f'<span class="ey">More from this pillar</span><h2 style="margin:.8rem 0 1.6rem">Related projects</h2><div class="pg">{related}</div>', 'paper')}
 {cta_band('Help fund work like this.',
-          'Every FNPW project is powered by donations, bequests and partnerships.',
+          'Every FNPW project is powered by donations, gifts in wills and partnerships.',
           [('Donate', RAISELY_DONATE, 'btn-p btn-don'), ('Become a partner', 'partner.html', 'btn-o')])}'''
         if p['slug'] in PORTED:
             continue

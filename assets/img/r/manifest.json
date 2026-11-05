@@ -457,6 +457,23 @@
    1600
   ]
  },
+ "assets/img/home-partner-kangaroo-coast.jpg": {
+  "h": 1143,
+  "size": 380659,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/home-partner-kangaroo-coast-480.webp",
+   "assets/img/r/home-partner-kangaroo-coast-800.webp",
+   "assets/img/r/home-partner-kangaroo-coast-1200.webp",
+   "assets/img/r/home-partner-kangaroo-coast-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/home-partner-loccitane.jpg": {
   "h": 1200,
   "size": 256742,
