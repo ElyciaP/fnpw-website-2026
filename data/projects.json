@@ -749,7 +749,11 @@
   "live_url": "https://fnpw.org.au/project/wild-heart/",
   "lat": -25.5,
   "lon": 134.5,
-  "on_map": true
+  "on_map": true,
+  "pin": [
+   39.75,
+   46.2
+  ]
  },
  {
   "slug": "bushfire-recovery-program",
