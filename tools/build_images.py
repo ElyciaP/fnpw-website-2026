@@ -51,7 +51,7 @@ FALLBACK_Q = 80      # the <img> fallback in assets/img/r
 WEBP_Q = 78
 
 # Files under assets/img that are artwork rather than photographs.
-NOT_PHOTO = re.compile(r'(fnpw-logo|og-default|favicon|apple-touch-icon|icon-/partners/|55-badge|projects-map|impact-tree-|placeholder-|/_to_delete/|^assets/img/r/)')
+NOT_PHOTO = re.compile(r'(fnpw-logo|og-default|favicon|apple-touch-icon|icon-|/partners/|55-badge|projects-map|impact-tree-|placeholder-|/_to_delete/|^assets/img/r/)')
 
 # sizes by role. Ancestor class names decide the role; the first match wins.
 SIZES = {
