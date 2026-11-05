@@ -459,7 +459,7 @@ html.js .rv.in{opacity:1;transform:translateY(0)}
 /* === v3 sitewide theme (sharp system + shared components) === */
 a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
 /* editorial CTA with growing line-arrow */
-.hx-cta{display:inline-flex;align-items:center;gap:1rem;margin-top:1.2rem;font-family:var(--ff-d);font-weight:700;font-size:1.02rem;color:var(--euc-deep);text-decoration:none;transition:color .25s ease}
+.hx-cta{display:inline-flex;align-items:center;min-height:24px;gap:1rem;margin-top:1.2rem;font-family:var(--ff-d);font-weight:700;font-size:1.02rem;color:var(--euc-deep);text-decoration:none;transition:color .25s ease}
 .hx-cta-line{position:relative;width:58px;height:2px;background:currentColor;transition:width .3s ease}
 .hx-cta-line::after{content:"";position:absolute;right:0;top:-4.5px;width:10px;height:10px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
 .hx-cta:hover{color:var(--euc)}
@@ -890,7 +890,7 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 /* Pillar tags on project tiles: solid pillar colour, cream text (matches homepage chips) */
 .pc-pb.pb-parks{background:var(--euc);color:var(--cream)}
 .pc-pb.pb-species{background:var(--waratah);color:var(--cream)}
-.pc-pb.pb-healing{background:var(--bark);color:var(--cream)}
+.pc-pb.pb-healing{background:var(--bark-text);color:var(--cream)}
 /* HubSpot embed fallback message (shown only if the form fails to load) */
 .hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:1rem 1.2rem;margin-top:1rem}
 .hsform-fallback a{color:var(--euc-deep);font-weight:600;text-decoration:underline}
