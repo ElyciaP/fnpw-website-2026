@@ -156,7 +156,7 @@ def related_html(items):
 
 def build(a):
     place = ' &nbsp;&nbsp;&middot;&nbsp;&nbsp; ' + a['place'] if a.get('place') else ''
-    body = ['<section class="hero pj-hero">%s'
+    body = ['<section class="pj-hero">%s'
             '  <figure class="pj-hero-im"><img src="%s" alt="%s"></figure>%s'
             '  <div class="cw rv">%s'
             '    <nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem">'
@@ -180,10 +180,10 @@ def build(a):
                 '    <a class="btn-o" href="articles.html">&#8592; All articles</a>%s'
                 '  </div>%s</section>' % (NL, NL, NL, NL))
     body.append('<section class="sec dark">%s  <div class="cw rv" style="text-align:center">%s'
-                '    <h2 class="hc">Help fund work like this.</h2>%s'
-                '    <p class="lede hc">Every FNPW project is '
+                '    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>%s'
+                '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is '
                 'powered by donations, gifts in wills and partnerships.</p>%s'
-                '    <div class="cta-btns">'
+                '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
                 '<a class="btn-p btn-don" href="https://foundation-for-national-parks-and-wildlife.raiselysite.com/">Donate</a>'
                 '<a class="btn-o" href="partner.html">Become a partner</a></div>%s  </div>%s</section>'
                 % (NL, NL, NL, NL, NL, NL))

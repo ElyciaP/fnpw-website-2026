@@ -100,21 +100,21 @@ def md_html(t, drop_h1=True, shift=0):
 
 PROSE_CSS = '''
 .prose{max-width:74ch}
-.prose h2{margin-top:var(--sp-4);color:var(--euc-deep)}
-.prose h3{margin-top:var(--sp-4);color:var(--euc-deep)}
+.prose h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:2.4rem 0 .9rem;color:var(--euc-deep)}
+.prose h3{font-size:1.08rem;margin:2rem 0 .7rem;color:var(--euc-deep);letter-spacing:.01em}
 .prose p,.prose li{font-size:1rem;line-height:1.75;color:var(--char)}
-.prose p{margin:0 0 var(--sp-2)}
-.prose ul,.prose ol{margin:0 0 var(--sp-2);padding-left:var(--sp-3)}
-.prose li{margin-bottom:var(--sp-1)}
+.prose p{margin:0 0 1rem}
+.prose ul,.prose ol{margin:0 0 1.2rem;padding-left:1.3rem}
+.prose li{margin-bottom:.45rem}
 .prose a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
-.prose img{max-width:100%;height:auto;display:block;margin:var(--sp-3) 0}
-.prose table{width:100%;border-collapse:collapse;margin:var(--sp-2) 0 var(--sp-4);font-size:.92rem}
-.prose th,.prose td{text-align:left;padding:var(--sp-1) var(--sp-2);border-bottom:1px solid var(--rule);vertical-align:top}
+.prose img{max-width:100%;height:auto;display:block;margin:1.6rem 0}
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:.92rem}
+.prose th,.prose td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top}
 .prose th{font-family:var(--ff-d);color:var(--euc-deep);background:var(--sand)}
-.prose blockquote{border-left:3px solid var(--bark);margin:var(--sp-3) 0;padding:.2rem 0 .2rem var(--sp-2)}
+.prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
 @media(max-width:640px){.prose table{display:block;overflow-x:auto}}
 .prose .btn-p{color:var(--cream);text-decoration:none}
-.gr-closed{background:var(--sand);border-left:3px solid var(--bark);padding:var(--sp-2) var(--sp-2);margin:0 0 var(--sp-4)!important}
+.gr-closed{background:var(--sand);border-left:3px solid var(--bark);padding:1rem 1.2rem;margin:0 0 1.8rem!important}
 '''
 
 
@@ -140,13 +140,13 @@ def crumbs(*items):
     for label, href in items[:-1]:
         parts.append('<a href="%s">%s</a>' % (href, label))
     parts.append(items[-1][0])
-    return ('<nav class="breadcrumb" aria-label="Breadcrumb">'
+    return ('<nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap">'
             + '<span>/</span>'.join(parts) + '</nav>')
 
 
 def photo_hero(ey, h1, lede, crumb_html, img, alt='', credit='', cls='', fig_style=''):
     return NL.join([
-        '<section class="hero pj-hero%s">' % ((' ' + cls) if cls else ''),
+        '<section class="pj-hero%s">' % ((' ' + cls) if cls else ''),
         '  <figure class="pj-hero-im"%s><img src="%s" alt="%s" fetchpriority="high" decoding="async"></figure>' % ((' style="%s"' % fig_style) if fig_style else '', img, H.escape(alt)),
         '  <div class="cw rv">',
         '    ' + crumb_html,
@@ -161,9 +161,9 @@ def photo_hero(ey, h1, lede, crumb_html, img, alt='', credit='', cls='', fig_sty
 DONATE_BAND = NL.join([
     '<section class="sec dark">',
     '  <div class="cw rv" style="text-align:center">',
-    '    <h2 class="hc">Help fund work like this.</h2>',
-    '    <p class="lede hc">Every FNPW project is powered by donations, gifts in wills and partnerships.</p>',
-    '    <div class="cta-btns"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="bequests.html">Leave a gift in your Will</a></div>',
+    '    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>',
+    '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered by donations, gifts in wills and partnerships.</p>',
+    '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="bequests.html">Leave a gift in your Will</a></div>',
     '  </div>',
     '</section>'])
 
@@ -258,20 +258,20 @@ def grants_hub():
     for slug, g in GRANTS.items():
         cards.append(('project-%s.html' % slug, g['title'], first_para(slug), g['img']))
     card_html = NL.join(
-        ('      <a class="card gr-card rv%s" href="%s">%s'
+        ('      <a class="gr-card rv%s" href="%s">%s'
          '        <div class="gr-im"><img src="%s" alt="" loading="lazy"></div>%s'
          '        <div class="gr-bd"><h2>%s</h2><p>%s</p><span class="art-link">Find out more</span></div>%s'
          '      </a>') % ('' if i == 0 else ' d%d' % min(i, 3), href, NL, img, NL, t, H.escape(p[:220].rsplit(' ', 1)[0] + ('…' if len(p) > 220 else '')), NL)
         for i, (href, t, p, img) in enumerate(cards))
     css = PROSE_CSS + '''
-.gr-g{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);margin-top:var(--sp-4)}
+.gr-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:2.4rem}
 @media(max-width:760px){.gr-g{grid-template-columns:1fr}}
-.gr-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
+.gr-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
 .gr-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px -18px rgba(15,49,50,.25);opacity:1}
 .gr-im{aspect-ratio:16/9;overflow:hidden;background:var(--sand)}
 .gr-im img{width:100%;height:100%;object-fit:cover}
-.gr-bd{padding:var(--sp-3) var(--sp-3) var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-1);flex:1}
-.gr-bd h2{color:var(--euc-deep);margin-top:0;margin-bottom:0}
+.gr-bd{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.gr-bd h2{font-size:1.15rem;color:var(--euc-deep);margin:0}
 .gr-bd p{font-size:.93rem;line-height:1.6;color:var(--char);margin:0;flex:1}
 '''
     body = NL.join([
@@ -307,22 +307,22 @@ def paws():
     head = re.sub(r'^## .*\n', '', head, count=1, flags=re.M)
     items = re.findall(r'### (.+?)\n!\[([^\]]*)\]\(([^)]+)\)\n\[Download PDF\]\(([^)]+)\)', issues)
     cards = NL.join(
-        ('      <a class="card pw-card rv" href="%s" target="_blank" rel="noopener">%s'
+        ('      <a class="pw-card rv" href="%s" target="_blank" rel="noopener">%s'
          '        <div class="pw-im"><img src="%s" alt="Cover of PAWS Magazine, %s" loading="lazy"></div>%s'
          '        <div class="pw-bd"><h3>%s</h3><span class="art-link">Download PDF</span></div>%s'
          '      </a>') % (pdf, NL, img, H.escape(t.title().replace(' Issue', ' issue')), NL,
                           H.escape(t.title().replace(' Issue', ' issue')), NL)
         for t, alt, img, pdf in items)
     css = PROSE_CSS + '''
-.pw-g{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);margin-top:var(--sp-5)}
+.pw-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:2.6rem}
 @media(max-width:980px){.pw-g{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.pw-g{grid-template-columns:repeat(2,1fr);gap:var(--sp-2)}}
-.pw-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
+@media(max-width:640px){.pw-g{grid-template-columns:repeat(2,1fr);gap:1rem}}
+.pw-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--rule);transition:transform .2s ease,box-shadow .2s ease}
 .pw-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px -18px rgba(15,49,50,.25);opacity:1}
 .pw-im{aspect-ratio:3/4;overflow:hidden;background:var(--sand)}
 .pw-im img{width:100%;height:100%;object-fit:cover;display:block}
-.pw-bd{padding:var(--sp-2) var(--sp-2) var(--sp-2);display:flex;flex-direction:column;gap:var(--sp-1)}
-.pw-bd h3{margin-top:0;margin-bottom:0;color:var(--euc-deep)}
+.pw-bd{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.pw-bd h3{font-size:1rem;margin:0;color:var(--euc-deep)}
 '''
     body = NL.join([
         photo_hero('Newsletter archive', 'PAWS Magazine.', H.escape(sub.group(1)) if sub else '',
@@ -360,11 +360,11 @@ def ebook():
     img = U + '2023/05/FNP1009_e-book_thumbnail_shadow.jpg'
     alt = cover.group(1) if cover else ''
     css = PROSE_CSS + '''
-.eb-g{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--sp-5);align-items:start}
-@media(max-width:860px){.eb-g{grid-template-columns:1fr;gap:var(--sp-4)}}
+.eb-g{display:grid;grid-template-columns:1.2fr .8fr;gap:3.5rem;align-items:start}
+@media(max-width:860px){.eb-g{grid-template-columns:1fr;gap:2rem}}
 .eb-cover img{width:100%;max-width:420px;height:auto;display:block;margin:0 auto}
-.eb-form{background:var(--sand);padding:var(--sp-4);margin-top:var(--sp-4)}
-.eb-form h3{margin-top:0;color:var(--euc-deep)}
+.eb-form{background:var(--sand);padding:2rem;margin-top:2.4rem}
+.eb-form h3{margin:0 0 .6rem;color:var(--euc-deep)}
 .eb-form p{margin:0;font-size:.95rem;color:var(--char)}
 '''
     body = NL.join([
@@ -397,12 +397,12 @@ def ebook():
 # ---------------------------------------------------------------- newsletter thank-you
 def newsletter_thanks():
     body = NL.join([
-        '<section class="sec sand">',
+        '<section class="sec" style="padding:7rem 0 6rem;background:var(--sand)">',
         '  <div class="cw rv" style="max-width:720px;text-align:center">',
         '    <span class="ey" style="justify-content:center">Newsletter</span>',
-        '    <h1>Thank you for signing up.</h1>',
+        '    <h1 style="margin:1rem 0 1.2rem">Thank you for signing up.</h1>',
         '    <p class="lede" style="margin:0 auto 2rem">You&rsquo;re now part of a community helping us protect and restore Australia&rsquo;s national parks and wildlife. Look out for stories from the field, project updates and new ways to get involved in your inbox.</p>',
-        '    <div class="cta-btns">'
+        '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
         '<a class="btn-p" href="articles.html">Read our latest stories</a><a class="btn-o" href="projects.html">See our projects</a></div>',
         '  </div>',
         '</section>'])
@@ -414,12 +414,12 @@ def newsletter_thanks():
 # ---------------------------------------------------------------- volunteer enquiry thank-you
 def volunteer_thanks():
     body = NL.join([
-        '<section class="sec sand">',
+        '<section class="sec" style="padding:7rem 0 6rem;background:var(--sand)">',
         '  <div class="cw rv" style="max-width:720px;text-align:center">',
         '    <span class="ey" style="justify-content:center">Corporate volunteering</span>',
-        '    <h1>Thank you for your interest in our corporate volunteering day.</h1>',
+        '    <h1 style="margin:1rem 0 1.2rem">Thank you for your interest in our corporate volunteering day.</h1>',
         '    <p class="lede" style="margin:0 auto 2rem">Your request has been submitted. We&rsquo;ll be in touch shortly with more details and next steps.</p>',
-        '    <div class="cta-btns">'
+        '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
         '<a class="btn-p" href="volunteer.html">Back to corporate volunteering</a><a class="btn-o" href="projects.html">See our projects</a></div>',
         '  </div>',
         '</section>'])

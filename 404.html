@@ -32,6 +32,12 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
+/* Utility page in the sand thank-you style; no photographic hero */
+.nf-hero{background:var(--sand);padding:var(--hero-top) 0 var(--hero-bot)}
+.nf-hero .breadcrumb{display:flex;gap:.5em;flex-wrap:wrap;font-size:.82rem;color:var(--stone);margin-bottom:var(--sp-3)}
+.nf-hero .breadcrumb a{color:var(--euc-deep)}
+.nf-hero h1{margin:.7rem 0 1rem;max-width:18ch}
+.nf-hero .lede{max-width:720px}
 .nf-links{display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center}
 </style>
 </head>
@@ -94,7 +100,7 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero flat">
+<section class="nf-hero">
   <div class="cw rv">
     <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Page not found</nav>
     <span class="ey">Error 404</span>

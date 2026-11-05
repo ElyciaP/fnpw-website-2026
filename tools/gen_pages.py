@@ -63,8 +63,8 @@ def feature(img, alt, title, paras, points, cta_label, cta_href, flip=False):
           f'style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;'
           f'box-shadow:12px 12px 0 var(--euc-pale)"></div>')
     pts = ''.join(f'<li>{p}</li>' for p in points)
-    txt = (f'<div class="rv d1"><h3 style="'
-           f'color:var(--euc-deep)">{title}</h3>'
+    txt = (f'<div class="rv d1"><h3 style="font-family:var(--ff-d);font-size:1.55rem;'
+           f'color:var(--euc-deep);margin-bottom:.9rem">{title}</h3>'
            + ''.join(f'<p style="margin-bottom:.8rem">{p}</p>' for p in paras)
            + f'<ul style="padding-left:1.2rem;display:grid;gap:.45rem;margin:.8rem 0 1.3rem">{pts}</ul>'
            + f'<a class="btn-p" href="{cta_href}">{cta_label}</a></div>')
@@ -72,20 +72,20 @@ def feature(img, alt, title, paras, points, cta_label, cta_href, flip=False):
     return f'<div class="two" style="align-items:center;margin-bottom:5rem">{inner}</div>'
 
 WY_CSS = '''
-.wy-intro{padding:var(--sp-6) 0 var(--sp-5);background:var(--cream)}
-.wy-wrap{background:var(--cream);padding:0 0 var(--sp-6)}
-.wy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3)}
+.wy-intro{padding:5rem 0 3rem;background:var(--cream)}
+.wy-wrap{background:var(--cream);padding:0 0 5.5rem}
+.wy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .wy-panel{position:relative;min-height:600px;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden}
 .wy-panel::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--wy) center/cover;transition:transform .7s ease}
 .wy-panel:hover::before{transform:scale(1.04)}
 .wy-panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,49,50,.12) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.94) 100%)}
-.wy-bd{position:relative;color:#fff;padding:var(--sp-4) var(--sp-4)}
+.wy-bd{position:relative;color:#fff;padding:2.4rem 2.2rem}
 .wy-i{font-family:var(--ff-d);font-weight:800;font-size:2rem;color:transparent;-webkit-text-stroke:1.4px var(--wattle)}
-.wy-tag{font-family:var(--ff-h);font-size:1.35rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block;margin-left:var(--sp-1)}
-.wy-bd h3{margin-top:var(--sp-1);color:#fff}
-.wy-bd p{color:rgba(255,255,255,.92);margin-bottom:var(--sp-1);font-size:.97rem}
-.wy-bd ul{padding-left:var(--sp-2);display:grid;gap:var(--sp-1);margin:var(--sp-2) 0 var(--sp-3);color:rgba(255,255,255,.88);font-size:.92rem}
-.wy-btn{display:inline-block;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:600;padding:var(--sp-2) var(--sp-4);text-decoration:none;transition:transform .18s ease}
+.wy-tag{font-family:var(--ff-h);font-size:1.35rem;color:var(--wattle-soft);transform:rotate(-2deg);display:inline-block;margin-left:.7rem}
+.wy-bd h3{font-family:var(--ff-d);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;letter-spacing:-.02em;margin:.5rem 0 .9rem;color:#fff}
+.wy-bd p{color:rgba(255,255,255,.92);margin-bottom:.7rem;font-size:.97rem}
+.wy-bd ul{padding-left:1.2rem;display:grid;gap:.4rem;margin:.8rem 0 1.4rem;color:rgba(255,255,255,.88);font-size:.92rem}
+.wy-btn{display:inline-block;background:var(--wattle);color:var(--euc-deep);font-family:var(--ff-d);font-weight:600;padding:.9rem 1.9rem;text-decoration:none;transition:transform .18s ease}
 .wy-btn:hover{transform:translateY(-2px)}
 @media(max-width:860px){.wy-grid{grid-template-columns:1fr}.wy-panel{min-height:480px}}
 '''
@@ -126,7 +126,7 @@ def wy_panels():
          'Learn how', 'bequests.html', True),
     ]
     out = ['<section class="wy-intro"><div class="cw rv"><span class="ey">Ways to give</span>'
-           '<h2 style="max-width:26ch">Money, planted where it grows the most.</h2>'
+           '<h2 style="margin:.8rem 0 .6rem;max-width:26ch">Money, planted where it grows the most.</h2>'
            '<p style="max-width:56ch">Four ways to give, each photographed where the money ends up.</p></div></section>']
     panels = []
     for num, tag, title, img, paras, points, cta, href, alt in P:
@@ -148,7 +148,7 @@ def numbered_steps(steps):
     cells = ''.join(
         f'<div class="rv"><span style="font-family:var(--ff-d);font-weight:800;font-size:2.6rem;'
         f'color:transparent;-webkit-text-stroke:1.3px var(--euc)">{i+1:02d}</span>'
-        f'<h3 style="color:var(--euc-deep)">{t}</h3>'
+        f'<h3 style="font-family:var(--ff-d);font-size:1.1rem;color:var(--euc-deep);margin:.5rem 0 .4rem">{t}</h3>'
         f'<p style="font-size:.94rem">{d}</p></div>'
         for i, (t, d) in enumerate(steps))
     return (f'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));'
@@ -163,7 +163,7 @@ def main():
              'five ways to give time and influence. Choose yours.', 'Get Involved')
         + wy_panels()
         + sec('<span class="ey">Time and influence</span>'
-              '<h2 style="max-width:26ch">Not everything we need is money.</h2>'
+              '<h2 style="margin:.8rem 0 1rem;max-width:26ch">Not everything we need is money.</h2>'
               '<p style="max-width:56ch">Hands in the dirt, a company behind the mission, a workplace '
               'that gives as a team: these move the work along just as surely.</p>'
               + rows([
@@ -198,7 +198,7 @@ def main():
              'A small amount from each pay, before tax, often matched by your employer. '
              'Set and forget, and it adds up to habitat.', 'Workplace Giving')
         + sec('<span class="ey">How it works</span>'
-              '<h2>Three steps, then it runs itself.</h2>'
+              '<h2 style="margin:.8rem 0 2.4rem">Three steps, then it runs itself.</h2>'
               + numbered_steps([
                   ('Ask payroll', 'Ask your payroll or people team to add the Foundation for National '
                    'Parks &amp; Wildlife as a workplace giving recipient.'),
@@ -211,7 +211,7 @@ def main():
               'alt="Bushcare volunteers restoring habitat" loading="lazy" style="display:block;width:100%;'
               'aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--wattle-soft)"></div>',
               '<div class="rv d1"><span class="ey">For payroll</span>'
-              '<h3 style="color:var(--euc-deep)">Details your payroll team will need</h3>'
+              '<h3 style="font-family:var(--ff-d);font-size:1.4rem;color:var(--euc-deep);margin:.6rem 0 .9rem">Details your payroll team will need</h3>'
               '<div class="pmeta">'
               '<div class="pmeta-i"><span>Organisation</span><strong>Foundation for National Parks &amp; Wildlife</strong></div>'
               '<div class="pmeta-i"><span>ABN</span><strong>90 107 744 771</strong></div>'
@@ -226,7 +226,7 @@ def main():
              'Birthdays, fun runs, morning teas, mountain climbs. Turn your thing into '
              'habitat for wildlife.', 'Fundraising')
         + sec('<span class="ey">Pick your thing</span>'
-              '<h2>Any excuse works.</h2><div class="lcg">'
+              '<h2 style="margin:.8rem 0 2.2rem">Any excuse works.</h2><div class="lcg">'
               '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Move for it</h3><p>Fun runs, ocean swims, '
               'mountain climbs and long rides. Every kilometre earns habitat.</p><span class="lc-go">&rsaquo;</span></a>'
               '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Host for it</h3><p>Morning teas, trivia '
@@ -236,7 +236,7 @@ def main():
               '<a class="lc rv" href="' + RAISELY_DONATE + '"><h3>Challenge yourself</h3><p>Give something '
               'up, take something on, let your friends sponsor the suffering.</p><span class="lc-go">&rsaquo;</span></a></div>')
         + sec('<span class="ey">How it works</span>'
-              '<h2>From idea to impact in three steps.</h2>'
+              '<h2 style="margin:.8rem 0 2.4rem">From idea to impact in three steps.</h2>'
               + numbered_steps([
                   ('Create your page', 'Set up a fundraising page in minutes, set a goal, tell your story.'),
                   ('Share it around', 'Friends, family, workmates. We can supply logos, photos and impact stats to make it look sharp.'),
@@ -251,7 +251,7 @@ def main():
              'Some gifts are measured in hectares. Land with conservation value can become '
              'part of the protected estate, safe forever.', 'Donate Land')
         + sec('<span class="ey">The pathway</span>'
-              '<h2>From your hands to protected, in three careful steps.</h2>'
+              '<h2 style="margin:.8rem 0 2.4rem">From your hands to protected, in three careful steps.</h2>'
               + numbered_steps([
                   ('A confidential conversation', 'Tell us about the land. Every discussion is private '
                    'and without obligation, and we treat every offer with care.'),
@@ -265,7 +265,7 @@ def main():
               'alt="Bushland protected at Heritage Estates" loading="lazy" style="display:block;width:100%;'
               'aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--euc-pale)"></div>',
               '<div class="rv d1"><span class="ey">Why it matters</span>'
-              '<h3 style="color:var(--euc-deep)">Land is the gift that cannot be undone.</h3>'
+              '<h3 style="font-family:var(--ff-d);font-size:1.4rem;color:var(--euc-deep);margin:.6rem 0 .9rem">Land is the gift that cannot be undone.</h3>'
               '<p style="margin-bottom:.8rem">Some of the most significant additions to the protected '
               'estate in our 55 years began as private land and a generous decision. Once protected, '
               'it stays protected: for the species on it now and everything that returns.</p>'
@@ -318,13 +318,13 @@ def main():
         hero('About us', 'Innovate Reconciliation Action Plan.',
              'Advancing reconciliation with First Nations Peoples.', 'Reconciliation Action Plan')
         + sec(two(
-            '<h2>Our commitment</h2>'
+            '<h2 style="margin-bottom:1.2rem">Our commitment</h2>'
             '<p>At FNPW, we&rsquo;re committed to fostering reconciliation by building meaningful '
             'partnerships with Aboriginal and Torres Strait Islander communities. Our '
             '<strong>Innovate Reconciliation Action Plan</strong> for 2025-2027 formalises this '
             'commitment, guiding our efforts to support cultural recognition, environmental '
             'stewardship, and sustainable conservation efforts led by First Nations peoples.</p>'
-            '<h3>Our vision for reconciliation</h3>'
+            '<h3 style="margin:1.6rem 0 .8rem">Our vision for reconciliation</h3>'
             '<p>FNPW recognises that Aboriginal and Torres Strait Islander peoples are the '
             '<strong>Traditional Custodians</strong> of Australia&rsquo;s lands, waters, and '
             'biodiversity. Our vision is to honour First Nations knowledge, cultures, and '
@@ -336,7 +336,7 @@ def main():
             '<li>Recognise and integrate the scientific and cultural knowledge of Aboriginal and '
             'Torres Strait Islander communities to support their leadership in conservation efforts</li>'
             '<li>Support community-led environmental programs</li></ul>',
-            '<div class="pmeta"><h3>Key initiatives in our RAP</h3>'
+            '<div class="pmeta"><h3 style="margin-bottom:.8rem">Key initiatives in our RAP</h3>'
             '<ul style="padding-left:1.1rem;display:grid;gap:.7rem">'
             '<li><strong>Community partnerships:</strong> working with First Nations communities to '
             'grow national parks, save native species, and restore degraded lands.</li>'
@@ -348,10 +348,10 @@ def main():
             '<li><strong>Governance &amp; accountability:</strong> establishing a strong framework to '
             'measure our progress and impact.</li></ul></div>'))
         + sec('<div style="text-align:center"><span class="ey">The full plan</span>'
-              '<h2>FNPW Innovate Reconciliation Action Plan 2025-2027</h2>'
+              '<h2 style="margin:.8rem 0 1rem">FNPW Innovate Reconciliation Action Plan 2025-2027</h2>'
               '<p class="lede" style="margin:0 auto 1.8rem;max-width:50ch">For a deeper look into our '
               'initiatives, goals, and commitments, read the full plan.</p>'
-              '<div class="cta-btns">'
+              '<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
               '<a class="btn-p" href="https://heyzine.com/flip-book/52077716c5.html">Read online</a>'
               f'<a class="btn-o" href="{RAP_PDF}">Open PDF</a></div></div>', 'paper'))
 
@@ -431,7 +431,7 @@ def main():
     <div class="cmp-hero-im"><img src="https://raisely-images.imgix.net/bring-back-the-bush/uploads/emu-blue-sky-v-2-png-5d1b82.png" alt=""></div>
   </div>
 </section>
-''' + sec('<span class="ey" id="story">The story</span><h2>Why this campaign exists</h2>'
+''' + sec('<span class="ey" id="story">The story</span><h2 style="margin:.8rem 0 1.2rem">Why this campaign exists</h2>'
           '<p>Campaign narrative goes here. Swap this template\'s copy, imagery and progress '
           'figures per campaign; the layout and components stay the same. This is the page type '
           'that used to require a Raisely subdomain.</p>', 'paper')

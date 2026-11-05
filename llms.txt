@@ -19,7 +19,7 @@
 - [Reports & Publications](https://elyciap.github.io/fnpw-website-2026/reports.html): Impact Reports, Year in Review, financial statements and strategy as PDFs.
 - [Partner With Us](https://elyciap.github.io/fnpw-website-2026/partner-invest.html): How businesses, foundations and major donors partner with us.
 - [Government Partnerships](https://elyciap.github.io/fnpw-website-2026/government-partnerships.html): How we work with Australian, state and territory governments.
-- [Gifts in Wills: Leave a Legacy for Nature](https://elyciap.github.io/fnpw-website-2026/bequests.html): Gifts in wills, with suggested wording.
+- [Gifts in Wills](https://elyciap.github.io/fnpw-website-2026/bequests.html): Gifts in wills, with suggested wording.
 - [Donate Land](https://elyciap.github.io/fnpw-website-2026/donate-land.html): How to give land to become national park.
 - [Corporate Volunteering](https://elyciap.github.io/fnpw-website-2026/volunteer.html): Corporate volunteering days across five states.
 - [Workplace Giving](https://elyciap.github.io/fnpw-website-2026/workplace-giving.html): Regular giving from pre-tax pay.

@@ -251,7 +251,7 @@ def build(rec, meta):
     meta_bits = ' &nbsp;&nbsp;&middot;&nbsp;&nbsp; '.join(
         x for x in (state, ('Since %s' % year) if year else '') if x)
     parts.append(
-        '<section class="hero pj-hero">%s'
+        '<section class="pj-hero">%s'
         '  <figure class="pj-hero-im"><img src="%s" alt="" fetchpriority="high" decoding="async"></figure>%s'
         '  <div class="cw rv">%s'
         '    <nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem">'
@@ -291,7 +291,7 @@ def build(rec, meta):
         '    <div class="two">',
         '      <div>',
         '        <span class="ey">The project</span>',
-        '        <h2>%s</h2>' % esc(intro['h'] or 'About this project'),
+        '        <h2 style="margin:.8rem 0 1.2rem">%s</h2>' % esc(intro['h'] or 'About this project'),
         body_html(intro['body'], '        '),
         '      </div>',
         '      <div><div class="pmeta">',
@@ -319,7 +319,7 @@ def build(rec, meta):
         if s['ey']:
             head += '      <span class="ey">%s</span>%s' % (esc(s['ey']), NL)
         if s['h']:
-            head += '      <h2>%s</h2>%s' % (esc(s['h']), NL)
+            head += '      <h2 class="pj-sub">%s</h2>%s' % (esc(s['h']), NL)
         words = wordcount(s['body'])
         img = gallery[gi] if gi < len(gallery) else None
 
@@ -361,10 +361,10 @@ def build(rec, meta):
                  '  </div>%s</section>' % (NL, NL, NL, NL))
     parts.append(
         '<section class="sec dark">%s  <div class="cw rv" style="text-align:center">%s'
-        '    <h2 class="hc">Help fund work like this.</h2>%s'
-        '    <p class="lede hc">Every FNPW project is powered '
+        '    <h2 style="max-width:24ch;margin:0 auto 1rem">Help fund work like this.</h2>%s'
+        '    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Every FNPW project is powered '
         'by donations, gifts in wills and partnerships.</p>%s'
-        '    <div class="cta-btns">'
+        '    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">'
         '<a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a>'
         '<a class="btn-o" href="bequests.html">Leave a gift in your Will</a></div>%s  </div>%s</section>'
         % (NL, NL, NL, NL, NL, NL))

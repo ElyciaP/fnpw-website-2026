@@ -32,16 +32,17 @@
 <style>
 .cg-sec{padding:var(--sec-md) 0;background:var(--cream)}
 .cg-sec.alt{background:var(--sand)}
-.cg-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--sp-6);align-items:start}
-@media(max-width:900px){.cg-g{grid-template-columns:1fr;gap:var(--sp-3)}}
-.cg-g h2{color:var(--euc-deep);margin-top:var(--sp-1);margin-bottom:0}
-.cg-list{list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-2)}
-.cg-list li{position:relative;padding-left:var(--sp-3);font-size:1rem;line-height:1.72;color:var(--char)}
+.cg-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+@media(max-width:900px){.cg-g{grid-template-columns:1fr;gap:1.4rem}}
+.cg-g h2{font-family:var(--ff-d);font-size:clamp(1.4rem,2.3vw,1.85rem);font-weight:700;
+  letter-spacing:-.02em;color:var(--euc-deep);margin:.5rem 0 0;line-height:1.15}
+.cg-list{list-style:none;padding:0;margin:0;display:grid;gap:1.1rem}
+.cg-list li{position:relative;padding-left:1.7rem;font-size:1rem;line-height:1.72;color:var(--char)}
 .cg-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;background:var(--euc-mid)}
 .cg-list a{color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor}
-.cg-facts{background:var(--sand);padding:var(--sp-4) var(--sp-3);display:grid;gap:var(--sp-2)}
+.cg-facts{background:var(--sand);padding:1.8rem 1.7rem;display:grid;gap:.9rem}
 .cg-facts div{display:grid;gap:.15rem}
-.cg-facts dt{font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:700}
+.cg-facts dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:700}
 .cg-facts dd{margin:0;font-family:var(--ff-d);font-size:.98rem;color:var(--euc-deep);font-weight:600}
 </style>
 </head>
@@ -104,10 +105,10 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero pj-hero">
+<section class="pj-hero">
   <figure class="pj-hero-im"><picture><source type="image/webp" srcset="assets/img/r/governance-hero-gorge-480.webp 480w, assets/img/r/governance-hero-gorge-800.webp 800w, assets/img/r/governance-hero-gorge-1200.webp 1200w, assets/img/r/governance-hero-gorge-1600.webp 1600w" sizes="100vw"><img src="assets/img/governance-hero-gorge.jpg" alt="Forested gorge winding through rugged, tree-covered hills under a clear blue sky" style="object-position:50% 30%" width="1600" height="900" fetchpriority="high" decoding="async"></picture></figure>
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Corporate Governance</nav>
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap"><a href="index.html">Home</a><span>/</span>Corporate Governance</nav>
     <span class="ey">About us</span>
     <h1>Corporate governance.</h1>
     <p class="lede">We are accountable to our supporters, our partners and the ACNC. Here is how the organisation is run.</p>

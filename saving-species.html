@@ -23,7 +23,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Foundation for National Parks &amp; Wildlife: news and stories" href="feed.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elyciap.github.io/fnpw-website-2026/#organization","name":"Foundation for National Parks & Wildlife","legalName":"Foundation for National Parks & Wildlife","alternateName":"FNPW","url":"https://elyciap.github.io/fnpw-website-2026/","logo":{"@type":"ImageObject","url":"https://elyciap.github.io/fnpw-website-2026/assets/img/fnpw-logo.png","width":900,"height":246},"taxID":"90 107 744 771","nonprofitStatus":"NonprofitType","foundingDate":"1970","sameAs":["https://www.facebook.com/fnpwaustralia/","https://www.instagram.com/fnpwaustralia/","https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife"],"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+61 1800 898 626","email":"fnpw@fnpw.org.au","areaServed":"AU","availableLanguage":"en"},"address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elyciap.github.io/fnpw-website-2026/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://elyciap.github.io/fnpw-website-2026/projects.html"},{"@type":"ListItem","position":3,"name":"Saving Species","item":"https://elyciap.github.io/fnpw-website-2026/saving-species.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home Projects Saving Species","item":"https://elyciap.github.io/fnpw-website-2026/saving-species.html"}]}</script>
 <!-- /@meta -->
 <meta name="referrer" content="no-referrer">
 <link rel="stylesheet" href="assets/css/global.css">
@@ -38,15 +38,16 @@
 .pil-hero::before{background-image:url('assets/img/pillar-species-koala.jpg');opacity:1;background-image:image-set(url('assets/img/r/pillar-species-koala-1600.webp') type('image/webp'),url('assets/img/pillar-species-koala.jpg') type('image/jpeg'))}
 /* neutral scrim instead of the green gradient, only as dark as the
    headline and lede need to stay legible. */
-.pil-hero{--hero-scrim:
+.pil-hero::after{background:
   linear-gradient(100deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.38) 32%,rgba(0,0,0,.10) 60%,rgba(0,0,0,0) 78%),
   linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.30) 100%)}
-.pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 @media(max-width:780px){.pil-cred{display:none}}
 
 
-
-.fb.fb-paper{background:var(--sand)}
+.pil-hero{padding:10rem 0 5rem}
+.fb.fb-paper{background:rgba(244,238,230,.95)}
 
 </style>
 </head>
@@ -109,12 +110,12 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero ch chi pil-hero chi-species" style="--chi:url('assets/img/pillar-species-koala.jpg')">
+<section class="ch chi pil-hero chi-species" style="--chi:url('assets/img/pillar-species-koala.jpg')">
   <div class="cw rv">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="projects.html">Projects</a><span>/</span>Saving Species</nav>
-    <span class="ey">43 projects across Australia</span>
-    <h1 style="max-width:16ch">Saving Species</h1>
-    <p class="lede">We protect Australia's most vulnerable species by restoring habitats, creating wildlife corridors, and supporting targeted conservation programs.</p>
+    <nav aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span>/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span>/</span>Saving Species</nav>
+    <span class="ey" style="color:var(--euc-soft)">43 projects across Australia</span>
+    <h1 style="margin:1rem 0 1.2rem;max-width:16ch;color:#fff">Saving Species</h1>
+    <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">We protect Australia's most vulnerable species by restoring habitats, creating wildlife corridors, and supporting targeted conservation programs.</p>
   </div>
   <span class="pil-cred">Credit: RichLindie</span>
 </section>
@@ -130,8 +131,8 @@
 <section class="sec ">
   <div class="cw rv">
 <div class="two">
-<div><span class="ey">Why it matters</span><h2>What this work does</h2><p>Australia is home to plants and animals found nowhere else on Earth, and one of the worst extinction records anywhere. These projects fund the unglamorous, essential work of recovery: breeding programs, monitoring, nest boxes, disease treatment and the science that underpins all of it.</p><p>From koalas and quolls to enigma moths and endangered wattles, if it is on the brink, this is the work fighting for it.</p></div>
-<div><div class="pmeta"><h3>How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We fund recovery programs run with researchers, carers and land managers</li><li>We back both flagship species and the overlooked ones</li><li>Every project reports real outcomes: populations, hectares, hollows, seedlings</li></ul></div></div>
+<div><span class="ey">Why it matters</span><h2 style="margin:.8rem 0 1.2rem">What this work does</h2><p>Australia is home to plants and animals found nowhere else on Earth, and one of the worst extinction records anywhere. These projects fund the unglamorous, essential work of recovery: breeding programs, monitoring, nest boxes, disease treatment and the science that underpins all of it.</p><p>From koalas and quolls to enigma moths and endangered wattles, if it is on the brink, this is the work fighting for it.</p></div>
+<div><div class="pmeta"><h3 style="margin-bottom:.8rem">How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We fund recovery programs run with researchers, carers and land managers</li><li>We back both flagship species and the overlooked ones</li><li>Every project reports real outcomes: populations, hectares, hollows, seedlings</li></ul></div></div>
 </div>
   </div>
 </section>
@@ -139,7 +140,7 @@
   <div class="cw rv">
 <div class="two" style="align-items:center">
 <div class="rv"><a href="project-warddeken-mayh.html"><img src="https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg" alt="Warddeken Mayh Recovery Project" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--bark-mid)" decoding="async"></a></div>
-<div class="rv d1"><span class="ey">Featured project</span><h2>Warddeken Mayh Recovery Project</h2>
+<div class="rv d1"><span class="ey">Featured project</span><h2 style="margin:.8rem 0 1rem">Warddeken Mayh Recovery Project</h2>
 <p><!-- Warddeken to confirm the current site count: 28 permanent sites per Annual Report 2023-24 -->Indigenous rangers run a network of permanent camera monitoring sites across 1.4 million hectares of the Warddeken Indigenous Protected Area, recovering threatened mammals through right-way fire and feral animal management.</p>
 <p>It is the largest single landscape we work across and the clearest demonstration of what this work funds: local knowledge, long timeframes, measured outcomes.</p>
 <a class="hx-cta" href="project-warddeken-mayh.html">Read the full story<span class="hx-cta-line" aria-hidden="true"></span></a></div>
@@ -147,7 +148,7 @@
   </div>
 </section>
 <section class="sec sand sec-head">
-  <div class="cw rv"><span class="ey">All 43 projects</span><h2>Projects in this area</h2></div>
+  <div class="cw rv"><span class="ey">All 43 projects</span><h2 style="margin:.8rem 0 0">Projects in this area</h2></div>
 </section>
 <div class="fb fb-paper fb-species">
   <div class="cw"><div class="fb-r">
@@ -618,9 +619,9 @@
 </section>
 <section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 class="hc">Support Saving Species.</h2>
-    <p class="lede hc">Donate to this work directly, or partner with us to fund it at scale.</p>
-    <div class="cta-btns"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="partner-invest.html">Partner with us</a></div>
+    <h2 style="max-width:24ch;margin:0 auto 1rem">Support Saving Species.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Donate to this work directly, or partner with us to fund it at scale.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="partner-invest.html">Partner with us</a></div>
   </div>
 </section>
 </main>

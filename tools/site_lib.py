@@ -45,8 +45,9 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
         print('meta.apply skipped for %s: %s' % (fname, e))
 
 def crumb(label):
-    return ('<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>'
-            f'<span>/</span>{label}</nav>')
+    return ('<nav style="display:flex;gap:.5em;font-size:.82rem;color:var(--stone);'
+            'margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc)">Home</a>'
+            f'<span style="opacity:.4">/</span>{label}</nav>')
 
 U_ = 'https://fnpw.org.au/wp-content/uploads/'
 # crumb label -> photographic hero (image, alt). Pages not listed fall back to flat.
@@ -78,21 +79,21 @@ def hero(ey, h1, lede, crumb_label):
     if crumb_label in HERO_IMGS:
         img, alt = HERO_IMGS[crumb_label]
         return hero_img(ey, h1, lede, crumb_label, img, alt)
-    return f'''<section class="hero flat light ch">
+    return f'''<section class="ch">
   <div class="cw rv">
     {crumb(crumb_label)}
     <span class="ey">{ey}</span>
-    <h1>{h1}</h1>
+    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">{h1}</h1>
     <p class="lede">{lede}</p>
   </div>
 </section>'''
 
 def hero_img(ey, h1, lede, crumb_label, img, alt):
-    return f'''<section class="hero ch chi" style="--chi:url('{img}')">
+    return f'''<section class="ch chi" style="--chi:url('{img}')">
   <div class="cw rv">
     {crumb(crumb_label)}
     <span class="ey">{ey}</span>
-    <h1>{h1}</h1>
+    <h1 style="margin:1rem 0 1.2rem;max-width:22ch">{h1}</h1>
     <p class="lede">{lede}</p>
   </div>
 </section>'''
@@ -111,9 +112,9 @@ def cta_band(h, p, buttons):
     btns = ''.join(f'<a class="{cls}" href="{href}">{label}</a>' for label, href, cls in buttons)
     return f'''<section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 class="hc">{h}</h2>
-    <p class="lede hc">{p}</p>
-    <div class="cta-btns">{btns}</div>
+    <h2 style="max-width:24ch;margin:0 auto 1rem">{h}</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">{p}</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">{btns}</div>
   </div>
 </section>'''
 

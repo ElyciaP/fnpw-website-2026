@@ -32,27 +32,27 @@
 <style>
 
 .prose{max-width:74ch}
-.prose h2{margin-top:var(--sp-4);color:var(--euc-deep)}
-.prose h3{margin-top:var(--sp-4);color:var(--euc-deep)}
+.prose h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:2.4rem 0 .9rem;color:var(--euc-deep)}
+.prose h3{font-size:1.08rem;margin:2rem 0 .7rem;color:var(--euc-deep);letter-spacing:.01em}
 .prose p,.prose li{font-size:1rem;line-height:1.75;color:var(--char)}
-.prose p{margin:0 0 var(--sp-2)}
-.prose ul,.prose ol{margin:0 0 var(--sp-2);padding-left:var(--sp-3)}
-.prose li{margin-bottom:var(--sp-1)}
+.prose p{margin:0 0 1rem}
+.prose ul,.prose ol{margin:0 0 1.2rem;padding-left:1.3rem}
+.prose li{margin-bottom:.45rem}
 .prose a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
-.prose img{max-width:100%;height:auto;display:block;margin:var(--sp-3) 0}
-.prose table{width:100%;border-collapse:collapse;margin:var(--sp-2) 0 var(--sp-4);font-size:.92rem}
-.prose th,.prose td{text-align:left;padding:var(--sp-1) var(--sp-2);border-bottom:1px solid var(--rule);vertical-align:top}
+.prose img{max-width:100%;height:auto;display:block;margin:1.6rem 0}
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:.92rem}
+.prose th,.prose td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top}
 .prose th{font-family:var(--ff-d);color:var(--euc-deep);background:var(--sand)}
-.prose blockquote{border-left:3px solid var(--bark);margin:var(--sp-3) 0;padding:.2rem 0 .2rem var(--sp-2)}
+.prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
 @media(max-width:640px){.prose table{display:block;overflow-x:auto}}
 .prose .btn-p{color:var(--cream);text-decoration:none}
-.gr-closed{background:var(--sand);border-left:3px solid var(--bark);padding:var(--sp-2) var(--sp-2);margin:0 0 var(--sp-4)!important}
+.gr-closed{background:var(--sand);border-left:3px solid var(--bark);padding:1rem 1.2rem;margin:0 0 1.8rem!important}
 
-.eb-g{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--sp-5);align-items:start}
-@media(max-width:860px){.eb-g{grid-template-columns:1fr;gap:var(--sp-4)}}
+.eb-g{display:grid;grid-template-columns:1.2fr .8fr;gap:3.5rem;align-items:start}
+@media(max-width:860px){.eb-g{grid-template-columns:1fr;gap:2rem}}
 .eb-cover img{width:100%;max-width:420px;height:auto;display:block;margin:0 auto}
-.eb-form{background:var(--sand);padding:var(--sp-4);margin-top:var(--sp-4)}
-.eb-form h3{margin-top:0;color:var(--euc-deep)}
+.eb-form{background:var(--sand);padding:2rem;margin-top:2.4rem}
+.eb-form h3{margin:0 0 .6rem;color:var(--euc-deep)}
 .eb-form p{margin:0;font-size:.95rem;color:var(--char)}
 
 </style>
@@ -116,10 +116,10 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero pj-hero">
+<section class="pj-hero">
   <figure class="pj-hero-im"><picture><source type="image/webp" srcset="assets/img/r/newsletter-hero-forest-480.webp 480w, assets/img/r/newsletter-hero-forest-800.webp 800w, assets/img/r/newsletter-hero-forest-1200.webp 1200w, assets/img/r/newsletter-hero-forest-1600.webp 1600w" sizes="100vw"><img src="assets/img/newsletter-hero-forest.jpg" alt="Looking straight down from above into sunlit eucalypt forest and tree ferns, with a dirt track along one edge" width="1600" height="1066" fetchpriority="high" decoding="async"></picture></figure>
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="articles.html">News</a><span>/</span>eBook</nav>
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap"><a href="index.html">Home</a><span>/</span><a href="articles.html">News</a><span>/</span>eBook</nav>
     <span class="ey">Free eBook</span>
     <h1>Mitigating the effects of environmental change on Australia&rsquo;s fragile ecosystem.</h1>
     <p class="lede">How to make proactive contributions to reduce the impacts of environmental change beyond 2023</p>

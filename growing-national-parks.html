@@ -23,7 +23,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Foundation for National Parks &amp; Wildlife: news and stories" href="feed.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elyciap.github.io/fnpw-website-2026/#organization","name":"Foundation for National Parks & Wildlife","legalName":"Foundation for National Parks & Wildlife","alternateName":"FNPW","url":"https://elyciap.github.io/fnpw-website-2026/","logo":{"@type":"ImageObject","url":"https://elyciap.github.io/fnpw-website-2026/assets/img/fnpw-logo.png","width":900,"height":246},"taxID":"90 107 744 771","nonprofitStatus":"NonprofitType","foundingDate":"1970","sameAs":["https://www.facebook.com/fnpwaustralia/","https://www.instagram.com/fnpwaustralia/","https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife"],"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+61 1800 898 626","email":"fnpw@fnpw.org.au","areaServed":"AU","availableLanguage":"en"},"address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elyciap.github.io/fnpw-website-2026/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://elyciap.github.io/fnpw-website-2026/projects.html"},{"@type":"ListItem","position":3,"name":"Growing National Parks","item":"https://elyciap.github.io/fnpw-website-2026/growing-national-parks.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home Projects Growing National Parks","item":"https://elyciap.github.io/fnpw-website-2026/growing-national-parks.html"}]}</script>
 <!-- /@meta -->
 <meta name="referrer" content="no-referrer">
 <link rel="stylesheet" href="assets/css/global.css">
@@ -38,15 +38,16 @@
 .pil-hero::before{background-image:url('assets/img/pillar-parks-forest.jpg');opacity:1;background-image:image-set(url('assets/img/r/pillar-parks-forest-1600.webp') type('image/webp'),url('assets/img/pillar-parks-forest.jpg') type('image/jpeg'))}
 /* neutral scrim instead of the green gradient, only as dark as the
    headline and lede need to stay legible. */
-.pil-hero{--hero-scrim:
+.pil-hero::after{background:
   linear-gradient(100deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.38) 32%,rgba(0,0,0,.10) 60%,rgba(0,0,0,0) 78%),
   linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.30) 100%)}
-.pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.pil-cred{position:absolute;bottom:1.2rem;right:1.6rem;z-index:4;color:rgba(250,246,242,.62);
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 @media(max-width:780px){.pil-cred{display:none}}
 
 
-
-.fb.fb-paper{background:var(--sand)}
+.pil-hero{padding:10rem 0 5rem}
+.fb.fb-paper{background:rgba(244,238,230,.95)}
 
 </style>
 </head>
@@ -109,12 +110,12 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero ch chi pil-hero chi-parks" style="--chi:url('assets/img/pillar-parks-forest.jpg')">
+<section class="ch chi pil-hero chi-parks" style="--chi:url('assets/img/pillar-parks-forest.jpg')">
   <div class="cw rv">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="projects.html">Projects</a><span>/</span>Growing National Parks</nav>
-    <span class="ey">13 projects across Australia</span>
-    <h1 style="max-width:16ch">Growing National Parks</h1>
-    <p class="lede">We expand and protect conservation spaces to safeguard critical habitats and support resilient ecosystems.</p>
+    <nav aria-label="Breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem"><a href="index.html" style="color:var(--euc-soft)">Home</a><span>/</span><a href="projects.html" style="color:var(--euc-soft)">Projects</a><span>/</span>Growing National Parks</nav>
+    <span class="ey" style="color:var(--euc-soft)">13 projects across Australia</span>
+    <h1 style="margin:1rem 0 1.2rem;max-width:16ch;color:#fff">Growing National Parks</h1>
+    <p class="lede" style="color:rgba(255,255,255,.88);max-width:52ch">We expand and protect conservation spaces to safeguard critical habitats and support resilient ecosystems.</p>
   </div>
   <span class="pil-cred">Credit: tsvibrav</span>
 </section>
@@ -130,8 +131,8 @@
 <section class="sec ">
   <div class="cw rv">
 <div class="two">
-<div><span class="ey">Why it matters</span><h2>What this work does</h2><p>National parks are the strongest protection Australian law can give a landscape. When land with high conservation value comes up, we help acquire it and hand it back, adding it to the protected estate so it is safe from clearing and development forever.</p><p>It started with our founding gift in 1970 and it has never stopped: from wetlands at the Murray Mouth to outback stations beside Boodjamulla, these projects are how the map of protected Australia grows.</p></div>
-<div><div class="pmeta"><h3>How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We identify land of high conservation value, often adjoining existing parks</li><li>We fund or co-fund the acquisition with partners and supporters</li><li>The land is transferred to the national parks estate, protected forever</li></ul></div></div>
+<div><span class="ey">Why it matters</span><h2 style="margin:.8rem 0 1.2rem">What this work does</h2><p>National parks are the strongest protection Australian law can give a landscape. When land with high conservation value comes up, we help acquire it and hand it back, adding it to the protected estate so it is safe from clearing and development forever.</p><p>It started with our founding gift in 1970 and it has never stopped: from wetlands at the Murray Mouth to outback stations beside Boodjamulla, these projects are how the map of protected Australia grows.</p></div>
+<div><div class="pmeta"><h3 style="margin-bottom:.8rem">How we do it</h3><ul style="padding-left:1.1rem;display:grid;gap:.6rem"><li>We identify land of high conservation value, often adjoining existing parks</li><li>We fund or co-fund the acquisition with partners and supporters</li><li>The land is transferred to the national parks estate, protected forever</li></ul></div></div>
 </div>
   </div>
 </section>
@@ -139,7 +140,7 @@
   <div class="cw rv">
 <div class="two" style="align-items:center">
 <div class="rv"><a href="project-remarkable-southern-flinders.html"><img src="https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg" alt="Remarkable Southern Flinders" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--bark-mid)" decoding="async"></a></div>
-<div class="rv d1"><span class="ey">Featured project</span><h2>Remarkable Southern Flinders</h2>
+<div class="rv d1"><span class="ey">Featured project</span><h2 style="margin:.8rem 0 1rem">Remarkable Southern Flinders</h2>
 <p>Linking established parks, newly protected land and open reservoir country into one vast, connected park precinct for South Australia, co-managed with the Nukunu Nation.</p>
 <p>It is our largest single acquisition and the clearest picture of what growing a national park actually takes: patient negotiation, co-funding, and Traditional Owners at the centre of how the land is managed afterwards.</p>
 <a class="hx-cta" href="project-remarkable-southern-flinders.html">Read the full story<span class="hx-cta-line" aria-hidden="true"></span></a></div>
@@ -147,7 +148,7 @@
   </div>
 </section>
 <section class="sec sand sec-head">
-  <div class="cw rv"><span class="ey">All 13 projects</span><h2>Projects in this area</h2></div>
+  <div class="cw rv"><span class="ey">All 13 projects</span><h2 style="margin:.8rem 0 0">Projects in this area</h2></div>
 </section>
 <div class="fb fb-paper fb-parks">
   <div class="cw"><div class="fb-r">
@@ -348,9 +349,9 @@
 </section>
 <section class="sec dark">
   <div class="cw rv" style="text-align:center">
-    <h2 class="hc">Support Growing National Parks.</h2>
-    <p class="lede hc">Donate to this work directly, or partner with us to fund it at scale.</p>
-    <div class="cta-btns"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="partner-invest.html">Partner with us</a></div>
+    <h2 style="max-width:24ch;margin:0 auto 1rem">Support Growing National Parks.</h2>
+    <p class="lede" style="margin:0 auto 2rem;max-width:52ch">Donate to this work directly, or partner with us to fund it at scale.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><a class="btn-p btn-don" href="https://bush.fnpw.org.au">Donate</a><a class="btn-o" href="partner-invest.html">Partner with us</a></div>
   </div>
 </section>
 </main>

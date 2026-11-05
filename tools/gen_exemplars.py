@@ -12,12 +12,12 @@ from site_lib import ROOT
 U = 'https://fnpw.org.au/wp-content/uploads/'
 
 ACK_CSS = '''
-.ackb{background:var(--euc-pale);border-left:5px solid var(--euc);border-radius:0 12px 12px 0;padding:var(--sp-3) var(--sp-3);margin:var(--sp-4) 0}
-.ackb .ey{margin-bottom:var(--sp-1);display:block}
-.upd{border:1px solid var(--rule);border-radius:14px;background:#fff;padding:var(--sp-3);margin-bottom:var(--sp-2)}
-.upd h3{color:var(--euc-deep)}
-.upd img{border-radius:8px;max-width:300px;height:auto;margin:var(--sp-2) var(--sp-2) 0 0}
-.spl{columns:2;gap:var(--sp-4);font-size:.92rem}
+.ackb{background:var(--euc-pale);border-left:5px solid var(--euc);border-radius:0 12px 12px 0;padding:1.4rem 1.6rem;margin:2rem 0}
+.ackb .ey{margin-bottom:.4rem;display:block}
+.upd{border:1px solid var(--rule);border-radius:14px;background:#fff;padding:1.6rem;margin-bottom:1.2rem}
+.upd h3{color:var(--euc-deep);margin-bottom:.7rem}
+.upd img{border-radius:8px;max-width:300px;height:auto;margin:.8rem .8rem 0 0}
+.spl{columns:2;gap:2rem;font-size:.92rem}
 @media(max-width:700px){.spl{columns:1}}
 '''
 
@@ -33,7 +33,7 @@ def related(slug, pillar, label, cls):
     others = [p for p in projects if p['pillar'] == pillar and p['slug'] != slug][:3]
     cards = '\n'.join(card(p['slug'], p['title'], p['img'], label, cls, p['state'], '') for p in others)
     return sec(f'<span class="ey">More from this pillar</span>'
-               f'<h2>Related projects</h2>'
+               f'<h2 style="margin:.8rem 0 1.6rem">Related projects</h2>'
                f'<div class="pg">{cards}</div>', 'paper')
 
 CTA = cta_band('Help fund work like this.',
@@ -48,14 +48,14 @@ def main():
         'vast, connected park of national significance.', 'Remarkable Southern Flinders',
         U + '2021/02/square.jpg', 'Southern Flinders Ranges')
     body += sec(two(
-        '<span class="ey">The project</span><h2>A new national park precinct for South Australia</h2>'
+        '<span class="ey">The project</span><h2 style="margin:.8rem 0 1.2rem">A new national park precinct for South Australia</h2>'
         '<p>Developing a Southern Flinders National Park precinct will create a new nature-based '
         'tourism destination for South Australia. It will connect the natural landscapes of the '
         'region and draw people into local communities. The project offers a rare opportunity to '
         'link well established national parks and conservation parks with land recently acquired '
         'for conservation and reservoir area opened for public use, to create a vast, connected '
         'park of national significance.</p>'
-        '<h3>Project overview</h3>'
+        '<h3 style="margin:1.6rem 0 .8rem">Project overview</h3>'
         '<p>The South Australian Government committed $5 million to establish the Southern '
         'Flinders Ranges National Park as part of the Parks 2025 strategy. Together, the community '
         'partners secured an additional $5 million from the Australian Government&rsquo;s Building '
@@ -78,7 +78,7 @@ def main():
               'In the spirit of reconciliation we acknowledge the Traditional Owners of Country and '
               'recognise their continuing connection to land, waters and culture.')))
     body += sec(
-        '<span class="ey">Latest news</span><h2>Progress on the ground</h2>'
+        '<span class="ey">Latest news</span><h2 style="margin:.8rem 0 1.4rem">Progress on the ground</h2>'
         '<div class="upd"><h3>Stage one complete: 20km of new trails at Willowie</h3>'
         '<p>Twenty kilometres of new mountain bike trails have opened in Mount Remarkable National '
         'Park at Willowie. The new trails are family-friendly, catering for beginner through to '
@@ -108,11 +108,11 @@ def main():
         'Wingecarribee Shire.', 'Southern Highlands Koala Conservation',
         U + '2021/02/Southern-Koala-05-scaled.jpg', 'Koala in the Southern Highlands')
     body += sec(two(
-        '<span class="ey">The project</span><h2>Finding the Southern Highlands koalas</h2>'
+        '<span class="ey">The project</span><h2 style="margin:.8rem 0 1.2rem">Finding the Southern Highlands koalas</h2>'
         '<p>Twenty koalas were collared with GPS tracking devices in the Southern Highlands to learn '
         'more about where they live, their numbers, what trees they prefer to eat and shelter in, '
         'and their movements throughout the Southern Highlands shire corridors.</p>'
-        '<h3>Project overview</h3>'
+        '<h3 style="margin:1.6rem 0 .8rem">Project overview</h3>'
         '<p>The project provides a clear direction for the long-term conservation of koalas in the '
         'Southern Highlands, in three parts:</p>'
         '<ol style="padding-left:1.2rem;display:grid;gap:.6rem;margin-top:.6rem">'
@@ -134,7 +134,7 @@ def main():
               'acknowledge the Traditional Owners of Country and recognise their continuing '
               'connection to land, waters and culture.')))
     body += sec(
-        '<span class="ey">Outcomes</span><h2>What the tracking showed</h2>'
+        '<span class="ey">Outcomes</span><h2 style="margin:.8rem 0 1.4rem">What the tracking showed</h2>'
         '<div class="upd"><h3>Project report</h3>'
         '<p>The twenty collared koalas were monitored for up to 8 months, with ground visits once '
         'to twice a week. The data allowed development of a list of key tree species used by koalas '
@@ -174,13 +174,13 @@ def main():
         U + '2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg',
         'Rangers in EPBC protected sandstone shrublands, photo Donal Sullivan')
     body += sec(two(
-        '<span class="ey">The project</span><h2>Recovering mayh on Country</h2>'
+        '<span class="ey">The project</span><h2 style="margin:.8rem 0 1.2rem">Recovering mayh on Country</h2>'
         '<p>In the face of catastrophic and ongoing mammal declines in northern Australia, the '
         'Warddeken Mayh Recovery Project seeks to improve the status of key mammal species in the '
         'Warddeken IPA through informed adaptive management of key threatening processes. Of the '
         'mammal species targeted by the monitoring activities, 30% are listed as threatened in the '
         'NT and nationally.</p>'
-        '<h3>Project overview</h3>'
+        '<h3 style="margin:1.6rem 0 .8rem">Project overview</h3>'
         '<p>At the centre of this project is the Mayh Monitoring Network, a long-term ecological '
         'monitoring program established in 2017: 120 monitoring sites strategically located across '
         'the IPA, sampled using remote sensing cameras. Warddeken rangers resampled 36 sites this '
@@ -195,7 +195,7 @@ def main():
         'nationally endangered Northern Quoll and Black-footed Tree-rat. Without a robust '
         'monitoring regime, WLML could not evaluate the effect of management actions and amplify '
         'their success.</p>'
-        '<h3>Threatened mammals sampled by camera trap</h3>'
+        '<h3 style="margin:1.6rem 0 .8rem">Threatened mammals sampled by camera trap</h3>'
         f'<ul class="spl" style="padding-left:1.2rem">{sp_list}</ul>',
         meta_panel([('Pillar', '<a href="saving-species.html">Saving Species</a>'),
                     ('Year', '2020'), ('Where', 'Northern Territory'),
@@ -207,7 +207,7 @@ def main():
               'acknowledge the Traditional Owners of Country and recognise their continuing '
               'connection to land, waters and culture.')))
     body += sec(
-        '<span class="ey">Project updates</span><h2>News from the IPA</h2>'
+        '<span class="ey">Project updates</span><h2 style="margin:.8rem 0 1.4rem">News from the IPA</h2>'
         '<div class="upd"><h3>2022: tailored fire management for djabbo</h3>'
         '<p>The rangers have processed all photos from the grid at Barradj; sadly no quolls were '
         'captured. The site was hit by a very intense late dry season fire in 2020, though gorges '

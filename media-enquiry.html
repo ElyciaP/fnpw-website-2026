@@ -31,22 +31,22 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 .me-sec{padding:var(--sec-md) 0;background:var(--cream)}
-.me-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--sp-5);align-items:start}
-@media(max-width:900px){.me-g{grid-template-columns:1fr;gap:var(--sp-4)}}
-.me-g p{font-size:1.02rem;line-height:1.72;color:var(--char);margin-bottom:var(--sp-2);max-width:54ch}
-.me-contact{display:flex;flex-direction:column;gap:var(--sp-1);margin-top:var(--sp-3);padding-top:var(--sp-3);border-top:1px solid var(--rule)}
+.me-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,3.5rem);align-items:start}
+@media(max-width:900px){.me-g{grid-template-columns:1fr;gap:2rem}}
+.me-g p{font-size:1.02rem;line-height:1.72;color:var(--char);margin-bottom:1rem;max-width:54ch}
+.me-contact{display:flex;flex-direction:column;gap:.7rem;margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--rule)}
 .me-contact a{display:flex;align-items:center;gap:.6em;font-family:var(--ff-d);font-weight:600;
   font-size:1.02rem;color:var(--euc-deep);text-decoration:none}
 .me-contact a:hover{color:var(--euc);opacity:1}
 .me-contact svg{width:17px;height:17px;flex:0 0 17px;stroke:var(--euc);fill:none;stroke-width:2}
-.hsform{background:var(--white);border:1px solid var(--rule);padding:var(--sp-4)}
-@media(max-width:600px){.hsform{padding:var(--sp-3) var(--sp-2)}}
-.hsform h3{color:var(--euc-deep);margin-top:0}
+.hsform{background:var(--white);border:1px solid var(--rule);padding:1.8rem}
+@media(max-width:600px){.hsform{padding:1.3rem 1.1rem}}
+.hsform h3{font-size:1.12rem;color:var(--euc-deep);margin:0 0 1.2rem}
 .hsform-slot{min-height:220px}
 .hsform-slot iframe{width:100%!important;border:0;display:block}
-.hsform-fallback{margin:var(--sp-2) 0 0;font-size:.88rem;line-height:1.6;color:var(--char)}
+.hsform-fallback{margin:1rem 0 0;font-size:.88rem;line-height:1.6;color:var(--char)}
 .hsform-fallback a{color:var(--euc-deep);font-weight:700;border-bottom:1px solid currentColor}
-.hsform .me-small{margin:var(--sp-2) 0 0;font-size:.8125rem;color:var(--stone);line-height:1.5}
+.hsform .me-small{margin:1rem 0 0;font-size:.78rem;color:var(--stone);line-height:1.5}
 </style>
 </head>
 <body>
@@ -108,10 +108,10 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero pj-hero pj-hero-split">
+<section class="pj-hero pj-hero-split">
   <figure class="pj-hero-im"><picture><source type="image/webp" srcset="assets/img/r/media-hero-regent-honeyeater-480.webp 480w, assets/img/r/media-hero-regent-honeyeater-800.webp 800w, assets/img/r/media-hero-regent-honeyeater-1200.webp 1200w, assets/img/r/media-hero-regent-honeyeater-1600.webp 1600w" sizes="100vw"><img src="assets/img/media-hero-regent-honeyeater.jpg" alt="A critically endangered regent honeyeater perched in a flowering grevillea" style="object-position:60% 45%" width="1600" height="1067" fetchpriority="high" decoding="async"></picture></figure>
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Media Enquiries</nav>
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap"><a href="index.html">Home</a><span>/</span>Media Enquiries</nav>
     <span class="ey">News</span>
     <h1>Media enquiries.</h1>
     <p class="lede">Talking wildlife, national parks or one of our projects? We can help with interviews, imagery and background.</p>
@@ -122,7 +122,7 @@
   <div class="cw"><div class="me-g">
     <div class="rv">
       <span class="ey">Press and media</span>
-      <h2 style="max-width:22ch">Talking to the media.</h2>
+      <h2 style="margin:.8rem 0 1.2rem;max-width:22ch">Talking to the media.</h2>
       <p>We are the charity partner of Australia&rsquo;s national parks. Our programs and conservation efforts, including grant funding, support the broader mission of safeguarding Australia&rsquo;s wilderness and wildlife for future generations.</p>
       <p>For media enquiries, including interview requests, imagery and background, fill out the form and our team will be in touch with you shortly.</p>
       <div class="me-contact">

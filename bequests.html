@@ -34,7 +34,7 @@
 <style>
 /* GIFTS IN WILLS (rebuilt Nov 2026) */
 .gw-hero{position:relative;min-height:clamp(520px,72vh,680px);display:flex;align-items:flex-end;background:var(--euc-deep);overflow:hidden;isolation:isolate}
-.gw-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:-2}
+.gw-hero>img,.gw-hero>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:-2}
 .gw-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(98deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.82) 34%,rgba(15,49,50,.3) 66%,rgba(15,49,50,.06) 100%)}
 .gw-hero .cw{width:100%;padding-top:5rem;padding-bottom:3.4rem}
 .gw-hero .breadcrumb{display:flex;gap:.5em;flex-wrap:wrap;font-size:.82rem;color:var(--cream);margin-bottom:1.4rem}
@@ -95,7 +95,7 @@
 .gw-why-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
 @media(max-width:900px){.gw-why-g{grid-template-columns:1fr}}
 .gw-w{padding:1.8rem 1.7rem;background:#fff;border:1px solid var(--rule)}
-.gw-w .n{font-family:var(--ff-d);font-weight:800;font-size:.9rem;color:var(--wattle-dk);letter-spacing:.04em}
+.gw-w .n{font-family:var(--ff-d);font-weight:800;font-size:.9rem;color:var(--bark-text);letter-spacing:.04em}
 .gw-w h3{font-size:1.25rem;margin:.6rem 0 .6rem;color:var(--euc-deep)}
 .gw-w p{font-size:.96rem;line-height:1.65;color:var(--char);margin:0}
 .gw-stat{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;margin-top:1.6rem;padding-top:1.2rem;border-top:2px solid var(--euc-deep)}
@@ -181,7 +181,7 @@
 .gw-form{background:#fff;color:var(--char);padding:2rem;border-top:5px solid var(--wattle-soft)}
 .gw-form h3{color:var(--euc-deep);font-size:1.25rem;margin-bottom:.4rem}
 .gw-form .sub{font-size:.92rem;color:var(--stone);margin:0 0 1.2rem;line-height:1.55}
-.gw-form .priv{font-size:.82rem;color:var(--stone);margin-top:1rem}
+.gw-form .priv{font-size:.82rem;color:var(--stone);margin-top:1rem}.gw-form .priv a{text-decoration:underline}
 .gw-form a{color:var(--euc)}
 /* faqs */
 .gw-faq{padding:var(--sec-md) 0;background:var(--cream)}
@@ -196,7 +196,7 @@
 .hs-form-frame{min-height:420px}.hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:1rem 1.2rem;margin-top:1rem}.hsform-fallback a{color:var(--euc);text-decoration:underline}
 /* hero: headline in the sky, top left */
 .gw-hero.sky{min-height:clamp(480px,40vw,560px);align-items:flex-start;background:#d9edf7}
-.gw-hero.sky>img{object-position:70% 44%}
+.gw-hero.sky>img,.gw-hero.sky>picture>img{object-position:70% 44%}
 .gw-hero.sky::after{background:linear-gradient(100deg,rgba(250,246,242,.5) 0%,rgba(250,246,242,.22) 38%,rgba(250,246,242,0) 62%)}
 .gw-hero.sky .cw{padding-top:clamp(2.4rem,4vw,3.4rem);padding-bottom:2.4rem}
 .gw-hero.sky .breadcrumb{color:var(--euc-deep)}
@@ -206,7 +206,7 @@
 .gw-hero.sky .lede{color:var(--euc-deep);max-width:46ch;font-size:clamp(1rem,1.3vw,1.15rem)}
 .gw-btn.od{border-color:var(--euc-deep);color:var(--euc-deep)}
 .gw-btn.od:hover{background:var(--euc-deep);color:var(--cream)}
-@media(max-width:700px){.gw-hero.sky{min-height:0;flex-direction:column-reverse;align-items:stretch;background:linear-gradient(180deg,#cfe7f5 0%,#e4f2f9 100%)}.gw-hero.sky>img{position:static;z-index:0;height:auto;aspect-ratio:1/1;object-position:86% 92%}.gw-hero.sky::after{display:none}.gw-hero.sky .cw{padding-top:2.4rem;padding-bottom:1.8rem}}
+@media(max-width:700px){.gw-hero.sky{min-height:0;flex-direction:column-reverse;align-items:stretch;background:linear-gradient(180deg,#cfe7f5 0%,#e4f2f9 100%)}.gw-hero.sky>img,.gw-hero.sky>picture>img{position:static;z-index:0;height:auto;aspect-ratio:1/1;object-position:86% 92%}.gw-hero.sky::after{display:none}.gw-hero.sky .cw{padding-top:2.4rem;padding-bottom:1.8rem}}
 /* timeline */
 .gw-tl{padding:var(--sec-md) 0;background:var(--cream)}
 .gw-tl-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.2rem;position:relative}
@@ -226,7 +226,7 @@
 @media(max-width:600px){.gw-leg-g.four{grid-template-columns:1fr}}
 .gw-strip-g.one{grid-template-columns:1fr}
 /* placeholder imagery (iStock comps) */
-.gw-leg-cta.img{background:linear-gradient(90deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.7) 55%,rgba(15,49,50,.35) 100%),url('assets/img/bequests-sunrise-paddock-2233157036-COMP.jpg') center 40%/cover;padding:2.6rem 2rem;min-height:180px}
+.gw-leg-cta.img{background:linear-gradient(90deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.7) 55%,rgba(15,49,50,.35) 100%),url('assets/img/bequests-sunrise-paddock-2233157036-COMP.jpg') center 40%/cover;padding:2.6rem 2rem;min-height:180px;background-image:linear-gradient(90deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.7) 55%,rgba(15,49,50,.35) 100%),image-set(url('assets/img/r/bequests-sunrise-paddock-2233157036-COMP-1024.webp') type('image/webp'),url('assets/img/bequests-sunrise-paddock-2233157036-COMP.jpg') type('image/jpeg'))}
 .gw-leg-cta.img p{font-size:1.35rem}
 .gw-im{background:var(--cream);padding:var(--sec-md) 0}
 .gw-im-pano{margin:0;position:relative;height:clamp(220px,28vw,420px);overflow:hidden}
@@ -360,7 +360,7 @@
   <div class="nav-bd" id="nav-bd" hidden></div>
 </div></div>
 </header><!-- /@header -->
-<main>
+<main id="main">
 
 <!-- ============ HERO ============ -->
 <section class="gw-hero sky">
@@ -449,7 +449,7 @@
     </div>
     <div class="gw-word-g">
       <div class="rv">
-        <div class="gw-wording" id="wording-text">I give to the Foundation for National Parks &amp; Wildlife (ABN 90 107 744 771) of Level 6, 10 Bridge Street, Sydney NSW 2000, <span class="br">[a percentage of my estate / the residue of my estate / the sum of $______ / the following specific gift]</span> for its general purposes. I direct that the receipt of the Chief Executive Officer or authorised officer shall be a sufficient discharge to my executors.</div>
+        <div class="gw-wording" id="wording-text">I give to the Foundation for National Parks &amp; Wildlife (ABN 90 107 744 771) of <span class="br">Level 6, 10 Bridge Street, Sydney NSW 2000</span>, <span class="br">[a percentage of my estate / the residue of my estate / the sum of $______ / the following specific gift]</span> for its general purposes. I direct that the receipt of the Chief Executive Officer or authorised officer shall be a sufficient discharge to my executors.</div>
         <button type="button" class="gw-copy" onclick="var r=document.createRange();r.selectNodeContents(document.getElementById('wording-text'));var s=window.getSelection();s.removeAllRanges();s.addRange(r);this.textContent='Wording selected. Press Ctrl+C or ⌘C to copy'">Select wording</button>
         <div class="gw-note"><h3>A note on tax</h3><p>For many people, a gift in their will is a tax-effective way to give, and as a registered charity with Deductible Gift Recipient status we are able to receive gifts of this kind. Everyone’s circumstances are different, so we always recommend talking it through with your solicitor or financial adviser.</p></div>
         <div class="gw-note"><h3>If you are an executor</h3><p>If you are managing an estate that includes a gift to us, please call <a href="tel:1800898626">1800 898 626</a> or email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> and we will help with whatever you need. There is more for executors in <a href="#professionals">the section below</a>.</p></div>

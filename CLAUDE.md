@@ -39,18 +39,16 @@ All design tokens live in the `:root` block at the top of each file's first `<st
 **Typefaces** (Google Fonts):
 - `--ff-d`: `Sora` — display headings
 - `--ff-b`: `Figtree` — body text
-- `--ff-h`: alias of Figtree (Caveat was retired)
+- `--ff-h`: `Caveat` — handwritten accent
 
 **Spacing tokens (Oct 2026):** one section rhythm sitewide, in the first `:root` of `global.css`.
 - `--sec-md` is the padding for every standard section, top and bottom, whatever its background. `--sec-y` is an alias for it. `--sec-sm` is for thin strips only (newsletter band, proof bars). Heroes use `--hero-top` / `--hero-bot`.
 - Gap scale: `--sp-1` 8, `--sp-2` 16, `--sp-3` 24, `--sp-4` 32, `--sp-5` 48, `--sp-6` 64 (px). Use these for grid gaps and stack spacing, not hard-coded values.
 - Heading stack: eyebrow, then h2 8px below (`.ey + h2`), then intro 24px below. `.ey` is `vertical-align:top` so the gap is exact.
 - Never put padding or margin in a section or heading `style=""` attribute. Inline spacing overrides the tokens; it was stripped from about.html.
-- Helpers in `global.css` (spacing pass, Oct 2026): `.sec.strip` for thin bands (logo bars, evidence strips); `.sec-head` / `.sec-cont` for a list section split around a sticky filter bar (pillar pages); `.sec.pj-credit` for the funder credit line on project pages. Where two cream, two sand or two dark sections meet, the second drops its top padding sitewide, so the gap is one `--sec-md`, not two (`.pj-main` is no longer needed for this).
+- Helpers in `global.css` (spacing pass, Oct 2026): `.sec.strip` for thin bands (logo bars, evidence strips); `.sec-head` / `.sec-cont` for a list section split around a sticky filter bar (pillar pages); `.sec.pj-credit` for the funder credit line on project pages. Project pages have `<main class="pj-main">`, which collapses the top padding where two cream (or two sand) sections meet, so the gap is one `--sec-md`, not two.
 
 **Section snap:** `assets/js/snap.js` gives a gentle one-direction settle onto `main > section` edges after scrolling stops (desktop, no reduced motion). Opt a page in by loading the script after main.js. Currently on: about.html.
-
-**Design-system consolidation (WP4, Nov 2026).** One type scale in `global.css` (h1 clamp(2.2rem,4.4vw,3.6rem), h2 clamp(1.6rem,3vw,2.4rem), h3 clamp(1.2rem,1.8vw,1.5rem), h4 1.1rem; body 17px/1.65; `.small` 13px is the floor for readable text; `.ey` is Sora 600 .75rem uppercase .06em, deep eucalyptus). Page `<style>` blocks must not restate heading sizes, weights, line-heights or tracking. One button spec: `.btn` plus a colour variant (`btn-p`, `btn-o`, `btn-l`, `btn-ol`, `btn-g`, `btn-don`), Sora 600 .9rem, 48px minimum, sentence case. Heading stack: `.ey + h2` 8px, h1/h2 24px below, h3/h4 16px below. Section backgrounds are cream (`.sec`), sand (`.sec.sand`, alias `.sec.paper`) and deep eucalyptus (`.sec.dark`) only; the same-background collapse (`.sec + .sec` drops the second top padding) now applies sitewide, not just `.pj-main`. Heroes build on `.hero` (`.hero.light`, `.hero.flat`); a page class adds only its image and scrim via `--hero-scrim` / `--hero-pos`. Cards: `.card`, `.card.img`, `.panel.dark`. Logo walls are static `.logo-row` lists, never marquees. Details and measurements: `/home/claude/work/NOTES-wp4.md`.
 
 **Key utility classes:**
 - `.cw` — content wrapper (max-width 1240px, fluid horizontal padding)

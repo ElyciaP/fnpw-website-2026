@@ -12,11 +12,11 @@
 <meta property="og:title" content="Donate Land | FNPW">
 <meta property="og:description" content="Give land with conservation value to become national park, protected by law for good. We assess the land, secure agreement and manage the transfer.">
 <meta property="og:url" content="https://elyciap.github.io/fnpw-website-2026/donate-land.html">
-<meta property="og:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/donate-land-hero.jpg?v=2">
+<meta property="og:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/donate-land-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Donate Land | FNPW">
 <meta name="twitter:description" content="Give land with conservation value to become national park, protected by law for good. We assess the land, secure agreement and manage the transfer.">
-<meta name="twitter:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/donate-land-hero.jpg?v=2">
+<meta name="twitter:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/donate-land-hero.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,60 +32,66 @@
 
 <style>
 /* SHARED full-bleed image hero (used on all sub-pages) */
-.fb-hero{--hero-scrim:none}
+.fb-hero{position:relative;min-height:clamp(360px,46vh,470px);display:flex;align-items:center;overflow:hidden;background:var(--euc-deep);isolation:isolate;padding:0}
 .fb-hero-bg{position:absolute;inset:0;z-index:-2}
 .fb-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
 .fb-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,49,50,.86) 0%,rgba(15,49,50,.58) 52%,rgba(15,49,50,.18) 100%);z-index:1}
-.fb-hero-content{position:relative;z-index:3;width:100%}
-.fb-hero-content h1{max-width:20ch}
-.fb-hero-content .lede{max-width:56ch}
-.fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.55);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
+.fb-hero-content{position:relative;z-index:3;padding:4.5rem 0;width:100%}
+.fb-hero-content .breadcrumb{color:var(--cream);display:flex;gap:.5em;font-size:.82rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.fb-hero-content .breadcrumb a{color:var(--euc-soft)}
+.fb-hero-content .ey{color:var(--euc-soft)}
+.fb-hero-content .ey::before{background:var(--euc-soft)}
+.fb-hero-content h1{color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.025em;max-width:20ch;margin-top:1rem}
+.fb-hero-content .lede{color:rgba(250,246,242,.86);margin-top:1.4rem;max-width:56ch;font-size:clamp(1rem,1.15vw,1.12rem)}
+.fb-cred{position:absolute;bottom:1.4rem;right:1.6rem;color:rgba(250,246,242,.55);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:4}
 @media(max-width:780px){.fb-cred{display:none}}
 
 /* HOW IT WORKS (who does what) */
 .dl-how{padding:var(--sec-md) 0;background:var(--cream)}
-.dl-how-in{margin-top:var(--sp-2);font-size:1.04rem;line-height:1.72;color:var(--char);max-width:60ch}
-.dl-how-g{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-5);counter-reset:r}
+.dl-how-in{margin-top:1.2rem;font-size:1.04rem;line-height:1.72;color:var(--char);max-width:60ch}
+.dl-how-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem;counter-reset:r}
 @media(max-width:920px){.dl-how-g{grid-template-columns:1fr}}
-.dl-role{position:relative}
+.dl-role{background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--euc);padding:1.9rem 1.8rem;position:relative}
 .dl-role.r2{border-top-color:var(--euc-deep)}
 .dl-role.r3{border-top-color:var(--bark)}
-.dl-role-k{display:inline-block;font-size:.8125rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--euc);margin-bottom:var(--sp-1)}
+.dl-role-k{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--euc);margin-bottom:.7rem}
 .dl-role.r3 .dl-role-k{color:var(--red-soil-dk)}
+.dl-role h3{font-size:1.16rem;margin-bottom:.6rem}
 .dl-role p{font-size:.95rem;line-height:1.65;color:var(--char)}
 .dl-open{background:var(--sand)!important}
 .dl-story-body .btn{display:inline-flex}
 /* OPENING REASSURANCE */
 .dl-open{padding:var(--sec-md) 0;background:var(--cream)}
-.dl-open-g{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--sp-6);align-items:stretch}
-@media(max-width:900px){.dl-open-g{grid-template-columns:1fr;gap:var(--sp-5)}
+.dl-open-g{display:grid;grid-template-columns:1.15fr 1fr;gap:4.5rem;align-items:stretch}
+@media(max-width:900px){.dl-open-g{grid-template-columns:1fr;gap:2.8rem}
   /* stacked, there is no text column to match, so the picture gets a shape of
      its own rather than the bare 360px minimum, which crops a portrait too hard */
-  .dl-open-g .dl-open-im{min-height:0;aspect-ratio:5/4}}
-.dl-open h2{margin-top:var(--sp-1);max-width:24ch;text-wrap:balance}
-.dl-open p{font-size:1.04rem;line-height:1.72;color:var(--char);margin-top:var(--sp-2);max-width:54ch}
+  .dl-open-im{min-height:0;aspect-ratio:5/4}}
+.dl-open h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-top:1rem;max-width:24ch;text-wrap:balance}
+.dl-open p{font-size:1.04rem;line-height:1.72;color:var(--char);margin-top:1.2rem;max-width:54ch}
 .dl-open-im{position:relative;height:100%;min-height:360px;overflow:hidden;background:var(--bark)}
 /* Taken out of flow so a tall portrait photograph cannot drive the row height.
    The column is then sized by the copy beside it, and the picture finishes level
    with the button. Same approach as .dl-story-im further down this page. */
 .dl-open-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .dl-open-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(36,25,20,.45))}
-.dl-open-im .stamp{position:absolute;bottom:0;left:0;right:0;padding:var(--sp-5) var(--sp-3) var(--sp-3);background:linear-gradient(rgba(36,25,20,0),rgba(36,25,20,.82) 55%);color:var(--cream);font-family:var(--ff-d);font-weight:600;font-size:1.02rem;line-height:1.3;z-index:2;letter-spacing:-.01em}
-.dl-open-im .stamp small{font-family:var(--ff-b);font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;display:block;color:var(--bark-soft);margin-top:var(--sp-1)}
+.dl-open-im .stamp{position:absolute;bottom:0;left:0;right:0;padding:2.6rem 1.5rem 1.5rem;background:linear-gradient(rgba(36,25,20,0),rgba(36,25,20,.82) 55%);color:var(--cream);font-family:var(--ff-d);font-weight:600;font-size:1.02rem;line-height:1.3;z-index:2;letter-spacing:-.01em}
+.dl-open-im .stamp small{font-family:var(--ff-b);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;display:block;color:var(--bark-soft);margin-top:.45rem}
 
 /* PROCESS TIMELINE */
 .dl-proc{padding:var(--sec-md) 0;background:var(--cream)}
-.dl-proc-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--sp-6);align-items:start}
-@media(max-width:920px){.dl-proc-g{grid-template-columns:1fr;gap:var(--sp-5)}}
-.dl-steps{position:relative;padding-left:var(--sp-5)}
+.dl-proc-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:start}
+@media(max-width:920px){.dl-proc-g{grid-template-columns:1fr;gap:2.6rem}}
+.dl-steps{position:relative;padding-left:2.6rem}
 .dl-steps::before{content:"";position:absolute;left:9px;top:.6rem;bottom:1.6rem;width:2px;background:linear-gradient(180deg,var(--euc),var(--bark-soft))}
-.dl-step{position:relative;padding-bottom:var(--sp-4)}
+.dl-step{position:relative;padding-bottom:2.1rem}
 .dl-step:last-child{padding-bottom:0}
 .dl-step::before{content:"";position:absolute;left:-2.6rem;top:.35rem;width:20px;height:20px;border-radius:50%;background:var(--cream);border:2px solid var(--euc)}
 .dl-step::after{content:"";position:absolute;left:calc(-2.6rem + 6px);top:calc(.35rem + 6px);width:8px;height:8px;border-radius:50%;background:var(--euc)}
+.dl-step h3{font-size:1.08rem;margin-bottom:.4rem}
 .dl-step p{font-size:.95rem;line-height:1.65;color:var(--char)}
-.dl-time{background:var(--sand);border-left:3px solid var(--bark);padding:var(--sp-3) var(--sp-3);margin-top:var(--sp-4)}
-.dl-time h3{text-transform:uppercase;color:var(--red-soil-dk)}
+.dl-time{background:var(--sand);border-left:3px solid var(--bark);padding:1.5rem 1.7rem;margin-top:2.2rem}
+.dl-time h3{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-family:var(--ff-b);margin-bottom:.7rem}
 .dl-time p{font-size:.94rem;line-height:1.65;color:var(--char)}
 
 /* COSTS */
@@ -98,58 +104,60 @@
 @media(max-width:880px){.dl-story-g{grid-template-columns:1fr}}
 .dl-story-im{position:relative;min-height:280px;background:var(--euc)}
 .dl-story-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.dl-story-im figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(15,49,50,.6);color:rgba(250,246,242,.85);font-size:.8125rem;padding:var(--sp-1) var(--sp-2);z-index:2}
-.dl-story-body{padding:var(--sp-4) var(--sp-4)}
-@media(max-width:600px){.dl-story-body{padding:var(--sp-4) var(--sp-3)}}
-.dl-story-body .lab{font-size:.8125rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-weight:700;margin-bottom:var(--sp-1)}
-.dl-story-body p{font-size:1rem;line-height:1.72;color:var(--char);margin-bottom:var(--sp-2)}
-.dl-story-pull{font-family:var(--ff-d);font-weight:500;font-size:1.12rem;color:var(--euc-deep);line-height:1.45;margin:var(--sp-3) 0;border-left:3px solid var(--bark);padding-left:var(--sp-2);letter-spacing:-.012em}
+.dl-story-im figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(15,49,50,.6);color:rgba(250,246,242,.85);font-size:.75rem;padding:.5rem .8rem;z-index:2}
+.dl-story-body{padding:2.3rem 2.5rem}
+@media(max-width:600px){.dl-story-body{padding:2rem 1.6rem}}
+.dl-story-body .lab{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-weight:700;margin-bottom:.7rem}
+.dl-story-body h2{font-size:clamp(1.4rem,2.2vw,1.9rem);margin-bottom:1.2rem}
+.dl-story-body p{font-size:1rem;line-height:1.72;color:var(--char);margin-bottom:1rem}
+.dl-story-pull{font-family:var(--ff-d);font-weight:500;font-size:1.12rem;color:var(--euc-deep);line-height:1.45;margin:1.5rem 0;border-left:3px solid var(--bark);padding-left:1.1rem;letter-spacing:-.012em}
 
 /* FAQ */
 .dl-faq{padding:var(--sec-md) 0;background:var(--cream)}
-.dl-faq-list{max-width:820px;margin:var(--sp-5) auto 0;display:flex;flex-direction:column;gap:var(--sp-1)}
+.dl-faq-list{max-width:820px;margin:3rem auto 0;display:flex;flex-direction:column;gap:.7rem}
 .dl-faq details{background:var(--white);border:1px solid var(--rule);overflow:hidden}
-.dl-faq summary{padding:var(--sp-2) var(--sp-3);font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);cursor:pointer;font-size:1rem;display:flex;justify-content:space-between;align-items:center;gap:var(--sp-2);list-style:none}
+.dl-faq summary{padding:1.25rem 1.6rem;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);cursor:pointer;font-size:1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;list-style:none}
 .dl-faq summary::-webkit-details-marker{display:none}
 .dl-faq summary::after{content:"+";font-size:1.5rem;color:var(--euc);transition:.25s;flex-shrink:0}
 .dl-faq details[open] summary::after{transform:rotate(45deg)}
-.dl-faq .body{padding:0 var(--sp-3) var(--sp-3);font-size:.95rem;color:var(--char);line-height:1.68}
+.dl-faq .body{padding:0 1.6rem 1.4rem;font-size:.95rem;color:var(--char);line-height:1.68}
 .dl-faq .body a{color:var(--euc);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 /* CONTACT */
 .dl-contact{padding:var(--sec-md) 0;background:var(--sand)}
-.dl-contact-g{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--sp-6);align-items:start}
-@media(max-width:900px){.dl-contact-g{grid-template-columns:1fr;gap:var(--sp-4)}}
-.dl-person{margin-top:var(--sp-4);display:flex;gap:var(--sp-3);align-items:flex-start}
+.dl-contact-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+@media(max-width:900px){.dl-contact-g{grid-template-columns:1fr;gap:2.4rem}}
+.dl-person{background:var(--white);border:1px solid var(--rule);padding:2rem;margin-top:2rem;display:flex;gap:1.4rem;align-items:flex-start}
 @media(max-width:480px){.dl-person{flex-direction:column}}
 .dl-person-ph{width:88px;height:88px;flex-shrink:0;background:var(--euc-pale);border:1px solid var(--rule);overflow:hidden}
 .dl-person-ph img{width:100%;height:100%;object-fit:cover}
 .dl-person-nm{font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:1.06rem;display:block;margin-bottom:.2rem}
-.dl-person-rl{font-size:.88rem;color:var(--stone);margin-bottom:var(--sp-1)}
+.dl-person-rl{font-size:.88rem;color:var(--stone);margin-bottom:.7rem}
 .dl-person a{color:var(--euc);font-size:.92rem;display:block;font-weight:500}
-.dl-next{margin-top:var(--sp-4)}
-.dl-next h3{text-transform:uppercase;color:var(--red-soil-dk)}
+.dl-next{margin-top:1.8rem}
+.dl-next h3{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soil-dk);font-family:var(--ff-b);margin-bottom:1.1rem}
 .dl-next ol{list-style:none;counter-reset:n;padding:0}
-.dl-next li{counter-increment:n;position:relative;padding:0 0 var(--sp-2) var(--sp-5);font-size:.94rem;line-height:1.6;color:var(--char)}
+.dl-next li{counter-increment:n;position:relative;padding:0 0 1.1rem 2.6rem;font-size:.94rem;line-height:1.6;color:var(--char)}
 .dl-next li:last-child{padding-bottom:0}
-.dl-next li::before{content:counter(n);position:absolute;left:0;top:-.1rem;width:26px;height:26px;border:1.5px solid var(--euc);color:var(--euc);font-family:var(--ff-d);font-size:.8125rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.dl-next li::before{content:counter(n);position:absolute;left:0;top:-.1rem;width:26px;height:26px;border:1.5px solid var(--euc);color:var(--euc);font-family:var(--ff-d);font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center}
 .dl-next li span{display:block;font-family:var(--ff-d);font-weight:600;color:var(--euc-deep);font-size:.95rem;margin-bottom:.15rem}
-.dl-form{position:relative}
-@media(max-width:600px){.dl-form{padding:var(--sp-4) var(--sp-3)}}
+.dl-form{background:var(--white);border:1px solid var(--rule);padding:2.5rem;position:relative}
+@media(max-width:600px){.dl-form{padding:1.8rem 1.5rem}}
 .dl-form::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--waratah)}
-.dl-form .sub{font-size:.9rem;color:var(--stone);margin-bottom:var(--sp-3);line-height:1.55}
-.dl-form label{display:block;font-size:.8125rem;font-weight:600;color:var(--euc-deep);margin-bottom:var(--sp-1)}
-.dl-form input,.dl-form textarea,.dl-form select{width:100%;padding:.82em 1.05em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink);margin-bottom:var(--sp-2)}
+.dl-form h3{margin-bottom:.5rem;font-size:1.24rem}
+.dl-form .sub{font-size:.9rem;color:var(--stone);margin-bottom:1.6rem;line-height:1.55}
+.dl-form label{display:block;font-size:.8rem;font-weight:600;color:var(--euc-deep);margin-bottom:.45rem}
+.dl-form input,.dl-form textarea,.dl-form select{width:100%;padding:.82em 1.05em;border:1.5px solid var(--rule);border-radius:0;font-family:var(--ff-b);font-size:.92rem;background:var(--cream);color:var(--ink);margin-bottom:1.05rem}
 .dl-form textarea{resize:vertical;min-height:92px}
 .dl-form input:focus,.dl-form textarea:focus,.dl-form select:focus{outline:none;border-color:var(--euc);background:var(--white)}
-.dl-form button{width:100%;padding:.8em 1.5em;background:var(--euc-deep);color:var(--cream);border-radius:0;font-weight:600;cursor:pointer;font-family:var(--ff-d);font-size:.9rem;transition:.2s;min-height:48px;letter-spacing:.01em}
+.dl-form button{width:100%;padding:1em 1.4em;background:var(--euc-deep);color:var(--cream);border-radius:0;font-weight:700;cursor:pointer;font-family:var(--ff-b);font-size:.95rem;transition:.2s}
 .dl-form button:hover{background:var(--euc)}
-.dl-form .priv{font-size:.82rem;color:var(--stone);margin-top:var(--sp-2);line-height:1.55}
+.dl-form .priv{font-size:.82rem;color:var(--stone);margin-top:1rem;line-height:1.55}
 
-.dl-tax{margin-top:var(--sp-4);max-width:860px}
-.dl-tax h3{margin-top:0;color:var(--euc-deep)}
+.dl-tax{margin-top:2.4rem;background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--bark);padding:1.8rem 2rem;max-width:860px}
+.dl-tax h3{margin:0 0 .8rem;color:var(--euc-deep);font-size:1.15rem}
 .dl-tax p,.dl-tax li{font-size:.97rem;line-height:1.7;color:var(--char)}
-.dl-tax ul{margin:var(--sp-1) 0 var(--sp-2);padding-left:var(--sp-2)}.dl-tax li{margin-bottom:var(--sp-1)}
+.dl-tax ul{margin:.4rem 0 1rem;padding-left:1.2rem}.dl-tax li{margin-bottom:.4rem}
 .dl-tax a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
@@ -214,7 +222,7 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<section class="hero fb-hero">
+<section class="fb-hero">
   <div class="fb-hero-bg">
     <picture><source type="image/webp" srcset="assets/img/r/donate-land-hero-480.webp 480w, assets/img/r/donate-land-hero-800.webp 800w, assets/img/r/donate-land-hero-1200.webp 1200w, assets/img/r/donate-land-hero-1600.webp 1600w" sizes="100vw"><img src="assets/img/donate-land-hero.jpg" alt="A lone eucalypt standing on an eroded red bank, with green hills rolling away behind it" width="1600" height="573" fetchpriority="high" decoding="async"></picture>
   </div>
@@ -233,21 +241,21 @@
   <div class="cw">
     <div class="rv" style="max-width:680px">
       <span class="ey">How a gift of land works</span>
-      <h2>Your gift becomes national park. We make sure it gets there.</h2>
+      <h2 style="margin-top:1rem">Your gift becomes national park. We make sure it gets there.</h2>
       <p class="dl-how-in">A gift of land is a gift to the nation. We work alongside Traditional Owners, landholders and government to see it through, and we don’t keep the land: the government adds it to the national park estate so it is protected for good.</p>
     </div>
     <div class="dl-how-g">
-      <div class="card dl-role rv">
+      <div class="dl-role rv">
         <span class="dl-role-k">You</span>
         <h3>Offer the land</h3>
         <p>You tell us about land you would like to protect, and you decide with your own advisers whether to go ahead. Nothing commits you until the documents are signed.</p>
       </div>
-      <div class="card dl-role r2 rv d1">
+      <div class="dl-role r2 rv d1">
         <span class="dl-role-k">Us</span>
         <h3>Make it happen</h3>
         <p>We assess the land, secure the government’s agreement to take it, and coordinate the valuation, legal work and transfer. Where it’s needed, the land passes through our Gift Fund Trust for the moment of transfer, but we never hold it long term.</p>
       </div>
-      <div class="card dl-role r3 rv d2">
+      <div class="dl-role r3 rv d2">
         <span class="dl-role-k">Government</span>
         <h3>Protect it by law</h3>
         <p>The national parks agency in your state receives the land and formally gazettes it as part of the national park estate. From then on it is protected by law and can’t be sold.</p>
@@ -281,7 +289,7 @@
   <div class="cw"><div class="dl-proc-g">
     <div class="rv">
       <span class="ey">What happens</span>
-      <h2>Five steps from your land to a national park.</h2>
+      <h2 style="margin-top:1rem">Five steps from your land to a national park.</h2>
       <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">A gift of land is a significant decision, so every step is careful and nothing is rushed. The government agrees to take the land before any valuation or legal work begins.</p>
       <div class="dl-time">
         <h3>How long it takes</h3>
@@ -319,10 +327,10 @@
   <div class="cw">
     <div class="rv" style="max-width:680px">
       <span class="ey">Tax and costs</span>
-      <h2>A gift that can carry a tax benefit.</h2>
+      <h2 style="margin-top:1rem">A gift that can carry a tax benefit.</h2>
       <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">Our Gift Fund Trust is a Deductible Gift Recipient on the Register of Environmental Organisations, so a gift of land may be tax deductible. An independent valuation is required for tax purposes, and we coordinate it as part of the process. We will also talk you through the costs involved, including valuation and legal fees, before you commit to anything.</p>
     </div>
-    <div class="card dl-tax rv">
+    <div class="dl-tax rv">
       <h3>Tax benefits for property donations</h3>
       <p>Since changes in 1999, the Income Tax Assessment Act:</p>
       <ul>
@@ -366,10 +374,10 @@
   <div class="cw"><div class="dl-contact-g">
     <div class="rv">
       <span class="ey">Start here</span>
-      <h2>Start with a conversation with us.</h2>
+      <h2 style="margin-top:1rem">Start with a conversation with us.</h2>
       <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">A gift of land is too significant to begin with a form and an automated reply, so it does not. Enquiries about land come to our Chief Executive, and the first conversation will be with someone able to give you a straight answer.</p>
 
-      <div class="card dl-person">
+      <div class="dl-person">
         <div class="dl-person-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy" width="1022" height="1024" decoding="async"></div>
         <div>
           <span class="dl-person-nm">Ian Darbyshire</span>
@@ -389,7 +397,7 @@
       </div>
     </div>
 
-    <div class="card dl-form rv d1">
+    <div class="dl-form rv d1">
       <h3>Tell us about the land</h3>
       <p class="sub">A few lines is plenty to start with. There is nothing you need to have decided, and nothing here commits you to anything.</p>
       <div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="e33c8c8b-1d45-4477-be3e-8e5ca7b3e82b" data-portal-id="441704788" style="min-height:460px"></div>
@@ -403,7 +411,7 @@
   <div class="cw">
     <div class="rv" style="text-align:center;max-width:640px;margin:0 auto">
       <span class="ey">FAQs</span>
-      <h2>Questions people ask.</h2>
+      <h2 style="margin-top:1rem">Questions people ask.</h2>
     </div>
     <div class="dl-faq-list">
       <details class="rv"><summary>Who will own the land?</summary><div class="body">The government. Once the transfer is complete, the land becomes part of the national park estate and is managed by the national parks agency in your state. We don’t keep it: where it’s needed, it passes through our Gift Fund Trust only for the moment of transfer.</div></details>

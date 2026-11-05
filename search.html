@@ -32,20 +32,20 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 .srch-hero h1{max-width:10ch}
-.srch-hero{--hero-scrim:linear-gradient(97deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 26%,rgba(15,49,50,.22) 44%,rgba(15,49,50,0) 60%)}
-@media(max-width:760px){.srch-hero{--hero-scrim-m:linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.9) 100%)}}
+.srch-hero::after{background:linear-gradient(97deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 26%,rgba(15,49,50,.22) 44%,rgba(15,49,50,0) 60%)}
+@media(max-width:760px){.srch-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.9) 100%)}}
 .srch-f{max-width:720px}
-.srch-l{display:block;font-family:var(--ff-d);font-size:1.25rem;font-weight:600;color:var(--euc-deep);margin-bottom:var(--sp-2)}
-.srch-row{display:flex;gap:var(--sp-1)}
-.srch-f .srch{max-width:none;flex:1;font-size:1.15rem;min-height:58px;padding:var(--sp-2) var(--sp-2)}
-.srch-b{flex:none;min-height:48px;padding:.8em 1.5em;font:600 1.1rem var(--ff-d);color:#fff;background:var(--euc);border:2px solid var(--euc);cursor:pointer;font-family:var(--ff-d);font-weight:600;font-size:.9rem;letter-spacing:.01em}
+.srch-l{display:block;font-family:var(--ff-d);font-size:1.25rem;font-weight:600;color:var(--euc-deep);margin-bottom:.8rem}
+.srch-row{display:flex;gap:.6rem}
+.srch-f .srch{max-width:none;flex:1;font-size:1.15rem;min-height:58px;padding:.9rem 1.2rem}
+.srch-b{flex:none;min-height:58px;padding:0 2rem;font:600 1.1rem var(--ff-d);color:#fff;background:var(--euc);border:2px solid var(--euc);cursor:pointer}
 .srch-b:hover{background:var(--euc-deep);border-color:var(--euc-deep)}
 .srch-b:focus-visible,.srch-f .srch:focus-visible{outline:3px solid var(--wattle);outline-offset:2px}
-.srch-n{margin:var(--sp-2) 0 0;font-size:.95rem;color:var(--stone)}
+.srch-n{margin:1.2rem 0 0;font-size:.95rem;color:var(--stone)}
 .srch-res{max-width:720px;font-size:1.08rem}
-.srch-res li{padding:var(--sp-1) 0;border-bottom:1px solid var(--rule)}
+.srch-res li{padding:.7rem 0;border-bottom:1px solid var(--rule)}
 .srch-res a{color:var(--euc-deep);font-weight:600}
-@media(max-width:560px){.srch-row{flex-direction:column}.srch-b{width:100%;font-family:var(--ff-d);font-weight:600;font-size:.9rem;padding:.8em 1.5em;min-height:48px;letter-spacing:.01em}}
+@media(max-width:560px){.srch-row{flex-direction:column}.srch-b{width:100%}}
 </style>
 </head>
 <body>
@@ -107,10 +107,10 @@
 </div></div>
 </header><!-- /@header -->
 <main id="main">
-<section class="hero pj-hero srch-hero">
+<section class="pj-hero srch-hero">
   <figure class="pj-hero-im"><picture><source type="image/webp" srcset="assets/img/r/search-hero-koala-480.webp 480w, assets/img/r/search-hero-koala-800.webp 800w, assets/img/r/search-hero-koala-1200.webp 1200w, assets/img/r/search-hero-koala-1600.webp 1600w" sizes="100vw"><img src="assets/img/search-hero-koala.jpg" alt="A koala climbing along a branch through eucalypt woodland" style="object-position:62% 40%" width="1600" height="1066" fetchpriority="high" decoding="async"></picture></figure>
   <div class="cw rv">
-    <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Search</nav>
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="display:flex;gap:.5em;font-size:.82rem;flex-wrap:wrap"><a href="index.html">Home</a><span>/</span>Search</nav>
     <span class="ey">Search</span>
     <h1>Branch out and explore.</h1>
     <p class="lede">Search our projects, stories, reports and ways to get involved.</p>
