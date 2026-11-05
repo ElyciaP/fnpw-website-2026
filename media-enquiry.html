@@ -26,10 +26,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elyciap.github.io/fnpw-website-2026/"},{"@type":"ListItem","position":2,"name":"Media Enquiries","item":"https://elyciap.github.io/fnpw-website-2026/media-enquiry.html"}]}</script>
 <!-- /@meta -->
 <meta name="referrer" content="no-referrer">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 .me-sec{padding:var(--sec-md) 0;background:var(--cream)}
 .me-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--sp-5);align-items:start}
@@ -110,7 +109,7 @@
 </header><!-- /@header -->
 <main id="main">
 <section class="hero pj-hero pj-hero-split">
-  <figure class="pj-hero-im"><img src="assets/img/media-hero-regent-honeyeater.jpg" alt="A critically endangered regent honeyeater perched in a flowering grevillea" style="object-position:60% 45%" fetchpriority="high" decoding="async"></figure>
+  <figure class="pj-hero-im"><picture><source type="image/webp" srcset="assets/img/r/media-hero-regent-honeyeater-480.webp 480w, assets/img/r/media-hero-regent-honeyeater-800.webp 800w, assets/img/r/media-hero-regent-honeyeater-1200.webp 1200w, assets/img/r/media-hero-regent-honeyeater-1600.webp 1600w" sizes="100vw"><img src="assets/img/media-hero-regent-honeyeater.jpg" alt="A critically endangered regent honeyeater perched in a flowering grevillea" style="object-position:60% 45%" width="1600" height="1067" fetchpriority="high" decoding="async"></picture></figure>
   <div class="cw rv">
     <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Media Enquiries</nav>
     <span class="ey">News</span>
@@ -133,7 +132,7 @@
     </div>
     <div class="hsform rv d1">
       <h3>Media enquiry</h3>
-      <div id="hsform" class="hsform-slot">
+      <div id="hsform" class="hsform-slot hs-form-frame" data-region="ap1" data-form-id="e9e550ed-025f-474c-b214-a5cb3c0511eb" data-portal-id="441704788">
         <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email
           <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
           <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
@@ -165,27 +164,7 @@
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 
-<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
-<script>
-/* The media enquiry form already live on fnpw.org.au, same portal as the other
-   embeds on this site. Falls back to email and phone if it cannot load. */
-(function () {
-  var slot = document.getElementById('hsform');
-  function showFallback() {
-    var f = document.getElementById('hsFallback');
-    if (f) f.hidden = false;
-  }
-  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
-  hbspt.forms.create({
-    region: 'ap1',
-    portalId: '441704788',
-    formId: 'e9e550ed-025f-474c-b214-a5cb3c0511eb',
-    target: '#hsform'
-  });
-  setTimeout(function () {
-    if (!slot.querySelector('iframe, form')) showFallback();
-  }, 8000);
-})();
-</script>
+<script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
+<script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
 </body>
 </html>

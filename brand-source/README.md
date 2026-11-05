@@ -1,0 +1,1 @@
+Brand source files (55-year badge artwork and the partner logo sheet exports), kept for reference. Not part of the published site: nothing links here, and WP7 adds brand-source/ to the robots exclusions.

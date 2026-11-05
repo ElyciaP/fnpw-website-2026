@@ -28,10 +28,9 @@
 <!-- /@meta -->
 <meta name="referrer" content="no-referrer">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 
 <style>
 /* About hero — matches Projects hero pattern: image bg, compact size, overlay text */
@@ -231,7 +230,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
 <main id="main">
 <section class="hero ab-hero">
   <span class="ab-hero-seal"><img src="assets/img/55-badge.png" alt="55 years of conservation" width="450" height="429"></span>
-  <div class="ab-hero-bg"><img src="assets/img/about-hero-koala.jpg" alt="A koala asleep in the fork of a smooth-barked gum tree, curled against the trunk with soft green bush behind" width="2560" height="1638" decoding="async"></div>
+  <div class="ab-hero-bg"><picture><source type="image/webp" srcset="assets/img/r/about-hero-koala-480.webp 480w, assets/img/r/about-hero-koala-800.webp 800w, assets/img/r/about-hero-koala-1200.webp 1200w, assets/img/r/about-hero-koala-1600.webp 1600w" sizes="100vw"><img src="assets/img/about-hero-koala.jpg" alt="A koala asleep in the fork of a smooth-barked gum tree, curled against the trunk with soft green bush behind" width="1600" height="1024" fetchpriority="high" decoding="async"></picture></div>
   <div class="cw rv">
     <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>About</nav>
     <span class="ey">Who we are</span>
@@ -270,7 +269,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
           <div><strong>55</strong><span>years of doing it</span></div>
         </div>
       </div>
-      <div class="rv d2 framed bm"><img src="assets/img/about-partners-planting.jpg" alt="A group of community volunteers, rural fire service members, park rangers, council staff and partners gathered around a newly planted seedling in bushland" width="1500" height="950" loading="lazy"></div>
+      <div class="rv d2 framed bm"><picture><source type="image/webp" srcset="assets/img/r/about-partners-planting-480.webp 480w, assets/img/r/about-partners-planting-800.webp 800w, assets/img/r/about-partners-planting-1200.webp 1200w, assets/img/r/about-partners-planting-1500.webp 1500w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/about-partners-planting.jpg" alt="A group of community volunteers, rural fire service members, park rangers, council staff and partners gathered around a newly planted seedling in bushland" width="1500" height="950" loading="lazy" decoding="async"></picture></div>
     </div>
   </div>
 </section>
@@ -282,7 +281,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
 <section class="ab-film">
   <div class="cw rv">
     <div class="vid">
-      <iframe src="https://www.youtube-nocookie.com/embed/KLVG-xJWLaw" title="FNPW 55 Years of Impact" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/KLVG-xJWLaw" title="FNPW 55 Years of Impact" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -340,7 +339,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
         <a href="https://fnpw.org.au/wp-content/uploads/2025/04/FNWP-Reconciliation-Action-Plan-February-25-February-27.pdf" class="btn btn-p" target="_blank" rel="noopener">Download our RAP</a>
       </div>
       <div class="rv d2 rap-art">
-        <img src="assets/img/rap-artwork.jpg" alt="Aboriginal artwork in earth tones and greens, showing meeting circles connected by pathways, native leaves, animal tracks and waterways" width="1400" height="1980" decoding="async">
+        <picture><source type="image/webp" srcset="assets/img/r/rap-artwork-480.webp 480w, assets/img/r/rap-artwork-800.webp 800w, assets/img/r/rap-artwork-1131.webp 1131w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/rap-artwork.jpg" alt="Aboriginal artwork in earth tones and greens, showing meeting circles connected by pathways, native leaves, animal tracks and waterways" width="1131" height="1600" loading="lazy" decoding="async"></picture>
         <p class="rap-cred">Artwork by Mirii Art.</p>
       </div>
     </div>
@@ -350,7 +349,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
 <section class="sec sand">
   <div class="cw">
     <div class="rv" style="text-align:center;max-width:680px;margin:0 auto"><span class="ey">Our team</span><h2>The people leading the work.</h2></div>
-    <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy"></div><div class="tc-in"><div class="tc-n">Ian Darbyshire</div><div class="tc-r">Chief Executive Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2022/04/suzana-01.jpg" alt="Suzana Majstorovic" loading="lazy"></div><div class="tc-in"><div class="tc-n">Suzana Majstorovic</div><div class="tc-r">Chief Operations Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/Gavin-Le-Roux.png" alt="Gavin Le Roux" loading="lazy"></div><div class="tc-in"><div class="tc-n">Gavin Le Roux</div><div class="tc-r">Chief Financial Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Mark-Cairns.png" alt="Mark Cairns" loading="lazy"></div><div class="tc-in"><div class="tc-n">Mark Cairns</div><div class="tc-r">Chief Biodiversity Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/06/Ian-Laing.png" alt="Ian Laing" loading="lazy"></div><div class="tc-in"><div class="tc-n">Ian Laing</div><div class="tc-r">Chief Commercial Officer</div></div></div>
+    <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy" width="1022" height="1024" decoding="async"></div><div class="tc-in"><div class="tc-n">Ian Darbyshire</div><div class="tc-r">Chief Executive Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2022/04/suzana-01.jpg" alt="Suzana Majstorovic" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Suzana Majstorovic</div><div class="tc-r">Chief Operations Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/Gavin-Le-Roux.png" alt="Gavin Le Roux" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Gavin Le Roux</div><div class="tc-r">Chief Financial Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Mark-Cairns.png" alt="Mark Cairns" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Mark Cairns</div><div class="tc-r">Chief Biodiversity Officer</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/06/Ian-Laing.png" alt="Ian Laing" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Ian Laing</div><div class="tc-r">Chief Commercial Officer</div></div></div>
 </div>
 </div>
 </section>
@@ -359,7 +358,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
 <section class="sec sand">
   <div class="cw">
     <div class="two" style="align-items:center">
-      <div class="rv" style="max-width:320px;justify-self:center"><img src="assets/img/tom-lewis.jpg" alt="The late Hon. Tom Lewis AO" width="384" height="480" decoding="async" style="display:block;width:100%;box-shadow:12px 12px 0 var(--bark-mid)"></div>
+      <div class="rv" style="max-width:320px;justify-self:center"><picture><source type="image/webp" srcset="assets/img/r/tom-lewis-384.webp 384w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/tom-lewis.jpg" alt="The late Hon. Tom Lewis AO" style="display:block;width:100%;box-shadow:12px 12px 0 var(--bark-mid)" width="384" height="480" loading="lazy" decoding="async"></picture></div>
       <div class="rv d1"><span class="ey">Founder &amp; Patron</span>
       <h2>The late Hon. Tom Lewis AO</h2>
       <p>As NSW lands minister, Tom Lewis set up the National Parks and Wildlife Service in 1967, then established the Foundation for National Parks &amp; Wildlife in 1970 as its fundraising arm. Today we are an independent conservation organisation working Australia-wide.</p></div>
@@ -374,7 +373,7 @@ main section .ey + h2{margin-top:var(--sp-1)}
       <h2>Our Board of Directors.</h2>
       <p class="lede" style="margin-top:1.2rem;margin-left:auto;margin-right:auto">Our board brings together expertise across conservation science, law, finance and community leadership to guide our long-term mission.</p>
     </div>
-    <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kelly-OShanassy.png" alt="Kelly O&rsquo;Shanassy" loading="lazy"></div><div class="tc-in"><div class="tc-n">Kelly O&rsquo;Shanassy</div><div class="tc-r">Chair</div><div class="tc-r small">Elected Chair 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Mark-Arnold.png" alt="Mark Arnold" loading="lazy"></div><div class="tc-in"><div class="tc-n">Mark Arnold</div><div class="tc-r">Treasurer &amp; Deputy Chair</div><div class="tc-r small">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2020/11/Jane-Daziger_POS@2x.png" alt="Jane Danziger" loading="lazy"></div><div class="tc-in"><div class="tc-n">Jane Danziger</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2020</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Tim-Jarvis-FNPW-director-1024x814.jpg" alt="Tim Jarvis AM" loading="lazy"></div><div class="tc-in"><div class="tc-n">Tim Jarvis AM</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2023</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Natalie-Kyrogiou-FNPW-Director.jpg" alt="Natalie Kyriacou OAM" loading="lazy"></div><div class="tc-in"><div class="tc-n">Natalie Kyriacou OAM</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2024</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/leisa-bacon-1024x1024.jpg" alt="Leisa Bacon" loading="lazy"></div><div class="tc-in"><div class="tc-n">Leisa Bacon</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Staff-Profiles.png" alt="Dr Lucas Carmody" loading="lazy"></div><div class="tc-in"><div class="tc-n">Dr Lucas Carmody</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kinjia.png" alt="Kinjia Munkara-Murray" loading="lazy"></div><div class="tc-in"><div class="tc-n">Kinjia Munkara-Murray</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Nick-Tubb.png" alt="Nick Tubb" loading="lazy"></div><div class="tc-in"><div class="tc-n">Nick Tubb</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2026</div></div></div>
+    <div class="tm-g"><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kelly-OShanassy.png" alt="Kelly O&rsquo;Shanassy" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Kelly O&rsquo;Shanassy</div><div class="tc-r">Chair</div><div class="tc-r small">Elected Chair 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Mark-Arnold.png" alt="Mark Arnold" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Mark Arnold</div><div class="tc-r">Treasurer &amp; Deputy Chair</div><div class="tc-r small">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2020/11/Jane-Daziger_POS@2x.png" alt="Jane Danziger" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Jane Danziger</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2020</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Tim-Jarvis-FNPW-director-1024x814.jpg" alt="Tim Jarvis AM" loading="lazy" width="1024" height="814" decoding="async"></div><div class="tc-in"><div class="tc-n">Tim Jarvis AM</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2023</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2023/05/Natalie-Kyrogiou-FNPW-Director.jpg" alt="Natalie Kyriacou OAM" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Natalie Kyriacou OAM</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2024</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/leisa-bacon-1024x1024.jpg" alt="Leisa Bacon" loading="lazy" width="1024" height="1024" decoding="async"></div><div class="tc-in"><div class="tc-n">Leisa Bacon</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2025/02/Staff-Profiles.png" alt="Dr Lucas Carmody" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Dr Lucas Carmody</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2025</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Kinjia.png" alt="Kinjia Munkara-Murray" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Kinjia Munkara-Murray</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2026</div></div></div><div class="tc rv"><div class="tc-ph"><img src="https://fnpw.org.au/wp-content/uploads/2026/02/Nick-Tubb.png" alt="Nick Tubb" loading="lazy" decoding="async"></div><div class="tc-in"><div class="tc-n">Nick Tubb</div><div class="tc-r">Director</div><div class="tc-r small">Appointed 2026</div></div></div>
 </div>
 </div>
 </section>
@@ -393,32 +392,32 @@ main section .ey + h2{margin-top:var(--sp-1)}
     <div class="abs-rail rv d1">
 <!--ABOUTSTORIES:START-->
 <a class="abs-card" href="article-the-number-almost-no-one-publishes.html">
-      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/09/55438801356_d02802b757_o-scaled-e1790059797143-1024x502.jpg" alt="Volunteers planting tree guards across a hillside" loading="lazy"></div>
+      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/09/55438801356_d02802b757_o-scaled-e1790059797143-1024x502.jpg" alt="Volunteers planting tree guards across a hillside" loading="lazy" width="1024" height="502" decoding="async"></div>
       <span class="abs-cat">Healing Land</span><h3>The number almost no one publishes</h3>
       <span class="abs-go">Read the story &#8594;</span>
     </a>
 <a class="abs-card" href="article-what-does-healthy-bushland-look-like.html">
-      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg" alt="Bushland with fallen logs, leaf litter and a dense understorey beneath the trees" loading="lazy"></div>
+      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/08/3-1-1024x538.jpg" alt="Bushland with fallen logs, leaf litter and a dense understorey beneath the trees" loading="lazy" width="1024" height="538" decoding="async"></div>
       <span class="abs-cat">Healing Land</span><h3>What does healthy bushland actually look like?</h3>
       <span class="abs-go">Read the story &#8594;</span>
     </a>
 <a class="abs-card" href="article-a-wildlife-corridor-is-only-as-wide-as-its-narrowest-point.html">
-      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg" alt="A koala crossing a road at the edge of a growing suburb" loading="lazy"></div>
+      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/2.jpg" alt="A koala crossing a road at the edge of a growing suburb" loading="lazy" decoding="async"></div>
       <span class="abs-cat">Saving Species</span><h3>A wildlife corridor is only as wide as its narrowest point</h3>
       <span class="abs-go">Read the story &#8594;</span>
     </a>
 <a class="abs-card" href="article-your-backyard-is-habitat-too-help-native-wildlife.html">
-      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg" alt="A green and brown bird with a pale bill and a blue eye, perched on a garden fence with palm fronds behind it." loading="lazy"></div>
+      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/07/8-1024x537.jpg" alt="A green and brown bird with a pale bill and a blue eye, perched on a garden fence with palm fronds behind it." loading="lazy" width="1024" height="537" decoding="async"></div>
       <span class="abs-cat">Saving Species</span><h3>Your Backyard Is Habitat Too: Help Native Wildlife</h3>
       <span class="abs-go">Read the story &#8594;</span>
     </a>
 <a class="abs-card" href="article-a-million-reasons-to-say-thank-you.html">
-      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/06/IMG_9752-1024x670.jpg" alt="Supporters gathered at Lane Cove National Park to mark one million trees planted" loading="lazy"></div>
+      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/06/IMG_9752-1024x670.jpg" alt="Supporters gathered at Lane Cove National Park to mark one million trees planted" loading="lazy" width="1024" height="670" decoding="async"></div>
       <span class="abs-cat">Healing Land</span><h3>A million reasons to say thank you</h3>
       <span class="abs-go">Read the story &#8594;</span>
     </a>
 <a class="abs-card" href="article-from-advocate-to-chair.html">
-      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1024x527.jpg" alt="Kelly O&#x27;Shanassy outdoors, smiling to camera." loading="lazy"></div>
+      <div class="abs-im"><img src="https://fnpw.org.au/wp-content/uploads/2026/05/IMG_9796-scaled-e1779762289191-1024x527.jpg" alt="Kelly O&#x27;Shanassy outdoors, smiling to camera." loading="lazy" width="1024" height="527" decoding="async"></div>
       <span class="abs-cat">News &amp; Events</span><h3>From advocate to chair: nature, ambition, and what comes next</h3>
       <span class="abs-go">Read the story &#8594;</span>
     </a>

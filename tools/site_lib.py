@@ -8,9 +8,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">'''
+FONTS = ''  # fonts are self-hosted: @font-face in global.css, preload links after it
 
 def write_page(fname, title, desc, body, page_css='', extra_js=''):
     html = f'''<!DOCTYPE html>
@@ -19,8 +17,9 @@ def write_page(fname, title, desc, body, page_css='', extra_js=''):
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">\n<meta name="referrer" content="no-referrer">
 <title>{title} | Foundation for National Parks &amp; Wildlife</title>
 <meta name="description" content="{desc}">
-{FONTS}
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 {page_css}
 </style>
@@ -67,7 +66,7 @@ HERO_IMGS = {
     'Thank You': ('assets/img/thank-you-planting.jpg', 'Four volunteers kneeling among newly planted seedlings in green tree guards, with tall eucalypts behind'),
     'Privacy Policy': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
     'Terms &amp; Conditions': (U_+'2021/02/Ascent-37-Woomargama-2000px-Copy.jpg', 'Woomargama National Park'),
-    'Search': ('assets/img/search-hero-mangroves.jpg', 'Aerial view of a river winding through dense green mangroves and tidal flats'),
+    'Search': ('assets/img/search-hero-koala.jpg', 'A koala climbing along a branch through eucalypt woodland'),
     'Corporate Volunteering / Sydney': (U_+'2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg', 'Bushcare volunteers'),
     'Corporate Volunteering / Melbourne': (U_+'2021/02/Koala-projects.png', 'Nest box installation'),
     'Corporate Volunteering / Brisbane': (U_+'2021/02/CurrumbinKoala-Erik-Veland.jpg', 'Koala in Queensland'),

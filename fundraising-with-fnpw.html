@@ -26,10 +26,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elyciap.github.io/fnpw-website-2026/"},{"@type":"ListItem","position":2,"name":"Get Involved","item":"https://elyciap.github.io/fnpw-website-2026/ways-you-can-get-involved.html"},{"@type":"ListItem","position":3,"name":"Fundraising","item":"https://elyciap.github.io/fnpw-website-2026/fundraising-with-fnpw.html"}]}</script>
 <!-- /@meta -->
 <meta name="referrer" content="no-referrer">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 /* ===== A-FEATURE HERO ===== */
 .fb-hero{--hero-scrim:none}
@@ -151,7 +150,7 @@
 <!-- ============ HERO (a-feature) ============ -->
 <section class="hero fb-hero">
   <div class="fb-hero-bg">
-    <img src="assets/img/fundraising-hero.jpg" alt="A Rainbow Lorikeet perched on a leafy branch, its blue head and orange breast bright against soft green bush">
+    <picture><source type="image/webp" srcset="assets/img/r/fundraising-hero-480.webp 480w, assets/img/r/fundraising-hero-800.webp 800w, assets/img/r/fundraising-hero-1200.webp 1200w, assets/img/r/fundraising-hero-1600.webp 1600w" sizes="100vw"><img src="assets/img/fundraising-hero.jpg" alt="A Rainbow Lorikeet perched on a leafy branch, its blue head and orange breast bright against soft green bush" width="1600" height="471" fetchpriority="high" decoding="async"></picture>
   </div>
   <div class="fb-hero-content">
     <div class="cw rv">
@@ -234,7 +233,7 @@
       <p style="font-size:.94rem">You can also email <a href="mailto:fnpw@fnpw.org.au" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626" style="color:var(--euc-deep);font-weight:600;border-bottom:1px solid currentColor">1800 898 626</a>.</p>
     </div>
     <div class="card hsform rv d1">
-      <div id="hsform" class="hsform-slot">
+      <div id="hsform" class="hsform-slot hs-form-frame" data-region="ap1" data-form-id="eca5e898-c9f5-429d-aa0f-1f4986c079c1" data-portal-id="441704788">
         <noscript><p class="hsform-fallback">The enquiry form needs JavaScript. Email
           <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call
           <a href="tel:1800898626">1800 898 626</a> and we will take your enquiry directly.</p></noscript>
@@ -274,28 +273,7 @@
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
 
-<script charset="utf-8" type="text/javascript" src="//js-ap1.hsforms.net/forms/embed/v2.js"></script>
-<script>
-/* Fundraising enquiry / Proposal to Fundraise, HubSpot portal 441704788,
-   region ap1, form eca5e898-c9f5-429d-aa0f-1f4986c079c1. Same form the live
-   site uses. Falls back to email and phone if the embed is blocked. */
-(function () {
-  var slot = document.getElementById('hsform');
-  function showFallback() {
-    var f = document.getElementById('hsFallback');
-    if (f) f.hidden = false;
-  }
-  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
-  hbspt.forms.create({
-    region: 'ap1',
-    portalId: '441704788',
-    formId: 'eca5e898-c9f5-429d-aa0f-1f4986c079c1',
-    target: '#hsform'
-  });
-  setTimeout(function () {
-    if (!slot.querySelector('iframe, form')) showFallback();
-  }, 8000);
-})();
-</script>
+<script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
+<script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
 </body>
 </html>

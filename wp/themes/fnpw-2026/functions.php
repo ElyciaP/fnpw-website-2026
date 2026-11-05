@@ -88,10 +88,34 @@ add_action( 'init', 'fnpw_pattern_categories' );
 remove_theme_support( 'core-block-patterns' );
 
 /**
- * Preload the two variable fonts actually used above the fold.
+ * Fonts (WP6, Nov 2026): Sora and Figtree are self-hosted.
+ *
+ * The variable woff2 files live in assets/fonts/ and the @font-face rules sit at the top
+ * of assets/css/global.css, so the theme never needs a third-party font request. Both
+ * files are preloaded from wp_head so the first paint already has them.
+ *
+ * Google Fonts is an explicit opt-in only, for a site where the files cannot be served:
+ *
+ *     add_filter( 'fnpw_google_fonts_fallback', '__return_true' );
+ *
+ * It defaults to off; with it off nothing is requested from fonts.googleapis.com.
  */
+function fnpw_fonts_are_self_hosted() {
+	return file_exists( get_template_directory() . '/assets/fonts/sora-variable.woff2' )
+		&& file_exists( get_template_directory() . '/assets/fonts/figtree-variable.woff2' );
+}
+
+function fnpw_use_google_fonts() {
+	/**
+	 * Load Sora and Figtree from Google Fonts instead of the self-hosted files.
+	 *
+	 * @param bool $use Default false: fonts are self-hosted.
+	 */
+	return (bool) apply_filters( 'fnpw_google_fonts_fallback', false );
+}
+
 function fnpw_preload_fonts() {
-	if ( ! fnpw_fonts_are_self_hosted() ) {
+	if ( fnpw_use_google_fonts() ) {
 		return;
 	}
 
@@ -101,7 +125,7 @@ function fnpw_preload_fonts() {
 	foreach ( $fonts as $font ) {
 		if ( file_exists( get_template_directory() . '/assets/fonts/' . $font ) ) {
 			printf(
-				'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+				'<link rel="preload" as="font" type="font/woff2" crossorigin href="%s">' . "\n",
 				esc_url( $uri . $font )
 			);
 		}
@@ -109,22 +133,8 @@ function fnpw_preload_fonts() {
 }
 add_action( 'wp_head', 'fnpw_preload_fonts', 1 );
 
-/**
- * Font loading.
- *
- * Self-hosted variable fonts are preferred, because a third-party font request
- * is a measurable cost against Core Web Vitals. Until the woff2 files are in
- * assets/fonts/, fall back to Google Fonts so the theme never renders in a
- * system font. Run wp/tools/fetch-fonts.sh to self-host, then this falls away
- * on its own.
- */
-function fnpw_fonts_are_self_hosted() {
-	return file_exists( get_template_directory() . '/assets/fonts/sora-variable.woff2' )
-		&& file_exists( get_template_directory() . '/assets/fonts/figtree-variable.woff2' );
-}
-
 function fnpw_google_fonts_fallback() {
-	if ( fnpw_fonts_are_self_hosted() ) {
+	if ( ! fnpw_use_google_fonts() ) {
 		return;
 	}
 
@@ -138,7 +148,7 @@ function fnpw_google_fonts_fallback() {
 add_action( 'wp_enqueue_scripts', 'fnpw_google_fonts_fallback' );
 
 function fnpw_google_fonts_preconnect( $urls, $relation_type ) {
-	if ( 'preconnect' === $relation_type && ! fnpw_fonts_are_self_hosted() ) {
+	if ( 'preconnect' === $relation_type && fnpw_use_google_fonts() ) {
 		$urls[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' => 'anonymous' );
 	}
 	return $urls;

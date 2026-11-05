@@ -58,11 +58,10 @@ HEAD = '''<!DOCTYPE html>
 <title>Give a Tree | Foundation for National Parks &amp; Wildlife</title>
 <meta name="description" content="Give a Tree and help bring back the bush. Every tree is a native species, planted in Australia&rsquo;s priority landscapes, and every gift comes with a personalised certificate.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://gift-a-tree.raiselysite.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 
 <style>
 /* ============================================================

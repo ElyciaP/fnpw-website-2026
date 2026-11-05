@@ -27,10 +27,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elyciap.github.io/fnpw-website-2026/"},{"@type":"ListItem","position":2,"name":"Search","item":"https://elyciap.github.io/fnpw-website-2026/search.html"}]}</script>
 <!-- /@meta -->
 <meta name="referrer" content="no-referrer">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
 <style>
 .srch-hero h1{max-width:10ch}
 .srch-hero{--hero-scrim:linear-gradient(97deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 26%,rgba(15,49,50,.22) 44%,rgba(15,49,50,0) 60%)}
@@ -109,7 +108,7 @@
 </header><!-- /@header -->
 <main id="main">
 <section class="hero pj-hero srch-hero">
-  <figure class="pj-hero-im"><img src="assets/img/search-hero-koala.jpg" alt="A koala climbing along a branch through eucalypt woodland" style="object-position:62% 40%" fetchpriority="high" decoding="async"></figure>
+  <figure class="pj-hero-im"><picture><source type="image/webp" srcset="assets/img/r/search-hero-koala-480.webp 480w, assets/img/r/search-hero-koala-800.webp 800w, assets/img/r/search-hero-koala-1200.webp 1200w, assets/img/r/search-hero-koala-1600.webp 1600w" sizes="100vw"><img src="assets/img/search-hero-koala.jpg" alt="A koala climbing along a branch through eucalypt woodland" style="object-position:62% 40%" width="1600" height="1066" fetchpriority="high" decoding="async"></picture></figure>
   <div class="cw rv">
     <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span>Search</nav>
     <span class="ey">Search</span>
