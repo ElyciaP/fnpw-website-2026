@@ -66,11 +66,19 @@ document.documentElement.classList.add('js');
       var el=x.target,t=parseFloat(el.dataset.count),dur=1500,st=performance.now();
       ni.unobserve(el);
       if(isNaN(t)){return}
+      /* Hold the counter at its finished width while it rolls. Without this the
+         number grows from "0", so anything beside or below it reflows on every
+         frame (the Healing Our Land graphic on our-impact.html jumped as the
+         row wrapped and unwrapped). The hold is released when the roll ends. */
+      var inl=getComputedStyle(el).display==='inline',w=el.getBoundingClientRect().width;
+      if(inl)el.style.display='inline-block';
+      el.style.boxSizing='border-box';el.style.width=w+'px';el.style.whiteSpace='nowrap';
       el.textContent=fmt(el,0);
       (function step(now){
         var pr=Math.min(1,(now-st)/dur),ea=1-Math.pow(1-pr,3);
         el.textContent=fmt(el,pr<1?t*ea:t);
         if(pr<1)requestAnimationFrame(step);
+        else{el.style.width='';el.style.whiteSpace='';el.style.boxSizing='';if(inl)el.style.display='';}
       })(st);
     })},{threshold:.4});
     counters.forEach(function(el){ni.observe(el)});
