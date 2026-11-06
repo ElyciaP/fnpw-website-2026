@@ -406,6 +406,57 @@
    1400
   ]
  },
+ "assets/img/gov-epic-cyclist.jpg": {
+  "h": 1600,
+  "size": 436881,
+  "w": 1280,
+  "webp": [
+   "assets/img/r/gov-epic-cyclist-480.webp",
+   "assets/img/r/gov-epic-cyclist-800.webp",
+   "assets/img/r/gov-epic-cyclist-1200.webp",
+   "assets/img/r/gov-epic-cyclist-1280.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1280
+  ]
+ },
+ "assets/img/gov-epic-flinders-walkers.jpg": {
+  "h": 1068,
+  "size": 264929,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/gov-epic-flinders-walkers-480.webp",
+   "assets/img/r/gov-epic-flinders-walkers-800.webp",
+   "assets/img/r/gov-epic-flinders-walkers-1200.webp",
+   "assets/img/r/gov-epic-flinders-walkers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/gov-epic-trailhead-opening.jpg": {
+  "h": 1301,
+  "size": 487979,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/gov-epic-trailhead-opening-480.webp",
+   "assets/img/r/gov-epic-trailhead-opening-800.webp",
+   "assets/img/r/gov-epic-trailhead-opening-1200.webp",
+   "assets/img/r/gov-epic-trailhead-opening-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/governance-hero-gorge.jpg": {
   "h": 900,
   "size": 250107,

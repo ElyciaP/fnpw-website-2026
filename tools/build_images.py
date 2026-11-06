@@ -59,11 +59,15 @@ SIZES = {
     'card': '(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw',
     'two': '(min-width: 880px) 50vw, 100vw',
     'wide': '(min-width: 1280px) 1240px, 100vw',
+    'bleed': '100vw',                               # full-width background that is not the hero
+    'gat': '(min-width: 761px) 50vw, 100vw',        # homepage Give a Tree strip splits at 760px
 }
 HERO_CLASSES = re.compile(r'(^|\s)(hero|hx-hero|hx-hero-bg|fb-hero-bg|ab-hero-bg|pj-hero-im|gw-hero|ct-hero|proj-hero)(\s|$)')
-WIDE_CLASSES = re.compile(r'(^|\s)(pj-wide|gw-im-pano|ip-bush-art|pj-q|imap|ed-bleed|ed-wide)(\s|$)')
+WIDE_CLASSES = re.compile(r'(^|\s)(pj-wide|gw-im-pano|ip-bush-art|pj-q|imap|ed-bleed|ed-wide|tr-main)(\s|$)')
+BLEED_CLASSES = re.compile(r'(^|\s)(hx-pt-bg)(\s|$)')
+GAT_CLASSES = re.compile(r'(^|\s)(hx-gat-im)(\s|$)')
 CARD_CLASSES = re.compile(r'(^|\s)(pc-im|pcard-im|fl-im|hx-pil-im|art-im|abs-im|pj-rcard|pj-gal|v-car-s|vg-page|gw-pc|gw-pil-g|case-im|'
-                          r'opp|aud|rp-cov|rp-g|feat-img|hx-ir-cov|g3|g4|also-g|pj-readgrid|fls-track|gr-im|pw-im|pj-fig|ed-col|pa-g)(\s|$)')
+                          r'opp|aud|rp-cov|rp-g|feat-img|hx-ir-cov|g3|g4|also-g|pj-readgrid|fls-track|gr-im|pw-im|pj-fig|ed-col|pa-g|tr-im)(\s|$)')
 PLAIN_PARENT = re.compile(r'(^|\s)(gw-rq)(\s|$)')
 TWO_CLASSES = re.compile(r'(^|\s)(pj-band-im|pj-duo|pj-story-im|pj-storypair|pa-im|two|story|gw-im-side|gw-pro-im|ab-proof|ip-cs-img|'
                          r'feat|wpn|gw-feat-im|gw-rq|gw-ty|gt-split-im|ip-rpt|v-act-im|dl-open-im)(\s|$)')
@@ -224,6 +228,11 @@ def role_for(ancestors, attrs):
     near = ' '.join(ancestors[-3:]) + ' ' + own
     if HERO_CLASSES.search(near):
         return 'hero'
+    if BLEED_CLASSES.search(own):
+        return 'bleed'
+    for a in reversed(ancestors[-2:]):
+        if GAT_CLASSES.search(a):
+            return 'gat'
     for a in reversed(ancestors[-4:]):
         if WIDE_CLASSES.search(a):
             return 'wide'

@@ -239,22 +239,27 @@
 .rec-k{display:flex;justify-content:space-between;gap:.5rem;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0F7768}
 .rec-n{font-family:Sora,sans-serif;font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.035em;color:#0F3132;margin-top:.25rem}
 .rec-d{font-size:.86rem;line-height:1.45;color:rgba(36,25,20,.86)}
-/* Conservation and the visitor economy (Nov 2026, option C): headline first, two photos, what is being built */
+/* Conservation and the visitor economy (Nov 2026, option C with Ely's photos): headline, lead photo, then what the agreement includes beside two photos */
 .tr-sec{background:#EEE8E1}
-.tr-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:1.2rem 3rem;align-items:end;margin-bottom:2rem}
-.tr-top h2{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.05;letter-spacing:-.03em;max-width:16ch;color:#0F3132}
+.tr-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2rem 3rem;align-items:end;margin-bottom:2rem}
+.tr-top h2{font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.06;letter-spacing:-.03em;max-width:18ch;color:#0F3132}
 .tr-lede{display:grid;gap:.9rem}
 .tr-lede p{margin:0;color:rgba(36,25,20,.86)}
-.tr-duo{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:.8rem}
-.tr-im{margin:0;position:relative;min-height:320px;overflow:hidden;background:#0F3132}
-.tr-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tr-im figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1.1rem .9rem;background:linear-gradient(180deg,rgba(15,49,50,0),rgba(15,49,50,.8));color:#FAF6F2;font-size:.78rem}
-.tr-gap{background:#FAF6F2;border:1.5px dashed #C9BFB1;display:grid;place-items:center;padding:1.5rem;text-align:center;color:#6B5F55;font-size:.85rem}
-.tr-gap figcaption{position:static;background:none;color:inherit;padding:0;font-size:.85rem}
-.tr-checks{list-style:none;margin:1.6rem 0 1.4rem;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.4rem}
-.tr-checks li{display:grid;grid-template-columns:1.4rem minmax(0,1fr);gap:.6rem;padding:.75rem 0;border-top:1px solid #D9D1C4;font-size:.95rem}
+.tr-main{margin:0;position:relative;aspect-ratio:21/9;overflow:hidden;background:#0F3132}
+.tr-main img,.tr-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tr-main img{object-position:50% 75%}
+.tr-main figcaption,.tr-im figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.4rem 1.1rem .9rem;background:linear-gradient(180deg,rgba(15,49,50,0),rgba(15,49,50,.82));color:#FAF6F2;font-size:.78rem;line-height:1.35}
+.tr-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);gap:.8rem;margin-top:.8rem}
+.tr-im{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;background:#0F3132}
+.tr-im:last-child img{object-position:78% 50%} /* keeps the Remarkable Trailhead sign in frame */
+.tr-list{background:#FAF6F2;padding:clamp(1.3rem,2.5vw,1.9rem);display:flex;flex-direction:column;gap:.6rem}
+.tr-list h3{font-size:1.15rem;color:#0F3132;margin:0}
+.tr-checks{list-style:none;margin:0 0 .6rem;padding:0;display:grid}
+.tr-checks li{display:grid;grid-template-columns:1.3rem minmax(0,1fr);gap:.55rem;padding:.65rem 0;border-top:1px solid #D9D1C4;font-size:.92rem;line-height:1.45}
 .tr-checks li::before{content:"\2713";font-weight:800;color:#0F7768}
-@media (max-width:900px){.tr-top,.tr-duo{grid-template-columns:1fr}.tr-checks{grid-template-columns:1fr}.tr-im{min-height:240px}}
+.tr-list .btn-g{margin-top:auto;align-self:flex-start}
+@media (max-width:900px){.tr-top{grid-template-columns:1fr}.tr-main{aspect-ratio:4/3}.tr-row{grid-template-columns:1fr 1fr}.tr-list{grid-column:1/-1}}
+@media (max-width:560px){.tr-row{grid-template-columns:1fr}}
 /* Accountable at every step: document-style links */
 .acc-links{display:grid;gap:.6rem}
 .acc-l{display:flex;align-items:center;gap:1rem;padding:.85rem 1.1rem;border:1px solid rgba(255,255,255,.4);background:rgba(15,49,50,.2);color:#FFFFFF;text-decoration:none;transition:background .2s ease,border-color .2s ease}
@@ -377,10 +382,9 @@
 </section>
 <section class="sec tr-sec" id="tourism">
 <div class="cw">
-<div class="tr-top"><div><span class="ey">Conservation and the visitor economy</span><h2>Building an Epic trail in the Southern Flinders Ranges.</h2></div><div class="tr-lede"><p>Governments are bringing parks and tourism closer together. That opens a second route to fund environmental outcomes, through visitor-economy objectives, and we help design projects that meet both briefs at once.</p><p>At Remarkable Southern Flinders, a 37.5 kilometre route through Mount Remarkable National Park is being designed for international Epic trail accreditation, with input from the Nukunu Wapma Thura Aboriginal Corporation.</p></div></div>
-<div class="tr-duo"><figure class="tr-im"><picture><source type="image/webp" srcset="assets/img/r/about-hero-flinders-COMP-480.webp 480w, assets/img/r/about-hero-flinders-COMP-800.webp 800w, assets/img/r/about-hero-flinders-COMP-1200.webp 1200w, assets/img/r/about-hero-flinders-COMP-1600.webp 1600w" sizes="(min-width: 900px) 62vw, 100vw"><img src="assets/img/about-hero-flinders-COMP.jpg" alt="Flinders Ranges peaks glowing under a pink dawn sky" width="1600" height="625" loading="lazy" decoding="async"></picture><figcaption>Flinders Ranges, South Australia.</figcaption></figure><figure class="tr-im tr-gap"><!-- PLACEHOLDER: photo of the new mountain bike trail at Mount Remarkable --><figcaption>Photo to come: the new mountain bike trail at Mount Remarkable</figcaption></figure></div>
-<ul class="tr-checks"><li>20 km of new mountain bike trail open at Mount Remarkable</li><li>A Melrose network of more than 150 km of singletrack</li><li>The Gorges Walk, a multi-day hike through Telowie and Nelshaby gorges in Wapma Thura</li><li>Day visitor facilities at Wirrabara</li><li>An upgraded Mambray Creek campground</li><li>New picnic areas, accessible toilets and carparks</li></ul>
-<a class="btn-g" href="project-remarkable-southern-flinders.html">Read about the project →</a>
+<div class="tr-top"><div><span class="ey">Conservation and the visitor economy</span><h2>A 38 kilometre Epic trail in the Southern Flinders Ranges.</h2></div><div class="tr-lede"><p>Governments are bringing parks and tourism closer together. That opens a second route to fund environmental outcomes, through visitor-economy objectives, and we help design projects that meet both briefs at once.</p><p>Designed in close consultation with the Nukunu Wapma Thura Aboriginal Corporation, the Epic Mountain Bike Trail near Melrose opened in October 2023. It was a major part of the $10 million Remarkable Southern Flinders agreement, funded by the South Australian and Australian Governments and supported by us.</p></div></div>
+<figure class="tr-main"><picture><source type="image/webp" srcset="assets/img/r/gov-epic-flinders-walkers-480.webp 480w, assets/img/r/gov-epic-flinders-walkers-800.webp 800w, assets/img/r/gov-epic-flinders-walkers-1200.webp 1200w, assets/img/r/gov-epic-flinders-walkers-1600.webp 1600w" sizes="(min-width: 1280px) 1240px, 100vw"><img src="assets/img/gov-epic-flinders-walkers.jpg" alt="Two walkers on a rise looking towards rugged red ranges lit by the late sun" width="1600" height="1068" loading="lazy" decoding="async"></picture><figcaption>Flinders Ranges, South Australia. Photo: South Australian Tourism Commission.</figcaption></figure>
+<div class="tr-row"><div class="tr-list"><h3>What the agreement includes</h3><ul class="tr-checks"><li>The 38 km Epic Mountain Bike Trail, a closed loop that starts at the Remarkable Trailhead in Melrose</li><li>20 km of new trails in Mount Remarkable National Park at Willowie</li><li>An upgraded Mambray Creek campground and day visitor area</li><li>New and improved day visitor facilities at Wirrabara</li><li>A new multi-day walking experience in Wapma Thura–Southern Flinders Ranges National Park</li></ul><a class="btn-g" href="project-remarkable-southern-flinders.html">Read about the project →</a></div><figure class="tr-im"><picture><source type="image/webp" srcset="assets/img/r/gov-epic-cyclist-480.webp 480w, assets/img/r/gov-epic-cyclist-800.webp 800w, assets/img/r/gov-epic-cyclist-1200.webp 1200w, assets/img/r/gov-epic-cyclist-1280.webp 1280w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/gov-epic-cyclist.jpg" alt="A cyclist with a backpack riding a winding dirt road through wildflowers towards distant ranges" width="1280" height="1600" loading="lazy" decoding="async"></picture><figcaption>Riding in the Flinders Ranges.</figcaption><!-- Photo credit to confirm --></figure><figure class="tr-im"><picture><source type="image/webp" srcset="assets/img/r/gov-epic-trailhead-opening-480.webp 480w, assets/img/r/gov-epic-trailhead-opening-800.webp 800w, assets/img/r/gov-epic-trailhead-opening-1200.webp 1200w, assets/img/r/gov-epic-trailhead-opening-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/gov-epic-trailhead-opening.jpg" alt="A group cutting a red ribbon in front of the Remarkable Trailhead shelter in Melrose, beside a post marking where the Remarkable Epic starts" width="1600" height="1301" loading="lazy" decoding="async"></picture><figcaption>Opening the Remarkable Trailhead in Melrose, where the Epic begins.</figcaption><!-- Photo credit and opening date to confirm --></figure></div>
 </div>
 </section>
 <section class="sec" id="first-nations" style="background: #C6EBCA">

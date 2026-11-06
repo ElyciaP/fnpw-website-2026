@@ -43,3 +43,6 @@ assets/img/give-a-tree-koala-tree.jpg|A koala climbing between the forked trunks
 assets/img/projects-hero-koala-sky.jpg|A koala on a eucalypt branch looking down at the camera, gum leaves and blue sky behind
 assets/img/home-partner-loccitane.jpg|L’Occitane team members in matching caps smiling beside trays of native seedlings in a nursery
 assets/img/reports-hero-grevillea.jpg|Pink and orange grevillea flowers against soft, blurred green foliage
+assets/img/gov-epic-flinders-walkers.jpg|Two walkers on a rise looking towards rugged red ranges lit by the late sun
+assets/img/gov-epic-cyclist.jpg|A cyclist with a backpack riding a winding dirt road through wildflowers towards distant ranges
+assets/img/gov-epic-trailhead-opening.jpg|A group cutting a red ribbon in front of the Remarkable Trailhead shelter in Melrose, beside a post marking where the Remarkable Epic starts
