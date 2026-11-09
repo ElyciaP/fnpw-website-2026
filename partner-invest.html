@@ -164,7 +164,32 @@
 .tk-main{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
 @media (max-width:900px){.tk-main{grid-template-columns:1fr !important}}
 
-/* Version 3 layout (Nov 2026): tabs, opportunities dashboard, case study carousel */
+/* Case studies as alternating rows, all three on the page (Nov 2026) */
+.cs-rows{display:flex;flex-direction:column;gap:clamp(2.2rem,4vw,3.5rem)}
+.case.csr{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.5rem 3rem;align-items:center;background:none;border:0}
+.case.csr:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.case.csr:nth-child(even) .case-im{order:2}
+.csr .case-im picture{display:block}
+.csr .case-im img{aspect-ratio:auto;height:340px;border-radius:4px}
+.csr .case-tag{border-top-left-radius:4px}
+.csr .case-b{padding:0}
+.csr .case-logos{min-height:0}
+.piw .csr .case-b h3{font-size:clamp(1.3rem,2vw,1.6rem)}
+.piw .csr .case-b p{flex:none;font-size:1rem}
+@media (max-width:900px){.case.csr,.case.csr:nth-child(even){grid-template-columns:minmax(0,1fr)}.case.csr:nth-child(even) .case-im{order:0}.csr .case-im img{height:240px}}
+/* Version 3 layout (Nov 2026): tabs and opportunities dashboard */
+/* Case studies: three cards on one page (Suz, Nov 2026) */
+.case{background:#fff;border:1px solid #E5DFD3;display:flex;flex-direction:column}
+.case-im{position:relative}
+.case-im img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.case-tag{position:absolute;top:0;left:0;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.7em 1.1em}
+.case-b{padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+/* Partner logos lead each story in place of the impact number (Nov 2026) */
+.case-logos{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;min-height:52px;padding-bottom:1rem;border-bottom:1px solid #E5DFD3}
+.case-logos img{height:38px;width:auto;max-width:100%;display:block}
+.case-logos .tx{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;line-height:1.25;color:#0F3132;max-width:15ch}
+.piw .case-b h3{font-size:1.3rem}
+.piw .case-b p{margin:0;font-size:.95rem;color:rgba(36,25,20,.84);flex:1}
 .piw [hidden]{display:none !important}
 .pi-hero-sh{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,.72) 0%,rgba(15,49,50,.5) 34%,rgba(15,49,50,.12) 62%,rgba(15,49,50,0) 100%),linear-gradient(0deg,rgba(15,49,50,.45) 0%,rgba(15,49,50,0) 45%)}
 @media (max-width:760px){.pi-hero-sh{background:linear-gradient(0deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 55%,rgba(15,49,50,.2) 100%)}}
@@ -183,10 +208,10 @@
 .wtab:hover{color:#FAF6F2}
 .wtab[aria-selected="true"]{color:#F8EEA9;box-shadow:inset 0 -3px 0 #F8EEA9}
 .wtab:focus-visible{outline:2px solid #F8EEA9;outline-offset:-2px}
-.wpanel{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:1.6rem 3rem;align-items:center}
+.wpanel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:1.6rem 3rem;align-items:center}
 .wpanel+.wpanel{margin-top:2.5rem}
 .wpanel picture{display:block}
-.wpanel img{width:100%;height:380px;object-fit:cover;display:block;border-radius:4px}
+.wpanel img{width:100%;height:280px;object-fit:cover;display:block;border-radius:4px}
 .piw .wpanel h3{color:#FAF6F2;font-size:clamp(1.4rem,2.2vw,1.75rem);margin-bottom:.8rem}
 .piw .wpanel p{color:#FAF6F2;font-size:1.05rem}
 .piw .wpanel .wp-eg{font-size:.92rem;color:#C6EBCA;margin-top:.6rem}
@@ -225,28 +250,6 @@
 .op-a{display:flex;flex-wrap:wrap;gap:1rem 1.8rem;align-items:center}
 @media (max-width:900px){.odash{grid-template-columns:minmax(0,1fr)}.otabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid #CBABAB}.otab{flex:0 0 15rem;width:15rem;border-bottom:0;border-right:1px solid #CBABAB}.op-im img,.op-gap{height:220px}.op-b{padding:1.4rem}}
 @media (max-width:560px){.op-stats{grid-template-columns:1fr}.op-stats div,.op-stats div:first-child{padding:.7rem 0;border-left:0;border-top:1px solid #CBABAB}.op-stats div:first-child{border-top:0}}
-.car-s{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff}
-.car-s+.car-s{margin-top:1.5rem}
-.car-s picture{display:block;height:100%}
-.car-s img{width:100%;height:100%;min-height:400px;object-fit:cover;display:block}
-.car-b{padding:2.5rem;display:flex;flex-direction:column;justify-content:center;gap:.8rem}
-.piw .car-b h3{font-size:clamp(1.3rem,2vw,1.6rem)}
-.piw .car-b p{margin:0}
-.car-b .btn-g{align-self:flex-start}
-.car-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.25rem}
-.car-dots{display:flex;align-items:center}
-.car-dot{position:relative;width:28px;height:44px;background:none;border:0;padding:0;cursor:pointer}
-.car-dot::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:999px;background:#CBABAB;transition:width .2s}
-.car-dot[aria-current="true"]{width:44px}
-.car-dot[aria-current="true"]::before{width:32px;background:#0F3132}
-.car-ct{margin-left:.7rem;font-weight:600;color:#0F3132;font-size:.95rem}
-.car-arr{display:flex;gap:.6rem}
-.car-btn{width:56px;height:56px;border-radius:50%;border:1.5px solid #0F3132;background:transparent;color:#0F3132;font-size:1.35rem;line-height:1;cursor:pointer}
-.car-btn.nx{background:#0F3132;color:#FAF6F2}
-.car-btn:hover{background:#0F7768;border-color:#0F7768;color:#FAF6F2}
-.car-btn:focus-visible,.car-dot:focus-visible{outline:3px solid #0F7768;outline-offset:2px}
-@media (max-width:900px){.car-s{grid-template-columns:minmax(0,1fr)}.car-s img{min-height:0;height:240px}.car-b{padding:1.5rem}}
-@media (prefers-reduced-motion:reduce){.car-dot::before{transition:none}}
 .pi-impact{background:#0F3132;padding:3.5rem 0}
 </style>
 </head>
@@ -312,7 +315,7 @@
 <div class="piw">
 
 <section id="top" style="position: relative; min-height: 560px; display: flex; align-items: flex-end; background: #0F3132; overflow: hidden">
-<picture><source type="image/webp" srcset="assets/img/r/partner-hero-lakes-480.webp 480w, assets/img/r/partner-hero-lakes-800.webp 800w, assets/img/r/partner-hero-lakes-1200.webp 1200w, assets/img/r/partner-hero-lakes-1600.webp 1600w" sizes="100vw"><img src="assets/img/partner-hero-lakes.jpg" alt="Aerial view of a narrow strip of farmland and wetland between two lakes, with reed islands in the shallows" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%" width="1600" height="832" fetchpriority="high" decoding="async"></picture>
+<picture><source type="image/webp" srcset="assets/img/r/partner-hero-lakes-480.webp 480w, assets/img/r/partner-hero-lakes-800.webp 800w, assets/img/r/partner-hero-lakes-1200.webp 1200w, assets/img/r/partner-hero-lakes-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/partner-hero-lakes.jpg" alt="Aerial view of a narrow strip of farmland and wetland between two lakes, with reed islands in the shallows" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%" width="1600" height="832" loading="lazy" decoding="async"></picture>
 <div class="pi-hero-sh" aria-hidden="true"></div>
 <div class="cw" style="position: relative; width: 100%; padding-top: 5.5rem; padding-bottom: 3.4rem">
 <nav class="breadcrumb" aria-label="Breadcrumb" style="display: flex; gap: .5em; flex-wrap: wrap; font-size: .82rem; color: #FAF6F2; margin-bottom: 1.4rem"><a href="index.html" style="color: #C6EBCA">Home</a><span>/</span>Partner With Us</nav>
@@ -363,14 +366,11 @@
 
 <section class="sec sand" id="evidence">
 <div class="cw">
-<span class="ey">Case studies</span><h2 style="margin-bottom: 2rem">What our partnerships have achieved.</h2>
-<div class="car" role="region" aria-roledescription="carousel" aria-label="Case studies">
-<div class="car-vp" aria-live="polite">
-<div class="car-s" role="group" aria-roledescription="slide" aria-label="1 of 3: Restoring a Ramsar wetland on Hindmarsh Island"><picture><source type="image/webp" srcset="assets/img/r/partner-loccitane-nursery-480.webp 480w, assets/img/r/partner-loccitane-nursery-800.webp 800w, assets/img/r/partner-loccitane-nursery-1200.webp 1200w, assets/img/r/partner-loccitane-nursery-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/partner-loccitane-nursery.jpg" alt="Volunteer in an L’Occitane cap potting seedlings at a nursery bench" width="1600" height="1067" loading="lazy" decoding="async"></picture><div class="car-b"><span class="k">L’OCCITANE Australia · since 2020</span><h3>Restoring a Ramsar wetland on Hindmarsh Island</h3><p>L’OCCITANE has partnered with us since 2020, when they helped fund our first Bushfire Recovery Nurseries. In 2025 their $90,000 contribution helped restore coastal woodland and wetland across five sites on Hindmarsh Island (Kumarangk), alongside the Ngarrindjeri, the Kumarangk Hindmarsh Island Landcare Group, local nurseries and park managers.</p><a class="btn-g" href="article-hindmarsh-island-ecological-restoration.html" aria-label="Read the full story: Hindmarsh Island with L’OCCITANE">Read the full story →</a></div></div>
-<div class="car-s" role="group" aria-roledescription="slide" aria-label="2 of 3: Curb Wombat Mange Program"><picture><source type="image/webp" srcset="assets/img/r/projects-wombat-mange-wombat-at-burrow-480.webp 480w, assets/img/r/projects-wombat-mange-wombat-at-burrow-800.webp 800w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1200.webp 1200w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/wombat-mange-wombat-at-burrow.jpg" alt="Wombat emerging from its burrow" width="1600" height="1200" loading="lazy" decoding="async"></picture><div class="car-b"><span class="k">NSW National Parks and Wildlife Service</span><h3>Curb Wombat Mange Program</h3><p>Together we put up to $2 million into rapid response grants between 2023 and 2025, getting funding to Indigenous community organisations and licensed wildlife groups across NSW. An estimated 1,498 wombats were treated in the first large-scale targeted program of its kind in the state.</p><a class="btn-g" href="project-curb-wombat-mange-program.html" aria-label="Read the full story: Curb Wombat Mange Program">Read the full story →</a></div></div>
-<div class="car-s" role="group" aria-roledescription="slide" aria-label="3 of 3: Mundoo Island Station"><picture><source type="image/webp" srcset="assets/img/r/projects-mundoo-aerial-sunset-480.webp 480w, assets/img/r/projects-mundoo-aerial-sunset-800.webp 800w, assets/img/r/projects-mundoo-aerial-sunset-1200.webp 1200w, assets/img/r/projects-mundoo-aerial-sunset-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/mundoo-aerial-sunset.jpg" alt="Wetlands and grassland on Mundoo Island at sunset, seen from the air" width="1600" height="900" loading="lazy" decoding="async"></picture><div class="car-b"><span class="k">With the Ngarrindjeri Aboriginal Corporation and the Australian and SA Governments</span><h3>Mundoo Island Station</h3><p>When this rare land at the Murray Mouth came up for sale, we joined the Australian and South Australian Governments as an acquisition partner, with a substantial part of our contribution coming from a gift in a will. The islands are now being added to Coorong National Park, protecting habitat for 65 nationally listed threatened species, and their management plan is being developed with the Ngarrindjeri Aboriginal Corporation.</p><a class="btn-g" href="project-mundoo-island-acquisition.html" aria-label="Read the full story: Mundoo Island Station">Read the full story →</a></div></div>
-</div>
-<div class="car-nav" hidden><div class="car-dots"><button type="button" class="car-dot" aria-label="Show Restoring a Ramsar wetland on Hindmarsh Island"></button><button type="button" class="car-dot" aria-label="Show Curb Wombat Mange Program"></button><button type="button" class="car-dot" aria-label="Show Mundoo Island Station"></button><span class="car-ct"></span></div><div class="car-arr"><button type="button" class="car-btn pv" aria-label="Previous case study">&#8592;</button><button type="button" class="car-btn nx" aria-label="Next case study">&#8594;</button></div></div>
+<div class="h2row" style="display: grid; gap: 2rem; align-items: end; margin-bottom: 2.4rem"><div><span class="ey">Partnerships in action</span><h2 style="max-width: 16ch">What our partnerships have achieved.</h2></div><p style="margin: 0; max-width: 50ch">Each of these began differently, with a business, a government agency and a gift in a will, and each has changed what is possible on the ground.</p></div>
+<div class="cs-rows">
+<article class="case csr"><div class="case-im"><picture><source type="image/webp" srcset="assets/img/r/partner-loccitane-nursery-480.webp 480w, assets/img/r/partner-loccitane-nursery-800.webp 800w, assets/img/r/partner-loccitane-nursery-1200.webp 1200w, assets/img/r/partner-loccitane-nursery-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/partner-loccitane-nursery.jpg" alt="Volunteer in an L’Occitane cap potting seedlings at a nursery bench" width="1600" height="1067" loading="lazy" decoding="async"></picture><span class="case-tag" style="background: #F8EEA9; color: #241914">Corporate</span></div><div class="case-b"><div class="case-logos"><img src="assets/img/partners/partner-16.png" alt="L’OCCITANE en Provence" width="360" height="82" loading="lazy"></div><span class="k">L’OCCITANE Australia · since 2020</span><h3>Restoring a Ramsar wetland on Hindmarsh Island</h3><p>L’OCCITANE has partnered with us since 2020, when they helped fund our first Bushfire Recovery Nurseries. In 2025 their $90,000 contribution helped restore coastal woodland and wetland across five sites on Hindmarsh Island (Kumarangk), alongside the Ngarrindjeri, the Kumarangk Hindmarsh Island Landcare Group, local nurseries and park managers.</p><a class="btn-g" href="article-hindmarsh-island-ecological-restoration.html" style="align-self: flex-start" aria-label="Read the full story: Hindmarsh Island with L’OCCITANE">Read the full story →</a></div></article>
+<article class="case csr"><div class="case-im"><picture><source type="image/webp" srcset="assets/img/r/projects-wombat-mange-wombat-at-burrow-480.webp 480w, assets/img/r/projects-wombat-mange-wombat-at-burrow-800.webp 800w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1200.webp 1200w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/wombat-mange-wombat-at-burrow.jpg" alt="Wombat emerging from its burrow" width="1600" height="1200" loading="lazy" decoding="async"></picture><span class="case-tag" style="background: #C6EBCA; color: #0F3132">Government</span></div><div class="case-b"><div class="case-logos"><img src="assets/img/partners/partner-23.png" alt="NSW National Parks and Wildlife Service" width="360" height="108" loading="lazy"></div><span class="k">NSW National Parks and Wildlife Service</span><h3>Curb Wombat Mange Program</h3><p>Together we put up to $2 million into rapid response grants between 2023 and 2025, getting funding to Indigenous community organisations and licensed wildlife groups across NSW. An estimated 1,498 wombats were treated in the first large-scale targeted program of its kind in the state.</p><a class="btn-g" href="project-curb-wombat-mange-program.html" style="align-self: flex-start" aria-label="Read the full story: Curb Wombat Mange Program">Read the full story →</a></div></article>
+<article class="case csr"><div class="case-im"><picture><source type="image/webp" srcset="assets/img/r/projects-mundoo-aerial-sunset-480.webp 480w, assets/img/r/projects-mundoo-aerial-sunset-800.webp 800w, assets/img/r/projects-mundoo-aerial-sunset-1200.webp 1200w, assets/img/r/projects-mundoo-aerial-sunset-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/mundoo-aerial-sunset.jpg" alt="Wetlands and grassland on Mundoo Island at sunset, seen from the air" width="1600" height="900" loading="lazy" decoding="async"></picture><span class="case-tag" style="background: #FFADB7; color: #8C1422">Philanthropy</span></div><div class="case-b"><div class="case-logos"><span class="tx">Ngarrindjeri Aboriginal Corporation</span><img src="assets/img/partners/partner-26.png" alt="Australian Government, Department of Climate Change, Energy, the Environment and Water" width="360" height="83" loading="lazy"><img src="assets/img/partners/partner-29.png" alt="Government of South Australia, Department for Environment and Water" width="360" height="80" loading="lazy"></div><!-- No Ngarrindjeri Aboriginal Corporation logo on file: name set in type until they supply one --><span class="k">With the Ngarrindjeri Aboriginal Corporation and the Australian and SA Governments</span><h3>Mundoo Island Station</h3><p>When this rare land at the Murray Mouth came up for sale, we joined the Australian and South Australian Governments as an acquisition partner, with a substantial part of our contribution coming from a gift in a will. The islands are now being added to Coorong National Park, protecting habitat for 65 nationally listed threatened species, and their management plan is being developed with the Ngarrindjeri Aboriginal Corporation.</p><a class="btn-g" href="project-mundoo-island-acquisition.html" style="align-self: flex-start" aria-label="Read the full story: Mundoo Island Station">Read the full story →</a></div></article>
 </div>
 </div>
 </section>
@@ -580,16 +580,6 @@
       });
     });
   });
-  var car=document.querySelector('.piw .car');
-  if(car){
-    var s=[].slice.call(car.querySelectorAll('.car-s')),d=[].slice.call(car.querySelectorAll('.car-dot')),c=car.querySelector('.car-ct'),i=0;
-    function go(n){i=(n+s.length)%s.length;s.forEach(function(x,j){x.hidden=j!==i});d.forEach(function(x,j){if(j===i)x.setAttribute('aria-current','true');else x.removeAttribute('aria-current')});c.textContent=(i+1)+' of '+s.length}
-    car.querySelector('.car-nav').hidden=false;
-    car.querySelector('.pv').addEventListener('click',function(){go(i-1)});
-    car.querySelector('.nx').addEventListener('click',function(){go(i+1)});
-    d.forEach(function(x,j){x.addEventListener('click',function(){go(j)})});
-    go(0);
-  }
 })();
 </script>
 
