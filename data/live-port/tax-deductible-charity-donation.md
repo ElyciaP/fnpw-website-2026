@@ -14,7 +14,7 @@ COMPLETE: yes. The full body came back in one fetch with 10 FAQ questions, and t
 
 # FAQs about tax deductible charity donations
 
-Tax deductible charity donations are a fantastic way to give to a cause that is close to your heart. We are a registered charity with the Australian Charities and Not-for-profits Commission (ACNC), which means all donations over $2 to FNPW are tax deductible in Australia.
+Tax deductible charity donations are a fantastic way to give to a cause that is close to your heart. We are endorsed as a Deductible Gift Recipient (DGR), which means donations to us are fully tax deductible in Australia.
 
 Below are answers to some frequently asked tax time questions.
 
@@ -24,15 +24,15 @@ Below are answers to some frequently asked tax time questions.
 
 ### What qualifies as a tax deductible donation in Australia?
 
-Donations over $2 made to charities that are registered with the Australian Charities and Not-for-profits Commission ([ACNC](https://www.acnc.gov.au/for-public/my-donation-tax-deductible)) are generally tax deductible in Australia.
+Gifts of money to organisations endorsed as Deductible Gift Recipients (DGRs) are generally tax deductible in Australia, as long as you receive nothing in return for your gift. Not every registered charity is a DGR, so it is worth checking. Find out more on the [ACNC website](https://www.acnc.gov.au/for-public/my-donation-tax-deductible).
 
 ### How much of my donation is tax deductible?
 
 The amount of your donation that is tax deductible depends on the charity you donate to and the type of donation you make. Visit the [ATO site](https://www.ato.gov.au/individuals/income-and-deductions/deductions-you-can-claim/other-deductions/gifts-and-donations/) to find out more.
 
-### How do I know if a charity is registered with the ACNC?
+### How do I know if a charity is a Deductible Gift Recipient?
 
-You can search for a charity's registration status on the [ACNC website](https://www.acnc.gov.au/).
+You can check any organisation's DGR status on [ABN Lookup](https://abr.business.gov.au/).
 
 ### Do I need a receipt for my donation to claim a tax deduction?
 
@@ -52,11 +52,11 @@ You can claim a tax deduction for your donation in the same tax year that you ma
 
 ### Can I claim a tax deduction for donating goods or services to a charity?
 
-Yes, you can claim a tax deduction for donating goods or services to a charity, as long as the charity is registered with the ACNC and the value of your donation is more than $2.
+You can't claim a deduction for donating your time or services. Some gifts of property or shares to a Deductible Gift Recipient can be deductible under rules set by the ATO, so check the [ATO website](https://www.ato.gov.au/individuals/income-and-deductions/deductions-you-can-claim/other-deductions/gifts-and-donations/) or ask your tax adviser before you give.
 
 ### Can I claim a tax deduction for donating to a charity through workplace giving?
 
-Yes, you can claim a tax deduction for donating to a charity through workplace giving, as long as the charity is registered with the ACNC and the donation is more than $2.
+Yes. Workplace giving donations to a Deductible Gift Recipient, including us, are tax deductible. Because they come out of your pre-tax pay, you get the tax benefit each pay rather than waiting until tax time.
 
 ### Can I donate land to a charity and claim a tax deduction in Australia?
 
