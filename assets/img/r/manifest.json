@@ -749,6 +749,23 @@
    1600
   ]
  },
+ "assets/img/partner-invest-canopy.jpg": {
+  "h": 1067,
+  "size": 637313,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-invest-canopy-480.webp",
+   "assets/img/r/partner-invest-canopy-800.webp",
+   "assets/img/r/partner-invest-canopy-1200.webp",
+   "assets/img/r/partner-invest-canopy-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/partner-invest-hero-planting.jpg": {
   "h": 1200,
   "size": 621526,
@@ -758,6 +775,23 @@
    "assets/img/r/partner-invest-hero-planting-800.webp",
    "assets/img/r/partner-invest-hero-planting-1200.webp",
    "assets/img/r/partner-invest-hero-planting-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-loccitane-nursery-visit.jpg": {
+  "h": 1067,
+  "size": 308126,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-loccitane-nursery-visit-480.webp",
+   "assets/img/r/partner-loccitane-nursery-visit-800.webp",
+   "assets/img/r/partner-loccitane-nursery-visit-1200.webp",
+   "assets/img/r/partner-loccitane-nursery-visit-1600.webp"
   ],
   "widths": [
    480,
