@@ -46,3 +46,4 @@ assets/img/reports-hero-grevillea.jpg|Pink and orange grevillea flowers against 
 assets/img/gov-epic-flinders-walkers.jpg|Two walkers on a rise looking towards rugged red ranges lit by the late sun
 assets/img/gov-epic-cyclist.jpg|A cyclist with a backpack riding a winding dirt road through wildflowers towards distant ranges
 assets/img/gov-epic-trailhead-opening.jpg|A group cutting a red ribbon in front of the Remarkable Trailhead shelter in Melrose, beside a post marking where the Remarkable Epic starts
+assets/img/bequests-galahs.jpg|Two galahs perched on a pale eucalypt branch, turned towards each other, with a smooth white gum trunk behind them

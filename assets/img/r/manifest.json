@@ -112,6 +112,21 @@
    1024
   ]
  },
+ "assets/img/bequests-galahs.jpg": {
+  "h": 1600,
+  "size": 285625,
+  "w": 1067,
+  "webp": [
+   "assets/img/r/bequests-galahs-480.webp",
+   "assets/img/r/bequests-galahs-800.webp",
+   "assets/img/r/bequests-galahs-1067.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1067
+  ]
+ },
  "assets/img/bequests-hero-legacy.jpg": {
   "h": 1067,
   "size": 172830,
