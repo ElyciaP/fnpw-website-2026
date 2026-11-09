@@ -98,6 +98,12 @@
 @media(max-width:900px){.gw-ty{grid-template-columns:1fr}}
 .gw-ty figure{margin:0;position:relative;min-height:460px}
 .gw-ty figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gw-ty figure.gw-ty-guide{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:var(--sand);padding:var(--sec-md) 1.5rem;min-height:0}
+.gw-ty figure.gw-ty-guide img{position:static;width:auto;height:auto;max-width:min(340px,100%);box-shadow:0 18px 40px rgba(36,25,20,.22)}
+.gw-ty figure.gw-ty-guide>a{display:block;width:100%;text-align:center}
+.gw-ty figure.gw-ty-guide>a img{display:inline-block;vertical-align:top}
+.gw-ty-guide figcaption{font-size:.92rem;text-align:center}
+.gw-ty-guide figcaption a{color:var(--euc-deep);font-weight:700;text-underline-offset:3px}
 .gw-ty-b{padding:var(--sec-md) clamp(1.5rem,5vw,4.5rem);display:flex;flex-direction:column;justify-content:center}
 .gw-ty-b h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:.9rem 0 1.2rem}
 .gw-ty-b p{font-size:1.04rem;line-height:1.72;color:var(--char);margin:0 0 1rem;max-width:52ch}
@@ -328,7 +334,7 @@
   <div class="cw">
     <div class="gw-head rv">
       <div><span class="ey">What your gift protects</span><h2>Some things deserve to be protected forever.</h2></div>
-      <p>Every gift left in a will protects something alive and breathing: the yellow-tailed black cockatoo calling across the treetops, the platypus surfacing in a creek brought back from silt and ruin, the quolls and gliders whose scattered homes we are working to reconnect. You can direct your gift to the work closest to your heart, or trust us to place it where the need is greatest.</p>
+      <p>You can direct your gift to the work closest to your heart, or trust us to place it where the need is greatest. Either way, it keeps caring for wild places and wildlife long after your lifetime.</p>
     </div>
     <div class="gw-pil-g">
       <article class="gw-pc rv"><picture><source type="image/webp" srcset="assets/img/r/pillar-parks-480.webp 480w, assets/img/r/pillar-parks-800.webp 800w, assets/img/r/pillar-parks-1200.webp 1200w, assets/img/r/pillar-parks-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/pillar-parks.jpg" alt="River gorge country at sunrise, Western Australia" width="1600" height="900" loading="lazy" decoding="async"></picture><div><span class="ey">Growing National Parks</span><h3>Add land to national parks</h3><p>When land of high conservation value comes up, often right beside an existing park, we work with our partners to acquire it and see it added to the national park estate, protected for good.</p><span class="ex">Projects like <a href="project-mundoo-island-acquisition.html">Mundoo Island</a> and <a href="project-remarkable-southern-flinders.html">Remarkable Southern Flinders</a></span></div></article>
@@ -341,7 +347,7 @@
 <!-- ============ NO PRESSURE, AND THREE SIMPLE STEPS ============ -->
 <section class="gw-ty">
   <!-- iStock comp placeholder 2150324577: license before launch -->
-  <figure><picture><source type="image/webp" srcset="assets/img/r/bequests-coast-friends-2150324577-COMP-480.webp 480w, assets/img/r/bequests-coast-friends-2150324577-COMP-800.webp 800w, assets/img/r/bequests-coast-friends-2150324577-COMP-1024.webp 1024w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/bequests-coast-friends-2150324577-COMP.jpg" alt="Three women sitting together on a grassy dune above a beach at sunset" width="1024" height="683" loading="lazy" decoding="async"></picture></figure>
+  <figure class="gw-ty-guide rv"><a href="assets/docs/fnpw-bequest-brochure.pdf"><picture><source type="image/webp" srcset="assets/img/r/bequests-guide-cover-480.webp 480w, assets/img/r/bequests-guide-cover-800.webp 800w, assets/img/r/bequests-guide-cover-900.webp 900w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/bequests-guide-cover.jpg" alt="Cover of our Gifts in Wills guide, Leave a Legacy for the Future, showing a family walking through the Flinders Ranges" width="900" height="1273" loading="lazy" decoding="async"></picture></a><figcaption><a href="assets/docs/fnpw-bequest-brochure.pdf">Download our Gifts in Wills guide (PDF)</a></figcaption></figure>
   <div class="gw-ty-b rv">
     <span class="ey">Thank you for considering it</span>
     <h2>No pressure, and no hurry.</h2>
@@ -349,7 +355,6 @@
     <p>A gift in your will is one of the most personal decisions you will ever make, and it deserves time, conversation and care. After you have provided for the people you love, even a small share of what remains can help protect a place for good.</p>
     <h3 class="gw-ty-k">When you are ready, it takes three steps</h3>
     <ol class="gw-ty-steps"><li><h3>Talk it through with the people you love</h3><p>A conversation with family or close friends brings clarity, and means your wishes are understood.</p></li><li><h3>Talk to us</h3><p>Helen can answer your questions in confidence, with no obligation. <a href="#talk">Get in touch</a>.</p></li><li><h3>Ask your solicitor to add it to your will</h3><p>Our <a href="assets/docs/fnpw-bequest-brochure.pdf">guide</a> has our legal details and the ways you can leave a gift, and your solicitor will make sure your will says exactly what you intend.</p></li></ol>
-    <div class="gw-acts"><a class="gw-btn d" href="assets/docs/fnpw-bequest-brochure.pdf">Download our guide (PDF)</a></div>
   </div>
 </section>
 
@@ -394,15 +399,9 @@
     <div class="rv">
       <span class="ey">Talk to us</span>
       <h2>We are here whenever you are ready.</h2>
-      <p class="gw-talk-lead">To want to protect something, to give beyond your own lifetime and to leave the future a little wilder than you found it is a quietly beautiful thing to do. We hold it as the gift it truly is, and we always will.</p>
-      <p>Whether you have already included us in your will, you are still thinking it over, or you simply have a question, we would be glad to hear from you. Every conversation is confidential and carries no obligation.</p>
+      <p>Whether you have already included us in your will, you are still thinking it over, or you simply have a question, we would be glad to hear from you. If you have already included us, please let us know through the form so we can thank you and understand your wishes. Every conversation is confidential and carries no obligation.</p>
       <!-- Gap: Helen's photo, once she is happy for it to go on the page -->
       <div class="gw-person"><span class="k">Your contact for Gifts in Wills</span><strong>Helen Dusevic</strong><a href="tel:1800898626">1800 898 626</a><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></div>
-      <ul class="gw-ways">
-        <li><strong>Ask us anything.</strong> Call or email Helen, or use the form, in confidence and with no obligation.</li>
-        <li><strong>Read our guide.</strong> <a href="assets/docs/fnpw-bequest-brochure.pdf">Download our Gifts in Wills guide (PDF)</a> for the different ways to leave a gift and our organisation details.</li>
-        <li><strong>Already included us?</strong> Please let us know through the form, so we can thank you and understand your wishes.</li>
-      </ul>
     </div>
     <div class="gw-form rv d1">
       <h3>Gifts in Wills enquiry</h3>

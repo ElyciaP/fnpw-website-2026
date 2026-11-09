@@ -127,6 +127,21 @@
    1067
   ]
  },
+ "assets/img/bequests-guide-cover.jpg": {
+  "h": 1273,
+  "size": 234674,
+  "w": 900,
+  "webp": [
+   "assets/img/r/bequests-guide-cover-480.webp",
+   "assets/img/r/bequests-guide-cover-800.webp",
+   "assets/img/r/bequests-guide-cover-900.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   900
+  ]
+ },
  "assets/img/bequests-hero-legacy.jpg": {
   "h": 1067,
   "size": 172830,
@@ -692,6 +707,23 @@
    "assets/img/r/nursery-volunteers-800.webp",
    "assets/img/r/nursery-volunteers-1200.webp",
    "assets/img/r/nursery-volunteers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-hero-lakes.jpg": {
+  "h": 832,
+  "size": 231984,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-hero-lakes-480.webp",
+   "assets/img/r/partner-hero-lakes-800.webp",
+   "assets/img/r/partner-hero-lakes-1200.webp",
+   "assets/img/r/partner-hero-lakes-1600.webp"
   ],
   "widths": [
    480,
@@ -1426,6 +1458,23 @@
    1600
   ]
  },
+ "assets/img/projects/mundoo-aerial-sunset.jpg": {
+  "h": 900,
+  "size": 264706,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-mundoo-aerial-sunset-480.webp",
+   "assets/img/r/projects-mundoo-aerial-sunset-800.webp",
+   "assets/img/r/projects-mundoo-aerial-sunset-1200.webp",
+   "assets/img/r/projects-mundoo-aerial-sunset-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/projects/mundoo-cormorants.jpg": {
   "h": 1200,
   "size": 362424,
@@ -1730,6 +1779,142 @@
    800,
    1200,
    1253
+  ]
+ },
+ "assets/img/projects/opp-fire-wise-tree-guards.jpg": {
+  "h": 1067,
+  "size": 393111,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-opp-fire-wise-tree-guards-480.webp",
+   "assets/img/r/projects-opp-fire-wise-tree-guards-800.webp",
+   "assets/img/r/projects-opp-fire-wise-tree-guards-1200.webp",
+   "assets/img/r/projects-opp-fire-wise-tree-guards-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/opp-wet-tropics-palms.jpg": {
+  "h": 1065,
+  "size": 493683,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-opp-wet-tropics-palms-480.webp",
+   "assets/img/r/projects-opp-wet-tropics-palms-800.webp",
+   "assets/img/r/projects-opp-wet-tropics-palms-1200.webp",
+   "assets/img/r/projects-opp-wet-tropics-palms-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/opp-winton-heron.jpg": {
+  "h": 1002,
+  "size": 136129,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-opp-winton-heron-480.webp",
+   "assets/img/r/projects-opp-winton-heron-800.webp",
+   "assets/img/r/projects-opp-winton-heron-1200.webp",
+   "assets/img/r/projects-opp-winton-heron-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/sf-lace-monitor.jpg": {
+  "h": 1064,
+  "size": 219964,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-sf-lace-monitor-480.webp",
+   "assets/img/r/projects-sf-lace-monitor-800.webp",
+   "assets/img/r/projects-sf-lace-monitor-1200.webp",
+   "assets/img/r/projects-sf-lace-monitor-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/sf-ranges.jpg": {
+  "h": 901,
+  "size": 346813,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-sf-ranges-480.webp",
+   "assets/img/r/projects-sf-ranges-800.webp",
+   "assets/img/r/projects-sf-ranges-1200.webp",
+   "assets/img/r/projects-sf-ranges-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/sf-rock-wallaby-wild.jpg": {
+  "h": 901,
+  "size": 190749,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-sf-rock-wallaby-wild-480.webp",
+   "assets/img/r/projects-sf-rock-wallaby-wild-800.webp",
+   "assets/img/r/projects-sf-rock-wallaby-wild-1200.webp",
+   "assets/img/r/projects-sf-rock-wallaby-wild-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/sf-rock-wallaby.jpg": {
+  "h": 1064,
+  "size": 312121,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-sf-rock-wallaby-480.webp",
+   "assets/img/r/projects-sf-rock-wallaby-800.webp",
+   "assets/img/r/projects-sf-rock-wallaby-1200.webp",
+   "assets/img/r/projects-sf-rock-wallaby-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/sf-willowie-trails-opening.jpg": {
+  "h": 1200,
+  "size": 534126,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-sf-willowie-trails-opening-480.webp",
+   "assets/img/r/projects-sf-willowie-trails-opening-800.webp",
+   "assets/img/r/projects-sf-willowie-trails-opening-1200.webp",
+   "assets/img/r/projects-sf-willowie-trails-opening-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/projects/turtles-eggs-at-plc.jpg": {

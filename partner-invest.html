@@ -154,27 +154,6 @@
 .pib-n{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1;letter-spacing:-.04em;color:#C6EBCA;white-space:nowrap}
 .pib-l{font-size:.86rem;line-height:1.4;margin-top:.55rem;color:#FAF6F2;max-width:30ch}
 @media (max-width:700px){.pib-i{border-left:0}}
-.wl{display:block;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#0F3132;margin-bottom:.8rem}
-.wchips{display:flex;flex-wrap:wrap;gap:.5rem}
-.wchip{display:inline-flex;align-items:center;min-height:40px;padding:.45em .9em;font-size:.82rem;font-weight:700;background:#FAF6F2;color:#0F3132;border:1.5px solid #D9D1C4}
-.way{background:#fff;border:1px solid #E5DFD3;border-top:4px solid #0F7768;padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.7rem}
-.way .n{font-family:'Sora',sans-serif;font-weight:800;font-size:1.1rem;color:#0F7768}
-.piw .way h3{font-size:1.25rem}
-.piw .way p{margin:0;font-size:.95rem;color:rgba(36,25,20,.84)}
-/* Example case studies inside each way to partner (Nov 2026) */
-.way-cases{margin-top:auto;padding-top:1.1rem;border-top:1px solid #E5DFD3;display:flex;flex-direction:column;gap:.85rem}
-.way-ck{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6B5F55}
-.way-case{display:grid;grid-template-columns:72px minmax(0,1fr);gap:.9rem;align-items:start;color:inherit;text-decoration:none}
-.way-case img{width:72px;height:72px;object-fit:cover;display:block}
-.way-case strong{display:block;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;line-height:1.3;color:#0F3132}
-.way-case small{display:block;font-size:.85rem;line-height:1.5;color:rgba(36,25,20,.78);margin-top:.2rem}
-.way-case:hover strong,.way-case:focus-visible strong{text-decoration:underline;text-underline-offset:3px}
-.piw .way .way-gap{border:1.5px dashed #D9D1C4;padding:1rem;font-size:.85rem;color:#6B5F55}
-/* line the number, heading, copy and case studies up across the three tiles */
-@supports (grid-template-rows:subgrid){
-  #ways .way{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:.7rem;align-content:start}
-  #ways .way-cases{margin-top:.5rem;align-self:start}
-}
 .steps3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem 2.4rem;list-style:none;margin:0;padding:0;position:relative}
 .steps3::before{content:"";position:absolute;top:21px;left:22px;right:calc((100% - 4.8rem) / 3 - 22px);height:2px;background:#0F7768}
 .steps3 li{position:relative;display:flex;flex-direction:column;gap:.6rem;min-width:0}
@@ -182,41 +161,99 @@
 .piw .steps3 h3{font-size:1.25rem;margin-top:.4rem}
 .piw .steps3 p{margin:0;font-size:.95rem;color:rgba(36,25,20,.84);max-width:38ch}
 @media (max-width:900px){.steps3{grid-template-columns:1fr}.steps3::before{display:none}}
-.opp{background:#fff;border:1px solid #E5DFD3;border-top:5px solid #0F7768;display:flex;flex-direction:column}
-.opp img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
-.opp-b{padding:1.3rem 1.4rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.piw .opp-b h3{font-size:1.1rem}
-.piw .opp-b p{margin:0;font-size:.92rem;color:rgba(36,25,20,.84);flex:1}
-.opp-dl{display:grid;grid-template-columns:1fr;gap:.15rem;font-size:.84rem;margin:.4rem 0 .4rem;padding-top:.8rem;border-top:1px solid #E5DFD3}
-.opp-dl dt{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0F7768}.opp-dl dd{margin:0 0 .55rem;color:rgba(36,25,20,.86)}
-@media (max-width:900px){.opp-foot{grid-template-columns:1fr !important}}
-.case{background:#fff;border:1px solid #E5DFD3;display:flex;flex-direction:column}
-.case-im{position:relative}
-.case-im img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-.case-tag{position:absolute;top:0;left:0;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.7em 1.1em}
-.case-b{padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
-/* Partner logos lead each story in place of the impact number (Nov 2026) */
-.case-logos{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;min-height:52px;padding-bottom:1rem;border-bottom:1px solid #E5DFD3}
-.case-logos img{height:38px;width:auto;max-width:100%;display:block}
-.case-logos .tx{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;line-height:1.25;color:#0F3132;max-width:15ch}
-.piw .case-b h3{font-size:1.3rem}
-.piw .case-b p{margin:0;font-size:.95rem;color:rgba(36,25,20,.84);flex:1}
-.acct{margin-top:2rem;background:#fff;padding:1.3rem 1.4rem;border-left:4px solid #0F7768}
-.piw .acct p{font-size:.92rem;margin:.4rem 0 0}
-.piw .acct .acct-l{display:flex;gap:.6rem 1.6rem;flex-wrap:wrap;margin-top:.9rem}
-.why-list{list-style:none;margin:0;padding:0;border-bottom:1px solid #D9D1C4}
-.why-list li{padding:1.2rem 0;border-top:1px solid #D9D1C4}
-.why-list strong{display:block;font-family:'Sora',sans-serif;font-weight:600;color:#0F3132;font-size:1.1rem;margin-bottom:.3rem}
-.piw .why-list p{margin:0;font-size:.97rem;color:rgba(36,25,20,.84);max-width:60ch}
-.aud{background:#0F3132;color:#FAF6F2;display:flex;flex-direction:column}
-.aud img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
-.aud-b{padding:1.6rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.piw .aud-b h3{font-size:1.3rem;color:#FAF6F2}
-.piw .aud-b p{margin:0;font-size:.95rem;color:rgba(250,246,242,.88);flex:1}
-.aud .k{color:#C6EBCA}
-.piw .aud .btn-g{color:#FAF6F2;align-self:flex-start;margin-top:.6rem}
 .tk-main{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
 @media (max-width:900px){.tk-main{grid-template-columns:1fr !important}}
+
+/* Version 3 layout (Nov 2026): tabs, opportunities dashboard, case study carousel */
+.piw [hidden]{display:none !important}
+.pi-hero-sh{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,.72) 0%,rgba(15,49,50,.5) 34%,rgba(15,49,50,.12) 62%,rgba(15,49,50,0) 100%),linear-gradient(0deg,rgba(15,49,50,.45) 0%,rgba(15,49,50,0) 45%)}
+@media (max-width:760px){.pi-hero-sh{background:linear-gradient(0deg,rgba(15,49,50,.82) 0%,rgba(15,49,50,.55) 55%,rgba(15,49,50,.2) 100%)}}
+.piw .who-h{max-width:22ch;margin-bottom:2.4rem}
+.aud3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid #0F3132}
+.aud3 a{display:flex;flex-direction:column;gap:.6rem;padding:1.6rem 2rem .4rem;border-left:1px solid #CBABAB;color:#241914;text-decoration:none}
+.aud3 a:first-child{padding-left:0;border-left:0}
+.aud3 a:last-child{padding-right:0}
+.aud3-h{font-family:'Sora',sans-serif;font-weight:600;font-size:1.3rem;line-height:1.25;letter-spacing:-.015em;color:#0F3132}
+.aud3-l{font-weight:600;color:#0F7768;margin-top:.3rem}
+.aud3 a:hover .aud3-l,.aud3 a:focus-visible .aud3-l{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){.aud3{grid-template-columns:minmax(0,1fr)}.aud3 a,.aud3 a:first-child,.aud3 a:last-child{padding:1.3rem 0;border-left:0;border-bottom:1px solid #CBABAB}}
+.wtabs{display:flex;border-bottom:1px solid rgba(250,246,242,.3);margin-bottom:2.2rem;overflow-x:auto;scrollbar-width:none}
+.wtab{flex:none;font:600 1rem/1.3 'Figtree',sans-serif;padding:1rem 1.4rem;min-height:52px;background:transparent;border:0;color:rgba(250,246,242,.75);cursor:pointer;white-space:nowrap}
+.wtab:first-child{padding-left:0}
+.wtab:hover{color:#FAF6F2}
+.wtab[aria-selected="true"]{color:#F8EEA9;box-shadow:inset 0 -3px 0 #F8EEA9}
+.wtab:focus-visible{outline:2px solid #F8EEA9;outline-offset:-2px}
+.wpanel{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:1.6rem 3rem;align-items:center}
+.wpanel+.wpanel{margin-top:2.5rem}
+.wpanel picture{display:block}
+.wpanel img{width:100%;height:380px;object-fit:cover;display:block;border-radius:4px}
+.piw .wpanel h3{color:#FAF6F2;font-size:clamp(1.4rem,2.2vw,1.75rem);margin-bottom:.8rem}
+.piw .wpanel p{color:#FAF6F2;font-size:1.05rem}
+.piw .wpanel .wp-eg{font-size:.92rem;color:#C6EBCA;margin-top:.6rem}
+.wp-eg a{color:#C6EBCA;text-decoration:underline;text-underline-offset:3px}
+.wp-eg a:hover{color:#FAF6F2}
+.wpanel:focus-visible,.opanel:focus-visible{outline:2px solid #0F7768;outline-offset:4px}
+@media (max-width:900px){.wpanel{grid-template-columns:minmax(0,1fr)}.wpanel img{height:240px}}
+.piw .op-h2{margin-bottom:1.8rem}
+@media (min-width:761px){.piw .op-h2{white-space:nowrap}}
+.odash{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);background:#fff;border:1px solid #CBABAB;border-radius:6px;overflow:hidden}
+.otabs{display:flex;flex-direction:column;border-right:1px solid #CBABAB;background:#FAF6F2}
+.otab{display:block;width:100%;text-align:left;padding:1.1rem 1.4rem;min-height:64px;border:0;border-bottom:1px solid #CBABAB;background:transparent;color:#0F3132;cursor:pointer;font-family:'Figtree',sans-serif}
+.otab:hover{background:#EEE8E1}
+.otab[aria-selected="true"],.otab[aria-selected="true"]:hover{background:#0F3132;color:#FAF6F2}
+.otab:focus-visible{outline:3px solid #0F7768;outline-offset:-3px}
+.otab-st{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.85}
+.otab-r{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;margin-top:.35rem}
+.otab-n{font-family:'Sora',sans-serif;font-weight:600;font-size:1.02rem;line-height:1.3}
+.otab-s{font-weight:700;font-size:.86rem;white-space:nowrap}
+.opanel{display:flex;flex-direction:column}
+.op-im{position:relative}
+.op-im picture{display:block}
+.op-im img{width:100%;height:300px;object-fit:cover;display:block}
+.op-cr{position:absolute;right:10px;bottom:8px;background:rgba(15,49,50,.78);color:#FAF6F2;font-size:.75rem;line-height:1.3;padding:4px 8px;border-radius:3px}
+.op-cr a{color:#FAF6F2}
+.op-gap{height:300px;background:#EEE8E1;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:#6B5F55;font-weight:600;font-size:.95rem}
+.op-b{padding:2rem 2.2rem 2.2rem;display:flex;flex-direction:column;gap:1.1rem}
+.piw .op-b h3{font-size:clamp(1.3rem,2vw,1.6rem);margin-top:.35rem}
+.op-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;border-top:1px solid #CBABAB;border-bottom:1px solid #CBABAB}
+.op-stats div{padding:.9rem 1rem;border-left:1px solid #CBABAB;min-width:0}
+.op-stats div:first-child{padding-left:0;border-left:0}
+.op-stats dt{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#6B5F55}
+.op-stats dd{margin:.35rem 0 0;font-weight:600;color:#0F3132;line-height:1.35;font-size:.98rem}
+.op-stats div:first-child dd{font-family:'Sora',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.1}
+.piw .op-b p{margin:0}
+.op-a{display:flex;flex-wrap:wrap;gap:1rem 1.8rem;align-items:center}
+@media (max-width:900px){.odash{grid-template-columns:minmax(0,1fr)}.otabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid #CBABAB}.otab{flex:0 0 15rem;width:15rem;border-bottom:0;border-right:1px solid #CBABAB}.op-im img,.op-gap{height:220px}.op-b{padding:1.4rem}}
+@media (max-width:560px){.op-stats{grid-template-columns:1fr}.op-stats div,.op-stats div:first-child{padding:.7rem 0;border-left:0;border-top:1px solid #CBABAB}.op-stats div:first-child{border-top:0}}
+.car-s{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff}
+.car-s+.car-s{margin-top:1.5rem}
+.car-s picture{display:block;height:100%}
+.car-s img{width:100%;height:100%;min-height:400px;object-fit:cover;display:block}
+.car-b{padding:2.5rem;display:flex;flex-direction:column;justify-content:center;gap:.8rem}
+.piw .car-b h3{font-size:clamp(1.3rem,2vw,1.6rem)}
+.piw .car-b p{margin:0}
+.car-b .btn-g{align-self:flex-start}
+.car-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.25rem}
+.car-dots{display:flex;align-items:center}
+.car-dot{position:relative;width:28px;height:44px;background:none;border:0;padding:0;cursor:pointer}
+.car-dot::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:999px;background:#CBABAB;transition:width .2s}
+.car-dot[aria-current="true"]{width:44px}
+.car-dot[aria-current="true"]::before{width:32px;background:#0F3132}
+.car-ct{margin-left:.7rem;font-weight:600;color:#0F3132;font-size:.95rem}
+.car-arr{display:flex;gap:.6rem}
+.car-btn{width:56px;height:56px;border-radius:50%;border:1.5px solid #0F3132;background:transparent;color:#0F3132;font-size:1.35rem;line-height:1;cursor:pointer}
+.car-btn.nx{background:#0F3132;color:#FAF6F2}
+.car-btn:hover{background:#0F7768;border-color:#0F7768;color:#FAF6F2}
+.car-btn:focus-visible,.car-dot:focus-visible{outline:3px solid #0F7768;outline-offset:2px}
+@media (max-width:900px){.car-s{grid-template-columns:minmax(0,1fr)}.car-s img{min-height:0;height:240px}.car-b{padding:1.5rem}}
+@media (prefers-reduced-motion:reduce){.car-dot::before{transition:none}}
+.pi-impact{background:#0F3132;padding:3.5rem 0}
+.pi-logos{padding:4.5rem 0;border-bottom:1px solid #CBABAB;text-align:center}
+.piw .lg-k{font-family:'Figtree',sans-serif;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#6B5F55}
+.lg-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2.25rem 2.5rem;align-items:center;justify-items:center;list-style:none;margin:2.25rem 0 0;padding:0}
+.lg-grid img{max-width:100%;height:52px;width:auto;object-fit:contain;display:block}
+@media (max-width:900px){.lg-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.lg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.8rem}.lg-grid img{height:44px}}
 </style>
 </head>
 <body>
@@ -281,8 +318,8 @@
 <div class="piw">
 
 <section id="top" style="position: relative; min-height: 560px; display: flex; align-items: flex-end; background: #0F3132; overflow: hidden">
-<picture><source type="image/webp" srcset="assets/img/r/government-hero-ranges-480.webp 480w, assets/img/r/government-hero-ranges-800.webp 800w, assets/img/r/government-hero-ranges-1200.webp 1200w, assets/img/r/government-hero-ranges-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/government-hero-ranges.jpg" alt="Aerial view of a river winding through red, rugged ranges" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% 62%" width="1600" height="1062" loading="lazy" decoding="async"></picture>
-<div style="position: absolute; inset: 0; background: linear-gradient(97deg, rgba(15,49,50,.94) 0%, rgba(15,49,50,.86) 30%, rgba(15,49,50,.42) 58%, rgba(15,49,50,.06) 100%)"></div>
+<picture><source type="image/webp" srcset="assets/img/r/partner-hero-lakes-480.webp 480w, assets/img/r/partner-hero-lakes-800.webp 800w, assets/img/r/partner-hero-lakes-1200.webp 1200w, assets/img/r/partner-hero-lakes-1600.webp 1600w" sizes="100vw"><img src="assets/img/partner-hero-lakes.jpg" alt="Aerial view of a narrow strip of farmland and wetland between two lakes, with reed islands in the shallows" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%" width="1600" height="832" fetchpriority="high" decoding="async"></picture>
+<div class="pi-hero-sh" aria-hidden="true"></div>
 <div class="cw" style="position: relative; width: 100%; padding-top: 5.5rem; padding-bottom: 3.4rem">
 <nav class="breadcrumb" aria-label="Breadcrumb" style="display: flex; gap: .5em; flex-wrap: wrap; font-size: .82rem; color: #FAF6F2; margin-bottom: 1.4rem"><a href="index.html" style="color: #C6EBCA">Home</a><span>/</span>Partner With Us</nav>
 <span class="ey" style="color: #C6EBCA">Partner with us</span>
@@ -290,221 +327,84 @@
 <p class="lede" style="color: rgba(250,246,242,.9); max-width: 46ch; font-size: clamp(1rem,1.3vw,1.15rem); margin: 0 0 1.8rem">We find the conservation priorities that matter most, bring the right partners and funding to the table, and stay with the work until we can show what it achieved.</p>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap"><a class="btn" href="#opportunities" style="background: #F8EEA9; color: #0F3132">Explore Opportunities</a><a class="btn btn-ol" href="#talk">Enquire About a Partnership</a></div>
 </div>
-<span style="position: absolute; right: .55rem; bottom: .45rem; font-size: .64rem; letter-spacing: .02em; color: rgba(250,246,242,.92); text-shadow: 0 1px 3px rgba(0,0,0,.65)">Photo: Australian Air Holidays</span>
 </section>
-<div style="background: #0F3132; padding: 1.9rem 0 1.2rem; border-top: 1px solid rgba(198,235,202,.18)">
+
+<section class="sec" id="who">
+<div class="cw">
+<h2 class="who-h">Together, we can achieve more for Australia’s wild places.</h2>
+<div class="aud3">
+<a href="partner.html"><span class="k">For corporates</span><span class="aud3-h">Make nature a strategic part of your business.</span><span class="aud3-l">Corporate partnerships →</span></a>
+<a href="government-partnerships.html"><span class="k">For government</span><span class="aud3-h">Turn conservation priorities into results.</span><span class="aud3-l">Government partnerships →</span></a>
+<a href="ways-you-can-get-involved.html"><span class="k">For philanthropy</span><span class="aud3-h">Give at a scale that changes a landscape.</span><span class="aud3-l">Ways to get involved →</span></a>
+</div>
+</div>
+</section>
+
+<section class="sec dark" id="ways">
+<div class="cw">
+<span class="ey" style="color: #F8EEA9">Ways to partner</span><h2 style="margin-bottom: 1.6rem">Find the partnership that fits.</h2>
+<div class="wtabs" role="tablist" aria-label="Ways to partner"><button type="button" class="wtab" role="tab" id="wt-fund" aria-controls="wp-fund" aria-selected="true">01&nbsp; Fund Conservation at Scale</button><button type="button" class="wtab" role="tab" id="wt-build" aria-controls="wp-build" aria-selected="false" tabindex="-1">02&nbsp; Build Conservation Partnerships</button><button type="button" class="wtab" role="tab" id="wt-invest" aria-controls="wp-invest" aria-selected="false" tabindex="-1">03&nbsp; Invest in Nature’s Future</button></div>
+<div class="wpanel" role="tabpanel" id="wp-fund" aria-labelledby="wt-fund" tabindex="0"><picture><source type="image/webp" srcset="assets/img/r/projects-mundoo-hero-480.webp 480w, assets/img/r/projects-mundoo-hero-800.webp 800w, assets/img/r/projects-mundoo-hero-1200.webp 1200w, assets/img/r/projects-mundoo-hero-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/mundoo-hero.jpg" alt="Mundoo Island from the air" width="1600" height="686" loading="lazy" decoding="async"></picture><div><h3>Fund Conservation at Scale</h3><p>Fund the acquisition of land for national parks, the growing and planting of native habitat, or recovery work for a threatened species. Every project starts with an agreed scope and what your funding will achieve.</p><p class="wp-eg">Our projects: <a href="project-mundoo-island-acquisition.html">Mundoo Island Station</a>, <a href="project-remarkable-southern-flinders.html">Remarkable Southern Flinders</a></p></div></div>
+<div class="wpanel" role="tabpanel" id="wp-build" aria-labelledby="wt-build" tabindex="0" hidden><picture><source type="image/webp" srcset="assets/img/r/partner-millionth-tree-480.webp 480w, assets/img/r/partner-millionth-tree-800.webp 800w, assets/img/r/partner-millionth-tree-1200.webp 1200w, assets/img/r/partner-millionth-tree-1500.webp 1500w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/partner-millionth-tree.jpg" alt="Planting the millionth tree at Lane Cove National Park, October 2024" width="1500" height="1200" loading="lazy" decoding="async"></picture><div><h3>Build Conservation Partnerships</h3><p>The most lasting results take years, not a single funding round. We build long-term partnerships around a landscape, a species or a cause that matters to you, and grow them as the results come in.</p><p class="wp-eg">Our projects: <a href="our-impact.html#trees">Landscape Resilience Program</a>, <a href="project-native-plant-nurseries.html">Native Plant Nurseries</a>, <a href="partner.html#focus">L’OCCITANE Australia</a></p></div></div>
+<div class="wpanel" role="tabpanel" id="wp-invest" aria-labelledby="wt-invest" tabindex="0" hidden><picture><source type="image/webp" srcset="assets/img/r/projects-sf-ranges-480.webp 480w, assets/img/r/projects-sf-ranges-800.webp 800w, assets/img/r/projects-sf-ranges-1200.webp 1200w, assets/img/r/projects-sf-ranges-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/sf-ranges.jpg" alt="Southern Flinders Ranges under cloud" width="1600" height="901" loading="lazy" decoding="async"></picture><div><h3>Invest in Nature’s Future</h3><p>We’re exploring how public, philanthropic and private funding could work together on long-term landscape outcomes, and we’d welcome a conversation with organisations who want to help shape it.</p><p class="wp-eg"><!-- PLACEHOLDER: co-investment project to come from Suz before launch -->Co-investment project to come.</p></div></div>
+</div>
+</section>
+
+<section class="sec" id="opportunities">
+<div class="cw">
+<span class="ey">Opportunities</span><h2 class="op-h2">Projects ready for funding partners now.</h2>
+<div class="odash">
+<div class="otabs" role="tablist" aria-label="Projects ready for funding" aria-orientation="vertical"><button type="button" class="otab" role="tab" id="ot-sa" aria-controls="op-sa" aria-selected="true"><span class="otab-st">South Australia</span><span class="otab-r"><span class="otab-n">Narrung Peninsula Restoration</span><span class="otab-s">700 ha</span></span></button><button type="button" class="otab" role="tab" id="ot-vic" aria-controls="op-vic" aria-selected="false" tabindex="-1"><span class="otab-st">Victoria</span><span class="otab-r"><span class="otab-n">Winton Wetlands</span><span class="otab-s">1,000+ ha</span></span></button><button type="button" class="otab" role="tab" id="ot-qld" aria-controls="op-qld" aria-selected="false" tabindex="-1"><span class="otab-st">Queensland</span><span class="otab-r"><span class="otab-n">Wet Tropics rainforest restoration</span><span class="otab-s">50 to 100 ha</span></span></button><button type="button" class="otab" role="tab" id="ot-nsw" aria-controls="op-nsw" aria-selected="false" tabindex="-1"><span class="otab-st">New South Wales</span><span class="otab-r"><span class="otab-n">Southern West Yiradyuri Clans restoration site</span><span class="otab-s">240 ha</span></span></button><button type="button" class="otab" role="tab" id="ot-wa" aria-controls="op-wa" aria-selected="false" tabindex="-1"><span class="otab-st">Western Australia</span><span class="otab-r"><span class="otab-n">South-west WA restoration site</span><span class="otab-s">TBC</span></span></button><button type="button" class="otab" role="tab" id="ot-nat" aria-controls="op-nat" aria-selected="false" tabindex="-1"><span class="otab-st">National</span><span class="otab-r"><span class="otab-n">Fire Wise</span><span class="otab-s">New regions</span></span></button></div>
+<div class="opanels">
+<div class="opanel" role="tabpanel" id="op-sa" aria-labelledby="ot-sa" tabindex="0"><div class="op-gap"><!-- PHOTO TO COME: Narrung Peninsula Restoration -->Photo to come: Narrung Peninsula Restoration</div><div class="op-b"><div><span class="k">South Australia</span><h3>Narrung Peninsula Restoration</h3></div><dl class="op-stats"><div><dt>Area</dt><dd>700 ha</dd></div><div><dt>Where</dt><dd>Lower Lakes, end of the Murray</dd></div><div><dt>Can grow into</dt><dd>A larger South Australian regional package</dd></div></dl><p>Restoring 700 hectares on the Narrung Peninsula, on Ngarrindjeri Country beside the Lower Lakes at the end of the Murray. The peninsula is home to Raukkan, whose church appears on the $50 note. Other South Australian sites could join it as a larger regional partnership.</p><div class="op-a"><a class="btn btn-p" href="#talk">Enquire about this project →</a></div></div></div>
+<div class="opanel" role="tabpanel" id="op-vic" aria-labelledby="ot-vic" tabindex="0" hidden><div class="op-im"><picture><source type="image/webp" srcset="assets/img/r/projects-opp-winton-heron-480.webp 480w, assets/img/r/projects-opp-winton-heron-800.webp 800w, assets/img/r/projects-opp-winton-heron-1200.webp 1200w, assets/img/r/projects-opp-winton-heron-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/opp-winton-heron.jpg" alt="White-faced Heron standing among dry reeds at the edge of a wetland" width="1600" height="1002" loading="lazy" decoding="async"></picture><span class="op-cr">White-faced Heron. Photo: patrickkavanagh, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license noopener" target="_blank">CC BY 2.0</a></span></div><div class="op-b"><div><span class="k">Victoria</span><h3>Winton Wetlands</h3></div><dl class="op-stats"><div><dt>Area</dt><dd>1,000+ ha</dd></div><div><dt>Where</dt><dd>North-east Victoria</dd></div><div><dt>Can grow into</dt><dd>A north-east Victoria or South Gippsland package</dd></div></dl><p>A large wetland where restoration is about water as much as land, and where we have already helped return Growling Grass Frogs. Nearby sites could make this a north-east Victoria partnership, or one in South Gippsland along the Tarwin River.</p><div class="op-a"><a class="btn btn-p" href="#talk">Enquire about this project →</a></div></div></div>
+<div class="opanel" role="tabpanel" id="op-qld" aria-labelledby="ot-qld" tabindex="0" hidden><div class="op-im"><picture><source type="image/webp" srcset="assets/img/r/projects-opp-wet-tropics-palms-480.webp 480w, assets/img/r/projects-opp-wet-tropics-palms-800.webp 800w, assets/img/r/projects-opp-wet-tropics-palms-1200.webp 1200w, assets/img/r/projects-opp-wet-tropics-palms-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/opp-wet-tropics-palms.jpg" alt="Looking up through fan palms into a tropical rainforest canopy" width="1600" height="1065" loading="lazy" decoding="async"></picture></div><div class="op-b"><div><span class="k">Queensland</span><h3>Wet Tropics rainforest restoration</h3></div><dl class="op-stats"><div><dt>Area</dt><dd>50 to 100 ha</dd></div><div><dt>Where</dt><dd>Wet Tropics, Far North Queensland</dd></div><div><dt>Can grow into</dt><dd>Several sites funded together</dd></div></dl><p>Several tropical rainforest restoration sites across the Wet Tropics, each between about 50 and 100 hectares, that can be funded one at a time or together.</p><div class="op-a"><a class="btn btn-p" href="#talk">Enquire about this project →</a></div></div></div>
+<div class="opanel" role="tabpanel" id="op-nsw" aria-labelledby="ot-nsw" tabindex="0" hidden><div class="op-gap"><!-- PHOTO TO COME: Southern West Yiradyuri Clans restoration site -->Photo to come: Southern West Yiradyuri Clans restoration site</div><div class="op-b"><div><span class="k">New South Wales</span><h3>Southern West Yiradyuri Clans restoration site</h3></div><dl class="op-stats"><div><dt>Area</dt><dd>240 ha</dd></div><div><dt>Where</dt><dd>Gap Road, The Rock</dd></div><div><dt>Can grow into</dt><dd>A wider focus on southern NSW</dd></div></dl><p>A First Nations-led restoration site on Gap Road at The Rock, and the start of a wider focus on southern New South Wales.</p><div class="op-a"><a class="btn btn-p" href="#talk">Enquire about this project →</a></div></div></div>
+<div class="opanel" role="tabpanel" id="op-wa" aria-labelledby="ot-wa" tabindex="0" hidden><!-- WA: site name, area and details to come from Mark and Ian --><div class="op-gap"><!-- PHOTO TO COME: South-west WA restoration site -->Photo to come: South-west WA restoration site</div><div class="op-b"><div><span class="k">Western Australia</span><h3>South-west WA restoration site</h3></div><dl class="op-stats"><div><dt>Area</dt><dd>TBC</dd></div><div><dt>Where</dt><dd>South-west Western Australia</dd></div><div><dt>Can grow into</dt><dd>Links to Fire Wise as it grows in WA</dd></div></dl><p>A restoration site in south-west Western Australia, with links to our national Fire Wise work as it expands into WA.</p><div class="op-a"><a class="btn btn-p" href="#talk">Enquire about this project →</a></div></div></div>
+<div class="opanel" role="tabpanel" id="op-nat" aria-labelledby="ot-nat" tabindex="0" hidden><div class="op-im"><picture><source type="image/webp" srcset="assets/img/r/projects-opp-fire-wise-tree-guards-480.webp 480w, assets/img/r/projects-opp-fire-wise-tree-guards-800.webp 800w, assets/img/r/projects-opp-fire-wise-tree-guards-1200.webp 1200w, assets/img/r/projects-opp-fire-wise-tree-guards-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/opp-fire-wise-tree-guards.jpg" alt="Rows of green tree guards protecting new native plantings beneath eucalypts" width="1600" height="1067" loading="lazy" decoding="async"></picture></div><div class="op-b"><div><span class="k">National</span><h3>Fire Wise</h3></div><dl class="op-stats"><div><dt>Area</dt><dd>New regions</dd></div><div><dt>Where</dt><dd>Sydney and Western Australia next</dd></div><div><dt>Can grow into</dt><dd>More bushfire-prone communities</dd></div></dl><p>Fire Wise helps communities prepare for bushfire by planting low-flammability natives instead of clearing habitat. The next step is taking it to new regions, including Sydney and Western Australia.</p><div class="op-a"><a class="btn btn-p" href="#talk">Enquire about this project →</a><a class="btn-g" href="project-fire-wise.html">Read about Fire Wise →</a></div></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec sand" id="evidence">
+<div class="cw">
+<span class="ey">Case studies</span><h2 style="margin-bottom: 2rem">What our partnerships have achieved.</h2>
+<div class="car" role="region" aria-roledescription="carousel" aria-label="Case studies">
+<div class="car-vp" aria-live="polite">
+<div class="car-s" role="group" aria-roledescription="slide" aria-label="1 of 3: Restoring a Ramsar wetland on Hindmarsh Island"><picture><source type="image/webp" srcset="assets/img/r/partner-loccitane-nursery-480.webp 480w, assets/img/r/partner-loccitane-nursery-800.webp 800w, assets/img/r/partner-loccitane-nursery-1200.webp 1200w, assets/img/r/partner-loccitane-nursery-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/partner-loccitane-nursery.jpg" alt="Volunteer in an L’Occitane cap potting seedlings at a nursery bench" width="1600" height="1067" loading="lazy" decoding="async"></picture><div class="car-b"><span class="k">L’OCCITANE Australia · since 2020</span><h3>Restoring a Ramsar wetland on Hindmarsh Island</h3><p>L’OCCITANE has partnered with us since 2020, when they helped fund our first Bushfire Recovery Nurseries. In 2025 their $90,000 contribution helped restore coastal woodland and wetland across five sites on Hindmarsh Island (Kumarangk), alongside the Ngarrindjeri, the Kumarangk Hindmarsh Island Landcare Group, local nurseries and park managers.</p><a class="btn-g" href="article-hindmarsh-island-ecological-restoration.html" aria-label="Read the full story: Hindmarsh Island with L’OCCITANE">Read the full story →</a></div></div>
+<div class="car-s" role="group" aria-roledescription="slide" aria-label="2 of 3: Curb Wombat Mange Program"><picture><source type="image/webp" srcset="assets/img/r/projects-wombat-mange-wombat-at-burrow-480.webp 480w, assets/img/r/projects-wombat-mange-wombat-at-burrow-800.webp 800w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1200.webp 1200w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/wombat-mange-wombat-at-burrow.jpg" alt="Wombat emerging from its burrow" width="1600" height="1200" loading="lazy" decoding="async"></picture><div class="car-b"><span class="k">NSW National Parks and Wildlife Service</span><h3>Curb Wombat Mange Program</h3><p>Together we put up to $2 million into rapid response grants between 2023 and 2025, getting funding to Indigenous community organisations and licensed wildlife groups across NSW. An estimated 1,498 wombats were treated in the first large-scale targeted program of its kind in the state.</p><a class="btn-g" href="project-curb-wombat-mange-program.html" aria-label="Read the full story: Curb Wombat Mange Program">Read the full story →</a></div></div>
+<div class="car-s" role="group" aria-roledescription="slide" aria-label="3 of 3: Mundoo Island Station"><picture><source type="image/webp" srcset="assets/img/r/projects-mundoo-aerial-sunset-480.webp 480w, assets/img/r/projects-mundoo-aerial-sunset-800.webp 800w, assets/img/r/projects-mundoo-aerial-sunset-1200.webp 1200w, assets/img/r/projects-mundoo-aerial-sunset-1600.webp 1600w" sizes="(min-width: 880px) 50vw, 100vw"><img src="assets/img/projects/mundoo-aerial-sunset.jpg" alt="Wetlands and grassland on Mundoo Island at sunset, seen from the air" width="1600" height="900" loading="lazy" decoding="async"></picture><div class="car-b"><span class="k">With the Ngarrindjeri Aboriginal Corporation and the Australian and SA Governments</span><h3>Mundoo Island Station</h3><p>When this rare land at the Murray Mouth came up for sale, we joined the Australian and South Australian Governments as an acquisition partner, with a substantial part of our contribution coming from a gift in a will. The islands are now being added to Coorong National Park, protecting habitat for 65 nationally listed threatened species, and their management plan is being developed with the Ngarrindjeri Aboriginal Corporation.</p><a class="btn-g" href="project-mundoo-island-acquisition.html" aria-label="Read the full story: Mundoo Island Station">Read the full story →</a></div></div>
+</div>
+<div class="car-nav" hidden><div class="car-dots"><button type="button" class="car-dot" aria-label="Show Restoring a Ramsar wetland on Hindmarsh Island"></button><button type="button" class="car-dot" aria-label="Show Curb Wombat Mange Program"></button><button type="button" class="car-dot" aria-label="Show Mundoo Island Station"></button><span class="car-ct"></span></div><div class="car-arr"><button type="button" class="car-btn pv" aria-label="Previous case study">&#8592;</button><button type="button" class="car-btn nx" aria-label="Next case study">&#8594;</button></div></div>
+</div>
+</div>
+</section>
+
+<section class="pi-impact" aria-label="Our impact in numbers">
 <div class="cw"><div class="statband" style="display: grid; gap: 1.6rem 0; margin: 0 -1.1rem">
 <div class="pib-i"><div class="pib-n">600,000+</div><div class="pib-l">hectares we have helped protect, across 50 national parks and reserves</div></div>
 <div class="pib-i"><div class="pib-n">29,479</div><div class="pib-l">hectares added to national park status in 2025</div></div>
 <div class="pib-i"><div class="pib-n">30+</div><div class="pib-l">community nurseries across four states</div></div>
-</div></div>
-</div>
-
-<section class="sec" id="who">
-<div class="cw">
-<div class="h2row" style="display: grid; gap: 2rem; align-items: start; margin-bottom: 2.6rem">
-<div><span class="ey">Partnering for impact</span><h2 style="max-width: 16ch">Together, we can achieve more for Australia’s wild places.</h2></div>
-<div><p style="max-width: 54ch">Protecting land, recovering species and restoring landscapes at scale is more than any one organisation can do alone. It takes Traditional Custodians, governments, philanthropists, businesses and delivery partners all working towards the same outcome.</p><p style="max-width: 54ch">Together we’ve already passed our goal of adding 10,000 hectares to protected areas. By 2028 we aim to secure $50 million in funding from corporates, government and philanthropy and build at least 20 high-impact partnerships, and we’d like you to be one of them.</p></div>
-</div>
-<span class="wl">Who we partner with</span>
-<div class="g3" style="display: grid; gap: 1.6rem">
-<article class="aud"><picture><source type="image/webp" srcset="assets/img/r/partner-millionth-tree-480.webp 480w, assets/img/r/partner-millionth-tree-800.webp 800w, assets/img/r/partner-millionth-tree-1200.webp 1200w, assets/img/r/partner-millionth-tree-1500.webp 1500w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/partner-millionth-tree.jpg" alt="Planting the millionth tree at Lane Cove National Park, October 2024" width="1500" height="1200" loading="lazy" decoding="async"></picture><div class="aud-b"><span class="k">For corporates</span><h3>Make nature a strategic part of your business.</h3><p>We deliver measurable conservation outcomes for your sustainability and nature commitments, and bring your people into the work through volunteering, workplace giving and staff engagement.</p><a class="btn-g" href="partner.html">Corporate partnerships →</a></div></article>
-<article class="aud"><picture><source type="image/webp" srcset="assets/img/r/governance-hero-gorge-480.webp 480w, assets/img/r/governance-hero-gorge-800.webp 800w, assets/img/r/governance-hero-gorge-1200.webp 1200w, assets/img/r/governance-hero-gorge-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/governance-hero-gorge.jpg" alt="Forested gorge winding through rugged, tree-covered hills under a clear blue sky" width="1600" height="900" loading="lazy" decoding="async"></picture><div class="aud-b"><span class="k">For government</span><h3>Turn conservation priorities into results.</h3><p>We work with Australian, state and territory governments to add land to national parks, recover threatened species, and design and run grant programs that reach the people doing the work.</p><a class="btn-g" href="government-partnerships.html">Government partnerships →</a></div></article>
-<article class="aud"><picture><source type="image/webp" srcset="assets/img/r/give-bequest-canopy-480.webp 480w, assets/img/r/give-bequest-canopy-800.webp 800w, assets/img/r/give-bequest-canopy-1200.webp 1200w, assets/img/r/give-bequest-canopy-1400.webp 1400w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/give-bequest-canopy.jpg" alt="Looking up through tall eucalypt trunks to a green canopy and blue sky" width="1400" height="1050" loading="lazy" decoding="async"></picture><div class="aud-b"><span class="k">For philanthropy</span><h3>Give at a scale that changes a landscape.</h3><p>Foundations, trusts, private ancillary funds and philanthropists fund some of our most ambitious work. We match your giving to the places and species you care about most.</p><a class="btn-g" href="ways-you-can-get-involved.html">Ways to get involved →</a></div></article>
-</div>
 </div>
 </section>
 
-<section class="sec sand" id="ways">
+<section class="pi-logos" id="partners">
 <div class="cw">
-<div style="margin-bottom: 2rem"><span class="ey">Ways to partner</span><h2 style="max-width: 20ch">Find the partnership that fits.</h2></div>
-<div class="g3" style="display: grid; gap: 1.2rem">
-<article class="way"><span class="n">01</span><h3>Fund Conservation at Scale</h3><p>Fund the acquisition of land for national parks, the growing and planting of native habitat, or recovery work for a threatened species. Every project starts with an agreed scope and the outcomes your funding will deliver, whether that’s hectares protected, habitat restored or animals treated.</p><div class="way-cases"><span class="way-ck">Our projects</span><a class="way-case" href="project-mundoo-island-acquisition.html"><img src="assets/img/r/projects-mundoo-lagoon-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async"><span><strong>Mundoo Island Station</strong><small>Secured in 2025 with the Ngarrindjeri Aboriginal Corporation and the Australian and South Australian Governments, and now being added to Coorong National Park.</small></span></a><a class="way-case" href="project-remarkable-southern-flinders.html"><img src="assets/img/r/about-hero-flinders-COMP-480.webp" alt="" width="480" height="188" loading="lazy" decoding="async"><span><strong>Remarkable Southern Flinders</strong><small>Four separate reserves joined into one connected park on Nukunu Country.</small></span></a></div></article>
-<article class="way"><span class="n">02</span><h3>Build Conservation Partnerships</h3><p>The most lasting results take years, not a single funding round. We build long-term partnerships around a landscape, a species or a cause that matters to you, shaping the program together and growing it as the results come in.</p><div class="way-cases"><span class="way-ck">Our projects</span><a class="way-case" href="our-impact.html#trees"><img src="assets/img/r/partner-millionth-tree-480.webp" alt="" width="480" height="384" loading="lazy" decoding="async"><span><strong>Landscape Resilience Program</strong><small>What began as a promise of a million trees after the Black Summer fires is now a goal of 9 million by 2030.</small></span></a><a class="way-case" href="project-native-plant-nurseries.html"><img src="assets/img/r/pillar-healing-nursery-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async"><span><strong>Native Plant Nurseries</strong><small>Only a tenth of Australia’s native plants are available as seed, so we built a nursery network to grow the rest.</small></span></a><a class="way-case" href="partner.html#focus"><img src="assets/img/r/partner-loccitane-nursery-480.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span><strong>L’OCCITANE Australia</strong><small>Partners since 2020, when they helped fund our first Bushfire Recovery Nurseries, and behind the millionth tree in 2024.</small></span></a></div></article>
-<article class="way"><span class="n">03</span><h3>Invest in Nature’s Future</h3><p>We’re exploring how public, philanthropic and private capital could work together on long-term landscape outcomes, including through nature finance. This work is still being developed, and we’d welcome a conversation with organisations who want to help shape it.</p><div class="way-cases"><span class="way-ck">Our projects</span><!-- PLACEHOLDER: co-investment projects to come from Suz before launch --><p class="way-gap">Placeholder: co-investment project to come.</p></div></article>
-</div>
+<h2 class="lg-k">In good company</h2>
+<ul class="lg-grid" aria-label="Some of our partners and supporters"><li><img src="assets/img/partners/partner-16.png" alt="L’OCCITANE en Provence" width="360" height="82" loading="lazy"></li><li><img src="assets/img/partners/partner-17.png" alt="Living Knowledge Network (Firesticks)" width="360" height="77" loading="lazy"></li><li><img src="assets/img/partners/partner-26.png" alt="Australian Government, Department of Climate Change, Energy, the Environment and Water" width="360" height="83" loading="lazy"></li><li><img src="assets/img/partners/partner-23.png" alt="NSW National Parks and Wildlife Service" width="360" height="108" loading="lazy"></li><li><img src="assets/img/partners/partner-29.png" alt="Government of South Australia, Department for Environment and Water" width="360" height="80" loading="lazy"></li><li><img src="assets/img/partners/partner-05.png" alt="NAB Foundation" width="172" height="132" loading="lazy"></li><li><img src="assets/img/partners/partner-04.png" alt="Dell Technologies" width="360" height="51" loading="lazy"></li><li><img src="assets/img/partners/partner-38.png" alt="Deloitte" width="360" height="72" loading="lazy"></li><li><img src="assets/img/partners/partner-57.png" alt="Xero" width="132" height="132" loading="lazy"></li><li><img src="assets/img/partners/partner-06.png" alt="AirTrunk" width="360" height="50" loading="lazy"></li><li><img src="assets/img/partners/partner-03.png" alt="GlobalGiving" width="360" height="58" loading="lazy"></li><li><img src="assets/img/partners/partner-54.png" alt="Skipper Jacobs Charitable Trust" width="360" height="104" loading="lazy"></li></ul>
 </div>
 </section>
 
 <section class="sec" id="how">
 <div class="cw">
-<div style="margin-bottom: 2.4rem"><span class="ey">How we work</span><h2 style="max-width: 18ch">We do more than fund the work. We make it happen.</h2></div>
+<div style="margin-bottom: 2.4rem"><span class="ey">How we work</span><h2 style="max-width: 18ch">How a partnership runs.</h2></div>
 <ol class="steps3">
 <li><span class="step-n">01</span><h3>Identify</h3><p>With Traditional Custodians, scientists and government, we find the places and species where a partnership will make the biggest difference, and shape them into projects ready for funding.</p></li>
 <li><span class="step-n">02</span><h3>Deliver</h3><p>We bring the partners and funding together, then engage specialists on the ground, from Traditional Owner ranger groups to community nurseries and wildlife organisations, against clear milestones.</p></li>
 <li><span class="step-n">03</span><h3>Demonstrate</h3><p>We track the ecological and financial outcomes and report back, so you can see what your partnership achieved and where it could go next.</p></li>
 </ol>
 </div>
-</section>
-
-<section class="sec sand" id="opportunities">
-<div class="cw">
-<div class="h2row" style="display: grid; gap: 2rem; align-items: end; margin-bottom: 2rem"><div><span class="ey">Opportunities</span><h2 style="max-width: 16ch">Projects ready for funding now.</h2></div><p style="margin: 0; max-width: 52ch">These are some of the projects where partner funding can make the biggest difference right now. Each one is already under way, with results to show.</p></div>
-<div class="g3" style="display: grid; gap: 1.2rem; align-items: stretch">
-<article class="opp" style="border-top-color: #C23747"><picture><source type="image/webp" srcset="assets/img/r/projects-bandicoot-hero-portrait-480.webp 480w, assets/img/r/projects-bandicoot-hero-portrait-800.webp 800w, assets/img/r/projects-bandicoot-hero-portrait-1200.webp 1200w, assets/img/r/projects-bandicoot-hero-portrait-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/bandicoot-hero-portrait.jpg" alt="A Southern Brown Bandicoot standing in leaf litter" width="1600" height="899" loading="lazy" decoding="async"></picture><div class="opp-b"><span class="k">Saving Species · SA</span><h3>Bandicoot Superhighway</h3><p>The Southern Brown Bandicoot is the last of the eight bandicoot species South Australia once had, and clearing has stranded it in isolated pockets of habitat. This project plants corridors across the gaps in the Mount Lofty Ranges and Fleurieu Peninsula so it can move between them again.</p><dl class="opp-dl"><dt>Funding supports</dt><dd>Corridor planting, habitat management and planned translocation trials</dd><dt>So far</dt><dd>34,669 seedlings planted across 44 hectares</dd></dl><a class="btn-g" href="project-bandicoot-superhighway-project.html" style="align-self: flex-start" aria-label="Read about the project: Bandicoot Superhighway">Read about the project →</a></div></article>
-<article class="opp" style="border-top-color: #AB7341"><picture><source type="image/webp" srcset="assets/img/r/partner-invest-hero-planting-480.webp 480w, assets/img/r/partner-invest-hero-planting-800.webp 800w, assets/img/r/partner-invest-hero-planting-1200.webp 1200w, assets/img/r/partner-invest-hero-planting-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/partner-invest-hero-planting.jpg" alt="Aerial view of volunteers planting rows of tree guards in a paddock" width="1600" height="1200" loading="lazy" decoding="async"></picture><div class="opp-b"><span class="k">Healing the Land · National</span><h3>Landscape Resilience Program</h3><p>What began as a promise to plant a million trees after the 2019–20 bushfires passed that mark in 2024. The goal now is 9 million trees by 2030, grown and planted with community nurseries to restore habitat and make landscapes more resilient.</p><dl class="opp-dl"><dt>Funding supports</dt><dd>Seed collection, community nurseries and planting</dd><dt>So far</dt><dd>1.2 million trees, shrubs and seedlings planted</dd></dl><a class="btn-g" href="project-bushfire-recovery-program.html" style="align-self: flex-start" aria-label="Read about the project: Landscape Resilience Program">Read about the project →</a></div></article>
-<article class="opp" style="border-top-color: #AB7341"><picture><source type="image/webp" srcset="assets/img/r/pillar-healing-nursery-480.webp 480w, assets/img/r/pillar-healing-nursery-800.webp 800w, assets/img/r/pillar-healing-nursery-1200.webp 1200w, assets/img/r/pillar-healing-nursery-1400.webp 1400w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/pillar-healing-nursery.jpg" alt="Trays of native seedlings growing in tubes on benches at a community nursery" width="1400" height="1050" loading="lazy" decoding="async"></picture><div class="opp-b"><span class="k">Healing the Land · VIC, SA and NSW</span><h3>Fire Wise</h3><p>Fire Wise helps communities prepare for bushfire by planting low-flammability natives instead of clearing habitat. Its first phase is complete, and partner funding can take it to more communities.</p><dl class="opp-dl"><dt>Funding supports</dt><dd>Workshops, community nurseries and Fire Wise plantings</dd><dt>So far</dt><dd>4,900+ people trained across three states</dd></dl><a class="btn-g" href="project-fire-wise.html" style="align-self: flex-start" aria-label="Read about the project: Fire Wise">Read about the project →</a></div></article>
-</div>
-<div class="opp-foot" style="margin-top: 1.8rem; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 1.4rem; align-items: center; background: #0F3132; color: #FAF6F2; padding: 1.2rem 1.4rem">
-<p style="margin: 0; font-size: .95rem">Our full portfolio is on our <a href="projects.html" style="color: #C6EBCA; text-decoration: underline">projects page</a>. If you have a place, species or outcome in mind that isn’t listed, we can shape a partnership around it.</p>
-<a class="btn" href="#talk" style="background: #F8EEA9; color: #0F3132; border-color: #F8EEA9">Enquire About a Partnership</a>
-</div>
-</div>
-</section>
-
-<section class="sec" id="evidence">
-<div class="cw">
-<div class="h2row" style="display: grid; gap: 2rem; align-items: end; margin-bottom: 2.4rem"><div><span class="ey">Partnerships in action</span><h2 style="max-width: 16ch">What our partnerships have achieved.</h2></div><p style="margin: 0; max-width: 50ch">Each of these began differently, with a business, a government agency and a gift in a will, and each has changed what is possible on the ground.</p></div>
-<div class="g3" style="display: grid; gap: 1.6rem; align-items: stretch">
-<article class="case"><div class="case-im"><picture><source type="image/webp" srcset="assets/img/r/partner-loccitane-nursery-480.webp 480w, assets/img/r/partner-loccitane-nursery-800.webp 800w, assets/img/r/partner-loccitane-nursery-1200.webp 1200w, assets/img/r/partner-loccitane-nursery-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/partner-loccitane-nursery.jpg" alt="Volunteer in an L’Occitane cap potting seedlings at a nursery bench" width="1600" height="1067" loading="lazy" decoding="async"></picture><span class="case-tag" style="background: #F8EEA9; color: #241914">Corporate</span></div><div class="case-b"><div class="case-logos"><img src="assets/img/partners/partner-16.png" alt="L’OCCITANE en Provence" width="360" height="82" loading="lazy"></div><span class="k">L’OCCITANE Australia · since 2020</span><h3>Restoring a Ramsar wetland on Hindmarsh Island</h3><p>L’OCCITANE has partnered with us since 2020, when they helped fund our first Bushfire Recovery Nurseries. In 2025 their $90,000 contribution helped restore coastal woodland and wetland across five sites on Hindmarsh Island (Kumarangk), alongside the Ngarrindjeri, the Kumarangk Hindmarsh Island Landcare Group, local nurseries and park managers.</p><a class="btn-g" href="article-hindmarsh-island-ecological-restoration.html" style="align-self: flex-start" aria-label="Read the full story: Hindmarsh Island with L’OCCITANE">Read the full story →</a></div></article>
-<article class="case"><div class="case-im"><picture><source type="image/webp" srcset="assets/img/r/projects-wombat-mange-wombat-at-burrow-480.webp 480w, assets/img/r/projects-wombat-mange-wombat-at-burrow-800.webp 800w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1200.webp 1200w, assets/img/r/projects-wombat-mange-wombat-at-burrow-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/wombat-mange-wombat-at-burrow.jpg" alt="Wombat emerging from its burrow" width="1600" height="1200" loading="lazy" decoding="async"></picture><span class="case-tag" style="background: #C6EBCA; color: #0F3132">Government</span></div><div class="case-b"><div class="case-logos"><img src="assets/img/partners/partner-23.png" alt="NSW National Parks and Wildlife Service" width="360" height="108" loading="lazy"></div><span class="k">NSW National Parks and Wildlife Service</span><h3>Curb Wombat Mange Program</h3><p>Together we put up to $2 million into rapid response grants between 2023 and 2025, getting funding to Indigenous community organisations and licensed wildlife groups across NSW. An estimated 1,498 wombats were treated in the first large-scale targeted program of its kind in the state.</p><a class="btn-g" href="project-curb-wombat-mange-program.html" style="align-self: flex-start" aria-label="Read the full story: Curb Wombat Mange Program">Read the full story →</a></div></article>
-<article class="case"><div class="case-im"><picture><source type="image/webp" srcset="assets/img/r/projects-mundoo-lagoon-480.webp 480w, assets/img/r/projects-mundoo-lagoon-800.webp 800w, assets/img/r/projects-mundoo-lagoon-1200.webp 1200w, assets/img/r/projects-mundoo-lagoon-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/mundoo-lagoon.jpg" alt="Flock of birds over a still lagoon on Mundoo Island" width="1600" height="1200" loading="lazy" decoding="async"></picture><span class="case-tag" style="background: #FFADB7; color: #8C1422">Philanthropy</span></div><div class="case-b"><div class="case-logos"><span class="tx">Ngarrindjeri Aboriginal Corporation</span><img src="assets/img/partners/partner-26.png" alt="Australian Government, Department of Climate Change, Energy, the Environment and Water" width="360" height="83" loading="lazy"><img src="assets/img/partners/partner-29.png" alt="Government of South Australia, Department for Environment and Water" width="360" height="80" loading="lazy"></div><!-- No Ngarrindjeri Aboriginal Corporation logo on file: name set in type until they supply one --><span class="k">With the Ngarrindjeri Aboriginal Corporation and the Australian and SA Governments</span><h3>Mundoo Island Station</h3><p>When this rare land at the Murray Mouth came up for sale, we joined the Australian and South Australian Governments as an acquisition partner, with a substantial part of our contribution coming from a gift in a will. The islands are now being added to Coorong National Park, protecting habitat for 65 nationally listed threatened species, and their management plan is being developed with the Ngarrindjeri Aboriginal Corporation.</p><a class="btn-g" href="project-mundoo-island-acquisition.html" style="align-self: flex-start" aria-label="Read the full story: Mundoo Island Station">Read the full story →</a></div></article>
-</div>
-</div>
-</section>
-
-<section class="sec sand" id="why">
-<div class="cw hw3" style="display: grid; gap: clamp(2rem,4vw,3.5rem); align-items: start">
-<div><span class="ey">Why partner with us</span><h2 style="max-width: 14ch">A partner with the experience to deliver.</h2>
-<div class="acct"><span class="k">Accountable at every step</span><p>We are registered with the ACNC and governed by a voluntary, unremunerated board supported by four committees, and our financial accounts are externally audited every year.</p><p class="acct-l"><a class="btn-g" href="corporate-governance.html">How we are governed →</a><a class="btn-g" href="reports.html">Our impact reports →</a></p></div>
-</div>
-<ul class="why-list">
-<li><strong>More than 55 years of experience</strong><p>We’ve been protecting Australia’s wild places since 1970, when we helped secure the station that is now part of Sturt National Park, and we know how to stay the course on work that takes decades.</p></li>
-<li><strong>National reach</strong><p>Our projects reach every state and territory and 13 priority landscapes, so we can take on work that crosses state borders.</p></li>
-<li><strong>Trusted relationships</strong><p>We’ve built long-standing relationships with Traditional Custodians, governments, scientists, community nurseries and Landcare groups, which means the right people are at the table from the start.</p></li>
-</ul>
-</div>
-</section>
-
-
-
-<!-- PARTNER LOGOS (carried over) -->
-<section class="partners-now" id="partners">
-  <div class="cw">
-    <h3 style="color:var(--stone);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600">In good company</h3>
-  <div class="lmq" aria-label="Our partners and supporters">
-    <div class="lmq-row" tabindex="0" aria-label="Partner and supporter logos, first row. Scroll sideways to see more.">
-      <div class="lmq-track" style="--dur:72s">
-        <div class="lmq-i"><img src="assets/img/partners/partner-01.png" alt="AnchorMark" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-03.png" alt="GlobalGiving" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-05.png" alt="NAB Foundation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-07.png" alt="Microequities Asset Management" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-09.png" alt="Docusign" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-11.png" alt="Virtuoso" loading="lazy"></div>
-        
-        <div class="lmq-i"><img src="assets/img/partners/partner-15.png" alt="Aon" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-17.png" alt="Living Knowledge Network (Firesticks)" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-19.png" alt="AGA Aktionsgemeinschaft Artenschutz" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-22.png" alt="Queensland Government, Department of the Environment, Tourism, Science and Innovation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-24.png" alt="NSW Biodiversity Conservation Trust" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-26.png" alt="Australian Government, Department of Climate Change, Energy, the Environment and Water" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-28.png" alt="National Parks and Wildlife Service South Australia" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-30.png" alt="Australian Philanthropic Services" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-32.png" alt="Bartier Perry Lawyers" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-34.png" alt="Coombes Property Group" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-36.png" alt="Chrysanthemum Foundation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-39.png" alt="&Eacute;toile" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-41.png" alt="Dicker Data" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-43.png" alt="FactSet" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-45.png" alt="Hilton" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-47.png" alt="LGT Crestone" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-49.png" alt="Little Feet Early Learning and Childcare" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-51.png" alt="Mulberry Lane Vet Hospital" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-54.png" alt="Skipper Jacobs Charitable Trust" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-56.png" alt="V2" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-58.png" alt="VMware" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-01.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-03.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-05.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-07.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-09.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-11.png" alt="" aria-hidden="true" loading="lazy"></div>
-        
-        <div class="lmq-i"><img src="assets/img/partners/partner-15.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-17.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-19.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-22.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-24.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-26.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-28.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-30.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-32.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-34.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-36.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-39.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-41.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-43.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-45.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-47.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-49.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-51.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-54.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-56.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-58.png" alt="" aria-hidden="true" loading="lazy"></div>
-      </div>
-    </div>
-    <div class="lmq-row" tabindex="0" aria-label="Partner and supporter logos, second row. Scroll sideways to see more.">
-      <div class="lmq-track lmq-rev" style="--dur:86s">
-        <div class="lmq-i"><img src="assets/img/partners/partner-02.png" alt="Zorali" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-04.png" alt="Dell Technologies" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-06.png" alt="AirTrunk" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-08.png" alt="Maple Brown Family Foundation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-10.png" alt="Re:wild" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-12.png" alt="EthicalJobs" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-14.png" alt="One Tree Planted" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-16.png" alt="L&rsquo;Occitane en Provence" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-18.png" alt="Gowing Bros" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-20.png" alt="Quercus &amp; Co." loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-23.png" alt="NSW National Parks and Wildlife Service" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-25.png" alt="Victoria State Government, Energy, Environment and Climate Action" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-27.png" alt="Government of South Australia, South Australian Fire and Emergency Services Commission" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-29.png" alt="Government of South Australia, Department for Environment and Water" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-31.png" alt="Catalina Consultants" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-33.png" alt="Beswick Family Fund" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-35.png" alt="Consult Australia" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-38.png" alt="Deloitte" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-40.png" alt="Dick and Pip Smith Foundation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-42.png" alt="Equity Trustees" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-44.png" alt="Flavourtech" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-46.png" alt="IMC" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-48.png" alt="Lifework Foundation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-50.png" alt="Michael Page International" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-52.png" alt="Outdoors NSW &amp; ACT" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-55.png" alt="The Broinowski Foundation" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-57.png" alt="Xero" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-59.png" alt="Spark Renewables" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-02.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-04.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-06.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-08.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-10.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-12.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-14.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-16.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-18.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-20.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-23.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-25.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-27.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-29.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-31.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-33.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-35.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-38.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-40.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-42.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-44.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-46.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-48.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-50.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-52.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-55.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-57.png" alt="" aria-hidden="true" loading="lazy"></div>
-        <div class="lmq-i"><img src="assets/img/partners/partner-59.png" alt="" aria-hidden="true" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
-  </div>
 </section>
 
 <section class="sec dark" id="talk">
@@ -546,6 +446,38 @@
   </div>
 </footer><!-- /@footer -->
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+  [].forEach.call(document.querySelectorAll('.piw [role="tablist"]'),function(list){
+    var tabs=[].slice.call(list.querySelectorAll('[role="tab"]'));
+    function sel(t,focus){
+      tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+      if(focus)t.focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){sel(t)});
+      t.addEventListener('keydown',function(e){
+        var n=null,k=e.key;
+        if(k==='ArrowRight'||k==='ArrowDown')n=tabs[(i+1)%tabs.length];
+        else if(k==='ArrowLeft'||k==='ArrowUp')n=tabs[(i-1+tabs.length)%tabs.length];
+        else if(k==='Home')n=tabs[0];else if(k==='End')n=tabs[tabs.length-1];
+        if(n){e.preventDefault();sel(n,true)}
+      });
+    });
+  });
+  var car=document.querySelector('.piw .car');
+  if(car){
+    var s=[].slice.call(car.querySelectorAll('.car-s')),d=[].slice.call(car.querySelectorAll('.car-dot')),c=car.querySelector('.car-ct'),i=0;
+    function go(n){i=(n+s.length)%s.length;s.forEach(function(x,j){x.hidden=j!==i});d.forEach(function(x,j){if(j===i)x.setAttribute('aria-current','true');else x.removeAttribute('aria-current')});c.textContent=(i+1)+' of '+s.length}
+    car.querySelector('.car-nav').hidden=false;
+    car.querySelector('.pv').addEventListener('click',function(){go(i-1)});
+    car.querySelector('.nx').addEventListener('click',function(){go(i+1)});
+    d.forEach(function(x,j){x.addEventListener('click',function(){go(j)})});
+    go(0);
+  }
+})();
+</script>
+
 <script src="https://js-ap1.hsforms.net/forms/embed/441704788.js" defer></script>
 <script>setTimeout(function(){var s=document.getElementById("hsform");if(s&&!s.querySelector("iframe,form")){var f=document.getElementById("hsFallback");if(f)f.hidden=false}},9000);</script>
 </body>
