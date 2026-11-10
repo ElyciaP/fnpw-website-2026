@@ -70,7 +70,7 @@ COMPONENTS = [
     ('Accordions (details)', lambda s, f: '<details' in s, 'Native details and summary', 'Core Details block'),
     ('Animated counters', lambda s, f: 'data-count=' in s, 'main.js animates [data-count]', 'Keep in main.js; data-count carried on the converted markup'),
     ('HubSpot form embed', lambda s, f: 'hsforms.net' in s, 'HubSpot embed script (portal 441704788, region ap1)',
-     'Swap for the matching Formidable form (live forms are Formidable)'),
+     'Keep the HubSpot embed in a Custom HTML block or small fnpw/hubspot-form block (live pages use the same HubSpot forms)'),
     ('Video embed', lambda s, f: 'youtube' in s and '<iframe' in s, 'YouTube no-cookie iframe', 'Core Embed block'),
     ('Podcast embed', lambda s, f: 'omny.fm' in s, 'Omny iframe', 'Core Embed or Custom HTML'),
     ('Google map embed', lambda s, f: 'google.com/maps' in s, 'Google Maps iframe', 'Custom HTML block'),
@@ -157,7 +157,7 @@ A('- **Partials**: `partials/header.html` and `partials/footer.html`, injected i
 A(f'- **Scripts**: `assets/js/main.js` on every page, four feature scripts, and inline component scripts on {sum(1 for r in rows if r["inline_js_bytes"])} pages.')
 A('- **Fonts are local.** Sora and Figtree variable woff2 files sit in `assets/fonts/` with `@font-face` in global.css, and no page links Google Fonts. Caveat is gone: `--ff-h` now points at Figtree.')
 A(f'- **Images**: {img_hosts["fnpw.org.au"]} references to the live media library (fnpw.org.au/wp-content/uploads), {img_hosts["(local assets/)"]} to local files, {other_hosts} to other hosts.')
-A(f'- **Forms**: HubSpot embeds on {len(comp_pages["HubSpot form embed"])} pages. Live runs these forms through Formidable (audit, 10 November), so each embed needs its Formidable form.')
+A(f'- **Forms**: HubSpot embeds on {len(comp_pages["HubSpot form embed"])} pages. Live pages embed the same HubSpot forms (admin audit, 10 November), so the embeds carry over as they are.')
 A('')
 A('## Pages')
 A('')
@@ -243,7 +243,7 @@ for name, _, how, wp in COMPONENTS:
 A('')
 A('## Forms')
 A('')
-A('HubSpot form IDs in the static build and the pages they sit on. Task 8 matches each to its live Formidable form ID and thank-you redirect.')
+A('HubSpot form IDs in the static build and the pages they sit on. The admin audit at the end compares them with live.')
 A('')
 A('| HubSpot form ID | Pages |')
 A('|---|---|')
@@ -278,7 +278,7 @@ A('')
 A('## Flags for Ely')
 A('')
 A(f'- **Page count.** The handover says 121 pages. The repo has {len(rows)}: {types["article"]} articles and {len(rows) - types["article"]} site, project and grant pages. How the articles import is a page-map decision.')
-A('- **Forms.** The static build embeds HubSpot forms while live runs Formidable, so the import swaps each embed for its Formidable form using the IDs from task 8.')
+A('- **Forms.** Live pages use the same HubSpot forms as the static build, so nothing is swapped. Three Formidable forms are still on live pages; see the admin audit.')
 A('- **Old WordPress scaffold.** `wp/` (September) holds an earlier block theme and plugin. Its fnpw-core registers its own `project` post type and taxonomies, which would clash with Template Required Plugins. Decision pending on whether to build fresh in `wordpress/` and borrow from it.')
 A('- **CLAUDE.md is out of date in two places.** It says images come from Unsplash (none do now) and lists Caveat as a typeface (removed).')
 A('<!-- /@generated -->')

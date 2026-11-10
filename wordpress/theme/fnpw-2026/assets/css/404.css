@@ -1,0 +1,9 @@
+/* Lifted verbatim from the <style> block of 404.html in the static build (only asset paths changed).
+   Do not edit design values here: change the static source and re-run the lift. */
+/* Utility page in the sand thank-you style; no photographic hero */
+.nf-hero{background:var(--sand);padding:var(--hero-top) 0 var(--hero-bot)}
+.nf-hero .breadcrumb{display:flex;gap:.5em;flex-wrap:wrap;font-size:.82rem;color:var(--stone);margin-bottom:var(--sp-3)}
+.nf-hero .breadcrumb a{color:var(--euc-deep)}
+.nf-hero h1{margin:.7rem 0 1rem;max-width:18ch}
+.nf-hero .lede{max-width:720px}
+.nf-links{display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center}

@@ -51,7 +51,7 @@ PAGES = {
     '/donate-land/': ('donate-land.html', 'replace', '', 'page', '', ''),
     '/workplace-giving/': ('workplace-giving.html', 'replace', '', 'page', '', ''),
     '/paws-magazine/': ('paws-magazine.html', 'replace', '', 'page', '', 'Listed as unmatched in the handover; the build has this page'),
-    '/mitigating-effects-environmental-change/': ('mitigating-effects-environmental-change.html', 'replace', '', 'page', '', 'Listed as unmatched in the handover; the build has this page'),
+    '/mitigating-effects-environmental-change/': ('article-mitigating-effects-environmental-change.html', 'replace', '', 'page-article', 'D6', 'Decided 10 Nov: the eBook becomes an article with a free PDF download and no form; stays at the same URL in the article layout'),
     '/why-your-support-is-needed/': ('why-your-support-is-needed.html', 'replace', '', 'page', '', ''),
     '/how-your-contributions-help/': ('how-your-contributions-help.html', 'replace', '', 'page', '', ''),
     '/reconciliation-action-plan/': ('reconciliation-action-plan.html', 'replace', '', 'page', '', ''),

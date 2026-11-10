@@ -37,4 +37,6 @@ Five pages the handover listed as unmatched do have a home: /paws-magazine/, /mi
 - **D8.** Monthly giving goes to habitat-heroes.fnpw.org.au, Donate to bush.fnpw.org.au and Give a Tree to gift-a-tree.fnpw.org.au.
 - **Old wp/ folder.** Build fresh in wordpress/ and borrow what fits; wp/ stays untouched until after launch.
 
-Still open: whether the contractor call at /project/form-test/ has closed, and Reef's answer on /welcome-to-fnpw/ and /thank-you-volunteer-for-impact/ (D4).
+- **Contractor call.** Closed: /project/form-test/ and /test-form/ retire, redirecting to /projects/ and the homepage.
+
+Still open: Reef's answer on /welcome-to-fnpw/ and /thank-you-volunteer-for-impact/ (D4).

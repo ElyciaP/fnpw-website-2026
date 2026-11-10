@@ -1,17 +1,17 @@
 <!-- @generated: written by build_inventory.py; edit the script, not this block -->
 # Repo inventory
 
-Generated 10 November 2026 from commit `a43b9ae4` (2026-11-09). Per-page detail is in `inventory-pages.csv`. Re-run `python3 wordpress/migration/build_inventory.py` after changes to the static build; the admin audit section at the end is kept.
+Generated 10 November 2026 from commit `23718e97` (2026-11-10). Per-page detail is in `inventory-pages.csv`. Re-run `python3 wordpress/migration/build_inventory.py` after changes to the static build; the admin audit section at the end is kept.
 
 ## Summary
 
-- **297 HTML pages**: 166 article, 85 project, 22 content, 5 volunteering state, 4 hub, 3 legal, 3 pillar, 3 thank-you, 3 grant programme, 2 utility, 1 home.
-- **Design layer**: `assets/css/global.css` (75 KB, 59 tokens) plus a page `<style>` block on most pages (1294 KB in total).
+- **297 HTML pages**: 167 article, 85 project, 21 content, 5 volunteering state, 4 hub, 3 legal, 3 pillar, 3 thank-you, 3 grant programme, 2 utility, 1 home.
+- **Design layer**: `assets/css/global.css` (75 KB, 59 tokens) plus a page `<style>` block on most pages (1298 KB in total).
 - **Partials**: `partials/header.html` and `partials/footer.html`, injected into every page by `tools/sync.py` between `@header` and `@footer` markers.
-- **Scripts**: `assets/js/main.js` on every page, four feature scripts, and inline component scripts on 191 pages.
+- **Scripts**: `assets/js/main.js` on every page, four feature scripts, and inline component scripts on 192 pages.
 - **Fonts are local.** Sora and Figtree variable woff2 files sit in `assets/fonts/` with `@font-face` in global.css, and no page links Google Fonts. Caveat is gone: `--ff-h` now points at Figtree.
-- **Images**: 1483 references to the live media library (fnpw.org.au/wp-content/uploads), 1196 to local files, 19 to other hosts.
-- **Forms**: HubSpot embeds on 18 pages. Live runs these forms through Formidable (audit, 10 November), so each embed needs its Formidable form.
+- **Images**: 1486 references to the live media library (fnpw.org.au/wp-content/uploads), 1197 to local files, 19 to other hosts.
+- **Forms**: HubSpot embeds on 18 pages. Live pages embed the same HubSpot forms (admin audit, 10 November), so the embeds carry over as they are.
 
 ## Pages
 
@@ -42,7 +42,6 @@ Generated 10 November 2026 from commit `a43b9ae4` (2026-11-09). Per-page detail 
 | in-the-news.html | hub | In the news | nw-hero, sec, pj-back |  |
 | index.html | home | Foundation for National Parks & Wildlife | hx-hero, sec.door, hx-gat, sec.sand.hx-pils, sec.dark.hx-impact, sec.hx-rail-sec, hx-pt, sec.sand.hx-story, sec.strip.hx-news | Project slider (homepage), Animated counters |
 | media-enquiry.html | content | Media Enquiries | pj-hero.pj-hero-split, me-sec | HubSpot form embed |
-| mitigating-effects-environmental-change.html | content | Mitigating the effects of environmental change eBook | pj-hero, sec |  |
 | newsletter-thank-you.html | thank-you | Thank you for signing up | sec |  |
 | newsletters-sign-up.html | content | Newsletter Sign-up | pj-hero, sec | HubSpot form embed |
 | our-impact.html | content | Our Impact | ip-hero, ip-jump, sec.ip-results, sec.ip-trees, sec, sec.sand, sec.ip-partners, sec.ip-close | Load more list |
@@ -91,13 +90,13 @@ Section sequences inside `<main>`, most common first:
 |---|---|
 | 3 | pj-hero → sec → pj-back → sec.dark |
 
-### Articles (166)
+### Articles (167)
 
 Section sequences inside `<main>`, most common first:
 
 | Pages | Sequence |
 |---|---|
-| 166 | article.ed-art → sec.sand.ed-more → pj-back → sec.dark |
+| 167 | article.ed-art → sec.sand.ed-more → pj-back → sec.dark |
 
 ## Partials
 
@@ -181,12 +180,12 @@ Classes on the direct children of `<main>`, with the number of pages using each 
 | Class | Pages | Defined in |
 |---|---|---|
 | `sec` | 279 | global.css, page |
-| `dark` | 261 | global.css |
-| `pj-back` | 253 | global.css |
-| `sand` | 203 | global.css |
-| `ed-art` | 166 | no rule found (modifier or script hook) |
-| `ed-more` | 166 | page |
-| `pj-hero` | 93 | global.css, page |
+| `dark` | 262 | global.css |
+| `pj-back` | 254 | global.css |
+| `sand` | 204 | global.css |
+| `ed-art` | 167 | no rule found (modifier or script hook) |
+| `ed-more` | 167 | page |
+| `pj-hero` | 92 | global.css, page |
 | `pj-band` | 57 | global.css |
 | `pj-credit` | 22 | global.css |
 | `alt` | 20 | global.css, page |
@@ -333,7 +332,7 @@ The treatment column is the build-spec proposal, confirmed as each one is built.
 | Project grid with pillar filter | 4: growing-national-parks, healing-the-land, projects, saving-species | Inline script filters #pgrid tiles by state and type | Custom block fnpw/project-grid, server-rendered tiles, filter script enqueued only where used |
 | Projects page tiles and filters | 1: projects | Inline script on projects.html (popup data retired Nov 2026, cards link to project pages) | Part of fnpw/project-grid |
 | Stories filter, sort and paging | 1: articles | assets/js/articles.js over .art-grid tiles | Core Query Loop for posts plus a small filter script, or a custom block if the sort must stay client-side |
-| Article reading bar | 166: article-10000-native-give-away-trees-and-shrubs-hit-the-ground, article-2022-impact-report, article-2023-foundation-for-national-parks-wildlife-impact-report, article-30765, article-80000-additional-trees-to-be-planted-at-friends-of-the-koala-nursery-to-support-koala-population and 161 more | Inline script adds a progress bar to the .ed article body | One script in the single post template, not per post |
+| Article reading bar | 167: article-10000-native-give-away-trees-and-shrubs-hit-the-ground, article-2022-impact-report, article-2023-foundation-for-national-parks-wildlife-impact-report, article-30765, article-80000-additional-trees-to-be-planted-at-friends-of-the-koala-nursery-to-support-koala-population and 162 more | Inline script adds a progress bar to the .ed article body | One script in the single post template, not per post |
 | Volunteer sites map | 5: corporate-volunteering-nsw, corporate-volunteering-qld, corporate-volunteering-sa, corporate-volunteering-vic, corporate-volunteering-wa | Inline script toggles state map pins and the site list | Custom block fnpw/volunteer-map with data/volunteer-sites.json |
 | Where-we-run state tabs | 1: volunteer | Inline tab switcher on volunteer.html | Custom block fnpw/tabs (shared with the other tab sets) |
 | Photo carousel | 1: volunteer | assets/js/carousel.js, scroll-snap track #volTrack, auto-advance | Pattern with carousel.js enqueued where the pattern is used |
@@ -350,22 +349,23 @@ The treatment column is the build-spec proposal, confirmed as each one is built.
 | Section snap | 1: about | assets/js/snap.js settles onto section edges | Enqueue snap.js on the About page only |
 | Accordions (details) | 5: bequests, donate-land, faqs, government-partnerships, volunteer | Native details and summary | Core Details block |
 | Animated counters | 1: index | main.js animates [data-count] | Keep in main.js; data-count carried on the converted markup |
-| HubSpot form embed | 18: articles, bequests, contact, corporate-volunteering-nsw, corporate-volunteering-qld and 13 more | HubSpot embed script (portal 441704788, region ap1) | Swap for the matching Formidable form (live forms are Formidable) |
+| HubSpot form embed | 18: articles, bequests, contact, corporate-volunteering-nsw, corporate-volunteering-qld and 13 more | HubSpot embed script (portal 441704788, region ap1) | Keep the HubSpot embed in a Custom HTML block or small fnpw/hubspot-form block (live pages use the same HubSpot forms) |
 | Video embed | 1: about | YouTube no-cookie iframe | Core Embed block |
 | Podcast embed | 1: article-koala-facts | Omny iframe | Core Embed or Custom HTML |
 | Google map embed | 1: contact | Google Maps iframe | Custom HTML block |
 
 ## Forms
 
-HubSpot form IDs in the static build and the pages they sit on. Task 8 matches each to its live Formidable form ID and thank-you redirect.
+HubSpot form IDs in the static build and the pages they sit on. The admin audit at the end compares them with live.
 
 | HubSpot form ID | Pages |
 |---|---|
 | `5275a663-85fc-43d4-8400-b17d34ece7fa` | corporate-volunteering-nsw, corporate-volunteering-qld, corporate-volunteering-sa, corporate-volunteering-vic, corporate-volunteering-wa, volunteer |
 | `be19c736-6c95-4159-8245-e7b32af6dba3` | articles, newsletters-sign-up, projects, reports |
 | `368738b1-f478-4c8b-93ac-484ef27a6540` | government-partnerships, partner, partner-invest |
-| `e33c8c8b-1d45-4477-be3e-8e5ca7b3e82b` | contact, donate-land |
 | `51106005-f5bb-4960-a900-2250a60244a0` | bequests |
+| `e33c8c8b-1d45-4477-be3e-8e5ca7b3e82b` | contact |
+| `39b8240c-ac28-4012-b9b7-30e589d105f4` | donate-land |
 | `eca5e898-c9f5-429d-aa0f-1f4986c079c1` | fundraising-with-fnpw |
 | `e9e550ed-025f-474c-b214-a5cb3c0511eb` | media-enquiry |
 
@@ -381,7 +381,7 @@ HubSpot form IDs in the static build and the pages they sit on. Task 8 matches e
 - `assets/fonts`: 2 files, 0.1 MB (Sora and Figtree woff2)
 - `assets/docs`: 1 files, 1.8 MB (PDFs)
 - Repo root: favicon.svg, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png and site.webmanifest go into the theme. robots.txt, sitemap.xml, feed.xml, llms.txt and llms-full.txt come from `tools/meta.py --site`; WordPress and Yoast produce their own at launch.
-- Image hosts: fnpw.org.au (1483), (local assets/) (1196), images.theconversation.com (16), counter.theconversation.com (2), cdnc.heyzine.com (1).
+- Image hosts: fnpw.org.au (1486), (local assets/) (1197), images.theconversation.com (16), counter.theconversation.com (2), cdnc.heyzine.com (1).
 
 ## Data and generators
 
@@ -392,12 +392,69 @@ HubSpot form IDs in the static build and the pages they sit on. Task 8 matches e
 
 ## Flags for Ely
 
-- **Page count.** The handover says 121 pages. The repo has 297: 166 articles and 131 site, project and grant pages. How the articles import is a page-map decision.
-- **Forms.** The static build embeds HubSpot forms while live runs Formidable, so the import swaps each embed for its Formidable form using the IDs from task 8.
+- **Page count.** The handover says 121 pages. The repo has 297: 167 articles and 130 site, project and grant pages. How the articles import is a page-map decision.
+- **Forms.** Live pages use the same HubSpot forms as the static build, so nothing is swapped. Three Formidable forms are still on live pages; see the admin audit.
 - **Old WordPress scaffold.** `wp/` (September) holds an earlier block theme and plugin. Its fnpw-core registers its own `project` post type and taxonomies, which would clash with Template Required Plugins. Decision pending on whether to build fresh in `wordpress/` and borrow from it.
 - **CLAUDE.md is out of date in two places.** It says images come from Unsplash (none do now) and lists Caveat as a typeface (removed).
 <!-- /@generated -->
 
 ## Admin audit (task 8)
 
-Added once Ely is logged in to wp-admin.
+Read on 10 November from wp-admin (Ely logged in, nothing changed) and from the theme and plugin files downloaded to Documents/fnpw-live-reference.
+
+### Tracking
+
+The snippets are theme templates (`fnpw/resources/views/partials/`) that print values held in ACF Settings: General. They disappear when the theme switches, so FNPW Core has to output them.
+
+| Snippet | Value on live | Where it prints |
+|---|---|---|
+| Google Tag Manager | GTM-K2P27RG | head, plus noscript after the body tag |
+| Meta pixel | 2023665144313964 | head |
+| Hotjar | 1708422 | head |
+| Universal Analytics | empty | not printed |
+| Head scripts, footer scripts | empty | not printed |
+| HubSpot tracking | from the HubSpot plugin | survives the switch |
+
+The two GA4 properties and two Google Ads IDs are not in the page source. They load through the Tag Manager container, so they carry over with GTM and their clean-up is a Tag Manager job for Reef. A Google Maps API key is also stored in Settings: General for the old map; the new build only needs it if the project map uses Google Maps.
+
+### Forms
+
+Live pages already use HubSpot forms, embedded through Elementor, with the same form IDs as the static build. The 14 Formidable forms are mostly history.
+
+| Live page | Form on live | Static build |
+|---|---|---|
+| Home, newsletter page, Ways to Get Involved | HubSpot be19c736 | Same form |
+| Contact | HubSpot e33c8c8b | Same |
+| Bequest | HubSpot 51106005 | Same |
+| Corporate partnerships | HubSpot 368738b1 | Same |
+| Corporate volunteering and the five city pages | HubSpot 5275a663 | Same |
+| Fundraising | HubSpot eca5e898 | Same |
+| Media enquiry | HubSpot e9e550ed | Same |
+| Donate land | HubSpot 39b8240c | **Different:** the build uses the Contact form e33c8c8b |
+| Workplace giving, /tech4forests/ | Formidable 4 (Corporate Contact Us) | No form on workplace-giving.html |
+| eBook page | Formidable 17 (Ebook submission) | No form on the page |
+| /test-form/, /project/form-test/ | Formidable 12 (contractor expression of interest) | Not in the build |
+
+Formidable forms and entries: 2 Donation (3), 3 Contact Us (1,567), 4 Corporate Contact Us (366), 5 Newsletter (985), 6 Bequest Contact Us (20), 7 Fundraising Contact Us (14), 8 Giving Circle Contact Us (5), 9 Media Enquiry (10), 10 Newsletter (5,230), 12 Contractor expression of interest (1), 16 Ebook (1), 17 Ebook submission (25), 18 Corporate Volunteering Contact Us (354), 19 Newsletter Sidebar (16).
+
+Not yet read: the confirmation settings for Formidable forms 4, 12 and 17, and the thank-you redirects for the HubSpot forms, which are set inside HubSpot.
+
+### ACF field groups (29)
+
+Saved as JSON by Template Required Plugins in `acf-json/field-groups/`.
+
+- **Project fields:** `Single - Project` holds `project_details` (start_year, project_latitude, project_longitude, project_state, project_focusarea, first_nations_). `Single - Project/Grant` holds `flexible_sections` with the layouts project_copy, project_overview, project_news, related_projects, project_gallery, project_video and decor_spacer. `Single - Header` (posts, projects, grants, donations) holds banner_image, title_override, subtitle_optional and excerpt.
+- **Per-page groups:** Home, About Us, Contact Us, Contributions Help, Corporate Partners, Donations, Donations Listing, FAQs, Get Involved, Grants, News, Projects, Support Needed and Template - Flexible, each tied to a Sage page template.
+- **Sections:** Hero, Heritage Map.
+- **Settings (options pages):** General, Header, Footer.
+- **Others:** Single - Donation, Single - Grant/Donation, Menu - Custom Fields, Widget - Announcement, Widget - Latest News, Attachments - Link, group with link.
+
+### Template Required Plugins
+
+- Registers `project`, `grant` and `donation` with the slugs /project/, /grant/ and /donation/, supporting title, editor, thumbnail and revisions, plus the taxonomies at projects/state, projects/focus_area, projects/year, grants/category and donations/category.
+- Two shortcodes, `[mydate]` and `[assetpath]`, and two widgets (announcement, latest news).
+- It also sets the ACF JSON save and load path, so the field groups stay available after the theme switch.
+
+### Menus
+
+Two menus exist: Primary Navigation Desktop (assigned to both the desktop and mobile locations) and Primary Navigation Mobile (unassigned). The footer links come from ACF Settings: Footer, not a menu. The new theme builds its menus from the static header and footer.

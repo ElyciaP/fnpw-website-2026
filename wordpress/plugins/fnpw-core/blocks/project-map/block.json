@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "fnpw/project-map",
+	"version": "0.1.0",
+	"title": "Project map",
+	"category": "widgets",
+	"icon": "location-alt",
+	"description": "Map of Australia with a pin for every project. Each pin opens a card that links to the project.",
+	"keywords": [ "map", "projects", "pins" ],
+	"textdomain": "fnpw-core",
+	"attributes": {},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"align": false,
+		"anchor": false,
+		"customClassName": false,
+		"autoRegister": true
+	},
+	"style": "fnpw-project-map",
+	"viewScript": "fnpw-project-map-view",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,60 @@
+{
+    "key": "group_fnpw_core_project_extras",
+    "title": "Project - Pillar and partner credit",
+    "fields": [
+        {
+            "key": "field_fnpw_core_pillar",
+            "label": "Pillar",
+            "name": "pillar",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "The pillar this project sits under. It sets the label and colour on the project page, cards and map.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "choices": {
+                "parks": "Growing National Parks",
+                "species": "Saving Species",
+                "healing": "Healing the Land"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_fnpw_core_partner_credit",
+            "label": "Partner credit line",
+            "name": "partner_credit",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "One line crediting the partners or funders of this project. List Traditional Custodians first. Anything naming a partner needs their sign-off before publishing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            { "param": "post_type", "operator": "==", "value": "project" }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Added by FNPW Core. Fields the new project template needs that the live \"Single - Project\" group does not have.",
+    "show_in_rest": 1,
+    "modified": 1794268800
+}

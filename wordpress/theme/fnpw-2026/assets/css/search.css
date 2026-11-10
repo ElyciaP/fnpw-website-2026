@@ -1,0 +1,17 @@
+/* Lifted verbatim from the <style> block of search.html in the static build (only asset paths changed).
+   Do not edit design values here: change the static source and re-run the lift. */
+.srch-hero h1{max-width:10ch}
+.srch-hero::after{background:linear-gradient(97deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.78) 26%,rgba(15,49,50,.22) 44%,rgba(15,49,50,0) 60%)}
+@media(max-width:760px){.srch-hero::after{background:linear-gradient(180deg,rgba(15,49,50,.15) 0%,rgba(15,49,50,.35) 40%,rgba(15,49,50,.9) 100%)}}
+.srch-f{max-width:720px}
+.srch-l{display:block;font-family:var(--ff-d);font-size:1.25rem;font-weight:600;color:var(--euc-deep);margin-bottom:.8rem}
+.srch-row{display:flex;gap:.6rem}
+.srch-f .srch{max-width:none;flex:1;font-size:1.15rem;min-height:58px;padding:.9rem 1.2rem}
+.srch-b{flex:none;min-height:58px;padding:0 2rem;font:600 1.1rem var(--ff-d);color:#fff;background:var(--euc);border:2px solid var(--euc);cursor:pointer}
+.srch-b:hover{background:var(--euc-deep);border-color:var(--euc-deep)}
+.srch-b:focus-visible,.srch-f .srch:focus-visible{outline:3px solid var(--wattle);outline-offset:2px}
+.srch-n{margin:1.2rem 0 0;font-size:.95rem;color:var(--stone)}
+.srch-res{max-width:720px;font-size:1.08rem}
+.srch-res li{padding:.7rem 0;border-bottom:1px solid var(--rule)}
+.srch-res a{color:var(--euc-deep);font-weight:600}
+@media(max-width:560px){.srch-row{flex-direction:column}.srch-b{width:100%}}

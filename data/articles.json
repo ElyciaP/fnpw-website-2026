@@ -9532,6 +9532,87 @@
   ]
  },
  {
+  "slug": "mitigating-effects-environmental-change",
+  "title": "Mitigating the effects of environmental change on Australia’s fragile ecosystem",
+  "eyebrow": "eBook",
+  "date": "2023-04-20",
+  "place": "",
+  "pillar": "species",
+  "standfirst": "How to make proactive contributions to reduce the impacts of environmental change beyond 2023",
+  "hero": "assets/img/newsletter-hero-forest.jpg",
+  "hero_alt": "Looking straight down from above into sunlit eucalypt forest and tree ferns, with a dirt track along one edge",
+  "hero_w": 1600,
+  "hero_h": 1066,
+  "description": "Download our free eBook on collaborative strategies to reduce the impacts of environmental change on Australia’s ecosystems.",
+  "credit": "tsvibrav",
+  "blocks": [
+   {
+    "type": "lead",
+    "flow": [
+     {
+      "p": "Despite its remarkable resilience, the Australian ecosystem is being pushed to its limits by the persistent impact of human-induced environmental change. Every year, the country is struck by catastrophic natural disasters, including devastating floods, damaging cyclones, record-breaking droughts, and raging bushfires , wreaking havoc on its precious landscape."
+     },
+     {
+      "p": "Although we are approaching the point of no return to halt the detrimental effects of environmental change, there is still hope. We can make a difference if we take swift action."
+     },
+     {
+      "p": "Discover how to save Australia's precious ecosystem from environmental catastrophe in the Foundation for National Parks &amp; Wildlife's (FNPW) latest eBook, Mitigating the effects of environmental change on Australia's fragile ecosystem, that outlines collaborative strategies to combat environmental change, including:"
+     },
+     {
+      "ul": [
+       "Prioritising a whole of system approach",
+       "Coordinating funding and resourcing for projects, and",
+       "Establishing short term and long-term goals."
+      ]
+     },
+     {
+      "p": "Take action today to create a brighter future: Download the eBook and learn how you can make a meaningful and proactive contribution in 2023 and beyond."
+     }
+    ]
+   },
+   {
+    "type": "wide",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/05/FNP1009_e-book_thumbnail_shadow.jpg",
+    "alt": "Ebook cover Mitigating the effects of environmental change on Australia's fragile ecosystem",
+    "caption": ""
+   },
+   {
+    "type": "text",
+    "flow": [
+     {
+      "p": "<a class=\"btn-p\" href=\"https://fnpw.org.au/wp-content/uploads/2023/05/Mitigating-the-effects-of-environmental-change.pdf\" target=\"_blank\" rel=\"noopener\">Download the eBook (PDF)</a>"
+     }
+    ]
+   }
+  ],
+  "related": [
+   {
+    "href": "article-monitoring-surveying-greater-gliders-for-future.html",
+    "date": "2023-08-16",
+    "title": "Monitoring &amp; Surveying Greater Gliders for future",
+    "blurb": "On a cold May morning, Wildlife Preservation Society of Queensland’s staff Matt Cecil &amp; Wayne Cameron set out along the trails in White Rock Spring Mountain Reserve in the Springfield Lakes...",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/08/nb675-1024x768.jpg",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-latest-news-kangaroo-island-project.html",
+    "date": "2023-06-26",
+    "title": "FNPW supports the KI Native Plant Nursery",
+    "blurb": "The Kangaroo Island Landscape Board is excited to announce it has recently received $77,000 of funding from the Foundation for National Parks &amp; Wildlife to support the KI Native Plant Nursery and...",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/06/Kangaroo-Island-Plant-Nursery-Manager.webp",
+    "cta": "Read the story"
+   },
+   {
+    "href": "article-namabundaplanting.html",
+    "date": "2023-04-20",
+    "title": "Namabunda Bursts Into Life With FNPW Support",
+    "blurb": "The 32 Ha property on Alstonville plateau, owned by the Bundjalung Tribal Society, called “Namabunda” is bursting with life and diversity thanks to support from the FNPW.",
+    "img": "https://fnpw.org.au/wp-content/uploads/2023/04/img_1119.jpg",
+    "cta": "Read the story"
+   }
+  ]
+ },
+ {
   "slug": "monitoring-surveying-greater-gliders-for-future",
   "title": "Monitoring &amp; Surveying Greater Gliders for future",
   "eyebrow": "Story",
@@ -10253,7 +10334,7 @@
       "p": "In our latest eBook, <em>Mitigating the effects of environmental change on Australia’s fragile ecosystem</em>, the Foundation for National Parks &amp; Wildlife (FNPW) discuss how we can help change the course of environmental change."
      },
      {
-      "p": "<strong>Download now:<br> </strong><strong><a href=\"mitigating-effects-environmental-change.html\">Mitigating the effects of environmental change on Australia’s fragile ecosystem. How to take action now for the future</a></strong>"
+      "p": "<strong>Download now:<br> </strong><strong><a href=\"article-mitigating-effects-environmental-change.html\">Mitigating the effects of environmental change on Australia’s fragile ecosystem. How to take action now for the future</a></strong>"
      },
      {
       "p": "<strong>Key takeaway #1: Prioritise a whole-of-system approach</strong><br> Protecting and restoring biodiversity is crucial to ensure that appropriate species thrive in their natural habitats. The relationships between fauna and biodiversity values are vital in preserving ecological balance. To sustain Australia’s fragile ecosystems, it is essential to protect and preserve native trees and plants that sequester carbon and help reduce the impact of environmental change."
@@ -10298,7 +10379,7 @@
       ]
      },
      {
-      "p": "<strong>Take action today to create a brighter future<br> </strong>Don’t wait to take action – <strong><a href=\"mitigating-effects-environmental-change.html\">download the eBook today</a> </strong>and discover how you can make a meaningful and proactive contribution to creating a brighter future for Australia’s ecosystem."
+      "p": "<strong>Take action today to create a brighter future<br> </strong>Don’t wait to take action – <strong><a href=\"article-mitigating-effects-environmental-change.html\">download the eBook today</a> </strong>and discover how you can make a meaningful and proactive contribution to creating a brighter future for Australia’s ecosystem."
      },
      {
       "p": "For more information on how environmental organisations, such as the Foundation for National Parks &amp; Wildlife (FNPW), can help governments and businesses make a more substantial contribution to environmental protection and sustainability, contact the team today."

@@ -189,7 +189,7 @@ live_url,live_type,live_lastmod,static_file,wp_url,wp_post_type,wp_template,acti
 /tech4forests/,page,2023-03-21,,,,,redirect,/corporate-partnerships/,D3,2022 corporate fundraising landing page (COP15)
 /news/,page,2023-04-11,articles.html,/news/,page,home,replace,,,Posts page under Settings > Reading; the template renders the Stories index
 /grants/,page,2023-04-18,grants.html,/grants/,page,page,replace,,,
-/mitigating-effects-environmental-change/,page,2023-06-07,mitigating-effects-environmental-change.html,/mitigating-effects-environmental-change/,page,page,replace,,,Listed as unmatched in the handover; the build has this page
+/mitigating-effects-environmental-change/,page,2023-06-07,article-mitigating-effects-environmental-change.html,/mitigating-effects-environmental-change/,page,page-article,replace,,D6,Decided 10 Nov: the eBook becomes an article with a free PDF download and no form; stays at the same URL in the article layout
 /tax-deductible-charity-donation/,page,2023-06-26,,,,,redirect,/faqs/,D3,Its tax FAQs were ported into the FAQ page
 /thank-you-volunteer-form/,page,2024-03-20,thank-you-volunteer-form.html,/thank-you-volunteer-form/,page,page,replace,,,Thank-you page; keep the URL so the volunteering form redirect still works
 /how-your-contributions-help/,page,2024-11-11,how-your-contributions-help.html,/how-your-contributions-help/,page,page,replace,,,

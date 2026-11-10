@@ -1,0 +1,499 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": false,
+    "useRootPaddingAwareAlignments": false,
+    "layout": {
+      "contentSize": "38rem",
+      "wideSize": "1240px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "custom": false,
+      "customGradient": false,
+      "customDuotone": false,
+      "gradients": [],
+      "duotone": [],
+      "background": true,
+      "text": true,
+      "link": false,
+      "palette": [
+        {
+          "slug": "eucalyptus",
+          "name": "Eucalyptus",
+          "color": "#0F7768"
+        },
+        {
+          "slug": "eucalyptus-deep",
+          "name": "Eucalyptus Deep",
+          "color": "#0F3132"
+        },
+        {
+          "slug": "eucalyptus-mid",
+          "name": "Eucalyptus Mid",
+          "color": "#51B593"
+        },
+        {
+          "slug": "eucalyptus-soft",
+          "name": "Eucalyptus Soft",
+          "color": "#C6EBCA"
+        },
+        {
+          "slug": "waratah",
+          "name": "Waratah",
+          "color": "#C23747"
+        },
+        {
+          "slug": "waratah-deep",
+          "name": "Waratah Deep",
+          "color": "#8C1422"
+        },
+        {
+          "slug": "waratah-mid",
+          "name": "Waratah Mid",
+          "color": "#ED4E61"
+        },
+        {
+          "slug": "waratah-soft",
+          "name": "Waratah Soft",
+          "color": "#FFADB7"
+        },
+        {
+          "slug": "wattle",
+          "name": "Wattle",
+          "color": "#C4A927"
+        },
+        {
+          "slug": "wattle-deep",
+          "name": "Wattle Deep",
+          "color": "#9F8506"
+        },
+        {
+          "slug": "wattle-mid",
+          "name": "Wattle Mid",
+          "color": "#E1CD4A"
+        },
+        {
+          "slug": "wattle-soft",
+          "name": "Wattle Soft",
+          "color": "#F8EEA9"
+        },
+        {
+          "slug": "bark",
+          "name": "Bark",
+          "color": "#AB7341"
+        },
+        {
+          "slug": "bark-mid",
+          "name": "Bark Mid",
+          "color": "#85735E"
+        },
+        {
+          "slug": "bark-text",
+          "name": "Bark Text",
+          "color": "#80522A"
+        },
+        {
+          "slug": "blue",
+          "name": "Reef Blue",
+          "color": "#2C4B89"
+        },
+        {
+          "slug": "blue-deep",
+          "name": "Reef Blue Deep",
+          "color": "#202F54"
+        },
+        {
+          "slug": "blue-mid",
+          "name": "Reef Blue Mid",
+          "color": "#5D7BC1"
+        },
+        {
+          "slug": "blue-soft",
+          "name": "Reef Blue Soft",
+          "color": "#A8C4F3"
+        },
+        {
+          "slug": "terracotta",
+          "name": "Red Soil",
+          "color": "#B64629"
+        },
+        {
+          "slug": "terracotta-deep",
+          "name": "Red Soil Deep",
+          "color": "#8E3821"
+        },
+        {
+          "slug": "terracotta-mid",
+          "name": "Red Soil Bright",
+          "color": "#E26539"
+        },
+        {
+          "slug": "terracotta-soft",
+          "name": "Red Soil Soft",
+          "color": "#FFAA8A"
+        },
+        {
+          "slug": "purple",
+          "name": "Hovea",
+          "color": "#703985"
+        },
+        {
+          "slug": "purple-deep",
+          "name": "Hovea Deep",
+          "color": "#47243A"
+        },
+        {
+          "slug": "purple-mid",
+          "name": "Hovea Mid",
+          "color": "#B790DE"
+        },
+        {
+          "slug": "purple-soft",
+          "name": "Hovea Soft",
+          "color": "#DBD1EC"
+        },
+        {
+          "slug": "soil",
+          "name": "Soil",
+          "color": "#371F1D"
+        },
+        {
+          "slug": "ink",
+          "name": "Soil Deep (ink)",
+          "color": "#241914"
+        },
+        {
+          "slug": "soil-mid",
+          "name": "Soil Mid",
+          "color": "#956F6F"
+        },
+        {
+          "slug": "soil-soft",
+          "name": "Soil Soft",
+          "color": "#CBABAB"
+        },
+        {
+          "slug": "stone",
+          "name": "Stone",
+          "color": "rgba(36,25,20,.74)"
+        },
+        {
+          "slug": "cream",
+          "name": "Cream",
+          "color": "#FAF6F2"
+        },
+        {
+          "slug": "sand",
+          "name": "Sand",
+          "color": "#EEE8E1"
+        },
+        {
+          "slug": "rule",
+          "name": "Rule",
+          "color": "#E5DFD3"
+        },
+        {
+          "slug": "white",
+          "name": "White",
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "customFontSize": false,
+      "fluid": false,
+      "lineHeight": false,
+      "dropCap": false,
+      "letterSpacing": false,
+      "textDecoration": false,
+      "textTransform": false,
+      "fontStyle": false,
+      "fontWeight": false,
+      "fontFamilies": [
+        {
+          "slug": "display",
+          "name": "Sora (display)",
+          "fontFamily": "'Sora',sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Sora",
+              "fontWeight": "100 800",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/sora-variable.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "body",
+          "name": "Figtree (body)",
+          "fontFamily": "'Figtree',sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Figtree",
+              "fontWeight": "300 900",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/figtree-variable.woff2"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "xs",
+          "name": "Extra small",
+          "size": ".78rem"
+        },
+        {
+          "slug": "sm",
+          "name": "Small",
+          "size": ".9rem"
+        },
+        {
+          "slug": "base",
+          "name": "Body",
+          "size": "17px"
+        },
+        {
+          "slug": "lede",
+          "name": "Lede",
+          "size": "clamp(1.08rem,1.4vw,1.3rem)"
+        },
+        {
+          "slug": "h4",
+          "name": "Heading 4",
+          "size": "clamp(1rem,1.3vw,1.15rem)"
+        },
+        {
+          "slug": "h3",
+          "name": "Heading 3",
+          "size": "clamp(1.2rem,1.8vw,1.5rem)"
+        },
+        {
+          "slug": "h2",
+          "name": "Heading 2",
+          "size": "clamp(1.6rem,3vw,2.4rem)"
+        },
+        {
+          "slug": "h1",
+          "name": "Heading 1",
+          "size": "clamp(2rem,4.4vw,3.6rem)"
+        }
+      ]
+    },
+    "spacing": {
+      "blockGap": null,
+      "margin": false,
+      "padding": false,
+      "customSpacingSize": false,
+      "defaultSpacingSizes": false,
+      "units": [
+        "px",
+        "rem",
+        "%"
+      ],
+      "spacingSizes": [
+        {
+          "slug": "10",
+          "name": "1 (8px)",
+          "size": "8px"
+        },
+        {
+          "slug": "20",
+          "name": "2 (16px)",
+          "size": "16px"
+        },
+        {
+          "slug": "30",
+          "name": "3 (24px)",
+          "size": "24px"
+        },
+        {
+          "slug": "40",
+          "name": "4 (32px)",
+          "size": "32px"
+        },
+        {
+          "slug": "50",
+          "name": "5 (48px)",
+          "size": "48px"
+        },
+        {
+          "slug": "60",
+          "name": "6 (64px)",
+          "size": "64px"
+        },
+        {
+          "slug": "70",
+          "name": "Section, small",
+          "size": "clamp(2rem,3vw,2.5rem)"
+        },
+        {
+          "slug": "80",
+          "name": "Section",
+          "size": "clamp(3rem,5vw,4.5rem)"
+        }
+      ]
+    },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": []
+    },
+    "custom": {
+      "contentWrapper": "1240px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--cream)",
+      "text": "var(--wp--preset--color--ink)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--body)",
+      "fontSize": "17px",
+      "lineHeight": "1.65"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "inherit"
+        },
+        "typography": {
+          "textDecoration": "none"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "fontWeight": "600",
+          "lineHeight": "1.05",
+          "letterSpacing": "-.03em",
+          "fontSize": "clamp(2rem,4.4vw,3.6rem)"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--eucalyptus-deep)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "fontWeight": "600",
+          "lineHeight": "1.08",
+          "letterSpacing": "-.02em",
+          "fontSize": "clamp(1.6rem,3vw,2.4rem)"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--eucalyptus-deep)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "fontWeight": "600",
+          "lineHeight": "1.08",
+          "letterSpacing": "-.022em",
+          "fontSize": "clamp(1.2rem,1.8vw,1.5rem)"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--eucalyptus-deep)"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "fontWeight": "600",
+          "lineHeight": "1.08",
+          "letterSpacing": "-.022em",
+          "fontSize": "clamp(1rem,1.3vw,1.15rem)"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--eucalyptus-deep)"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "fontWeight": "600",
+          "lineHeight": "1.08",
+          "letterSpacing": "-.022em"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--eucalyptus-deep)"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--eucalyptus-deep)",
+          "text": "var(--wp--preset--color--cream)"
+        },
+        "border": {
+          "radius": "0",
+          "width": "1.5px",
+          "style": "solid",
+          "color": "var(--wp--preset--color--eucalyptus-deep)"
+        },
+        "spacing": {
+          "padding": {
+            "top": ".85em",
+            "bottom": ".85em",
+            "left": "1.6em",
+            "right": "1.6em"
+          }
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--body)",
+          "fontWeight": "500",
+          "fontSize": ".86rem",
+          "letterSpacing": ".01em",
+          "textDecoration": "none"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--eucalyptus)",
+            "text": "var(--wp--preset--color--cream)"
+          },
+          "border": {
+            "color": "var(--wp--preset--color--eucalyptus)"
+          }
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ],
+  "customTemplates": [
+    {
+      "name": "page-article",
+      "title": "Page, article layout",
+      "postTypes": [
+        "page"
+      ]
+    }
+  ]
+}

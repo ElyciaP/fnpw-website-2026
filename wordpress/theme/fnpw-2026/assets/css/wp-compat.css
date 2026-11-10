@@ -1,0 +1,24 @@
+/* WordPress compatibility layer.
+   global.css is the design layer and is copied unchanged from the static build. This
+   file only undoes what WordPress wraps around the static markup, plus the few pieces
+   the static build never had (server-side pagination). No design values are changed. */
+
+/* Block themes wrap the page in .wp-site-blocks and each template part in its own
+   element. The static header is a direct child of <body> and is position:sticky, so the
+   wrappers must not create boxes or the header would stop sticking after its wrapper. */
+.wp-site-blocks,
+.wp-site-blocks > .wp-block-template-part{display:contents}
+
+/* Pagination for the story, project and search lists (the static build paged in the
+   browser, so it has no markup for this). Built from the existing tokens and the .fp
+   filter-pill look. */
+.fnpw-pager{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-1);padding:0 0 var(--sec-md)}
+.sec .fnpw-pager{padding:var(--sp-5) 0 0}
+.fnpw-pager .page-numbers{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:.5em 1.05em;font-family:var(--ff-b);font-size:.84rem;font-weight:600;border:1.5px solid var(--rule);background:var(--white);color:var(--char)}
+.fnpw-pager a.page-numbers:hover{border-color:var(--euc);color:var(--euc);opacity:1}
+.fnpw-pager .page-numbers.current{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep)}
+.fnpw-pager .page-numbers.dots{border-color:transparent;background:none}
+
+/* Logged-in view: keep the sticky header below the admin bar. */
+.admin-bar .hdr{top:var(--wp-admin--admin-bar--height,32px)}
+@media(max-width:600px){.admin-bar .hdr{top:0}}

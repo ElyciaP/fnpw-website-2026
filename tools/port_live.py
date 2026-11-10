@@ -605,7 +605,7 @@ if __name__ == '__main__':
         grant_page(s, g)
     grants_hub()
     paws()
-    ebook()
+    # ebook() retired 10 Nov 2026: the eBook is now an article (data/articles.json), free to download with no form
     newsletter_thanks()
     volunteer_thanks()
     faq_tax()
