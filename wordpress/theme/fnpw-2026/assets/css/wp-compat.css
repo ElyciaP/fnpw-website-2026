@@ -22,3 +22,20 @@
 /* Logged-in view: keep the sticky header below the admin bar. */
 .admin-bar .hdr{top:var(--wp-admin--admin-bar--height,32px)}
 @media(max-width:600px){.admin-bar .hdr{top:0}}
+
+/* WordPress ships "html :where([style*=border-color]){border-style:solid}" (and the same
+   for border-width and each side) so its own border controls work. The static markup
+   sets a border colour inline on elements whose class draws one side only
+   (style="border-color:…" on .ip-cs-link), and that rule would give them all four
+   sides. Put the default back for markup that is not a WordPress block; class rules in
+   global.css and the page CSS still decide which sides are drawn. */
+html :where([style*="border-color"]:not([class*="wp-block-"])),
+html :where([style*="border-width"]:not([class*="wp-block-"])){border-style:none}
+html :where([style*="border-top-color"]:not([class*="wp-block-"])),
+html :where([style*="border-top-width"]:not([class*="wp-block-"])){border-top-style:none}
+html :where([style*="border-right-color"]:not([class*="wp-block-"])),
+html :where([style*="border-right-width"]:not([class*="wp-block-"])){border-right-style:none}
+html :where([style*="border-bottom-color"]:not([class*="wp-block-"])),
+html :where([style*="border-bottom-width"]:not([class*="wp-block-"])){border-bottom-style:none}
+html :where([style*="border-left-color"]:not([class*="wp-block-"])),
+html :where([style*="border-left-width"]:not([class*="wp-block-"])){border-left-style:none}

@@ -1,0 +1,16 @@
+/* Shared page styles lifted unchanged from the static build by convert.py (2 pages, first: privacy-policy.html).
+   Do not edit: change the static source and re-run the converter. */
+.prose{max-width:74ch}
+.prose h2{font-size:clamp(1.3rem,2vw,1.6rem);margin:2.4rem 0 .9rem;color:var(--euc-deep)}
+.prose h2,.prose h3{font-size:1.08rem;margin:2rem 0 .7rem;color:var(--euc-deep);letter-spacing:.01em}
+.prose p,.prose li{font-size:1rem;line-height:1.75;color:var(--char)}
+.prose p{margin:0 0 1rem}
+.prose ul,.prose ol{margin:0 0 1.2rem;padding-left:1.3rem}
+.prose li{margin-bottom:.45rem}
+.prose a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
+.prose img{max-width:100%;height:auto;display:block;margin:1.6rem 0}
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:.92rem}
+.prose th,.prose td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.prose th{font-family:var(--ff-d);color:var(--euc-deep);background:var(--sand)}
+.prose blockquote{border-left:3px solid var(--bark);margin:1.6rem 0;padding:.2rem 0 .2rem 1.2rem}
+@media(max-width:640px){.prose table{display:block;overflow-x:auto}}

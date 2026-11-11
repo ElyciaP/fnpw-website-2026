@@ -6,13 +6,14 @@
  * the map on the static projects.html (.map-sec) so it looks and behaves the same.
  * The stylesheet and script are only enqueued on pages where the block renders.
  *
- * DATA SOURCE. At launch the pins come from blocks/project-map/data/projects.json, a
- * copy of the static build's data/projects.json with each link pointing at
- * /project/{slug}/ and the pin positions the static generator (tools/gen_map.py)
- * worked out. Everything downstream only sees the array returned by
+ * DATA SOURCE. The pins come from the published project posts, filled in from
+ * blocks/project-map/data/projects.json (a copy of the static build's
+ * data/projects.json with the pin positions tools/gen_map.py worked out) wherever a
+ * post has no coordinates. Everything downstream only sees the array returned by
  * fnpw_core_map_projects(), so the source can be swapped without touching the block:
  *
- *   add_filter( 'fnpw_core_map_source', fn() => 'query' );   // live project posts
+ *   add_filter( 'fnpw_core_map_source', fn() => 'json' );    // the shipped file only
+ *   add_filter( 'fnpw_core_map_source', fn() => 'query' );   // project posts only
  *   add_filter( 'fnpw_core_map_projects', $callback );        // or any array you build
  *
  * @package fnpw-core
@@ -59,10 +60,22 @@ add_action( 'init', 'fnpw_core_register_project_map' );
  */
 function fnpw_core_map_projects() {
 	/**
-	 * Filters where the map reads its projects from: "json" (launch default) or "query".
+	 * Filters where the map reads its projects from:
+	 *
+	 *   "auto"  (default) published project posts, each filled in from the shipped JSON
+	 *           where the post has no coordinates; the JSON alone when there are no
+	 *           project posts.
+	 *   "query" project posts only.
+	 *   "json"  the shipped JSON only.
 	 */
-	$source   = apply_filters( 'fnpw_core_map_source', 'json' );
-	$projects = ( 'query' === $source ) ? fnpw_core_map_projects_from_query() : fnpw_core_map_projects_from_json();
+	$source = apply_filters( 'fnpw_core_map_source', 'auto' );
+	if ( 'json' === $source ) {
+		$projects = fnpw_core_map_projects_from_json();
+	} elseif ( 'query' === $source ) {
+		$projects = fnpw_core_map_projects_from_query();
+	} else {
+		$projects = fnpw_core_map_projects_merged();
+	}
 
 	/**
 	 * Filters the final list of map projects.
@@ -107,21 +120,67 @@ function fnpw_core_map_projects_from_json() {
 			// Site-relative links in the file become full URLs for this install.
 			'link'         => ( 0 === strpos( $link, '/' ) ) ? home_url( $link ) : $link,
 			'img'          => isset( $row['img'] ) ? (string) $row['img'] : '',
+			'lat'          => isset( $row['lat'] ) && is_numeric( $row['lat'] ) ? (float) $row['lat'] : null,
+			'lon'          => isset( $row['lon'] ) && is_numeric( $row['lon'] ) ? (float) $row['lon'] : null,
 		);
 	}
 	return $out;
 }
 
 /**
- * Source 2 (after launch): published project posts.
+ * A project's coordinates from the live ACF group "Single - Project". The group field
+ * project_details stores its sub-fields as project_details_project_latitude and
+ * project_details_project_longitude; plain project_latitude / project_longitude and
+ * an array under project_details are accepted too.
  *
- * Reads the pillar from the "pillar" field this plugin adds, the state from the
- * project_state taxonomy and the coordinates from the live ACF group
- * project_details (project_latitude, project_longitude). Projects without
- * coordinates are listed but get no pin.
+ * @param int $post_id Project ID.
+ * @return array{0:float,1:float}|null Latitude, longitude.
+ */
+function fnpw_core_project_latlon( $post_id ) {
+	$pairs = array(
+		array( 'project_details_project_latitude', 'project_details_project_longitude' ),
+		array( 'project_latitude', 'project_longitude' ),
+	);
+	foreach ( $pairs as $pair ) {
+		$lat = get_post_meta( $post_id, $pair[0], true );
+		$lon = get_post_meta( $post_id, $pair[1], true );
+		if ( is_numeric( $lat ) && is_numeric( $lon ) && ( 0.0 !== (float) $lat || 0.0 !== (float) $lon ) ) {
+			return array( (float) $lat, (float) $lon );
+		}
+	}
+	$group = get_post_meta( $post_id, 'project_details', true );
+	if ( is_array( $group ) && isset( $group['project_latitude'], $group['project_longitude'] )
+		&& is_numeric( $group['project_latitude'] ) && is_numeric( $group['project_longitude'] ) ) {
+		return array( (float) $group['project_latitude'], (float) $group['project_longitude'] );
+	}
+	return null;
+}
+
+/**
+ * Popup thumbnail for a project post: its featured image, else the banner_image of the
+ * live "Single - Header" group.
  *
- * Not the launch source: unlike tools/gen_map.py it does not nudge pins that share a
- * spot or sit on a region label, and it has not been run against live data.
+ * @param int $post_id Project ID.
+ * @return string URL or ''.
+ */
+function fnpw_core_project_thumb( $post_id ) {
+	$url = get_the_post_thumbnail_url( $post_id, 'medium_large' );
+	if ( ! $url ) {
+		$banner = get_post_meta( $post_id, 'banner_image', true );
+		$url    = is_numeric( $banner ) ? wp_get_attachment_image_url( (int) $banner, 'medium_large' ) : '';
+	}
+	return $url ? (string) $url : '';
+}
+
+/**
+ * Source 2: published project posts.
+ *
+ * Reads the pillar from the "pillar" field this plugin adds (else the focus-area
+ * terms), the state from the project_state taxonomy and the coordinates from the live
+ * ACF group project_details. Projects without coordinates are listed but get no pin.
+ *
+ * Unlike tools/gen_map.py it does not nudge pins that share a spot or sit on a region
+ * label; the merged source keeps the hand-placed positions from the JSON for that.
  *
  * @return array<int,array<string,mixed>>
  */
@@ -150,15 +209,40 @@ function fnpw_core_map_projects_from_query() {
 				}
 			}
 		}
+		if ( ! isset( $pillars[ $pillar ] ) && taxonomy_exists( 'project_focus_area' ) ) {
+			$areas = get_the_terms( $post->ID, 'project_focus_area' );
+			foreach ( is_array( $areas ) ? $areas : array() as $area ) {
+				if ( false !== strpos( $area->slug, 'park' ) ) {
+					$pillar = 'parks';
+				} elseif ( false !== strpos( $area->slug, 'species' ) ) {
+					$pillar = 'species';
+				} elseif ( false !== strpos( $area->slug, 'heal' ) ) {
+					$pillar = 'healing';
+				}
+			}
+		}
 		$state = '';
 		if ( taxonomy_exists( 'project_state' ) ) {
 			$terms = get_the_terms( $post->ID, 'project_state' );
-			$state = is_array( $terms ) ? $terms[0]->name : '';
+			if ( is_array( $terms ) ) {
+				// The map's state buttons use short names; the live terms are spelled out.
+				$short = array(
+					'new-south-wales'              => 'NSW',
+					'victoria'                     => 'VIC',
+					'queensland'                   => 'QLD',
+					'qld'                          => 'QLD',
+					'south-australia'              => 'SA',
+					'western-australia'            => 'WA',
+					'tasmania'                     => 'TAS',
+					'northern-territory'           => 'NT',
+					'australian-capital-territory' => 'ACT',
+					'national'                     => 'Australia',
+				);
+				$state = isset( $short[ $terms[0]->slug ] ) ? $short[ $terms[0]->slug ] : $terms[0]->name;
+			}
 		}
-		$lat   = get_post_meta( $post->ID, 'project_details_project_latitude', true );
-		$lon   = get_post_meta( $post->ID, 'project_details_project_longitude', true );
-		$xy    = ( is_numeric( $lat ) && is_numeric( $lon ) ) ? fnpw_core_map_xy( (float) $lat, (float) $lon ) : null;
-		$image = get_the_post_thumbnail_url( $post->ID, 'medium_large' );
+		$latlon = fnpw_core_project_latlon( $post->ID );
+		$xy     = $latlon ? fnpw_core_map_xy( $latlon[0], $latlon[1] ) : null;
 
 		$out[] = array(
 			'slug'         => $post->post_name,
@@ -170,9 +254,68 @@ function fnpw_core_map_projects_from_query() {
 			'on_map'       => null !== $xy && isset( $pillars[ $pillar ] ),
 			'x'            => $xy ? $xy[0] : null,
 			'y'            => $xy ? $xy[1] : null,
+			'lat'          => $latlon ? $latlon[0] : null,
+			'lon'          => $latlon ? $latlon[1] : null,
 			'link'         => get_permalink( $post ),
-			'img'          => $image ? $image : '',
+			'img'          => fnpw_core_project_thumb( $post->ID ),
 		);
+	}
+	return $out;
+}
+
+/**
+ * Source 3 (default): project posts, filled in from the shipped JSON.
+ *
+ * For each published project the post is the authority for title, link and thumbnail.
+ * Position: when the post has coordinates and they differ from the ones the JSON was
+ * built from, the pin is computed from the post; otherwise the JSON position is used
+ * (it carries the hand nudges that keep pins from stacking). Pillar and state fall back
+ * to the JSON when the post has none, and the JSON thumbnail when the post has no image.
+ * With no project posts at all, the JSON is used as it is.
+ *
+ * @return array<int,array<string,mixed>>
+ */
+function fnpw_core_map_projects_merged() {
+	$json  = fnpw_core_map_projects_from_json();
+	$posts = fnpw_core_map_projects_from_query();
+	if ( ! $posts ) {
+		return $json;
+	}
+	$by_slug = array();
+	foreach ( $json as $row ) {
+		$by_slug[ $row['slug'] ] = $row;
+	}
+	$pillars = fnpw_core_pillars();
+	$out     = array();
+	foreach ( $posts as $row ) {
+		$j = isset( $by_slug[ $row['slug'] ] ) ? $by_slug[ $row['slug'] ] : null;
+		if ( $j ) {
+			$same = null === $row['lat']
+				|| ( isset( $j['lat'], $j['lon'] ) && abs( $row['lat'] - $j['lat'] ) < 0.011 && abs( $row['lon'] - $j['lon'] ) < 0.011 );
+			if ( $same && null !== $j['x'] && null !== $j['y'] ) {
+				$row['x'] = $j['x'];
+				$row['y'] = $j['y'];
+			}
+			if ( '' === $row['pillar'] && isset( $pillars[ $j['pillar'] ] ) ) {
+				$row['pillar']       = $j['pillar'];
+				$row['pillar_label'] = $pillars[ $j['pillar'] ][0];
+				$row['pillar_class'] = $pillars[ $j['pillar'] ][1];
+			}
+			// The map's state buttons use the build's short state names.
+			if ( '' !== $j['state'] ) {
+				$row['state'] = $j['state'];
+			}
+			if ( '' === $row['img'] ) {
+				$row['img'] = $j['img'];
+			}
+			$row['on_map'] = null !== $row['x'] && null !== $row['y'] && '' !== $row['pillar'] && ( $j['on_map'] || null !== $row['lat'] );
+		}
+		// A project with no pillar, no state and no pin (a retired or placeholder post) is
+		// not map material, and would only inflate the "All" count.
+		if ( '' === $row['pillar'] && '' === $row['state'] && ! $row['on_map'] ) {
+			continue;
+		}
+		$out[] = $row;
 	}
 	return $out;
 }

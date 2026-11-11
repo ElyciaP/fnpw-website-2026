@@ -127,7 +127,12 @@ function fnpw_meta_image() {
 function fnpw_meta_description() {
 	$text = '';
 	if ( is_singular() ) {
-		$text = get_the_excerpt( get_queried_object_id() );
+		// The import stores each page's hand-written description in the Yoast field. With
+		// Yoast switched off it is still the best description there is.
+		$text = (string) get_post_meta( get_queried_object_id(), '_yoast_wpseo_metadesc', true );
+		if ( '' === trim( $text ) || false !== strpos( $text, '%%' ) ) {
+			$text = get_the_excerpt( get_queried_object_id() );
+		}
 	} elseif ( is_front_page() || is_home() ) {
 		$text = get_bloginfo( 'description', 'display' );
 	} elseif ( is_post_type_archive() ) {
@@ -229,6 +234,22 @@ function fnpw_print_ld( $data ) {
 function fnpw_seo_plugin_active() {
 	return (bool) apply_filters( 'fnpw_seo_plugin_active', defined( 'WPSEO_VERSION' ) );
 }
+
+/**
+ * Without Yoast, use the title the import stored in the Yoast field (it is the static
+ * build's <title>, written by hand in data/meta.json).
+ *
+ * @param string $title Short-circuit title; empty to let WordPress build one.
+ * @return string
+ */
+function fnpw_document_title( $title ) {
+	if ( fnpw_seo_plugin_active() || ! is_singular() ) {
+		return $title;
+	}
+	$stored = (string) get_post_meta( get_queried_object_id(), '_yoast_wpseo_title', true );
+	return ( '' !== trim( $stored ) && false === strpos( $stored, '%%' ) ) ? $stored : $title;
+}
+add_filter( 'pre_get_document_title', 'fnpw_document_title' );
 
 function fnpw_head_meta() {
 	if ( is_admin() || is_404() || fnpw_seo_plugin_active() ) {

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       FNPW Core
  * Description:       Site functionality that must outlive any theme: block-editor support for the existing project, grant and donation content types, analytics and tracking tags, the project map block and the extra project fields.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.6
  * Requires PHP:      8.1
  * Author:            Foundation for National Parks & Wildlife
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FNPW_CORE_VERSION', '0.1.0' );
+define( 'FNPW_CORE_VERSION', '0.2.0' );
 define( 'FNPW_CORE_FILE', __FILE__ );
 define( 'FNPW_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FNPW_CORE_URL', plugin_dir_url( __FILE__ ) );

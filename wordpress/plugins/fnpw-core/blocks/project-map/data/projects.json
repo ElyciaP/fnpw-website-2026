@@ -39,7 +39,8 @@
   "on_map": true,
   "x": 70.88,
   "y": 22.48,
-  "link": "/project/garners-beach-cassowary-rehabilitation-centre-project/"
+  "link": "/project/garners-beach-cassowary-rehabilitation-centre-project/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2020/12/Cassowary-Rehabilitation-Centre-Project-lge.jpg"
  },
  {
   "slug": "tangaroa-blue",
@@ -53,7 +54,8 @@
   "on_map": true,
   "x": 69.86,
   "y": 20.1,
-  "link": "/project/tangaroa-blue/"
+  "link": "/project/tangaroa-blue/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Dugong-fish-CYMK.jpg"
  },
  {
   "slug": "genetic-code-of-koalas",
@@ -67,7 +69,8 @@
   "on_map": true,
   "x": 84.66,
   "y": 58.6,
-  "link": "/project/genetic-code-of-koalas/"
+  "link": "/project/genetic-code-of-koalas/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Koala-mum-bub-scaled.jpg"
  },
  {
   "slug": "bushfire-recovery-habitat-restoration",
@@ -81,7 +84,8 @@
   "on_map": true,
   "x": 75.74,
   "y": 71.51,
-  "link": "/project/bushfire-recovery-habitat-restoration/"
+  "link": "/project/bushfire-recovery-habitat-restoration/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/04/Kosciuszko-National-Park-Harrington-New-South-Wales-Australia-by-benkrut-from-Getty-Images.png"
  },
  {
   "slug": "bilby-fire-project",
@@ -95,7 +99,8 @@
   "on_map": true,
   "x": 29.37,
   "y": 23.54,
-  "link": "/project/bilby-fire-project/"
+  "link": "/project/bilby-fire-project/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/11057207814_38a4518a3f_b.jpg"
  },
  {
   "slug": "brush-tailed-rock-wallaby-school-education",
@@ -109,7 +114,8 @@
   "on_map": true,
   "x": 79.79,
   "y": 67.27,
-  "link": "/project/brush-tailed-rock-wallaby-school-education/"
+  "link": "/project/brush-tailed-rock-wallaby-school-education/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Brush-tailed-Rock-wallaby-school-education-KVPS-puppet-show-18-scaled.jpg"
  },
  {
   "slug": "caught-on-camera",
@@ -123,7 +129,8 @@
   "on_map": true,
   "x": 68.24,
   "y": 73.89,
-  "link": "/project/caught-on-camera/"
+  "link": "/project/caught-on-camera/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Caught-on-Camera-Superb-Lyrebird.jpg"
  },
  {
   "slug": "christmas-island-reptiles",
@@ -137,7 +144,8 @@
   "on_map": true,
   "x": 3.0,
   "y": 8.0,
-  "link": "/project/christmas-island-reptiles/"
+  "link": "/project/christmas-island-reptiles/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Christmas-Island-Reptile-Captive-Breeding-lge.jpg"
  },
  {
   "slug": "eastern-bristlebird",
@@ -151,7 +159,8 @@
   "on_map": true,
   "x": 78.17,
   "y": 74.16,
-  "link": "/project/eastern-bristlebird/"
+  "link": "/project/eastern-bristlebird/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Eastern-Bristlebird.jpg"
  },
  {
   "slug": "endangered-pomaderris-plants",
@@ -165,7 +174,8 @@
   "on_map": true,
   "x": 77.76,
   "y": 68.86,
-  "link": "/project/endangered-pomaderris-plants/"
+  "link": "/project/endangered-pomaderris-plants/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Pomaderris-intermedia-lge.jpg"
  },
  {
   "slug": "feather-leaved-banksia-of-wa",
@@ -179,7 +189,8 @@
   "on_map": true,
   "x": 10.34,
   "y": 58.79,
-  "link": "/project/feather-leaved-banksia-of-wa/"
+  "link": "/project/feather-leaved-banksia-of-wa/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/FeatherLeavedBanksia-lge.jpg"
  },
  {
   "slug": "gogerlys-point-heritage-precinct",
@@ -193,7 +204,8 @@
   "on_map": true,
   "x": 81.41,
   "y": 64.09,
-  "link": "/project/gogerlys-point-heritage-precinct/"
+  "link": "/project/gogerlys-point-heritage-precinct/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Gogerlys-Cottage.jpg"
  },
  {
   "slug": "granite-island-little-penguins",
@@ -207,7 +219,8 @@
   "on_map": true,
   "x": 54.41,
   "y": 70.27,
-  "link": "/project/granite-island-little-penguins/"
+  "link": "/project/granite-island-little-penguins/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/LittlePenguins.jpg"
  },
  {
   "slug": "green-parrot-breeding-project",
@@ -221,7 +234,8 @@
   "on_map": true,
   "x": 97.0,
   "y": 52.3,
-  "link": "/project/green-parrot-breeding-project/"
+  "link": "/project/green-parrot-breeding-project/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Phillip-Island-Green-Parrot-lge.jpg"
  },
  {
   "slug": "habitats-for-koalas-in-the-otways",
@@ -235,7 +249,8 @@
   "on_map": true,
   "x": 65.61,
   "y": 77.87,
-  "link": "/project/habitats-for-koalas-in-the-otways/"
+  "link": "/project/habitats-for-koalas-in-the-otways/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/04/Koala-Habitat.png"
  },
  {
   "slug": "jungurra",
@@ -249,7 +264,8 @@
   "on_map": true,
   "x": 85.04,
   "y": 51.15,
-  "link": "/project/jungurra/"
+  "link": "/project/jungurra/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/GOPR0158_1641337130395-scaled-e1658287534120.jpg"
  },
  {
   "slug": "kangaroo-islands-bandicoots",
@@ -263,7 +279,8 @@
   "on_map": true,
   "x": 52.86,
   "y": 70.18,
-  "link": "/project/kangaroo-islands-bandicoots/"
+  "link": "/project/kangaroo-islands-bandicoots/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Bandicoot-2.png"
  },
  {
   "slug": "kangaroo-islands-enigma-moth",
@@ -277,7 +294,8 @@
   "on_map": true,
   "x": 52.05,
   "y": 70.71,
-  "link": "/project/kangaroo-islands-enigma-moth/"
+  "link": "/project/kangaroo-islands-enigma-moth/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/EnigmaMoth-lge.jpg"
  },
  {
   "slug": "koala-tree-planting",
@@ -291,7 +309,8 @@
   "on_map": true,
   "x": 64.12,
   "y": 77.37,
-  "link": "/project/koala-tree-planting/"
+  "link": "/project/koala-tree-planting/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Koala-Alyson-Boyer-1-scaled.jpg"
  },
  {
   "slug": "kosciuszko-national-park-2020-fire-recovery",
@@ -305,7 +324,8 @@
   "on_map": true,
   "x": 74.93,
   "y": 72.89,
-  "link": "/project/kosciuszko-national-park-2020-fire-recovery/"
+  "link": "/project/kosciuszko-national-park-2020-fire-recovery/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/KNP-recovery-1-scaled.jpg"
  },
  {
   "slug": "kukundi-nature-playspace",
@@ -319,7 +339,8 @@
   "on_map": true,
   "x": 80.63,
   "y": 65.63,
-  "link": "/project/kukundi-nature-playspace/"
+  "link": "/project/kukundi-nature-playspace/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Discovery-rangers-biodiversity-education-WilderQuest.jpg"
  },
  {
   "slug": "lane-cove-bushcare-program-2018",
@@ -333,7 +354,8 @@
   "on_map": true,
   "x": 81.1,
   "y": 64.88,
-  "link": "/project/lane-cove-bushcare-program-2018/"
+  "link": "/project/lane-cove-bushcare-program-2018/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Lane-Cove-Bushcare-Program-2018-scaled.jpg"
  },
  {
   "slug": "malleefowl-conservation",
@@ -347,7 +369,8 @@
   "on_map": true,
   "x": 62.98,
   "y": 61.7,
-  "link": "/project/malleefowl-conservation/"
+  "link": "/project/malleefowl-conservation/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/2113-malleefowl-Jill-Lochman.jpg"
  },
  {
   "slug": "manly-little-penguins",
@@ -361,7 +384,8 @@
   "on_map": true,
   "x": 82.03,
   "y": 63.03,
-  "link": "/project/manly-little-penguins/"
+  "link": "/project/manly-little-penguins/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Featured-projects-Penguins-lge.jpg"
  },
  {
   "slug": "movement-of-koalas-back-into-severely-burnt-forest",
@@ -375,7 +399,8 @@
   "on_map": true,
   "x": 79.38,
   "y": 69.39,
-  "link": "/project/movement-of-koalas-back-into-severely-burnt-forest/"
+  "link": "/project/movement-of-koalas-back-into-severely-burnt-forest/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/04/Koala-Movement.png"
  },
  {
   "slug": "mt-schank-walking-trail",
@@ -389,7 +414,8 @@
   "on_map": true,
   "x": 59.94,
   "y": 75.75,
-  "link": "/project/mt-schank-walking-trail/"
+  "link": "/project/mt-schank-walking-trail/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Mount-Schank-walking-track.jpg"
  },
  {
   "slug": "petaurus-connections",
@@ -403,7 +429,8 @@
   "on_map": true,
   "x": 76.75,
   "y": 66.21,
-  "link": "/project/petaurus-connections/"
+  "link": "/project/petaurus-connections/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/K2W-GER-Aerial.jpg"
  },
  {
   "slug": "quolls",
@@ -417,7 +444,8 @@
   "on_map": true,
   "x": 77.64,
   "y": 71.51,
-  "link": "/project/quolls/"
+  "link": "/project/quolls/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2020/12/Quoll-lge.jpg"
  },
  {
   "slug": "red-tailed-phascogale",
@@ -431,7 +459,8 @@
   "on_map": true,
   "x": 12.97,
   "y": 60.22,
-  "link": "/project/red-tailed-phascogale/"
+  "link": "/project/red-tailed-phascogale/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/red-tailed-phascogale.jpg"
  },
  {
   "slug": "redlands-koala-planting",
@@ -445,7 +474,8 @@
   "on_map": true,
   "x": 84.86,
   "y": 49.02,
-  "link": "/project/redlands-koala-planting/"
+  "link": "/project/redlands-koala-planting/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/CurrumbinKoala-Erik-Veland.jpg"
  },
  {
   "slug": "remarkable-southern-flinders",
@@ -459,7 +489,8 @@
   "on_map": true,
   "x": 54.68,
   "y": 62.23,
-  "link": "/project/remarkable-southern-flinders/"
+  "link": "/project/remarkable-southern-flinders/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/square.jpg"
  },
  {
   "slug": "restoring-the-glideways-of-k2w",
@@ -473,7 +504,8 @@
   "on_map": true,
   "x": 77.29,
   "y": 64.67,
-  "link": "/project/restoring-the-glideways-of-k2w/"
+  "link": "/project/restoring-the-glideways-of-k2w/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/K2W-glideways-1920x600-1.jpg"
  },
  {
   "slug": "seagrass-collaboration",
@@ -487,7 +519,8 @@
   "on_map": true,
   "x": 54.88,
   "y": 66.74,
-  "link": "/project/seagrass-collaboration/"
+  "link": "/project/seagrass-collaboration/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Seagrass-Small.jpg"
  },
  {
   "slug": "southern-highlands-koala-conservation",
@@ -501,7 +534,8 @@
   "on_map": true,
   "x": 78.31,
   "y": 66.12,
-  "link": "/project/southern-highlands-koala-conservation/"
+  "link": "/project/southern-highlands-koala-conservation/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg"
  },
  {
   "slug": "tassie-devil-roadkill",
@@ -515,7 +549,8 @@
   "on_map": true,
   "x": 72.71,
   "y": 90.08,
-  "link": "/project/tassie-devil-roadkill/"
+  "link": "/project/tassie-devil-roadkill/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/TassieDevilRoadkill_PhotoBurrardLucas.jpg"
  },
  {
   "slug": "the-great-koala-count",
@@ -529,7 +564,8 @@
   "on_map": true,
   "x": 84.85,
   "y": 55.61,
-  "link": "/project/the-great-koala-count/"
+  "link": "/project/the-great-koala-count/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/04/Koala-tree.png"
  },
  {
   "slug": "trails-for-tails",
@@ -543,7 +579,8 @@
   "on_map": true,
   "x": 83.77,
   "y": 50.04,
-  "link": "/project/trails-for-tails/"
+  "link": "/project/trails-for-tails/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Alberts-Lyrebird-Peter-Owen-Birdlife-2016.jpg"
  },
  {
   "slug": "wa-bird-watering-stations",
@@ -557,7 +594,8 @@
   "on_map": true,
   "x": 10.47,
   "y": 60.42,
-  "link": "/project/wa-bird-watering-stations/"
+  "link": "/project/wa-bird-watering-stations/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/WA-Bird-Watering-Stations-Jirdarup-bushland-precinct-Three-cockies.jpeg"
  },
  {
   "slug": "warddeken-mayh",
@@ -571,7 +609,8 @@
   "on_map": true,
   "x": 46.17,
   "y": 8.7,
-  "link": "/project/warddeken-mayh/"
+  "link": "/project/warddeken-mayh/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Lorina-and-Tinnesha-in-EPBC-protected-sandstone-shrublands_photo-Donal-Sullivan5f911988b9c1d-scaled.jpg"
  },
  {
   "slug": "was-woylie-survival",
@@ -585,7 +624,8 @@
   "on_map": true,
   "x": 11.55,
   "y": 65.15,
-  "link": "/project/was-woylie-survival/"
+  "link": "/project/was-woylie-survival/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Woylie.jpg"
  },
  {
   "slug": "western-swamp-tortoise",
@@ -599,7 +639,8 @@
   "on_map": true,
   "x": 11.76,
   "y": 59.58,
-  "link": "/project/western-swamp-tortoise/"
+  "link": "/project/western-swamp-tortoise/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Western-Swamp-Tortoise-scaled.jpg"
  },
  {
   "slug": "woomargama-national-park",
@@ -613,7 +654,8 @@
   "on_map": true,
   "x": 73.31,
   "y": 70.18,
-  "link": "/project/woomargama-national-park/"
+  "link": "/project/woomargama-national-park/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Ascent-37-Woomargama-2000px-Copy.jpg"
  },
  {
   "slug": "yarning-online-oncountry-kurrupurra-pila-weaving",
@@ -627,7 +669,8 @@
   "on_map": true,
   "x": 64.4,
   "y": 59.85,
-  "link": "/project/yarning-online-oncountry-kurrupurra-pila-weaving/"
+  "link": "/project/yarning-online-oncountry-kurrupurra-pila-weaving/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/pexels-kelly-l-3794747-scaled.jpg"
  },
  {
   "slug": "yarrahapinni-wetlands-restoration-stage-1",
@@ -641,7 +684,8 @@
   "on_map": true,
   "x": 84.85,
   "y": 56.93,
-  "link": "/project/yarrahapinni-wetlands-restoration-stage-1/"
+  "link": "/project/yarrahapinni-wetlands-restoration-stage-1/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/NSW-NPWS-Yarrahapinni-Wetlands-National-Park-1.jpg"
  },
  {
   "slug": "youth-wildlife-ambassadors",
@@ -655,7 +699,8 @@
   "on_map": true,
   "x": 69.05,
   "y": 77.34,
-  "link": "/project/youth-wildlife-ambassadors/"
+  "link": "/project/youth-wildlife-ambassadors/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Phillip-Island-Ambassadors.jpg"
  },
  {
   "slug": "nectar-sippers",
@@ -683,7 +728,8 @@
   "on_map": true,
   "x": 56.18,
   "y": 67.53,
-  "link": "/project/enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation/"
+  "link": "/project/enhancing-biodiversity-protecting-cultural-heritage-at-torrens-island-conservation/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/02/torrens-Island-bird.jpg"
  },
  {
   "slug": "fnpw-koala-projects",
@@ -697,7 +743,8 @@
   "on_map": true,
   "x": 82.82,
   "y": 52.16,
-  "link": "/project/fnpw-koala-projects/"
+  "link": "/project/fnpw-koala-projects/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2023/08/koala-fun-facts.png"
  },
  {
   "slug": "nilpena-nationalpark",
@@ -711,7 +758,8 @@
   "on_map": true,
   "x": 55.08,
   "y": 57.46,
-  "link": "/project/nilpena-nationalpark/"
+  "link": "/project/nilpena-nationalpark/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/nilpena03.png"
  },
  {
   "slug": "aussie-ark-quolls",
@@ -725,7 +773,8 @@
   "on_map": true,
   "x": 81.61,
   "y": 60.11,
-  "link": "/project/aussie-ark-quolls/"
+  "link": "/project/aussie-ark-quolls/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Aussie-Ark-Quoll-enclosure.jpg"
  },
  {
   "slug": "lion-island-little-penguin",
@@ -739,7 +788,8 @@
   "on_map": true,
   "x": 81.67,
   "y": 63.35,
-  "link": "/project/lion-island-little-penguin/"
+  "link": "/project/lion-island-little-penguin/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/LittlePenguins.jpg"
  },
  {
   "slug": "impact-of-bushfires-on-koalas",
@@ -753,7 +803,8 @@
   "on_map": true,
   "x": 78.75,
   "y": 68.06,
-  "link": "/project/impact-of-bushfires-on-koalas/"
+  "link": "/project/impact-of-bushfires-on-koalas/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Southern-Koala-05-scaled.jpg"
  },
  {
   "slug": "alpine-frogs-a-calling",
@@ -767,7 +818,8 @@
   "on_map": true,
   "x": 70.43,
   "y": 74.69,
-  "link": "/project/alpine-frogs-a-calling/"
+  "link": "/project/alpine-frogs-a-calling/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/pexels-pixabay-67290-scaled.jpg"
  },
  {
   "slug": "ngurrawaana-ranger-habitat-conservation",
@@ -781,7 +833,8 @@
   "on_map": true,
   "x": 12.16,
   "y": 32.82,
-  "link": "/project/ngurrawaana-ranger-habitat-conservation/"
+  "link": "/project/ngurrawaana-ranger-habitat-conservation/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/WArangers-lge.jpg"
  },
  {
   "slug": "heritage-estates",
@@ -795,7 +848,8 @@
   "on_map": true,
   "x": 79.99,
   "y": 68.33,
-  "link": "/project/heritage-estates/"
+  "link": "/project/heritage-estates/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/heritage-Estates-05-lg.jpg"
  },
  {
   "slug": "1-million-turtles",
@@ -809,7 +863,8 @@
   "on_map": true,
   "x": 67.64,
   "y": 70.18,
-  "link": "/project/1-million-turtles/"
+  "link": "/project/1-million-turtles/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/1-million-turtles.png"
  },
  {
   "slug": "native-plant-nurseries",
@@ -823,7 +878,8 @@
   "on_map": true,
   "x": 66.59,
   "y": 72.53,
-  "link": "/project/native-plant-nurseries/"
+  "link": "/project/native-plant-nurseries/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia.png"
  },
  {
   "slug": "cultivating-koala-habitat",
@@ -837,7 +893,8 @@
   "on_map": true,
   "x": 79.42,
   "y": 64.7,
-  "link": "/project/cultivating-koala-habitat/"
+  "link": "/project/cultivating-koala-habitat/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2023/12/Feature-Images-for-website.png"
  },
  {
   "slug": "mountain-pygmy-possum",
@@ -851,7 +908,8 @@
   "on_map": true,
   "x": 73.31,
   "y": 73.1,
-  "link": "/project/mountain-pygmy-possum/"
+  "link": "/project/mountain-pygmy-possum/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/02/mpp_dept_environment_and_primaryIndustries2_VIC_edited-scaled-e1683699811709.jpg"
  },
  {
   "slug": "wild-heart",
@@ -879,7 +937,8 @@
   "on_map": true,
   "x": 76.84,
   "y": 69.92,
-  "link": "/project/bushfire-recovery-program/"
+  "link": "/project/bushfire-recovery-program/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/2jGU-mXU.png"
  },
  {
   "slug": "fire-wise",
@@ -893,7 +952,8 @@
   "on_map": true,
   "x": 57.48,
   "y": 68.59,
-  "link": "/project/fire-wise/"
+  "link": "/project/fire-wise/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2024/01/Carpobrotus-rossii.png"
  },
  {
   "slug": "sturt-national-park",
@@ -907,7 +967,8 @@
   "on_map": true,
   "x": 62.05,
   "y": 52.92,
-  "link": "/project/sturt-national-park/"
+  "link": "/project/sturt-national-park/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/sturt-national-park-08_Amanda-Cutlack-DPIE.jpg"
  },
  {
   "slug": "wildlife-heroes",
@@ -921,7 +982,8 @@
   "on_map": true,
   "x": 77.47,
   "y": 62.99,
-  "link": "/project/wildlife-heroes/"
+  "link": "/project/wildlife-heroes/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/feeding.jpg"
  },
  {
   "slug": "black-cockatoo-corridor",
@@ -935,7 +997,8 @@
   "on_map": true,
   "x": 53.6,
   "y": 69.71,
-  "link": "/project/black-cockatoo-corridor/"
+  "link": "/project/black-cockatoo-corridor/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Black-Cockatoo-Too_big_nestling_240420-rotated-e1746404683346.jpg"
  },
  {
   "slug": "memorial-trees",
@@ -963,7 +1026,8 @@
   "on_map": true,
   "x": 55.93,
   "y": 66.0,
-  "link": "/project/bandicoot-superhighway-project/"
+  "link": "/project/bandicoot-superhighway-project/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/Southern-Brown-Bandicoot.jpg"
  },
  {
   "slug": "students-dig-in-for-conservation",
@@ -977,7 +1041,8 @@
   "on_map": true,
   "x": 66.89,
   "y": 81.79,
-  "link": "/project/students-dig-in-for-conservation/"
+  "link": "/project/students-dig-in-for-conservation/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/King-Island-Students-Field-Days-scaled.jpg"
  },
  {
   "slug": "devil-ark",
@@ -991,7 +1056,8 @@
   "on_map": true,
   "x": 82.99,
   "y": 59.85,
-  "link": "/project/devil-ark/"
+  "link": "/project/devil-ark/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/TasmanianDevil-MelanieWagner.jpg"
  },
  {
   "slug": "bushfire-recovery-seedbanks",
@@ -1005,7 +1071,8 @@
   "on_map": true,
   "x": 75.53,
   "y": 75.09,
-  "link": "/project/bushfire-recovery-seedbanks/"
+  "link": "/project/bushfire-recovery-seedbanks/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/51965515327_82f49da53c_k.jpg"
  },
  {
   "slug": "mary-valley-rail-trail-habitat-link",
@@ -1019,7 +1086,8 @@
   "on_map": true,
   "x": 84.04,
   "y": 45.01,
-  "link": "/project/mary-valley-rail-trail-habitat-link/"
+  "link": "/project/mary-valley-rail-trail-habitat-link/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/12/koala_gympie.gif"
  },
  {
   "slug": "save-the-orange-bellied-parrot",
@@ -1033,7 +1101,8 @@
   "on_map": true,
   "x": 70.86,
   "y": 92.99,
-  "link": "/project/save-the-orange-bellied-parrot/"
+  "link": "/project/save-the-orange-bellied-parrot/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/02/Orange-belliedParrot_DPIPWE-scaled.jpg"
  },
  {
   "slug": "recovering-blue-butterflies-in-victoria",
@@ -1047,7 +1116,8 @@
   "on_map": true,
   "x": 69.08,
   "y": 75.26,
-  "link": "/project/recovering-blue-butterflies-in-victoria/"
+  "link": "/project/recovering-blue-butterflies-in-victoria/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/46018344_10157140736212125_311600624649109504_n.jpg"
  },
  {
   "slug": "restoring-campbells-wetland-walkway",
@@ -1061,7 +1131,8 @@
   "on_map": true,
   "x": 70.67,
   "y": 66.21,
-  "link": "/project/restoring-campbells-wetland-walkway/"
+  "link": "/project/restoring-campbells-wetland-walkway/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/Griffith-Swamp-Land.jpg"
  },
  {
   "slug": "nest-boxes-in-plenty-gorge-park",
@@ -1075,7 +1146,8 @@
   "on_map": true,
   "x": 67.87,
   "y": 76.09,
-  "link": "/project/nest-boxes-in-plenty-gorge-park/"
+  "link": "/project/nest-boxes-in-plenty-gorge-park/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Koala-projects.png"
  },
  {
   "slug": "backyard-buddies",
@@ -1089,7 +1161,8 @@
   "on_map": true,
   "x": 72.7,
   "y": 58.79,
-  "link": "/project/backyard-buddies/"
+  "link": "/project/backyard-buddies/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/01/children-Biodiversity-discovery-native-flora-banksia-seed-cones.jpg"
  },
  {
   "slug": "white-throated-grasswren",
@@ -1103,7 +1176,8 @@
   "on_map": true,
   "x": 45.36,
   "y": 10.29,
-  "link": "/project/white-throated-grasswren/"
+  "link": "/project/white-throated-grasswren/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/White-throated-gresswrenMale-Female-Luke-Paterson-NTBS.jpg"
  },
  {
   "slug": "mount-field-national-park",
@@ -1117,7 +1191,8 @@
   "on_map": true,
   "x": 72.71,
   "y": 91.9,
-  "link": "/project/mount-field-national-park/"
+  "link": "/project/mount-field-national-park/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/02/Mount-Field-NP-East-Planking-PAWS.jpg"
  },
  {
   "slug": "booningyah-junior-rangers-program",
@@ -1131,7 +1206,8 @@
   "on_map": true,
   "x": 86.0,
   "y": 52.86,
-  "link": "/project/booningyah-junior-rangers-program/"
+  "link": "/project/booningyah-junior-rangers-program/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2021/12/PXL_20211024_001509888.PORTRAIT-scaled.jpg"
  },
  {
   "slug": "dalki-garringa-botanic-park",
@@ -1145,7 +1221,8 @@
   "on_map": true,
   "x": 62.98,
   "y": 72.04,
-  "link": "/project/dalki-garringa-botanic-park/"
+  "link": "/project/dalki-garringa-botanic-park/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2022/03/Wail-Nursery.jpg"
  },
  {
   "slug": "gift-a-tree-for-nature-conservation",
@@ -1159,7 +1236,8 @@
   "on_map": true,
   "x": 73.71,
   "y": 64.09,
-  "link": "/project/gift-a-tree-for-nature-conservation/"
+  "link": "/project/gift-a-tree-for-nature-conservation/",
+  "img": "https://fnpw.org.au/wp-content/uploads/2024/03/Plant-a-Tree-Australia.png"
  },
  {
   "slug": "curb-wombat-mange-program",

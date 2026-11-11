@@ -89,18 +89,18 @@ function fnpw_assets() {
 	if ( false !== strpos( $content, 'id="volTrack"' ) ) {
 		fnpw_script( 'fnpw-carousel', 'assets/js/carousel.js' );
 	}
-	// articles.js drives the client-side filter, sort and "more" button of the static
-	// Stories markup. The home template pages on the server instead, so it only loads
-	// where a page carries the static controls (id="asort").
-	if ( false !== strpos( $content, 'id="asort"' ) ) {
+	// articles.js drives the client-side filter, sort and "more" button of the Stories
+	// index (home template, block fnpw/stories-index) and of any page that carries the
+	// static controls (id="asort").
+	if ( is_home() || false !== strpos( $content, 'id="asort"' ) ) {
 		fnpw_script( 'fnpw-articles', 'assets/js/articles.js' );
 	}
 	/*
 	 * snap.js has no markup hook: the static build opts a page in by loading the script
-	 * (about.html only). TODO (converter stage): confirm the About page slug at import,
-	 * or have the converter set the fnpw_snap post meta instead of relying on the slug.
+	 * (about.html only). The converter sets the fnpw_snap post meta on that page.
 	 */
-	$snap = is_page( (array) apply_filters( 'fnpw_snap_pages', array( 'about-us' ) ) )
+	$snap_pages = (array) apply_filters( 'fnpw_snap_pages', array() );
+	$snap       = ( $snap_pages && is_page( $snap_pages ) )
 		|| ( is_singular() && get_post_meta( get_queried_object_id(), 'fnpw_snap', true ) );
 	if ( $snap ) {
 		fnpw_script( 'fnpw-snap', 'assets/js/snap.js' );

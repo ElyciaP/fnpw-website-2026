@@ -13,11 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FNPW_THEME_VERSION', '0.2.0' );
+define( 'FNPW_THEME_VERSION', '0.3.0' );
 
 require get_template_directory() . '/inc/urls.php';
+require get_template_directory() . '/inc/menu.php';
 require get_template_directory() . '/inc/head.php';
 require get_template_directory() . '/inc/assets.php';
+require get_template_directory() . '/inc/page-assets.php';
 require get_template_directory() . '/inc/blocks.php';
 
 /**

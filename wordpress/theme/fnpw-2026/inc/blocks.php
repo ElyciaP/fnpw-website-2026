@@ -30,6 +30,8 @@ function fnpw_register_template_blocks() {
 		'post-grid'        => array( 'Story grid', 'fnpw_render_post_grid' ),
 		'project-grid'     => array( 'Project grid', 'fnpw_render_project_grid' ),
 		'search-results'   => array( 'Search form and results', 'fnpw_render_search_results' ),
+		'stories-index'    => array( 'Stories index', 'fnpw_render_stories_index' ),
+		'project-furniture' => array( 'Project back link and donate band', 'fnpw_render_project_furniture' ),
 	);
 	foreach ( $blocks as $name => $def ) {
 		register_block_type(
@@ -139,6 +141,115 @@ function fnpw_hero_image_id( $post_id ) {
 }
 
 /**
+ * Card image of a story: the featured image, else the hero URL an imported article
+ * carries (fnpw_hero_url) until its image is in the media library.
+ *
+ * @param int    $post_id Post ID.
+ * @param string $class   Class for the img, or ''.
+ * @return string An img tag or ''.
+ */
+function fnpw_story_image( $post_id, $class = '' ) {
+	$attrs = array(
+		'loading'  => 'lazy',
+		'decoding' => 'async',
+	);
+	if ( '' !== $class ) {
+		$attrs['class'] = $class;
+	}
+	if ( has_post_thumbnail( $post_id ) ) {
+		return get_the_post_thumbnail( $post_id, 'large', $attrs );
+	}
+	$url = (string) get_post_meta( $post_id, 'fnpw_hero_url', true );
+	if ( '' === $url ) {
+		return '';
+	}
+	return sprintf(
+		'<img%s src="%s" alt="%s" loading="lazy"%s decoding="async">',
+		'' !== $class ? ' class="' . esc_attr( $class ) . '"' : '',
+		esc_url( $url ),
+		esc_attr( fnpw_story_title( $post_id ) ),
+		fnpw_hero_dims_attr( $post_id )
+	);
+}
+
+/**
+ * width and height attributes for an imported hero URL, when the build knew them.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function fnpw_hero_dims_attr( $post_id ) {
+	$w = (int) get_post_meta( $post_id, 'fnpw_hero_w', true );
+	$h = (int) get_post_meta( $post_id, 'fnpw_hero_h', true );
+	return ( $w && $h ) ? sprintf( ' width="%d" height="%d"', $w, $h ) : '';
+}
+
+/**
+ * Display headline of a story: fnpw_headline when the imported article has one (pages
+ * shown in the article layout keep a short page title), else the post title.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function fnpw_story_title( $post_id ) {
+	$headline = (string) get_post_meta( $post_id, 'fnpw_headline', true );
+	return '' !== trim( $headline ) ? $headline : get_the_title( $post_id );
+}
+
+/**
+ * One or two sentences about a story for cards: the card summary an imported article
+ * carries (fnpw_summary), else the SEO description, else the excerpt.
+ *
+ * @param int $post_id Post ID.
+ * @return string
+ */
+function fnpw_story_summary( $post_id ) {
+	$text = (string) get_post_meta( $post_id, 'fnpw_summary', true );
+	if ( '' === trim( $text ) ) {
+		$text = (string) get_post_meta( $post_id, '_yoast_wpseo_metadesc', true );
+	}
+	if ( '' === trim( $text ) || false !== strpos( $text, '%%' ) ) {
+		$text = get_the_excerpt( $post_id );
+	}
+	return trim( wp_strip_all_tags( (string) $text ) );
+}
+
+/**
+ * Pillar of a story as array( filter key, tile label ). Keys match the static Stories
+ * filter: parks, species, heal, news.
+ *
+ * @param int $post_id Post ID.
+ * @return array{0:string,1:string}
+ */
+function fnpw_story_pillar( $post_id ) {
+	$labels = array(
+		'parks'   => 'Growing Parks',
+		'species' => 'Saving Species',
+		'heal'    => 'Healing Land',
+		'news'    => 'News & Events',
+	);
+	$key    = (string) get_post_meta( $post_id, 'fnpw_pillar', true );
+	if ( 'healing' === $key ) {
+		$key = 'heal';
+	}
+	if ( ! isset( $labels[ $key ] ) ) {
+		$key = 'news';
+	}
+	return array( $key, $labels[ $key ] );
+}
+
+/**
+ * True when the imported content of this post already holds the whole of <main>
+ * (hero to closing band), so the template adds nothing around it.
+ *
+ * @param int $post_id Post ID.
+ * @return bool
+ */
+function fnpw_has_full_main( $post_id ) {
+	return (bool) get_post_meta( $post_id, '_fnpw_full_main', true );
+}
+
+/**
  * Whole-minute reading time for a post. Same sum as the static generator
  * (tools/gen_articles.py): 220 words a minute, never less than two minutes.
  *
@@ -146,6 +257,10 @@ function fnpw_hero_image_id( $post_id ) {
  * @return int
  */
 function fnpw_reading_minutes( $post_id ) {
+	$stored = (int) get_post_meta( $post_id, 'fnpw_read_min', true );
+	if ( $stored > 0 ) {
+		return $stored;
+	}
 	$words = str_word_count( wp_strip_all_tags( strip_shortcodes( (string) get_post_field( 'post_content', $post_id ) ) ) );
 	return max( 2, (int) round( $words / 220 ) );
 }
@@ -281,6 +396,22 @@ function fnpw_render_article_hero() {
 			)
 		)
 		: '';
+	if ( '' === $image ) {
+		// Imported articles whose hero is not (yet) a media library item keep its URL.
+		$url = (string) get_post_meta( $post_id, 'fnpw_hero_url', true );
+		if ( '' !== $url ) {
+			$image = sprintf(
+				'<img src="%s" sizes="100vw" alt="%s"%s fetchpriority="high" decoding="async">',
+				esc_url( $url ),
+				esc_attr( (string) get_post_meta( $post_id, 'fnpw_hero_alt', true ) ),
+				fnpw_hero_dims_attr( $post_id )
+			);
+		}
+	}
+	// A feature image too small for a full-bleed hero is used on cards only.
+	if ( '1' === (string) get_post_meta( $post_id, 'fnpw_hero_flat', true ) ) {
+		$image = '';
+	}
 	$kicker = (string) get_post_meta( $post_id, 'fnpw_kicker', true );
 	if ( '' === $kicker && 'post' === get_post_type( $post_id ) ) {
 		$cats = get_the_category( $post_id );
@@ -298,13 +429,22 @@ function fnpw_render_article_hero() {
 	if ( '' !== $kicker ) {
 		$out .= '      <span class="ed-kicker ed-kicker-top">' . esc_html( $kicker ) . '</span>' . "\n";
 	}
-	$out .= '      <h1>' . wp_kses_post( get_the_title( $post_id ) ) . '</h1>' . "\n";
-	if ( has_excerpt( $post_id ) ) {
-		$out .= '      <p class="ed-stand">' . esc_html( get_the_excerpt( $post_id ) ) . '</p>' . "\n";
+	$out .= '      <h1>' . wp_kses_post( fnpw_story_title( $post_id ) ) . '</h1>' . "\n";
+	// Imported articles say outright whether they have a standfirst (fnpw_standfirst,
+	// possibly empty); anything else shows its hand-written excerpt.
+	if ( metadata_exists( 'post', $post_id, 'fnpw_standfirst' ) ) {
+		$stand = (string) get_post_meta( $post_id, 'fnpw_standfirst', true );
+	} else {
+		$stand = has_excerpt( $post_id ) ? get_the_excerpt( $post_id ) : '';
 	}
-	$out .= sprintf(
-		'      <p class="ed-meta">%s &nbsp;&middot;&nbsp; %d min read</p>' . "\n",
+	if ( '' !== trim( $stand ) ) {
+		$out .= '      <p class="ed-stand">' . esc_html( $stand ) . '</p>' . "\n";
+	}
+	$place = (string) get_post_meta( $post_id, 'fnpw_place', true );
+	$out  .= sprintf(
+		'      <p class="ed-meta">%s%s &nbsp;&middot;&nbsp; %d min read</p>' . "\n",
 		esc_html( get_the_date( 'F Y', $post_id ) ),
+		'' !== $place ? ' &nbsp;&middot;&nbsp; ' . esc_html( $place ) : '',
 		fnpw_reading_minutes( $post_id )
 	);
 	$out .= '    </div>' . "\n" . '  </header>';
@@ -324,7 +464,31 @@ function fnpw_render_keep_reading() {
 	if ( $cats ) {
 		$args['category__in'] = $cats;
 	}
-	$posts = get_posts( $args );
+	// Imported articles name their three related stories (fnpw_related, post slugs).
+	$posts   = array();
+	$related = get_post_meta( $current, 'fnpw_related', true );
+	if ( is_string( $related ) && '' !== $related ) {
+		$related = json_decode( $related, true );
+	}
+	if ( is_array( $related ) && $related ) {
+		foreach ( $related as $slug ) {
+			$found = get_posts(
+				array(
+					'name'           => sanitize_title( (string) $slug ),
+					'post_type'      => array( 'post', 'page' ),
+					'post_status'    => 'publish',
+					'posts_per_page' => 1,
+					'no_found_rows'  => true,
+				)
+			);
+			if ( $found && $found[0]->ID !== $current ) {
+				$posts[] = $found[0];
+			}
+		}
+	}
+	if ( ! $posts ) {
+		$posts = get_posts( $args );
+	}
 	if ( ! $posts ) {
 		return '';
 	}
@@ -334,21 +498,14 @@ function fnpw_render_keep_reading() {
 	$out .= '    <div class="pj-readgrid">' . "\n";
 	foreach ( $posts as $post ) {
 		$out .= '      <a class="pj-rcard" href="' . esc_url( get_permalink( $post ) ) . '">' . "\n";
-		if ( has_post_thumbnail( $post ) ) {
-			$out .= '        ' . get_the_post_thumbnail(
-				$post,
-				'large',
-				array(
-					'class'    => 'pj-rcard-im',
-					'loading'  => 'lazy',
-					'decoding' => 'async',
-				)
-			) . "\n";
+		$thumb = fnpw_story_image( $post->ID, 'pj-rcard-im' );
+		if ( '' !== $thumb ) {
+			$out .= '        ' . $thumb . "\n";
 		}
 		$out .= '        <div class="pj-rcard-bd">' . "\n";
 		$out .= '          <span class="pj-rd">' . esc_html( get_the_date( 'F Y', $post ) ) . '</span>' . "\n";
-		$out .= '          <h3>' . esc_html( get_the_title( $post ) ) . '</h3>' . "\n";
-		$out .= '          <p>' . esc_html( get_the_excerpt( $post ) ) . '</p>' . "\n";
+		$out .= '          <h3>' . esc_html( fnpw_story_title( $post->ID ) ) . '</h3>' . "\n";
+		$out .= '          <p>' . esc_html( fnpw_story_summary( $post->ID ) ) . '</p>' . "\n";
 		$out .= '          <span class="pj-rgo">Read the story &#8594;</span>' . "\n";
 		$out .= '        </div>' . "\n" . '      </a>' . "\n";
 	}
@@ -362,7 +519,7 @@ function fnpw_render_keep_reading() {
 
 function fnpw_render_project_hero() {
 	$post_id = get_queried_object_id();
-	if ( ! $post_id ) {
+	if ( ! $post_id || fnpw_has_full_main( $post_id ) ) {
 		return '';
 	}
 	$title  = get_the_title( $post_id );
@@ -408,7 +565,7 @@ function fnpw_render_project_hero() {
 
 function fnpw_render_related_projects() {
 	$current = get_queried_object_id();
-	if ( ! $current || ! post_type_exists( 'project' ) ) {
+	if ( ! $current || ! post_type_exists( 'project' ) || fnpw_has_full_main( $current ) ) {
 		return '';
 	}
 	$args = array(
@@ -615,5 +772,141 @@ function fnpw_render_search_results() {
 		$out .= '<p class="srch-n" id="rn" aria-live="polite"></p>' . "\n" . '<ul id="res" class="srch-res"></ul>' . "\n";
 	}
 	$out .= '  </div>' . "\n" . '</section>';
+	return $out;
+}
+
+/* ---------------------------------------------------------------------------
+ * Project template furniture: the back link and the donate band, for projects written
+ * in the editor. Imported projects carry both in their content.
+ * ------------------------------------------------------------------------- */
+
+function fnpw_render_project_furniture() {
+	if ( fnpw_has_full_main( get_queried_object_id() ) ) {
+		return '';
+	}
+	return do_blocks( '<!-- wp:pattern {"slug":"fnpw-2026/project-back"} /-->' . "\n" . '<!-- wp:pattern {"slug":"fnpw-2026/cta-donate"} /-->' );
+}
+
+/* ---------------------------------------------------------------------------
+ * Stories index (static source: articles.html). Featured story, pillar filter, sort
+ * and "load more", from real posts. Every tile is printed and assets/js/articles.js
+ * filters, sorts and pages them in the browser, exactly as the static page does.
+ * ------------------------------------------------------------------------- */
+
+/**
+ * The posts on the Stories index, newest first: every published post, plus pages that
+ * use the article template. Press-coverage items (category "media") that were not
+ * imported from the build stay on the In the news page only.
+ *
+ * @return WP_Post[]
+ */
+function fnpw_stories_posts() {
+	$posts = get_posts(
+		array(
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'posts_per_page'      => 1000,
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
+		)
+	);
+	$skip  = (array) apply_filters( 'fnpw_stories_skip_categories', array( 'media' ) );
+	$out   = array();
+	foreach ( $posts as $post ) {
+		if ( $skip && has_category( $skip, $post ) && ! metadata_exists( 'post', $post->ID, 'fnpw_pillar' ) ) {
+			continue;
+		}
+		$out[] = $post;
+	}
+	$pages = get_posts(
+		array(
+			'post_type'      => 'page',
+			'post_status'    => 'publish',
+			'posts_per_page' => 50,
+			'meta_key'       => '_wp_page_template', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'meta_value'     => 'page-article', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			'no_found_rows'  => true,
+		)
+	);
+	if ( $pages ) {
+		$out = array_merge( $out, $pages );
+		usort(
+			$out,
+			static function ( $a, $b ) {
+				return strcmp( $b->post_date, $a->post_date );
+			}
+		);
+	}
+	return (array) apply_filters( 'fnpw_stories_posts', $out );
+}
+
+function fnpw_render_stories_index() {
+	$posts = fnpw_stories_posts();
+	$out   = '';
+
+	// Featured: the latest story.
+	$feat = $posts ? array_shift( $posts ) : null;
+	if ( $feat ) {
+		$pillar = fnpw_story_pillar( $feat->ID );
+		$image  = fnpw_story_image( $feat->ID );
+		$image  = str_replace( ' loading="lazy"', '', $image );
+		$out   .= '<section class="feat-art">' . "\n" . '  <div class="cw">' . "\n";
+		$out   .= '    <div class="feat-card rv">' . "\n";
+		$out   .= '      <div class="feat-img">' . $image . '</div>' . "\n";
+		$out   .= '      <div class="feat-bd">' . "\n";
+		$out   .= '        <span class="feat-tag">Featured story &middot; ' . esc_html( get_the_date( 'F Y', $feat ) ) . '</span>' . "\n";
+		$out   .= '        <h2>' . esc_html( fnpw_story_title( $feat->ID ) ) . '</h2>' . "\n";
+		$out   .= '        <p>' . esc_html( fnpw_story_summary( $feat->ID ) ) . '</p>' . "\n";
+		$out   .= '        <div class="feat-meta"><strong>' . esc_html( $pillar[1] ) . '</strong><span>&middot; ' . (int) fnpw_reading_minutes( $feat->ID ) . ' min read</span></div>' . "\n";
+		$out   .= '        <a href="' . esc_url( get_permalink( $feat ) ) . '" class="btn btn-p" style="align-self:flex-start;margin-top:1.4rem">Read the full story</a>' . "\n";
+		$out   .= '      </div>' . "\n" . '    </div>' . "\n" . '  </div>' . "\n" . '</section>' . "\n";
+	}
+
+	$out .= '<section class="filters-news">
+  <div class="cw">
+    <div class="fn-r">
+      <span class="lb">Filter:</span>
+      <button class="fp on" data-f="all">All</button>
+      <button class="fp pk" data-f="parks">Growing Parks</button>
+      <button class="fp sp" data-f="species">Saving Species</button>
+      <button class="fp hl" data-f="heal">Healing Land</button>
+      <button class="fp" data-f="news">News &amp; Events</button>
+      <label class="sortwrap" style="margin-left:1.2rem">Sort by
+        <select class="psel" id="asort">
+          <option value="recent">Most recent</option>
+          <option value="az">A to Z</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>' . "\n";
+
+	$out .= '<section>' . "\n" . '  <div class="cw"><div class="art-grid">' . "\n";
+	if ( ! $posts && ! $feat ) {
+		$out .= '<p>' . esc_html__( 'There are no stories here yet.', 'fnpw-2026' ) . '</p>';
+	}
+	foreach ( $posts as $post ) {
+		$pillar = fnpw_story_pillar( $post->ID );
+		$kicker = (string) get_post_meta( $post->ID, 'fnpw_kicker', true );
+		$title  = fnpw_story_title( $post->ID );
+		$out   .= '    <a href="' . esc_url( get_permalink( $post ) ) . '" class="art rv">' . "\n";
+		$out   .= '      <div class="art-im">' . fnpw_story_image( $post->ID );
+		$out   .= '<span class="cat' . ( 'news' === $pillar[0] ? '' : ' ' . esc_attr( $pillar[0] ) ) . '">' . esc_html( $pillar[1] ) . '</span></div>' . "\n";
+		$out   .= '      <div class="art-bd">' . "\n";
+		$out   .= '        <div class="art-date">' . esc_html( get_the_date( 'F Y', $post ) ) . ( '' !== $kicker ? ' &middot; ' . esc_html( $kicker ) : '' ) . '</div>' . "\n";
+		$out   .= '        <h3>' . esc_html( $title ) . '</h3>' . "\n";
+		$out   .= '        <p>' . esc_html( fnpw_story_summary( $post->ID ) ) . '</p>' . "\n";
+		$out   .= '        <span class="art-link">Read more</span>' . "\n";
+		$out   .= '      </div>' . "\n" . '    </a>' . "\n";
+	}
+	$out .= '  </div></div>' . "\n" . '</section>' . "\n";
+
+	$out .= '<section class="sec" style="padding-top:0">
+  <div class="cw" style="text-align:center">
+    <p id="artcount" style="font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--stone);margin-bottom:1.2rem"></p>
+    <button id="moreart" class="btn-o" type="button">Load more stories</button>
+  </div>
+</section>';
 	return $out;
 }
