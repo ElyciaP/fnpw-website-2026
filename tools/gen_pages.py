@@ -7,7 +7,7 @@ import os, re, glob
 from site_lib import (ROOT, write_page, hero, sec, two, port, cta_band, faq,
                       RAISELY_DONATE, RAISELY_HERO)
 
-GAT = 'https://gift-a-tree.fnpw.org.au'
+GAT = 'https://giveatree.fnpw.org.au/'
 SKIPPED = []
 P = []  # (fname, title) collected for the search index
 

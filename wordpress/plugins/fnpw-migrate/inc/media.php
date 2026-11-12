@@ -204,3 +204,51 @@ function fnpw_migrate_rewrite_media( $text, $map ) {
 	}
 	return $pairs ? strtr( $text, $pairs ) : $text;
 }
+
+/**
+ * Mark images that now live in the media library with WordPress's own
+ * wp-image-{id} class, so WordPress adds the smaller sizes (srcset) for phones
+ * when the page is shown. The converter drops the static build's responsive
+ * variants, and this is what puts responsive images back.
+ *
+ * @param string $html Post content.
+ * @param array  $map  fnpw_migrate_media_map().
+ * @return string
+ */
+function fnpw_migrate_tag_images( $html, $map ) {
+	if ( ! is_string( $html ) || false === stripos( $html, '<img' ) || ! $map ) {
+		return $html;
+	}
+	$ids = array();
+	foreach ( $map as $row ) {
+		if ( ! empty( $row['id'] ) && ! empty( $row['url'] ) ) {
+			$ids[ $row['url'] ] = (int) $row['id'];
+		}
+	}
+	if ( ! $ids ) {
+		return $html;
+	}
+	return preg_replace_callback(
+		'/<img\b[^>]*>/i',
+		static function ( $m ) use ( $ids ) {
+			$tag = $m[0];
+			if ( false !== strpos( $tag, 'wp-image-' ) || false !== stripos( $tag, 'srcset=' ) ) {
+				return $tag;
+			}
+			if ( ! preg_match( '/\bsrc=("|\')(.*?)\1/i', $tag, $src ) ) {
+				return $tag;
+			}
+			$url = html_entity_decode( $src[2], ENT_QUOTES );
+			if ( empty( $ids[ $url ] ) ) {
+				return $tag;
+			}
+			$class = 'wp-image-' . $ids[ $url ];
+			if ( preg_match( '/\bclass=("|\')(.*?)\1/i', $tag, $c ) ) {
+				return str_replace( $c[0], 'class=' . $c[1] . trim( $c[2] . ' ' . $class ) . $c[1], $tag );
+			}
+			return preg_replace( '/<img\b/i', '<img class="' . $class . '"', $tag, 1 );
+		},
+		$html
+	);
+}
+

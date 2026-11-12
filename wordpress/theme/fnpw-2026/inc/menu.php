@@ -177,15 +177,18 @@ function fnpw_primary_nav_items() {
 }
 
 /**
- * Create the starting menu once, when the theme is activated and no menu is
- * assigned to the header yet. Pages are linked as pages where they exist, so
+ * Create the starting menu once, when the theme is first activated (or on the
+ * next admin visit if it was already active). Pages are linked as pages where they exist, so
  * the link follows the page if its address changes.
  */
 function fnpw_seed_menu() {
-	$locations = get_nav_menu_locations();
-	if ( ! empty( $locations[ FNPW_MENU_LOCATION ] ) ) {
+	// Runs once. WordPress carries the old theme's menu into this location when
+	// themes are switched, so an assigned location is not a sign that the
+	// designed menu exists. After this first run the assignment is left alone.
+	if ( get_option( 'fnpw_2026_menu_seeded' ) ) {
 		return;
 	}
+	$locations = get_nav_menu_locations();
 	$menu = wp_get_nav_menu_object( FNPW_MENU_NAME );
 	if ( ! $menu ) {
 		$menu_id = wp_create_nav_menu( FNPW_MENU_NAME );
@@ -223,5 +226,7 @@ function fnpw_seed_menu() {
 	}
 	$locations[ FNPW_MENU_LOCATION ] = $menu_id;
 	set_theme_mod( 'nav_menu_locations', $locations );
+	update_option( 'fnpw_2026_menu_seeded', 1, false );
 }
 add_action( 'after_switch_theme', 'fnpw_seed_menu' );
+add_action( 'admin_init', 'fnpw_seed_menu' );

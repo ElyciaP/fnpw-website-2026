@@ -34,7 +34,7 @@ Five pages the handover listed as unmatched do have a home: /paws-magazine/, /mi
 - **D1.** Keep the live URLs.
 - **D2.** Option B: the build's block version replaces each post body, with the old body saved for rollback.
 - **D5.** New page URLs as proposed, except /partner-with-us/ (partner-invest.html) and /bequest/professional-advisers/ (bequests-professional-advisers.html). New projects follow /project/{slug}/.
-- **D8.** Monthly giving goes to habitat-heroes.fnpw.org.au, Donate to bush.fnpw.org.au and Give a Tree to gift-a-tree.fnpw.org.au.
+- **D8.** Monthly giving goes to habitat-heroes.fnpw.org.au, Donate to bush.fnpw.org.au and Give a Tree to giveatree.fnpw.org.au.
 - **Old wp/ folder.** Build fresh in wordpress/ and borrow what fits; wp/ stays untouched until after launch.
 
 - **Contractor call.** Closed: /project/form-test/ and /test-form/ retire, redirecting to /projects/ and the homepage.

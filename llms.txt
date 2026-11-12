@@ -29,7 +29,7 @@
 ## Donations (all giving is handled on Raisely, not on this site)
 
 - Donate: https://bush.fnpw.org.au
-- Give a Tree: https://gift-a-tree.fnpw.org.au
+- Give a Tree: https://giveatree.fnpw.org.au/
 - Habitat Heroes (monthly giving): https://habitat-heroes.fnpw.org.au
 
 ## Data endpoints

@@ -67,6 +67,23 @@
    1600
   ]
  },
+ "assets/img/bequests-advisers-coastal-walk.jpg": {
+  "h": 1192,
+  "size": 452116,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/bequests-advisers-coastal-walk-480.webp",
+   "assets/img/r/bequests-advisers-coastal-walk-800.webp",
+   "assets/img/r/bequests-advisers-coastal-walk-1200.webp",
+   "assets/img/r/bequests-advisers-coastal-walk-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/bequests-beach-grandfather-2156176791-COMP.jpg": {
   "h": 683,
   "size": 80682,
@@ -159,6 +176,23 @@
    1600
   ]
  },
+ "assets/img/bequests-hero-lookout-sunset.jpg": {
+  "h": 1067,
+  "size": 191135,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/bequests-hero-lookout-sunset-480.webp",
+   "assets/img/r/bequests-hero-lookout-sunset-800.webp",
+   "assets/img/r/bequests-hero-lookout-sunset-1200.webp",
+   "assets/img/r/bequests-hero-lookout-sunset-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/bequests-imagine-forest-1407133324-COMP.jpg": {
   "h": 341,
   "size": 95890,
@@ -172,6 +206,23 @@
    480,
    800,
    1024
+  ]
+ },
+ "assets/img/bequests-koala-branch.jpg": {
+  "h": 1067,
+  "size": 379986,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/bequests-koala-branch-480.webp",
+   "assets/img/r/bequests-koala-branch-800.webp",
+   "assets/img/r/bequests-koala-branch-1200.webp",
+   "assets/img/r/bequests-koala-branch-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/bequests-mundoo.jpg": {
@@ -228,6 +279,23 @@
    "assets/img/r/bongil-800.webp",
    "assets/img/r/bongil-1200.webp",
    "assets/img/r/bongil-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/contact-hero-pigface.jpg": {
+  "h": 1067,
+  "size": 216262,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/contact-hero-pigface-480.webp",
+   "assets/img/r/contact-hero-pigface-800.webp",
+   "assets/img/r/contact-hero-pigface-1200.webp",
+   "assets/img/r/contact-hero-pigface-1600.webp"
   ],
   "widths": [
    480,
@@ -345,6 +413,23 @@
    "assets/img/r/get-involved-hero-wildflower-800.webp",
    "assets/img/r/get-involved-hero-wildflower-1200.webp",
    "assets/img/r/get-involved-hero-wildflower-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/get-involved-planting-day.jpg": {
+  "h": 667,
+  "size": 214752,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/get-involved-planting-day-480.webp",
+   "assets/img/r/get-involved-planting-day-800.webp",
+   "assets/img/r/get-involved-planting-day-1200.webp",
+   "assets/img/r/get-involved-planting-day-1600.webp"
   ],
   "widths": [
    480,
@@ -504,6 +589,40 @@
    1600
   ]
  },
+ "assets/img/government-forest-canopy.jpg": {
+  "h": 1067,
+  "size": 636777,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/government-forest-canopy-480.webp",
+   "assets/img/r/government-forest-canopy-800.webp",
+   "assets/img/r/government-forest-canopy-1200.webp",
+   "assets/img/r/government-forest-canopy-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/government-grants-planting.jpg": {
+  "h": 1143,
+  "size": 508637,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/government-grants-planting-480.webp",
+   "assets/img/r/government-grants-planting-800.webp",
+   "assets/img/r/government-grants-planting-1200.webp",
+   "assets/img/r/government-grants-planting-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/government-hero-ranges.jpg": {
   "h": 1062,
   "size": 363804,
@@ -538,9 +657,24 @@
    1600
   ]
  },
+ "assets/img/hero-golden.jpg": {
+  "h": 450,
+  "size": 89091,
+  "w": 900,
+  "webp": [
+   "assets/img/r/hero-golden-480.webp",
+   "assets/img/r/hero-golden-800.webp",
+   "assets/img/r/hero-golden-900.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   900
+  ]
+ },
  "assets/img/home-partner-gang-gangs.jpg": {
   "h": 978,
-  "size": 275613,
+  "size": 300719,
   "w": 1600,
   "webp": [
    "assets/img/r/home-partner-gang-gangs-480.webp",
@@ -651,6 +785,21 @@
    1600
   ]
  },
+ "assets/img/impact-report-2026.jpg": {
+  "h": 471,
+  "size": 37348,
+  "w": 900,
+  "webp": [
+   "assets/img/r/impact-report-2026-480.webp",
+   "assets/img/r/impact-report-2026-800.webp",
+   "assets/img/r/impact-report-2026-900.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   900
+  ]
+ },
  "assets/img/impact-report-cover.jpg": {
   "h": 1131,
   "size": 85767,
@@ -707,6 +856,23 @@
    "assets/img/r/nursery-volunteers-800.webp",
    "assets/img/r/nursery-volunteers-1200.webp",
    "assets/img/r/nursery-volunteers-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/partner-blue-mountains.jpg": {
+  "h": 1067,
+  "size": 372325,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-blue-mountains-480.webp",
+   "assets/img/r/partner-blue-mountains-800.webp",
+   "assets/img/r/partner-blue-mountains-1200.webp",
+   "assets/img/r/partner-blue-mountains-1600.webp"
   ],
   "widths": [
    480,
@@ -832,6 +998,23 @@
    800,
    1200,
    1500
+  ]
+ },
+ "assets/img/partner-murray-mouth-aerial.jpg": {
+  "h": 1199,
+  "size": 471447,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/partner-murray-mouth-aerial-480.webp",
+   "assets/img/r/partner-murray-mouth-aerial-800.webp",
+   "assets/img/r/partner-murray-mouth-aerial-1200.webp",
+   "assets/img/r/partner-murray-mouth-aerial-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/partner-ways-build.jpg": {
@@ -1217,6 +1400,21 @@
    1300
   ]
  },
+ "assets/img/projects/granite-little-penguin-burrow.jpg": {
+  "h": 851,
+  "size": 232199,
+  "w": 1137,
+  "webp": [
+   "assets/img/r/projects-granite-little-penguin-burrow-480.webp",
+   "assets/img/r/projects-granite-little-penguin-burrow-800.webp",
+   "assets/img/r/projects-granite-little-penguin-burrow-1137.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1137
+  ]
+ },
  "assets/img/projects/kaurna-fire-before-after.jpg": {
   "h": 284,
   "size": 28527,
@@ -1490,6 +1688,100 @@
    800,
    1200,
    1600
+  ]
+ },
+ "assets/img/projects/lion-island-burrows-beach.jpg": {
+  "h": 719,
+  "size": 222751,
+  "w": 958,
+  "webp": [
+   "assets/img/r/projects-lion-island-burrows-beach-480.webp",
+   "assets/img/r/projects-lion-island-burrows-beach-800.webp",
+   "assets/img/r/projects-lion-island-burrows-beach-958.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   958
+  ]
+ },
+ "assets/img/projects/lion-island-burrows-boat.jpg": {
+  "h": 719,
+  "size": 167610,
+  "w": 958,
+  "webp": [
+   "assets/img/r/projects-lion-island-burrows-boat-480.webp",
+   "assets/img/r/projects-lion-island-burrows-boat-800.webp",
+   "assets/img/r/projects-lion-island-burrows-boat-958.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   958
+  ]
+ },
+ "assets/img/projects/lion-island-penguins-burrow.jpg": {
+  "h": 693,
+  "size": 149345,
+  "w": 1020,
+  "webp": [
+   "assets/img/r/projects-lion-island-penguins-burrow-480.webp",
+   "assets/img/r/projects-lion-island-penguins-burrow-800.webp",
+   "assets/img/r/projects-lion-island-penguins-burrow-1020.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1020
+  ]
+ },
+ "assets/img/projects/little-penguin-rock-crevice.jpg": {
+  "h": 1067,
+  "size": 182735,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-little-penguin-rock-crevice-480.webp",
+   "assets/img/r/projects-little-penguin-rock-crevice-800.webp",
+   "assets/img/r/projects-little-penguin-rock-crevice-1200.webp",
+   "assets/img/r/projects-little-penguin-rock-crevice-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/little-penguin-sand-night.jpg": {
+  "h": 1576,
+  "size": 384240,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-little-penguin-sand-night-480.webp",
+   "assets/img/r/projects-little-penguin-sand-night-800.webp",
+   "assets/img/r/projects-little-penguin-sand-night-1200.webp",
+   "assets/img/r/projects-little-penguin-sand-night-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
+ "assets/img/projects/manly-little-penguin-nestbox.jpg": {
+  "h": 680,
+  "size": 109340,
+  "w": 961,
+  "webp": [
+   "assets/img/r/projects-manly-little-penguin-nestbox-480.webp",
+   "assets/img/r/projects-manly-little-penguin-nestbox-800.webp",
+   "assets/img/r/projects-manly-little-penguin-nestbox-961.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   961
   ]
  },
  "assets/img/projects/mundoo-aerial-sunset.jpg": {

@@ -85,6 +85,9 @@ function fnpw_migrate_prepare( $item, $media_map ) {
 			$item[ $field ] = fnpw_migrate_rewrite_media( (string) $item[ $field ], $media_map );
 		}
 	}
+	if ( isset( $item['content'] ) ) {
+		$item['content'] = fnpw_migrate_tag_images( $item['content'], $media_map );
+	}
 	if ( isset( $item['meta'] ) && is_array( $item['meta'] ) ) {
 		foreach ( $item['meta'] as $key => $value ) {
 			if ( is_string( $value ) ) {

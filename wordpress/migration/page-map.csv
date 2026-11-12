@@ -314,7 +314,7 @@ live_url,live_type,live_lastmod,static_file,wp_url,wp_post_type,wp_template,acti
 /donation/become-a-habitat-hero-with-a-monthly-gift/,donation,2025-11-03,,,,,redirect,https://habitat-heroes.fnpw.org.au,D8,Monthly giving; CLAUDE.md sends Habitat Heroes to its own Raisely page. Already redirects off-site on live
 /donation/donate-to-growing-parks-and-saving-species/,donation,2025-11-03,,,,,redirect,https://bush.fnpw.org.au,,Known retirement
 /donation/healing-our-land-2/,donation,2025-11-03,,,,,redirect,https://bush.fnpw.org.au,,Known retirement. Already redirects off-site on live
-/donation/plant-a-tree/,donation,2025-11-03,,,,,redirect,https://gift-a-tree.fnpw.org.au,D8,Tree gift; proposed Give a Tree. Already redirects off-site on live
+/donation/plant-a-tree/,donation,2025-11-03,,,,,redirect,https://giveatree.fnpw.org.au/,D8,Tree gift; proposed Give a Tree. Already redirects off-site on live
 /news/category/latest-blogs/,category,2026-09-22,,/news/category/latest-blogs/,category,archive,keep,,,
 /news/category/latest-news/,category,2026-07-28,,/news/category/latest-news/,category,archive,keep,,,
 /news/category/media/,category,2025-10-29,,/news/category/media/,category,archive,keep,,,

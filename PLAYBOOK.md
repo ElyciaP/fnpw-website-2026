@@ -53,7 +53,7 @@ relevant week's section and say "continue from here".
   **Formidable Forms** + **HubSpot** (newsletter/EDM) + **Post SMTP** (email delivery).
 - Analytics: Google Tag Manager container **GTM-K2P27RG**. Keep it through launch.
 - Donations: **Raisely**, hosted off-site (foundation-for-national-parks-and-wildlife.raiselysite.com,
-  habitat-heroes.raiselysite.com, bush.fnpw.org.au, gift-a-tree.fnpw.org.au subdomain).
+  habitat-heroes.raiselysite.com, bush.fnpw.org.au, giveatree.fnpw.org.au subdomain).
 - 85 live project URLs under `/project/<slug>/` (2 are junk/grants, see redirects).
 - Org facts: ABN 90 107 744 771, 1800 898 626, GPO Box 2666 Sydney NSW 2001,
   ACNC registered, DGR endorsed.

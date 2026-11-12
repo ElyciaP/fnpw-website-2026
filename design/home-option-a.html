@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<base href="../">
+<meta name="robots" content="noindex">
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- @meta -->
+<title>Foundation for National Parks &amp; Wildlife | Since 1970</title>
+<meta name="description" content="We grow national parks, save threatened species and heal damaged country. The Foundation for National Parks &amp; Wildlife, since 1970.">
+<link rel="canonical" href="https://elyciap.github.io/fnpw-website-2026/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Foundation for National Parks &amp; Wildlife">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Foundation for National Parks &amp; Wildlife | Since 1970">
+<meta property="og:description" content="We grow national parks, save threatened species and heal damaged country. The Foundation for National Parks &amp; Wildlife, since 1970.">
+<meta property="og:url" content="https://elyciap.github.io/fnpw-website-2026/">
+<meta property="og:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/hero-beeeaters.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Foundation for National Parks &amp; Wildlife | Since 1970">
+<meta name="twitter:description" content="We grow national parks, save threatened species and heal damaged country. The Foundation for National Parks &amp; Wildlife, since 1970.">
+<meta name="twitter:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/hero-beeeaters.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Foundation for National Parks &amp; Wildlife: news and stories" href="feed.xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://elyciap.github.io/fnpw-website-2026/#organization","name":"Foundation for National Parks & Wildlife","legalName":"Foundation for National Parks & Wildlife","alternateName":"FNPW","url":"https://elyciap.github.io/fnpw-website-2026/","logo":{"@type":"ImageObject","url":"https://elyciap.github.io/fnpw-website-2026/assets/img/fnpw-logo.png","width":900,"height":246},"taxID":"90 107 744 771","nonprofitStatus":"NonprofitType","foundingDate":"1970","sameAs":["https://www.facebook.com/fnpwaustralia/","https://www.instagram.com/fnpwaustralia/","https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife"],"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+61 1800 898 626","email":"fnpw@fnpw.org.au","areaServed":"AU","availableLanguage":"en"},"address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://elyciap.github.io/fnpw-website-2026/#website","url":"https://elyciap.github.io/fnpw-website-2026/","name":"Foundation for National Parks & Wildlife","publisher":{"@id":"https://elyciap.github.io/fnpw-website-2026/#organization"},"inLanguage":"en-AU","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://elyciap.github.io/fnpw-website-2026/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<!-- /@meta -->
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/sora-variable.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/figtree-variable.woff2">
+<style>
+/* ============ homepage 2026 (hx-), page-scoped, becomes front-page.php ============ */
+/* Spacing uses the global tokens only (--sec-md, --sec-sm, --sp-1..6). The hero h1 is the one display size on this page. */
+
+/* The sitewide fixed noise overlay (body::before in global.css) sat over the hero image and, with the old marquee,
+   stopped Chromium from reporting an LCP candidate on this page. It is switched off on the homepage only. */
+body::before{display:none}
+
+/* --- hero (restored to the 4 Nov design) --- */
+.hx-hero{position:relative;min-height:92vh;display:flex;align-items:flex-start;background:var(--euc-deep);overflow:hidden}
+.hx-hero-bg{position:absolute;inset:0;background:#EBF7F7}
+.hx-hero-bg img{position:absolute;left:0;top:6%;width:100%;height:100%;object-fit:cover;object-position:15% 44%;opacity:1}
+.hx-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,49,50,0.95) 0%,rgba(15,49,50,0.94) 12%,rgba(15,49,50,0.91) 20%,rgba(15,49,50,0.85) 27%,rgba(15,49,50,0.77) 33%,rgba(15,49,50,0.66) 39%,rgba(15,49,50,0.53) 44%,rgba(15,49,50,0.39) 49%,rgba(15,49,50,0.26) 53%,rgba(15,49,50,0.15) 57%,rgba(15,49,50,0.07) 61%,rgba(15,49,50,0.02) 65%,rgba(15,49,50,0) 68%),linear-gradient(180deg,rgba(15,49,50,.18) 0%,rgba(15,49,50,.1) 10%,rgba(15,49,50,.03) 20%,rgba(15,49,50,0) 28%,rgba(15,49,50,0) 66%,rgba(15,49,50,.08) 76%,rgba(15,49,50,.22) 86%,rgba(15,49,50,.38) 94%,rgba(15,49,50,.45) 100%)}
+.hx-hero .cw{position:relative;padding-bottom:7rem;padding-top:clamp(6rem,20vh,11rem);width:100%}
+/* Phones keep the original bottom-aligned layout and heavier scrim so the text stays legible over the bright sky */
+@media(max-width:760px){.hx-hero{align-items:flex-end}.hx-hero-bg img{object-position:50% 44%;top:0}.hx-hero-bg::after{background:linear-gradient(90deg,rgba(15,49,50,.96) 0%,rgba(15,49,50,.9) 28%,rgba(15,49,50,.52) 46%,rgba(15,49,50,0) 66%),linear-gradient(180deg,rgba(15,49,50,.4) 0%,rgba(15,49,50,.15) 38%,rgba(15,49,50,.85) 100%)}.hx-hero .cw{padding-top:9rem;padding-bottom:5.5rem}}
+.hx-kicker{display:inline-flex;align-items:center;gap:.6rem;color:var(--euc-soft);font-family:var(--ff-d);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem}
+.hx-kicker::before{content:"";width:2.2rem;height:2px;background:var(--euc-soft)}
+.hx-h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.6rem,6.5vw,5.4rem);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:13ch;margin:0 0 1.4rem}
+.hx-h1 .wild{color:var(--euc-soft)}
+.hx-lede{color:rgba(250,246,242,.88);font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:40ch;line-height:1.6;margin-bottom:2.2rem}
+.hx-hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.hx-btn{font-family:var(--ff-d);font-weight:600;font-size:1rem;padding:1rem 2rem;border-radius:0;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;display:inline-block}
+.hx-btn:hover{transform:translateY(-2px)}
+.hx-btn-don{background:var(--waratah);color:var(--cream);box-shadow:0 10px 30px -10px rgba(194,55,71,.5)}
+.hx-btn-ghost{border:1.5px solid rgba(250,246,242,.55);color:var(--cream)}
+.hx-btn-ghost:hover{border-color:var(--cream);background:rgba(250,246,242,.08)}
+/* organic bottom edge */
+.hx-hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:70px}
+.hx-hero-curve svg{display:block;width:100%;height:100%}
+
+.hx-h1{text-shadow:0 2px 26px rgba(15,49,50,.4)}
+.hx-lede-w{max-width:52ch!important}
+
+/* --- Give a Tree photo band (Christmas appeal, Nov 2026) --- */
+.hx-gat{position:relative;background:var(--soil-deep);color:var(--cream);overflow:hidden}
+.hx-gat-im{position:absolute;top:0;right:0;bottom:0;width:50%;background:var(--soil)}
+.hx-gat-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.hx-gat-im::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,25,20,1) 0%,rgba(36,25,20,.7) 9%,rgba(36,25,20,0) 24%)}
+.hx-gat .cw{min-height:400px;display:flex;align-items:center;padding-top:var(--sec-md);padding-bottom:var(--sec-md)}
+.hx-gat-bd{max-width:min(540px,calc(50vw - 4.5rem));display:flex;flex-direction:column;gap:1.1rem}
+.hx-gat h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.08;letter-spacing:-.02em;color:var(--cream);max-width:14ch}
+.hx-gat p{margin:0;max-width:46ch;color:rgba(250,246,242,.88)}
+.hx-gat-cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:.5rem}
+.hx-gat-note{font-size:.88rem;color:rgba(250,246,242,.78)}
+@media(max-width:760px){
+  .hx-gat-im{position:relative;width:100%;height:260px}
+  .hx-gat-im::after{background:linear-gradient(0deg,rgba(36,25,20,1) 0%,rgba(36,25,20,0) 40%)}
+  .hx-gat .cw{min-height:0;padding-top:var(--sp-3);padding-bottom:var(--sec-md)}
+  .hx-gat-bd{max-width:none}
+}
+
+/* --- doorways: why we exist, supporters and partners, Give a Tree strip --- */
+.door-head{text-align:center;max-width:980px;margin:0 auto var(--sp-5)}
+.door-head h2{max-width:26ch;margin-left:auto;margin-right:auto}
+.door-head h2 em{font-style:normal;color:var(--euc)}
+.door-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3)}
+.door-c{display:block;padding:var(--sp-4);border:1px solid var(--rule);background:var(--white);text-decoration:none;color:inherit;border-top:4px solid var(--waratah)}
+.door-c2{background:var(--euc-deep);color:var(--cream);border-color:var(--euc-deep);border-top-color:var(--euc-mid)}
+.door-k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--euc)}
+.door-c2 .door-k{color:var(--euc-soft)}
+.door-c h3{margin:var(--sp-1) 0;color:var(--euc-deep)}
+.door-c2 h3{color:var(--cream)}
+.door-c p{font-size:.94rem;line-height:1.55;color:var(--char);margin:0 0 var(--sp-2)}
+.door-c2 p{color:rgba(250,246,242,.85)}
+.door-go{font-weight:700;font-size:.9rem;color:var(--euc)}
+.door-c2 .door-go{color:var(--euc-soft)}
+/* seasonal strip: thin band, sand background, same rhythm as .sec.strip */
+.gat-strip{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-3);padding:var(--sec-sm) var(--sp-4);background:var(--sand);border-left:4px solid var(--bark)}
+.gat-strip p{margin:0;max-width:60ch;color:var(--char)}
+.gat-strip strong{font-family:var(--ff-d);font-weight:700;color:var(--euc-deep)}
+.gat-strip-act{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap}
+.gat-note{font-size:.85rem;color:var(--stone);white-space:nowrap}
+@media(max-width:760px){.door-head{margin-bottom:var(--sp-4)}.door-g{grid-template-columns:1fr;gap:var(--sp-2)}.door-c{padding:var(--sp-3)}.gat-strip{padding:var(--sp-3)}}
+
+/* --- pillars --- */
+.hx-pils-head{margin-bottom:var(--sp-5)}
+.hx-pilrow{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4)}
+.hx-pil{display:block;text-decoration:none;color:inherit}
+.hx-pil-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--euc-pale)}
+.hx-pil-im img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.hx-pil:hover .hx-pil-im img{transform:scale(1.04)}
+.hx-pil-bar{display:block;width:46px;height:4px;margin:var(--sp-3) 0 var(--sp-2);background:var(--pilc,var(--euc))}
+.hx-pil h3{color:var(--euc-deep);margin:0 0 var(--sp-1)}
+.hx-pil p{font-size:.95rem;color:var(--char);max-width:38ch;margin:0 0 var(--sp-2)}
+.hx-pil-go{display:inline-block;font-family:var(--ff-d);font-weight:600;font-size:.88rem;color:var(--euc);transition:transform .2s ease}
+.hx-pil:hover .hx-pil-go{transform:translateX(4px)}
+@media(max-width:920px){.hx-pilrow{grid-template-columns:1fr;gap:var(--sp-4)}.hx-pil{display:grid;grid-template-columns:104px 1fr;column-gap:var(--sp-3);row-gap:0;align-items:start}.hx-pil-im{aspect-ratio:1/1;grid-row:1/5}.hx-pil-bar{margin:0 0 var(--sp-1)}.hx-pil p{font-size:.9rem;margin-bottom:var(--sp-1)}}
+
+/* --- impact band --- */
+.hx-impact{overflow:hidden;padding-bottom:calc(var(--sec-md) + var(--sp-4))}
+.hx-impact h2{max-width:24ch}
+.hx-imp-lead{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-5);align-items:start;padding:var(--sp-4) 0;border-bottom:1px solid rgba(250,246,242,.18);margin-top:var(--sp-4)}
+.hx-imp-ln{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.4rem,4.6vw,3.9rem);letter-spacing:-.04em;line-height:.95;color:var(--euc-soft);white-space:nowrap}
+.hx-imp-l p{font-size:1rem;color:rgba(250,246,242,.9);max-width:24ch;line-height:1.45;margin:var(--sp-1) 0 0}
+.hx-imp-u{font-family:var(--ff-b);font-weight:600;font-size:.27em;color:var(--cream);margin-left:.18em;letter-spacing:0}
+.hx-imp-ic{display:block;margin-bottom:var(--sp-2)}.hx-imp-ic img{height:52px;width:auto;display:block}
+.hx-chip{display:inline-block;font-family:var(--ff-d);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);padding:.5em 1.2em;border-radius:0}
+.hx-chip.pb-healing{background:var(--bark);color:var(--cream)}
+.hx-imp-year-l{display:inline-flex;align-items:center;gap:.6em;font-family:var(--ff-b);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);margin-top:var(--sp-4)}
+.hx-imp-year-l::before{content:"";width:22px;height:1.5px;background:var(--cream);display:inline-block}
+.hx-imp-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:var(--sp-4);padding-top:var(--sp-3)}
+.hx-imp-n{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.3rem);letter-spacing:-.03em;color:var(--euc-soft);line-height:1;margin:var(--sp-2) 0 var(--sp-1)}
+.hx-imp-i p{font-size:.95rem;color:rgba(250,246,242,.85);max-width:26ch;line-height:1.45;margin:0}
+.hx-imp-src{margin-top:var(--sp-4);font-size:.85rem;color:rgba(250,246,242,.65)}
+.hx-imp-src a{color:var(--euc-soft)}
+.hx-impact-curve{position:absolute;left:0;right:0;bottom:-1px;height:56px}
+.hx-impact-curve svg{display:block;width:100%;height:100%}
+@media(max-width:820px){.hx-imp-lead{grid-template-columns:1fr;gap:var(--sp-3)}.hx-imp-l{display:grid;grid-template-columns:52px 1fr;column-gap:var(--sp-2);align-items:center}.hx-imp-ic{grid-row:1/3;margin:0}.hx-imp-ic img{height:44px}.hx-imp-l p{margin-top:0}.hx-imp-g{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--sp-3)}.hx-chip{font-size:.6rem}}
+
+/* --- flagship projects --- */
+.hx-rail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-4);flex-wrap:wrap;margin-bottom:var(--sp-4)}
+.hx-rail-lede{font-size:1rem;line-height:1.6;color:var(--char);max-width:52ch;margin:var(--sp-2) 0 0}
+.fl-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--euc-pale)}
+.fl-im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.fl-card:hover .fl-im img{transform:scale(1.05)}
+.fl-chip{position:absolute;top:var(--sp-1);left:var(--sp-1);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.4em .8em;color:var(--cream)}
+.fl-parks{background:var(--euc)}.fl-species{background:var(--waratah)}.fl-healing{background:var(--soil)}
+.fl-loc{position:absolute;bottom:var(--sp-1);left:var(--sp-1);background:rgba(250,246,242,.92);color:var(--euc-deep);font-family:var(--ff-d);font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.4em 1em}
+.fl-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--rule)}
+.fl-bd{padding:var(--sp-3);display:flex;flex-direction:column;flex:1}
+.fl-bd h3{color:var(--euc-deep);line-height:1.2;margin:0 0 var(--sp-1)}
+.fl-bd p{font-size:.88rem;line-height:1.5;color:var(--char);margin:0 0 var(--sp-2);flex:1}
+.fl-go{font-size:.82rem;font-weight:600;color:var(--euc)}
+.fls-wrap{position:relative}
+.fls-track{display:flex;gap:var(--sp-3);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:var(--sp-1) 0 var(--sp-2);scrollbar-width:none}
+.fls-track::-webkit-scrollbar{display:none}
+.fls-track .fl-card{flex:0 0 calc((100% - 3*var(--sp-3))/4);scroll-snap-align:start}
+@media(max-width:1100px){.fls-track .fl-card{flex-basis:calc((100% - 2*var(--sp-3))/3)}}
+@media(max-width:820px){.fls-track .fl-card{flex-basis:calc((100% - var(--sp-3))/2)}}
+@media(max-width:520px){.fls-track .fl-card{flex-basis:82%}}
+.fls-bar{display:flex;align-items:center;gap:var(--sp-3);margin-top:var(--sp-2)}
+.fls-prog{flex:1;height:3px;background:var(--rule);position:relative;overflow:hidden}
+.fls-prog i{position:absolute;left:0;top:0;bottom:0;background:var(--euc-deep);width:33%;transition:left .3s ease,width .3s ease}
+.fls-count{font-family:var(--ff-d);font-size:.86rem;font-weight:600;color:var(--euc-deep);min-width:5.5ch;text-align:right}
+.fls-btn{width:48px;height:48px;border:1.5px solid var(--euc-deep);background:transparent;color:var(--euc-deep);font-size:1.15rem;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.fls-btn:hover{background:var(--euc-deep);color:var(--cream)}
+.fls-btn[disabled]{opacity:.3;cursor:default;background:transparent;color:var(--euc-deep)}
+
+/* --- partner & invest (landscape band, photo with deep scrim) --- */
+.hx-pt{position:relative;overflow:hidden;color:var(--cream);padding:var(--sec-md) 0;min-height:max(760px,52vw);display:flex;align-items:flex-end}
+.hx-pt-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.hx-pt::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,49,50,.92) 0%,rgba(15,49,50,.8) 30%,rgba(15,49,50,.35) 46%,rgba(15,49,50,0) 58%),linear-gradient(0deg,rgba(15,49,50,.9) 0%,rgba(15,49,50,.6) 14%,rgba(15,49,50,0) 32%)}
+.hx-pt .cw{position:relative;z-index:2;width:100%}
+.hx-pt-cap{position:absolute;right:var(--sp-2);top:var(--sp-2);z-index:2;font-size:.72rem;opacity:.75}
+.hx-pt .ey{color:var(--euc-pale)}.hx-pt .ey::before{background:var(--euc-pale)}
+.hx-pt h2{color:var(--cream);max-width:15ch}
+.hx-pt .lede{color:rgba(250,246,242,.9);max-width:46ch;margin-top:var(--sp-3)}
+.hx-pt-acts{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;margin-top:var(--sp-4)}
+.hx-pt-btn{display:inline-flex;align-items:center;padding:1.05em 2em;font-family:var(--ff-d);font-weight:700;font-size:.9rem;text-decoration:none;background:var(--cream);color:var(--euc-deep);border:1.5px solid var(--cream);transition:background .18s}
+.hx-pt-btn:hover{background:var(--euc-pale);border-color:var(--euc-pale)}
+.hx-pt-talk{font-family:var(--ff-d);font-weight:700;color:var(--cream);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:.15em}
+.hx-pt-talk:hover{color:var(--euc-pale)}
+.hx-pt-routes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--sp-6);border-top:1px solid rgba(250,246,242,.3)}
+.hx-pt-routes a{display:flex;justify-content:space-between;gap:var(--sp-2);padding:var(--sp-3) var(--sp-3) 0 0;color:var(--cream);text-decoration:none;border-right:1px solid rgba(250,246,242,.18)}
+.hx-pt-routes a+a{padding-left:var(--sp-3)}.hx-pt-routes a:last-child{border-right:0}
+.hx-pt-routes a:hover b{color:var(--euc-pale)}
+.hx-pt-routes b{font-family:var(--ff-d);font-size:1.12rem;display:block;margin-bottom:var(--sp-1)}
+.hx-pt-routes span{font-size:.9rem;opacity:.85;line-height:1.5}
+@media(max-width:900px){
+  .hx-pt{min-height:0;display:block}.hx-pt-bg{object-position:72% 30%}
+  .hx-pt::before{background:linear-gradient(0deg,rgba(15,49,50,.94) 0%,rgba(15,49,50,.84) 60%,rgba(15,49,50,.6) 100%)}
+  .hx-pt-cap{left:var(--sp-2);right:auto;top:auto;bottom:var(--sp-1)}
+  .hx-pt-routes{grid-template-columns:1fr;margin-top:var(--sp-5)}
+  .hx-pt-routes a,.hx-pt-routes a+a{border-right:0;border-bottom:1px solid rgba(250,246,242,.18);padding:var(--sp-3) 0}
+  .hx-pt-routes a:last-child{border-bottom:0;padding-bottom:0}
+}
+
+/* --- since 1970: story and Impact Report, one section --- */
+.hx-story .two{grid-template-columns:.8fr 1.2fr;gap:clamp(var(--sp-5),6vw,var(--sp-6))}
+.hx-ir-cov{position:relative;justify-self:center;width:min(330px,84%)}
+.hx-ir-cov img{position:relative;z-index:1;display:block;width:100%;height:auto;box-shadow:12px 12px 0 var(--euc-deep);transition:transform .3s ease,box-shadow .3s ease}
+.hx-ir-cov:hover img{transform:translate(-4px,-4px);box-shadow:18px 18px 0 var(--euc-deep)}
+.hx-story p{max-width:52ch;margin:0 0 var(--sp-2)}
+.hx-story .ey + h2{margin-bottom:var(--sp-3)}
+.hx-story .hx-quote{margin-top:var(--sp-4)}
+.hx-story-acts{display:flex;gap:var(--sp-2);flex-wrap:wrap;align-items:center;margin-top:var(--sp-4)}
+.hx-story-more{margin-top:var(--sp-3)}
+.hx-ir-trust{display:flex;gap:var(--sp-4);flex-wrap:wrap;margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid var(--rule);font-size:.92rem;font-weight:500;color:var(--char)}
+.hx-ir-trust span{display:inline-flex;align-items:center;gap:.45em}
+.hx-ir-trust i{font-style:normal;color:var(--euc-deep);font-weight:700}
+@media(max-width:880px){.hx-story .two{grid-template-columns:1fr;gap:var(--sp-4)}.hx-ir-cov{width:min(170px,50%);justify-self:start}.hx-story .hx-quote{margin-top:var(--sp-3)}}
+
+/* --- newsletter strip --- */
+.hx-news{border-top:1px solid var(--rule)}
+.hx-news-g{display:grid;grid-template-columns:1fr auto;gap:clamp(var(--sp-4),4vw,var(--sp-6));align-items:center}
+.hx-news-g p{max-width:68ch;margin:var(--sp-3) 0 0}
+.hx-news-g .btn-p{min-width:250px;white-space:nowrap}
+@media(max-width:820px){.hx-news-g{grid-template-columns:1fr;gap:var(--sp-4)}}
+main:has(.hx-news)+.ftr{margin-top:0}
+
+/* --- shared --- */
+a:focus-visible,button:focus-visible{outline:2px solid var(--euc);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  .hx-pil-im img,.fl-im img,.hx-ir-cov img,.hx-pil-go{transition:none}
+}
+
+/* Homepage option preview (Nov 2026) */
+.door-g .door-c{padding:var(--sp-3) var(--sp-4)}
+.door-g .door-c h3{font-size:1.2rem;margin:.3rem 0 .35rem}
+.door-g .door-c p{font-size:.9rem;line-height:1.5;margin:0 0 .7rem}
+@media(min-width:861px){.hx-feat3 .fls-track{overflow:visible}.hx-feat3 .fls-track .fl-card{flex:1 1 0}.hx-feat3 .fls-bar{display:none}}
+.hx-h1{max-width:17ch;font-size:clamp(2.3rem,5vw,4.2rem);line-height:1.05}
+.hx-btn-lt{background:var(--cream);color:var(--euc-deep)}
+.door-p{max-width:68ch;margin:var(--sp-3) auto 0;font-size:1.05rem;line-height:1.65;color:var(--char)}
+.hx-imp-intro{max-width:62ch;margin:var(--sp-3) 0 0;color:rgba(250,246,242,.86)}
+.hx-imp-intro a{color:var(--euc-soft);font-weight:600;white-space:nowrap}
+@media(min-width:861px){.hx-gat-md .cw{min-height:300px;padding-top:var(--sp-5);padding-bottom:var(--sp-5)}}
+</style>
+</head>
+<body>
+<!-- @header --><a class="skip" href="#main">Skip to content</a>
+<div class="ack" role="region" aria-label="Acknowledgement of Country">We acknowledge the Traditional Custodians of Country throughout Australia. <span class="ack-more">We pay our respects to Elders past and present.</span></div>
+<header class="hdr" id="hdr">
+<div class="cw"><div class="hdr-in">
+  <a href="index.html" class="logo"><img src="assets/img/fnpw-logo.png" alt="Foundation for National Parks &amp; Wildlife" style="height:42px;width:auto;display:block"></a>
+  <a href="search.html" class="m-srch" aria-label="Search the site"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg></a>
+  <button class="mt" id="mt" aria-label="Menu" aria-controls="mn" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mn" aria-label="Main">
+    <a href="about.html" class="">About</a>
+    <div class="ng">
+      <button aria-expanded="false" aria-controls="dd-projects">Projects <span class="ar">▾</span></button>
+      <div class="dd" id="dd-projects">
+        <a href="projects.html" class="">All Projects</a>
+        <a href="growing-national-parks.html" class="">Growing National Parks</a>
+        <a href="saving-species.html" class="">Saving Species</a>
+        <a href="healing-the-land.html" class="">Healing the Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button aria-expanded="false" aria-controls="dd-partner">Partner With Us <span class="ar">▾</span></button>
+      <div class="dd" id="dd-partner">
+        <a href="partner-invest.html" class="">Ways to Partner</a>
+        <a href="government-partnerships.html" class="">Government Partnerships</a>
+        <a href="partner.html" class="">Corporate Partnerships</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button aria-expanded="false" aria-controls="dd-impact">Impact <span class="ar">▾</span></button>
+      <div class="dd" id="dd-impact">
+        <a href="our-impact.html" class="">Our Impact</a>
+        <a href="reports.html" class="">Impact Reports</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button aria-expanded="false" aria-controls="dd-involved">Get Involved <span class="ar">▾</span></button>
+      <div class="dd" id="dd-involved">
+        <a href="ways-you-can-get-involved.html" class="">Ways to Get Involved</a>
+        <a href="volunteer.html" class="">Corporate Volunteering</a>
+        <a href="workplace-giving.html" class="">Workplace Giving</a>
+        <a href="fundraising-with-fnpw.html" class="">Fundraising</a>
+        <a href="bequests.html" class="">Gifts in Wills</a>
+        <a href="donate-land.html" class="">Donate Land</a>
+      </div>
+    </div>
+    <div class="ng">
+      <button aria-expanded="false" aria-controls="dd-stories">Stories <span class="ar">▾</span></button>
+      <div class="dd" id="dd-stories">
+        <a href="articles.html" class="">Articles</a>
+      </div>
+    </div>
+    <a href="contact.html" class="">Contact Us</a>
+    <a href="search.html" class="nav-srch" aria-label="Search the site"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg><span>Search</span></a>
+    <a href="https://bush.fnpw.org.au" class="btn btn-don">Donate</a>
+  </nav>
+  <div class="nav-bd" id="nav-bd" hidden></div>
+</div></div>
+</header><!-- /@header -->
+<main id="main">
+
+<!-- 1. HERO ========================================================== -->
+<section class="hx-hero">
+  <div class="hx-hero-bg">
+    <picture><source type="image/webp" srcset="assets/img/r/hero-beeeaters-480.webp 480w, assets/img/r/hero-beeeaters-800.webp 800w, assets/img/r/hero-beeeaters-1200.webp 1200w, assets/img/r/hero-beeeaters-1600.webp 1600w" sizes="100vw"><img src="assets/img/hero-beeeaters.jpg" alt="Two rainbow bee-eaters on a branch" width="1600" height="1022" fetchpriority="high" decoding="async"></picture>
+  </div>
+  <div class="cw rv">
+    <h1 class="hx-h1">Protecting and restoring Australia&rsquo;s <span class="wild">nature</span> since 1970.</h1>
+    <p class="hx-lede hx-lede-w">For more than 55 years we have brought First Nations organisations, governments, businesses and communities together to protect Australia&rsquo;s natural heritage, restore vital ecosystems and save threatened wildlife.</p>
+    <div class="hx-hero-cta">
+      <a class="hx-btn hx-btn-lt" href="partner-invest.html">Partner with us</a>
+      <a class="hx-btn hx-btn-ghost" href="our-impact.html">Explore our impact</a>
+    </div>
+  </div>
+  <div class="hx-hero-curve" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,70 L0,40 C240,0 480,55 720,38 C960,20 1200,52 1440,22 L1440,70 Z" fill="var(--cream)"/></svg>
+  </div>
+</section>
+
+<!-- 2. DOORWAYS: SUPPORTERS AND PARTNERS ============================== -->
+<section class="sec door">
+  <div class="cw">
+    <div class="door-head rv">
+      <span class="ey">Our purpose</span>
+      <h2>Together, we can create a <em>lasting legacy</em> for nature.</h2>
+      <p class="door-p">Australia is home to extraordinary landscapes and wildlife found nowhere else on Earth, but habitat loss, a changing climate and other pressures threaten the places and species that make this country unique. We work with Traditional Custodians, scientists, governments, communities, businesses and supporters to protect what matters and restore what has been lost.</p>
+    </div>
+    <div class="door-g rv d1">
+        <a class="door-c door-c2" href="partner-invest.html"><span class="door-k">For government, business and philanthropy</span><h3>Partner with us for impact</h3><p>How we work with government, foundations, businesses and major donors, and the results we report.</p><span class="door-go">Explore partnerships &#8594;</span></a>
+        <a class="door-c" href="ways-you-can-get-involved.html"><span class="door-k">For supporters</span><h3>Support conservation</h3><p>Donate, Give a Tree, volunteer with your team or leave a gift in your will.</p><span class="door-go">Ways to get involved &#8594;</span></a>
+      </div>
+  </div>
+</section>
+
+<!-- 3. PILLARS ======================================================= -->
+<section class="sec sand hx-pils">
+  <div class="cw">
+    <div class="hx-pils-head rv">
+      <span class="ey">What we do</span>
+      <h2>Three priorities and one commitment to nature.</h2>
+    </div>
+    <div class="hx-pilrow rv d1">
+      <a class="hx-pil" href="growing-national-parks.html" style="--pilc:var(--euc)">
+        <div class="hx-pil-im"><picture><source type="image/webp" srcset="assets/img/r/pillar-parks-480.webp 480w, assets/img/r/pillar-parks-800.webp 800w, assets/img/r/pillar-parks-1200.webp 1200w, assets/img/r/pillar-parks-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/pillar-parks.jpg" alt="River gorge country at sunrise, Western Australia" width="1600" height="900" loading="lazy" decoding="async"></picture></div>
+        <span class="hx-pil-bar"></span>
+        <h3>Growing National Parks</h3>
+        <p>We expand and protect conservation spaces to safeguard critical habitats and support resilient ecosystems.</p>
+        <span class="hx-pil-go">See the projects &#8594;</span>
+      </a>
+      <a class="hx-pil" href="saving-species.html" style="--pilc:var(--waratah)">
+        <div class="hx-pil-im"><picture><source type="image/webp" srcset="assets/img/r/species-rock-wallaby-480.webp 480w, assets/img/r/species-rock-wallaby-800.webp 800w, assets/img/r/species-rock-wallaby-1200.webp 1200w, assets/img/r/species-rock-wallaby-1400.webp 1400w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/species-rock-wallaby.jpg" alt="A brush-tailed rock-wallaby on a boulder, looking straight at the camera with a grass stem in its mouth" width="1400" height="1050" loading="lazy" decoding="async"></picture><span class="img-cr">Photo: Jenolan Caves/DCCEEW</span></div>
+        <span class="hx-pil-bar"></span>
+        <h3>Saving Species</h3>
+        <p>We protect Australia's most vulnerable species by restoring habitats, creating wildlife corridors, and supporting targeted conservation programs.</p>
+        <span class="hx-pil-go">See the projects &#8594;</span>
+      </a>
+      <a class="hx-pil" href="healing-the-land.html" style="--pilc:var(--bark)">
+        <div class="hx-pil-im"><picture><source type="image/webp" srcset="assets/img/r/pillar-healing-nursery-480.webp 480w, assets/img/r/pillar-healing-nursery-800.webp 800w, assets/img/r/pillar-healing-nursery-1200.webp 1200w, assets/img/r/pillar-healing-nursery-1400.webp 1400w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/pillar-healing-nursery.jpg" alt="Trays of native seedlings growing in tubes on benches at a community nursery" style="object-position:62% 50%" width="1400" height="1050" loading="lazy" decoding="async"></picture><span class="img-cr">Photo: &copy; Rebecca Collins</span></div>
+        <span class="hx-pil-bar"></span>
+        <h3>Healing the Land</h3>
+        <p>We restore landscapes affected by bushfires, floods and unsustainable activities through our Landscape Resilience Program.</p>
+        <span class="hx-pil-go">See the projects &#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. IMPACT ======================================================== -->
+<section class="sec dark hx-impact">
+  <div class="cw">
+    <div class="rv">
+      <span class="ey">Our impact</span>
+      <h2>Lasting conservation and measurable impact.</h2>
+      <p class="hx-imp-intro">We measure our work in landscapes protected, habitats restored, species supported and communities equipped to care for nature. <a href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Read the 2025 Impact Report <span aria-hidden="true">&rarr;</span></a></p>
+    </div>
+    <div class="hx-imp-lead rv">
+      <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-terrain-light-soil-rgb.svg" alt="" aria-hidden="true" width="68" height="64" loading="lazy"></span>
+        <div class="hx-imp-ln"><span data-count="600" data-suf="K+">600K+</span><span class="hx-imp-u">hectares</span></div>
+        <p>protected for national parks and reserves</p>
+      </div>
+      <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-landscape-light-bark-rgb.svg" alt="" aria-hidden="true" width="65" height="64" loading="lazy"></span>
+        <div class="hx-imp-ln"><span data-count="50">50</span></div>
+        <p>national parks and reserves created or expanded</p>
+      </div>
+      <div class="hx-imp-l">
+        <span class="hx-imp-ic"><img src="assets/icons/fnpw-icon-plants-growing-light-soil-rgb.svg" alt="" aria-hidden="true" width="63" height="64" loading="lazy"></span>
+        <div class="hx-imp-ln"><span data-count="1.2" data-dec="1" data-suf="M">1.2M</span></div>
+        <p>trees, shrubs and seedlings planted in key priority landscapes</p>
+      </div>
+    </div>
+    <div class="hx-imp-year rv">
+      <span class="hx-imp-year-l">This year</span>
+      <div class="hx-imp-g">
+        <div class="hx-imp-i"><span class="hx-chip pb-parks">Growing National Parks</span>
+          <div class="hx-imp-n"><span data-count="29479">29,479</span><span class="hx-imp-u">ha</span></div>
+          <p>added to National Park status</p></div>
+        <div class="hx-imp-i"><span class="hx-chip pb-healing">Healing the Land</span>
+          <div class="hx-imp-n"><span data-count="647">647</span><span class="hx-imp-u">ha</span></div>
+          <p>under active restoration</p></div>
+        <div class="hx-imp-i"><span class="hx-chip pb-species">Saving Species</span>
+          <div class="hx-imp-n"><span data-count="18582">18,582</span></div>
+          <p>wombat mange treatments delivered</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="hx-impact-curve" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,30 C260,0 520,48 760,30 C1000,12 1240,44 1440,18 L1440,56 Z" fill="var(--cream)"/></svg>
+  </div>
+</section>
+
+<!-- 5. FLAGSHIP PROJECTS ============================================= -->
+<section class="sec hx-rail-sec">
+  <div class="cw">
+    <div class="hx-rail-head rv">
+      <div>
+        <span class="ey">Our work</span>
+        <h2>Conservation in action.</h2>
+        <p class="hx-rail-lede">Across Australia, we work with partners to protect significant landscapes, restore ecosystems and support native wildlife.</p>
+      </div>
+      <div class="hx-rail-nav"><a class="btn-o" href="projects.html">All 85 projects</a></div>
+    </div>
+    <div class="rv d1">
+    <div class="fls-wrap hx-feat3" data-fls>
+      <div class="fls-track" tabindex="0" aria-label="Flagship projects">
+          <a class="fl-card" href="project-mundoo-island-acquisition.html"><div class="fl-im"><picture><source type="image/webp" srcset="assets/img/r/projects-mundoo-hero-480.webp 480w, assets/img/r/projects-mundoo-hero-800.webp 800w, assets/img/r/projects-mundoo-hero-1200.webp 1200w, assets/img/r/projects-mundoo-hero-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/mundoo-hero.jpg" alt="Aerial view of the Murray Mouth, with tidal channels winding between saltmarsh islands" width="1600" height="686" loading="lazy" decoding="async"></picture><span class="fl-chip fl-parks">Growing National Parks</span><span class="fl-loc">South Australia</span></div><div class="fl-bd"><h3>Mundoo Island Station</h3><p>Helping secure an ecologically important landscape in the Coorong for long-term conservation.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+          <a class="fl-card" href="project-curb-wombat-mange-program.html"><div class="fl-im"><picture><source type="image/webp" srcset="assets/img/r/projects-wombat-mange-healthy-wombat-grass-480.webp 480w, assets/img/r/projects-wombat-mange-healthy-wombat-grass-800.webp 800w, assets/img/r/projects-wombat-mange-healthy-wombat-grass-1200.webp 1200w, assets/img/r/projects-wombat-mange-healthy-wombat-grass-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/projects/wombat-mange-healthy-wombat-grass.jpg" alt="A healthy bare-nosed wombat grazing in open grass" width="1600" height="1064" loading="lazy" decoding="async"></picture><span class="fl-chip fl-species">Saving Species</span><span class="fl-loc">New South Wales</span></div><div class="fl-bd"><h3>Curb Wombat Mange Program</h3><p>Supporting coordinated action to address wombat mange through wildlife carers and conservation partners.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+          <a class="fl-card" href="project-native-plant-nurseries.html"><div class="fl-im"><img src="https://fnpw.org.au/wp-content/uploads/2024/03/Native-Nursery-Australia-1024x791.png" alt="A community nursery growing locally collected native stock" loading="lazy" width="1024" height="791" decoding="async"><span class="fl-chip fl-healing">Healing the Land</span><span class="fl-loc">National</span></div><div class="fl-bd"><h3>Native Plant Nurseries</h3><p>Strengthening local capacity to grow native plants and restore landscapes across Australia.</p><span class="fl-go">Read the story &#8594;</span></div></a>
+        </div>
+      <div class="fls-bar"><button class="fls-btn" data-fls-dir="-1" aria-label="Previous projects">&#8592;</button><button class="fls-btn" data-fls-dir="1" aria-label="Next projects">&#8594;</button><div class="fls-prog"><i></i></div><span class="fls-count">1&ndash;4 of 12</span></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIVE A TREE: Christmas band, moved below the projects and reduced in height. Remove after Christmas -->
+<section class="hx-gat hx-gat-md">
+  <div class="hx-gat-im">
+    <picture><source type="image/webp" srcset="assets/img/r/give-a-tree-koala-tree-480.webp 480w, assets/img/r/give-a-tree-koala-tree-800.webp 800w, assets/img/r/give-a-tree-koala-tree-1200.webp 1200w" sizes="(min-width: 761px) 50vw, 100vw"><img src="assets/img/give-a-tree-koala-tree.jpg" alt="A koala climbing between the forked trunks of a eucalypt, looking at the camera" width="1200" height="1600" loading="lazy" decoding="async"></picture>
+  </div>
+  <div class="cw">
+    <div class="hx-gat-bd rv">
+      <h2>Give a Tree this Christmas.</h2>
+      <p>A gift that is still growing long after the day itself. $10 plants a native tree where habitat needs it most, and every gift comes with a personalised certificate.</p>
+      <div class="hx-gat-cta">
+        <a class="hx-btn hx-btn-don" href="https://giveatree.fnpw.org.au/">Give a Tree</a>
+        <span class="hx-gat-note">Fully tax deductible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PARTNER & INVEST ============================================== -->
+<section class="hx-pt">
+  <!-- Photo supplied Nov 2026 (gang-gang cockatoos), flipped horizontally and cropped. Location and photographer credit to confirm, then add a .hx-pt-cap caption -->
+  <picture><source type="image/webp" srcset="assets/img/r/home-partner-gang-gangs-480.webp 480w, assets/img/r/home-partner-gang-gangs-800.webp 800w, assets/img/r/home-partner-gang-gangs-1200.webp 1200w, assets/img/r/home-partner-gang-gangs-1600.webp 1600w" sizes="100vw"><img class="hx-pt-bg" src="assets/img/home-partner-gang-gangs.jpg" alt="A pair of gang-gang cockatoos on a eucalypt branch, the red-headed male leaning in to the grey female" width="1600" height="978" loading="lazy" decoding="async"></picture>
+  <div class="cw rv">
+    <span class="ey">Partner with us</span>
+    <h2>Partnerships that change whole landscapes.</h2>
+    <p class="lede">We work with government, foundations, businesses and philanthropists to fund and deliver conservation at scale, from securing land for new national parks to multi-year programs that cross state lines.</p>
+    <div class="hx-pt-acts"><a class="hx-pt-btn" href="partner-invest.html#opportunities">Explore Opportunities</a><a class="hx-pt-talk" href="partner-invest.html#talk">Enquire About a Partnership <span aria-hidden="true">&rarr;</span></a></div>
+    <div class="hx-pt-routes">
+      <a href="government-partnerships.html"><div><b>Government</b><span>Land acquisition, landscape programs and grant delivery.</span></div><span aria-hidden="true">&rarr;</span></a>
+      <a href="partner.html"><div><b>Business</b><span>Measurable outcomes inside your sustainability and nature commitments.</span></div><span aria-hidden="true">&rarr;</span></a>
+      <a href="ways-you-can-get-involved.html"><div><b>Foundations &amp; philanthropy</b><span>Fund a project, a program or a whole landscape.</span></div><span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SINCE 1970: STORY AND IMPACT REPORT =========================== -->
+<section class="sec sand hx-story">
+  <div class="cw">
+    <div class="two">
+      <div class="hx-ir-cov rv">
+        <a href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf"><picture><source type="image/webp" srcset="assets/img/r/impact-report-cover-480.webp 480w, assets/img/r/impact-report-cover-800.webp 800w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"><img src="assets/img/impact-report-cover.jpg" alt="Cover of the FNPW Impact Report 2025" width="800" height="1131" loading="lazy" decoding="async"></picture></a>
+      </div>
+      <div class="rv d1">
+        <span class="ey">Experience, trust and accountability</span>
+        <h2>More than 55 years of commitment to conservation.</h2>
+        <p>Since 1970 we have worked with Traditional Custodians, governments, conservation organisations, scientists and communities to protect and restore Australia&rsquo;s natural heritage.</p>
+        <p>Our partnerships are built on shared objectives, practical conservation delivery and accountability for the outcomes we achieve.</p>
+        <div class="hx-story-acts">
+          <a class="btn-p" href="https://fnpw.org.au/wp-content/uploads/2026/04/FNPW_ImpactReport2025_V2_Digital_FA2-Medium.pdf">Read the Impact Report</a>
+          <a class="btn-o" href="reports.html">All reports &amp; financials</a>
+        </div>
+        <div class="hx-story-more"><a class="btn-g" href="about.html">Read our story </a></div>
+        <div class="hx-ir-trust">
+          <span><i>&#10003;</i> ACNC registered charity</span>
+          <span><i>&#10003;</i> DGR endorsed</span>
+          <span><i>&#10003;</i> Independently audited</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. NEWSLETTER ==================================================== -->
+<section class="sec strip hx-news">
+  <div class="cw">
+    <div class="hx-news-g">
+      <div class="rv">
+        <span class="ey">Newsletter</span>
+        <h2>Stories from the bush, straight to your inbox.</h2>
+        <p>Once a month we send project updates, species spotlights and the small wins that rarely make the news, written by the people doing the work on the ground.</p>
+      </div>
+      <div class="rv d1">
+        <a class="btn-p" href="newsletters-sign-up.html">Get our newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- @footer --><footer class="ftr">
+  
+  
+  <div class="cw">
+    <div class="ftr-g">
+      <div>
+        <div style="margin-bottom:1.4rem"><img src="assets/img/fnpw-logo-footer.png" alt="Foundation for National Parks &amp; Wildlife" style="height:48px;width:auto;display:block"></div>
+        <p style="font-size:.94rem;line-height:1.65;opacity:.85;max-width:36ch">For more than 55 years, protecting and restoring Australia&rsquo;s most precious landscapes and wildlife.</p>
+        <ul class="ftr-social" aria-label="Follow us"><li><a href="https://www.facebook.com/fnpwaustralia/" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/fnpwaustralia/" rel="noopener">Instagram</a></li><li><a href="https://au.linkedin.com/company/foundation-for-national-parks-%26-wildlife" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+      <div><h2 class="ftr-h">Explore</h2><ul><li><a href="about.html">About FNPW</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="articles.html">News &amp; Stories</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="media-enquiry.html">Media Enquiries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2 class="ftr-h">Get Involved</h2><ul><li><a href="https://bush.fnpw.org.au">Donate</a></li><li><a href="partner-invest.html">Partner With Us</a></li><li><a href="volunteer.html">Corporate Volunteering</a></li><li><a href="bequests.html">Gifts in Wills</a></li><li><a href="https://giveatree.fnpw.org.au/">Give a Tree</a></li><li><a href="newsletters-sign-up.html">Newsletter Sign-up</a></li></ul></div>
+      <div><h2 class="ftr-h">Visit Us</h2><ul><li>Sydney, NSW</li><li><a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a></li><li><a href="tel:1800898626">1800 898 626</a></li><li>ABN 90 107 744 771</li></ul></div>
+    </div>
+    <div class="ftr-b"><span>&copy; 2026 Foundation for National Parks &amp; Wildlife. All rights reserved.</span><div style="display:flex;gap:1.5rem"><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="reconciliation-action-plan.html">RAP</a></div></div>
+  </div>
+</footer><!-- /@footer -->
+<script src="assets/js/main.js"></script>
+<script>
+document.querySelectorAll('[data-fls]').forEach(function(w){
+  var t=w.querySelector('.fls-track'),cards=t.querySelectorAll('.fl-card'),pv=w.querySelector('[data-fls-dir="-1"]'),nx=w.querySelector('[data-fls-dir="1"]'),bar=w.querySelector('.fls-prog i'),ct=w.querySelector('.fls-count');
+  function step(){var c=cards[0];return c.offsetWidth+parseFloat(getComputedStyle(t).columnGap||20);}
+  function upd(){var max=t.scrollWidth-t.clientWidth,vis=Math.max(1,Math.round(t.clientWidth/step())),first=Math.round(t.scrollLeft/step())+1,last=Math.min(cards.length,first+vis-1);
+    if(ct)ct.textContent=(first===last?first:first+'\u2013'+last)+' of '+cards.length;
+    if(bar){bar.style.width=(vis/cards.length*100)+'%';bar.style.left=(max>0?(t.scrollLeft/max)*(100-vis/cards.length*100):0)+'%';}
+    if(pv)pv.disabled=t.scrollLeft<=2; if(nx)nx.disabled=t.scrollLeft>=max-2;}
+  w.querySelectorAll('[data-fls-dir]').forEach(function(b){b.addEventListener('click',function(){var vis=Math.max(1,Math.round(t.clientWidth/step()));t.scrollBy({left:parseInt(b.dataset.flsDir,10)*step()*vis,behavior:'smooth'});});});
+  t.addEventListener('scroll',function(){window.requestAnimationFrame(upd);});window.addEventListener('resize',upd);upd();
+});
+</script>
+</body>
+</html>

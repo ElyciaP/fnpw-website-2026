@@ -661,7 +661,7 @@ def llms():
             lines.append('- [%s](%s): %s' % (text(existing_title_part(open(os.path.join(ROOT, fname)).read())) or fname, page_url(fname), blurb))
     lines += ['', '## Donations (all giving is handled on Raisely, not on this site)', '',
               '- Donate: https://bush.fnpw.org.au',
-              '- Give a Tree: https://gift-a-tree.fnpw.org.au',
+              '- Give a Tree: https://giveatree.fnpw.org.au/',
               '- Habitat Heroes (monthly giving): https://habitat-heroes.fnpw.org.au', '']
     lines += ['## Data endpoints', '',
               '- Sitemap: %ssitemap.xml' % SITE_URL,

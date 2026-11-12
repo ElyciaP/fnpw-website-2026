@@ -94,7 +94,7 @@ All images are sourced from Unsplash via URL (e.g. `https://images.unsplash.com/
 
 Donations stay on Raisely. Our own donate, Give a Tree and Bring Back the Bush pages were
 removed. Every Donate button goes to https://bush.fnpw.org.au, Give a Tree goes to
-https://gift-a-tree.fnpw.org.au and monthly giving (Habitat Heroes) to
+https://giveatree.fnpw.org.au/ and monthly giving (Habitat Heroes) to
 https://habitat-heroes.fnpw.org.au. Never build an on-site payment form.
 
 ## Pages ported from the live site

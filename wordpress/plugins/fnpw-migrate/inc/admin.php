@@ -47,6 +47,14 @@ function fnpw_migrate_handle_post() {
 			$notice = sprintf( 'Package stored: %d items, %d media entries.', $result['items'], $result['media'] );
 			fnpw_migrate_log( 'upload-' . $result['hash'], 'upload', $result['name'], 'upload', 0, $notice );
 		}
+	} elseif ( 'mailtest' === $do ) {
+		fnpw_migrate_block_mail();
+		$user = wp_get_current_user();
+		wp_mail( $user->user_email, 'FNPW import: email block test', 'If this email arrives, the importer is not blocking email. Do not run an import.' );
+		$blocked = fnpw_migrate_mail_blocked_now();
+		$notice  = $blocked ? 'Email block is working: the test email to ' . $user->user_email . ' was stopped. Check your inbox and the email log to confirm nothing arrived.' : 'The email block did NOT catch the test email. Do not run an import.';
+		$type    = $blocked ? 'success' : 'error';
+		fnpw_migrate_log( 'mailtest-' . gmdate( 'Ymd-His' ), 'mailtest', $user->user_email, $blocked ? 'mail-blocked' : 'error', 0, $notice );
 	} elseif ( 'log' === $do ) {
 		fnpw_migrate_log_csv();
 		exit;
@@ -304,6 +312,15 @@ function fnpw_migrate_screen() {
 				</table>
 			</details>
 		<?php endif; ?>
+
+		<h2>Email safety</h2>
+		<p>No email leaves the site while an import, dry run or restore is running. Emails blocked so far: <strong><?php echo (int) get_option( 'fnpw_migrate_mail_blocked_total', 0 ); ?></strong>.</p>
+		<form method="post" action="<?php echo esc_url( $action ); ?>">
+			<input type="hidden" name="action" value="fnpw_migrate">
+			<input type="hidden" name="fnpw_do" value="mailtest">
+			<?php wp_nonce_field( 'fnpw_migrate_mailtest' ); ?>
+			<p><button type="submit" class="button" id="fnpw-mailtest">Test the email block</button> Sends one test email to your own address, which should be stopped.</p>
+		</form>
 
 		<h2>4. Log</h2>
 		<form method="post" action="<?php echo esc_url( $action ); ?>">

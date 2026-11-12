@@ -8,3 +8,6 @@ Claude outputs/
 .claude/settings.local.json
 __pycache__/
 *.pyc
+
+# Built zips for upload to WordPress
+wordpress/dist/

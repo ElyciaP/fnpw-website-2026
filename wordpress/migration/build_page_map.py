@@ -25,7 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 os.chdir(ROOT)
 SNAP = 'wordpress/migration/source/live-sitemaps-2026-11-10.txt'
 OUT = 'wordpress/migration/page-map.csv'
-BUSH, GAT, HH = 'https://bush.fnpw.org.au', 'https://gift-a-tree.fnpw.org.au', 'https://habitat-heroes.fnpw.org.au'
+BUSH, GAT, HH = 'https://bush.fnpw.org.au', 'https://giveatree.fnpw.org.au/', 'https://habitat-heroes.fnpw.org.au'
 
 # Live pages (page-sitemap) -> (static file, action, redirect_to, template, decision, note)
 PAGES = {
