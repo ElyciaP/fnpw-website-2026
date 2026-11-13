@@ -274,7 +274,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | article-what-does-healthy-bushland-look-like.html | /news/latest-blogs/what-does-healthy-bushland-look-like/ | 30 / 9 / 0 | 35 | 11 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-why-species-matters-plant-selection.html | /news/latest-blogs/why-species-matters-plant-selection/ | 35 / 5 / 0 | 35 | 5 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 1 (0) |
 | article-the-number-almost-no-one-publishes.html | /news/latest-blogs/the-number-almost-no-one-publishes/ | 28 / 3 / 0 | 31 | 3 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
-| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18565 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (3) |
+| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18604 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (3) |
 | newsletter-thank-you.html | /newsletter-thank-you/ | 0 / 1 / 0 | 0 | 1 | none | none | none | 0 (0) |
 | thank-you.html | /thank-you/ | 1 / 1 / 0 | 2 | 3 | none | none | none | 1 (0) |
 | paws-magazine.html | /paws-magazine/ | 2 / 0 / 0 | 5 | 3 | page CSS in _fnpw_page_css (1939 bytes) | none | none | 1 (0) |
