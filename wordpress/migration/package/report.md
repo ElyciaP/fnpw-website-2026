@@ -11,11 +11,11 @@ Written by `convert.py` on 13 November 2026. Regenerate rather than edit.
 | Sections converted to core blocks (Group with editable Heading, Paragraph or List inside) | 2948 (83%) |
 | Sections carried whole in one Custom HTML block | 593 (17%) |
 | Sections drawn by the theme or a dynamic block | 2 |
-| Editable core blocks (Heading, Paragraph, List) | 4412 |
+| Editable core blocks (Heading, Paragraph, List) | 4413 |
 | Group blocks | 1757 |
 | Custom HTML blocks in total (whole sections plus pieces inside converted sections) | 1501 |
-| Images and documents to sideload from GitHub Pages | 231 |
-| ...of which are not in the repo asset list | 19 |
+| Images and documents to sideload from GitHub Pages | 233 |
+| ...of which are not in the repo asset list | 23 |
 | Images left on the live media library (URL unchanged) | 238 |
 | Unresolved internal links | 0 |
 
@@ -87,6 +87,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 - `assets/img/bequests-koala-branch.jpg`
 - `assets/img/contact-hero-pigface.jpg`
 - `assets/img/emu-face.png`
+- `assets/img/faqs-hero-kangaroo.jpg`
 - `assets/img/give-a-tree-gang-gang.jpg`
 - `assets/img/give-donate-emu.jpg`
 - `assets/img/government-forest-canopy.jpg`
@@ -101,6 +102,9 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 - `assets/img/projects/little-penguin-rock-crevice.jpg`
 - `assets/img/projects/little-penguin-sand-night.jpg`
 - `assets/img/projects/manly-little-penguin-nestbox.jpg`
+- `assets/img/projects/opp-narrung-pelicans.jpg`
+- `assets/img/projects/wombat-mange-wombat-walking.jpg`
+- `assets/img/saving-species-hero-koala.jpg`
 
 ## Per page
 
@@ -270,7 +274,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | article-what-does-healthy-bushland-look-like.html | /news/latest-blogs/what-does-healthy-bushland-look-like/ | 30 / 9 / 0 | 35 | 11 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-why-species-matters-plant-selection.html | /news/latest-blogs/why-species-matters-plant-selection/ | 35 / 5 / 0 | 35 | 5 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 1 (0) |
 | article-the-number-almost-no-one-publishes.html | /news/latest-blogs/the-number-almost-no-one-publishes/ | 28 / 3 / 0 | 31 | 3 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
-| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18523 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (2) |
+| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18565 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (3) |
 | newsletter-thank-you.html | /newsletter-thank-you/ | 0 / 1 / 0 | 0 | 1 | none | none | none | 0 (0) |
 | thank-you.html | /thank-you/ | 1 / 1 / 0 | 2 | 3 | none | none | none | 1 (0) |
 | paws-magazine.html | /paws-magazine/ | 2 / 0 / 0 | 5 | 3 | page CSS in _fnpw_page_css (1939 bytes) | none | none | 1 (0) |
@@ -290,7 +294,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | contact.html | /contact-us/ | 3 / 0 / 0 | 10 | 9 | page CSS in _fnpw_page_css (7049 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (1) |
 | fundraising-with-fnpw.html | /fundraising-with-fnpw/ | 6 / 1 / 0 | 33 | 12 | page CSS in _fnpw_page_css (4748 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | donate-land.html | /donate-land/ | 6 / 1 / 0 | 35 | 16 | page CSS in _fnpw_page_css (9532 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 2 (0) |
-| faqs.html | /faqs/ | 3 / 0 / 0 | 11 | 10 | page CSS in _fnpw_page_css (2019 bytes) | none | none | 1 (0) |
+| faqs.html | /faqs/ | 3 / 0 / 0 | 12 | 10 | page CSS in _fnpw_page_css (2019 bytes) | none | none | 1 (1) |
 | volunteer.html | /corporate-volunteering/ | 7 / 1 / 0 | 45 | 37 | page CSS in _fnpw_page_css (31275 bytes) | 1 page script(s) in _fnpw_page_js (1642 bytes); assets/js/carousel.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file volunteer-90c0411a.js | none | 19 (0) |
 | corporate-volunteering-nsw.html | /corporate-volunteering/sydney/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (73 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
 | corporate-volunteering-vic.html | /corporate-volunteering/melbourne/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (66 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
@@ -395,12 +399,12 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | growing-national-parks.html | /growing-national-parks/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1318 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (0) |
 | healing-the-land.html | /healing-the-land/ | 6 / 5 / 0 | 12 | 18 | page CSS in _fnpw_page_css (2620 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 6 (0) |
 | in-the-news.html | /in-the-news/ | 1 / 2 / 0 | 2 | 3 | page CSS in _fnpw_page_css (1215 bytes) | none | none | 0 (0) |
-| our-impact.html | /our-impact/ | 6 / 2 / 0 | 14 | 20 | page CSS in _fnpw_page_css (14498 bytes) | 1 page script(s) in _fnpw_page_js (283 bytes) | none | 65 (0) |
-| partner-invest.html | /partner-with-us/ | 0 / 1 / 0 | 0 | 1 | page CSS in _fnpw_page_css (19081 bytes) | 1 page script(s) in _fnpw_page_js (881 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 67 (0) |
+| our-impact.html | /our-impact/ | 6 / 2 / 0 | 14 | 20 | page CSS in _fnpw_page_css (14564 bytes) | 1 page script(s) in _fnpw_page_js (283 bytes) | none | 65 (1) |
+| partner-invest.html | /partner-with-us/ | 0 / 1 / 0 | 0 | 1 | page CSS in _fnpw_page_css (19081 bytes) | 1 page script(s) in _fnpw_page_js (881 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 68 (2) |
 | project-kaurna-cultural-fire-field-river.html | /project/kaurna-cultural-fire-field-river/ | 10 / 2 / 0 | 26 | 19 | none | none | none | 3 (0) |
 | project-mundoo-island-acquisition.html | /project/mundoo-island-acquisition/ | 11 / 3 / 0 | 28 | 23 | none | none | none | 10 (0) |
 | project-nectar-sippers.html | /project/nectar-sippers/ | 10 / 4 / 0 | 28 | 23 | none | none | none | 8 (0) |
-| saving-species.html | /saving-species/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1321 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 6 (0) |
+| saving-species.html | /saving-species/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1109 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (1) |
 
 ## Sections carried as HTML, with the reason
 
@@ -422,7 +426,7 @@ Site pages and projects only (article bodies are listed in the table above by co
 - `div.fb.fb-paper.fb-healing` (1): <button> has no core block with the same markup. Pages: healing-the-land.html
 - `div.fb.fb-paper.fb-parks` (1): <button> has no core block with the same markup. Pages: growing-national-parks.html
 - `div.fb.fb-paper.fb-species` (1): <button> has no core block with the same markup. Pages: saving-species.html
-- `div.piw` (1): markup is not well formed (implicitly closed <div> by </section> at 14774), carried untouched. Pages: partner-invest.html
+- `div.piw` (1): markup is not well formed (implicitly closed <div> by </section> at 15383), carried untouched. Pages: partner-invest.html
 - `div.po` (1): <button> has no core block with the same markup. Pages: projects.html
 - `div.v-sticky` (1): <div class="v-sticky"> has attributes a Group block cannot hold (role, aria-label). Pages: volunteer.html
 - `nav.ip-jump` (1): <nav> has no core block with the same markup. Pages: our-impact.html

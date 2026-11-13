@@ -214,6 +214,9 @@ function fnpw_migrate_item( $item, $apply, $options ) {
 	$notes                      = array_merge( $notes, $term_notes );
 
 	if ( $existing && get_post_meta( $existing->ID, FNPW_MIGRATE_HASH, true ) === $hash ) {
+		if ( $apply ) {
+			fnpw_migrate_refresh_seo( $existing->ID );
+		}
 		return $done( 'skip', $existing->ID, 'Unchanged since the last import.' );
 	}
 
@@ -352,6 +355,7 @@ function fnpw_migrate_item( $item, $apply, $options ) {
 		}
 	}
 	update_post_meta( $post_id, FNPW_MIGRATE_HASH, $hash );
+	fnpw_migrate_refresh_seo( $post_id );
 
 	$keymap         = fnpw_migrate_keymap();
 	$keymap[ $key ] = $post_id;
@@ -406,6 +410,40 @@ function fnpw_migrate_restore( $post_id ) {
 	}
 	delete_post_meta( $post_id, FNPW_MIGRATE_HASH );
 	return true;
+}
+
+/**
+ * Yoast SEO reads titles and descriptions from its own index table, not straight from
+ * post meta, and that index is built when a post is saved. The import writes the SEO
+ * fields after the save, so the index entry is rebuilt here. If Yoast's builder is not
+ * available the stale entry is removed, and Yoast builds a fresh one on the next view.
+ *
+ * @param int $post_id Post ID.
+ */
+function fnpw_migrate_refresh_seo( $post_id ) {
+	$post_id = (int) $post_id;
+	if ( ! $post_id || ! function_exists( 'YoastSEO' ) ) {
+		return;
+	}
+	$stale = false;
+	try {
+		$classes   = YoastSEO()->classes;
+		$repo      = $classes->get( 'Yoast\\WP\\SEO\\Repositories\\Indexable_Repository' );
+		$builder   = $classes->get( 'Yoast\\WP\\SEO\\Builders\\Indexable_Builder' );
+		$indexable = $repo->find_by_id_and_type( $post_id, 'post', false );
+		$builder->build_for_id_and_type( $post_id, 'post', $indexable ? $indexable : false );
+		// Yoast does not save its index outside production (a staging site, say), so check
+		// the stored entry really carries the new title.
+		$stored = $repo->find_by_id_and_type( $post_id, 'post', false );
+		$want   = (string) get_post_meta( $post_id, '_yoast_wpseo_title', true );
+		$stale  = $stored && '' !== $want && (string) $stored->title !== $want;
+	} catch ( \Throwable $e ) {
+		$stale = true;
+	}
+	if ( $stale ) {
+		global $wpdb;
+		$wpdb->delete( $wpdb->prefix . 'yoast_indexable', array( 'object_id' => $post_id, 'object_type' => 'post' ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+	}
 }
 
 /**

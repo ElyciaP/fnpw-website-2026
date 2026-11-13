@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       FNPW Import
  * Description:       One-off importer for the 2026 site rebuild. Reads an import package made by wordpress/migration/convert.py and creates or updates pages, posts and projects. Never deletes anything; keeps the previous content of every post it overwrites so it can be restored.
- * Version:           1.2.0
+ * Version:           1.3.1
  * Requires at least: 6.6
  * Requires PHP:      8.1
  * Author:            Foundation for National Parks & Wildlife
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FNPW_MIGRATE_VERSION', '1.2.0' );
+define( 'FNPW_MIGRATE_VERSION', '1.3.1' );
 define( 'FNPW_MIGRATE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FNPW_MIGRATE_URL', plugin_dir_url( __FILE__ ) );
 

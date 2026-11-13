@@ -387,6 +387,23 @@
    1600
   ]
  },
+ "assets/img/faqs-hero-kangaroo.jpg": {
+  "h": 1203,
+  "size": 399364,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/faqs-hero-kangaroo-480.webp",
+   "assets/img/r/faqs-hero-kangaroo-800.webp",
+   "assets/img/r/faqs-hero-kangaroo-1200.webp",
+   "assets/img/r/faqs-hero-kangaroo-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/fundraising-hero.jpg": {
   "h": 471,
   "size": 64332,
@@ -2175,6 +2192,23 @@
    1600
   ]
  },
+ "assets/img/projects/opp-narrung-pelicans.jpg": {
+  "h": 1200,
+  "size": 352181,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-opp-narrung-pelicans-480.webp",
+   "assets/img/r/projects-opp-narrung-pelicans-800.webp",
+   "assets/img/r/projects-opp-narrung-pelicans-1200.webp",
+   "assets/img/r/projects-opp-narrung-pelicans-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/projects/opp-wet-tropics-palms.jpg": {
   "h": 1065,
   "size": 493683,
@@ -2673,6 +2707,23 @@
    1600
   ]
  },
+ "assets/img/projects/wombat-mange-wombat-walking.jpg": {
+  "h": 1064,
+  "size": 219018,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/projects-wombat-mange-wombat-walking-480.webp",
+   "assets/img/r/projects-wombat-mange-wombat-walking-800.webp",
+   "assets/img/r/projects-wombat-mange-wombat-walking-1200.webp",
+   "assets/img/r/projects-wombat-mange-wombat-walking-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/projects/wombat-mange-wombat-with-mange.jpg": {
   "h": 1069,
   "size": 429587,
@@ -2733,6 +2784,23 @@
   "widths": [
    480,
    520
+  ]
+ },
+ "assets/img/saving-species-hero-koala.jpg": {
+  "h": 1190,
+  "size": 327215,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/saving-species-hero-koala-480.webp",
+   "assets/img/r/saving-species-hero-koala-800.webp",
+   "assets/img/r/saving-species-hero-koala-1200.webp",
+   "assets/img/r/saving-species-hero-koala-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/search-hero-koala.jpg": {
