@@ -844,6 +844,9 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 /* HubSpot embed fallback message (shown only if the form fails to load) */
 .hsform-fallback{font-size:.92rem;line-height:1.6;color:var(--char);background:var(--sand);padding:1rem 1.2rem;margin-top:1rem}
 .hsform-fallback a{color:var(--euc-deep);font-weight:600;text-decoration:underline}
+/* HubSpot forms render in their own frame at HubSpot's sizes, which read as oversized beside our type.
+   Scaling the holder keeps the frame height HubSpot sets in step, so no gap is left under the button. */
+.hs-form-frame{zoom:.82}
 
 /* Long-form prose (legal pages, ported pages, grant pages) */
 .prose{max-width:74ch}
