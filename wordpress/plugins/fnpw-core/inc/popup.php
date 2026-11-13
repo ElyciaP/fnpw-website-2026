@@ -73,8 +73,8 @@ function fnpw_core_popup_render() {
 .fnpw-pop-btn:hover,.fnpw-pop-btn:focus{background:#8C1422;color:#fff}
 .fnpw-pop-x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;padding:0;background:rgba(15,49,50,.85);color:#FAF6F2;font:600 20px/36px sans-serif;cursor:pointer;z-index:2}
 .fnpw-pop-x:focus-visible,.fnpw-pop-btn:focus-visible{outline:3px solid #C6EBCA;outline-offset:2px}
-@media(max-width:600px){
-.fnpw-pop{left:12px;right:12px;bottom:12px;width:auto;display:flex;align-items:stretch}
+@media(max-width:600px),(max-height:640px){
+.fnpw-pop{width:360px;display:flex;align-items:stretch}
 .fnpw-pop[hidden]{display:none}
 .fnpw-pop-im{flex:0 0 112px}
 .fnpw-pop-im img{height:100%;aspect-ratio:auto;object-position:78% 50%}
@@ -84,6 +84,7 @@ function fnpw_core_popup_render() {
 .fnpw-pop-btn{font-size:.85rem}
 .fnpw-pop-x{top:6px;right:6px;width:30px;height:30px;font-size:17px;line-height:30px}
 }
+@media(max-width:600px){.fnpw-pop{left:12px;right:12px;bottom:12px;width:auto}}
 @media(prefers-reduced-motion:reduce){.fnpw-pop{transition:none}}
 @media print{.fnpw-pop{display:none}}
 </style>

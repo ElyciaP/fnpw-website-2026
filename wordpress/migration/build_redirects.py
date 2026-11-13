@@ -178,6 +178,21 @@ for src in list(order):
         notes.append(('Dropped (points at itself)', src, r['target'], ''))
         del rows[src]; order.remove(src)
 
+# Reef's review, 13 Nov 2026: three destinations corrected, and the general giving
+# addresses made temporary (302) so they can follow each appeal.
+REEF_TARGETS = {
+    '/donation/leave-a-legacy-for-the-future': '/bequest/',
+    '/donation/donate-to-outdoors-for-a-cause': 'https://bush.fnpw.org.au',
+    '/fnpw/fnpw/fundraising/donate-pages/appeals.aspx': 'https://bush.fnpw.org.au',
+}
+REEF_TEMPORARY = {'/donations', '/donation', '/appeals', '/appeals/current-appeal', '/donation/plant-a-tree'}
+for src in order:
+    key = src.lower().rstrip('/')
+    if key in REEF_TARGETS:
+        rows[src]['target'] = REEF_TARGETS[key]
+    if key in REEF_TEMPORARY:
+        rows[src]['code'] = '302'
+
 with open('redirects.csv', 'w', newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, FIELDS, quoting=csv.QUOTE_ALL)
     w.writeheader()
