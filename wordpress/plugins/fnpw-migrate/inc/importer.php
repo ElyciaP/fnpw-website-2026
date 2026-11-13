@@ -300,6 +300,11 @@ function fnpw_migrate_item( $item, $apply, $options ) {
 				true
 			);
 		}
+		if ( metadata_exists( 'post', $post_id, '_fnpw_migrate_unpublished' ) ) {
+			// A rollback set this imported post to draft: publish it again.
+			$postarr['post_status'] = isset( $item['status'] ) ? sanitize_key( (string) $item['status'] ) : 'publish';
+			delete_post_meta( $post_id, '_fnpw_migrate_unpublished' );
+		}
 		if ( $postarr ) {
 			$postarr['ID'] = $post_id;
 			// wp_update_post() re-submits the page template it finds on the post. A template
@@ -399,6 +404,37 @@ function fnpw_migrate_restore( $post_id ) {
 			set_post_thumbnail( $post_id, (int) $fields['thumbnail'] );
 		}
 	}
+	delete_post_meta( $post_id, FNPW_MIGRATE_HASH );
+	return true;
+}
+
+/**
+ * Posts the import created (they have no previous content to restore).
+ *
+ * @return int[]
+ */
+function fnpw_migrate_created() {
+	global $wpdb;
+	return array_map( 'intval', $wpdb->get_col( $wpdb->prepare( "SELECT pm.post_id FROM {$wpdb->postmeta} pm JOIN {$wpdb->posts} p ON p.ID = pm.post_id WHERE pm.meta_key = %s AND p.post_status <> 'trash' ORDER BY pm.post_id ASC", '_fnpw_migrate_created' ) ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+}
+
+/**
+ * Rollback for a post the import created: set it to draft and mark it, so the next
+ * import publishes it again.
+ *
+ * @param int $post_id Post ID.
+ * @return true|WP_Error
+ */
+function fnpw_migrate_unpublish( $post_id ) {
+	$post_id = (int) $post_id;
+	if ( 'publish' !== get_post_status( $post_id ) ) {
+		return true; // Already offline: leave it as the editor left it.
+	}
+	$result  = wp_update_post( array( 'ID' => $post_id, 'post_status' => 'draft', 'page_template' => '' ), true );
+	if ( is_wp_error( $result ) ) {
+		return $result;
+	}
+	update_post_meta( $post_id, '_fnpw_migrate_unpublished', gmdate( 'c' ) );
 	delete_post_meta( $post_id, FNPW_MIGRATE_HASH );
 	return true;
 }

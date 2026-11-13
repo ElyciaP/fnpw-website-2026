@@ -107,10 +107,24 @@ function fnpw_migrate_ajax() {
 
 	// Restore-all runs through the same batching, without a package.
 	if ( 'restore' === $phase ) {
-		$ids   = fnpw_migrate_restorable();
-		$slice = array_slice( $ids, $offset, FNPW_MIGRATE_ITEM_BATCH );
-		$rows  = array();
+		$created = fnpw_migrate_created();
+		$ids     = array_merge( fnpw_migrate_restorable(), $created );
+		$slice   = array_slice( $ids, $offset, FNPW_MIGRATE_ITEM_BATCH );
+		$rows    = array();
 		foreach ( $slice as $post_id ) {
+			if ( in_array( $post_id, $created, true ) ) {
+				// The import created this post, so there is nothing to put back: take it offline.
+				$result = fnpw_migrate_unpublish( $post_id );
+				$row    = array(
+					'key'     => get_post_type( $post_id ) . ': ' . get_the_title( $post_id ),
+					'action'  => is_wp_error( $result ) ? 'error' : 'restore',
+					'post_id' => $post_id,
+					'message' => is_wp_error( $result ) ? $result->get_error_message() : 'Created by the import: set to draft.',
+				);
+				fnpw_migrate_log( $run, 'restore', $row['key'], $row['action'], $post_id, $row['message'] );
+				$rows[] = $row;
+				continue;
+			}
 			$result = fnpw_migrate_restore( $post_id );
 			$row    = array(
 				'key'     => get_post_type( $post_id ) . ': ' . get_the_title( $post_id ),

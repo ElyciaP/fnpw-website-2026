@@ -672,6 +672,23 @@
    900
   ]
  },
+ "assets/img/home-partner-escarpment.jpg": {
+  "h": 1067,
+  "size": 256745,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/home-partner-escarpment-480.webp",
+   "assets/img/r/home-partner-escarpment-800.webp",
+   "assets/img/r/home-partner-escarpment-1200.webp",
+   "assets/img/r/home-partner-escarpment-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/home-partner-gang-gangs.jpg": {
   "h": 978,
   "size": 300719,

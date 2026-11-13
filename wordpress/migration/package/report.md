@@ -15,7 +15,7 @@ Written by `convert.py` on 13 November 2026. Regenerate rather than edit.
 | Group blocks | 1761 |
 | Custom HTML blocks in total (whole sections plus pieces inside converted sections) | 1504 |
 | Images and documents to sideload from GitHub Pages | 232 |
-| ...of which are not in the repo asset list | 15 |
+| ...of which are not in the repo asset list | 16 |
 | Images left on the live media library (URL unchanged) | 238 |
 | Unresolved internal links | 0 |
 
@@ -88,6 +88,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 - `assets/img/contact-hero-pigface.jpg`
 - `assets/img/government-forest-canopy.jpg`
 - `assets/img/government-grants-planting.jpg`
+- `assets/img/home-partner-escarpment.jpg`
 - `assets/img/partner-blue-mountains.jpg`
 - `assets/img/partner-murray-mouth-aerial.jpg`
 - `assets/img/projects/granite-little-penguin-burrow.jpg`
@@ -266,7 +267,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | article-what-does-healthy-bushland-look-like.html | /news/latest-blogs/what-does-healthy-bushland-look-like/ | 30 / 9 / 0 | 35 | 11 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-why-species-matters-plant-selection.html | /news/latest-blogs/why-species-matters-plant-selection/ | 35 / 5 / 0 | 35 | 5 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 1 (0) |
 | article-the-number-almost-no-one-publishes.html | /news/latest-blogs/the-number-almost-no-one-publishes/ | 28 / 3 / 0 | 31 | 3 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
-| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18526 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (0) |
+| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18523 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (1) |
 | newsletter-thank-you.html | /newsletter-thank-you/ | 0 / 1 / 0 | 0 | 1 | none | none | none | 0 (0) |
 | thank-you.html | /thank-you/ | 1 / 1 / 0 | 2 | 3 | none | none | none | 1 (0) |
 | paws-magazine.html | /paws-magazine/ | 2 / 0 / 0 | 5 | 3 | page CSS in _fnpw_page_css (1939 bytes) | none | none | 1 (0) |
