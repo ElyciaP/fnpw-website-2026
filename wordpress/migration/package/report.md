@@ -83,13 +83,13 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 ## Images not in the repo asset list
 
 - `assets/img/bequests-advisers-coastal-walk.jpg`
-- `assets/img/bequests-hero-lookout-sunset.jpg`
+- `assets/img/bequests-hero-bushwalkers.jpg`
 - `assets/img/bequests-koala-branch.jpg`
 - `assets/img/contact-hero-pigface.jpg`
 - `assets/img/emu-face.png`
 - `assets/img/faqs-hero-kangaroo.jpg`
 - `assets/img/give-a-tree-gang-gang.jpg`
-- `assets/img/give-donate-emu.jpg`
+- `assets/img/give-donate-emu-centred.jpg`
 - `assets/img/government-forest-canopy.jpg`
 - `assets/img/government-grants-planting.jpg`
 - `assets/img/home-partner-treetops-dusk.jpg`
@@ -295,7 +295,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | fundraising-with-fnpw.html | /fundraising-with-fnpw/ | 6 / 1 / 0 | 33 | 12 | page CSS in _fnpw_page_css (4748 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | donate-land.html | /donate-land/ | 6 / 1 / 0 | 35 | 16 | page CSS in _fnpw_page_css (9532 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 2 (0) |
 | faqs.html | /faqs/ | 3 / 0 / 0 | 12 | 10 | page CSS in _fnpw_page_css (2019 bytes) | none | none | 1 (1) |
-| volunteer.html | /corporate-volunteering/ | 7 / 1 / 0 | 45 | 37 | page CSS in _fnpw_page_css (31275 bytes) | 1 page script(s) in _fnpw_page_js (1642 bytes); assets/js/carousel.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file volunteer-90c0411a.js | none | 19 (0) |
+| volunteer.html | /corporate-volunteering/ | 7 / 1 / 0 | 45 | 37 | page CSS in _fnpw_page_css (31317 bytes) | 1 page script(s) in _fnpw_page_js (1642 bytes); assets/js/carousel.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file volunteer-90c0411a.js | none | 19 (0) |
 | corporate-volunteering-nsw.html | /corporate-volunteering/sydney/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (73 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
 | corporate-volunteering-vic.html | /corporate-volunteering/melbourne/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (66 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
 | corporate-volunteering-qld.html | /corporate-volunteering/brisbane/ | 5 / 0 / 0 | 23 | 11 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (68 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
@@ -306,7 +306,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | newsletters-sign-up.html | /foundation-for-national-parks-and-wildlife-newsletter/ | 1 / 1 / 0 | 3 | 3 | none | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | bequests.html | /bequest/ | 8 / 1 / 0 | 42 | 34 | page CSS in _fnpw_page_css (14405 bytes) | 1 page script(s) in _fnpw_page_js (385 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js | none | 10 (2) |
 | ways-you-can-get-involved.html | /ways-you-can-get-involved/ | 6 / 1 / 0 | 19 | 16 | page CSS in _fnpw_page_css (3843 bytes) | none | none | 5 (2) |
-| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18148 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 9 (1) |
+| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18272 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 9 (1) |
 | about.html | /about-us/ | 3 / 9 / 0 | 5 | 15 | page CSS in _fnpw_page_css (13558 bytes) | 3 page script(s) in _fnpw_page_js (1460 bytes); assets/js/snap.js (theme, enqueued where its markup is used) | none | 5 (0) |
 | partner.html | /corporate-partnerships/ | 1 / 0 / 0 | 4 | 6 | page CSS in _fnpw_page_css (19071 bytes) | 1 page script(s) in _fnpw_page_js (1081 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 25 (2) |
 | project-garners-beach-cassowary-rehabilitation-centre-project.html | /project/garners-beach-cassowary-rehabilitation-centre-project/ | 3 / 2 / 0 | 10 | 6 | none | none | none | 0 (0) |

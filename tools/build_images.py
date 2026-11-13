@@ -46,6 +46,8 @@ OUT = 'assets/img/r'
 MANIFEST = os.path.join(OUT, 'manifest.json')
 WIDTHS = (480, 800, 1200, 1600)
 MAX_SIDE = 1600
+# Photographs allowed a larger master, for a full-width hero that looked soft at 1600.
+LARGE = {'assets/img/bequests-hero-bushwalkers.jpg': 2400}
 JPEG_Q = 82          # the shrunk original
 FALLBACK_Q = 80      # the <img> fallback in assets/img/r
 WEBP_Q = 78
@@ -155,8 +157,9 @@ def shrink_in_place(src, manifest):
         return None  # artwork with transparency: not a photograph
     w, h = im.size
     resized = False
-    if max(w, h) > MAX_SIDE:
-        scale = MAX_SIDE / float(max(w, h))
+    limit = LARGE.get(src, MAX_SIDE)
+    if max(w, h) > limit:
+        scale = limit / float(max(w, h))
         im = im.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS)
         w, h = im.size
         resized = True

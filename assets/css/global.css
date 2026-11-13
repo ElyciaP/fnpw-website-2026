@@ -32,8 +32,9 @@
   --mw:1240px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:clip}
-body{font-family:var(--ff-b);font-size:17px;line-height:1.65;color:var(--char);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip}
+/* Overall scale (Nov 2026): every rem-based size is 6% smaller. Remove font-size here to go back. */
+html{scroll-behavior:smooth;overflow-x:clip;font-size:93.75%}
+body{font-family:var(--ff-b);font-size:1.0625rem;line-height:1.65;color:var(--char);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip}
 body.nav-lock{overflow:hidden}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .18 0 0 0 0 .16 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:multiply}
 img{max-width:100%;display:block;height:auto}

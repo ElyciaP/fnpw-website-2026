@@ -159,6 +159,25 @@
    900
   ]
  },
+ "assets/img/bequests-hero-bushwalkers.jpg": {
+  "h": 1601,
+  "size": 345750,
+  "w": 2400,
+  "webp": [
+   "assets/img/r/bequests-hero-bushwalkers-480.webp",
+   "assets/img/r/bequests-hero-bushwalkers-800.webp",
+   "assets/img/r/bequests-hero-bushwalkers-1200.webp",
+   "assets/img/r/bequests-hero-bushwalkers-1600.webp",
+   "assets/img/r/bequests-hero-bushwalkers-2400.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2400
+  ]
+ },
  "assets/img/bequests-hero-legacy.jpg": {
   "h": 1067,
   "size": 172830,
@@ -519,6 +538,23 @@
    800,
    1200,
    1400
+  ]
+ },
+ "assets/img/give-donate-emu-centred.jpg": {
+  "h": 1200,
+  "size": 96253,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/give-donate-emu-centred-480.webp",
+   "assets/img/r/give-donate-emu-centred-800.webp",
+   "assets/img/r/give-donate-emu-centred-1200.webp",
+   "assets/img/r/give-donate-emu-centred-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/give-donate-emu.jpg": {

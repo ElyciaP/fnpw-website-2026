@@ -29,6 +29,15 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+# Page names in WordPress (admin lists, menus) stay short when the SEO title is longer.
+PAGE_NAMES = {
+    'growing-national-parks.html': 'Growing National Parks',
+    'healing-the-land.html': 'Healing the Land',
+    'saving-species.html': 'Saving Species',
+    'our-impact.html': 'Our Impact',
+    'partner-invest.html': 'Partner With Us',
+}
+
 # Live posts with an empty title: the import sets this one.
 TITLE_FIXES = {'latest-blog-ian-darbyshire-30-by-30-target': 'Ian Darbyshire on the 30 by 30 target'}
 from htmltree import parse  # noqa: E402
@@ -811,7 +820,7 @@ def main():
                     h1 = re.search(r'<h1[^>]*>(.*?)</h1>', main_src, re.S)
                     item['static_title'] = text_of(h1.group(1)) if h1 else page.title
                     if not existing:
-                        item['title'] = re.sub(r'\s*\|\s*FNPW\s*$', '', page.title) or item['static_title']
+                        item['title'] = PAGE_NAMES.get(name) or re.sub(r'\s*\|\s*FNPW\s*$', '', page.title) or item['static_title']
                     if template == 'front-page' and not existing:
                         item['title'] = 'Home'
             item['content'] = content
