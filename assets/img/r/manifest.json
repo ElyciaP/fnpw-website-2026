@@ -438,6 +438,23 @@
    1600
   ]
  },
+ "assets/img/give-a-tree-gang-gang.jpg": {
+  "h": 900,
+  "size": 233459,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/give-a-tree-gang-gang-480.webp",
+   "assets/img/r/give-a-tree-gang-gang-800.webp",
+   "assets/img/r/give-a-tree-gang-gang-1200.webp",
+   "assets/img/r/give-a-tree-gang-gang-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ]
+ },
  "assets/img/give-a-tree-koala-tree.jpg": {
   "h": 1600,
   "size": 353747,
@@ -485,6 +502,23 @@
    800,
    1200,
    1400
+  ]
+ },
+ "assets/img/give-donate-emu.jpg": {
+  "h": 900,
+  "size": 59792,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/give-donate-emu-480.webp",
+   "assets/img/r/give-donate-emu-800.webp",
+   "assets/img/r/give-donate-emu-1200.webp",
+   "assets/img/r/give-donate-emu-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/give-donate-waratah.jpg": {
@@ -672,23 +706,6 @@
    900
   ]
  },
- "assets/img/home-partner-escarpment.jpg": {
-  "h": 1067,
-  "size": 256745,
-  "w": 1600,
-  "webp": [
-   "assets/img/r/home-partner-escarpment-480.webp",
-   "assets/img/r/home-partner-escarpment-800.webp",
-   "assets/img/r/home-partner-escarpment-1200.webp",
-   "assets/img/r/home-partner-escarpment-1600.webp"
-  ],
-  "widths": [
-   480,
-   800,
-   1200,
-   1600
-  ]
- },
  "assets/img/home-partner-gang-gangs.jpg": {
   "h": 978,
   "size": 300719,
@@ -736,6 +753,23 @@
    480,
    800,
    1200
+  ]
+ },
+ "assets/img/home-partner-treetops-dusk.jpg": {
+  "h": 1067,
+  "size": 261941,
+  "w": 1600,
+  "webp": [
+   "assets/img/r/home-partner-treetops-dusk-480.webp",
+   "assets/img/r/home-partner-treetops-dusk-800.webp",
+   "assets/img/r/home-partner-treetops-dusk-1200.webp",
+   "assets/img/r/home-partner-treetops-dusk-1600.webp"
+  ],
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
   ]
  },
  "assets/img/home-story-nursery.jpg": {

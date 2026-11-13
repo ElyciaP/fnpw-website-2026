@@ -28,6 +28,9 @@ from collections import Counter, OrderedDict, defaultdict
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Live posts with an empty title: the import sets this one.
+TITLE_FIXES = {'latest-blog-ian-darbyshire-30-by-30-target': 'Ian Darbyshire on the 30 by 30 target'}
 from htmltree import parse  # noqa: E402
 
 # --------------------------------------------------------------------------- config
@@ -921,6 +924,10 @@ def main():
     package['media'] = media_list
     package['items'] = items
     os.makedirs(OUT, exist_ok=True)
+    # Posts keep their live titles, except where the live post has none (Nov 2026).
+    for item in package['items']:
+        if item.get('slug') in TITLE_FIXES and not item.get('title'):
+            item['title'] = item.get('static_title') or TITLE_FIXES[item['slug']]
     with open(os.path.join(OUT, 'package.json'), 'w', encoding='utf-8') as fh:
         json.dump(package, fh, ensure_ascii=False, indent=1)
 

@@ -7,15 +7,15 @@ Written by `convert.py` on 13 November 2026. Regenerate rather than edit.
 | | Count |
 |---|---|
 | Pages converted | 295 (167 articles, 88 projects, 40 pages) |
-| Top-level sections | 3544 |
-| Sections converted to core blocks (Group with editable Heading, Paragraph or List inside) | 2949 (83%) |
+| Top-level sections | 3543 |
+| Sections converted to core blocks (Group with editable Heading, Paragraph or List inside) | 2948 (83%) |
 | Sections carried whole in one Custom HTML block | 593 (17%) |
 | Sections drawn by the theme or a dynamic block | 2 |
-| Editable core blocks (Heading, Paragraph, List) | 4414 |
-| Group blocks | 1761 |
-| Custom HTML blocks in total (whole sections plus pieces inside converted sections) | 1504 |
-| Images and documents to sideload from GitHub Pages | 232 |
-| ...of which are not in the repo asset list | 16 |
+| Editable core blocks (Heading, Paragraph, List) | 4412 |
+| Group blocks | 1757 |
+| Custom HTML blocks in total (whole sections plus pieces inside converted sections) | 1501 |
+| Images and documents to sideload from GitHub Pages | 231 |
+| ...of which are not in the repo asset list | 19 |
 | Images left on the live media library (URL unchanged) | 238 |
 | Unresolved internal links | 0 |
 
@@ -23,7 +23,7 @@ For articles a "section" is one child of the article body (`.ed`): a paragraph, 
 
 | Kind | Sections | As core blocks |
 |---|---|---|
-| page | 197 | 144 (73%) |
+| page | 196 | 143 (73%) |
 | project | 591 | 385 (65%) |
 | article | 2756 | 2420 (88%) |
 
@@ -86,9 +86,12 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 - `assets/img/bequests-hero-lookout-sunset.jpg`
 - `assets/img/bequests-koala-branch.jpg`
 - `assets/img/contact-hero-pigface.jpg`
+- `assets/img/emu-face.png`
+- `assets/img/give-a-tree-gang-gang.jpg`
+- `assets/img/give-donate-emu.jpg`
 - `assets/img/government-forest-canopy.jpg`
 - `assets/img/government-grants-planting.jpg`
-- `assets/img/home-partner-escarpment.jpg`
+- `assets/img/home-partner-treetops-dusk.jpg`
 - `assets/img/partner-blue-mountains.jpg`
 - `assets/img/partner-murray-mouth-aerial.jpg`
 - `assets/img/projects/granite-little-penguin-burrow.jpg`
@@ -267,7 +270,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | article-what-does-healthy-bushland-look-like.html | /news/latest-blogs/what-does-healthy-bushland-look-like/ | 30 / 9 / 0 | 35 | 11 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-why-species-matters-plant-selection.html | /news/latest-blogs/why-species-matters-plant-selection/ | 35 / 5 / 0 | 35 | 5 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 1 (0) |
 | article-the-number-almost-no-one-publishes.html | /news/latest-blogs/the-number-almost-no-one-publishes/ | 28 / 3 / 0 | 31 | 3 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
-| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18523 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (1) |
+| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18523 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (2) |
 | newsletter-thank-you.html | /newsletter-thank-you/ | 0 / 1 / 0 | 0 | 1 | none | none | none | 0 (0) |
 | thank-you.html | /thank-you/ | 1 / 1 / 0 | 2 | 3 | none | none | none | 1 (0) |
 | paws-magazine.html | /paws-magazine/ | 2 / 0 / 0 | 5 | 3 | page CSS in _fnpw_page_css (1939 bytes) | none | none | 1 (0) |
@@ -298,8 +301,8 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | reports.html | /annual-reports-financials/ | 3 / 1 / 0 | 6 | 7 | page CSS in _fnpw_page_css (11123 bytes) | 1 page script(s) in _fnpw_page_js (351 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 4 (0) |
 | newsletters-sign-up.html | /foundation-for-national-parks-and-wildlife-newsletter/ | 1 / 1 / 0 | 3 | 3 | none | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | bequests.html | /bequest/ | 8 / 1 / 0 | 42 | 34 | page CSS in _fnpw_page_css (14405 bytes) | 1 page script(s) in _fnpw_page_js (385 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js | none | 10 (2) |
-| ways-you-can-get-involved.html | /ways-you-can-get-involved/ | 7 / 1 / 0 | 21 | 19 | page CSS in _fnpw_page_css (3843 bytes) | none | none | 6 (0) |
-| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18148 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 9 (0) |
+| ways-you-can-get-involved.html | /ways-you-can-get-involved/ | 6 / 1 / 0 | 19 | 16 | page CSS in _fnpw_page_css (3843 bytes) | none | none | 5 (2) |
+| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18148 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 9 (1) |
 | about.html | /about-us/ | 3 / 9 / 0 | 5 | 15 | page CSS in _fnpw_page_css (13558 bytes) | 3 page script(s) in _fnpw_page_js (1460 bytes); assets/js/snap.js (theme, enqueued where its markup is used) | none | 5 (0) |
 | partner.html | /corporate-partnerships/ | 1 / 0 / 0 | 4 | 6 | page CSS in _fnpw_page_css (19071 bytes) | 1 page script(s) in _fnpw_page_js (1081 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 25 (2) |
 | project-garners-beach-cassowary-rehabilitation-centre-project.html | /project/garners-beach-cassowary-rehabilitation-centre-project/ | 3 / 2 / 0 | 10 | 6 | none | none | none | 0 (0) |
