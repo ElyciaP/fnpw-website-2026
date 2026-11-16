@@ -287,12 +287,24 @@ function fnpw_core_map_projects_merged() {
 	}
 	$pillars = fnpw_core_pillars();
 	$out     = array();
+	/**
+	 * Published project posts that are not conservation projects on the map: two retired
+	 * posts that redirect elsewhere and the three grant program pages.
+	 *
+	 * @param string[] $slugs Post slugs to leave off the map and out of its counts.
+	 */
+	$skip = (array) apply_filters( 'fnpw_core_map_skip', array( 'form-test', 'nectarlovers', 'community-conservation-grants', 'private-land-conservation-grants', 'bushfire-recovery-small-grants' ) );
 	foreach ( $posts as $row ) {
+		if ( in_array( $row['slug'], $skip, true ) ) {
+			continue;
+		}
 		$j = isset( $by_slug[ $row['slug'] ] ) ? $by_slug[ $row['slug'] ] : null;
 		if ( $j ) {
 			$same = null === $row['lat']
 				|| ( isset( $j['lat'], $j['lon'] ) && abs( $row['lat'] - $j['lat'] ) < 0.011 && abs( $row['lon'] - $j['lon'] ) < 0.011 );
-			if ( $same && null !== $j['x'] && null !== $j['y'] ) {
+			// Use the hand-placed position when the post agrees with it, and also when the
+			// post's own coordinates fall off the artwork (islands, bad data), so the pin is kept.
+			if ( ( $same || null === $row['x'] || null === $row['y'] ) && null !== $j['x'] && null !== $j['y'] ) {
 				$row['x'] = $j['x'];
 				$row['y'] = $j['y'];
 			}

@@ -1,6 +1,6 @@
 # Conversion report
 
-Written by `convert.py` on 13 November 2026. Regenerate rather than edit.
+Written by `convert.py` on 16 November 2026. Regenerate rather than edit.
 
 ## Summary
 
@@ -274,7 +274,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | article-what-does-healthy-bushland-look-like.html | /news/latest-blogs/what-does-healthy-bushland-look-like/ | 30 / 9 / 0 | 35 | 11 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-why-species-matters-plant-selection.html | /news/latest-blogs/why-species-matters-plant-selection/ | 35 / 5 / 0 | 35 | 5 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 1 (0) |
 | article-the-number-almost-no-one-publishes.html | /news/latest-blogs/the-number-almost-no-one-publishes/ | 28 / 3 / 0 | 31 | 3 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
-| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18604 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (3) |
+| index.html | / | 9 / 0 / 0 | 24 | 29 | page CSS in _fnpw_page_css (18529 bytes) | 1 page script(s) in _fnpw_page_js (1232 bytes) | none | 9 (3) |
 | newsletter-thank-you.html | /newsletter-thank-you/ | 0 / 1 / 0 | 0 | 1 | none | none | none | 0 (0) |
 | thank-you.html | /thank-you/ | 1 / 1 / 0 | 2 | 3 | none | none | none | 1 (0) |
 | paws-magazine.html | /paws-magazine/ | 2 / 0 / 0 | 5 | 3 | page CSS in _fnpw_page_css (1939 bytes) | none | none | 1 (0) |
@@ -306,7 +306,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | newsletters-sign-up.html | /foundation-for-national-parks-and-wildlife-newsletter/ | 1 / 1 / 0 | 3 | 3 | none | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | bequests.html | /bequest/ | 8 / 1 / 0 | 42 | 34 | page CSS in _fnpw_page_css (14405 bytes) | 1 page script(s) in _fnpw_page_js (385 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js | none | 10 (2) |
 | ways-you-can-get-involved.html | /ways-you-can-get-involved/ | 6 / 1 / 0 | 19 | 16 | page CSS in _fnpw_page_css (3843 bytes) | none | none | 5 (2) |
-| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18272 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 9 (1) |
+| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18272 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 8 (1) |
 | about.html | /about-us/ | 3 / 9 / 0 | 5 | 15 | page CSS in _fnpw_page_css (13558 bytes) | 3 page script(s) in _fnpw_page_js (1460 bytes); assets/js/snap.js (theme, enqueued where its markup is used) | none | 5 (0) |
 | partner.html | /corporate-partnerships/ | 1 / 0 / 0 | 4 | 6 | page CSS in _fnpw_page_css (19071 bytes) | 1 page script(s) in _fnpw_page_js (1081 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 25 (2) |
 | project-garners-beach-cassowary-rehabilitation-centre-project.html | /project/garners-beach-cassowary-rehabilitation-centre-project/ | 3 / 2 / 0 | 10 | 6 | none | none | none | 0 (0) |
@@ -397,7 +397,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | bequests-professional-advisers.html | /bequest/professional-advisers/ | 5 / 2 / 0 | 26 | 18 | page CSS in _fnpw_page_css (17258 bytes) | none | none | 3 (1) |
 | government-partnerships.html | /government-partnerships/ | 1 / 0 / 0 | 7 | 6 | page CSS in _fnpw_page_css (21532 bytes) | 2 page script(s) in _fnpw_page_js (1041 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 16 (2) |
 | growing-national-parks.html | /growing-national-parks/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1318 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (0) |
-| healing-the-land.html | /healing-the-land/ | 6 / 5 / 0 | 12 | 18 | page CSS in _fnpw_page_css (2620 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 6 (0) |
+| healing-the-land.html | /healing-the-land/ | 6 / 5 / 0 | 12 | 18 | page CSS in _fnpw_page_css (2620 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (0) |
 | in-the-news.html | /in-the-news/ | 1 / 2 / 0 | 2 | 3 | page CSS in _fnpw_page_css (1215 bytes) | none | none | 0 (0) |
 | our-impact.html | /our-impact/ | 6 / 2 / 0 | 14 | 20 | page CSS in _fnpw_page_css (14564 bytes) | 1 page script(s) in _fnpw_page_js (283 bytes) | none | 65 (1) |
 | partner-invest.html | /partner-with-us/ | 0 / 1 / 0 | 0 | 1 | page CSS in _fnpw_page_css (19081 bytes) | 1 page script(s) in _fnpw_page_js (881 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 68 (2) |

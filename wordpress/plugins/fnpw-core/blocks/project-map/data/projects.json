@@ -14,20 +14,6 @@
   "link": "/project/mundoo-island-acquisition/"
  },
  {
-  "slug": "kaurna-cultural-fire-field-river",
-  "title": "Kaurna Cultural Fire at Kauwi-marnirla",
-  "state": "SA",
-  "pillar": "healing",
-  "pillar_label": "Healing the Land",
-  "pillar_class": "pb-healing",
-  "lat": -35.07,
-  "lon": 138.51,
-  "on_map": true,
-  "x": 53.78,
-  "y": 68.25,
-  "link": "/project/kaurna-cultural-fire-field-river/"
- },
- {
   "slug": "garners-beach-cassowary-rehabilitation-centre-project",
   "title": "Garners Beach Cassowary Rehabilitation Centre Project",
   "state": "QLD",

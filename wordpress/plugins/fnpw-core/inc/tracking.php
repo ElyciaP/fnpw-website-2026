@@ -7,6 +7,8 @@
  * admin audit of 10 November 2026 (wordpress/migration/inventory.md):
  *
  *   Google Tag Manager  GTM-K2P27RG       head, plus noscript after <body>
+ *   Google Tag Manager  GTM-KLVK6SNV      Reef's container, added 16 Nov 2026 at their request;
+ *                                         runs alongside the one above until Reef says to retire it
  *   Meta pixel          2023665144313964  head, with its noscript image
  *   Hotjar              1708422           head
  *
@@ -31,6 +33,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 if ( ! defined( 'FNPW_CORE_GTM_ID' ) ) {
 	define( 'FNPW_CORE_GTM_ID', 'GTM-K2P27RG' );
+}
+if ( ! defined( 'FNPW_CORE_GTM_ID_2' ) ) {
+	define( 'FNPW_CORE_GTM_ID_2', 'GTM-KLVK6SNV' );
 }
 if ( ! defined( 'FNPW_CORE_META_PIXEL_ID' ) ) {
 	define( 'FNPW_CORE_META_PIXEL_ID', '2023665144313964' );
@@ -71,6 +76,19 @@ function fnpw_core_tracking_id( $which ) {
 }
 
 /**
+ * Every Tag Manager container to load, in order. An empty constant drops that container;
+ * the fnpw_core_gtm_ids filter can change the list.
+ *
+ * @return string[]
+ */
+function fnpw_core_gtm_ids() {
+	$ids = array( fnpw_core_tracking_id( 'gtm' ), preg_replace( '/[^A-Za-z0-9_-]/', '', (string) FNPW_CORE_GTM_ID_2 ) );
+	$ids = apply_filters( 'fnpw_core_gtm_ids', $ids );
+	$ids = is_array( $ids ) ? $ids : array();
+	return array_values( array_unique( array_filter( array_map( 'strval', $ids ) ) ) );
+}
+
+/**
  * Google Consent Mode v2 default state.
  *
  * Everything defaults to "granted" so behaviour matches the live site today, where the
@@ -100,7 +118,7 @@ function fnpw_core_tracking_head() {
 	if ( ! fnpw_core_tracking_enabled() ) {
 		return;
 	}
-	$gtm    = fnpw_core_tracking_id( 'gtm' );
+	$gtm    = fnpw_core_gtm_ids();
 	$pixel  = fnpw_core_tracking_id( 'meta_pixel' );
 	$hotjar = fnpw_core_tracking_id( 'hotjar' );
 
@@ -111,14 +129,18 @@ function fnpw_core_tracking_head() {
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',<?php echo wp_json_encode( fnpw_core_consent_default() ); ?>);
 </script>
+		<?php
+		foreach ( $gtm as $gtm_id ) {
+			?>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer',<?php echo wp_json_encode( $gtm ); ?>);</script>
+})(window,document,'script','dataLayer',<?php echo wp_json_encode( $gtm_id ); ?>);</script>
 <!-- End Google Tag Manager -->
-		<?php
+			<?php
+		}
 	}
 
 	if ( $pixel ) {
@@ -168,15 +190,13 @@ function fnpw_core_tracking_body_open() {
 	if ( ! fnpw_core_tracking_enabled() ) {
 		return;
 	}
-	$gtm = fnpw_core_tracking_id( 'gtm' );
-	if ( ! $gtm ) {
-		return;
-	}
-	?>
+	foreach ( fnpw_core_gtm_ids() as $gtm ) {
+		?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="<?php echo esc_url( 'https://www.googletagmanager.com/ns.html?id=' . $gtm ); ?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-	<?php
+		<?php
+	}
 }
 add_action( 'wp_body_open', 'fnpw_core_tracking_body_open', 1 );

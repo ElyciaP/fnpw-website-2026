@@ -29,6 +29,9 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+# Pages that go in as drafts until they are approved (never published by the import).
+DRAFT_PAGES = {'project-kaurna-cultural-fire-field-river.html'}
+
 # Page names in WordPress (admin lists, menus) stay short when the SEO title is longer.
 PAGE_NAMES = {
     'growing-national-parks.html': 'Growing National Parks',
@@ -692,7 +695,7 @@ def main():
         item['source'] = name
         item['post_type'] = post_type
         item['expect'] = 'update' if existing else 'create'
-        item['status'] = 'publish'
+        item['status'] = 'draft' if name in DRAFT_PAGES else 'publish'
         meta = OrderedDict()
 
         if post_type == 'page':
