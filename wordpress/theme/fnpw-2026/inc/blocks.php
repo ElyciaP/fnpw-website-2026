@@ -161,6 +161,17 @@ function fnpw_story_image( $post_id, $class = '' ) {
 	}
 	$url = (string) get_post_meta( $post_id, 'fnpw_hero_url', true );
 	if ( '' === $url ) {
+		// No featured image and no hero on record: use the first photo on the page itself.
+		$content = (string) get_post_field( 'post_content', $post_id );
+		if ( preg_match( '/<img\b[^>]*\bsrc="([^"]+\.(?:jpe?g|png|webp)[^"]*)"[^>]*>/i', $content, $m ) ) {
+			$alt = preg_match( '/\balt="([^"]*)"/i', $m[0], $a ) ? html_entity_decode( $a[1], ENT_QUOTES ) : '';
+			return sprintf(
+				'<img%s src="%s" alt="%s" loading="lazy" decoding="async">',
+				'' !== $class ? ' class="' . esc_attr( $class ) . '"' : '',
+				esc_url( $m[1] ),
+				esc_attr( '' !== $alt ? $alt : fnpw_story_title( $post_id ) )
+			);
+		}
 		return '';
 	}
 	return sprintf(
@@ -472,15 +483,23 @@ function fnpw_render_keep_reading() {
 	}
 	if ( is_array( $related ) && $related ) {
 		foreach ( $related as $slug ) {
-			$found = get_posts(
-				array(
-					'name'           => sanitize_title( (string) $slug ),
-					'post_type'      => array( 'post', 'page' ),
-					'post_status'    => 'publish',
-					'posts_per_page' => 1,
-					'no_found_rows'  => true,
-				)
-			);
+			// A story and a page can share a slug (the Our Impact article and the Our Impact
+			// page), so look for the story first and only then for a page.
+			$found = array();
+			foreach ( array( 'post', 'page' ) as $type ) {
+				$found = get_posts(
+					array(
+						'name'           => sanitize_title( (string) $slug ),
+						'post_type'      => $type,
+						'post_status'    => 'publish',
+						'posts_per_page' => 1,
+						'no_found_rows'  => true,
+					)
+				);
+				if ( $found ) {
+					break;
+				}
+			}
 			if ( $found && $found[0]->ID !== $current ) {
 				$posts[] = $found[0];
 			}
@@ -503,10 +522,13 @@ function fnpw_render_keep_reading() {
 			$out .= '        ' . $thumb . "\n";
 		}
 		$out .= '        <div class="pj-rcard-bd">' . "\n";
-		$out .= '          <span class="pj-rd">' . esc_html( get_the_date( 'F Y', $post ) ) . '</span>' . "\n";
+		// A page has no story date, so its card goes without one.
+		if ( 'page' !== $post->post_type ) {
+			$out .= '          <span class="pj-rd">' . esc_html( get_the_date( 'F Y', $post ) ) . '</span>' . "\n";
+		}
 		$out .= '          <h3>' . esc_html( fnpw_story_title( $post->ID ) ) . '</h3>' . "\n";
 		$out .= '          <p>' . esc_html( fnpw_story_summary( $post->ID ) ) . '</p>' . "\n";
-		$out .= '          <span class="pj-rgo">Read the story &#8594;</span>' . "\n";
+		$out .= '          <span class="pj-rgo">' . ( 'page' === $post->post_type ? 'Find out more' : 'Read the story' ) . ' &#8594;</span>' . "\n";
 		$out .= '        </div>' . "\n" . '      </a>' . "\n";
 	}
 	$out .= '    </div>' . "\n" . '  </div>' . "\n" . '</section>';

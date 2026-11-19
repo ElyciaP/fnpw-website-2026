@@ -621,9 +621,23 @@
    renders in a cross-origin iframe and cannot. v2.js is deferred, so the set-up
    waits for DOMContentLoaded, when deferred scripts have run. Everything here is
    guarded in case the field is renamed or the script is blocked. */
-document.addEventListener('DOMContentLoaded', function () {
+/* Scripts on the live site can load in any order, so this waits for the HubSpot
+   embed for up to 15 seconds instead of expecting it at DOMContentLoaded. */
+(function fnpwVolForm() {
+  var tries = 0;
+  function begin() {
+    if (!document.getElementById('hsform')) { return; }
+    if (typeof hbspt === 'undefined' || !hbspt.forms) {
+      if (++tries > 60) { var fb = document.getElementById('hsFallback'); if (fb) fb.hidden = false; return; }
+      setTimeout(begin, 250);
+      return;
+    }
+    setUp();
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', begin); }
+  else { begin(); }
+function setUp() {
   var slot = document.getElementById('hsform');
-  if (!slot || typeof hbspt === 'undefined') { showFallback(); return; }
   var liveForm = null;
 
   function showFallback() {
@@ -748,7 +762,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
     if (!slot.querySelector('iframe, form')) showFallback();
   }, 8000);
-});
+}
+}());
 </script>
 <script>
 (function () {

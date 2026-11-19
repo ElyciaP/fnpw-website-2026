@@ -115,7 +115,8 @@
 .lmq-i img:hover{opacity:1}
 @keyframes lmq-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 .partners-now .lmq{gap:1.2rem}
-.lmq-row{overflow-x:auto}
+.lmq-row{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.lmq-row::-webkit-scrollbar{display:none}
 .lmq-row:focus-visible{outline:2px solid var(--euc);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.lmq-track,.hx-tick{animation:none}}
 .cta-form{padding:5rem 0;background:var(--sand)}
@@ -186,7 +187,7 @@
 .case-b{padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
 /* Partner logos lead each story in place of the impact number (Nov 2026) */
 .case-logos{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;min-height:52px;padding-bottom:1rem;border-bottom:1px solid #E5DFD3}
-.case-logos img{height:38px;width:auto;max-width:100%;display:block}
+.case-logos img{height:38px;width:auto;max-width:100%;display:block;mix-blend-mode:multiply}
 .case-logos .tx{font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;line-height:1.25;color:#0F3132;max-width:15ch}
 .piw .case-b h3{font-size:1.3rem}
 .piw .case-b p{margin:0;font-size:.95rem;color:rgba(36,25,20,.84);flex:1}

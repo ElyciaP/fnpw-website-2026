@@ -336,6 +336,8 @@ function fnpw_migrate_screen() {
 			<p><button type="submit" class="button" id="fnpw-mailtest">Test the email block</button> Sends one test email to your own address, which should be stopped.</p>
 		</form>
 
+		<?php fnpw_migrate_images_section(); ?>
+
 		<h2>4. Log</h2>
 		<form method="post" action="<?php echo esc_url( $action ); ?>">
 			<input type="hidden" name="action" value="fnpw_migrate">

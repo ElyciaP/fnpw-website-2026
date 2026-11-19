@@ -847,6 +847,9 @@ main > section.sec.dark:last-child .btn-o:hover{background:var(--euc-deep);color
 /* HubSpot forms render in their own frame at HubSpot's sizes, which read as oversized beside our type.
    Scaling the holder keeps the frame height HubSpot sets in step, so no gap is left under the button. */
 .hs-form-frame{zoom:.82}
+/* Safari lays a zoomed form out at the unzoomed width, which leaves a blank strip beside it, and phones want full-size fields */
+@media(max-width:600px){.hs-form-frame{zoom:1}}
+@supports (font:-apple-system-body){.hs-form-frame{zoom:1}}
 
 /* Long-form prose (legal pages, ported pages, grant pages) */
 .prose{max-width:74ch}

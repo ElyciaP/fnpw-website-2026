@@ -59,7 +59,9 @@ function fnpw_migrate_find( $item ) {
 	if ( is_post_type_hierarchical( $type ) ) {
 		$path = trim( ( isset( $item['parent_path'] ) ? trim( (string) $item['parent_path'], '/' ) . '/' : '' ) . $slug, '/' );
 		$post = get_page_by_path( $path, OBJECT, $type );
-		return ( $post && 'trash' !== $post->post_status ) ? $post : null;
+		// get_page_by_path() also searches attachments and returns one when no post of
+		// the asked type has that path, so an image titled like the item must not match.
+		return ( $post && $type === $post->post_type && 'trash' !== $post->post_status ) ? $post : null;
 	}
 	$found = get_posts(
 		array(
@@ -200,7 +202,7 @@ function fnpw_migrate_item( $item, $apply, $options ) {
 			$parent_id = 0;
 		} else {
 			$parent = get_page_by_path( $parent_path, OBJECT, $type );
-			if ( $parent ) {
+			if ( $parent && $type === $parent->post_type ) {
 				$parent_id = (int) $parent->ID;
 			} elseif ( $apply ) {
 				return $done( 'error', $existing ? $existing->ID : 0, 'Parent page /' . $parent_path . '/ does not exist.' );

@@ -199,7 +199,8 @@
 .lmq-i img:hover{opacity:1}
 @keyframes lmq-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 .partners-now .lmq{gap:1.2rem}
-.lmq-row{overflow-x:auto}
+.lmq-row{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.lmq-row::-webkit-scrollbar{display:none}
 .cta-form{padding:5rem 0;background:var(--sand)}
 .cf-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
 .cf-form{background:var(--white);border:1px solid var(--rule);border-radius:0;padding:2.5rem;position:relative}

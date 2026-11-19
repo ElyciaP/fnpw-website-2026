@@ -1,6 +1,6 @@
 # Conversion report
 
-Written by `convert.py` on 16 November 2026. Regenerate rather than edit.
+Written by `convert.py` on 17 November 2026. Regenerate rather than edit.
 
 ## Summary
 
@@ -16,7 +16,7 @@ Written by `convert.py` on 16 November 2026. Regenerate rather than edit.
 | Custom HTML blocks in total (whole sections plus pieces inside converted sections) | 1501 |
 | Images and documents to sideload from GitHub Pages | 233 |
 | ...of which are not in the repo asset list | 23 |
-| Images left on the live media library (URL unchanged) | 238 |
+| Images left on the live media library (URL unchanged) | 239 |
 | Unresolved internal links | 0 |
 
 For articles a "section" is one child of the article body (`.ed`): a paragraph, heading, figure or band. The hero, standfirst, related stories, back link and donate band of an article come from the theme template, not the post content.
@@ -74,7 +74,7 @@ No custom blocks were built for these beyond the project map and the Stories ind
 - `assets/js/shared/corporate-volunteering-c6b0b783.js`
 - `assets/js/shared/growing-national-parks-70bf2c5f.js`
 - `assets/js/shared/hs-fallback-884c1850.js`
-- `assets/js/shared/volunteer-90c0411a.js`
+- `assets/js/shared/volunteer-248e8266.js`
 
 ## Unresolved links
 
@@ -295,20 +295,20 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | fundraising-with-fnpw.html | /fundraising-with-fnpw/ | 6 / 1 / 0 | 33 | 12 | page CSS in _fnpw_page_css (4748 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | donate-land.html | /donate-land/ | 6 / 1 / 0 | 35 | 16 | page CSS in _fnpw_page_css (9532 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 2 (0) |
 | faqs.html | /faqs/ | 3 / 0 / 0 | 12 | 10 | page CSS in _fnpw_page_css (2019 bytes) | none | none | 1 (1) |
-| volunteer.html | /corporate-volunteering/ | 7 / 1 / 0 | 45 | 37 | page CSS in _fnpw_page_css (31317 bytes) | 1 page script(s) in _fnpw_page_js (1642 bytes); assets/js/carousel.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file volunteer-90c0411a.js | none | 19 (0) |
-| corporate-volunteering-nsw.html | /corporate-volunteering/sydney/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (73 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
-| corporate-volunteering-vic.html | /corporate-volunteering/melbourne/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (66 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
-| corporate-volunteering-qld.html | /corporate-volunteering/brisbane/ | 5 / 0 / 0 | 23 | 11 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (68 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
-| corporate-volunteering-sa.html | /corporate-volunteering/adelaide/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (72 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
-| corporate-volunteering-wa.html | /corporate-volunteering/perth/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (74 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-90c0411a.js | none | 16 (0) |
+| volunteer.html | /corporate-volunteering/ | 7 / 1 / 0 | 45 | 37 | page CSS in _fnpw_page_css (31317 bytes) | 1 page script(s) in _fnpw_page_js (1642 bytes); assets/js/carousel.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file volunteer-248e8266.js | none | 19 (0) |
+| corporate-volunteering-nsw.html | /corporate-volunteering/sydney/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (73 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-248e8266.js | none | 16 (0) |
+| corporate-volunteering-vic.html | /corporate-volunteering/melbourne/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (66 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-248e8266.js | none | 16 (0) |
+| corporate-volunteering-qld.html | /corporate-volunteering/brisbane/ | 5 / 0 / 0 | 23 | 11 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (68 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-248e8266.js | none | 16 (0) |
+| corporate-volunteering-sa.html | /corporate-volunteering/adelaide/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (72 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-248e8266.js | none | 16 (0) |
+| corporate-volunteering-wa.html | /corporate-volunteering/perth/ | 4 / 0 / 0 | 10 | 10 | shared file corporate-volunteering-f91c1f87.css | 1 page script(s) in _fnpw_page_js (74 bytes); assets/js/gallery.js (theme, enqueued where its markup is used); external: https://js-ap1.hsforms.net/forms/embed/v2.js; shared file corporate-volunteering-c6b0b783.js; shared file volunteer-248e8266.js | none | 16 (0) |
 | media-enquiry.html | /media-enquiry/ | 2 / 0 / 0 | 6 | 5 | page CSS in _fnpw_page_css (1316 bytes) | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
 | reports.html | /annual-reports-financials/ | 3 / 1 / 0 | 6 | 7 | page CSS in _fnpw_page_css (11123 bytes) | 1 page script(s) in _fnpw_page_js (351 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 4 (0) |
 | newsletters-sign-up.html | /foundation-for-national-parks-and-wildlife-newsletter/ | 1 / 1 / 0 | 3 | 3 | none | external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 1 (0) |
-| bequests.html | /bequest/ | 8 / 1 / 0 | 42 | 34 | page CSS in _fnpw_page_css (14405 bytes) | 1 page script(s) in _fnpw_page_js (385 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js | none | 10 (2) |
+| bequests.html | /bequest/ | 8 / 1 / 0 | 42 | 34 | page CSS in _fnpw_page_css (14432 bytes) | 1 page script(s) in _fnpw_page_js (385 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js | none | 10 (2) |
 | ways-you-can-get-involved.html | /ways-you-can-get-involved/ | 6 / 1 / 0 | 19 | 16 | page CSS in _fnpw_page_css (3843 bytes) | none | none | 5 (2) |
-| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18272 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 8 (1) |
+| projects.html | /projects/ | 3 / 3 / 1 | 7 | 10 | page CSS in _fnpw_page_css (18272 bytes) | 1 page script(s) in _fnpw_page_js (5538 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; map script dropped: the fnpw/project-map block has its own; shared file hs-fallback-884c1850.js | none | 8 (2) |
 | about.html | /about-us/ | 3 / 9 / 0 | 5 | 15 | page CSS in _fnpw_page_css (13558 bytes) | 3 page script(s) in _fnpw_page_js (1460 bytes); assets/js/snap.js (theme, enqueued where its markup is used) | none | 5 (0) |
-| partner.html | /corporate-partnerships/ | 1 / 0 / 0 | 4 | 6 | page CSS in _fnpw_page_css (19071 bytes) | 1 page script(s) in _fnpw_page_js (1081 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 25 (2) |
+| partner.html | /corporate-partnerships/ | 1 / 0 / 0 | 4 | 6 | page CSS in _fnpw_page_css (19245 bytes) | 1 page script(s) in _fnpw_page_js (1081 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 25 (2) |
 | project-garners-beach-cassowary-rehabilitation-centre-project.html | /project/garners-beach-cassowary-rehabilitation-centre-project/ | 3 / 2 / 0 | 10 | 6 | none | none | none | 0 (0) |
 | project-tangaroa-blue.html | /project/tangaroa-blue/ | 2 / 4 / 0 | 8 | 7 | none | none | none | 0 (0) |
 | project-bushfire-recovery-small-grants.html | /project/bushfire-recovery-small-grants/ | 2 / 2 / 0 | 33 | 4 | shared file project-4206f1bf.css | none | none | 0 (0) |
@@ -370,13 +370,13 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | project-native-plant-nurseries.html | /project/native-plant-nurseries/ | 4 / 4 / 0 | 12 | 10 | none | none | none | 0 (0) |
 | project-cultivating-koala-habitat.html | /project/cultivating-koala-habitat/ | 12 / 3 / 0 | 35 | 25 | none | none | none | 9 (0) |
 | project-mountain-pygmy-possum.html | /project/mountain-pygmy-possum/ | 8 / 3 / 0 | 60 | 12 | none | none | none | 0 (0) |
-| project-wild-heart.html | /project/wild-heart/ | 10 / 2 / 0 | 21 | 11 | none | none | none | 1 (0) |
+| project-wild-heart.html | /project/wild-heart/ | 10 / 2 / 0 | 21 | 11 | none | none | none | 0 (0) |
 | project-bushfire-recovery-program.html | /project/bushfire-recovery-program/ | 3 / 3 / 0 | 28 | 7 | none | none | none | 0 (0) |
 | project-fire-wise.html | /project/fire-wise/ | 7 / 4 / 0 | 13 | 17 | none | none | none | 0 (0) |
 | project-sturt-national-park.html | /project/sturt-national-park/ | 3 / 2 / 0 | 10 | 6 | none | none | none | 0 (0) |
 | project-wildlife-heroes.html | /project/wildlife-heroes/ | 5 / 3 / 0 | 14 | 10 | none | none | none | 0 (0) |
 | project-black-cockatoo-corridor.html | /project/black-cockatoo-corridor/ | 3 / 2 / 0 | 10 | 5 | none | none | none | 0 (0) |
-| project-memorial-trees.html | /project/memorial-trees/ | 5 / 2 / 0 | 14 | 7 | none | none | none | 1 (0) |
+| project-memorial-trees.html | /project/memorial-trees/ | 5 / 2 / 0 | 14 | 7 | none | none | none | 0 (0) |
 | project-bandicoot-superhighway-project.html | /project/bandicoot-superhighway-project/ | 12 / 3 / 0 | 28 | 25 | none | none | none | 14 (0) |
 | project-students-dig-in-for-conservation.html | /project/students-dig-in-for-conservation/ | 4 / 2 / 0 | 11 | 6 | none | none | none | 0 (0) |
 | project-devil-ark.html | /project/devil-ark/ | 3 / 2 / 0 | 9 | 6 | none | none | none | 0 (0) |
@@ -392,19 +392,19 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | project-booningyah-junior-rangers-program.html | /project/booningyah-junior-rangers-program/ | 6 / 3 / 0 | 40 | 9 | none | none | none | 0 (0) |
 | project-dalki-garringa-botanic-park.html | /project/dalki-garringa-botanic-park/ | 4 / 2 / 0 | 11 | 6 | none | none | none | 0 (0) |
 | project-gift-a-tree-for-nature-conservation.html | /project/gift-a-tree-for-nature-conservation/ | 5 / 2 / 0 | 16 | 6 | none | none | none | 0 (0) |
-| project-curb-wombat-mange-program.html | /project/curb-wombat-mange-program/ | 10 / 3 / 0 | 21 | 21 | none | none | none | 13 (0) |
-| project-supporting-community-led-treatment-to-protect-bare-nosed-wombats.html | /project/supporting-community-led-treatment-to-protect-bare-nosed-wombats/ | 9 / 2 / 0 | 40 | 9 | none | none | none | 1 (0) |
+| project-curb-wombat-mange-program.html | /project/curb-wombat-mange-program/ | 10 / 3 / 0 | 21 | 21 | none | none | none | 13 (1) |
+| project-supporting-community-led-treatment-to-protect-bare-nosed-wombats.html | /project/supporting-community-led-treatment-to-protect-bare-nosed-wombats/ | 9 / 2 / 0 | 40 | 9 | none | none | none | 0 (0) |
 | bequests-professional-advisers.html | /bequest/professional-advisers/ | 5 / 2 / 0 | 26 | 18 | page CSS in _fnpw_page_css (17258 bytes) | none | none | 3 (1) |
-| government-partnerships.html | /government-partnerships/ | 1 / 0 / 0 | 7 | 6 | page CSS in _fnpw_page_css (21532 bytes) | 2 page script(s) in _fnpw_page_js (1041 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 16 (2) |
+| government-partnerships.html | /government-partnerships/ | 1 / 0 / 0 | 7 | 6 | page CSS in _fnpw_page_css (21619 bytes) | 2 page script(s) in _fnpw_page_js (1041 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 16 (2) |
 | growing-national-parks.html | /growing-national-parks/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1318 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (0) |
-| healing-the-land.html | /healing-the-land/ | 6 / 5 / 0 | 12 | 18 | page CSS in _fnpw_page_css (2620 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (0) |
+| healing-the-land.html | /healing-the-land/ | 6 / 5 / 0 | 12 | 18 | page CSS in _fnpw_page_css (2620 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 4 (0) |
 | in-the-news.html | /in-the-news/ | 1 / 2 / 0 | 2 | 3 | page CSS in _fnpw_page_css (1215 bytes) | none | none | 0 (0) |
-| our-impact.html | /our-impact/ | 6 / 2 / 0 | 14 | 20 | page CSS in _fnpw_page_css (14564 bytes) | 1 page script(s) in _fnpw_page_js (283 bytes) | none | 65 (1) |
-| partner-invest.html | /partner-with-us/ | 0 / 1 / 0 | 0 | 1 | page CSS in _fnpw_page_css (19081 bytes) | 1 page script(s) in _fnpw_page_js (881 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 68 (2) |
+| our-impact.html | /our-impact/ | 6 / 2 / 0 | 14 | 20 | page CSS in _fnpw_page_css (14651 bytes) | 1 page script(s) in _fnpw_page_js (283 bytes) | none | 65 (1) |
+| partner-invest.html | /partner-with-us/ | 0 / 1 / 0 | 0 | 1 | page CSS in _fnpw_page_css (19192 bytes) | 1 page script(s) in _fnpw_page_js (881 bytes); external: https://js-ap1.hsforms.net/forms/embed/441704788.js; shared file hs-fallback-884c1850.js | none | 68 (2) |
 | project-kaurna-cultural-fire-field-river.html | /project/kaurna-cultural-fire-field-river/ | 10 / 2 / 0 | 26 | 19 | none | none | none | 3 (0) |
 | project-mundoo-island-acquisition.html | /project/mundoo-island-acquisition/ | 11 / 3 / 0 | 28 | 23 | none | none | none | 10 (0) |
 | project-nectar-sippers.html | /project/nectar-sippers/ | 10 / 4 / 0 | 28 | 23 | none | none | none | 8 (0) |
-| saving-species.html | /saving-species/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1109 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (1) |
+| saving-species.html | /saving-species/ | 5 / 5 / 0 | 10 | 16 | page CSS in _fnpw_page_css (1109 bytes) | shared file growing-national-parks-70bf2c5f.js | none | 5 (2) |
 
 ## Sections carried as HTML, with the reason
 
