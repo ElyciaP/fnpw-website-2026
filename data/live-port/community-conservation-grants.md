@@ -116,7 +116,7 @@ The following ten projects were allocated funds in the 2019 small grants round:
 | Roydon Island African Boxthorn Control | Land and water conservation | [Friends of Bass Strait Islands](https://wildcaretas.org.au/branches/friends-of-bass-strait-islands/ "Friends of Bass Strait Islands") | TAS |
 | Upgrading the Fagus Walking Track at Mount Field | Parks for people | [Wildcare Friends of Mount Field](https://wildcaretas.org.au/branches/friends-of-mt-field/ "Wildcare Friends of Mount Field") | TAS |
 | Yesterdays stories: Heritage drive from Wollongong to Bega | Cultural heritage | Yesterday Stories | NSW |
-| [Currie Wharf Bush Restoration](project-students-dig-in-for-conservation.html) | Cultural heritage | [King Island NRMG](http://www.kingislandnaturalresources.org/ "King Island NRM Group") | TAS |
+| [Currie Wharf Bush Restoration](project-students-dig-in-for-conservation.html) | Cultural heritage | King Island NRMG | TAS |
 | Weed management and restoration of native vegetation on Deal Island | Land and water conservation | [Wildcare Friends of Deal Island](https://wildcaretas.org.au/branches/friends-of-deal-island/ "Wildcare Friends of Deal Isalnd") | TAS |
 | Eco-acoustic monitoring of Leadbeater's Possum and Powerful Owls by citizen scientists | Threatened species recovery | [Victoria National Parks Assoc.](https://vnpa.org.au/ "Victoria National Parks Association") | VIC |
 | [Youth Wildlife Ambassadors](project-youth-wildlife-ambassadors.html) | Parks for people | [Phillip Island Nature Parks](https://www.penguins.org.au/ "Phillip Island Nature Parks") | VIC |

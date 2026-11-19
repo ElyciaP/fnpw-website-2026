@@ -1,17 +1,17 @@
 # Conversion report
 
-Written by `convert.py` on 17 November 2026. Regenerate rather than edit.
+Written by `convert.py` on 19 November 2026. Regenerate rather than edit.
 
 ## Summary
 
 | | Count |
 |---|---|
 | Pages converted | 295 (167 articles, 88 projects, 40 pages) |
-| Top-level sections | 3543 |
-| Sections converted to core blocks (Group with editable Heading, Paragraph or List inside) | 2948 (83%) |
+| Top-level sections | 3542 |
+| Sections converted to core blocks (Group with editable Heading, Paragraph or List inside) | 2947 (83%) |
 | Sections carried whole in one Custom HTML block | 593 (17%) |
 | Sections drawn by the theme or a dynamic block | 2 |
-| Editable core blocks (Heading, Paragraph, List) | 4413 |
+| Editable core blocks (Heading, Paragraph, List) | 4412 |
 | Group blocks | 1757 |
 | Custom HTML blocks in total (whole sections plus pieces inside converted sections) | 1501 |
 | Images and documents to sideload from GitHub Pages | 233 |
@@ -25,7 +25,7 @@ For articles a "section" is one child of the article body (`.ed`): a paragraph, 
 |---|---|---|
 | page | 196 | 143 (73%) |
 | project | 591 | 385 (65%) |
-| article | 2756 | 2420 (88%) |
+| article | 2755 | 2419 (88%) |
 
 ## How the conversion decides
 
@@ -155,7 +155,7 @@ None. Every internal `.html` link maps to a WordPress URL in page-map.csv.
 | article-foundation-for-national-parks-wildlife-wins-charity-of-the-year-2021.html | /news/latest-news/foundation-for-national-parks-wildlife-wins-charity-of-the-year-2021/ | 4 / 4 / 0 | 4 | 4 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-fnpw-flood-emergency-grant-applications-open-in-nsw.html | /news/latest-news/fnpw-flood-emergency-grant-applications-open-in-nsw/ | 4 / 0 / 0 | 4 | 0 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-wildlife-heroes-updates-from-the-field.html | /news/latest-blogs/wildlife-heroes-updates-from-the-field/ | 10 / 0 / 0 | 10 | 0 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
-| article-fnpw-giving-day-2022.html | /news/latest-news/fnpw-giving-day-2022/ | 7 / 0 / 0 | 7 | 0 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
+| article-fnpw-giving-day-2022.html | /news/latest-news/fnpw-giving-day-2022/ | 6 / 0 / 0 | 6 | 0 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-discovering-a-hidden-gem.html | /news/latest-blogs/discovering-a-hidden-gem/ | 4 / 1 / 0 | 4 | 1 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-update-from-namabunda-bundjalung-country.html | /news/latest-blogs/update-from-namabunda-bundjalung-country/ | 6 / 1 / 0 | 6 | 1 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
 | article-crookshanks-wildlife-corridor-will-extend-from-the-murrumbidgee-river-to-crookshanks-peak.html | /news/latest-blogs/crookshanks-wildlife-corridor-will-extend-from-the-murrumbidgee-river-to-crookshanks-peak/ | 8 / 1 / 0 | 8 | 1 | article.css (theme, by template) | article-progress.js (theme, by template) | none | 0 (0) |
