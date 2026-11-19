@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <!-- @meta -->
-<title>Donate Land for Conservation | FNPW</title>
-<meta name="description" content="Give land with conservation value to become national park, protected by law for good. We assess the land, secure agreement and manage the transfer.">
+<title>Donate Land for Conservation in Australia | FNPW</title>
+<meta name="description" content="Donate land for conservation and protect nature for generations. We guide landholders through every step, with Traditional Custodians and government.">
 <link rel="canonical" href="https://elyciap.github.io/fnpw-website-2026/donate-land.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Foundation for National Parks &amp; Wildlife">
 <meta property="og:locale" content="en_AU">
-<meta property="og:title" content="Donate Land for Conservation | FNPW">
-<meta property="og:description" content="Give land with conservation value to become national park, protected by law for good. We assess the land, secure agreement and manage the transfer.">
+<meta property="og:title" content="Donate Land for Conservation in Australia | FNPW">
+<meta property="og:description" content="Donate land for conservation and protect nature for generations. We guide landholders through every step, with Traditional Custodians and government.">
 <meta property="og:url" content="https://elyciap.github.io/fnpw-website-2026/donate-land.html">
 <meta property="og:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/donate-land-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Donate Land for Conservation | FNPW">
-<meta name="twitter:description" content="Give land with conservation value to become national park, protected by law for good. We assess the land, secure agreement and manage the transfer.">
+<meta name="twitter:title" content="Donate Land for Conservation in Australia | FNPW">
+<meta name="twitter:description" content="Donate land for conservation and protect nature for generations. We guide landholders through every step, with Traditional Custodians and government.">
 <meta name="twitter:image" content="https://elyciap.github.io/fnpw-website-2026/assets/img/donate-land-hero.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -143,6 +143,43 @@
 .dl-tax p,.dl-tax li{font-size:.97rem;line-height:1.7;color:var(--char)}
 .dl-tax ul{margin:.4rem 0 1rem;padding-left:1.2rem}.dl-tax li{margin-bottom:.4rem}
 .dl-tax a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
+/* ===== V2 page (Nov 2026): hero buttons, trust strip, track record, four steps ===== */
+.fb-hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.fb-hero-content .btn-p{background:var(--waratah);border-color:var(--waratah);color:var(--cream)}
+.fb-hero-content .btn-p:hover{background:var(--waratah-dk);border-color:var(--waratah-dk);color:var(--cream)}
+.fb-hero-content .btn-o{color:var(--cream);border-color:rgba(250,246,242,.65)}
+.fb-hero-content .btn-o:hover{background:var(--white);color:var(--euc-deep);border-color:var(--cream)}
+.dl-trust{background:var(--euc-deep);padding:1.6rem 0}
+.dl-trust-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem 2.5rem}
+@media(max-width:820px){.dl-trust-g{grid-template-columns:1fr}}
+.dl-trust p{padding-left:1rem;border-left:2px solid var(--euc-mid);font-family:var(--ff-d);font-weight:600;font-size:1rem;line-height:1.4;color:var(--cream)}
+.dl-open{background:var(--cream)!important}
+.dl-open ul{margin-top:.8rem;padding-left:1.2rem;max-width:54ch;font-size:1.04rem;line-height:1.72;color:var(--char);list-style:disc}
+.dl-open li{margin-bottom:.3rem}
+.dl-track{padding:var(--sec-md) 0;background:var(--sand)}
+.dl-track-in{margin-top:1.2rem;font-size:1.04rem;line-height:1.72;color:var(--char);max-width:68ch}
+.dl-chips{list-style:none;padding:0;margin:1.6rem 0 0;display:flex;flex-wrap:wrap;gap:.7rem}
+.dl-chips li{display:inline-flex;align-items:baseline;gap:.5em;padding:.6em 1.1em;background:var(--white);border:1.5px solid var(--euc-deep);font-size:.9rem;color:var(--euc-deep)}
+.dl-chips strong{font-family:var(--ff-d);font-weight:600;font-size:1.05rem;line-height:1}
+.dl-src{margin-top:.7rem;font-size:.86rem;color:var(--stone)}
+.dl-src a{color:var(--euc);text-decoration:underline;text-underline-offset:2px}
+.dl-case{margin-top:2.6rem;background:var(--white);display:grid;grid-template-columns:1.3fr 1fr}
+@media(max-width:820px){.dl-case{grid-template-columns:1fr}}
+.dl-case-im{position:relative;min-height:320px;background:var(--bark);overflow:hidden}
+.dl-case-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dl-case-tx{padding:1.9rem 1.8rem;border-top:4px solid var(--euc)}
+.dl-case-tx h3{font-size:1.16rem;margin-bottom:.6rem}
+.dl-case-tx p{font-size:.95rem;line-height:1.65;color:var(--char)}
+.dl-case-tx .btn-g{margin-top:1.1rem}
+.dl-how-in{max-width:68ch}
+.dl-how-g{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1100px){.dl-how-g{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.dl-how-g{grid-template-columns:1fr}}
+.dl-role{padding:1.5rem 1.5rem 1.6rem}
+.dl-role h3{font-size:1.08rem}
+.dl-role.r4{border-top-color:var(--wattle)}
+.dl-role.r4 .dl-role-k{color:var(--red-soil-dk)}
+.dl-faq .body p+p{margin-top:.8rem}
 </style>
 </head>
 <body>
@@ -214,50 +251,39 @@
     <div class="cw rv">
       <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="ways-you-can-get-involved.html">Get Involved</a><span>/</span>Donate Land</nav>
       <span class="ey">Donate land</span>
-      <h1>A gift you can walk through.</h1>
-      <p class="lede">Most gifts to nature are counted in dollars. A few are counted in hectares. If you own land with real conservation value, you can give it to become national park, protected for good, and we will guide you through every step.</p>
+      <h1>Donate your land and protect nature for generations</h1>
+      <p class="lede">Most gifts to nature are counted in dollars, and a few are counted in hectares. If you own land with conservation value, we can help protect and restore it, and we’ll guide you through every step.</p>
+      <div class="fb-hero-cta"><a class="btn btn-p" href="#talk">Talk to us about your land</a><a class="btn btn-o" href="#how">See how it works</a></div>
     </div>
   </div>
 </section>
 
-<!-- ============ HOW IT WORKS ============ -->
-<section class="dl-how">
-  <div class="cw">
-    <div class="rv" style="max-width:680px">
-      <span class="ey">How a gift of land works</span>
-      <h2 style="margin-top:1rem">Your gift becomes national park. We make sure it gets there.</h2>
-      <p class="dl-how-in">A gift of land is a gift to the nation. We work alongside Traditional Owners, landholders and government to see it through, and we don’t keep the land: the government adds it to the national park estate so it is protected for good.</p>
-    </div>
-    <div class="dl-how-g">
-      <div class="dl-role rv">
-        <span class="dl-role-k">You</span>
-        <h3>Offer the land</h3>
-        <p>You tell us about land you would like to protect, and you decide with your own advisers whether to go ahead. Nothing commits you until the documents are signed.</p>
-      </div>
-      <div class="dl-role r2 rv d1">
-        <span class="dl-role-k">Us</span>
-        <h3>Make it happen</h3>
-        <p>We assess the land, secure the government’s agreement to take it, and coordinate the valuation, legal work and transfer. Where it’s needed, the land passes through our Gift Fund Trust for the moment of transfer, but we never hold it long term.</p>
-      </div>
-      <div class="dl-role r3 rv d2">
-        <span class="dl-role-k">Government</span>
-        <h3>Protect it by law</h3>
-        <p>The national parks agency in your state receives the land and formally gazettes it as part of the national park estate. From then on it is protected by law and can’t be sold.</p>
-      </div>
-    </div>
-  </div>
+<!-- ============ TRUST STRIP ============ -->
+<section class="dl-trust">
+  <div class="cw"><div class="dl-trust-g">
+    <p>Growing national parks since 1970</p>
+    <p>A registered Australian charity</p>
+    <p>Confidential, with no cost or obligation in asking</p>
+  </div></div>
 </section>
 
-<!-- ============ OPENING REASSURANCE ============ -->
+<!-- ============ WHAT YOUR LAND COULD PROTECT ============ -->
 <section class="dl-open">
   <div class="cw"><div class="dl-open-g">
     <div class="rv">
       <span class="ey">Is my land suitable?</span>
-      <h2>Not sure your land counts? That is worth a conversation.</h2>
-      <p>People often assume we are only interested in the spectacular. In truth, some of the most valuable country in Australia is quiet and unremarkable to look at: a paddock with the last remnant scrub in the district, a scrappy gully that happens to hold a creek, forty hectares of regrowth sitting between two reserves that have been waiting decades to be joined up.</p>
-      <p>There is no cost and no obligation in asking, and no question is too small to put to us. We would far rather have the conversation and tell you honestly what we think than have you decide on our behalf that it was not worth raising.</p>
-      <p>Every property is assessed on its conservation value and on whether the government wants it for the national park estate. Not every property will be right, and if yours isn’t, we will tell you honestly and as early as we can.</p>
-      <a class="btn btn-p" href="#talk" style="margin-top:1.4rem">Start a conversation</a>
+      <h2>What your land could protect</h2>
+      <p>Land does not need to be spectacular to matter. Some of the most valuable country in Australia is quiet to look at, like a paddock holding the last remnant scrub in the district, or forty hectares of regrowth sitting between two reserves that have waited decades to be joined.</p>
+      <p>Whether you own bushland, wetlands, farmland or another property with conservation potential, your land could help to:</p>
+      <ul>
+        <li>support conservation shaped in partnership with Traditional Custodians</li>
+        <li>extend a national park or protected area</li>
+        <li>reconnect habitat and wildlife corridors that have been broken apart</li>
+        <li>protect the places threatened plants and animals depend on</li>
+        <li>restore country that has been degraded</li>
+      </ul>
+      <p>If you are unsure whether your land counts, that is worth a conversation. We would far rather talk it through and tell you honestly what we think than have you decide on our behalf that it wasn’t worth raising.</p>
+      <a class="btn btn-p" href="#talk" style="margin-top:1.4rem">Talk to us about your land</a>
     </div>
     <div class="rv d1">
       <div class="dl-open-im">
@@ -268,64 +294,80 @@
   </div></div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="dl-proc">
-  <div class="cw"><div class="dl-proc-g">
+<!-- ============ TRACK RECORD ============ -->
+<section class="dl-track">
+  <div class="cw">
     <div class="rv">
-      <span class="ey">What happens</span>
-      <h2 style="margin-top:1rem">Five steps from your land to a national park.</h2>
-      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">A gift of land is a significant decision, so every step is careful and nothing is rushed. The government agrees to take the land before any valuation or legal work begins.</p>
-      <div class="dl-time">
-        <h3>How long it takes</h3>
-        <p>Every gift of land is different. Government agreement, valuation and the legal work all take time, and we will give you a realistic picture of the timeline once we know your land.</p>
-      </div>
+      <span class="ey">Our track record</span>
+      <h2 style="margin-top:1rem">Land we have helped protect since 1970</h2>
+      <p class="dl-track-in">For more than five decades we have helped add land to national parks and protected areas across Australia, working alongside Traditional Custodians, landholders and government to see each one through. Much of this work happens in South Australia with the Department for Environment and Water, and we have supported land conservation in Queensland and other parts of the country as well.</p>
+      <ul class="dl-chips">
+        <li><strong>600K+</strong> hectares protected for national parks and reserves</li>
+        <li><strong>50</strong> national parks and reserves created or expanded</li>
+      </ul>
+      <p class="dl-src">Figures from our <a href="our-impact.html">2025 Impact Report</a>.</p>
     </div>
-
-    <div class="dl-steps rv d1">
-      <div class="dl-step">
-        <h3>01. We assess your land</h3>
-        <p>It starts with a confidential conversation about where the land is and what you know about it. Our projects team then looks at its biodiversity value, what it connects to and the species it supports, and commissions a biodiversity report if one is needed.</p>
+    <article class="dl-case rv">
+      <div class="dl-case-im"><picture><source type="image/webp" srcset="assets/img/r/donate-land-mundoo-480.webp 480w, assets/img/r/donate-land-mundoo-800.webp 800w, assets/img/r/donate-land-mundoo-1200.webp 1200w, assets/img/r/donate-land-mundoo-1400.webp 1400w" sizes="(min-width: 820px) 55vw, 100vw"><img src="assets/img/donate-land-mundoo.jpg" alt="Aerial view of wetland channels, saltmarsh and dunes with the ocean beyond" width="1400" height="1049" loading="lazy" decoding="async"></picture></div>
+      <div class="dl-case-tx">
+        <span class="dl-role-k">South Australia</span>
+        <h3>Mundoo Island Station</h3>
+        <p>We helped secure 1,900 hectares at Mundoo Island Station, part of an internationally important wetland at the mouth of the Murray, and the land is now being added to Coorong National Park.</p>
+        <a class="btn btn-g" href="project-mundoo-island-acquisition.html">Read the Mundoo Island story</a>
       </div>
-      <div class="dl-step">
-        <h3>02. We secure the government’s agreement</h3>
-        <p>We approach the government agency that manages national parks where your land is, such as the Department for Environment and Water in South Australia, where we do much of this work, to confirm it wants to receive the land and that it fits its priorities for the park estate. Nothing moves to valuation until the government has agreed in principle.</p>
-      </div>
-      <div class="dl-step">
-        <h3>03. We coordinate the valuation and legal work</h3>
-        <p>We agree the right structure for the gift with you and your advisers, arrange an independent valuation that meets ATO requirements, and prepare the donation agreement and transfer documents with your legal team and the government’s.</p>
-      </div>
-      <div class="dl-step">
-        <h3>04. The land is transferred</h3>
-        <p>The transfer is registered through the Titles Office. Where it’s needed, the land passes through our Gift Fund Trust for the moment of transfer on its way to the government.</p>
-      </div>
-      <div class="dl-step">
-        <h3>05. It becomes national park</h3>
-        <p>The government adds the land to the national park estate and formally gazettes it, so it is protected by law and can’t be sold. We give you the documentation you need and record the hectares your gift has protected.</p>
-      </div>
-    </div>
-  </div></div>
+    </article>
+    <p class="dl-track-in rv" style="margin-top:2.2rem">We understand that giving land is a significant decision. Our role is to work out what is possible for your property, bring the right people and partners to the table and help you find the right way forward.</p>
+  </div>
 </section>
 
-<!-- ============ TAX AND COSTS ============ -->
-<section class="dl-cost">
+<!-- ============ HOW IT WORKS ============ -->
+<section class="dl-how" id="how">
   <div class="cw">
-    <div class="rv" style="max-width:680px">
-      <span class="ey">Tax and costs</span>
-      <h2 style="margin-top:1rem">A gift that can carry a tax benefit.</h2>
-      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">Our Gift Fund Trust is a Deductible Gift Recipient on the Register of Environmental Organisations, so a gift of land may be tax deductible. An independent valuation is required for tax purposes, and we coordinate it as part of the process. We will also talk you through the costs involved, including valuation and legal fees, before you commit to anything.</p>
+    <div class="rv">
+      <span class="ey">What happens</span>
+      <h2 style="margin-top:1rem">How donating land works</h2>
+      <p class="dl-how-in">A gift of land is a gift to the nation, which is why we don’t keep it ourselves. The government adds it to the national park estate, where it is protected by law and can’t be sold, and our role is to make sure it gets there. Every gift of land is different and is subject to assessment and to the government’s acceptance, so we will give you a realistic picture of timing once we know your land.</p>
     </div>
-    <div class="dl-tax rv">
-      <h3>Tax benefits for property donations</h3>
-      <p>Since changes in 1999, the Income Tax Assessment Act:</p>
-      <ul>
-        <li>Allows an income tax deduction in relation to gifts of property including land valued at more than $5000 by the Taxation Commissioner to eligible charities, regardless of when and how the property was acquired.</li>
-        <li>Allows apportionment (spread) of deductions over five years in relation to these property donations.</li>
-      </ul>
-      <p>Tax rules for gifts of land are specific, so please get advice from your own accountant or financial adviser before you commit. For more information on tax incentives for property donations for conservation, please visit:</p>
-      <ul class="dl-tax-links">
-        <li><a href="https://www.dcceew.gov.au/about/assistance-grants-tenders/environmental-tax-concessions" target="_blank" rel="noopener">The Department of Climate Change, Energy, the Environment and Water</a></li>
-        <li><a href="https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/tax-deductible-donations/gift-types-requirements-and-valuation-rules/property-we-value-at-more-than-5000-dollars" target="_blank" rel="noopener">The Australian Taxation Office</a></li>
-      </ul>
+    <div class="dl-how-g">
+      <div class="dl-role rv">
+        <span class="dl-role-k">Step 01</span>
+        <h3>Start with a confidential conversation</h3>
+        <p>Tell us where the land is and what you would like for it, with nothing committing you until documents are signed.</p>
+      </div>
+      <div class="dl-role r2 rv d1">
+        <span class="dl-role-k">Step 02</span>
+        <h3>We assess the land and seek agreement</h3>
+        <p>Our projects team looks at its conservation value, then the national parks agency in your state confirms it wants to receive the land.</p>
+      </div>
+      <div class="dl-role r3 rv d2">
+        <span class="dl-role-k">Step 03</span>
+        <h3>We coordinate valuation and transfer</h3>
+        <p>We arrange the independent valuation, legal work and transfer with your advisers and the government’s.</p>
+      </div>
+      <div class="dl-role r4 rv d2">
+        <span class="dl-role-k">Step 04</span>
+        <h3>Your land becomes national park</h3>
+        <p>The government gazettes it as part of the park estate, and we record the hectares your gift has protected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="dl-faq">
+  <div class="cw">
+    <div class="rv" style="text-align:center;max-width:760px;margin:0 auto">
+      <span class="ey">FAQs</span>
+      <h2 style="margin-top:1rem">Common questions about donating land</h2>
+    </div>
+    <div class="dl-faq-list">
+      <details><summary>Who will own the land?</summary><div class="body">The government. Once the transfer is complete, the land becomes part of the national park estate and is managed by the national parks agency in your state. We don’t keep it: where it’s needed, it passes through our Gift Fund Trust only for the moment of transfer.</div></details>
+      <details><summary>How much land do I need to have?</summary><div class="body">There is no minimum. What matters is what is on the land and what is around it. A small block adjoining an existing reserve can be worth more to conservation than a large one in the middle of cleared country. If you are close to a national park, a reserve or a wildlife corridor, please do get in touch, whatever the size.</div></details>
+      <details><summary>Will my land definitely be accepted?</summary><div class="body">Not always, and we would rather say so here than let you find out late. The land needs real conservation value, and the government has to agree to receive it before we go any further. If it isn’t suitable, we will tell you why as early as we can.</div></details>
+      <details open><summary>Are there tax benefits to donating land?</summary><div class="body"><p>A gift of land may be tax deductible. Tax law allows an income tax deduction for gifts of property, including land, valued at more than $5,000 by the Commissioner of Taxation, and that deduction can be spread over up to five years.</p><p>An independent valuation is required for tax purposes and we coordinate it as part of the process, and we will talk you through the costs involved, including valuation and legal fees, before you commit to anything.</p><p>Tax rules for gifts of land depend on your circumstances, so please speak with your own accountant or legal adviser before you commit.</p><p><a href="https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/tax-deductible-donations/gift-types-requirements-and-valuation-rules/property-we-value-at-more-than-5000-dollars" target="_blank" rel="noopener">Gift types, requirements and valuation rules (Australian Taxation Office)</a><br><a href="https://www.dcceew.gov.au/about/assistance-grants-tenders/environmental-tax-concessions" target="_blank" rel="noopener">Environmental tax concessions (DCCEEW)</a></p></div></details>
+      <details><summary>Can I protect my land and keep living on it?</summary><div class="body">Not through a gift of land with us. Our process transfers ownership, because the land has to pass to the government to become national park, and that is what lets it be gazetted and protected by law. If you are not ready to part with your land yet, we are still glad to talk it through with you, with no obligation, whenever the time feels right.</div></details>
+      <details><summary>What happens to my land once it becomes national park?</summary><div class="body">Once it is gazetted, the land is managed as national park under the same rules as every other park in your state. Tell us early what matters to you about the land and we will share it with the government as part of the conversation. Conditions attached to a gift can also affect its tax treatment, so talk them through with your adviser too.</div></details>
+      <details><summary>What if my family have views about this?</summary><div class="body">They usually do, and that is right and proper. Land carries family history in a way money does not. We would always encourage you to have that conversation before you have it with us, and we are very glad to talk to your family alongside you if that would help. A gift that causes hurt at home is not one we want.</div></details>
     </div>
   </div>
 </section>
@@ -335,55 +377,26 @@
   <div class="cw"><div class="dl-contact-g">
     <div class="rv">
       <span class="ey">Start here</span>
-      <h2 style="margin-top:1rem">Start with a conversation with us.</h2>
-      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">A gift of land is too significant to begin with a form and an automated reply, so it does not. Enquiries about land come to our Chief Executive, and the first conversation will be with someone able to give you a straight answer.</p>
+      <h2 style="margin-top:1rem">Start with a conversation about your land</h2>
+      <p style="margin-top:1.2rem;font-size:1.02rem;line-height:1.72;color:var(--char)">Whether you are ready to give or only beginning to wonder what might be possible, a first conversation with our team is the best place to start.</p>
 
       <div class="dl-person">
-        <div class="dl-person-ph"><img src="https://fnpw.org.au/wp-content/uploads/2021/03/Ian-Darbyshire-FNPW-CEO-e1614899323722-1022x1024.jpg" alt="Ian Darbyshire" loading="lazy" width="1022" height="1024" decoding="async"></div>
         <div>
-          <span class="dl-person-nm">Ian Darbyshire</span>
-          <div class="dl-person-rl">Chief Executive Officer, Foundation for National Parks &amp; Wildlife</div>
+          <span class="dl-person-nm">Talk to our team</span>
+          <div class="dl-person-rl">Email or call and we will help directly.</div>
           <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a>
           <a href="tel:1800898626">1800 898 626</a>
         </div>
       </div>
-
-      <div class="dl-next">
-        <h3>What happens after you send this</h3>
-        <ol>
-          <li><span>We’ll get back to you soon</span>personally, by whichever means you have asked for.</li>
-          <li><span>A first conversation</span>at a time that suits, to understand the land and what you would like for it.</li>
-          <li><span>Then it is your call</span>we will tell you honestly what we think is possible, and you decide whether to go further. Or not.</li>
-        </ol>
-      </div>
     </div>
 
     <div class="dl-form rv d1">
-      <h3>Tell us about the land</h3>
-      <p class="sub">A few lines is plenty to start with. There is nothing you need to have decided, and nothing here commits you to anything.</p>
+      <h3>Tell us about your land</h3>
+      <p class="sub">A few lines is plenty to begin with, and nothing here commits you to anything.</p>
       <div class="hs-form-frame" id="hsform" data-region="ap1" data-form-id="39b8240c-ac28-4012-b9b7-30e589d105f4" data-portal-id="441704788" style="min-height:460px"></div>
       <noscript><p class="hsform-fallback">Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> and we will help directly.</p></noscript><p class="hsform-fallback" id="hsFallback" hidden>Email <a href="mailto:fnpw@fnpw.org.au">fnpw@fnpw.org.au</a> or call <a href="tel:1800898626">1800 898 626</a> and we will help directly.</p>
     </div>
   </div></div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="dl-faq">
-  <div class="cw">
-    <div class="rv" style="text-align:center;max-width:640px;margin:0 auto">
-      <span class="ey">FAQs</span>
-      <h2 style="margin-top:1rem">Questions people ask.</h2>
-    </div>
-    <div class="dl-faq-list">
-      <details class="rv"><summary>Who will own the land?</summary><div class="body">The government. Once the transfer is complete, the land becomes part of the national park estate and is managed by the national parks agency in your state. We don’t keep it: where it’s needed, it passes through our Gift Fund Trust only for the moment of transfer.</div></details>
-      <details class="rv"><summary>How much land do I need to have?</summary><div class="body">There is no minimum. What matters is what is on the land and what is around it. A small block adjoining an existing reserve can be worth more to conservation than a large one in the middle of cleared country. If you are close to a national park, a reserve or a wildlife corridor, please do get in touch, whatever the size.</div></details>
-      <details class="rv"><summary>Will my land definitely be accepted?</summary><div class="body">Not always, and we would rather say so here than let you find out late. The land needs real conservation value, and the government has to agree to receive it before we go any further. If it isn’t suitable, we will tell you why as early as we can.</div></details>
-      <details class="rv"><summary>Can I leave land to you in my will?</summary><div class="body">No. A gift of land has to be made in your lifetime, through the process on this page. If you would like your will to protect land, a gift of money can do that, and it is how a gift in a will helped secure Mundoo Island. <a href="bequests.html">Find out about gifts in wills</a>.</div></details>
-      <details class="rv"><summary>Can I protect my land and keep living on it?</summary><div class="body">Not through a gift of land with us. Our process transfers ownership, because the land has to pass to the government to become national park, and that is what lets it be gazetted and protected by law. If you are not ready to part with your land yet, we are still glad to talk it through with you, with no obligation, whenever the time feels right.</div></details>
-      <details class="rv"><summary>Can I say what the land should be used for?</summary><div class="body">Once it is gazetted, the land is managed as national park under the same rules as every other park in your state. Tell us early what matters to you about the land and we will share it with the government as part of the conversation. Conditions attached to a gift can also affect its tax treatment, so talk them through with your adviser too.</div></details>
-      <details class="rv"><summary>What if my family have views about this?</summary><div class="body">They usually do, and that is right and proper. Land carries family history in a way money does not. We would always encourage you to have that conversation before you have it with us, and we are very glad to talk to your family alongside you if that would help. A gift that causes hurt at home is not one we want.</div></details>
-    </div>
-  </div>
 </section>
 
 </main>
